@@ -1,0 +1,3 @@
+export const SET_CONFIGS_IS_OFFLINE = 'SET_CONFIGS_IS_OFFLINE';
+export const INIT_APP = 'INIT_APP';
+
