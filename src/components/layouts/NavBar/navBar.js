@@ -1,7 +1,6 @@
 import * as React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import isEmpty from "lodash/isEmpty";
 import { navigate } from "../../../utils";
 
 const NavBar = props => {
@@ -25,17 +24,8 @@ const NavBar = props => {
         </Nav.Link>
         {isAuthenticated && (
           <>
-            <Nav.Link name="/recipes" onClick={goTo}>
-              Recipes
-            </Nav.Link>
-            <Nav.Link name="/ingredients" onClick={goTo}>
-              Ingredients
-            </Nav.Link>
-            <Nav.Link name="/generate" onClick={goTo}>
-              Generate Menu
-            </Nav.Link>
-            <Nav.Link name="/history" onClick={goTo}>
-              History
+            <Nav.Link name="/files" onClick={goTo}>
+              Files
             </Nav.Link>
           </>
         )}

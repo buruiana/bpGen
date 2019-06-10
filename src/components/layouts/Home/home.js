@@ -1,9 +1,6 @@
 import React from "react";
 
 const Home = props => {
-  const navigate = e => {
-    props.history.push(e.target.id);
-  };
 
   const addNewModal = () => props.addModal("TEST_MODAL");
 
@@ -13,7 +10,7 @@ const Home = props => {
         <a onClick={addNewModal}>Modal</a>
       </p>
       <p>
-        <img src="recipes.jpg" />
+        <img src="boiler.jpeg" />
       </p>
     </div>
   );

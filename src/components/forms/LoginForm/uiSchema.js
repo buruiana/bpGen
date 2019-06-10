@@ -1,26 +1,9 @@
 const uiSchema = {
-  users: {
-    properties: {
-      username: {
-        'ui:options': {
-          inputType: 'text',
-          label: 'true',
-          rows: 10,
-        },
-        'ui:placeholder': 'test',
-        'ui:widget': 'text',
-      },
-      useraddress: {
-        'ui:options': {
-          inputType: 'text',
-          label: 'true',
-          rows: 10,
-        },
-        'ui:placeholder': 'aaaaaaaa',
-        'ui:widget': 'textarea',
-      },
-    },
+  email: {
+    "ui:placeholder": "email"
+  },
+  password: {
+    "ui:widget": "password",
+    "ui:placeholder": "password"
   },
 };
-
-export default uiSchema;
