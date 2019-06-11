@@ -4,46 +4,39 @@ body {
   width: 100%;
   font-size: 1rem;
 }
+.array-item,
+.body-div {
+  width: 100%
+}
 
-// .navbar {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+// .btn-add > i {
+//   display: none;
 // }
 
-// .row {
-//   width: 100%;
+// .btn-add::after {
+//   content: "Add";
 // }
 
-// .body-div {
-//   margin-top: 5em;
-//   width: 100%;
+// .array-item-remove > i {
+//   display: none;
 // }
 
-// .simpleLink {
-//   text-decoration: underline !important;
-//   cursor: pointer;
+// .array-item-remove::after {
+//   content: "Remove";
 // }
 
-// a {
-//   font-size: 1rem;
+// .array-item-move-down > i {
+//   display: none;
 // }
 
-// .hidden {
-//   visibility: hidden;
-// }
-
-// .paddLeft {
-//   padding-left: 10px;
-// }
-
-// input[type="checkbox"] {
-//   margin-right: 10px;
-// }
-
-// select.form-control[multiple],
-// select.form-control[size] {
-//   height: auto;
-//   min-height: 700px;
+// .array-item-move-up > i {
+//   display: none;
 // }

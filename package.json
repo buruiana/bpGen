@@ -5,7 +5,7 @@
   "main": "src/app/index.js",
   "scripts": {
     "test": "",
-    "start": "parcel src/app/index.html"
+    "start": "parcel src/app/index.html --open"
   },
   "browserslist": [
     "last 1 Chrome version"
@@ -21,7 +21,7 @@
     "parcel-bundler": "^1.12.3",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-bootstrap": "^1.0.0-beta.6",
+    "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6",
     "react-jsonschema-form": "^1.6.1",
     "react-jsonschema-form-layout": "^1.0.4",
@@ -37,6 +37,6 @@
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
-    "sass": "^1.17.4"
+    "babel-preset-env": "^1.7.0"
   }
 }

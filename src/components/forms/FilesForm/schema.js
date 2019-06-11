@@ -22,6 +22,7 @@ const schema = {
           type: 'object',
           properties: {
             blockname: { type: 'string', title: 'Block Name' },
+            blockseq: { type: 'number', title: 'Block Sequence' },
           },
         }
       },
@@ -31,7 +32,8 @@ const schema = {
         items: {
           type: 'object',
           properties: {
-           propname: { type: 'string', title: 'Prop Name' },
+            propname: { type: 'string', title: 'Prop Name' },
+            defaultpropval: { type: 'string', title: 'Default Prop Val' },
           },
         }
       },
