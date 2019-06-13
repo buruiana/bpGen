@@ -4,10 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import { navigate } from "../../../utils";
 
 const NavBar = props => {
-  const {
-    isAuthenticated,
-    logout,
-  } = props;
+  const { isAuthenticated, logout } = props;
 
   const goTo = e => {
     navigate(e.target.name);
@@ -26,6 +23,9 @@ const NavBar = props => {
           <>
             <Nav.Link name="/files" onClick={goTo}>
               Files
+            </Nav.Link>
+            <Nav.Link name="/templates" onClick={goTo}>
+              Templates
             </Nav.Link>
           </>
         )}

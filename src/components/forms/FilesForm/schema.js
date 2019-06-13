@@ -1,44 +1,46 @@
 const schema = {
   type: "array",
   items: {
-    type: 'object',
+    type: "object",
     properties: {
-      filename: { type: 'string', title: 'File Name' },
-      isActive: { type: 'boolean' },
+      filename: { type: "string", title: "File Name" },
+      isActive: { type: "boolean" },
       fileforms: {
-        type: 'array',
-        title: 'Forms',
+        type: "array",
+        title: "Forms",
         items: {
-          type: 'object',
+          type: "object",
           properties: {
-            formname: { type: 'string', title: 'Form Name' },
-          },
+            formname: { type: "string", title: "Form Name" },
+            formschema: { type: "string", title: "Form Schema" },
+            formnuischema: { type: "string", title: "Form UISchema" }
+          }
         }
       },
       fileblocks: {
-        type: 'array',
-        title: 'Blocks',
+        type: "array",
+        title: "Blocks",
         items: {
-          type: 'object',
+          type: "object",
           properties: {
-            blockname: { type: 'string', title: 'Block Name' },
-            blockseq: { type: 'number', title: 'Block Sequence' },
-          },
+            blockname: { type: "string", title: "Block Name" },
+            blockseq: { type: "number", title: "Block Sequence" }
+          }
         }
       },
       fileprops: {
-        type: 'array',
-        title: 'Props',
+        type: "array",
+        title: "Props",
         items: {
-          type: 'object',
+          type: "object",
           properties: {
-            propname: { type: 'string', title: 'Prop Name' },
-            defaultpropval: { type: 'string', title: 'Default Prop Val' },
-          },
+            propname: { type: "string", title: "Prop Name" },
+            defaultpropval: { type: "string", title: "Default Prop Val" }
+          }
         }
-      },
+      }
     }
-  },
+  }
 };
 
 export default schema;

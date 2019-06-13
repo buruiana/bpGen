@@ -6,6 +6,7 @@ import Home from "../components/layouts/Home";
 
 import LoginForm from "../components/forms/LoginForm";
 import FilesForm from "../components/forms/FilesForm";
+import TemplatesForm from "../components/forms/TemplatesForm";
 
 import NoMatch from "../components/layouts/NoMatch";
 
@@ -18,6 +19,7 @@ const routes = (
           <Route path="/home" component={Home} />
           <Route path="/login" component={LoginForm} />
           <Route path="/files" component={FilesForm} />
+          <Route path="/templates" component={TemplatesForm} />
           <Route component={NoMatch} />
         </Switch>
       </div>
