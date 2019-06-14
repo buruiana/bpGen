@@ -14,6 +14,7 @@ const schema = {
         properties: {
           fileName: { type: "string", title: "File Name" },
           fileDescription: { type: "string", title: "File Description" },
+          fileSequence: { type: "number", title: "File Sequence" },
           fileIsActive: { type: "boolean", title: "File is Active" },
           fileForms: {
             type: "array",
@@ -56,6 +57,10 @@ const schema = {
                   title: "Block Description"
                 },
                 blockSequence: { type: "number", title: "Block Sequence" },
+                blockImplementation: {
+                  type: "string",
+                  title: "Block Implementation"
+                },
                 blockIsActive: { type: "boolean", title: "Block is Active" }
               }
             }

@@ -12,9 +12,8 @@ import { setAllIngredients, getAllIngredients } from "./actions";
 
 export function* watchSetTemplate(action) {
   const { template } = action;
+  console.log("console: templatetemplate", { template });
   const { isOffline } = (yield select()).configsReducer;
-  // let newIngredient = { ...ingredient };
-  // newIngredient.children = [];
 
   if (!isOffline) {
     if (template.id) {
@@ -24,7 +23,9 @@ export function* watchSetTemplate(action) {
         template
       );
     } else {
-      yield call(rsf.firestore.addDocument, `templates`, template);
+      yield call(rsf.firestore.addDocument, `templates`, {
+        item: { template }
+      });
     }
     yield put(getAllTemplates());
   }

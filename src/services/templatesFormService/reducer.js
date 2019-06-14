@@ -7,6 +7,7 @@ export const initialState = () => ({
 });
 
 export default (state = initialState(), action) => {
+  console.log("console: -------------------", action);
   switch (action.type) {
     case actionTypes.SET_TEMPLATE:
       return {

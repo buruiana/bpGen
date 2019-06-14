@@ -9,6 +9,7 @@ return {
       fileName: "actionTypes.js",
       fileDescription: "file for action types",
       fileIsActive: true,
+      fileSequence: 1,
       fileForms: [
         {
           formName: "actionTypesForm",
@@ -43,7 +44,8 @@ return {
           blockName: "definition block",
           blockDescription: "definition block descr",
           blockSequence: 1,
-          blockIsActive: true
+          blockIsActive: true,
+          blockImplementation: ""
         }
       ]
     },
@@ -51,6 +53,7 @@ return {
       fileName: "actions.js",
       fileDescription: "file for actions",
       fileIsActive: true,
+      fileSequence: 2,
       fileForms: [
         {
           formName: "actionsForm",
@@ -85,13 +88,15 @@ return {
           blockName: "import block",
           blockDescription: "import block descr",
           blockSequence: 1,
-          blockIsActive: true
+          blockIsActive: true,
+          blockImplementation: ""
         },
         {
           blockName: "definition block",
           blockDescription: "definition block descr",
           blockSequence: 2,
-          blockIsActive: true
+          blockIsActive: true,
+          blockImplementation: ""
         }
       ]
     },
@@ -99,6 +104,7 @@ return {
       fileName: "reducer.js",
       fileDescription: "file for reducer",
       fileIsActive: true,
+      fileSequence: 3,
       fileForms: [
         {
           formName: "reducerForm",
@@ -141,19 +147,22 @@ return {
           blockName: "import block",
           blockDescription: "import block descr",
           blockSequence: 1,
-          blockIsActive: true
+          blockIsActive: true,
+          blockImplementation: ""
         },
         {
           blockName: "initialState block",
           blockDescription: "initialState block descr",
           blockSequence: 2,
-          blockIsActive: true
+          blockIsActive: true,
+          blockImplementation: ""
         },
         {
           blockName: "definition block",
           blockDescription: "definition block descr",
           blockSequence: 3,
-          blockIsActive: true
+          blockIsActive: true,
+          blockImplementation: ""
         }
       ]
     }

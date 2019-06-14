@@ -2,7 +2,7 @@ import * as actionTypes from "./actionTypes";
 
 export const initialState = () => ({
   error: "",
-  isAuthenticated: true,
+  isAuthenticated: false,
   userInfo: {}
 });
 
