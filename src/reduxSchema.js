@@ -18,24 +18,30 @@ return {
           formSchema: "actionTypesForm Schema",
           formUISchema: "actionTypesForm UISchema",
           formProps: [
-            [
-              {
-                propName: "name",
-                propType: "string"
-              }
-            ],
-            [
-              {
-                propName: "isSuccess",
-                propType: "boolean"
-              }
-            ],
-            [
-              {
-                propName: "isFailure",
-                propType: "boolean"
-              }
-            ]
+            {
+              item: [
+                {
+                  propName: "name",
+                  propType: "string"
+                }
+              ]
+            },
+            {
+              item: [
+                {
+                  propName: "isSuccess",
+                  propType: "boolean"
+                }
+              ]
+            },
+            {
+              item: [
+                {
+                  propName: "isFailure",
+                  propType: "boolean"
+                }
+              ]
+            }
           ]
         }
       ],
@@ -62,24 +68,30 @@ return {
           formSchema: "actionsForm Schema",
           formUISchema: "actionsForm UISchema",
           formProps: [
-            [
-              {
-                propName: "name",
-                propType: "string"
-              }
-            ],
-            [
-              {
-                propName: "isActive",
-                propType: "boolean"
-              }
-            ],
-            [
-              {
-                propName: "payload",
-                propType: "string"
-              }
-            ]
+            {
+              item: [
+                {
+                  propName: "name",
+                  propType: "string"
+                }
+              ]
+            },
+            {
+              item: [
+                {
+                  propName: "isActive",
+                  propType: "boolean"
+                }
+              ]
+            },
+            {
+              item: [
+                {
+                  propName: "payload",
+                  propType: "string"
+                }
+              ]
+            }
           ]
         }
       ],
@@ -113,32 +125,38 @@ return {
           formSchema: "reducerForm Schema",
           formUISchema: "reducerForm UISchema",
           formProps: [
-            [
-              {
-                propName: "name",
-                propType: "string"
-              }
-            ],
-            [
-              {
-                propName: "isActive",
-                propType: "boolean"
-              }
-            ],
-            [
-              {
-                propName: "payload",
-                propType: "string"
-              },
-              {
-                propName: "payloadVal",
-                propType: "string"
-              },
-              {
-                propName: "payloadInitVal",
-                propType: "string"
-              }
-            ]
+            {
+              item: [
+                {
+                  propName: "name",
+                  propType: "string"
+                }
+              ]
+            },
+            {
+              item: [
+                {
+                  propName: "isActive",
+                  propType: "boolean"
+                }
+              ]
+            },
+            {
+              item: [
+                {
+                  propName: "payload",
+                  propType: "string"
+                },
+                {
+                  propName: "payloadVal",
+                  propType: "string"
+                },
+                {
+                  propName: "payloadInitVal",
+                  propType: "string"
+                }
+              ]
+            }
           ]
         }
       ],

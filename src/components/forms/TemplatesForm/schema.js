@@ -31,13 +31,18 @@ const schema = {
                   type: "array",
                   title: "Form Props",
                   items: {
-                    title: "Item",
-                    type: "array",
-                    items: {
-                      type: "object",
-                      properties: {
-                        propName: { type: "string", title: "Prop Name" },
-                        propType: { type: "string", title: "Prop Type" }
+                    type: "object",
+                    properties: {
+                      item: {
+                        title: "Item",
+                        type: "array",
+                        items: {
+                          type: "object",
+                          properties: {
+                            propName: { type: "string", title: "Prop Name" },
+                            propType: { type: "string", title: "Prop Type" }
+                          }
+                        }
                       }
                     }
                   }
