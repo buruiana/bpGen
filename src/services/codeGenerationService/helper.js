@@ -1,22 +1,25 @@
 import reduxSchema from "../../reduxSchema";
 
-export const executeCodeGeneration = (template, state) => {
+export const executeCodeGeneration = template => {
   const filesCode = [];
 
-  template.files.map(file => {
-    const code = "";
-    file.blocks.map(block => {
-      code = blockCode.concat(executeBlockGeneration(block, state));
+  template.templateFiles.map(file => {
+    let code = "";
+    file.fileBlocks.map(block => {
+      code = code + block.blockImplementation;
     });
+
     filesCode.push({
-      id: file.name,
+      id: file.fileName,
       code
     });
   });
+
   return filesCode;
 };
 
-export const executeBlockGeneration = (block, state) => {
-  const blockCode = new Function(block.implementation);
-  return blockCode;
-};
+// export const executeBlockGeneration = block => {
+//   const blockCode = new Function(block.implementation);
+
+//   return blockCode;
+// };

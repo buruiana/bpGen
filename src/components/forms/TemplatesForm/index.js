@@ -1,15 +1,22 @@
 import { connect } from "react-redux";
-import { setTemplate } from "../../../services/templatesFormService/actions";
+import get from "lodash/get";
+import {
+  setTemplate,
+  getAllTemplates
+} from "../../../services/templatesFormService/actions";
+import { generateCode } from "../../../services/codeGenerationService/actions";
 import TemplatesForm from "./templatesForm";
 
 const mapStateToProps = state => {
   return {
-    userid: state.loginFormReducer.userInfo.user.uid
+    userid: get(state, "loginFormReducer.userInfo.user.uid", "aaa")
   };
 };
 
 const mapDispatchToProps = {
-  setTemplate
+  setTemplate,
+  generateCode,
+  getAllTemplates
 };
 
 export default connect(

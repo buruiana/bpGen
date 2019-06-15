@@ -44,3 +44,18 @@ export const getAllTemplatesFailure = error => ({
   type: actionTypes.GET_ALL_TEMPLATES_FAILURE,
   error
 });
+
+export const setAllTemplates = templates => ({
+  type: actionTypes.SET_ALL_TEMPLATES,
+  templates
+});
+
+export const setAllTemplatesSuccess = templates => ({
+  type: actionTypes.SET_ALL_TEMPLATES_SUCCESS,
+  templates
+});
+
+export const setAllTemplatesFailure = error => ({
+  type: actionTypes.SET_ALL_TEMPLATES_FAILURE,
+  error
+});

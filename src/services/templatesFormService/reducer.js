@@ -20,29 +20,16 @@ export default (state = initialState(), action) => {
         error: "",
         currentTemplate: action.template
       };
+    case actionTypes.SET_ALL_TEMPLATES:
+      return {
+        ...state,
+        error: "",
+        allTemplates: action.templates
+      };
     case actionTypes.SET_TEMPLATE_FAILURE:
       return {
         ...state,
         error: action.error
-      };
-    case actionTypes.LOGIN_FAILURE:
-      return {
-        ...state,
-        error: action.error,
-        userInfo: {}
-      };
-    case actionTypes.LOGOUT_SUCCESS:
-      return {
-        ...state,
-        error: "",
-        isAuthenticated: false,
-        userInfo: {}
-      };
-    case actionTypes.LOGOUT_FAILURE:
-      return {
-        ...state,
-        error: action.error,
-        userInfo: {}
       };
     default:
       return state;

@@ -6,23 +6,25 @@ import schema from "./schema";
 import rrr from "../../../reduxSchema";
 
 const TemplatesForm = props => {
-  const { setTemplate, userid } = props;
+  const { setTemplate, userid, generateCode, getAllTemplates } = props;
   let fileReader;
   const [formSchema, setFormSchema] = useState([]);
+  getAllTemplates();
 
   const onSubmit = data => {
     const { formData } = data;
-    const newormData = { ...formData, userid };
-    setTemplate(newormData);
+    setTemplate({ ...formData, userid });
   };
 
   const onChange = data => {
     console.log("console: change", data);
+    generateCode();
   };
 
   const handleFileRead = e => {
     const redux = new Function(fileReader.result);
     setFormSchema(redux);
+    setTemplate({ ...redux, userid });
   };
 
   const onImport = e => {
@@ -30,7 +32,7 @@ const TemplatesForm = props => {
     fileReader.onloadend = handleFileRead;
     fileReader.readAsText(e.target.files[0]);
   };
-  console.log("console: formSchema", formSchema);
+
   return (
     <div>
       <>

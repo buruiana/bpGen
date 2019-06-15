@@ -7,7 +7,7 @@ import {
   GET_ALL_TEMPLATES
 } from "./actionTypes";
 import rsf from "../../redux/firebaseConfig";
-import { setAllIngredients, getAllIngredients } from "./actions";
+import { setAllTemplates, getAllTemplates } from "./actions";
 //import { mock } from "./mock";
 
 export function* watchSetTemplate(action) {
@@ -40,7 +40,7 @@ export function* watchGetAllTemplates(action) {
   } else {
     const snapshot = yield call(rsf.firestore.getCollection, "templates");
     allTemplates = snapshot.docs.map(template => {
-      return { ...template.data(), id: template.id };
+      return { ...template.data().item.template, id: template.id };
     });
   }
   if (isEmpty(allTemplates)) allTemplates = [];
