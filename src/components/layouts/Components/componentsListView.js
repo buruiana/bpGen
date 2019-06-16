@@ -6,30 +6,25 @@ import ProvidersSearchForm from "../../forms/ProvidersSearch";
 import { navigate } from "../../../utils";
 
 const ComponentsListView = props => {
-  const components = props.components || [];
+  const { searchData, components = [], deleteComponent } = props;
 
-  const deleteComponent = event => {
-    props.deleteComponent({ id: event.target.id });
-  };
+  const deleteSelectedComponent = event =>  deleteComponent({ id: event.target.id });
+  const goTo = event => navigate(`/component/${event.target.id}`);
 
   const filteredItems = () => {
     const filteredComponents = components.filter(el => {
-      if (props.searchData.name || props.searchData.componentType) {
+      if (searchData.name || searchData.componentType) {
         return (
           el.name
             .toLowerCase()
-            .includes(get(props.searchData, "name", el.name).toLowerCase()) &&
-          get(props.searchData, "componentType", el.componentType) === el.componentType
+            .includes(get(searchData, "name", el.name).toLowerCase()) &&
+          get(searchData, "componentType", el.componentType) === el.componentType
         );
       }
       return el;
     });
 
     return sortBy(filteredComponents, el => el.name);
-  };
-
-  const goTo = (e) => {
-    navigate(`/component/${e.target.id}`);
   };
 
   const componentsList = () => {
@@ -39,12 +34,12 @@ const ComponentsListView = props => {
       return (
         <tr key={id}>
           <td>
-            <h4><a id={id} onClick={goTo}>{name}</a></h4>
+            <a id={id} onClick={goTo}>{name}</a>
           </td>
           <td>{techno}</td>
           <td>{provider}</td>
           <td>
-           <a className="deleteStyle" id={id} onClick={deleteComponent}>Delete</a>
+            <a className="deleteStyle" id={id} onClick={deleteSelectedComponent}>Delete</a>
           </td>
         </tr>
       );

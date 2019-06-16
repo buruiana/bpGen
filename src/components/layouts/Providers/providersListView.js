@@ -2,35 +2,29 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import sortBy from "lodash/sortBy";
 import get from "lodash/get";
-import isEmpty from "lodash/isEmpty";
 import ProvidersSearchForm from "../../forms/ProvidersSearch";
 import { navigate } from "../../../utils";
 
 const ProvidersListView = props => {
-  const providers = props.providers || [];
+  const { searchData, providers = [], deleteProvider } = props;
 
-  const deleteProvider = event => {
-    props.deleteProvider({ id: event.target.id });
-  };
+  const deleteSelectedProvider = event => deleteProvider({ id: event.target.id });
+  const goTo = event => navigate(`/provider/${event.target.id}`);
 
   const filteredItems = () => {
     const filteredProviders = providers.filter(el => {
-      if (props.searchData.name || props.searchData.providerType) {
+      if (searchData.name || searchData.providerType) {
         return (
           el.name
             .toLowerCase()
-            .includes(get(props.searchData, "name", el.name).toLowerCase()) &&
-          get(props.searchData, "providerType", el.providerType) === el.providerType
+            .includes(get(searchData, "name", el.name).toLowerCase()) &&
+          get(searchData, "providerType", el.providerType) === el.providerType
         );
       }
       return el;
     });
 
     return sortBy(filteredProviders, el => el.name);
-  };
-
-  const goTo = (e) => {
-    navigate(`/provider/${e.target.id}`);
   };
 
   const providersList = () => {
@@ -40,13 +34,13 @@ const ProvidersListView = props => {
       return (
         <tr key={id}>
           <td>
-            <h4><a id={id} onClick={goTo}>{name}</a></h4>
+            <a id={id} onClick={goTo}>{name}</a>
           </td>
           <td>{providerTechno}</td>
           <td>{name}</td>
           <td><a href={providerUrl} target='blank'>url</a></td>
           <td>
-           <a className="deleteStyle" id={id} onClick={deleteProvider}>Delete</a>
+           <a className="deleteStyle" id={id} onClick={deleteSelectedProvider}>Delete</a>
           </td>
         </tr>
       );

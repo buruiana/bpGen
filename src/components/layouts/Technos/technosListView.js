@@ -7,30 +7,25 @@ import ProvidersSearchForm from "../../forms/ProvidersSearch";
 import { navigate } from "../../../utils";
 
 const TechnosListView = props => {
-  const technos = props.technos || [];
+  const { technos = [], searchData, deleteTechno } = props;
 
-  const deleteTechno = event => {
-    props.deleteTechno({ id: event.target.id });
-  };
+  const deleteSelectedTechno = event => deleteTechno({ id: event.target.id });
+  const goTo = event => navigate(`/techno/${event.target.id}`);
 
   const filteredItems = () => {
     const filteredTechnos = technos.filter(el => {
-      if (props.searchData.name || props.searchData.technoType) {
+      if (searchData.name || searchData.technoType) {
         return (
           el.name
             .toLowerCase()
-            .includes(get(props.searchData, "name", el.name).toLowerCase()) &&
-          get(props.searchData, "technoType", el.technoType) === el.technoType
+            .includes(get(searchData, "name", el.name).toLowerCase()) &&
+          get(searchData, "technoType", el.technoType) === el.technoType
         );
       }
       return el;
     });
 
     return sortBy(filteredTechnos, el => el.name);
-  };
-
-  const goTo = (e) => {
-    navigate(`/techno/${e.target.id}`);
   };
 
   const technosList = () => {
@@ -46,7 +41,7 @@ const TechnosListView = props => {
           <td>{name}</td>
           <td><a href={technoUrl} target='blank'>url</a></td>
           <td>
-           <a className="deleteStyle" id={id} onClick={deleteTechno}>Delete</a>
+            <a className="deleteStyle" id={id} onClick={deleteSelectedTechno}>Delete</a>
           </td>
         </tr>
       );
