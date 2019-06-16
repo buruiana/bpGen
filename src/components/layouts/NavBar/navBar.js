@@ -5,7 +5,16 @@ import Nav from "react-bootstrap/Nav";
 import { navigate } from "../../../utils";
 
 const NavBar = props => {
-  const { isAuthenticated, logout, providers, getAllProviders, technos, getAllTechnos, propTypes, getAllPropTypes } = props;
+  const {
+    isAuthenticated,
+    logout,
+    providers,
+    getAllProviders,
+    technos,
+    getAllTechnos,
+    propTypes,
+    getAllPropTypes
+  } = props;
 
   // remove this shit
   if (isEmpty(providers)) {
@@ -18,9 +27,7 @@ const NavBar = props => {
     getAllPropTypes();
   }
 
-  const goTo = e => {
-    navigate(e.target.name);
-  };
+  const goTo = e => navigate(e.target.name);
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
