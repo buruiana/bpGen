@@ -8,32 +8,32 @@ export const initialState = () => ({
 
 export default (state = initialState(), action) => {
   switch (action.type) {
-    case actionTypes.SET_TECHNO:
+    case actionTypes.SET_PROP_TYPE:
       return {
         ...state,
         propType: action.propType,
       };
-    case actionTypes.SET_ALL_TECHNOS:
+    case actionTypes.SET_ALL_PROP_TYPES:
       return {
         ...state,
         propTypes: action.propTypes,
       };
-    case actionTypes.GET_TECHNO:
+    case actionTypes.GET_PROP_TYPE:
       return {
         ...state,
         propType: action.propType,
       };
-    case actionTypes.GET_ALL_TECHNOS:
+    case actionTypes.GET_ALL_PROP_TYPES:
       return {
         ...state,
         propTypes: action.propTypes,
       };
-    case actionTypes.DELETE_TECHNO:
+    case actionTypes.DELETE_PROP_TYPE:
       return {
         ...state,
         propType: action.propType,
       };
-    case actionTypes.FILTER_TECHNOS:
+    case actionTypes.FILTER_PROP_TYPES:
       return {
         ...state,
         searchData: action.searchData,

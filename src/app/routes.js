@@ -12,6 +12,8 @@ import Technos from "../components/layouts/Technos";
 import TechnosForm from "../components/forms/Technos";
 import Components from "../components/layouts/Components";
 import ComponentsForm from "../components/forms/ComponentsForm";
+import PropTypes from "../components/layouts/PropTypes";
+import PropTypesForm from "../components/forms/PropTypesForm";
 
 import NoMatch from "../components/layouts/NoMatch";
 
@@ -30,6 +32,8 @@ const routes = (
           <Route path="/techno/:id" component={TechnosForm} />
           <Route path="/components" component={Components} />
           <Route path="/component/:id" component={ComponentsForm} />
+          <Route path="/proptypes" component={PropTypes} />
+          <Route path="/proptype/:id" component={PropTypesForm} />
           <Route component={NoMatch} />
         </Switch>
       </div>

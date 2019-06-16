@@ -1,0 +1,6 @@
+export const SET_PROP_TYPE = 'SET_PROP_TYPE';
+export const SET_ALL_PROP_TYPES = 'SET_ALL_PROP_TYPES';
+export const GET_PROP_TYPE = 'GET_PROP_TYPE';
+export const GET_ALL_PROP_TYPES = 'GET_ALL_PROP_TYPES';
+export const DELETE_PROP_TYPE = 'DELETE_PROP_TYPE';
+export const FILTER_PROP_TYPES = 'FILTER_PROP_TYPES';

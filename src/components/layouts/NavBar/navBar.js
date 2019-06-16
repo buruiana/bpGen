@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import { navigate } from "../../../utils";
 
 const NavBar = props => {
-  const { isAuthenticated, logout, providers, getAllProviders, technos, getAllTechnos } = props;
+  const { isAuthenticated, logout, providers, getAllProviders, technos, getAllTechnos, propTypes, getAllPropTypes } = props;
 
   // remove this shit
   if (isEmpty(providers)) {
@@ -13,6 +13,9 @@ const NavBar = props => {
   }
   if (isEmpty(technos)) {
     getAllTechnos();
+  }
+  if (isEmpty(propTypes)) {
+    getAllPropTypes();
   }
 
   const goTo = e => {
@@ -41,6 +44,9 @@ const NavBar = props => {
             </Nav.Link>
             <Nav.Link name="/components" onClick={goTo}>
               Components
+            </Nav.Link>
+            <Nav.Link name="/proptypes" onClick={goTo}>
+              PropTypes
             </Nav.Link>
           </>
         )}
