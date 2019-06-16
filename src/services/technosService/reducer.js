@@ -1,8 +1,8 @@
 import * as actionTypes from './actionTypes';
 
 export const initialState = () => ({
-  propType: {},
-  propTypes: [],
+  techno: {},
+  technos: [],
   searchData: {},
 });
 
@@ -11,27 +11,27 @@ export default (state = initialState(), action) => {
     case actionTypes.SET_TECHNO:
       return {
         ...state,
-        propType: action.propType,
+        techno: action.techno,
       };
     case actionTypes.SET_ALL_TECHNOS:
       return {
         ...state,
-        propTypes: action.propTypes,
+        technos: action.technos,
       };
     case actionTypes.GET_TECHNO:
       return {
         ...state,
-        propType: action.propType,
+        techno: action.techno,
       };
     case actionTypes.GET_ALL_TECHNOS:
       return {
         ...state,
-        propTypes: action.propTypes,
+        technos: action.technos,
       };
     case actionTypes.DELETE_TECHNO:
       return {
         ...state,
-        propType: action.propType,
+        techno: action.techno,
       };
     case actionTypes.FILTER_TECHNOS:
       return {

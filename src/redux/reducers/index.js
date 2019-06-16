@@ -9,6 +9,7 @@ import technosReducer from "../../services/technosService/reducer";
 import componentsReducer from "../../services/componentsService/reducer";
 import propTypesReducer from "../../services/propTypesService/reducer";
 import genericFormReducer from "../../services/genericFormService/reducer";
+import filterDataReducer from "../../services/filterDataService/reducer";
 
 export default history =>
   combineReducers({
@@ -21,5 +22,6 @@ export default history =>
     technosReducer,
     componentsReducer,
     propTypesReducer,
-    genericFormReducer
+    genericFormReducer,
+    filterDataReducer
   });

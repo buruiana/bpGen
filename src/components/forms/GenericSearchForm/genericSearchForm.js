@@ -1,43 +1,44 @@
 import React from 'react';
 import Form from "react-jsonschema-form";
-import LayoutField from 'react-jsonschema-form-layout';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import isEmpty from 'lodash/isEmpty';
-import Row from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
-import Glyphicon from 'react-bootstrap/lib/Glyphicon';
-import {
-  REACT_NATIVE,
-  REACT,
-} from '../../../utils/constants';
-import ExportFilesView from '../../layouts/ExportFiles';
+import { fields } from './constants.js';
+import { availablecomponents } from '../../../utils/constants';
 
-const ComponentsSearchForm = props => {
-  const { providers, projectTechno, searchData } = props;
+const GenericSearchForm = props => {
+  const { providers, technos, searchData, componentname, setFilter } = props;
+
   const providersEnums = !isEmpty(providers)
     ? providers.map(provider => provider.name)
     : [];
 
-  const technoTypeEnums = [REACT, REACT_NATIVE];
+  const technoTypeEnums = !isEmpty(technos)
+    ? technos.map(techno => techno.name)
+    : [];
 
   const schema = {
     type: "object",
     properties: {
       name: { type: "string", default: '' },
-      projectTechno: {
-        type: 'string',
-        enum: technoTypeEnums,
-        default: projectTechno || undefined,
-      },
-      provider: {
-        type: "string",
-        enum: providersEnums,
-      },
     },
   };
 
-  const fields = {
-    layout: LayoutField
-  }
+  fields[componentname].map(el => {
+    if (el === availablecomponents.TECHNOS) {
+      schema.properties.techno = {
+        type: 'string',
+        enum: technoTypeEnums,
+      }
+    }
+    if (el === availablecomponents.PROVIDERS) {
+      schema.properties.provider = {
+        type: "string",
+        enum: providersEnums,
+      }
+    }
+  });
+  const onChange = data => setFilter(data.formData);
 
   const uiSchema = {
     name: {
@@ -46,7 +47,7 @@ const ComponentsSearchForm = props => {
       },
       "ui:placeholder": "Name",
     },
-    projectTechno: {
+    techno: {
       "ui:placeholder": "All technos",
       "ui:options": {
         "label": false,
@@ -68,11 +69,6 @@ const ComponentsSearchForm = props => {
     ],
   };
 
-  const onChange = data => {
-    const { formData } = data;
-    props.setFilterData(formData);
-  };
-
   const getExportFilesView = () => {
     return ((props.pathname === 'editor') || (props.pathname === '/editor'))
       ? (
@@ -80,33 +76,33 @@ const ComponentsSearchForm = props => {
           <ExportFilesView />
         </Col>
       )
-        : null;
+      : null;
   };
 
   const log = (type) => console.log.bind(console, type)
 
   return (
     <Row>
-      <Col md={((props.pathname === 'editor') || (props.pathname === '/editor')) ? 7 : 12}>
+      <Col md={12}>
+      {/* <Col md={((props.pathname === 'editor') || (props.pathname === '/editor')) ? 7 : 12}> */}
         <div className='filterComponentsBox'>
-          <span className='filterComponentsLabel'>FILTER COMPONENTS</span>
+          <span className='filterComponentsLabel'>FILTER {componentname}</span>
           <div className='paddingTop'>
             <Form schema={schema}
               uiSchema={uiSchema}
               onChange={onChange}
               onError={log("errors")}
-              fields={fields}
               formData={searchData}
               autocomplete='on'
-              >
-            <button type="submit" className="hidden">Submit</button>
+            >
+              <button type="submit" className="hidden">Submit</button>
             </Form>
           </div>
         </div>
       </Col>
-      {getExportFilesView()}
+      {/* {getExportFilesView()} */}
     </Row>
   );
 }
 
-export default ComponentsSearchForm;
+export default GenericSearchForm;

@@ -2,11 +2,13 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import sortBy from "lodash/sortBy";
 import get from "lodash/get";
-import ProvidersSearchForm from "../../forms/ProvidersSearch";
+import GenericSearchForm from "../../forms/GenericSearchForm";
 import { navigate } from "../../../utils";
+import { availablecomponents } from '../../../utils/constants';
 
 const ComponentsListView = props => {
   const { searchData, components = [], deleteComponent } = props;
+  const { COMPONENTS } = availablecomponents;
 
   const deleteSelectedComponent = event =>  deleteComponent({ id: event.target.id });
   const goTo = event => navigate(`/component/${event.target.id}`);
@@ -48,10 +50,12 @@ const ComponentsListView = props => {
 
   return (
     <div>
-      <ProvidersSearchForm />
-      <a className="simpleLink" onClick={() => navigate("/component/new")}>
-        Add Component
-      </a>
+      <GenericSearchForm componentname={COMPONENTS} />
+      <div className='addEditLink'>
+        <a className="simpleLink" onClick={() => navigate("/component/new")}>
+          Add Component
+        </a>
+      </div>
       <Table striped bordered hover>
         <tbody>{componentsList()}</tbody>
       </Table>

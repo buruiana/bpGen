@@ -9,7 +9,7 @@ import {
 const mapStateToProps = state => {
   return {
     propTypes: state.propTypesReducer.propTypes,
-    searchData: state.propTypesReducer.searchData,
+    searchData: state.filterDataReducer.searchData,
   }
 }
 

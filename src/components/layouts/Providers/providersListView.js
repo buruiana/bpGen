@@ -2,23 +2,24 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import sortBy from "lodash/sortBy";
 import get from "lodash/get";
-import ProvidersSearchForm from "../../forms/ProvidersSearch";
+import GenericSearchForm from "../../forms/GenericSearchForm";
 import { navigate } from "../../../utils";
+import { availablecomponents } from '../../../utils/constants';
 
 const ProvidersListView = props => {
   const { searchData, providers = [], deleteProvider } = props;
+  const { PROVIDERS } = availablecomponents;
 
   const deleteSelectedProvider = event => deleteProvider({ id: event.target.id });
   const goTo = event => navigate(`/provider/${event.target.id}`);
 
   const filteredItems = () => {
     const filteredProviders = providers.filter(el => {
-      if (searchData.name || searchData.providerType) {
+      if (searchData.name) {
         return (
           el.name
             .toLowerCase()
-            .includes(get(searchData, "name", el.name).toLowerCase()) &&
-          get(searchData, "providerType", el.providerType) === el.providerType
+            .includes(get(searchData, "name", el.name).toLowerCase())
         );
       }
       return el;
@@ -49,10 +50,12 @@ const ProvidersListView = props => {
 
   return (
     <div>
-      <ProvidersSearchForm />
-      <a className="simpleLink" onClick={() => navigate("/provider/new")}>
-        Add Provider
-      </a>
+      <GenericSearchForm componentname={PROVIDERS} />
+      <div className='addEditLink'>
+        <a className="simpleLink" onClick={() => navigate("/provider/new")}>
+          Add Provider
+        </a>
+      </div>
       <Table striped bordered hover>
         <tbody>{providersList()}</tbody>
       </Table>
