@@ -1,10 +1,15 @@
 import * as React from "react";
 import Navbar from "react-bootstrap/Navbar";
+import isEmpty from 'lodash/isEmpty';
 import Nav from "react-bootstrap/Nav";
 import { navigate } from "../../../utils";
 
 const NavBar = props => {
-  const { isAuthenticated, logout } = props;
+  const { isAuthenticated, logout, providers, getAllProviders } = props;
+
+  if (isEmpty(providers)) {
+    getAllProviders();
+  }
 
   const goTo = e => {
     navigate(e.target.name);
@@ -21,11 +26,11 @@ const NavBar = props => {
         </Nav.Link>
         {isAuthenticated && (
           <>
-            <Nav.Link name="/files" onClick={goTo}>
-              Files
-            </Nav.Link>
             <Nav.Link name="/templates" onClick={goTo}>
               Templates
+            </Nav.Link>
+            <Nav.Link name="/providers" onClick={goTo}>
+              Providers
             </Nav.Link>
           </>
         )}
