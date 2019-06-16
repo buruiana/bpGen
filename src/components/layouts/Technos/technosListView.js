@@ -2,7 +2,6 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import sortBy from "lodash/sortBy";
 import get from "lodash/get";
-import isEmpty from "lodash/isEmpty";
 import ProvidersSearchForm from "../../forms/ProvidersSearch";
 import { navigate } from "../../../utils";
 
