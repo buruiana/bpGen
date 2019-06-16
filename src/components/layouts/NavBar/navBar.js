@@ -39,6 +39,9 @@ const NavBar = props => {
             <Nav.Link name="/technos" onClick={goTo}>
               Technos
             </Nav.Link>
+            <Nav.Link name="/components" onClick={goTo}>
+              Components
+            </Nav.Link>
           </>
         )}
       </Nav>

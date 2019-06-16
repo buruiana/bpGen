@@ -10,6 +10,8 @@ import Providers from "../components/layouts/Providers";
 import ProviderForm from "../components/forms/Providers";
 import Technos from "../components/layouts/Technos";
 import TechnosForm from "../components/forms/Technos";
+import Components from "../components/layouts/Components";
+import ComponentsForm from "../components/forms/ComponentsForm";
 
 import NoMatch from "../components/layouts/NoMatch";
 
@@ -26,6 +28,8 @@ const routes = (
           <Route path="/provider/:id" component={ProviderForm} />
           <Route path="/technos" component={Technos} />
           <Route path="/techno/:id" component={TechnosForm} />
+          <Route path="/components" component={Components} />
+          <Route path="/component/:id" component={ComponentsForm} />
           <Route component={NoMatch} />
         </Switch>
       </div>

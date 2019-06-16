@@ -6,6 +6,7 @@ import loginFormReducer from "../../services/loginFormService/reducer";
 import templatesServiceReducer from "../../services/templatesFormService/reducer";
 import providersReducer from "../../services/providersService/reducer";
 import technosReducer from "../../services/technosService/reducer";
+import componentsReducer from "../../services/componentsService/reducer";
 
 export default history =>
   combineReducers({
@@ -15,5 +16,6 @@ export default history =>
     loginFormReducer,
     templatesServiceReducer,
     providersReducer,
-    technosReducer
+    technosReducer,
+    componentsReducer
   });
