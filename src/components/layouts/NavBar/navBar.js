@@ -5,10 +5,14 @@ import Nav from "react-bootstrap/Nav";
 import { navigate } from "../../../utils";
 
 const NavBar = props => {
-  const { isAuthenticated, logout, providers, getAllProviders } = props;
+  const { isAuthenticated, logout, providers, getAllProviders, technos, getAllTechnos } = props;
 
+  // remove this shit
   if (isEmpty(providers)) {
     getAllProviders();
+  }
+  if (isEmpty(technos)) {
+    getAllTechnos();
   }
 
   const goTo = e => {
@@ -31,6 +35,9 @@ const NavBar = props => {
             </Nav.Link>
             <Nav.Link name="/providers" onClick={goTo}>
               Providers
+            </Nav.Link>
+            <Nav.Link name="/technos" onClick={goTo}>
+              Technos
             </Nav.Link>
           </>
         )}

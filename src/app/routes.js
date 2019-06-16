@@ -8,6 +8,8 @@ import LoginForm from "../components/forms/LoginForm";
 import TemplatesForm from "../components/forms/TemplatesForm";
 import Providers from "../components/layouts/Providers";
 import ProviderForm from "../components/forms/Providers";
+import Technos from "../components/layouts/Technos";
+import TechnosForm from "../components/forms/Technos";
 
 import NoMatch from "../components/layouts/NoMatch";
 
@@ -22,6 +24,8 @@ const routes = (
           <Route path="/templates" component={TemplatesForm} />
           <Route path="/providers" component={Providers} />
           <Route path="/provider/:id" component={ProviderForm} />
+          <Route path="/technos" component={Technos} />
+          <Route path="/techno/:id" component={TechnosForm} />
           <Route component={NoMatch} />
         </Switch>
       </div>

@@ -1,0 +1,6 @@
+export const SET_TECHNO = 'SET_TECHNO';
+export const SET_ALL_TECHNOS = 'SET_ALL_TECHNOS';
+export const GET_TECHNO = 'GET_TECHNO';
+export const GET_ALL_TECHNOS = 'GET_ALL_TECHNOS';
+export const DELETE_TECHNO = 'DELETE_TECHNO';
+export const FILTER_TECHNOS = 'FILTER_TECHNOS';

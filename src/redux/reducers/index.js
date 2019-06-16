@@ -5,6 +5,7 @@ import modalsReducer from "../../services/modalService/reducer";
 import loginFormReducer from "../../services/loginFormService/reducer";
 import templatesServiceReducer from "../../services/templatesFormService/reducer";
 import providersReducer from "../../services/providersService/reducer";
+import technosReducer from "../../services/technosService/reducer";
 
 export default history =>
   combineReducers({
@@ -13,5 +14,6 @@ export default history =>
     modalsReducer,
     loginFormReducer,
     templatesServiceReducer,
-    providersReducer
+    providersReducer,
+    technosReducer
   });

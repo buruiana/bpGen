@@ -24,6 +24,7 @@ const ProvidersForm = props => {
   }
 
   const { name, path, id, providersTechno, providerUrl } = provider;
+
   const schema = {
     type: "object",
     required: ["name"],
