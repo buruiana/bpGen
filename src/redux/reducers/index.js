@@ -8,6 +8,7 @@ import providersReducer from "../../services/providersService/reducer";
 import technosReducer from "../../services/technosService/reducer";
 import componentsReducer from "../../services/componentsService/reducer";
 import propTypesReducer from "../../services/propTypesService/reducer";
+import genericFormReducer from "../../services/genericFormService/reducer";
 
 export default history =>
   combineReducers({
@@ -19,5 +20,6 @@ export default history =>
     providersReducer,
     technosReducer,
     componentsReducer,
-    propTypesReducer
+    propTypesReducer,
+    genericFormReducer
   });

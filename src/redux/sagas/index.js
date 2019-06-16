@@ -6,6 +6,7 @@ import providersSaga from "../../services/providersService";
 import technosSaga from "../../services/technosService";
 import componentsSaga from "../../services/componentsService";
 import propTypesSaga from "../../services/propTypesService";
+import genericFormSaga from "../../services/genericFormService";
 
 export default function* sagas() {
   yield all(
@@ -16,7 +17,8 @@ export default function* sagas() {
       providersSaga,
       technosSaga,
       componentsSaga,
-      propTypesSaga
+      propTypesSaga,
+      genericFormSaga
     ].map(saga =>
       fork(saga)
     )
