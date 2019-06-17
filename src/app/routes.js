@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import Home from "../components/layouts/Home";
 
 import LoginForm from "../components/forms/LoginForm";
+import Templates from "../components/layouts/Templates";
 import TemplatesForm from "../components/forms/TemplatesForm";
 import Providers from "../components/layouts/Providers";
 import ProviderForm from "../components/forms/Providers";
@@ -25,7 +26,8 @@ const routes = (
           <Route exact path="/" component={Home} />
           <Route path="/home" component={Home} />
           <Route path="/login" component={LoginForm} />
-          <Route path="/templates" component={TemplatesForm} />
+          <Route path="/templates" component={Templates} />
+          <Route path="/template/:id" component={TemplatesForm} />
           <Route path="/providers" component={Providers} />
           <Route path="/provider/:id" component={ProviderForm} />
           <Route path="/technos" component={Technos} />

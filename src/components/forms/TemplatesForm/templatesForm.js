@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-jsonschema-form";
+import isEmpty from 'lodash/isEmpty';
 import schema from "./schema";
 //import uiSchema from "./uiSchema";
 
-import rrr from "../../../reduxSchema";
+import rrr from "../../../example/reduxSchema";
 
 const TemplatesForm = props => {
-  const { setTemplate, userid, generateCode, getAllTemplates } = props;
+  const { setTemplate, userid, generateCode, getAllTemplates, templates } = props;
   let fileReader;
-  const [formSchema, setFormSchema] = useState([]);
-  getAllTemplates();
+
+  const [formSchema, setFormSchema] = useState();
+  useEffect(() => {
+    setFormSchema(template);
+  });
+
+  const templatesArray = templates.filter(template => template.id === props.match.params.id);
+
+  const template = !isEmpty(templatesArray)
+    ? templatesArray[0]
+    : {};
 
   const onSubmit = data => {
     const { formData } = data;
@@ -17,8 +27,7 @@ const TemplatesForm = props => {
   };
 
   const onChange = data => {
-    console.log("console: change", data);
-    generateCode();
+    //generateCode();
   };
 
   const handleFileRead = e => {

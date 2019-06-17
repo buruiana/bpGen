@@ -3,4 +3,5 @@ export const availablecomponents = {
   COMPONENTS: 'COMPONENTS',
   PROP_TYPES: 'PROP_TYPES',
   PROVIDERS: 'PROVIDERS',
+  TEMPLATES: 'TEMPLATES'
 };

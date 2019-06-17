@@ -3,11 +3,10 @@ import * as actionTypes from "./actionTypes";
 export const initialState = () => ({
   error: "",
   currentTemplate: {},
-  allTemplates: {}
+  templates: []
 });
 
 export default (state = initialState(), action) => {
-  console.log("console: -------------------", action);
   switch (action.type) {
     case actionTypes.SET_TEMPLATE:
       return {
@@ -24,7 +23,7 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         error: "",
-        allTemplates: action.templates
+        templates: action.templates
       };
     case actionTypes.SET_TEMPLATE_FAILURE:
       return {

@@ -30,15 +30,13 @@ const TechnosListView = props => {
 
   const technosList = () => {
     return filteredItems().map(techno => {
-      const { name, id, technoTechno, technoUrl } = techno;
+      const { name, id, technoUrl } = techno;
 
       return (
         <tr key={id}>
           <td>
             <a id={id} onClick={goTo}>{name}</a>
           </td>
-          <td>{technoTechno}</td>
-          <td>{name}</td>
           <td><a href={technoUrl} target='blank'>url</a></td>
           <td>
             <a className="deleteStyle" id={id} onClick={deleteSelectedTechno}>Delete</a>

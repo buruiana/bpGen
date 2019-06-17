@@ -1,4 +1,4 @@
-import reduxSchema from "../../reduxSchema";
+import reduxSchema from "../../example/reduxSchema";
 
 export const executeCodeGeneration = template => {
   const filesCode = [];

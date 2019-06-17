@@ -30,15 +30,13 @@ const ProvidersListView = props => {
 
   const providersList = () => {
     return filteredItems().map(provider => {
-      const { name, id, providerTechno, providerUrl } = provider;
+      const { name, id, providerUrl } = provider;
 
       return (
         <tr key={id}>
           <td>
             <a id={id} onClick={goTo}>{name}</a>
           </td>
-          <td>{providerTechno}</td>
-          <td>{name}</td>
           <td><a href={providerUrl} target='blank'>url</a></td>
           <td>
            <a className="deleteStyle" id={id} onClick={deleteSelectedProvider}>Delete</a>

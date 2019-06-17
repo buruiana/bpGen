@@ -1,6 +1,6 @@
 import { fork, all } from "redux-saga/effects";
 import loginFormSaga from "../../services/loginFormService";
-import templatesFormSaga from "../../services/templatesFormService";
+import templatesSaga from "../../services/templatesService";
 import codeGenerationSaga from "../../services/codeGenerationService";
 import providersSaga from "../../services/providersService";
 import technosSaga from "../../services/technosService";
@@ -12,7 +12,7 @@ export default function* sagas() {
   yield all(
     [
       loginFormSaga,
-      templatesFormSaga,
+      templatesSaga,
       codeGenerationSaga,
       providersSaga,
       technosSaga,

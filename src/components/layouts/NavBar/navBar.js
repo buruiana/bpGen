@@ -13,7 +13,10 @@ const NavBar = props => {
     technos,
     getAllTechnos,
     propTypes,
-    getAllPropTypes
+    getAllPropTypes,
+    templates,
+    getAllTemplates
+
   } = props;
 
   // remove this shit
@@ -25,6 +28,9 @@ const NavBar = props => {
   }
   if (isEmpty(propTypes)) {
     getAllPropTypes();
+  }
+  if (isEmpty(templates)) {
+    getAllTemplates();
   }
 
   const goTo = e => navigate(e.target.name);

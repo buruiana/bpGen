@@ -3,13 +3,14 @@ import get from "lodash/get";
 import {
   setTemplate,
   getAllTemplates
-} from "../../../services/templatesFormService/actions";
+} from "../../../services/templatesService/actions";
 import { generateCode } from "../../../services/codeGenerationService/actions";
 import TemplatesForm from "./templatesForm";
 
 const mapStateToProps = state => {
   return {
-    userid: get(state, "loginFormReducer.userInfo.user.uid", "aaa")
+    userid: get(state, "loginFormReducer.userInfo.user.uid", "aaa"),
+    templates: state.templatesReducer.templates
   };
 };
 
