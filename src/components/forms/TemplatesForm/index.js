@@ -9,7 +9,7 @@ import TemplatesForm from "./templatesForm";
 
 const mapStateToProps = state => {
   return {
-    userid: get(state, "loginFormReducer.userInfo.user.uid", "aaa"),
+    userid: get(state, "loginReducer.userInfo.user.uid", "aaa"),
     templates: state.templatesReducer.templates
   };
 };

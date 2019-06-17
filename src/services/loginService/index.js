@@ -7,7 +7,7 @@ import {
   loginFailure,
   logoutSuccess,
   logoutFailure
-} from "../loginFormService/actions";
+} from "../loginService/actions";
 
 export function* watchLogin(action) {
   const { email, password } = action.credentials;
