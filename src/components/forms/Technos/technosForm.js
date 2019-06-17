@@ -35,9 +35,7 @@ const TechnosForm = props => {
     id: { "ui:widget": "hidden" },
   };
 
-  const goTo = () => {
-    navigate("/technos");
-  };
+  const goTo = () => navigate("/technos");
 
   const onSubmit = data => {
     const { formData } = data;

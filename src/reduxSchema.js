@@ -1,5 +1,5 @@
 return {
-  templateName: "react-redux",
+  name: "react-redux",
   templateDescription: "react-redux",
   templateTechnos: "react, redux",
   templateIsPublic: true,

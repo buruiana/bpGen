@@ -30,12 +30,12 @@ const TemplatesListView = props => {
 
   const templatesList = () => {
     return filteredItems().map(template => {
-      const { templateName, id, templateTechnos } = template;
+      const { name, id, templateTechnos } = template;
 
       return (
         <tr key={id}>
           <td>
-            <a id={id} onClick={goTo}>{templateName}</a>
+            <a id={id} onClick={goTo}>{name}</a>
           </td>
           <td><a id={id} target='blank'>{templateTechnos}</a></td>
           <td>

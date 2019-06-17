@@ -2,28 +2,21 @@ import React, { useState, useEffect } from "react";
 import Form from "react-jsonschema-form";
 import isEmpty from 'lodash/isEmpty';
 import schema from "./schema";
+import { navigate } from '../../../utils';
 //import uiSchema from "./uiSchema";
 
 import rrr from "../../../example/reduxSchema";
 
 const TemplatesForm = props => {
-  const { setTemplate, userid, generateCode, getAllTemplates, templates } = props;
+  const { setTemplate, userid, templates } = props;
   let fileReader;
 
-  const [formSchema, setFormSchema] = useState();
-  useEffect(() => {
-    setFormSchema(template);
-  });
-
-  const templatesArray = templates.filter(template => template.id === props.match.params.id);
-
-  const template = !isEmpty(templatesArray)
-    ? templatesArray[0]
-    : {};
+  const [formSchema, setFormSchema] = useState(templates.filter(template => template.id === props.match.params.id)[0] || []);
 
   const onSubmit = data => {
     const { formData } = data;
     setTemplate({ ...formData, userid });
+    goTo();
   };
 
   const onChange = data => {
@@ -33,7 +26,6 @@ const TemplatesForm = props => {
   const handleFileRead = e => {
     const redux = new Function(fileReader.result);
     setFormSchema(redux);
-    setTemplate({ ...redux, userid });
   };
 
   const onImport = e => {
@@ -41,6 +33,8 @@ const TemplatesForm = props => {
     fileReader.onloadend = handleFileRead;
     fileReader.readAsText(e.target.files[0]);
   };
+
+  const goTo = () => navigate("/templates");
 
   return (
     <div>
