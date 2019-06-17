@@ -35,11 +35,11 @@ const ProvidersListView = props => {
       return (
         <tr key={id}>
           <td>
-            <a id={id} onClick={goTo}>{name}</a>
+            <a id={id} className="simpleLink" onClick={goTo}>{name}</a>
           </td>
-          <td><a id={id} target='blank'>{providerUrl}</a></td>
+          <td><a id={id} className="simpleLink">{providerUrl}</a></td>
           <td>
-           <a className="deleteStyle" id={id} onClick={deleteSelectedProvider}>Delete</a>
+            <a className="simpleLink" id={id} onClick={deleteSelectedProvider}>Delete</a>
           </td>
         </tr>
       );

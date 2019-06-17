@@ -36,12 +36,12 @@ const ComponentsListView = props => {
       return (
         <tr key={id}>
           <td>
-            <a id={id} onClick={goTo}>{name}</a>
+            <a id={id} className="simpleLink" onClick={goTo}>{name}</a>
           </td>
           <td>{techno}</td>
           <td>{provider}</td>
           <td>
-            <a className="deleteStyle" id={id} onClick={deleteSelectedComponent}>Delete</a>
+            <a className="simpleLink" id={id} onClick={deleteSelectedComponent}>Delete</a>
           </td>
         </tr>
       );

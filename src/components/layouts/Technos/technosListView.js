@@ -35,11 +35,10 @@ const TechnosListView = props => {
       return (
         <tr key={id}>
           <td>
-            <a id={id} onClick={goTo}>{name}</a>
+            <a id={id} className="simpleLink" onClick={goTo}>{name}</a>
           </td>
-          <td><a href={technoUrl} target='blank'>url</a></td>
           <td>
-            <a className="deleteStyle" id={id} onClick={deleteSelectedTechno}>Delete</a>
+            <a className="simpleLink" id={id} onClick={deleteSelectedTechno}>Delete</a>
           </td>
         </tr>
       );
