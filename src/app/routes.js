@@ -15,6 +15,7 @@ import Components from "../components/layouts/Components";
 import ComponentsForm from "../components/forms/ComponentsForm";
 import PropTypes from "../components/layouts/PropTypes";
 import PropTypesForm from "../components/forms/PropTypesForm";
+import Editor from "../components/layouts/Editor";
 
 import NoMatch from "../components/layouts/NoMatch";
 
@@ -26,6 +27,7 @@ const routes = (
           <Route exact path="/" component={Home} />
           <Route path="/home" component={Home} />
           <Route path="/login" component={LoginForm} />
+          <Route path="/editor" component={Editor} />
           <Route path="/templates" component={Templates} />
           <Route path="/template/:id" component={TemplatesForm} />
           <Route path="/providers" component={Providers} />

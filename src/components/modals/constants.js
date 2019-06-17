@@ -1,0 +1,13 @@
+export const PROPS_FORM = 'PROPS_FORM';
+export const COMPONENT_INFO = 'COMPONENT_INFO';
+export const PROJECT_SETTINGS = 'PROJECT_SETTINGS';
+export const ACTIONS = 'ACTIONS';
+export const ACTION_TYPES = 'ACTION_TYPES';
+export const SAGA = 'SAGA';
+export const REDUCER = 'REDUCER';
+export const HOC = 'HOC';
+export const SMART = 'Smart';
+export const APPLICATION = 'Application';
+export const JSON_FORM_SETTINGS = 'JSON_FORM_SETTINGS';
+export const JSON_FORM_INFO = 'JSON_FORM_INFO';
+export const JSON_FORM_UI_SETTINGS = 'JSON_FORM_UI_SETTINGS';

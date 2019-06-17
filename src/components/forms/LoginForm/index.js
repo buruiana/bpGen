@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { login } from "../../../services/loginFormService/actions";
+import { login } from "../../../services/loginService/actions";
 import LoginForm from "./loginForm";
 
 // const mapStateToProps = state => {

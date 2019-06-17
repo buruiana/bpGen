@@ -1,6 +1,6 @@
 import * as React from "react";
 import Navbar from "react-bootstrap/Navbar";
-import isEmpty from 'lodash/isEmpty';
+import isEmpty from "lodash/isEmpty";
 import Nav from "react-bootstrap/Nav";
 import { navigate } from "../../../utils";
 
@@ -16,7 +16,6 @@ const NavBar = props => {
     getAllPropTypes,
     templates,
     getAllTemplates
-
   } = props;
 
   // remove this shit
@@ -60,6 +59,9 @@ const NavBar = props => {
             </Nav.Link>
             <Nav.Link name="/proptypes" onClick={goTo}>
               PropTypes
+            </Nav.Link>
+            <Nav.Link name="/editor" onClick={goTo}>
+              Editor
             </Nav.Link>
           </>
         )}
