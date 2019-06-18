@@ -73,7 +73,7 @@ const GenericSearchForm = props => {
     return ((props.pathname === 'editor') || (props.pathname === '/editor'))
       ? (
         <Col md={5}>
-          <ExportFilesView />
+          {/* <ExportFilesView /> */}
         </Col>
       )
       : null;

@@ -78,8 +78,8 @@ const ProjectSettingsForm = props => {
   };
 
   const onSubmit = data => {
-    console.log("console:-------------------------- ", data.formData);
-    setProjectSettings(data.formData);
+    const template = templates.filter(el => el.name === data.formData.projectTemplate)[0];
+    setProjectSettings({ ...data.formData, template });
     removeModal();
   };
 
@@ -91,7 +91,7 @@ const ProjectSettingsForm = props => {
       onChange={log("changed")}
       onSubmit={onSubmit}
       onError={log("errors")}
-      formData={props}
+      formData={projectSettings}
     />
   );
 };

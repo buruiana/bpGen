@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
-import ProjectSettingsForm from "../../forms/ProjectSettings";
+import ProjectSettingsForm from "../../forms/ProjectSettingsForm";
 
 const ProjectSettings = ({ closeModal }) => {
   return (
