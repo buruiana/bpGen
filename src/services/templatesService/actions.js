@@ -59,3 +59,8 @@ export const setAllTemplatesFailure = error => ({
   type: actionTypes.SET_ALL_TEMPLATES_FAILURE,
   error
 });
+
+export const deleteTemplate = template => ({
+  type: actionTypes.DELETE_TEMPLATE,
+  template
+});

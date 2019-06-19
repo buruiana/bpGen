@@ -22,9 +22,7 @@ export function* watchSetTemplate(action) {
         template
       );
     } else {
-      yield call(rsf.firestore.addDocument, `templates`, {
-        item: { template }
-      });
+      yield call(rsf.firestore.addDocument, `templates`, template);
     }
     yield put(getAllTemplates());
   }

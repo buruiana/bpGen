@@ -17,6 +17,7 @@ return {
           formIsActive: true,
           formSchema: "actionTypesForm Schema",
           formUISchema: "actionTypesForm UISchema",
+          formPrepareData: "",
           formProps: [
             {
               item: [
@@ -67,6 +68,7 @@ return {
           formIsActive: true,
           formSchema: "actionsForm Schema",
           formUISchema: "actionsForm UISchema",
+          formPrepareData: "",
           formProps: [
             {
               item: [
@@ -124,6 +126,7 @@ return {
           formIsActive: true,
           formSchema: "reducerForm Schema",
           formUISchema: "reducerForm UISchema",
+          formPrepareData: "",
           formProps: [
             {
               item: [
