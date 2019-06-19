@@ -27,6 +27,7 @@ const schema = {
                 formIsActive: { type: "boolean", title: "Form is Active" },
                 formSchema: { type: "string", title: "Form Schema" },
                 formUISchema: { type: "string", title: "Form UI Schema" },
+                formPrepareData: { type: "string", title: "Form Prepare Data" },
                 formProps: {
                   type: "array",
                   title: "Form Props",

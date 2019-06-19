@@ -14,6 +14,12 @@ const uiSchema = {
             "ui:options": {
               rows: 5
             }
+          },
+          formPrepareData: {
+            "ui:widget": "textarea",
+            "ui:options": {
+              rows: 5
+            }
           }
         }
       }
