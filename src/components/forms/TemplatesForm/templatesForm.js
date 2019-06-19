@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Form from "react-jsonschema-form";
+import Form from "react-jsonschema-form-bs4";
 import isEmpty from "lodash/isEmpty";
 import schema from "./schema";
 import { navigate } from "../../../utils";
@@ -41,6 +41,11 @@ const TemplatesForm = props => {
   return (
     <div>
       <>
+        <div>
+          <a onClick={goTo} className="simpleLink">
+            Back
+        </a>
+        </div>
         <input type="file" id="importFile" onChange={onImport} />
         <Form
           schema={schema}

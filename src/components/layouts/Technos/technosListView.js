@@ -30,7 +30,7 @@ const TechnosListView = props => {
 
   const technosList = () => {
     return filteredItems().map(techno => {
-      const { name, id, technoUrl } = techno;
+      const { name, id } = techno;
 
       return (
         <tr key={id}>

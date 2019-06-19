@@ -51,9 +51,7 @@ const ProvidersForm = props => {
     },
   };
 
-  const goTo = () => {
-    navigate("/providers");
-  };
+  const goTo = () => navigate("/providers");
 
   const onSubmit = data => {
     const { formData } = data;
