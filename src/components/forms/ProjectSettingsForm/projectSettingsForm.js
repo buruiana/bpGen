@@ -77,9 +77,26 @@ const ProjectSettingsForm = props => {
     }
   };
 
+  const getFlatForms = files => {
+    let customModals = [];
+    files.map(file => {
+      file.fileForms.map(form => {
+        customModals.push(form);
+      });
+    });
+
+    return customModals;
+  };
+
   const onSubmit = data => {
-    const template = templates.filter(el => el.name === data.formData.projectTemplate)[0];
-    setProjectSettings({ ...data.formData, template });
+    const template = templates.filter(
+      el => el.name === data.formData.projectTemplate
+    )[0];
+    setProjectSettings({
+      ...data.formData,
+      template,
+      flatForms: getFlatForms(template.templateFiles)
+    });
     removeModal();
   };
 

@@ -8,7 +8,7 @@ import NavBar from "../NavBar";
 import ModalsManager from "../../modals/modalsManager";
 import "../../../stylesheets/main.scss";
 
-const App = ({ history, modals }) => {
+const App = ({ history, modals, projectSettings }) => {
   return (
     <ConnectedRouter history={history}>
       <Row className="justify-content-md-center">
@@ -18,7 +18,7 @@ const App = ({ history, modals }) => {
       </Row>
       <Row className="justify-content-md-center">
         {routes}
-        {ModalsManager(modals)}
+        {ModalsManager(modals, projectSettings)}
       </Row>
     </ConnectedRouter>
   );

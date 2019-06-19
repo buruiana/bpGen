@@ -1,26 +1,24 @@
 const uiSchema = {
-  users: {
-    properties: {
-      username: {
-        'ui:options': {
-          inputType: 'text',
-          label: 'true',
-          rows: 10,
-        },
-        'ui:placeholder': 'test',
-        'ui:widget': 'text',
-      },
-      useraddress: {
-        'ui:options': {
-          inputType: 'text',
-          label: 'true',
-          rows: 10,
-        },
-        'ui:placeholder': 'aaaaaaaa',
-        'ui:widget': 'textarea',
-      },
-    },
-  },
+  templateFiles: {
+    items: {
+      fileForms: {
+        items: {
+          formSchema: {
+            "ui:widget": "textarea",
+            "ui:options": {
+              rows: 5
+            }
+          },
+          formUISchema: {
+            "ui:widget": "textarea",
+            "ui:options": {
+              rows: 5
+            }
+          }
+        }
+      }
+    }
+  }
 };
 
 export default uiSchema;

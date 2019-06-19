@@ -11,6 +11,7 @@ import propTypesReducer from "../../services/propTypesService/reducer";
 import genericFormReducer from "../../services/genericFormService/reducer";
 import filterDataReducer from "../../services/filterDataService/reducer";
 import projectSettingsReducer from "../../services/projectSettingsService/reducer";
+import customFormReducer from "../../services/customFormService/reducer";
 
 export default history =>
   combineReducers({
@@ -25,5 +26,6 @@ export default history =>
     propTypesReducer,
     genericFormReducer,
     filterDataReducer,
-    projectSettingsReducer
+    projectSettingsReducer,
+    customFormReducer
   });

@@ -2,10 +2,14 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import ProjectSettingsForm from "../../forms/ProjectSettingsForm";
 
-const ProjectSettings = ({ closeModal }) => {
+const ProjectSettings = ({ removeModal }) => {
   return (
     <div>
-      <Modal show={true} aria-labelledby="contained-modal-title-lg">
+      <Modal
+        show={true}
+        aria-labelledby="contained-modal-title-lg"
+        onHide={removeModal}
+      >
         <Modal.Header closeButton>
           <Modal.Title>Project Settings</Modal.Title>
         </Modal.Header>

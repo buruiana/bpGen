@@ -21,3 +21,7 @@ export const COMPONENT_TYPE = "Component Type";
 export const STYLES = "styles";
 export const INIT_APP = "INIT_APP";
 export const PROJECT_TEMPLATE = "PROJECT_TEMPLATE";
+
+export const allmodals = {
+  PROJECT_SETTINGS: "PROJECT_SETTINGS"
+};

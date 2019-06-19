@@ -7,17 +7,14 @@ import { executeCodeGeneration } from "./helper";
 
 export function* watchGenerateCode(action) {
   const template = (yield select()).templatesServiceReducer.allTemplates[0];
-  console.log("console: allTemplates", template);
+
   if (isEmpty(template)) {
-    console.log("console: aaaaaaaaaaaaa");
     generateCodeFail({ error: "template not provided for code generation" });
     return null;
   }
 
   try {
-    console.log("console: zzzzzzzzzz");
     const code = executeCodeGeneration(template);
-    console.log("console: bbbbbbbbbbbbbbbbb", code);
     yield put(generateCodeSuccess(code));
   } catch (error) {
     generateCodeFail(error);

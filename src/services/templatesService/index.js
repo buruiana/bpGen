@@ -12,7 +12,6 @@ import { setAllTemplates, getAllTemplates } from "./actions";
 
 export function* watchSetTemplate(action) {
   const { template } = action;
-  console.log("console: templatetemplate", { template });
   const { isOffline } = (yield select()).configsReducer;
 
   if (!isOffline) {
@@ -40,7 +39,7 @@ export function* watchGetAllTemplates(action) {
   } else {
     const snapshot = yield call(rsf.firestore.getCollection, "templates");
     allTemplates = snapshot.docs.map(template => {
-      return { ...template.data().item.template, id: template.id };
+      return { ...template.data(), id: template.id };
     });
   }
   if (isEmpty(allTemplates)) allTemplates = [];

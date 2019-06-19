@@ -1,19 +1,32 @@
 import React from "react";
 import isEmpty from "lodash/isEmpty";
-import TestModal from "../modals/TestModal";
+import GenericModal from "./GenericModal";
 import ProjectSettings from "../modals/ProjectSettings";
+import { allmodals } from "../../utils/constants";
 
-const ModalsManager = modals => {
+const ModalsManager = (modals, projectSettings) => {
   const currentModal = !isEmpty(modals) ? modals[modals.length - 1] : null;
+  let customModals = [];
+  if (!isEmpty(projectSettings)) {
+    projectSettings.template.templateFiles.map(file => {
+      file.fileForms.map(form => {
+        customModals.push(form.formName);
+      });
+    });
+  }
+
+  const getCustomModals = currentModal => {
+    return customModals.includes(currentModal) ? (
+      <GenericModal name={currentModal} />
+    ) : null;
+  };
 
   if (currentModal) {
     switch (currentModal) {
-      case "TEST_MODAL":
-        return <TestModal />;
-      case "PROJECT_SETTINGS":
+      case allmodals.PROJECT_SETTINGS:
         return <ProjectSettings />;
       default:
-        return null;
+        return getCustomModals(currentModal);
     }
   }
 };
