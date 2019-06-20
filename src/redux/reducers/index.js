@@ -8,7 +8,6 @@ import providersReducer from "../../services/providersService/reducer";
 import technosReducer from "../../services/technosService/reducer";
 import componentsReducer from "../../services/componentsService/reducer";
 import propTypesReducer from "../../services/propTypesService/reducer";
-import genericFormReducer from "../../services/genericFormService/reducer";
 import filterDataReducer from "../../services/filterDataService/reducer";
 import projectSettingsReducer from "../../services/projectSettingsService/reducer";
 import customFormReducer from "../../services/customFormService/reducer";
@@ -25,7 +24,6 @@ export default history =>
     technosReducer,
     componentsReducer,
     propTypesReducer,
-    genericFormReducer,
     filterDataReducer,
     projectSettingsReducer,
     customFormReducer,
