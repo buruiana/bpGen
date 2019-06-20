@@ -4,7 +4,14 @@ import isEmpty from "lodash/isEmpty";
 import get from "lodash/get";
 
 const CustomForm = props => {
-  const { setCustomForm, flatForms, name, forms = [], removeModal } = props;
+  const {
+    setCustomForm,
+    flatForms,
+    name,
+    forms = [],
+    removeModal,
+    generateCode
+  } = props;
   if (isEmpty(flatForms)) flatForms = [];
 
   const currentForm = flatForms.filter(form => form.formName === name)[0];
@@ -13,8 +20,8 @@ const CustomForm = props => {
     let formData = get(forms, `${name}`, []);
 
     if (isEmpty(formData) && currentForm.formPrepareData) {
-      formData = new Function('forms', currentForm.formPrepareData)(forms);
-    };
+      formData = new Function("forms", currentForm.formPrepareData)(forms);
+    }
     return formData;
   };
 
@@ -29,6 +36,7 @@ const CustomForm = props => {
     };
     setCustomForm(newForms);
     removeModal();
+    generateCode();
   };
 
   const log = type => console.log.bind(console, type);

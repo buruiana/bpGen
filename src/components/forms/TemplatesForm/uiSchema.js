@@ -1,6 +1,16 @@
 const uiSchema = {
   templateFiles: {
     items: {
+      fileBlocks: {
+        items: {
+          blockImplementation: {
+            "ui:widget": "textarea",
+            "ui:options": {
+              rows: 5
+            }
+          }
+        }
+      },
       fileForms: {
         items: {
           formSchema: {

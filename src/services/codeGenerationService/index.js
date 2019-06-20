@@ -6,7 +6,9 @@ import { executeCodeGeneration } from "./helper";
 //import { mock } from "./mock";
 
 export function* watchGenerateCode(action) {
-  const template = (yield select()).templatesServiceReducer.allTemplates[0];
+  const template = (yield select()).projectSettingsReducer.projectSettings
+    .template;
+  const forms = (yield select()).customFormReducer.forms;
 
   if (isEmpty(template)) {
     generateCodeFail({ error: "template not provided for code generation" });
@@ -14,7 +16,8 @@ export function* watchGenerateCode(action) {
   }
 
   try {
-    const code = executeCodeGeneration(template);
+    const code = executeCodeGeneration(template, forms);
+    console.log("console: =================", code);
     yield put(generateCodeSuccess(code));
   } catch (error) {
     generateCodeFail(error);
