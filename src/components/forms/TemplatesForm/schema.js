@@ -4,7 +4,6 @@ const schema = {
     name: { type: "string", title: "Name" },
     templateDescription: { type: "string", title: "Description" },
     templateTechnos: { type: "string", title: "Technos" },
-    templateIsPublic: { type: "boolean", title: "Public" },
     templateIsActive: { type: "boolean", title: "Active" },
     templateFiles: {
       type: "array",

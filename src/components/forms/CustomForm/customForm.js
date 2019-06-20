@@ -7,13 +7,17 @@ const CustomForm = props => {
   const { setCustomForm, flatForms, name, forms = [], removeModal } = props;
   if (isEmpty(flatForms)) flatForms = [];
 
-  // get the current form
   const currentForm = flatForms.filter(form => form.formName === name)[0];
 
-  // get the form data
-  const getFormData = () => get(forms, `${name}`, []);
+  const getFormData = () => {
+    let formData = get(forms, `${name}`, []);
 
-  // get the form schema and uischema
+    if (isEmpty(formData) && currentForm.formPrepareData) {
+      formData = new Function('forms', currentForm.formPrepareData)(forms);
+    };
+    return formData;
+  };
+
   const schema = new Function(currentForm.formSchema)();
   const uiSchema = new Function(currentForm.formUISchema)();
 

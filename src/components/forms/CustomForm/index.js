@@ -5,7 +5,7 @@ import { removeModal } from "../../../services/modalService/actions";
 
 const mapStateToProps = state => ({
   flatForms: state.projectSettingsReducer.projectSettings.flatForms,
-  forms: state.customFormReducer.forms
+  forms: state.customFormReducer.forms,
 });
 
 const mapDispatchToProps = {

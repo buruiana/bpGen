@@ -2,7 +2,6 @@ return {
   templateName: "react-redux",
   templateDescription: "react-redux",
   templateTechnos: "react, redux",
-  templateIsPublic: true,
   templateIsActive: true,
   templateFiles: [
     {

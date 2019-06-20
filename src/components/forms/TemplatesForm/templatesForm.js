@@ -18,7 +18,7 @@ const TemplatesForm = props => {
   const onSubmit = data => {
     const { formData } = data;
     setTemplate({ ...formData, userid });
-    goTo();
+    goBack();
   };
 
   const onChange = data => {
@@ -36,13 +36,13 @@ const TemplatesForm = props => {
     fileReader.readAsText(e.target.files[0]);
   };
 
-  const goTo = () => navigate("/templates");
+  const goBack = () => navigate("/templates");
 
   return (
     <div>
       <>
         <div>
-          <a onClick={goTo} className="simpleLink">
+          <a onClick={goBack} className="simpleLink">
             Back
         </a>
         </div>
