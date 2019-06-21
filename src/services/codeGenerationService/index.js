@@ -1,8 +1,9 @@
-import { call, put, takeLatest, select } from "redux-saga/effects";
+import { put, takeLatest, select } from "redux-saga/effects";
 import isEmpty from "lodash/isEmpty";
 import { GENERATE_CODE } from "./actionTypes";
 import { generateCodeSuccess, generateCodeFail } from "./actions";
 import { executeCodeGeneration } from "./helper";
+import { prettifyCode } from "../backEndService/actions";
 //import { mock } from "./mock";
 
 export function* watchGenerateCode(action) {
@@ -16,8 +17,10 @@ export function* watchGenerateCode(action) {
   }
 
   try {
-    const code = executeCodeGeneration(template, forms);
-    console.log("console: =================", code);
+    const code = yield call(
+      prettifyCode,
+      executeCodeGeneration(template, forms)
+    );
     yield put(generateCodeSuccess(code));
   } catch (error) {
     generateCodeFail(error);

@@ -1,21 +1,11 @@
 import { connect } from "react-redux";
-import Ace from './ace';
+import Ace from "./ace";
 
-const mapStateToProps = state => {
-  return {
-    actionTypez: state.codeGeneratorServiceReducer.actionTypez,
-    actions: state.codeGeneratorServiceReducer.actions,
-    saga: state.codeGeneratorServiceReducer.saga,
-    reducer: state.codeGeneratorServiceReducer.reducer,
-    hoc: state.codeGeneratorServiceReducer.hoc,
-    projectSettings: state.projectSettingsServiceReducer,
-    aceTab: state.aceTabsServiceReducer.aceTab,
-    smart: state.codeGeneratorServiceReducer.smart,
-    dumb: state.codeGeneratorServiceReducer.dumb,
-    styles: state.codeGeneratorServiceReducer.styles,
-    schema: state.codeGeneratorServiceReducer.schema,
-    uiSchema: state.codeGeneratorServiceReducer.uiSchema,
-  }
-}
+const mapStateToProps = state => ({
+  projectSettings: state.projectSettingsReducer.projectSettings,
+  aceTab: state.aceTabsReducer.aceTab,
+  aceTabs: state.aceTabsReducer.aceTabs,
+  code: state.codeGenerationReducer.code
+});
 
 export default connect(mapStateToProps)(Ace);

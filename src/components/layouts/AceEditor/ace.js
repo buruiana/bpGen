@@ -1,35 +1,35 @@
-import React from 'react';
-import AceEditor from 'react-ace';
-import 'brace/mode/jsx';
-import 'brace/theme/github';
-import AceTabs from '../AceTabs';
-import {
-  SERVICE,
-  COMPONENT,
-  SMART,
-} from '../../../utils/constants';
+import React from "react";
+import AceEditor from "react-ace";
+import "brace/mode/jsx";
+import "brace/theme/xcode";
+import AceTabs from "../AceTabs";
+import isEmpty from "lodash/isEmpty";
+import { SERVICE, COMPONENT, SMART } from "../../../utils/constants";
 //import ExportFilesView from '../ExportFiles';
 
 const Ace = props => {
+  const { code, aceTab } = props;
   const onChange = newValue => {
-    console.log('change1', newValue);
-  }
+    console.log("change1", newValue);
+  };
   const getAceContent = () => {
-   //
+    if (isEmpty(code)) return "";
+    return code.filter(e => e.id === aceTab)[0].code;
   };
 
   // const getExportBox = (props.projectSettings.projectType === SERVICE)
   //   ? <ExportFilesView />
   //   : null;
 
-  // const getAceStyle = (props.projectSettings.projectType === SERVICE)
-  //   ? 'serviceAce'
-  //   : 'componentAce';
+  // const getAceStyle =
+  //   props.projectSettings.projectType === SERVICE
+  //     ? "serviceAce"
+  //     : "componentAce";
 
   return (
-    <div className={getAceStyle}>
+    <div>
       {/* {getExportBox} */}
-      <div className='paddingTop'>
+      <div className="paddingTop">
         <AceTabs />
         <AceEditor
           mode="jsx"
@@ -42,18 +42,17 @@ const Ace = props => {
             enableLiveAutocompletion: true,
             enableSnippets: false,
             showLineNumbers: true,
-            tabSize: 2,
+            tabSize: 2
           }}
           fontSize={12}
           showPrintMargin={true}
           showGutter={true}
           highlightActiveLine={true}
           value={getAceContent()}
-          height='750px'
-          />
+          height="750px"
+        />
       </div>
     </div>
-
   );
 };
 

@@ -6,7 +6,7 @@ const uiSchema = {
           blockImplementation: {
             "ui:widget": "textarea",
             "ui:options": {
-              rows: 5
+              rows: 15
             }
           }
         }
@@ -16,19 +16,19 @@ const uiSchema = {
           formSchema: {
             "ui:widget": "textarea",
             "ui:options": {
-              rows: 5
+              rows: 15
             }
           },
           formUISchema: {
             "ui:widget": "textarea",
             "ui:options": {
-              rows: 5
+              rows: 15
             }
           },
           formPrepareData: {
             "ui:widget": "textarea",
             "ui:options": {
-              rows: 5
+              rows: 15
             }
           }
         }

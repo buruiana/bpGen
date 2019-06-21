@@ -44,7 +44,7 @@ const TemplatesForm = props => {
         <div>
           <a onClick={goBack} className="simpleLink">
             Back
-        </a>
+          </a>
         </div>
         <input type="file" id="importFile" onChange={onImport} />
         <Form

@@ -12,6 +12,8 @@ import filterDataReducer from "../../services/filterDataService/reducer";
 import projectSettingsReducer from "../../services/projectSettingsService/reducer";
 import customFormReducer from "../../services/customFormService/reducer";
 import codeGenerationReducer from "../../services/codeGenerationService/reducer";
+import aceTabsReducer from "../../services/aceTabsService/reducer";
+import backEndReducer from "../../services/backEndService/reducer";
 
 export default history =>
   combineReducers({
@@ -27,5 +29,7 @@ export default history =>
     filterDataReducer,
     projectSettingsReducer,
     customFormReducer,
-    codeGenerationReducer
+    codeGenerationReducer,
+    aceTabsReducer,
+    backEndReducer
   });
