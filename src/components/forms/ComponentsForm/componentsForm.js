@@ -124,6 +124,7 @@ const ComponentsForm = props => {
         onChange={log("changed")}
         onSubmit={onSubmit}
         onError={log("errors")}
+        formData={component}
       />
     </div>
   );
