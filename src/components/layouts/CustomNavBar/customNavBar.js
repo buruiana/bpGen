@@ -38,9 +38,6 @@ const NavBar = props => {
   return (
     <div className="customNavBar">
       <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand onClick={goTo} name="/home">
-          bpGen
-        </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link
             name="/init"
@@ -49,10 +46,10 @@ const NavBar = props => {
           >
             Project Settings
           </Nav.Link>
-          <Nav.Link name="/init" onClick={initProject}>
+          {getTemplateForms()}
+          <Nav.Link name="/init" onClick={initProject} className="justify-content-end">
             Init Project
           </Nav.Link>
-          {getTemplateForms()}
         </Nav>
       </Navbar>
     </div>

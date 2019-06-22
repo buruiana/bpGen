@@ -5,76 +5,73 @@ import { navigate } from '../../../utils';
 
 
 const ComponentsForm = props => {
-  let { components } = props;
+  let { components, technos, providers, propTypes } = props;
   if (isEmpty(components)) components = [];
 
   const componentsArray = components.filter(component => component.id === props.match.params.id);
 
-  let component = {};
-  if (!isEmpty(componentsArray)) {
-    component = componentsArray[0]
-  } else {
-    component = {
-      title: '',
+  let component = (!isEmpty(componentsArray))
+    ? componentsArray[0]
+    : {
+      name: '',
       id: '',
       description: '',
       provider: '',
       techno: '',
       componentProps: [],
     };
-  }
 
-  const { title, id, description, techno, provider } = component;
-  const { providers, propTypes, providerPath, isDefault } = props;
+  const { name, id, description, techno, provider } = component;
 
-  const technosEnums = ['REACT', 'REACT_NATIVE'];
+  const technosEnums = !isEmpty(technos)
+    ? technos.map(techno => techno.name)
+    : [];
   const providersEnums = !isEmpty(providers)
     ? providers.map(provider => provider.name)
     : [];
-
   const propTypesEnums = !isEmpty(propTypes)
     ? propTypes.map(p => p.name)
     : [];
 
   const schema = {
     type: "object",
-    required: ['title', 'provider', 'techno'],
+    required: ['name', 'provider', 'techno'],
     properties: {
-      id: { type: "string", title: "Id", default: id },
-      title: { type: "string", title: "Name", default: title },
-      description: { type: "string", title: "Description", default: description || '' },
+      id: { type: "string", name: "Id", default: id },
+      name: { type: "string", name: "Name", default: name },
+      description: { type: "string", name: "Description", default: description || '' },
       provider: {
         type: "string",
-        title: "Provider",
+        name: "Provider",
         enum: providersEnums,
         default: provider,
       },
       componentImport: {
         type: "string",
-        title: "Import Path",
+        name: "Import Path",
         default: providerPath,
       },
       techno: {
         type: 'string',
-        title: "Techno",
+        name: "Techno",
         enum: technosEnums,
         default: techno,
       },
-      isDefault: { type: "boolean", title: "isDefault", default: isDefault || false },
+      isDefault: { type: "boolean", name: "isDefault", default: isDefault || false },
       componentProps: {
         type: "array",
         items: {
           type: 'object',
           required: ['name'],
           properties: {
-            name: { type: 'string', title: 'Name' },
-            description: { type: 'string', title: 'Description', default: '' },
+            name: { type: 'string', name: 'Name' },
+            description: { type: 'string', name: 'Description', default: '' },
             propType: {
               type: 'string',
-              title: 'PropType',
+              name: 'PropType',
               enum: propTypesEnums,
             },
-            propTypeIsrequired: { type: 'boolean', title: 'Prop Type isRequired', default: false },
+            propTypeIsrequired: { type: 'boolean', name: 'Prop Type isRequired', default: false },
           }
         },
       },

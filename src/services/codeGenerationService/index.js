@@ -1,10 +1,9 @@
-import { put, takeLatest, select } from "redux-saga/effects";
+import { put, takeLatest, select, call } from "redux-saga/effects";
 import isEmpty from "lodash/isEmpty";
 import { GENERATE_CODE } from "./actionTypes";
-import { generateCodeSuccess, generateCodeFail } from "./actions";
+import { generateCodeFail } from "./actions";
 import { executeCodeGeneration } from "./helper";
 import { prettifyCode } from "../backEndService/actions";
-//import { mock } from "./mock";
 
 export function* watchGenerateCode(action) {
   const template = (yield select()).projectSettingsReducer.projectSettings
@@ -17,11 +16,7 @@ export function* watchGenerateCode(action) {
   }
 
   try {
-    const code = yield call(
-      prettifyCode,
-      executeCodeGeneration(template, forms)
-    );
-    yield put(generateCodeSuccess(code));
+    yield put(prettifyCode(executeCodeGeneration(template, forms)));
   } catch (error) {
     generateCodeFail(error);
   }

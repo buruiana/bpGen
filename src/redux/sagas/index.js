@@ -7,7 +7,7 @@ import technosSaga from "../../services/technosService";
 import componentsSaga from "../../services/componentsService";
 import propTypesSaga from "../../services/propTypesService";
 import aceTabsSaga from "../../services/aceTabsService";
-import backEndSaga from "../../services//backEndService";
+import backEndSaga from "../../services/backEndService";
 
 export default function* sagas() {
   yield all(

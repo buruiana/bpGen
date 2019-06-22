@@ -43,7 +43,14 @@ app.post('/api/prettify', (req, res) => {
     proseWrap: 'preserve'
   };
 
-  res.json(prettier.format(req.body.code, opt));
+  let newCode = [];
+  req.body.code.code.map(e => {
+    let theCode = '';
+    if (e.code) theCode = e.code;
+    newCode.push({ id: e.id, code: prettier.format(theCode, opt) });
+  });
+
+  res.json(newCode);
 });
 
 function execWrapper(command, options) {
@@ -60,8 +67,6 @@ app.post('/api/exportFiles', (req, res) => {
   const techno = req.body.techno;
   const dest = req.body.destination + `/${name}`;
   shell.mkdir(dest);
-
-  console.log('console: ------------------', req.body);
 
   if (req.body.projectType === 'Service') {
     if (req.body.reducer || req.body.exportAll) {

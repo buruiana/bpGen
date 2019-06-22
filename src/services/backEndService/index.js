@@ -1,23 +1,22 @@
-import { call, put, takeLatest, select } from "redux-saga/effects";
-import isEmpty from "lodash/isEmpty";
-import sortBy from "lodash/sortBy";
+import { put, takeLatest, select } from "redux-saga/effects";
+import axios from 'axios';
+import { PRETTIFY_CODE } from '../backEndService/actionTypes';
+import { generateCodeSuccess } from '../codeGenerationService/actions';
 
-export function* getPrettyCode(code, parser = "babel") {
-  if (isEmpty(code)) return;
+const prettify = (code, parser) => {
+  return axios.post('http://localhost:5000/api/prettify', code, parser);
+}
 
+export function* watchPrettyfyCode(code, parser = "babel") {
   let prettyCode = [];
   try {
-    yield put(setProjectError(""));
     const res = yield prettify({ code, parser });
     prettyCode = res.data;
+    yield put(generateCodeSuccess(prettyCode));
   } catch (err) {
-    console.log("console: err", err);
     prettyCode = JSON.parse(err.config.data);
     prettyCode = prettyCode.code;
-
-    yield put(setProjectError(err.response.data));
   }
-  return prettyCode;
 }
 
 export default function* rootSaga() {

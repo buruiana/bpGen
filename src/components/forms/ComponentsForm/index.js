@@ -5,6 +5,9 @@ import ComponentsForm from './componentsForm';
 const mapStateToProps = state => {
   return {
     components: state.componentsReducer.components,
+    providers: state.providersReducer.providers,
+    technos: state.technosReducer.technos,
+    propTypes: state.propTypesReducer.propTypes,
   }
 };
 

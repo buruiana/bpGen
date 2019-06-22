@@ -9,6 +9,7 @@ import { SERVICE, COMPONENT, SMART } from "../../../utils/constants";
 
 const Ace = props => {
   const { code, aceTab } = props;
+
   const onChange = newValue => {
     console.log("change1", newValue);
   };

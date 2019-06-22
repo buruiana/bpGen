@@ -8,7 +8,7 @@ import {
 } from "./actionTypes";
 import rsf from "../../redux/firebaseConfig";
 import { setAllTemplates, getAllTemplates } from "./actions";
-//import { mock } from "./mock";
+import { mock } from "./mock";
 
 export function* watchSetTemplate(action) {
   const { template } = action;

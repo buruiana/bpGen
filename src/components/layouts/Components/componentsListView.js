@@ -1,6 +1,7 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
 import sortBy from "lodash/sortBy";
+import isEmpty from "lodash/isEmpty";
 import get from "lodash/get";
 import GenericSearchForm from "../../forms/GenericSearchForm";
 import { navigate } from "../../../utils";
@@ -15,18 +16,16 @@ const ComponentsListView = props => {
 
   const filteredItems = () => {
     const filteredComponents = components.filter(el => {
-      if (searchData.name || searchData.componentType) {
-        return (
-          el.name
-            .toLowerCase()
-            .includes(get(searchData, "name", el.name).toLowerCase()) &&
-          get(searchData, "componentType", el.componentType) === el.componentType
-        );
+      if (!isEmpty(searchData) && searchData.name) {
+        return (el.name.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
+          && get(searchData, 'provider', el.provider) === el.provider
+          && get(searchData, 'techno', el.techno) === el.techno);
       }
-      return el;
+      return (get(searchData, 'provider', el.provider) === el.provider
+        && get(searchData, 'techno', el.techno) === el.techno);
     });
 
-    return sortBy(filteredComponents, el => el.name);
+    return sortBy(filteredComponents, el => el.title);
   };
 
   const componentsList = () => {

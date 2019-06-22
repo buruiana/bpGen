@@ -1,39 +1,68 @@
 export const mock = {
-  allProviders: [
+  allPropTypes: [
     {
-      id: 'Rbdnac4zPa8OBfJOBTsT',
-      name: 'ReactBootstrap_1.0.0-beta.5',
-      path: 'react-bootstrap',
-      projectTechno: 'React',
-      providerUrl: 'https://react-bootstrap.github.io/'
+      id: '2BXEhvMPVh9ylaB7B5TJ',
+      name: 'PropTypes.node'
     },
     {
-      id: 'g4dkcggI0iE0TGyvRq3t',
-      name: 'HTML',
-      path: 'https://www.w3schools.com/html/',
-      projectTechno: 'React',
-      providerUrl: 'https://www.w3schools.com/html/'
+      id: '3kAhe2GkqiBLojrsPnZ1',
+      name: 'PropTypes.symbol'
     },
     {
-      id: 'k0LjCQQLYTKwe8DfA44J',
-      name: 'Bootstrap_0_32_4',
-      path: '-',
-      projectTechno: 'React',
-      providerUrl: 'https://react-bootstrap.github.io/'
+      id: '5GDPk1MTskx5kElbFhri',
+      name: 'PropTypes.objectOf()'
     },
     {
-      id: 'pOSUeTSB0BzO9b4qzT4M',
-      name: 'Jsonschema-form',
-      path: 'react-jsonschema-form',
-      projectTechno: 'React',
-      providerUrl: 'https://github.com/mozilla-services/react-jsonschema-form'
+      id: '7VJS3EQgakN3zPzkfk2T',
+      name: 'PropTypes.exact({})'
     },
     {
-      id: 'tdcwhGptX0R31Q6YwWoF',
-      name: 'ReactNative',
-      path: 'react-native',
-      projectTechno: 'React Native',
-      providerUrl: 'https://facebook.github.io/react-native/docs/getting-started'
+      id: 'DJtbV6P1DvVZbbwXWBnw',
+      name: 'PropTypes.object'
+    },
+    {
+      id: 'YA1VbhkVMtFxtu38OiHE',
+      name: 'PropTypes.instanceOf()'
+    },
+    {
+      id: 'aNjcxoWUpnOweVAYdFqT',
+      name: 'PropTypes.oneOfType([])'
+    },
+    {
+      id: 'lLtjjaCGRreMhQ7p77P4',
+      name: ' PropTypes.arrayOf()'
+    },
+    {
+      id: 'p6mQX90GtBBIXpiJJr8w',
+      name: 'PropTypes.shape({})'
+    },
+    {
+      id: 'pFiGtdjd8u4ns41hESxF',
+      name: 'PropTypes.element'
+    },
+    {
+      id: 's2Qx5qMocDCzKUcsxDBR',
+      name: 'PropTypes.number'
+    },
+    {
+      id: 's3assK1m0x6dIeaIqg1T',
+      name: 'PropTypes.array'
+    },
+    {
+      id: 'ugHtUMssV0oyM2l1ZspN',
+      name: 'PropTypes.string'
+    },
+    {
+      id: 'wbTB6SJIg1drfjOPm7JW',
+      name: 'PropTypes.bool'
+    },
+    {
+      id: 'wpfyDNRtkQToVuhiYF64',
+      name: 'PropTypes.func'
+    },
+    {
+      id: 'yjJYLVOmnrwmYam6zICX',
+      name: 'PropTypes.oneOf([\'\', \'\'])'
     }
   ],
 }

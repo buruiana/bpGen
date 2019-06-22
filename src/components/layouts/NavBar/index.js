@@ -5,6 +5,7 @@ import { getAllProviders } from "../../../services/providersService/actions";
 import { getAllTechnos } from "../../../services/technosService/actions";
 import { getAllPropTypes } from "../../../services/propTypesService/actions";
 import { getAllTemplates } from "../../../services/templatesService/actions";
+import { getAllComponents } from "../../../services/componentsService/actions";
 
 const mapStateToProps = state => {
   return {
@@ -13,6 +14,7 @@ const mapStateToProps = state => {
     technos: state.technosReducer.technos,
     propTypes: state.propTypesReducer.propTypes,
     templates: state.templatesReducer.templates,
+    components: state.componentsReducer.components
   };
 };
 
@@ -21,7 +23,8 @@ const mapDispatchToProps = {
   getAllProviders,
   getAllTechnos,
   getAllPropTypes,
-  getAllTemplates
+  getAllTemplates,
+  getAllComponents
 };
 
 export default connect(
