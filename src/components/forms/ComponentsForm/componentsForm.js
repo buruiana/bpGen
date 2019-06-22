@@ -21,7 +21,7 @@ const ComponentsForm = props => {
       componentProps: [],
     };
 
-  const { name, id, description, techno, provider } = component;
+  const { name, id, description, techno, provider, componentImport, isDefault } = component;
 
   const technosEnums = !isEmpty(technos)
     ? technos.map(techno => techno.name)
@@ -49,7 +49,7 @@ const ComponentsForm = props => {
       componentImport: {
         type: "string",
         name: "Import Path",
-        default: providerPath,
+        default: componentImport,
       },
       techno: {
         type: 'string',
