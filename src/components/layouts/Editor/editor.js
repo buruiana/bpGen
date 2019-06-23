@@ -132,7 +132,6 @@ const Editor = props => {
 
   return (
     <div>
-      <CustomNavBar />
       {returnComponentBlock()}
       {renderAce()}
     </div>

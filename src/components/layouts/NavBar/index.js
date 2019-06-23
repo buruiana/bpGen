@@ -6,6 +6,7 @@ import { getAllTechnos } from "../../../services/technosService/actions";
 import { getAllPropTypes } from "../../../services/propTypesService/actions";
 import { getAllTemplates } from "../../../services/templatesService/actions";
 import { getAllComponents } from "../../../services/componentsService/actions";
+import { addModal } from '../../../services/modalService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -14,7 +15,8 @@ const mapStateToProps = state => {
     technos: state.technosReducer.technos,
     propTypes: state.propTypesReducer.propTypes,
     templates: state.templatesReducer.templates,
-    components: state.componentsReducer.components
+    components: state.componentsReducer.components,
+    projectSettings: state.projectSettingsReducer.projectSettings,
   };
 };
 
@@ -24,7 +26,8 @@ const mapDispatchToProps = {
   getAllTechnos,
   getAllPropTypes,
   getAllTemplates,
-  getAllComponents
+  getAllComponents,
+  addModal
 };
 
 export default connect(

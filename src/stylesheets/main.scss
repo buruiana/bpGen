@@ -104,3 +104,21 @@ div.rst__moveHandle {
 //   display: none;
 // }
 
+
+.mainBox {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all .15s;
+  transition: all .15s;
+  padding: 0 20px;
+  margin-left: 64px;
+  width: 100%;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f7d8d9;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f7d8d9 !important;
+}
