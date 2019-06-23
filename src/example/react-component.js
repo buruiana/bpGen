@@ -113,20 +113,6 @@ return {
           blockIsActive: true,
           blockImplementation: ""
         },
-        {
-          blockName: "initialState block",
-          blockDescription: "initialState block descr",
-          blockSequence: 2,
-          blockIsActive: true,
-          blockImplementation: ""
-        },
-        {
-          blockName: "definition block",
-          blockDescription: "definition block descr",
-          blockSequence: 3,
-          blockIsActive: true,
-          blockImplementation: ""
-        }
       ]
     }
   ]

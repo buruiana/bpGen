@@ -17,7 +17,7 @@ const ComponentsListView = props => {
   const filteredItems = () => {
     const filteredComponents = components.filter(el => {
       if (!isEmpty(searchData) && searchData.name) {
-        return (el.name.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
+        return (el.title.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
           && get(searchData, 'provider', el.provider) === el.provider
           && get(searchData, 'techno', el.techno) === el.techno);
       }
@@ -30,12 +30,12 @@ const ComponentsListView = props => {
 
   const componentsList = () => {
     return filteredItems().map(component => {
-      const { name, id, provider, techno } = component;
+      const { title, id, provider, techno } = component;
 
       return (
         <tr key={id}>
           <td>
-            <a id={id} className="simpleLink" onClick={goTo}>{name}</a>
+            <a id={id} className="simpleLink" onClick={goTo}>{title}</a>
           </td>
           <td>{techno}</td>
           <td>{provider}</td>

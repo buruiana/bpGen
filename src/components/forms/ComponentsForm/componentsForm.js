@@ -113,19 +113,21 @@ const ComponentsForm = props => {
 
   const log = (type) => console.log.bind(console, type);
   return (
-    <div className="middle20">
-      <div>
-        <a onClick={goTo} className="simpleLink">
-          Back
-        </a>
-      </div>
-      <Form schema={schema}
-        uiSchema={uiSchema}
-        onChange={log("changed")}
-        onSubmit={onSubmit}
-        onError={log("errors")}
-        formData={component}
-      />
+    <div>
+      <>
+        <div>
+          <a onClick={goTo} className="simpleLink">
+            Back
+          </a>
+        </div>
+        <Form schema={schema}
+          uiSchema={uiSchema}
+          onChange={log("changed")}
+          onSubmit={onSubmit}
+          onError={log("errors")}
+          formData={component}
+        />
+      </>
     </div>
   );
 }

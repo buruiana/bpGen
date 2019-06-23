@@ -14,6 +14,7 @@ import customFormReducer from "../../services/customFormService/reducer";
 import codeGenerationReducer from "../../services/codeGenerationService/reducer";
 import aceTabsReducer from "../../services/aceTabsService/reducer";
 import backEndReducer from "../../services/backEndService/reducer";
+import sortableTreeReducer from "../../services/sortableTreeService/reducer";
 
 export default history =>
   combineReducers({
@@ -31,5 +32,6 @@ export default history =>
     customFormReducer,
     codeGenerationReducer,
     aceTabsReducer,
-    backEndReducer
+    backEndReducer,
+    sortableTreeReducer
   });

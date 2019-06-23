@@ -6,19 +6,19 @@ export const mock = {
       componentProps: [
         {
           description: 'Set a custom element for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'An href, when provided the Brand will render as an <a> element (unless as is provided).',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'navbar\'\n\t\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -28,8 +28,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Navbar__Brand',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Navbar__Brand',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -38,19 +38,19 @@ export const mock = {
       componentProps: [
         {
           description: 'backgroundColor',
-          name: 'backgroundColor',
+          title: 'backgroundColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'An ID which is used to associate this InputAccessoryView to specified TextInput(s).',
-          name: 'nativeID',
+          title: 'nativeID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'style',
-          name: 'style',
+          title: 'style',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -60,8 +60,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'InputAccessoryView',
-      subname: 'ReactNative'
+      title: 'InputAccessoryView',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -69,97 +69,97 @@ export const mock = {
       componentProps: [
         {
           description: 'default: 0\t\n\ncontrolled by: onSelect, initial prop: defaultActiveindex\nControls the current visible slide',
-          name: 'activeIndex',
+          title: 'activeIndex',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'default: true\t\n\nShow the Carousel previous and next arrows for changing the current slide',
-          name: 'controls',
+          title: 'controls',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nCross fade slides instead of the default slide animation',
-          name: 'fade',
+          title: 'fade',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: true\t\n\nShow a set of slide position indicators',
-          name: 'indicators',
+          title: 'indicators',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: 5000\t\n\nThe amount of time to delay between automatically cycling an item. If null, carousel will not automatically cycle.',
-          name: 'interval',
+          title: 'interval',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'default: true\t\n\nEnable keyboard navigation via the Arrow keys for changing slides',
-          name: 'keyboard',
+          title: 'keyboard',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: node\ndefault: <span aria-hidden="true" className="carousel-control-next-icon" />\t\n\nOverride the default button icon for the "next" control',
-          name: 'nextIcon',
+          title: 'nextIcon',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'Next\'\t\n\nLabel shown to screen readers only, can be used to show the next element in the carousel. Set to null to deactivate.',
-          name: 'nextLabel',
+          title: 'nextLabel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'controls activeIndex\nCallback fired when the active item changes.\n\n(eventKey: any, direction: \'prev\' | \'next\', ?event: Object) => any',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'A callback fired after a slide transitions in',
-          name: 'onSlideEnd',
+          title: 'onSlideEnd',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'default: true\t\n\nTemporarily puase the slide interval when the mouse hovers over a slide.',
-          name: 'pauseOnHover',
+          title: 'pauseOnHover',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: <span aria-hidden="true" className="carousel-control-prev-icon" />\t\n\nOverride the default button icon for the "previous" control',
-          name: 'prevIcon',
+          title: 'prevIcon',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'Previous\'\t\n\nLabel shown to screen readers only, can be used to show the previous element in the carousel. Set to null to deactivate.',
-          name: 'prevLabel',
+          title: 'prevLabel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: true\n\t\nEnables animation on the Carousel as it transitions between slides.',
-          name: 'slide',
+          title: 'slide',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: true\t\n\nSlides will loop to the start when the last one transitions',
-          name: 'wrap',
+          title: 'wrap',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'carousel\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -169,8 +169,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Carousel',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Carousel',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -179,138 +179,138 @@ export const mock = {
       componentProps: [
         {
           description: 'The actual data to render, akin to the data prop in FlatList.\n\nType: array of Sections',
-          name: 'sections',
+          title: 'sections',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         },
         {
           description: 'How many items to render in the initial batch. This should be enough to fill the screen but not much more. Note these items will never be unmounted as part of the windowed rendering in order to improve perceived performance of scroll-to-top actions.',
-          name: 'initialNumToRender',
+          title: 'initialNumToRender',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Used to extract a unique key for a given item at the specified index. Key is used for caching and as the react key to track item re-ordering. The default extractor checks item.key, then falls back to using the index, like react does. Note that this sets keys for each item, but each overall section still needs its own key.\n\nType: (item: Item, index: number) => string',
-          name: 'keyExtractor',
+          title: 'keyExtractor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Default renderer for every item in every section. Can be over-ridden on a per-section basis. Should return a React element.\n\nThe render function will be passed an object with the following keys:\n\n\'item\' (object) - the item object as specified in this section\'s data key\n\'index\' (number) - Item\'s index within the section.\n\'section\' (object) - The full section object as specified in sections.\n\'separators\' (object) - An object with the following keys:\n\'highlight\' (function) - () => void\n\'unhighlight\' (function) - () => void\n\'updateProps\' (function) - (select, newProps) => void\n\'select\' (enum) - possible values are \'leading\', \'trailing\'\n\'newProps\' (object)\n',
-          name: 'renderItem',
+          title: 'renderItem',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Called once when the scroll position gets within onEndReachedThreshold of the rendered content.\n\nType: [(info: {distanceFromEnd: number}) => void]',
-          name: 'onEndReached',
+          title: 'onEndReached',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'A marker property for telling the list to re-render (since it implements PureComponent). If any of your renderItem, Header, Footer, etc. functions depend on anything outside of the data prop, stick it here and treat it immutably.',
-          name: 'extraData',
+          title: 'extraData',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Rendered in between each item, but not at the top or bottom. By default, highlighted, section, and [leading/trailing][Item/Separator] props are provided. renderItem provides separators.highlight/unhighlight which will update the highlighted prop, but you can also add custom props with separators.updateProps.\n\nType: [component, function, element]',
-          name: 'ItemSeparatorComponent',
+          title: 'ItemSeparatorComponent',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Reverses the direction of scroll. Uses scale transforms of -1.',
-          name: 'inverted',
+          title: 'inverted',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Rendered at the very end of the list. Can be a React Component Class, a render function, or a rendered element.\n\nType: [component, function, element]',
-          name: 'ListFooterComponent',
+          title: 'ListFooterComponent',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'legacyImplementation',
-          name: 'legacyImplementation',
+          title: 'legacyImplementation',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Rendered when the list is empty. Can be a React Component Class, a render function, or a rendered element.\n\nType: [component, function, element]',
-          name: 'ListEmptyComponent',
+          title: 'ListEmptyComponent',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'How far from the end (in units of visible length of the list) the bottom edge of the list must be from the end of the content to trigger the onEndReached callback. Thus a value of 0.5 will trigger onEndReached when the end of the content is within half the visible length of the list.',
-          name: 'onEndReachedThreshold',
+          title: 'onEndReachedThreshold',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'If provided, a standard RefreshControl will be added for "Pull to Refresh" functionality. Make sure to also set the refreshing prop correctly.\n\nType: [() => void]',
-          name: 'onRefresh',
+          title: 'onRefresh',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Called when the viewability of rows changes, as defined by the viewabilityConfig prop.\n\nThe function will be passed an object with the following keys:\n\n\'viewableItems\' (array of ViewTokens)\n\'changed\' (array of ViewTokens)\nThe ViewToken type is exported by ViewabilityHelper.js:',
-          name: 'onViewableItemsChanged',
+          title: 'onViewableItemsChanged',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Set this true while waiting for new data from a refresh.',
-          name: 'refreshing',
+          title: 'refreshing',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Note: may have bugs (missing content) in some circumstances - use at your own risk.\n\nThis may improve scroll performance for large lists.',
-          name: 'removeClippedSubviews',
+          title: 'removeClippedSubviews',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Rendered at the very beginning of the list. Can be a React Component Class, a render function, or a rendered element.\n\nType: component, function, element',
-          name: 'ListHeaderComponent',
+          title: 'ListHeaderComponent',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Rendered at the bottom of each section.\n\nType: [(info: {section: SectionT}) => ?React.Element]',
-          name: 'renderSectionFooter',
+          title: 'renderSectionFooter',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Rendered at the top of each section. These stick to the top of the ScrollView by default on iOS. See stickySectionHeadersEnabled.\n\nType: [(info: {section: SectionT}) => ?React.Element]',
-          name: 'renderSectionHeader',
+          title: 'renderSectionHeader',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Rendered at the top and bottom of each section (note this is different from ItemSeparatorComponent which is only rendered between items). These are intended to separate sections from the headers above and below and typically have the same highlight response as ItemSeparatorComponent. Also receives highlighted, [leading/trailing][Item/Separator], and any custom props from separators.updateProps.',
-          name: 'SectionSeparatorComponent',
+          title: 'SectionSeparatorComponent',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Makes section headers stick to the top of the screen until the next one pushes it off. Only enabled by default on iOS because that is the platform standard there.',
-          name: 'stickySectionHeadersEnabled',
+          title: 'stickySectionHeadersEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
       ],
-      description: 'A performant interface for rendering sectioned lists, supporting the most handy features:\n\nFully cross-platform.\nConfigurable viewability callbacks.\nList header support.\nList footer support.\nItem separator support.\nSection header support.\nSection separator support.\nHeterogeneous data and item rendering support.\nPull to Refresh.\nScroll loading.\nIf you don\'t need section support and want a simpler interface, use <FlatList>.\n\nSimple Examples:\n\n// Example 1 (Homogeneous Rendering)\n<SectionList\n  renderItem={({item, index, section}) => <Text key={index}>{item}</Text>}\n  renderSectionHeader={({section: {name}}) => (\n    <Text style={{fontWeight: \'bold\'}}>{name}</Text>\n  )}\n  sections={[\n    {name: \'name1\', data: [\'item1\', \'item2\']},\n    {name: \'name2\', data: [\'item3\', \'item4\']},\n    {name: \'name3\', data: [\'item5\', \'item6\']},\n  ]}\n  keyExtractor={(item, index) => item + index}\n/>\n// Example 2 (Heterogeneous Rendering / No Section Headers)\nconst overrideRenderItem = ({ item, index, section: { name, data } }) => <Text key={index}>Override{item}</Text>\n\n<SectionList\n  renderItem={({ item, index, section }) => <Text key={index}>{item}</Text>}\n  sections={[\n    { name: \'name1\', data: [\'item1\', \'item2\'], renderItem: overrideRenderItem },\n    { name: \'name2\', data: [\'item3\', \'item4\'] },\n    { name: \'name3\', data: [\'item5\', \'item6\'] },\n  ]}\n/>\n\nThis is a convenience wrapper around <VirtualizedList>, and thus inherits its props (as well as those of <ScrollView> that aren\'t explicitly listed here, along with the following caveats:\n\nInternal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.\nThis is a PureComponent which means that it will not re-render if props remain shallow- equal. Make sure that everything your renderItem function depends on is passed as a prop (e.g. extraData) that is not === after updates, otherwise your UI may not update on changes. This includes the data prop and parent component state.\nIn order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it\'s possible to scroll faster than the fill rate and momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.\nBy default, the list looks for a key prop on each item and uses that for the React key. Alternatively, you can provide a custom keyExtractor prop.',
+      description: 'A performant interface for rendering sectioned lists, supporting the most handy features:\n\nFully cross-platform.\nConfigurable viewability callbacks.\nList header support.\nList footer support.\nItem separator support.\nSection header support.\nSection separator support.\nHeterogeneous data and item rendering support.\nPull to Refresh.\nScroll loading.\nIf you don\'t need section support and want a simpler interface, use <FlatList>.\n\nSimple Examples:\n\n// Example 1 (Homogeneous Rendering)\n<SectionList\n  renderItem={({item, index, section}) => <Text key={index}>{item}</Text>}\n  renderSectionHeader={({section: {name}}) => (\n    <Text style={{fontWeight: \'bold\'}}>{name}</Text>\n  )}\n  sections={[\n    {title: \'name1\', data: [\'item1\', \'item2\']},\n    {title: \'name2\', data: [\'item3\', \'item4\']},\n    {title: \'name3\', data: [\'item5\', \'item6\']},\n  ]}\n  keyExtractor={(item, index) => item + index}\n/>\n// Example 2 (Heterogeneous Rendering / No Section Headers)\nconst overrideRenderItem = ({ item, index, section: { name, data } }) => <Text key={index}>Override{item}</Text>\n\n<SectionList\n  renderItem={({ item, index, section }) => <Text key={index}>{item}</Text>}\n  sections={[\n    { title: \'name1\', data: [\'item1\', \'item2\'], renderItem: overrideRenderItem },\n    { title: \'name2\', data: [\'item3\', \'item4\'] },\n    { title: \'name3\', data: [\'item5\', \'item6\'] },\n  ]}\n/>\n\nThis is a convenience wrapper around <VirtualizedList>, and thus inherits its props (as well as those of <ScrollView> that aren\'t explicitly listed here, along with the following caveats:\n\nInternal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.\nThis is a PureComponent which means that it will not re-render if props remain shallow- equal. Make sure that everything your renderItem function depends on is passed as a prop (e.g. extraData) that is not === after updates, otherwise your UI may not update on changes. This includes the data prop and parent component state.\nIn order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it\'s possible to scroll faster than the fill rate and momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.\nBy default, the list looks for a key prop on each item and uses that for the React key. Alternatively, you can provide a custom keyExtractor prop.',
       id: '0edsmGABQyCcxvjxEeFe',
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'SectionList',
-      subname: 'ReactNative'
+      title: 'SectionList',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -318,19 +318,19 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <div>\t\n\nYou can use a custom element for this component',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nAllow the Container to fill all of it\'s availble horizontal space.',
-          name: 'fluid',
+          title: 'fluid',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'container\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -340,8 +340,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Container',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Container',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -349,19 +349,19 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'flush\'\ndefault: null\t\nAdds a variant to the list-group',
-          name: 'variant',
+          title: 'variant',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'list-group\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -371,8 +371,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'ListGroup',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'ListGroup',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -381,37 +381,37 @@ export const mock = {
       componentProps: [
         {
           description: 'The progress value (between 0 and 1).',
-          name: 'progress',
+          title: 'progress',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'A stretchable image to display as the progress bar.\n\nType: Image.propTypes.source',
-          name: 'progressImage',
+          title: 'progressImage',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The tint color of the progress bar itself.',
-          name: 'progressTintColor',
+          title: 'progressTintColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The progress bar style.\n\nType: enum(\'default\', \'bar\')',
-          name: 'progressViewStyle',
+          title: 'progressViewStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'A stretchable image to display behind the progress bar.\n\nType: Image.propTypes.source',
-          name: 'trackImage',
+          title: 'trackImage',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The tint color of the progress bar track.',
-          name: 'trackTintColor',
+          title: 'trackTintColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -421,8 +421,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'ProgressViewIOS',
-      subname: 'ReactNative'
+      title: 'ProgressViewIOS',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -430,55 +430,55 @@ export const mock = {
       componentProps: [
         {
           description: 'active',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'disabled',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'header',
-          name: 'header',
+          title: 'header',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'listItem',
-          name: 'listItem',
+          title: 'listItem',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'onClick',
-          name: 'onClick',
+          title: 'onClick',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'href',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type',
-          name: 'type',
+          title: 'type',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Component visual or contextual style variants.',
-          name: 'bsStyle',
+          title: 'bsStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'list-group-item\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -488,9 +488,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'ListGroupItem'
+      title: 'ListGroupItem'
     },
     {
       children: [],
@@ -498,37 +498,37 @@ export const mock = {
       componentProps: [
         {
           description: 'type: elementType\ndefault <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'primary\' | \'secondary\' | \'success\' | \'danger\' | \'warning\' | \'info\' | \'dark\' | \'light\'\n\nSets card background',
-          name: 'bg',
+          title: 'bg',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nWhen this prop is set, it creates a Card with a Card.Body inside passing the children directly to it',
-          name: 'body',
+          title: 'body',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'primary\' | \'secondary\' | \'success\' | \'danger\' | \'warning\' | \'info\' | \'dark\' | \'light\'\n\nSets card border color',
-          name: 'border',
+          title: 'border',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'primary\' | \'secondary\' | \'success\' | \'danger\' | \'warning\' | \'info\' | \'dark\' | \'light\' | \'white\' | \'muted\'\n\nSets card text color',
-          name: 'text',
+          title: 'text',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'card\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -537,9 +537,9 @@ export const mock = {
       id: '2BeFPCXrDt2xOjsapxEx',
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
-      subname: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Card'
+      title: 'Card'
     },
     {
       children: [],
@@ -547,31 +547,31 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false\n\t\nSets image as fluid image.',
-          name: 'fluid',
+          title: 'fluid',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nSets image shape as rounded.',
-          name: 'rounded',
+          title: 'rounded',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\n\t\nSets image shape as circle.',
-          name: 'roundedCircle',
+          title: 'roundedCircle',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nSets image shape as thumbnail.',
-          name: 'thumbnail',
+          title: 'thumbnail',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'img\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -581,8 +581,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Image',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Image',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -591,7 +591,7 @@ export const mock = {
       componentProps: [
         {
           description: 'maskElement',
-          name: 'maskElement',
+          title: 'maskElement',
           propType: 'PropTypes.element',
           propTypeIsrequired: true
         }
@@ -601,8 +601,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'MaskedViewIOS',
-      subname: 'ReactNative'
+      title: 'MaskedViewIOS',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -611,67 +611,67 @@ export const mock = {
       componentProps: [
         {
           description: 'It specifies whether the children are visible or not. If you see a blank content, you probably forgot to add a selected one.',
-          name: 'selected',
+          title: 'selected',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Little red bubble that sits at the top right of the icon.\n\nstring, number',
-          name: 'badge',
+          title: 'badge',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'A custom icon for the tab. It is ignored when a system icon is defined.\n\nImage.propTypes.source',
-          name: 'icon',
+          title: 'icon',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Callback when this tab is being selected, you should change the state of your component to set selected={true}.',
-          name: 'onPress',
+          title: 'onPress',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'If set to true it renders the image as original, it defaults to being displayed as a template',
-          name: 'renderAsOriginal',
+          title: 'renderAsOriginal',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Background color for the badge. Available since iOS 10.',
-          name: 'badgeColor',
+          title: 'badgeColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'A custom icon when the tab is selected. It is ignored when a system icon is defined. If left empty, the icon will be tinted in blue.\n\nImage.propTypes.source',
-          name: 'selectedIcon',
+          title: 'selectedIcon',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'React style object.',
-          name: 'style',
+          title: 'style',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Items comes with a few predefined system icons. Note that if you are using them, the name and selectedIcon will be overridden with the system ones.\n\nenum(\'bookmarks\', \'contacts\', \'downloads\', \'favorites\', \'featured\', \'history\', \'more\', \'most-recent\', \'most-viewed\', \'recents\', \'search\', \'top-rated\')',
-          name: 'systemIcon',
+          title: 'systemIcon',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Text that appears under the icon. It is ignored when a system icon is defined.',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: '(Apple TV only)* When set to true, this view will be focusable and navigable using the Apple TV remote.',
-          name: 'isTVSelectable',
+          title: 'isTVSelectable',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -681,8 +681,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'TabBarIOS__Item',
-      subname: 'ReactNative'
+      title: 'TabBarIOS__Item',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -691,151 +691,151 @@ export const mock = {
       componentProps: [
         {
           description: 'renderItem({ item: Object, index: number, separators: { highlight: Function, unhighlight: Function, updateProps: Function(select: string, newProps: Object) } }) => ?React.Element\n\nTakes an item from data and renders it into the list.\n\nProvides additional metadata like index if you need it, as well as a more generic separators.updateProps function which let you set whatever props you want to change the rendering of either the leading separator or trailing separator in case the more common highlight and unhighlight (which set the highlighted: boolean prop) are insufficient for your use case.',
-          name: 'renderItem',
+          title: 'renderItem',
           propType: 'PropTypes.func',
           propTypeIsrequired: true
         },
         {
           description: 'For simplicity, data is just a plain array. If you want to use something else, like an immutable list, use the underlying VirtualizedList directly.',
-          name: 'data',
+          title: 'data',
           propType: 'PropTypes.array',
           propTypeIsrequired: true
         },
         {
           description: 'Rendered in between each item, but not at the top or bottom. By default, highlighted and leadingItem props are provided. renderItem provides separators.highlight/unhighlight which will update the highlighted prop, but you can also add custom props with separators.updateProps.',
-          name: 'ItemSeparatorComponent',
+          title: 'ItemSeparatorComponent',
           propType: 'PropTypes.instanceOf()',
           propTypeIsrequired: false
         },
         {
           description: 'Rendered when the list is empty. Can be a React Component Class, a render function, or a rendered element.',
-          name: 'ListEmptyComponent',
+          title: 'ListEmptyComponent',
           propType: 'PropTypes.instanceOf()',
           propTypeIsrequired: false
         },
         {
           description: 'Rendered at the bottom of all the items. Can be a React Component Class, a render function, or a rendered element.\n\n',
-          name: 'ListFooterComponent',
+          title: 'ListFooterComponent',
           propType: 'PropTypes.instanceOf()',
           propTypeIsrequired: false
         },
         {
           description: 'Rendered at the top of all the items. Can be a React Component Class, a render function, or a rendered element.',
-          name: 'ListHeaderComponent',
+          title: 'ListHeaderComponent',
           propType: 'PropTypes.instanceOf()',
           propTypeIsrequired: false
         },
         {
           description: 'Optional custom style for multi-item rows generated when numColumns > 1.',
-          name: 'columnWrapperStyle',
+          title: 'columnWrapperStyle',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'A marker property for telling the list to re-render (since it implements PureComponent). If any of your renderItem, Header, Footer, etc. functions depend on anything outside of the data prop, stick it here and treat it immutably.',
-          name: 'extraData',
+          title: 'extraData',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: '(data, index) => {length: number, offset: number, index: number}\ngetItemLayout is an optional optimization that let us skip the measurement of dynamic content if you know the height of items ahead of time. getItemLayout is both efficient and easy to use if you have fixed height items, for example:\n\n  getItemLayout={(data, index) => (\n    {length: ITEM_HEIGHT, offset: ITEM_HEIGHT * index, index}\n  )}\nAdding getItemLayout can be a great performance boost for lists of several hundred items. Remember to include separator length (height or width) in your offset calculation if you specify ItemSeparatorComponent.',
-          name: 'getItemLayout',
+          title: 'getItemLayout',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'If true, renders items next to each other horizontally instead of stacked vertically.',
-          name: 'horizontal',
+          title: 'horizontal',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'How many items to render in the initial batch. This should be enough to fill the screen but not much more. Note these items will never be unmounted as part of the windowed rendering in order to improve perceived performance of scroll-to-top actions.',
-          name: 'initialNumToRender',
+          title: 'initialNumToRender',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Instead of starting at the top with the first item, start at initialScrollIndex. This disables the "scroll to top" optimization that keeps the first initialNumToRender items always rendered and immediately renders the items starting at this initial index. Requires getItemLayout to be implemented.',
-          name: 'initialScrollIndex',
+          title: 'initialScrollIndex',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Reverses the direction of scroll. Uses scale transforms of -1.',
-          name: 'inverted',
+          title: 'inverted',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: '(item: object, index: number) => string;\nUsed to extract a unique key for a given item at the specified index. Key is used for caching and as the react key to track item re-ordering. The default extractor checks item.key, then falls back to using the index, like React does.',
-          name: 'keyExtractor',
+          title: 'keyExtractor',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Multiple columns can only be rendered with horizontal={false} and will zig-zag like a flexWrap layout. Items should all be the same height - masonry layouts are not supported.',
-          name: 'numColumns',
+          title: 'numColumns',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: '(info: {distanceFromEnd: number}) => void\nCalled once when the scroll position gets within onEndReachedThreshold of the rendered content.',
-          name: 'onEndReached',
+          title: 'onEndReached',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'How far from the end (in units of visible length of the list) the bottom edge of the list must be from the end of the content to trigger the onEndReached callback. Thus a value of 0.5 will trigger onEndReached when the end of the content is within half the visible length of the list.',
-          name: 'onEndReachedThreshold',
+          title: 'onEndReachedThreshold',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: '() => void\nIf provided, a standard RefreshControl will be added for "Pull to Refresh" functionality. Make sure to also set the refreshing prop correctly.',
-          name: 'onRefresh',
+          title: 'onRefresh',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: '(info: {\n    viewableItems: array,\n    changed: array,\n  }) => void\nCalled when the viewability of rows changes, as defined by the viewabilityConfig prop.',
-          name: 'onViewableItemsChanged',
+          title: 'onViewableItemsChanged',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Set this when offset is needed for the loading indicator to show correctly.',
-          name: 'progressViewOffset',
+          title: 'progressViewOffset',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'May not have full feature parity and is meant for debugging and performance comparison.',
-          name: 'legacyImplementation',
+          title: 'legacyImplementation',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Set this true while waiting for new data from a refresh.',
-          name: 'refreshing',
+          title: 'refreshing',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'This may improve scroll performance for large lists.\n\nNote: May have bugs (missing content) in some circumstances - use at your own risk.',
-          name: 'removeClippedSubviews',
+          title: 'removeClippedSubviews',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'See ViewabilityHelper.js for flow type and further documentation.\n\nAt least one of the viewAreaCoveragePercentThreshold or itemVisiblePercentThreshold is required. This needs to be done in the constructor to avoid following error (ref):\n\n  Error: Changing viewabilityConfig on the fly is not supported`\nconstructor (props) {\n  super(props)\n\n  this.viewabilityConfig = {\n      waitForInteraction: true,\n      viewAreaCoveragePercentThreshold: 95\n  }\n}\n<FlatList\n    viewabilityConfig={this.viewabilityConfig}\n  ...\nminimumViewTime\nMinimum amount of time (in milliseconds) that an item must be physically viewable before the viewability callback will be fired. A high number means that scrolling through content without stopping will not mark the content as viewable.\n\nviewAreaCoveragePercentThreshold\nPercent of viewport that must be covered for a partially occluded item to count as "viewable", 0-100. Fully visible items are always considered viewable. A value of 0 means that a single pixel in the viewport makes the item viewable, and a value of 100 means that an item must be either entirely visible or cover the entire viewport to count as viewable.\n\nitemVisiblePercentThreshold\nSimilar to viewAreaPercentThreshold, but considers the percent of the item that is visible, rather than the fraction of the viewable area it covers.\n\nwaitForInteraction\nNothing is considered viewable until the user scrolls or recordInteraction is called after render.',
-          name: 'viewabilityConfig',
+          title: 'viewabilityConfig',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'List of ViewabilityConfig/onViewableItemsChanged pairs. A specific onViewableItemsChanged will be called when its corresponding ViewabilityConfig\'s conditions are met. See ViewabilityHelper.js for flow type and further documentation.',
-          name: 'viewabilityConfigCallbackPairs',
+          title: 'viewabilityConfigCallbackPairs',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         }
@@ -845,8 +845,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'FlatList',
-      subname: 'ReactNative'
+      title: 'FlatList',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -855,37 +855,37 @@ export const mock = {
       componentProps: [
         {
           description: 'Handler to be called when the user taps the button',
-          name: 'onPress',
+          title: 'onPress',
           propType: 'PropTypes.func',
           propTypeIsrequired: true
         },
         {
           description: 'Text to display inside the button',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         },
         {
           description: 'Text to display for blindness accessibility features',
-          name: 'accessibilityLabel',
+          title: 'accessibilityLabel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'If true, disable all interactions for this component.',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Used to locate this view in end-to-end tests.',
-          name: 'testID',
+          title: 'testID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: '(Apple TV only) TV preferred focus (see documentation for the View component).',
-          name: 'hasTVPreferredFocus',
+          title: 'hasTVPreferredFocus',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -895,8 +895,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'Button',
-      subname: 'ReactNative'
+      title: 'Button',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -904,31 +904,31 @@ export const mock = {
       componentProps: [
         {
           description: 'default: true\t\nSets image as fluid image.',
-          name: 'fluid',
+          title: 'fluid',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Sets image shape as rounded.',
-          name: 'rounded',
+          title: 'rounded',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Sets image shape as circle.',
-          name: 'roundedCircle',
+          title: 'roundedCircle',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Sets image shape as thumbnail.',
-          name: 'thumbnail',
+          title: 'thumbnail',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'img\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -938,8 +938,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'FigureImage',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'FigureImage',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -947,13 +947,13 @@ export const mock = {
       componentProps: [
         {
           description: 'Type: elementType\t\nDefault: <DivStyledAsH4>\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'alert-heading\'\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -962,9 +962,9 @@ export const mock = {
       id: '48Jey3qC5n46EvcP7Ab6',
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
-      subname: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Alert__Heading'
+      title: 'Alert__Heading'
     },
     {
       children: [],
@@ -972,67 +972,67 @@ export const mock = {
       componentProps: [
         {
           description: 'Create a fixed navbar along the top of the screen, that scrolls with the page\n\ndefault: false',
-          name: 'fixedTop',
+          title: 'fixedTop',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Create a fixed navbar along the bottom of the screen, that scrolls with the page\n\ndefault: false',
-          name: 'fixedBottom',
+          title: 'fixedBottom',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Create a full-width navbar that scrolls away with the page\n\ndefault: false',
-          name: 'staticTop',
+          title: 'staticTop',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'An alternative dark visual style for the Navbar\n\ndefault: false',
-          name: 'inverse',
+          title: 'inverse',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Allow the Navbar to fluidly adjust to the page or container width, instead of at the predefined screen breakpoints\n\ndefault: false',
-          name: 'fluid',
+          title: 'fluid',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Set a custom element for this component.\n\ndefault: \'nav\'',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'A callback fired when the <Navbar> body collapses or expands. Fired when a <Navbar.Toggle> is clicked and called with the new expanded boolean value.',
-          name: 'onToggle',
+          title: 'onToggle',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'A callback fired when a descendant of a child <Nav> is selected. Should be used to execute complex closing or other miscellaneous actions desired after selecting a descendant of <Nav>. Does nothing if no <Nav> or <Nav> descendants exist. The callback is called with an eventKey, which is a prop from the selected <Nav> descendant, and an event.\n\nfunction (\n Any eventKey,\n SyntheticEvent event?\n)\nFor basic closing behavior after all <Nav> descendant onSelect events in mobile viewports, try using collapseOnSelect.\n\nNote: If you are manually closing the navbar using this OnSelect prop, ensure that you are setting expanded to false and not toggling between true and false.',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Sets expanded to false after the onSelect event of a descendant of a child <Nav>. Does nothing if no <Nav> or <Nav> descendants exist.\n\nThe onSelect callback should be used instead for more complex operations that need to be executed after the select event of <Nav> descendants.\n\ndefault: false',
-          name: 'collapseOnSelect',
+          title: 'collapseOnSelect',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Explicitly set the visiblity of the navbar body\n\ndefault: false',
-          name: 'expanded',
+          title: 'expanded',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Component visual or contextual style variants.\n\ndefault: false',
-          name: 'bsStyle',
+          title: 'bsStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         }
@@ -1042,9 +1042,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Navbar'
+      title: 'Navbar'
     },
     {
       children: [],
@@ -1053,193 +1053,193 @@ export const mock = {
       componentProps: [
         {
           description: 'Loads static HTML or a URI (with optional headers) in the WebView. Note that static HTML will require setting originWhitelist to ["*"].\n\nThe object passed to source can have either of the following shapes:\n\nLoad uri\n\nuri (string) - The URI to load in the WebView. Can be a local or remote file.\nmethod (string) - The HTTP Method to use. Defaults to GET if not specified. On Android, the only supported methods are GET and POST.\nheaders (object) - Additional HTTP headers to send with the request. On Android, this can only be used with GET requests.\nbody (string) - The HTTP body to send with the request. This must be a valid UTF-8 string, and will be sent exactly as specified, with no additional encoding (e.g. URL-escaping or base64) applied. On Android, this can only be used with POST requests.\nStatic HTML\n\nhtml (string) - A static HTML page to display in the WebView.\nbaseUrl (string) - The base URL to be used for any relative links in the HTML.',
-          name: 'source',
+          title: 'source',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'Controls whether to adjust the content inset for web views that are placed behind a navigation bar, tab bar, or toolbar. The default value is true.',
-          name: 'automaticallyAdjustContentInsets',
+          title: 'automaticallyAdjustContentInsets',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Function that accepts a string that will be passed to the WebView and executed immediately as JavaScript.',
-          name: 'injectJavaScript',
+          title: 'injectJavaScript',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Set this to provide JavaScript that will be injected into the web page when the view loads.',
-          name: 'injectedJavaScript',
+          title: 'injectedJavaScript',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean that determines whether HTML5 audio and video requires the user to tap them before they start playing. The default value is true.',
-          name: 'mediaPlaybackRequiresUserAction',
+          title: 'mediaPlaybackRequiresUserAction',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Override the native component used to render the WebView. Enables a custom native WebView which uses the same JavaScript as the original WebView.\n\nThe nativeConfig prop expects an object with the following keys:\n\ncomponent (any)\nprops (object)\nviewManager (object)',
-          name: 'nativeConfig',
+          title: 'nativeConfig',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'Function that is invoked when the WebView load fails.',
-          name: 'onError',
+          title: 'onError',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Function that is invoked when the WebView has finished loading.',
-          name: 'onLoad',
+          title: 'onLoad',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Function that is invoked when the WebView load succeeds or fails.',
-          name: 'onLoadEnd',
+          title: 'onLoadEnd',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Function that is invoked when the WebView starts loading.',
-          name: 'onLoadStart',
+          title: 'onLoadStart',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'A function that is invoked when the webview calls window.postMessage. Setting this property will inject a postMessage global into your webview, but will still call pre-existing values of postMessage.\n\nwindow.postMessage accepts one argument, data, which will be available on the event object, event.nativeEvent.data. data must be a string.',
-          name: 'onMessage',
+          title: 'onMessage',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Function that is invoked when the WebView loading starts or ends.',
-          name: 'onNavigationStateChange',
+          title: 'onNavigationStateChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'List of origin strings to allow being navigated to. The strings allow wildcards and get matched against just the origin (not the full URL). If the user taps to navigate to a new page but the new page is not in this whitelist, the URL will be handled by the OS. The default whitelisted origins are "http://" and "https://".',
-          name: 'originWhitelist',
+          title: 'originWhitelist',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         },
         {
           description: 'Function that returns a view to show if there\'s an error.',
-          name: 'renderError',
+          title: 'renderError',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Function that returns a loading indicator. The startInLoadingState prop must be set to true in order to use this prop.',
-          name: 'renderLoading',
+          title: 'renderLoading',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean that controls whether the web content is scaled to fit the view and enables the user to change the scale. The default value is true.\n\nOn iOS, when useWebKit=true, this prop will not work.',
-          name: 'scalesPageToFit',
+          title: 'scalesPageToFit',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Function that allows custom handling of any web view requests. Return true from the function to continue loading the request and false to stop loading.',
-          name: 'onShouldStartLoadWithRequest',
+          title: 'onShouldStartLoadWithRequest',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean value that forces the WebView to show the loading view on the first load. This prop must be set to true in order for the renderLoading prop to work.',
-          name: 'startInLoadingState',
+          title: 'startInLoadingState',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A floating-point number that determines how quickly the scroll view decelerates after the user lifts their finger. You may also use the string shortcuts "normal" and "fast" which match the underlying iOS settings for UIScrollViewDecelerationRateNormal and UIScrollViewDecelerationRateFast respectively:\n\nnormal: 0.998\nfast: 0.99 (the default for iOS web view)',
-          name: 'decelerationRate',
+          title: 'decelerationRate',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean value to control whether DOM Storage is enabled. Used only in Android.',
-          name: 'domStorageEnabled',
+          title: 'domStorageEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean value to enable JavaScript in the WebView. Used on Android only as JavaScript is enabled by default on iOS. The default value is true.',
-          name: 'javaScriptEnabled',
+          title: 'javaScriptEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Specifies the mixed content mode. i.e WebView will allow a secure origin to load content from any other origin.\n\nPossible values for mixedContentMode are:\n\nnever (default) - WebView will not allow a secure origin to load content from an insecure origin.\nalways - WebView will allow a secure origin to load content from any other origin, even if that origin is insecure.\ncompatibility - WebView will attempt to be compatible with the approach of a modern web browser with regard to mixed content.',
-          name: 'mixedContentMode',
+          title: 'mixedContentMode',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean value to enable third party cookies in the WebView. Used on Android Lollipop and above only as third party cookies are enabled by default on Android Kitkat and below and on iOS. The default value is true.',
-          name: 'thirdPartyCookiesEnabled',
+          title: 'thirdPartyCookiesEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the user-agent for the WebView.',
-          name: 'userAgent',
+          title: 'userAgent',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean that determines whether HTML5 videos play inline or use the native full-screen controller. The default value is false.\n\nNOTE\n\nIn order for video to play inline, not only does this property need to be set to true, but the video element in the HTML document must also include the webkit-playsinline attribute.',
-          name: 'allowsInlineMediaPlayback',
+          title: 'allowsInlineMediaPlayback',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean value that determines whether the web view bounces when it reaches the edge of the content. The default value is true.',
-          name: 'bounces',
+          title: 'bounces',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The amount by which the web view content is inset from the edges of the scroll view. Defaults to {top: 0, left: 0, bottom: 0, right: 0}.\n\nobject: {top: number, left: number, bottom: number, right: number}',
-          name: 'contentInset',
+          title: 'contentInset',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'Determines the types of data converted to clickable URLs in the web view\'s content. By default only phone numbers are detected.\n\nYou can provide one type or an array of many types.\n\nPossible values for dataDetectorTypes are:\n\nphoneNumber\nlink\naddress\ncalendarEvent\nnone\nall\nWith the new WebKit implementation, we have three new values:\n\ntrackingNumber\nflightNumber\nlookupSuggestion\n',
-          name: 'dataDetectorTypes',
+          title: 'dataDetectorTypes',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean value that determines whether scrolling is enabled in the WebView. The default value is true.',
-          name: 'scrollEnabled',
+          title: 'scrollEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Set whether Geolocation is enabled in the WebView. The default value is false. Used only in Android.',
-          name: 'geolocationEnabled',
+          title: 'geolocationEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean that sets whether JavaScript running in the context of a file scheme URL should be allowed to access content from any origin. Including accessing content from other file scheme URLs. The default value is false.',
-          name: 'allowUniversalAccessFromFileURLs',
+          title: 'allowUniversalAccessFromFileURLs',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If true, use WKWebView instead of UIWebView.',
-          name: 'useWebKit',
+          title: 'useWebKit',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -1249,8 +1249,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'WebView',
-      subname: 'ReactNative'
+      title: 'WebView',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -1259,72 +1259,72 @@ export const mock = {
       componentProps: [
         {
           description: 'NavigatorIOS uses route objects to identify child views, their props, and navigation bar configuration. Navigation operations such as push operations expect routes to look like this the initialRoute.',
-          name: 'initialRoute',
+          title: 'initialRoute',
           propType: 'PropTypes.object',
           propTypeIsrequired: true
         },
         {
           description: 'The style of the navigation bar. Supported values are \'default\', \'black\'. Use \'black\' instead of setting barTintColor to black. This produces a navigation bar with the native iOS style with higher translucency.\n\nType: enum(\'default\', \'black\')',
-          name: 'barStyle',
+          title: 'barStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'The default background color of the navigation bar.',
-          name: 'barTintColor',
+          title: 'barTintColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean value that indicates whether the interactive pop gesture is enabled. This is useful for enabling/disabling the back swipe navigation gesture.\n\nIf this prop is not provided, the default behavior is for the back swipe gesture to be enabled when the navigation bar is shown and disabled when the navigation bar is hidden. Once you\'ve provided the interactivePopGestureEnabled prop, you can never restore the default behavior.',
-          name: 'interactivePopGestureEnabled',
+          title: 'interactivePopGestureEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The default wrapper style for components in the navigator. A common use case is to set the backgroundColor for every scene.',
-          name: 'itemWrapperStyle',
+          title: 'itemWrapperStyle',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean value that indicates whether the navigation bar is hidden by default.',
-          name: 'navigationBarHidden',
+          title: 'navigationBarHidden',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean value that indicates whether to hide the 1px hairline shadow by default.',
-          name: 'shadowHidden',
+          title: 'shadowHidden',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The default color used for the buttons in the navigation bar.',
-          name: 'tintColor',
+          title: 'tintColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The default text color of the navigation bar name.',
-          name: 'nameTextColor',
+          title: 'nameTextColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Boolean value that indicates whether the navigation bar is translucent by default. When true any screens loaded within the navigator will sit below the status bar and underneath the navigation bar. To have screens render below the navigation bar set to false.',
-          name: 'translucent',
+          title: 'translucent',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
       ],
-      description: 'NavigatorIOS is a wrapper around UINavigationController, enabling you to implement a navigation stack. It works exactly the same as it would on a native app using UINavigationController, providing the same animations and behavior from UIKit.\n\nAs the name implies, it is only available on iOS. Take a look at React Navigation for a cross-platform solution in JavaScript, or check out either of these components for native solutions: native-navigation, react-native-navigation.\n\nTo set up the navigator, provide the initialRoute prop with a route object. A route object is used to describe each scene that your app navigates to. initialRoute represents the first route in your navigator.\n\nimport PropTypes from \'prop-types\';\nimport React, { Component } from \'react\';\nimport { NavigatorIOS, Text, TouchableHighlight, View } from \'react-native\';\n\nexport default class NavigatorIOSApp extends Component {\n  render() {\n    return (\n      <NavigatorIOS\n        initialRoute={{\n          component: MyScene,\n          name: \'My Initial Scene\',\n        }}\n        style={{flex: 1}}\n      />\n    );\n  }\n}\n\nclass MyScene extends Component {\n  static propTypes = {\n    name: PropTypes.string.isRequired,\n    navigator: PropTypes.object.isRequired,\n  }\n\n  _onForward = () => {\n    this.props.navigator.push({\n      name: \'Scene\',\n    });\n  }\n\n  render() {\n    return (\n      <View>\n        <Text>Current Scene: { this.props.name }</Text>\n        <TouchableHighlight onPress={this._onForward}>\n          <Text>Tap me to load the next scene</Text>\n        </TouchableHighlight>\n      </View>\n    )\n  }\n}\nIn this code, the navigator renders the component specified in initialRoute, which in this case is MyScene. This component will receive a route prop and a navigator prop representing the navigator. The navigator\'s navigation bar will render the name for the current scene, "My Initial Scene".\n\nYou can optionally pass in a passProps property to your initialRoute. NavigatorIOS passes this in as props to the rendered component:\n\ninitialRoute={{\n  component: MyScene,\n  name: \'My Initial Scene\',\n  passProps: { myProp: \'foo\' }\n}}\nYou can then access the props passed in via {this.props.myProp}.\n\nHandling Navigation\nTo trigger navigation functionality such as pushing or popping a view, you have access to a navigator object. The object is passed in as a prop to any component that is rendered by NavigatorIOS. You can then call the relevant methods to perform the navigation action you need:\n\nclass MyView extends Component {\n  _handleBackPress() {\n    this.props.navigator.pop();\n  }\n\n  _handleNextPress(nextRoute) {\n    this.props.navigator.push(nextRoute);\n  }\n\n  render() {\n    const nextRoute = {\n      component: MyView,\n      name: \'Bar That\',\n      passProps: { myProp: \'bar\' }\n    };\n    return(\n      <TouchableHighlight onPress={() => this._handleNextPress(nextRoute)}>\n        <Text style={{marginTop: 200, alignSelf: \'center\'}}>\n          See you on the other nav {this.props.myProp}!\n        </Text>\n      </TouchableHighlight>\n    );\n  }\n}\nYou can also trigger navigator functionality from the NavigatorIOS component:\n\nclass NavvyIOS extends Component {\n  _handleNavigationRequest() {\n    this.refs.nav.push({\n      component: MyView,\n      name: \'Genius\',\n      passProps: { myProp: \'genius\' },\n    });\n  }\n\n  render() {\n    return (\n      <NavigatorIOS\n        ref=\'nav\'\n        initialRoute={{\n          component: MyView,\n          name: \'Foo This\',\n          passProps: { myProp: \'foo\' },\n          rightButtonname: \'Add\',\n          onRightButtonPress: () => this._handleNavigationRequest(),\n        }}\n        style={{flex: 1}}\n      />\n    );\n  }\n}\nThe code above adds a _handleNavigationRequest private method that is invoked from the NavigatorIOS component when the right navigation bar item is pressed. To get access to the navigator functionality, a reference to it is saved in the ref prop and later referenced to push a new scene into the navigation stack.\n\nNavigation Bar Configuration\nProps passed to NavigatorIOS will set the default configuration for the navigation bar. Props passed as properties to a route object will set the configuration for that route\'s navigation bar, overriding any props passed to the NavigatorIOS component.\n\n_handleNavigationRequest() {\n  this.refs.nav.push({\n    //...\n    passProps: { myProp: \'genius\' },\n    barTintColor: \'#996699\',\n  });\n}\n\nrender() {\n  return (\n    <NavigatorIOS\n      //...\n      style={{flex: 1}}\n      barTintColor=\'#ffffcc\'\n    />\n  );\n}\nIn the example above the navigation bar color is changed when the new route is pushed.',
+      description: 'NavigatorIOS is a wrapper around UINavigationController, enabling you to implement a navigation stack. It works exactly the same as it would on a native app using UINavigationController, providing the same animations and behavior from UIKit.\n\nAs the name implies, it is only available on iOS. Take a look at React Navigation for a cross-platform solution in JavaScript, or check out either of these components for native solutions: native-navigation, react-native-navigation.\n\nTo set up the navigator, provide the initialRoute prop with a route object. A route object is used to describe each scene that your app navigates to. initialRoute represents the first route in your navigator.\n\nimport PropTypes from \'prop-types\';\nimport React, { Component } from \'react\';\nimport { NavigatorIOS, Text, TouchableHighlight, View } from \'react-native\';\n\nexport default class NavigatorIOSApp extends Component {\n  render() {\n    return (\n      <NavigatorIOS\n        initialRoute={{\n          component: MyScene,\n          title: \'My Initial Scene\',\n        }}\n        style={{flex: 1}}\n      />\n    );\n  }\n}\n\nclass MyScene extends Component {\n  static propTypes = {\n    title: PropTypes.string.isRequired,\n    navigator: PropTypes.object.isRequired,\n  }\n\n  _onForward = () => {\n    this.props.navigator.push({\n      title: \'Scene\',\n    });\n  }\n\n  render() {\n    return (\n      <View>\n        <Text>Current Scene: { this.props.name }</Text>\n        <TouchableHighlight onPress={this._onForward}>\n          <Text>Tap me to load the next scene</Text>\n        </TouchableHighlight>\n      </View>\n    )\n  }\n}\nIn this code, the navigator renders the component specified in initialRoute, which in this case is MyScene. This component will receive a route prop and a navigator prop representing the navigator. The navigator\'s navigation bar will render the name for the current scene, "My Initial Scene".\n\nYou can optionally pass in a passProps property to your initialRoute. NavigatorIOS passes this in as props to the rendered component:\n\ninitialRoute={{\n  component: MyScene,\n  title: \'My Initial Scene\',\n  passProps: { myProp: \'foo\' }\n}}\nYou can then access the props passed in via {this.props.myProp}.\n\nHandling Navigation\nTo trigger navigation functionality such as pushing or popping a view, you have access to a navigator object. The object is passed in as a prop to any component that is rendered by NavigatorIOS. You can then call the relevant methods to perform the navigation action you need:\n\nclass MyView extends Component {\n  _handleBackPress() {\n    this.props.navigator.pop();\n  }\n\n  _handleNextPress(nextRoute) {\n    this.props.navigator.push(nextRoute);\n  }\n\n  render() {\n    const nextRoute = {\n      component: MyView,\n      title: \'Bar That\',\n      passProps: { myProp: \'bar\' }\n    };\n    return(\n      <TouchableHighlight onPress={() => this._handleNextPress(nextRoute)}>\n        <Text style={{marginTop: 200, alignSelf: \'center\'}}>\n          See you on the other nav {this.props.myProp}!\n        </Text>\n      </TouchableHighlight>\n    );\n  }\n}\nYou can also trigger navigator functionality from the NavigatorIOS component:\n\nclass NavvyIOS extends Component {\n  _handleNavigationRequest() {\n    this.refs.nav.push({\n      component: MyView,\n      title: \'Genius\',\n      passProps: { myProp: \'genius\' },\n    });\n  }\n\n  render() {\n    return (\n      <NavigatorIOS\n        ref=\'nav\'\n        initialRoute={{\n          component: MyView,\n          title: \'Foo This\',\n          passProps: { myProp: \'foo\' },\n          rightButtontitle: \'Add\',\n          onRightButtonPress: () => this._handleNavigationRequest(),\n        }}\n        style={{flex: 1}}\n      />\n    );\n  }\n}\nThe code above adds a _handleNavigationRequest private method that is invoked from the NavigatorIOS component when the right navigation bar item is pressed. To get access to the navigator functionality, a reference to it is saved in the ref prop and later referenced to push a new scene into the navigation stack.\n\nNavigation Bar Configuration\nProps passed to NavigatorIOS will set the default configuration for the navigation bar. Props passed as properties to a route object will set the configuration for that route\'s navigation bar, overriding any props passed to the NavigatorIOS component.\n\n_handleNavigationRequest() {\n  this.refs.nav.push({\n    //...\n    passProps: { myProp: \'genius\' },\n    barTintColor: \'#996699\',\n  });\n}\n\nrender() {\n  return (\n    <NavigatorIOS\n      //...\n      style={{flex: 1}}\n      barTintColor=\'#ffffcc\'\n    />\n  );\n}\nIn the example above the navigation bar color is changed when the new route is pushed.',
       id: '5MYx13I9F6HqlPRmgXlY',
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'NavigatorIOS',
-      subname: 'ReactNative'
+      title: 'NavigatorIOS',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -1333,31 +1333,31 @@ export const mock = {
       componentProps: [
         {
           description: 'Sets image as responsive image',
-          name: 'responsive',
+          title: 'responsive',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Sets image shape as rounded',
-          name: 'rounded',
+          title: 'rounded',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Sets image shape as circle',
-          name: 'circle',
+          title: 'circle',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Sets image shape as thumbnail',
-          name: 'thumbnail',
+          title: 'thumbnail',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'img\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -1367,9 +1367,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Image'
+      title: 'Image'
     },
     {
       children: [],
@@ -1377,43 +1377,43 @@ export const mock = {
       componentProps: [
         {
           description: 'type: any\n\ncontrolled by: onSelect, initial prop: defaultActivekey\nMark the Tab with a matching eventKey as active.',
-          name: 'activeKey',
+          title: 'activeKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'HTML id attribute, required if no generateChildId prop is specified.',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nWait until the first "enter" transition to mount tabs (add them to the DOM)',
-          name: 'mountOnEnter',
+          title: 'mountOnEnter',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'controls activeKey\nCallback fired when a Tab is selected.\n\nfunction (\n  Any eventKey,\n  SyntheticEvent event?\n)',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'type: Transition | false\ndefault: {Fade}\t\n\nSets a default animation strategy for all children <TabPane>s. Use false to disable, true to enable the default <Fade> animation or a react-transition-group v2 <Transition/> component.',
-          name: 'transition',
+          title: 'transition',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nUnmount tabs (remove it from the DOM) when it is no longer visible',
-          name: 'unmountOnExit',
+          title: 'unmountOnExit',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'tabs\' | \'pills\'\ndefault: \'tabs\'\t\n\nNavigation style',
-          name: 'variant',
+          title: 'variant',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -1423,8 +1423,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Tabs',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Tabs',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -1433,55 +1433,55 @@ export const mock = {
       componentProps: [
         {
           description: 'Highlight the menu item as active.',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Disable the menu item, making it unselectable.\n\ndefault: false',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Styles the menu item as a horizontal rule, providing visual separation between groups of menu items.\n\nall( PropTypes.bool, ({ divider, children }) => divider && children ? new Error(\'Children will not be rendered for dividers\') : null )',
-          name: 'divider',
+          title: 'divider',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Value passed to the onSelect handler, useful for identifying the selected menu item.',
-          name: 'eventKey',
+          title: 'eventKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Styles the menu item as a header label, useful for describing a group of menu items.\n\ndefault: false',
-          name: 'header',
+          title: 'header',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'HTML href attribute corresponding to a.href.',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired when the menu item is clicked.',
-          name: 'onClick',
+          title: 'onClick',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired when the menu item is selected.\n\n(eventKey: any, event: Object) => any',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'dropdown\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -1491,9 +1491,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'MenuItem'
+      title: 'MenuItem'
     },
     {
       children: [],
@@ -1501,7 +1501,7 @@ export const mock = {
       componentProps: [
         {
           description: 'default: \'carousel-item\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -1511,8 +1511,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Carousel__Item',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Carousel__Item',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -1521,7 +1521,7 @@ export const mock = {
       componentProps: [
         {
           description: 'className',
-          name: 'className',
+          title: 'className',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -1530,9 +1530,9 @@ export const mock = {
       id: '8eawiS1gwWNjnw6Fz1PS',
       isDefault: false,
       provider: 'HTML',
-      subname: 'HTML',
+      subtitle: 'HTML',
       techno: 'React',
-      name: 'div'
+      title: 'div'
     },
     {
       children: [],
@@ -1541,7 +1541,7 @@ export const mock = {
       componentProps: [
         {
           description: 'className',
-          name: 'className',
+          title: 'className',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -1551,8 +1551,8 @@ export const mock = {
       isDefault: false,
       provider: 'HTML',
       techno: 'React',
-      name: 'h1',
-      subname: 'HTML'
+      title: 'h1',
+      subtitle: 'HTML'
     },
     {
       children: [],
@@ -1561,19 +1561,19 @@ export const mock = {
       componentProps: [
         {
           description: 'A css class to apply to the Modal dialog DOM node.',
-          name: 'dialogClassName',
+          title: 'dialogClassName',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Component size variations.\n\none of: "lg", "large", "sm", "small"',
-          name: 'bsSize',
+          title: 'bsSize',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'modal\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -1583,9 +1583,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Modal__Dialog'
+      title: 'Modal__Dialog'
     },
     {
       children: [],
@@ -1597,9 +1597,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Navbar__Collapse'
+      title: 'Navbar__Collapse'
     },
     {
       children: [],
@@ -1608,13 +1608,13 @@ export const mock = {
       componentProps: [
         {
           description: 'You can use a custom element type for this component.',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'jumbotron\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -1624,9 +1624,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Jumbotron'
+      title: 'Jumbotron'
     },
     {
       children: [],
@@ -1635,7 +1635,7 @@ export const mock = {
       componentProps: [
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'input-group-addon\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -1645,9 +1645,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'InputGroup__Addon'
+      title: 'InputGroup__Addon'
     },
     {
       children: [],
@@ -1655,85 +1655,85 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false\t\n\nRun the expand animation when the component mounts, if it is initially shown',
-          name: 'appear',
+          title: 'appear',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'height\' | \'width\' | function\ndefault: \'height\'\t\n\nThe dimension used when collapsing, or a function that returns the dimension\n\nNote: Bootstrap only partially supports \'width\'! You will need to supply your own CSS animation for the .width CSS class.',
-          name: 'dimension',
+          title: 'dimension',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'default: element.offsetWidth | element.offsetHeight\t\n\nFunction that returns the height or width of the animating DOM node\n\nAllows for providing some custom logic for how much the Collapse component should animate in its specified dimension. Called with the current dimension prop value and the DOM node.',
-          name: 'getDimensionValue',
+          title: 'getDimensionValue',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nShow the component; triggers the expand or collapse animation',
-          name: 'in',
+          title: 'in',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nWait until the first "enter" transition to mount the component (add it to the DOM)',
-          name: 'mountOnEnter',
+          title: 'mountOnEnter',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired before the component expands',
-          name: 'onEnter',
+          title: 'onEnter',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component has expanded',
-          name: 'onEntered',
+          title: 'onEntered',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component starts to expand',
-          name: 'onEntering',
+          title: 'onEntering',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired before the component collapses',
-          name: 'onExit',
+          title: 'onExit',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component has collapsed',
-          name: 'onExited',
+          title: 'onExited',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component starts to collapse',
-          name: 'onExiting',
+          title: 'onExiting',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'ARIA role of collapsible element',
-          name: 'role',
+          title: 'role',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: 300\t\n\nDuration of the collapse animation in milliseconds, to ensure that finishing callbacks are fired even if the original browser transition end events are canceled',
-          name: 'timeout',
+          title: 'timeout',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nUnmount the component (remove it from the DOM) when it is collapsed',
-          name: 'unmountOnExit',
+          title: 'unmountOnExit',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -1743,8 +1743,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Collapse',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Collapse',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -1752,13 +1752,13 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <figcaption>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'figure-caption\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -1768,8 +1768,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'FigureCaption',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'FigureCaption',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -1777,13 +1777,13 @@ export const mock = {
       componentProps: [
         {
           description: 'onClick',
-          name: 'onClick',
+          title: 'onClick',
           propType: 'PropTypes.func',
           propTypeIsrequired: true
         },
         {
           description: 'The toggle content, if left empty it will render the default toggle (seen above).',
-          name: 'children',
+          title: 'children',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         }
@@ -1793,9 +1793,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'NavbarToggle'
+      title: 'NavbarToggle'
     },
     {
       children: [],
@@ -1804,13 +1804,13 @@ export const mock = {
       componentProps: [
         {
           description: 'You can use a custom element type for this component.\n\nIf not specified, it will be treated as \'li\' if every child is a non-actionable <ListGroupItem>, and \'div\' otherwise.',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'list-group\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -1820,9 +1820,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'ListGroup'
+      title: 'ListGroup'
     },
     {
       children: [],
@@ -1831,13 +1831,13 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false',
-          name: 'pullRight',
+          title: 'pullRight',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'badge\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -1847,9 +1847,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Badge'
+      title: 'Badge'
     },
     {
       children: [],
@@ -1858,43 +1858,43 @@ export const mock = {
       componentProps: [
         {
           description: 'If false the user won\'t be able to interact with the control. Default value is true.',
-          name: 'enabled',
+          title: 'enabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If true, then selecting a segment won\'t persist visually. The onValueChange callback will still work as expected.',
-          name: 'momentary',
+          title: 'momentary',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Callback that is called when the user taps a segment; passes the event as an argument',
-          name: 'onChange',
+          title: 'onChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback that is called when the user taps a segment; passes the segment\'s value as an argument',
-          name: 'onValueChange',
+          title: 'onValueChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The index in props.values of the segment to be (pre)selected.',
-          name: 'selectedIndex',
+          title: 'selectedIndex',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Accent color of the control.',
-          name: 'tintColor',
+          title: 'tintColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The labels for the control\'s segment buttons, in order.',
-          name: 'values',
+          title: 'values',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         }
@@ -1904,8 +1904,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'SegmentedControlIOS',
-      subname: 'ReactNative'
+      title: 'SegmentedControlIOS',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -1913,25 +1913,25 @@ export const mock = {
       componentProps: [
         {
           description: 'disabled',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'name',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'tabClassName is used as className for the associated NavItem',
-          name: 'tabClassName',
+          title: 'tabClassName',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -1941,9 +1941,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Tab'
+      title: 'Tab'
     },
     {
       children: [],
@@ -1952,96 +1952,96 @@ export const mock = {
       componentProps: [
         {
           description: 'Type: optionalImageSource',
-          name: 'overflowIcon',
+          title: 'overflowIcon',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
-          description: 'Sets possible actions on the toolbar as part of the action menu. These are displayed as icons or text on the right side of the widget. If they don\'t fit they are placed in an \'overflow\' menu.\n\nThis property takes an array of objects, where each object has the following keys:\n\nname: required, the name of this action\nicon: the icon for this action, e.g. require(\'./some_icon.png\')\nshow: when to show this action as an icon or hide it in the overflow menu: always, ifRoom or never\nshowWithText: boolean, whether to show text alongside the icon or not\n\narray of object: {name: string,icon: optionalImageSource,show: enum(\'always\', \'ifRoom\', \'never\'),showWithText: bool}',
-          name: 'actions',
+          description: 'Sets possible actions on the toolbar as part of the action menu. These are displayed as icons or text on the right side of the widget. If they don\'t fit they are placed in an \'overflow\' menu.\n\nThis property takes an array of objects, where each object has the following keys:\n\ntitle: required, the name of this action\nicon: the icon for this action, e.g. require(\'./some_icon.png\')\nshow: when to show this action as an icon or hide it in the overflow menu: always, ifRoom or never\nshowWithText: boolean, whether to show text alongside the icon or not\n\narray of object: {title: string,icon: optionalImageSource,show: enum(\'always\', \'ifRoom\', \'never\'),showWithText: bool}',
+          title: 'actions',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the content inset for the toolbar starting edge.\n\nThe content inset affects the valid area for Toolbar content other than the navigation button and menu. Insets define the minimum margin for these components and can be used to effectively align Toolbar content along well-known gridlines.',
-          name: 'contentInsetStart',
+          title: 'contentInsetStart',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the toolbar logo.\n\nType: optionalImageSource',
-          name: 'logo',
+          title: 'logo',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the navigation icon.\n\nType: optionalImageSource',
-          name: 'navIcon',
+          title: 'navIcon',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Callback that is called when an action is selected. The only argument that is passed to the callback is the position of the action in the actions array.',
-          name: 'onActionSelected',
+          title: 'onActionSelected',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback called when the icon is selected.',
-          name: 'onIconClicked',
+          title: 'onIconClicked',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the content inset for the toolbar ending edge.\n\nThe content inset affects the valid area for Toolbar content other than the navigation button and menu. Insets define the minimum margin for these components and can be used to effectively align Toolbar content along well-known gridlines.\n\n',
-          name: 'contentInsetEnd',
+          title: 'contentInsetEnd',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Used to set the toolbar direction to RTL. In addition to this property you need to add\n\nandroid:supportsRtl="true"\n\nto your application AndroidManifest.xml and then call setLayoutDirection(LayoutDirection.RTL) in your MainActivity onCreate method.',
-          name: 'rtl',
+          title: 'rtl',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the toolbar subname.',
-          name: 'subname',
+          title: 'subname',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the toolbar subname color.',
-          name: 'subnameColor',
+          title: 'subnameColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Used to locate this view in end-to-end tests.',
-          name: 'testID',
+          title: 'testID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the toolbar name.',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the toolbar name color.',
-          name: 'nameColor',
+          title: 'nameColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
       ],
-      description: 'React component that wraps the Android-only Toolbar widget. A Toolbar can display a logo, navigation icon (e.g. hamburger menu), a name & subname and a list of actions. The name and subname are expanded so the logo and navigation icons are displayed on the left, name and subname in the middle and the actions on the right.\n\nIf the toolbar has an only child, it will be displayed between the name and actions.\n\nAlthough the Toolbar supports remote images for the logo, navigation and action icons, this should only be used in DEV mode where require(\'./some_icon.png\') translates into a packager URL. In release mode you should always use a drawable resource for these icons. Using require(\'./some_icon.png\') will do this automatically for you, so as long as you don\'t explicitly use e.g. {uri: \'http://...\'}, you will be good.\n\nExample:\n\nrender: function() {\n  return (\n    <ToolbarAndroid\n      logo={require(\'./app_logo.png\')}\n      name="AwesomeApp"\n      actions={[{name: \'Settings\', icon: require(\'./icon_settings.png\'), show: \'always\'}]}\n      onActionSelected={this.onActionSelected} />\n  )\n},\nonActionSelected: function(position) {\n  if (position === 0) { // index of \'Settings\'\n    showSettings();\n  }\n}',
+      description: 'React component that wraps the Android-only Toolbar widget. A Toolbar can display a logo, navigation icon (e.g. hamburger menu), a name & subname and a list of actions. The name and subname are expanded so the logo and navigation icons are displayed on the left, name and subname in the middle and the actions on the right.\n\nIf the toolbar has an only child, it will be displayed between the name and actions.\n\nAlthough the Toolbar supports remote images for the logo, navigation and action icons, this should only be used in DEV mode where require(\'./some_icon.png\') translates into a packager URL. In release mode you should always use a drawable resource for these icons. Using require(\'./some_icon.png\') will do this automatically for you, so as long as you don\'t explicitly use e.g. {uri: \'http://...\'}, you will be good.\n\nExample:\n\nrender: function() {\n  return (\n    <ToolbarAndroid\n      logo={require(\'./app_logo.png\')}\n      name="AwesomeApp"\n      actions={[{title: \'Settings\', icon: require(\'./icon_settings.png\'), show: \'always\'}]}\n      onActionSelected={this.onActionSelected} />\n  )\n},\nonActionSelected: function(position) {\n  if (position === 0) { // index of \'Settings\'\n    showSettings();\n  }\n}',
       id: 'C4eG0qzWuQqjmV7yKefr',
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'ToolbarAndroid',
-      subname: 'ReactNative'
+      title: 'ToolbarAndroid',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -2049,43 +2049,43 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false\t\n\nAligns the Dropdown menu to the right of it\'s container.',
-          name: 'alignRight',
+          title: 'alignRight',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: elementType\ndefault: <div>\t\n\n\nControl the rendering of the DropdownMenu. All non-menu props (listed here) are passed through to the as Component.\n\nIf providing a custom, non DOM, component. the show, close and alignRight props are also injected and should be handled appropriately.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'default: true\n\t\nHave the dropdown switch to it\'s opposite placement when necessary to stay on screen.',
-          name: 'flip',
+          title: 'flip',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'onSelect',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'click\' | \'mousedown\'\n\nWhich event when fired outside the component will cause it to be closed\n\nNote: For custom dropdown components, you will have to pass the rootCloseEvent to <RootCloseWrapper> in your custom dropdown menu component (similarly to how it is implemented in <Dropdown.Menu>).',
-          name: 'rootCloseEvent',
+          title: 'rootCloseEvent',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: '\t\nControls the visibility of the Dropdown menu',
-          name: 'show',
+          title: 'show',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'dropdown-menu\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -2095,8 +2095,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Dropdown__Menu',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Dropdown__Menu',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -2104,37 +2104,37 @@ export const mock = {
       componentProps: [
         {
           description: 'type: elementType\ndefault <div>\t\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'group\'\t\n\nAn ARIA role describing the button group. Usually the default "group" role is fine. An aria-label or aria-labelledby prop is also recommended.',
-          name: 'role',
+          title: 'role',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'sm\' | \'lg\'\n\nSets the size for all Buttons in the group.',
-          name: 'size',
+          title: 'size',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\nDisplay as a button toggle group.\n\n(Generally it\'s better to use ToggleButtonGroup directly)',
-          name: 'toggle',
+          title: 'toggle',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nMake the set of Buttons appear vertically stacked.',
-          name: 'vertical',
+          title: 'vertical',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'btn-group\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -2144,8 +2144,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'ButtonGroup',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'ButtonGroup',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -2154,49 +2154,49 @@ export const mock = {
       componentProps: [
         {
           description: 'onClick',
-          name: 'onClick',
+          title: 'onClick',
           propType: 'PropTypes.func',
           propTypeIsrequired: true
         },
         {
           description: 'className',
-          name: 'className',
+          title: 'className',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         },
         {
           description: 'html buttonSpecifies that a button should automatically get focus when the page loads',
-          name: 'autofocus',
+          title: 'autofocus',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Specifies that a button should be disabled',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Specifies one or more forms the button belongs to',
-          name: 'form',
+          title: 'form',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Specifies the type of button',
-          name: 'type',
+          title: 'type',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Specifies an initial value for the button',
-          name: 'value',
+          title: 'value',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Specifies a name for the button',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -2206,8 +2206,8 @@ export const mock = {
       isDefault: false,
       provider: 'HTML',
       techno: 'React',
-      name: 'button',
-      subname: 'HTML'
+      title: 'button',
+      subtitle: 'HTML'
     },
     {
       children: [],
@@ -2216,13 +2216,13 @@ export const mock = {
       componentProps: [
         {
           description: 'Determines the type of background drawable that\'s going to be used to display feedback. It takes an object with type property and extra data depending on the type. It\'s recommended to use one of the static methods to generate that dictionary.\n\nType: backgroundPropType',
-          name: 'background',
+          title: 'background',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Set to true to add the ripple effect to the foreground of the view, instead of the background. This is useful if one of your child views has a background of its own, or you\'re e.g. displaying images, and you don\'t want the ripple to be covered by them.\n\nCheck TouchableNativeFeedback.canUseNativeForeground() first, as this is only available on Android 6.0 and above. If you try to use this on older versions you will get a warning and fallback to background.',
-          name: 'useForeground',
+          title: 'useForeground',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -2232,8 +2232,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'TouchableNativeFeedback',
-      subname: 'ReactNative'
+      title: 'TouchableNativeFeedback',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -2242,43 +2242,43 @@ export const mock = {
       componentProps: [
         {
           description: 'Callback fired before the component expands',
-          name: 'onEnter',
+          title: 'onEnter',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component starts to expand',
-          name: 'onEntering',
+          title: 'onEntering',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component has expanded',
-          name: 'onEntered',
+          title: 'onEntered',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired before the component collapses',
-          name: 'onExit',
+          title: 'onExit',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component starts to collapse',
-          name: 'onExiting',
+          title: 'onExiting',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component has collapsed',
-          name: 'onExited',
+          title: 'onExited',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'panel\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -2288,9 +2288,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Panel__Collapse'
+      title: 'Panel__Collapse'
     },
     {
       children: [],
@@ -2299,211 +2299,211 @@ export const mock = {
       componentProps: [
         {
           description: 'Does this view want to become responder on the start of a touch?\n\nView.props.onStartShouldSetResponder: (event) => [true | false], where event is a synthetic touch event as described above.',
-          name: 'onStartShouldSetResponder',
+          title: 'onStartShouldSetResponder',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'An accessibility hint helps users understand what will happen when they perform an action on the accessibility element when that result is not obvious from the accessibility label.',
-          name: 'accessibilityHint',
+          title: 'accessibilityHint',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Overrides the text that\'s read by the screen reader when the user interacts with the element. By default, the label is constructed by traversing all the children and accumulating all the Text nodes separated by space.',
-          name: 'accessibilityLabel',
+          title: 'accessibilityLabel',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'This defines how far a touch event can start away from the view. Typical interface guidelines recommend touch targets that are at least 30 - 40 points/density-independent pixels.\n\nFor example, if a touchable view has a height of 20 the touchable height can be extended to 40 with hitSlop={{top: 10, bottom: 10, left: 0, right: 0}}\n\nThe touch area never extends past the parent view bounds and the Z-index of sibling views always takes precedence if a touch hits two overlapping views.\n\nobject: {top: number, left: number, bottom: number, right: number}',
-          name: 'hitSlop',
+          title: 'hitSlop',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'Used to locate this view from native classes.\n\nThis disables the \'layout-only view removal\' optimization for this view!',
-          name: 'nativeID',
+          title: 'nativeID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'When accessible is true, the system will try to invoke this function when the user performs accessibility tap gesture.\n\n',
-          name: 'onAccessibilityTap',
+          title: 'onAccessibilityTap',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked on mount and layout changes with:\n\n{nativeEvent: { layout: {x, y, width, height}}}\n\nThis event is fired immediately once the layout has been calculated, but the new layout may not yet be reflected on the screen at the time the event is received, especially if a layout animation is in progress.',
-          name: 'onLayout',
+          title: 'onLayout',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'When accessible is true, the system will invoke this function when the user performs the magic tap gesture.',
-          name: 'onMagicTap',
+          title: 'onMagicTap',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Does this view want to "claim" touch responsiveness? This is called for every touch move on the View when it is not the responder.\n\nView.props.onMoveShouldSetResponder: (event) => [true | false], where event is a synthetic touch event as described above.',
-          name: 'onMoveShouldSetResponder',
+          title: 'onMoveShouldSetResponder',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'If a parent View wants to prevent a child View from becoming responder on a move, it should have this handler which returns true.\n\nView.props.onMoveShouldSetResponderCapture: (event) => [true | false], where event is a synthetic touch event as described above.',
-          name: 'onMoveShouldSetResponderCapture',
+          title: 'onMoveShouldSetResponderCapture',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The View is now responding for touch events. This is the time to highlight and show the user what is happening.\n\nView.props.onResponderGrant: (event) => {}, where event is a synthetic touch event as described above.',
-          name: 'onResponderGrant',
+          title: 'onResponderGrant',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The user is moving their finger.\n\nView.props.onResponderMove: (event) => {}, where event is a synthetic touch event as described above.',
-          name: 'onResponderMove',
+          title: 'onResponderMove',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Another responder is already active and will not release it to that View asking to be the responder.\n\nView.props.onResponderReject: (event) => {}, where event is a synthetic touch event as described above.',
-          name: 'onResponderReject',
+          title: 'onResponderReject',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Fired at the end of the touch.\n\nView.props.onResponderRelease: (event) => {}, where event is a synthetic touch event as described above.',
-          name: 'onResponderRelease',
+          title: 'onResponderRelease',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The responder has been taken from the View. Might be taken by other views after a call to onResponderTerminationRequest, or might be taken by the OS without asking (e.g., happens with control center/ notification center on iOS)\n\nView.props.onResponderTerminate: (event) => {}, where event is a synthetic touch event as described above.',
-          name: 'onResponderTerminate',
+          title: 'onResponderTerminate',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Some other View wants to become responder and is asking this View to release its responder. Returning true allows its release.\n\nView.props.onResponderTerminationRequest: (event) => {}, where event is a synthetic touch event as described above.',
-          name: 'onResponderTerminationRequest',
+          title: 'onResponderTerminationRequest',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'When true, indicates that the view is an accessibility element. By default, all the touchable elements are accessible.',
-          name: 'accessible',
+          title: 'accessible',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If a parent View wants to prevent a child View from becoming responder on a touch start, it should have this handler which returns true.\n\nView.props.onStartShouldSetResponderCapture: (event) => [true | false], where event is a synthetic touch event as described above.',
-          name: 'onStartShouldSetResponderCapture',
+          title: 'onStartShouldSetResponderCapture',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Controls whether the View can be the target of touch events.\n\n\'auto\': The View can be the target of touch events.\n\'none\': The View is never the target of touch events.\n\'box-none\': The View is never the target of touch events but it\'s subviews can be. It behaves like if the view had the following classes in CSS:\n.box-none {\n     pointer-events: none;\n}\n.box-none * {\n     pointer-events: all;\n}\n\'box-only\': The view can be the target of touch events but it\'s subviews cannot be. It behaves like if the view had the following classes in CSS:\n.box-only {\n     pointer-events: all;\n}\n.box-only * {\n     pointer-events: none;\n}\nSince pointerEvents does not affect layout/appearance, and we are already deviating from the spec by adding additional modes, we opt to not include pointerEvents on style. On some platforms, we would need to implement it as a className anyways. Using style or not is an implementation detail of the platform.\n\nenum(\'box-none\', \'none\', \'box-only\', \'auto\')',
-          name: 'pointerEvents',
+          title: 'pointerEvents',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'This is a special performance property exposed by RCTView and is useful for scrolling content when there are many subviews, most of which are offscreen. For this property to be effective, it must be applied to a view that contains many subviews that extend outside its bound. The subviews must also have overflow: hidden, as should the containing view (or one of its superviews).',
-          name: 'removeClippedSubviews',
+          title: 'removeClippedSubviews',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'style',
-          name: 'style',
+          title: 'style',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Used to locate this view in end-to-end tests.\n\nThis disables the \'layout-only view removal\' optimization for this view!',
-          name: 'testID',
+          title: 'testID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: '> Note: accessibilityComponentTypewill soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead.\n\nIndicates to accessibility services to treat UI component like a native one. Works for Android only.\n\nPossible values are one of:\n\n\'none\'\n\'button\'\n\'radiobutton_checked\'\n\'radiobutton_unchecked\'\n\n',
-          name: 'accessibilityComponentType',
+          title: 'accessibilityComponentType',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Indicates to accessibility services whether the user should be notified when this view changes. Works for Android API >= 19 only. Possible values:\n\n\'none\' - Accessibility services should not announce changes to this view.\n\'polite\'- Accessibility services should announce changes to this view.\n\'assertive\' - Accessibility services should interrupt ongoing speech to immediately announce changes to this view.\nSee the Android View docs for reference.\n\nenum(\'none\', \'polite\', \'assertive\')',
-          name: 'accessibilityLiveRegion',
+          title: 'accessibilityLiveRegion',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Views that are only used to layout their children or otherwise don\'t draw anything may be automatically removed from the native hierarchy as an optimization. Set this property to false to disable this optimization and ensure that this View exists in the native view hierarchy.',
-          name: 'collapsable',
+          title: 'collapsable',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Controls how view is important for accessibility which is if it fires accessibility events and if it is reported to accessibility services that query the screen. Works for Android only.\n\nPossible values:\n\n\'auto\' - The system determines whether the view is important for accessibility - default (recommended).\n\'yes\' - The view is important for accessibility.\n\'no\' - The view is not important for accessibility.\n\'no-hide-descendants\' - The view is not important for accessibility, nor are any of its descendant views.\nSee the Android importantForAccessibility docs for reference.\n\nenum(\'auto\', \'yes\', \'no\', \'no-hide-descendants\')',
-          name: 'importantForAccessibility',
+          title: 'importantForAccessibility',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Whether this View needs to rendered offscreen and composited with an alpha in order to preserve 100% correct colors and blending behavior. The default (false) falls back to drawing the component and its children with an alpha applied to the paint used to draw each element instead of rendering the full component offscreen and compositing it back with an alpha value. This default may be noticeable and undesired in the case where the View you are setting an opacity on has multiple overlapping elements (e.g. multiple overlapping Views, or text and a background).\n\nRendering offscreen to preserve correct alpha behavior is extremely expensive and hard to debug for non-native developers, which is why it is not turned on by default. If you do need to enable this property for an animation, consider combining it with renderToHardwareTextureAndroid if the view contents are static (i.e. it doesn\'t need to be redrawn each frame). If that property is enabled, this View will be rendered off-screen once, saved in a hardware texture, and then composited onto the screen with an alpha each frame without having to switch rendering targets on the GPU.',
-          name: 'needsOffscreenAlphaCompositing',
+          title: 'needsOffscreenAlphaCompositing',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Whether this View should render itself (and all of its children) into a single hardware texture on the GPU.\n\nOn Android, this is useful for animations and interactions that only modify opacity, rotation, translation, and/or scale: in those cases, the view doesn\'t have to be redrawn and display lists don\'t need to be re-executed. The texture can just be re-used and re-composited with different parameters. The downside is that this can use up limited video memory, so this prop should be set back to false at the end of the interaction/animation.',
-          name: 'renderToHardwareTextureAndroid',
+          title: 'renderToHardwareTextureAndroid',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: '> Note: AccessibilityRole and AccessibilityStates are meant to be a cross-platform solution to replace accessibilityTraits and accessibilityComponentType, which will soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead of accessibilityTraits and accessibilityComponentType.\n\nTells the screen reader to treat the currently focused on element as having a specific role.\n\nPossible values for AccessibilityRole is one of:\n\n\'none\' - The element has no role.\n\'button\' - The element should be treated as a button.\n\'link\' - The element should be treated as a link.\n\'header\' - The element is a header that divides content into sections.\n\'search\' - The element should be treated as a search field.\n\'image\' - The element should be treated as an image.\n\'key\' - The element should be treated like a keyboard key.\n\'text\' - The element should be treated as text.\n\'summary\' - The element provides app summary information.\n\'imagebutton\' - The element has the role of both an image and also a button.\n\'adjustable\' - The element allows adjustment over a range of values.\nOn iOS, these roles map to corresponding Accessibility Traits. Image button has the same functionality as if the trait was set to both \'image\' and \'button\'. See the Accessibility guide for more information.\n\nOn Android, these roles have similar functionality on TalkBack as adding Accessibility Traits does on Voiceover in iOS',
-          name: 'accessibilityRole',
+          title: 'accessibilityRole',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: '> Note: AccessibilityRole and AccessibilityStates are meant to be a cross-platform solution to replace accessibilityTraits and accessibilityComponentType, which will soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead of accessibilityTraits and accessibilityComponentType.\n\nTells the screen reader to treat the currently focused on element as being in a specific state.\n\nYou can provide one state, no state, or both states. The states must be passed in through an array. Ex: [\'selected\'] or [\'selected\', \'disabled\']\n\nPossible values for AccessibilityStates are:\n\n\'selected\' - The element is in a selcted state.\n\'disabled\' - The element is in a disabled state.',
-          name: 'accessibilityStates',
+          title: 'accessibilityStates',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: '> Note: accessibilityTraits will soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead.\n\nProvides additional traits to screen reader. By default no traits are provided unless specified otherwise in element.\n\nYou can provide one trait or an array of many traits.\n\nPossible values for AccessibilityTraits are:\n\n\'none\' - The element has no traits.\n\'button\' - The element should be treated as a button.\n\'link\' - The element should be treated as a link.\n\'header\' - The element is a header that divides content into sections.\n\'search\' - The element should be treated as a search field.\n\'image\' - The element should be treated as an image.\n\'selected\' - The element is selected.\n\'plays\' - The element plays sound.\n\'key\' - The element should be treated like a keyboard key.\n\'text\' - The element should be treated as text.\n\'summary\' - The element provides app summary information.\n\'disabled\' - The element is disabled.\n\'frequentUpdates\' - The element frequently changes its value.\n\'startsMedia\' - The element starts a media session.\n\'adjustable\' - The element allows adjustment over a range of values.\n\'allowsDirectInteraction\' - The element allows direct touch interaction for VoiceOver users.\n\'pageTurn\' - Informs VoiceOver that it should scroll to the next page when it finishes reading the contents of the element.\nSee the Accessibility guide for more information.',
-          name: 'accessibilityTraits',
+          title: 'accessibilityTraits',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'A value indicating whether VoiceOver should ignore the elements within views that are siblings of the receiver. Default is false.\n\nSee the Accessibility guide for more information.',
-          name: 'accessibilityViewIsModal',
+          title: 'accessibilityViewIsModal',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A value indicating whether the accessibility elements contained within this accessibility element are hidden. Default is false.\n\nSee the Accessibility guide for more information.',
-          name: 'accessibilityElementsHidden',
+          title: 'accessibilityElementsHidden',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A value indicating this view should or should not be inverted when color inversion is turned on. A value of true will tell the view to not be inverted even if color inversion is turned on.\n\nSee the Accessibility guide for more information.',
-          name: 'accessibilityIgnoresInvertColors',
+          title: 'accessibilityIgnoresInvertColors',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Whether this View should be rendered as a bitmap before compositing.\n\nOn iOS, this is useful for animations and interactions that do not modify this component\'s dimensions nor its children; for example, when translating the position of a static view, rasterization allows the renderer to reuse a cached bitmap of a static view and quickly composite it during each frame.\n\nRasterization incurs an off-screen drawing pass and the bitmap consumes memory. Test and measure when using this property.\n\n',
-          name: 'shouldRasterizeIOS',
+          title: 'shouldRasterizeIOS',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -2513,8 +2513,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'View',
-      subname: 'ReactNative'
+      title: 'View',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -2523,97 +2523,97 @@ export const mock = {
       componentProps: [
         {
           description: 'default: true',
-          name: 'slide',
+          title: 'slide',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: true',
-          name: 'indicators',
+          title: 'indicators',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The amount of time to delay between automatically cycling an item. If null, carousel will not automatically cycle.\ndefault: 5000',
-          name: 'interval',
+          title: 'interval',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'default: true',
-          name: 'controls',
+          title: 'controls',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: true',
-          name: 'pauseOnHover',
+          title: 'pauseOnHover',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: true',
-          name: 'wrap',
+          title: 'wrap',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired when the active item changes.\n\n(eventKey: any, ?event: Object) => any\nIf this callback takes two or more arguments, the second argument will be a persisted event object with direction set to the direction of the transition.',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'onSlideEnd',
-          name: 'onSlideEnd',
+          title: 'onSlideEnd',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'activeIndex',
-          name: 'activeIndex',
+          title: 'activeIndex',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'defaultActiveIndex',
-          name: 'defaultActiveIndex',
+          title: 'defaultActiveIndex',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'direction',
-          name: 'direction',
+          title: 'direction',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: '<Glyphicon glyph="chevron-left" />',
-          name: 'prevIcon',
+          title: 'prevIcon',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'Label shown to screen readers only, can be used to show the previous element in the carousel. Set to null to deactivate.\n\ndefault: \'Previous\'',
-          name: 'prevLabel',
+          title: 'prevLabel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: '<Glyphicon glyph="chevron-right" />',
-          name: 'nextIcon',
+          title: 'nextIcon',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: '\t\nLabel shown to screen readers only, can be used to show the next element in the carousel. Set to null to deactivate.\n\ndefault: \'Next\'',
-          name: 'nextLabel',
+          title: 'nextLabel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'carousel\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -2623,9 +2623,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Carousel'
+      title: 'Carousel'
     },
     {
       children: [],
@@ -2634,25 +2634,25 @@ export const mock = {
       componentProps: [
         {
           description: 'If set to true, renders span instead of a\n\ndefault: false',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'href attribute for the inner a element',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'name attribute for the inner a element',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'target attribute for the inner a element',
-          name: 'target',
+          title: 'target',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -2662,9 +2662,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Breadcrumb__Item'
+      title: 'Breadcrumb__Item'
     },
     {
       children: [],
@@ -2672,25 +2672,25 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false\t\n\nSpecify whether the Component should contain a close button',
-          name: 'closeButton',
+          title: 'closeButton',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'Close\'\t\n\nProvides an accessible label for the close button. It is used for Assistive Technology when the label text is not readable.',
-          name: 'closeLabel',
+          title: 'closeLabel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'A Callback fired when the close button is clicked. If used directly inside a Modal component, the onHide will automatically be propagated up to the parent Modal onHide.',
-          name: 'onHide',
+          title: 'onHide',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Change the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -2700,8 +2700,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'ModalHeader',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'ModalHeader',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -2709,19 +2709,19 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'sm\' | \'lg\'\n\nControl the size of buttons and form elements from the top-level .',
-          name: 'size',
+          title: 'size',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'input-group\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -2731,8 +2731,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'InputGroup',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'InputGroup',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -2740,19 +2740,19 @@ export const mock = {
       componentProps: [
         {
           description: 'Specify whether the Component should be vertically centered',
-          name: 'centered',
+          title: 'centered',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'sm\' | \'lg\'\n\nSpecifies a large or small modal.',
-          name: 'size',
+          title: 'size',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Change the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -2762,8 +2762,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'ModalDialog',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'ModalDialog',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -2775,9 +2775,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Navbar__Header'
+      title: 'Navbar__Header'
     },
     {
       children: [],
@@ -2786,67 +2786,67 @@ export const mock = {
       componentProps: [
         {
           description: 'The visible prop determines whether your modal is visible.',
-          name: 'visible',
+          title: 'visible',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The supportedOrientations prop allows the modal to be rotated to any of the specified orientations. On iOS, the modal is still restricted by what\'s specified in your app\'s Info.plist\'s UISupportedInterfaceOrientations field. When using presentationStyle of pageSheet or formSheet, this property will be ignored by iOS.\n\nType: array of enum(\'portrait\', \'portrait-upside-down\', \'landscape\', \'landscape-left\', \'landscape-right\')',
-          name: 'supportedOrientations',
+          title: 'supportedOrientations',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         },
         {
           description: 'The onRequestClose callback is called when the user taps the hardware back button on Android or the menu button on Apple TV. Because of this required prop, be aware that BackHandler events will not be emitted as long as the modal is open.',
-          name: 'onRequestClose',
+          title: 'onRequestClose',
           propType: 'PropTypes.func',
           propTypeIsrequired: true
         },
         {
           description: 'The onShow prop allows passing a function that will be called once the modal has been shown.',
-          name: 'onShow',
+          title: 'onShow',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The transparent prop determines whether your modal will fill the entire view. Setting this to true will render the modal over a transparent background.',
-          name: 'transparent',
+          title: 'transparent',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The animationType prop controls how the modal animates.\n\nslide slides in from the bottom\nfade fades into view\nnone appears without an animation\nDefault is set to none.\n\nType: enum(\'none\', \'slide\', \'fade\')',
-          name: 'animationType',
+          title: 'animationType',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'The hardwareAccelerated prop controls whether to force hardware acceleration for the underlying window.',
-          name: 'hardwareAccelerated',
+          title: 'hardwareAccelerated',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The onDismiss prop allows passing a function that will be called once the modal has been dismissed.',
-          name: 'onDismiss',
+          title: 'onDismiss',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The onOrientationChange callback is called when the orientation changes while the modal is being displayed. The orientation provided is only \'portrait\' or \'landscape\'. This callback is also called on initial render, regardless of the current orientation.',
-          name: 'onOrientationChange',
+          title: 'onOrientationChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The presentationStyle prop controls how the modal appears (generally on larger devices such as iPad or plus-sized iPhones). See https://developer.apple.com/reference/uikit/uimodalpresentationstyle for details.\n\nfullScreen covers the screen completely\npageSheet covers portrait-width view centered (only on larger devices)\nformSheet covers narrow-width view centered (only on larger devices)\noverFullScreen covers the screen completely, but allows transparency\nDefault is set to overFullScreen or fullScreen depending on transparent property.\n\nType: enum(\'fullScreen\', \'pageSheet\', \'formSheet\', \'overFullScreen\')',
-          name: 'presentationStyle',
+          title: 'presentationStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Deprecated. Use the animationType prop instead.',
-          name: 'animated',
+          title: 'animated',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -2856,8 +2856,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'Modal',
-      subname: 'ReactNative'
+      title: 'Modal',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -2865,13 +2865,13 @@ export const mock = {
       componentProps: [
         {
           description: 'type: elementType\ndefault: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'card-img-overlay\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -2881,8 +2881,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Card__ImgOverlay',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Card__ImgOverlay',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -2890,37 +2890,37 @@ export const mock = {
       componentProps: [
         {
           description: 'Specify which action or actions trigger Overlay visibility\n\ndefault: [\'hover\', \'focus\']',
-          name: 'trigger',
+          title: 'trigger',
           propType: ' PropTypes.arrayOf()',
           propTypeIsrequired: false
         },
         {
           description: 'A millisecond delay amount to show and hide the Overlay once triggered',
-          name: 'delay',
+          title: 'delay',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'A millisecond delay amount before showing the Overlay once triggered.',
-          name: 'delayShow',
+          title: 'delayShow',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'A millisecond delay amount before hiding the Overlay once triggered.',
-          name: 'delayHide',
+          title: 'delayHide',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'The initial visibility state of the Overlay. For more nuanced visibility control, consider using the Overlay component directly.\n\ndefault: false',
-          name: 'defaultOverlayShown',
+          title: 'defaultOverlayShown',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'An element or text to overlay next to the target.',
-          name: 'overlay',
+          title: 'overlay',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         }
@@ -2930,9 +2930,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'OverlayTrigger'
+      title: 'OverlayTrigger'
     },
     {
       children: [],
@@ -2940,25 +2940,25 @@ export const mock = {
       componentProps: [
         {
           description: 'type: { ref: ReactRef, style: Object }\n\nAn Overlay injected set of props for positioning the tooltip arrow.\n\nThis is generally provided by the Overlay component positioning the tooltip',
-          name: 'arrowProps',
+          title: 'arrowProps',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ntype: string|number\n\nAn html id attribute, necessary for accessibility',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         },
         {
           description: 'type: \'auto-start\' | \'auto\' | \'auto-end\' | \'top-start\' | \'top\' | \'top-end\' | \'right-start\' | \'right\' | \'right-end\' | \'bottom-end\' | \'bottom\' | \'bottom-start\' | \'left-end\' | \'left\' | \'left-start\'\ndefault: \'right\'\t\n\nSets the direction the Tooltip is positioned towards.\n\nThis is generally provided by the Overlay component positioning the tooltip',
-          name: 'placement',
+          title: 'placement',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'tooltip\'\n\t\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -2968,8 +2968,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Tooltip',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Tooltip',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -2978,67 +2978,67 @@ export const mock = {
       componentProps: [
         {
           description: 'Marks the NavItem with a matching eventKey as active. Has a higher precedence over activeHref.',
-          name: 'activeKey',
+          title: 'activeKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Marks the child NavItem with a matching href prop as active.',
-          name: 'activeHref',
+          title: 'activeHref',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'NavItems are be positioned vertically.\n\ndefault: false',
-          name: 'stacked',
+          title: 'stacked',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'all( PropTypes.bool, ({ justified, navbar }) => justified && navbar ? Error(\'justified navbar `Nav`s are not supported\') : null )\n\n\ndefault: false',
-          name: 'justified',
+          title: 'justified',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A callback fired when a NavItem is selected.\n\nfunction (\n Any eventKey,\n SyntheticEvent event?\n)',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'ARIA role for the Nav, in the context of a TabContainer, the default will be set to "tablist", but can be overridden by the Nav when set explicitly.\n\nWhen the role is set to "tablist" NavItem focus is managed according to the ARIA authoring practices for tabs: https://www.w3.org/TR/2013/WD-wai-aria-practices-20130307/#tabpanel',
-          name: 'role',
+          title: 'role',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Apply styling an alignment for use in a Navbar. This prop will be set automatically when the Nav is used inside a Navbar.',
-          name: 'navbar',
+          title: 'navbar',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Float the Nav to the right. When navbar is true the appropriate contextual classes are added as well.\n\ndefault: false',
-          name: 'pullRight',
+          title: 'pullRight',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Float the Nav to the left. When navbar is true the appropriate contextual classes are added as well.\n\ndefault: false',
-          name: 'pullLeft',
+          title: 'pullLeft',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Component visual or contextual style variants.\n\none of: "lg", "large", "sm", "small"',
-          name: 'bsStyle',
+          title: 'bsStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'nav\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3048,9 +3048,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Nav'
+      title: 'Nav'
     },
     {
       children: [],
@@ -3059,19 +3059,19 @@ export const mock = {
       componentProps: [
         {
           description: 'Uses controlId from <FormGroup> if not explicitly specified.',
-          name: 'htmlFor',
+          title: 'htmlFor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'srOnly',
+          title: 'srOnly',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'control-label\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3081,9 +3081,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'ControlLabel'
+      title: 'ControlLabel'
     },
     {
       children: [],
@@ -3091,19 +3091,19 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false\n\nAdd the pill modifier to make badges more rounded with some additional horizontal padding',
-          name: 'pill',
+          title: 'pill',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'primary\' | \'secondary\' | \'success\' | \'danger\' | \'warning\' | \'info\' | \'light\' | \'dark\'\n\nThe visual style of the badge',
-          name: 'variant',
+          title: 'variant',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'badge\'\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -3113,8 +3113,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Badge',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Badge',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -3122,7 +3122,7 @@ export const mock = {
       componentProps: [
         {
           description: 'default: \'navbar-collapse\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3132,8 +3132,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Navbar__Collapse',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Navbar__Collapse',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -3142,115 +3142,115 @@ export const mock = {
       componentProps: [
         {
           description: 'ImageResizeMode is an Enum for different image resizing modes, set via the resizeMode style property on Image components. The values are contain, cover, stretch, center, repeat.',
-          name: 'style',
+          title: 'style',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'blurRadius: the blur radius of the blur filter added to the image',
-          name: 'blurRadius',
+          title: 'blurRadius',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked on mount and layout changes with {nativeEvent: {layout: {x, y, width, height}}}.',
-          name: 'onLayout',
+          title: 'onLayout',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked when load completes successfully.',
-          name: 'onLoad',
+          title: 'onLoad',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked when load either succeeds or fails.',
-          name: 'onLoadEnd',
+          title: 'onLoadEnd',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked on load start.\n\ne.g., onLoadStart={(e) => this.setState({loading: true})}',
-          name: 'onLoadStart',
+          title: 'onLoadStart',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Determines how to resize the image when the frame doesn\'t match the raw image dimensions.\n\ncover: Scale the image uniformly (maintain the image\'s aspect ratio) so that both dimensions (width and height) of the image will be equal to or larger than the corresponding dimension of the view (minus padding).\n\ncontain: Scale the image uniformly (maintain the image\'s aspect ratio) so that both dimensions (width and height) of the image will be equal to or less than the corresponding dimension of the view (minus padding).\n\nstretch: Scale width and height independently, This may change the aspect ratio of the src.\n\nrepeat: Repeat the image to cover the frame of the view. The image will keep its size and aspect ratio, unless it is larger than the view, in which case it will be scaled down uniformly so that it is contained in the view.\n\ncenter: Center the image in the view along both dimensions. If the image is larger than the view, scale it down uniformly so that it is contained in the view.\n\nType: enum(\'cover\', \'contain\', \'stretch\', \'repeat\', \'center\')',
-          name: 'resizeMode',
+          title: 'resizeMode',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'The image source (either a remote URL or a local file resource).\n\nThis prop can also contain several remote URLs, specified together with their width and height and potentially with scale/other URI arguments. The native side will then choose the best uri to display based on the measured size of the image container. A cache property can be added to control how networked request interacts with the local cache.\n\nThe currently supported formats are png, jpg, jpeg, bmp, gif, webp (Android only), psd (iOS only).',
-          name: 'source',
+          title: 'source',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Similarly to source, this property represents the resource used to render the loading indicator for the image, displayed until image is ready to be displayed, typically after when it got downloaded from network.',
-          name: 'loadingIndicatorSource',
+          title: 'loadingIndicatorSource',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked on load error with {nativeEvent: {error}}.',
-          name: 'onError',
+          title: 'onError',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'A unique identifier for this element to be used in UI Automation testing scripts.',
-          name: 'testID',
+          title: 'testID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The mechanism that should be used to resize the image when the image\'s dimensions differ from the image view\'s dimensions. Defaults to auto.\n\nauto: Use heuristics to pick between resize and scale.\n\nresize: A software operation which changes the encoded image in memory before it gets decoded. This should be used instead of scale when the image is much larger than the view.\n\nscale: The image gets drawn downscaled or upscaled. Compared to resize, scale is faster (usually hardware accelerated) and produces higher quality images. This should be used if the image is smaller than the view. It should also be used if the image is slightly bigger than the view.\n\nMore details about resize and scale can be found at http://frescolib.org/docs/resizing.html.\n\nType: enum(\'auto\', \'resize\', \'scale\')',
-          name: 'resizeMethod',
+          title: 'resizeMethod',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'The text that\'s read by the screen reader when the user interacts with the image.',
-          name: 'accessibilityLabel',
+          title: 'accessibilityLabel',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'When true, indicates the image is an accessibility element.',
-          name: 'accessible',
+          title: 'accessible',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When the image is resized, the corners of the size specified by capInsets will stay a fixed size, but the center content and borders of the image will be stretched. This is useful for creating resizable rounded buttons, shadows, and other resizable assets. More info in the official Apple documentation.\n\nType: object: {top: number, left: number, bottom: number, right: number}',
-          name: 'capInsets',
+          title: 'capInsets',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'A static image to display while loading the image source.\nIf passing an object, the general shape is {uri: string, width: number, height: number, scale: number}:\n\nuri - a string representing the resource identifier for the image, which should be either a local file path or the name of a static image resource (which should be wrapped in the require(\'./path/to/image.png\') function).\nwidth, height - can be specified if known at build time, in which case these will be used to set the default <Image/> component dimensions.\nscale - used to indicate the scale factor of the image. Defaults to 1.0 if unspecified, meaning that one image pixel equates to one display point / DIP.\nIf passing a number:\n\nnumber - Opaque type returned by something like require(\'./image.jpg\').\nNote: On Android, the default source prop is ignored on debug builds.',
-          name: 'defaultSource',
+          title: 'defaultSource',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked when a partial load of the image is complete. The definition of what constitutes a "partial load" is loader specific though this is meant for progressive JPEG loads.',
-          name: 'onPartialLoad',
+          title: 'onPartialLoad',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked on download progress with {nativeEvent: {loaded, total}}.',
-          name: 'onProgress',
+          title: 'onProgress',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Android only. By default, it is 300ms.',
-          name: 'fadeDuration',
+          title: 'fadeDuration',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         }
@@ -3260,8 +3260,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'Image',
-      subname: 'ReactNative'
+      title: 'Image',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -3269,49 +3269,49 @@ export const mock = {
       componentProps: [
         {
           description: 'The active state of the NavItem item.',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: <a>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nThe disabled state of the NavItem item.',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Uniquely idenifies the NavItem amoungst its siblings, used to determine and control the active state ofthe parent Nav',
-          name: 'eventKey',
+          title: 'eventKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The HTML href attribute for the NavLink',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'A callback fired when the NavLink is selected.\n\nfunction (eventKey: any, event: SyntheticEvent) {}',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The ARIA role for the NavLink, In the context of a \'tablist\' parent Nav, the role defaults to \'tab\'',
-          name: 'role',
+          title: 'role',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'nav-link\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3321,8 +3321,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Nav__Link',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Nav__Link',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -3331,43 +3331,43 @@ export const mock = {
       componentProps: [
         {
           description: 'An html id attribute, necessary for accessibility',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the direction the Tooltip is positioned towards.\n\ndefault: right',
-          name: 'placement',
+          title: 'placement',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'The "top" position value for the Tooltip.',
-          name: 'positionTop',
+          title: 'positionTop',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: '\t\nThe "left" position value for the Tooltip.',
-          name: 'positionLeft',
+          title: 'positionLeft',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The "top" position value for the Tooltip arrow.',
-          name: 'arrowOffsetTop',
+          title: 'arrowOffsetTop',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The "left" position value for the Tooltip arrow.',
-          name: 'arrowOffsetLeft',
+          title: 'arrowOffsetLeft',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'tooltip\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3377,9 +3377,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Tooltip'
+      title: 'Tooltip'
     },
     {
       children: [],
@@ -3388,7 +3388,7 @@ export const mock = {
       componentProps: [
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'input-group-btn\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3398,9 +3398,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'InputGroup__Button'
+      title: 'InputGroup__Button'
     },
     {
       children: [],
@@ -3408,43 +3408,43 @@ export const mock = {
       componentProps: [
         {
           description: 'type: any\n\ncontrolled by: onSelect, initial prop: defaultActivekey\nThe eventKey of the currently active tab.',
-          name: 'activeKey',
+          title: 'activeKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: '(eventKey, type) => `${this.props.id}-${type}-${eventKey}`\t\nA function that takes an eventKey and type and returns a unique id for child tab <NavItem>s and <TabPane>s. The function must be a pure function, meaning it should always return the same id for the same set of inputs. The default value requires that an id to be set for the <TabContainer>.\n\nThe type argument will either be "tab" or "pane".',
-          name: 'generateChildId',
+          title: 'generateChildId',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'HTML id attribute, required if no generateChildId prop is specified.',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Wait until the first "enter" transition to mount tabs (add them to the DOM)',
-          name: 'mountOnEnter',
+          title: 'mountOnEnter',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'controls activeKey\nA callback fired when a tab is selected.',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'type: {Transition | false}\ndefault: {Fade}\t\n\nSets a default animation strategy for all children <TabPane>s. Use false to disable, true to enable the default <Fade> animation or a react-transition-group v2 <Transition/> component.',
-          name: 'transition',
+          title: 'transition',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Unmount tabs (remove it from the DOM) when they are no longer visible',
-          name: 'unmountOnExit',
+          title: 'unmountOnExit',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -3454,8 +3454,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'TabContainer',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'TabContainer',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -3464,31 +3464,31 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false',
-          name: 'Radio',
+          title: 'Radio',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Only valid if inline is not set.\n\none of: \'success\', \'warning\', \'error\', null',
-          name: 'validationState',
+          title: 'validationState',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Attaches a ref to the <input> element. Only functions can be used here.\n\n<Radio inputRef={ref => { this.input = ref; }} />',
-          name: 'inputRef',
+          title: 'inputRef',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'radio\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3498,9 +3498,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Radio'
+      title: 'Radio'
     },
     {
       children: [],
@@ -3509,13 +3509,13 @@ export const mock = {
       componentProps: [
         {
           description: 'onSnapshotReady',
-          name: 'onSnapshotReady',
+          title: 'onSnapshotReady',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'testIdentifier',
-          name: 'testIdentifier',
+          title: 'testIdentifier',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3525,8 +3525,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'SnapshotViewIOS',
-      subname: 'ReactNative'
+      title: 'SnapshotViewIOS',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -3535,25 +3535,25 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false',
-          name: 'horizontal',
+          title: 'horizontal',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'inline',
+          title: 'inline',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'You can use a custom element type for this component.\n\ndefault: \'form\'',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'form\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3563,9 +3563,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Form'
+      title: 'Form'
     },
     {
       children: [],
@@ -3573,13 +3573,13 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <figure>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'figure\'\n\t\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3589,8 +3589,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Figure',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Figure',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -3598,37 +3598,37 @@ export const mock = {
       componentProps: [
         {
           description: 'Marks a ListGroupItem as actionable, applying additional hover, active and disabled styles for links and buttons.',
-          name: 'action',
+          title: 'action',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\n\t\nSets list item as active',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: <{div | a | button}>\t\n\nYou can use a custom element type for this component. For none action items, items render as li. For actions the default is an achor or button element depending on whether a href is provided.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nSets list item state as disabled',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'primary\' | \'secondary\' | \'success\' | \'danger\' | \'warning\' | \'info\' | \'dark\' | \'light\'\ndefault: null\t\n\nSets contextual classes for list item',
-          name: 'variant',
+          title: 'variant',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'list-group-item\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -3638,8 +3638,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'ListGroup__Item',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'ListGroup__Item',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -3647,37 +3647,37 @@ export const mock = {
       componentProps: [
         {
           description: 'default false\n\nAdds a visual "active" state to a Breadcrumb Item and disables the link.',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: elementType\ndefault: <li>\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'href attribute for the inner a element',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'target attribute for the inner a element',
-          name: 'target',
+          title: 'target',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'name attribute for the inner a element',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'breadcrumb-item\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3686,9 +3686,9 @@ export const mock = {
       id: 'Ohy25sdoxqdGfq1UpDqk',
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
-      subname: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Breadcrumb__Item'
+      title: 'Breadcrumb__Item'
     },
     {
       children: [],
@@ -3697,37 +3697,37 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false',
-          name: 'inline',
+          title: 'inline',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'\'',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Only valid if inline is not set.\n\none of: \'success\', \'warning\', \'error\', null',
-          name: 'validationState',
+          title: 'validationState',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Attaches a ref to the <input> element. Only functions can be used here.\n\n<Checkbox inputRef={ref => { this.input = ref; }} />',
-          name: 'inputRef',
+          title: 'inputRef',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'checkbox\'\t\n',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3737,9 +3737,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Checkbox'
+      title: 'Checkbox'
     },
     {
       children: [],
@@ -3748,13 +3748,13 @@ export const mock = {
       componentProps: [
         {
           description: 'An icon name without "glyphicon-" prefix. See e.g. http://getbootstrap.com/components/#glyphicons',
-          name: 'glyph',
+          title: 'glyph',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'glyphicon\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3764,9 +3764,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Glyphicon'
+      title: 'Glyphicon'
     },
     {
       children: [],
@@ -3774,115 +3774,115 @@ export const mock = {
       componentProps: [
         {
           description: 'default: true\t\n\nOpen and close the Modal with a slide and fade animation.',
-          name: 'animation',
+          title: 'animation',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: true\n\t\nWhen true The modal will automatically shift focus to itself when it opens, and replace it to the last focused element when it closes. Generally this should never be set to false as it makes the Modal less accessible to assistive technologies, like screen-readers.',
-          name: 'autoFocus',
+          title: 'autoFocus',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'static\' | true | false\ndefault: true\t\n\nInclude a backdrop component. Specify \'static\' for a backdrop that doesn\'t trigger an "onHide" when clicked.',
-          name: 'backdrop',
+          title: 'backdrop',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Add an optional extra class name to .modal-backdrop It could end up looking like class="modal-backdrop foo-modal-backdrop in".',
-          name: 'backdropClassName',
+          title: 'backdropClassName',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'vertically center the Dialog in the window',
-          name: 'centered',
+          title: 'centered',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: <ModalDialog>\t\n\nA Component type that provides the modal content Markup. This is a useful prop when you want to use your own styles and markup to create a custom modal component.',
-          name: 'dialogAs',
+          title: 'dialogAs',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'A css class to apply to the Modal dialog DOM node.',
-          name: 'dialogClassName',
+          title: 'dialogClassName',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: true\t\n\nWhen true The modal will prevent focus from leaving the Modal while open. Consider leaving the default value here, as it is necessary to make the Modal work well with assistive technologies, such as screen readers.',
-          name: 'enforceFocus',
+          title: 'enforceFocus',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: true\t\n\nClose the modal when escape key is pressed',
-          name: 'keyboard',
+          title: 'keyboard',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired before the Modal transitions in',
-          name: 'onEnter',
+          title: 'onEnter',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the Modal finishes transitioning in',
-          name: 'onEntered',
+          title: 'onEntered',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired as the Modal begins to transition in',
-          name: 'onEntering',
+          title: 'onEntering',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired right before the Modal transitions out',
-          name: 'onExit',
+          title: 'onExit',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the Modal finishes transitioning out',
-          name: 'onExited',
+          title: 'onExited',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired as the Modal begins to transition out',
-          name: 'onExiting',
+          title: 'onExiting',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'A callback fired when the header closeButton or non-static backdrop is clicked. Required if either are specified.',
-          name: 'onHide',
+          title: 'onHide',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'default: true\t\n\nWhen true The modal will restore focus to previously focused element once modal is hidden',
-          name: 'restoreFocus',
+          title: 'restoreFocus',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nWhen true The modal will show itself.',
-          name: 'show',
+          title: 'show',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'sm\' | \'lg\'\n\nRender a large or small modal.',
-          name: 'size',
+          title: 'size',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         }
@@ -3892,8 +3892,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Modal',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Modal',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -3902,25 +3902,25 @@ export const mock = {
       componentProps: [
         {
           description: 'HTML id attribute, required if no generateChildId prop is specified.\n\nfunction(props, ...args) { let error = null; if (!props.generateChildId) { error = idPropType(props, ...args); if (!error && !props.id) { error = new Error( \'In order to properly initialize Tabs in a way that is accessible \' + \'to assistive technologies (such as screen readers) an `id` or a \' + \'`generateChildId` prop to TabContainer is required\' ); } } return error;',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'A function that takes an eventKey and type and returns a unique id for child tab <NavItem>s and <TabPane>s. The function must be a pure function, meaning it should always return the same id for the same set of inputs. The default value requires that an id to be set for the <TabContainer>.\n\nThe type argument will either be "tab" or "pane".\n\ndefault: (eventKey, type) => `${this.props.id}-${type}-${key}`',
-          name: 'generateChildId',
+          title: 'generateChildId',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'he eventKey of the currently active tab.',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The eventKey of the currently active tab.',
-          name: 'activeKey',
+          title: 'activeKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3930,9 +3930,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'TabContainer'
+      title: 'TabContainer'
     },
     {
       children: [],
@@ -3940,19 +3940,19 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nRemoves the gutter spacing between Cols as well as any added negative margins.',
-          name: 'noGutters',
+          title: 'noGutters',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'row\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -3962,8 +3962,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Row',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Row',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -3972,121 +3972,121 @@ export const mock = {
       componentProps: [
         {
           description: 'This defines how far your touch can start away from the button. This is added to pressRetentionOffset when moving off of the button. ** NOTE ** The touch area never extends past the parent view bounds and the Z-index of sibling views always takes precedence if a touch hits two overlapping views.\n\nobject: {top: number, left: number, bottom: number, right: number}',
-          name: 'hitSlop',
+          title: 'hitSlop',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: '> Note: accessibilityComponentTypewill soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead.\n\nType: AccessibilityComponentTypes',
-          name: 'accessibilityComponentType',
+          title: 'accessibilityComponentType',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'An accessibility hint helps users understand what will happen when they perform an action on the accessibility element when that result is not obvious from the accessibility label.',
-          name: 'accessibilityHint',
+          title: 'accessibilityHint',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Overrides the text that\'s read by the screen reader when the user interacts with the element. By default, the label is constructed by traversing all the children and accumulating all the Text nodes separated by space.',
-          name: 'accessibilityLabel',
+          title: 'accessibilityLabel',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'accessibilityRole\n\nType: AccessibilityRoles',
-          name: 'accessibilityRole',
+          title: 'accessibilityRole',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'array of AccessibilityStates',
-          name: 'accessibilityStates',
+          title: 'accessibilityStates',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         },
         {
           description: '> Note: accessibilityTraitswill soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead.\n\nType: AccessibilityTraits, ,array of AccessibilityTraits',
-          name: 'accessibilityTraits',
+          title: 'accessibilityTraits',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         },
         {
           description: 'accessible',
-          name: 'accessible',
+          title: 'accessible',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Delay in ms, from onPressIn, before onLongPress is called.',
-          name: 'delayLongPress',
+          title: 'delayLongPress',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Delay in ms, from the start of the touch, before onPressIn is called.',
-          name: 'delayPressIn',
+          title: 'delayPressIn',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Delay in ms, from the release of the touch, before onPressOut is called.',
-          name: 'delayPressOut',
+          title: 'delayPressOut',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'If true, disable all interactions for this component.',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked when the item loses focus.',
-          name: 'onBlur',
+          title: 'onBlur',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked when the item receives focus.',
-          name: 'onFocus',
+          title: 'onFocus',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked on mount and layout changes with\n\n{nativeEvent: {layout: {x, y, width, height}}}',
-          name: 'onLayout',
+          title: 'onLayout',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'onLongPress',
-          name: 'onLongPress',
+          title: 'onLongPress',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Called when the touch is released, but not if cancelled (e.g. by a scroll that steals the responder lock).',
-          name: 'onPress',
+          title: 'onPress',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Called as soon as the touchable element is pressed and invoked even before onPress. This can be useful when making network requests.',
-          name: 'onPressIn',
+          title: 'onPressIn',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Called as soon as the touch is released even before onPress.',
-          name: 'onPressOut',
+          title: 'onPressOut',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'When the scroll view is disabled, this defines how far your touch may move off of the button, before deactivating the button. Once deactivated, try moving it back and you\'ll see that the button is once again reactivated! Move it back and forth several times while the scroll view is disabled. Ensure you pass in a constant to reduce memory allocations.\n\nobject: {top: number, left: number, bottom: number, right: number}',
-          name: 'pressRetentionOffset',
+          title: 'pressRetentionOffset',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         }
@@ -4096,8 +4096,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'TouchableWithoutFeedback',
-      subname: 'ReactNative'
+      title: 'TouchableWithoutFeedback',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -4106,67 +4106,67 @@ export const mock = {
       componentProps: [
         {
           description: 'Set the visibility of the Overlay\n\ndefault: false',
-          name: 'show',
+          title: 'show',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Specify whether the overlay should trigger onHide when the user clicks outside the overlay\n\ndefault: false',
-          name: 'rootClose',
+          title: 'rootClose',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A callback invoked by the overlay when it wishes to be hidden. Required if rootClose is specified.',
-          name: 'onHide',
+          title: 'onHide',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Use animation. default: Fade',
-          name: 'animation',
+          title: 'animation',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired before the Overlay transitions in',
-          name: 'onEnter',
+          title: 'onEnter',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired as the Overlay begins to transition in',
-          name: 'onEntering',
+          title: 'onEntering',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the Overlay finishes transitioning in',
-          name: 'onEntered',
+          title: 'onEntered',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired right before the Overlay transitions out',
-          name: 'onExit',
+          title: 'onExit',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired as the Overlay begins to transition out',
-          name: 'onExiting',
+          title: 'onExiting',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the Overlay finishes transitioning out',
-          name: 'onExited',
+          title: 'onExited',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the direction of the Overlay.\n\ndefault: right',
-          name: 'placement',
+          title: 'placement',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         }
@@ -4176,9 +4176,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Overlay'
+      title: 'Overlay'
     },
     {
       children: [],
@@ -4186,49 +4186,49 @@ export const mock = {
       componentProps: [
         {
           description: 'Highlight the menu item as active.',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: <SafeAnchor>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nDisable the menu item, making it unselectable.',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: any\n\nValue passed to the onSelect handler, useful for identifying the selected menu item.',
-          name: 'eventKey',
+          title: 'eventKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'HTML href attribute corresponding to a.href.',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired when the menu item is clicked.',
-          name: 'onClick',
+          title: 'onClick',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired when the menu item is selected.\n\n(eventKey: any, event: Object) => any',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'dropdown\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -4238,8 +4238,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Dropdown__Item',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Dropdown__Item',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -4248,7 +4248,7 @@ export const mock = {
       componentProps: [
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'form-control-feedback\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -4258,9 +4258,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'FormControl__Feedback'
+      title: 'FormControl__Feedback'
     },
     {
       children: [],
@@ -4268,13 +4268,13 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'dropdown-header\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -4284,8 +4284,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Dropdown__Header',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Dropdown__Header',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -4293,85 +4293,85 @@ export const mock = {
       componentProps: [
         {
           description: 'Toggles the active state of the TabPane, this is generally controlled by a TabContainer.',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'You can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'tab-pane\'\t\n',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type: any\n\nA key that associates the TabPane with it\'s controlling NavLink.',
-          name: 'eventKey',
+          title: 'eventKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Wait until the first "enter" transition to mount the tab (add it to the DOM)',
-          name: 'mountOnEnter',
+          title: 'mountOnEnter',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Transition onEnter callback when animation is not false',
-          name: 'onEnter',
+          title: 'onEnter',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Transition onEntered callback when animation is not false',
-          name: 'onEntered',
+          title: 'onEntered',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Transition onEntering callback when animation is not false',
-          name: 'onEntering',
+          title: 'onEntering',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Transition onExit callback when animation is not false',
-          name: 'onExit',
+          title: 'onExit',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Transition onExited callback when animation is not false',
-          name: 'onExited',
+          title: 'onExited',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Transition onExiting callback when animation is not false',
-          name: 'onExiting',
+          title: 'onExiting',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'type: boolean | elementType\n\nUse animation when showing or hiding <TabPane>s. Use false to disable, true to enable the default <Fade> animation or a react-transition-group v2 <Transition/> component.',
-          name: 'transition',
+          title: 'transition',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Unmount the tab (remove it from the DOM) when it is no longer visible',
-          name: 'unmountOnExit',
+          title: 'unmountOnExit',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'tab-pane\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -4381,8 +4381,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'TabPane',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'TabPane',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -4391,43 +4391,43 @@ export const mock = {
       componentProps: [
         {
           description: 'Mark the Tab with a matching eventKey as active.',
-          name: 'activeKey',
+          title: 'activeKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Navigation style\n\none of: \'tabs\', \'pills\'',
-          name: 'bsStyle',
+          title: 'bsStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Sets a default animation strategy. Use false to disable, true to enable the default <Fade> animation, or a react-transition-group v2 <Transition/> component.\n\ndefault: true\n\n',
-          name: 'animation',
+          title: 'animation',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'requiredForA11y( PropTypes.oneOfType([PropTypes.string, PropTypes.number]) )',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired when a Tab is selected.\n\nfunction (\n  Any eventKey,\n  SyntheticEvent event?\n)',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Wait until the first "enter" transition to mount tabs (add them to the DOM)\n\ndefault: false',
-          name: 'mountOnEnter',
+          title: 'mountOnEnter',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Unmount tabs (remove it from the DOM) when it is no longer visible\n\ndefault: false',
-          name: 'unmountOnExit',
+          title: 'unmountOnExit',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -4437,9 +4437,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Tabs'
+      title: 'Tabs'
     },
     {
       children: [],
@@ -4447,13 +4447,13 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'media\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -4463,8 +4463,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Media',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Media',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -4472,7 +4472,7 @@ export const mock = {
       componentProps: [
         {
           description: 'required',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.node',
           propTypeIsrequired: true
         }
@@ -4481,9 +4481,9 @@ export const mock = {
       id: 'SXebJOqI82f3Yg2XsdB4',
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
-      subname: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Tab'
+      title: 'Tab'
     },
     {
       children: [],
@@ -4492,259 +4492,259 @@ export const mock = {
       componentProps: [
         {
           description: 'When true, the scroll view bounces vertically when it reaches the end even if the content is smaller than the scroll view itself. The default value is false when horizontal={true} and true otherwise.',
-          name: 'alwaysBounceVertical',
+          title: 'alwaysBounceVertical',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'These styles will be applied to the scroll view content container which wraps all of the child views. Example:\n\nreturn (\n  <ScrollView contentContainerStyle={styles.contentContainer}>\n  </ScrollView>\n);\n...\nconst styles = StyleSheet.create({\n  contentContainer: {\n    paddingVertical: 20\n  }\n});\n\nType: StyleSheetPropType(View Style props)',
-          name: 'contentContainerStyle',
+          title: 'contentContainerStyle',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Determines whether the keyboard gets dismissed in response to a drag.\n\nCross platform\n\n\'none\' (the default), drags do not dismiss the keyboard.\n\'on-drag\', the keyboard is dismissed when a drag begins.\niOS Only\n\n\'interactive\', the keyboard is dismissed interactively with the drag and moves in synchrony with the touch; dragging upwards cancels the dismissal. On android this is not supported and it will have the same behavior as \'none\'.\n\nType: enum(\'none\', \'on-drag\', \'interactive\')',
-          name: 'keyboardDismissMode',
+          title: 'keyboardDismissMode',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Determines when the keyboard should stay visible after a tap.\n\n\'never\' (the default), tapping outside of the focused text input when the keyboard is up dismisses the keyboard. When this happens, children won\'t receive the tap.\n\'always\', the keyboard will not dismiss automatically, and the scroll view will not catch taps, but children of the scroll view can catch taps.\n\'handled\', the keyboard will not dismiss automatically when the tap was handled by a children, (or captured by an ancestor).\nfalse, deprecated, use \'never\' instead\ntrue, deprecated, use \'always\' instead\n\nType: enum(\'always\', \'never\', \'handled\', false, true)',
-          name: 'keyboardShouldPersistTaps',
+          title: 'keyboardShouldPersistTaps',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Called when scrollable content view of the ScrollView changes.\n\nHandler function is passed the content width and content height as parameters: (contentWidth, contentHeight)\n\nIt\'s implemented using onLayout handler attached to the content container which this ScrollView renders.',
-          name: 'onContentSizeChange',
+          title: 'onContentSizeChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Called when the momentum scroll starts (scroll which occurs as the ScrollView glides to a stop).',
-          name: 'onMomentumScrollBegin',
+          title: 'onMomentumScrollBegin',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Called when the momentum scroll ends (scroll which occurs as the ScrollView glides to a stop).',
-          name: 'onMomentumScrollEnd',
+          title: 'onMomentumScrollEnd',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Fires at most once per frame during scrolling. The frequency of the events can be controlled using the scrollEventThrottle prop.',
-          name: 'onScroll',
+          title: 'onScroll',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Called when the user begins to drag the scroll view.',
-          name: 'onScrollBeginDrag',
+          title: 'onScrollBeginDrag',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Called when the user stops dragging the scroll view and it either stops or begins to glide.',
-          name: 'onScrollEndDrag',
+          title: 'onScrollEndDrag',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'When true, the scroll view stops on multiples of the scroll view\'s size when scrolling. This can be used for horizontal pagination. The default value is false.\n\nNote: Vertical pagination is not supported on Android.',
-          name: 'pagingEnabled',
+          title: 'pagingEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A RefreshControl component, used to provide pull-to-refresh functionality for the ScrollView. Only works for vertical ScrollViews (horizontal prop must be false).',
-          name: 'refreshControl',
+          title: 'refreshControl',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Experimental: When true, offscreen child views (whose overflow value is hidden) are removed from their native backing superview when offscreen. This can improve scrolling performance on long lists. The default value is true.',
-          name: 'removeClippedSubviews',
+          title: 'removeClippedSubviews',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When false, the view cannot be scrolled via touch interaction. The default value is true.\n\nNote that the view can always be scrolled by calling scrollTo.\n',
-          name: 'scrollEnabled',
+          title: 'scrollEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When true, shows a horizontal scroll indicator. The default value is true.',
-          name: 'showsHorizontalScrollIndicator',
+          title: 'showsHorizontalScrollIndicator',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When true, shows a vertical scroll indicator. The default value is true.',
-          name: 'showsVerticalScrollIndicator',
+          title: 'showsVerticalScrollIndicator',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'An array of child indices determining which children get docked to the top of the screen when scrolling. For example, passing stickyHeaderIndices={[0]} will cause the first child to be fixed to the top of the scroll view. This property is not supported in conjunction with horizontal={true}',
-          name: 'stickyHeaderIndices',
+          title: 'stickyHeaderIndices',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         },
         {
           description: 'Sometimes a scrollview takes up more space than its content fills. When this is the case, this prop will fill the rest of the scrollview with a color to avoid setting a background and creating unnecessary overdraw. This is an advanced optimization that is not needed in the general case.',
-          name: 'endFillColor',
+          title: 'endFillColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Used to override default value of overScroll mode.\n\nPossible values:\n\n\'auto\' - Default value, allow a user to over-scroll this view only if the content is large enough to meaningfully scroll.\n\'always\' - Always allow a user to over-scroll this view.\n\'never\' - Never allow a user to over-scroll this view.\n\n\nType: enum(\'auto\', \'always\', \'never\')',
-          name: 'overScrollMode',
+          title: 'overScrollMode',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Tag used to log scroll performance on this scroll view. Will force momentum events to be turned on (see sendMomentumEvents). This doesn\'t do anything out of the box and you need to implement a custom native FpsListener for it to be useful.',
-          name: 'scrollPerfTag',
+          title: 'scrollPerfTag',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'When true, the scroll view bounces horizontally when it reaches the end even if the content is smaller than the scroll view itself. The default value is true when horizontal={true} and false otherwise.',
-          name: 'alwaysBounceHorizontal',
+          title: 'alwaysBounceHorizontal',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When true, the scroll view\'s children are arranged horizontally in a row instead of vertically in a column. The default value is false.',
-          name: 'horizontal',
+          title: 'horizontal',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Controls whether iOS should automatically adjust the content inset for scroll views that are placed behind a navigation bar or tab bar/ toolbar. The default value is true.',
-          name: 'automaticallyAdjustContentInsets',
+          title: 'automaticallyAdjustContentInsets',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When true, the scroll view bounces when it reaches the end of the content if the content is larger then the scroll view along the axis of the scroll direction. When false, it disables all bouncing even if the alwaysBounce* props are true. The default value is true.',
-          name: 'bounces',
+          title: 'bounces',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When true, gestures can drive zoom past min/max and the zoom will animate to the min/max value at gesture end, otherwise the zoom will not exceed the limits.',
-          name: 'bouncesZoom',
+          title: 'bouncesZoom',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When false, once tracking starts, won\'t try to drag if the touch moves. The default value is true.',
-          name: 'canCancelContentTouches',
+          title: 'canCancelContentTouches',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When true, the scroll view automatically centers the content when the content is smaller than the scroll view bounds; when the content is larger than the scroll view, this property has no effect. The default value is false.',
-          name: 'centerContent',
+          title: 'centerContent',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The amount by which the scroll view content is inset from the edges of the scroll view. Defaults to {top: 0, left: 0, bottom: 0, right: 0}.\n\nType: object: {top: number, left: number, bottom: number, right: number}',
-          name: 'contentInset',
+          title: 'contentInset',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'This property specifies how the safe area insets are used to modify the content area of the scroll view. The default value of this property is "never". Available on iOS 11 and later.\n\nType: enum(\'automatic\', \'scrollableAxes\', \'never\', \'always\')',
-          name: 'contentInsetAdjustmentBehavior',
+          title: 'contentInsetAdjustmentBehavior',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Used to manually set the starting scroll offset. The default value is {x: 0, y: 0}.',
-          name: 'contentOffset',
+          title: 'contentOffset',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'A floating-point number that determines how quickly the scroll view decelerates after the user lifts their finger. You may also use string shortcuts "normal" and "fast" which match the underlying iOS settings for UIScrollViewDecelerationRateNormal and UIScrollViewDecelerationRateFast respectively.\n\n\'normal\': 0.998 (the default)\n\'fast\': 0.99\n\nType: enum(\'fast\', \'normal\'), ,number',
-          name: 'decelerationRate',
+          title: 'decelerationRate',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'When true, the ScrollView will try to lock to only vertical or horizontal scrolling while dragging. The default value is false.',
-          name: 'directionalLockEnabled',
+          title: 'directionalLockEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The style of the scroll indicators.\n\n\'default\' (the default), same as black.\n\'black\', scroll indicator is black. This style is good against a light background.\n\'white\', scroll indicator is white. This style is good against a dark background.\n\nType: enum(\'default\', \'black\', \'white\')',
-          name: 'indicatorStyle',
+          title: 'indicatorStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'The maximum allowed zoom scale. The default value is 1.0.',
-          name: 'maximumZoomScale',
+          title: 'maximumZoomScale',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'The minimum allowed zoom scale. The default value is 1.0.',
-          name: 'minimumZoomScale',
+          title: 'minimumZoomScale',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'When true, ScrollView allows use of pinch gestures to zoom in and out. The default value is true.',
-          name: 'pinchGestureEnabled',
+          title: 'pinchGestureEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'This controls how often the scroll event will be fired while scrolling (as a time interval in ms). A lower number yields better accuracy for code that is tracking the scroll position, but can lead to scroll performance problems due to the volume of information being send over the bridge. You will not notice a difference between values set between 1-16 as the JS run loop is synced to the screen refresh rate. If you do not need precise scroll position tracking, set this value higher to limit the information being sent across the bridge. The default value is zero, which results in the scroll event being sent only once each time the view is scrolled.',
-          name: 'scrollEventThrottle',
+          title: 'scrollEventThrottle',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'The amount by which the scroll view indicators are inset from the edges of the scroll view. This should normally be set to the same value as the contentInset. Defaults to {0, 0, 0, 0}.\n\nType: object: {top: number, left: number, bottom: number, right: number}',
-          name: 'scrollIndicatorInsets',
+          title: 'scrollIndicatorInsets',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'When true, the scroll view scrolls to top when the status bar is tapped. The default value is true.',
-          name: 'scrollsToTop',
+          title: 'scrollsToTop',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When snapToInterval is set, snapToAlignment will define the relationship of the snapping to the scroll view.\n\n\'start\' (the default) will align the snap at the left (horizontal) or top (vertical)\n\'center\' will align the snap in the center\n\'end\' will align the snap at the right (horizontal) or bottom (vertical)\n\nType: enum(\'start\', \'center\', \'end\')',
-          name: 'snapToAlignment',
+          title: 'snapToAlignment',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'When set, causes the scroll view to stop at multiples of the value of snapToInterval. This can be used for paginating through children that have lengths smaller than the scroll view. Typically used in combination with snapToAlignment and decelerationRate="fast". Overrides less configurable pagingEnabled prop.\n\nNote: Vertical snapToInterval is not supported on Android.',
-          name: 'snapToInterval',
+          title: 'snapToInterval',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'The current scale of the scroll view content. The default value is 1.0.',
-          name: 'zoomScale',
+          title: 'zoomScale',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Enables nested scrolling for Android API level 21+. Nested scrolling is supported by default on iOS.',
-          name: 'nestedScrollEnabled',
+          title: 'nestedScrollEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -4754,8 +4754,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'ScrollView',
-      subname: 'ReactNative'
+      title: 'ScrollView',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -4763,55 +4763,55 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false\t\n\nAnimate\'s the stripes from right to left',
-          name: 'animated',
+          title: 'animated',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: onlyProgressBar\n\nChild elements (only allows elements of type )',
-          name: 'children',
+          title: 'children',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Show label that represents visual percentage. EG. 60%',
-          name: 'label',
+          title: 'label',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'default: 100\n\nMaximum value progress can reach',
-          name: 'max',
+          title: 'max',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'default: 0\t\n\nMinimum value progress can begin from',
-          name: 'min',
+          title: 'min',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Current value of progress',
-          name: 'now',
+          title: 'now',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nHide\'s the label visually.',
-          name: 'srOnly',
+          title: 'srOnly',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nUses a gradient to create a striped effect.',
-          name: 'striped',
+          title: 'striped',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'success\' | \'danger\' | \'warning\' | \'info\'\n\nSets the background class of the progress bar.',
-          name: 'variant',
+          title: 'variant',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         }
@@ -4821,8 +4821,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'ProgressBar',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'ProgressBar',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -4830,19 +4830,19 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\n\t\nMake the jumbotron full width, and without rounded corners',
-          name: 'fluid',
+          title: 'fluid',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'jumbotron\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -4852,8 +4852,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Jumbotron',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Jumbotron',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -4862,61 +4862,61 @@ export const mock = {
       componentProps: [
         {
           description: 'min\n\ndefault: 0',
-          name: 'min',
+          title: 'min',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'now',
-          name: 'now',
+          title: 'now',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'max\n\ndefault: 100',
-          name: 'max',
+          title: 'max',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'label',
-          name: 'label',
+          title: 'label',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'srOnly',
+          title: 'srOnly',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'striped',
+          title: 'striped',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: onlyProgressBar',
-          name: 'children',
+          title: 'children',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Component visual or contextual style variants.\n\none of: "success", "warning", "danger", "info"',
-          name: 'bsStyle',
+          title: 'bsStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'progress-bar\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -4926,9 +4926,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'ProgressBar'
+      title: 'ProgressBar'
     },
     {
       children: [],
@@ -4936,13 +4936,13 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'dropdown-divider\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -4952,8 +4952,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Dropdown__Divider',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Dropdown__Divider',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -4962,25 +4962,25 @@ export const mock = {
       componentProps: [
         {
           description: 'Closeable alerts: just pass in a onDismiss function.',
-          name: 'onDismiss',
+          title: 'onDismiss',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Default: \'Close alert\'',
-          name: 'closeLabel',
+          title: 'closeLabel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Component visual or contextual style variants. Deafult: \'info\'',
-          name: 'bsStyle',
+          title: 'bsStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\nDefault: \'alert\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -4990,9 +4990,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Alert'
+      title: 'Alert'
     },
     {
       children: [],
@@ -5001,49 +5001,49 @@ export const mock = {
       componentProps: [
         {
           description: 'The style of the tab bar. Supported values are \'default\', \'black\'. Use \'black\' instead of setting barTintColor to black. This produces a tab bar with the native iOS style with higher translucency.\n\nenum(\'default\', \'black\')',
-          name: 'barStyle',
+          title: 'barStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Background color of the tab bar',
-          name: 'barTintColor',
+          title: 'barTintColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Specifies tab bar item positioning. Available values are:\n\nfill - distributes items across the entire width of the tab bar\ncenter - centers item in the available tab bar space\nauto (default) - distributes items dynamically according to the user interface idiom. In a horizontally compact environment (e.g. iPhone 5) this value defaults to fill, in a horizontally regular one (e.g. iPad) it defaults to center.\n\nenum(\'fill\', \'center\', \'auto\')',
-          name: 'itemPositioning',
+          title: 'itemPositioning',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'style',
-          name: 'style',
+          title: 'style',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Color of the currently selected tab icon',
-          name: 'tintColor',
+          title: 'tintColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'A Boolean value that indicates whether the tab bar is translucent',
-          name: 'translucent',
+          title: 'translucent',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Color of unselected tab icons. Available since iOS 10.',
-          name: 'unselectedItemTintColor',
+          title: 'unselectedItemTintColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Color of text on unselected tabs',
-          name: 'unselectedTintColor',
+          title: 'unselectedTintColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -5053,8 +5053,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'TabBarIOS',
-      subname: 'ReactNative'
+      title: 'TabBarIOS',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -5062,13 +5062,13 @@ export const mock = {
       componentProps: [
         {
           description: 'type: elementType\ndefault: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'card-group\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -5078,8 +5078,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'CardGroup',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'CardGroup',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -5088,37 +5088,37 @@ export const mock = {
       componentProps: [
         {
           description: 'You can use a custom element type for this component.\n\ndefault: \'input\'',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Only relevant if componentClass is \'input\'.',
-          name: 'type',
+          title: 'type',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Uses controlId from <FormGroup> if not explicitly specified.',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Attaches a ref to the <input> element. Only functions can be used here.\n\n<FormControl inputRef={ref => { this.input = ref; }} />',
-          name: 'inputRef',
+          title: 'inputRef',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Component size variations.\n\none of: "sm", "small", "lg", "large"',
-          name: 'bsSize',
+          title: 'bsSize',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'form-control\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -5128,9 +5128,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'FormControl'
+      title: 'FormControl'
     },
     {
       children: [],
@@ -5139,25 +5139,25 @@ export const mock = {
       componentProps: [
         {
           description: 'Component visual or contextual style variants.',
-          name: 'bsStyle',
+          title: 'bsStyle',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Component size variations.',
-          name: 'bsSize',
+          title: 'bsSize',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'name',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'noCaret',
-          name: 'noCaret',
+          title: 'noCaret',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -5167,9 +5167,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'DropdownButton'
+      title: 'DropdownButton'
     },
     {
       children: [],
@@ -5178,37 +5178,37 @@ export const mock = {
       componentProps: [
         {
           description: 'The <input> type',
-          name: 'type',
+          title: 'type',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The HTML input name, used to group like checkboxes or radio buttons together semantically',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The checked state of the input, managed by ` automatically',
-          name: 'checked',
+          title: 'checked',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The disabled state of both the label and input',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'onChange',
-          name: 'onChange',
+          title: 'onChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The value of the input, and unique identifier in the ToggleButtonGroup',
-          name: 'value',
+          title: 'value',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -5218,9 +5218,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'ToggleButton'
+      title: 'ToggleButton'
     },
     {
       children: [],
@@ -5229,109 +5229,109 @@ export const mock = {
       componentProps: [
         {
           description: 'Include a backdrop component. Specify \'static\' for a backdrop that doesn\'t trigger an "onHide" when clicked.\n\none of: \'static\', true, false',
-          name: 'backdrop',
+          title: 'backdrop',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Add an optional extra class name to .modal-backdrop It could end up looking like class="modal-backdrop foo-modal-backdrop in".',
-          name: 'backdropClassName',
+          title: 'backdropClassName',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Close the modal when escape key is pressed',
-          name: 'keyboard',
+          title: 'keyboard',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Open and close the Modal with a slide and fade animation.\n\ndefault: true',
-          name: 'animation',
+          title: 'animation',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A Component type that provides the modal content Markup. This is a useful prop when you want to use your own styles and markup to create a custom modal component.\n\ndefault: ModalDialog',
-          name: 'dialogComponentClass',
+          title: 'dialogComponentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'When true The modal will automatically shift focus to itself when it opens, and replace it to the last focused element when it closes. Generally this should never be set to false as it makes the Modal less accessible to assistive technologies, like screen-readers.',
-          name: 'autoFocus',
+          title: 'autoFocus',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When true The modal will prevent focus from leaving the Modal while open. Consider leaving the default value here, as it is necessary to make the Modal work well with assistive technologies, such as screen readers.',
-          name: 'enforceFocus',
+          title: 'enforceFocus',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When true The modal will restore focus to previously focused element once modal is hidden',
-          name: 'restoreFocus',
+          title: 'restoreFocus',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When true The modal will show itself.',
-          name: 'show',
+          title: 'show',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: '\t\nA callback fired when the header closeButton or non-static backdrop is clicked. Required if either are specified.',
-          name: 'onHide',
+          title: 'onHide',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired before the Modal transitions in',
-          name: 'onEnter',
+          title: 'onEnter',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired as the Modal begins to transition in',
-          name: 'onEntering',
+          title: 'onEntering',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the Modal finishes transitioning in',
-          name: 'onEntered',
+          title: 'onEntered',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired right before the Modal transitions out',
-          name: 'onExit',
+          title: 'onExit',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired as the Modal begins to transition out',
-          name: 'onExiting',
+          title: 'onExiting',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the Modal finishes transitioning out',
-          name: 'onExited',
+          title: 'onExited',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Component size variations.\n\none of: "lg", "large", "sm", "small"',
-          name: 'bsSize',
+          title: 'bsSize',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'modal\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -5341,9 +5341,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Modal'
+      title: 'Modal'
     },
     {
       children: [],
@@ -5352,211 +5352,211 @@ export const mock = {
       componentProps: [
         {
           description: 'Does this view want to become responder on the start of a touch?\n\nView.props.onStartShouldSetResponder: (event) => [true | false], where event is a synthetic touch event as described above.',
-          name: 'onStartShouldSetResponder',
+          title: 'onStartShouldSetResponder',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'An accessibility hint helps users understand what will happen when they perform an action on the accessibility element when that result is not obvious from the accessibility label.',
-          name: 'accessibilityHint',
+          title: 'accessibilityHint',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Overrides the text that\'s read by the screen reader when the user interacts with the element. By default, the label is constructed by traversing all the children and accumulating all the Text nodes separated by space.',
-          name: 'accessibilityLabel',
+          title: 'accessibilityLabel',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'This defines how far a touch event can start away from the view. Typical interface guidelines recommend touch targets that are at least 30 - 40 points/density-independent pixels.\n\nFor example, if a touchable view has a height of 20 the touchable height can be extended to 40 with hitSlop={{top: 10, bottom: 10, left: 0, right: 0}}\n\nThe touch area never extends past the parent view bounds and the Z-index of sibling views always takes precedence if a touch hits two overlapping views.\n\nType: object: {top: number, left: number, bottom: number, right: number}',
-          name: 'hitSlop',
+          title: 'hitSlop',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'Used to locate this view from native classes.\n\nThis disables the \'layout-only view removal\' optimization for this view!',
-          name: 'nativeID',
+          title: 'nativeID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'When accessible is true, the system will try to invoke this function when the user performs accessibility tap gesture.',
-          name: 'onAccessibilityTap',
+          title: 'onAccessibilityTap',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked on mount and layout changes with:\n\n{nativeEvent: { layout: {x, y, width, height}}}\n\nThis event is fired immediately once the layout has been calculated, but the new layout may not yet be reflected on the screen at the time the event is received, especially if a layout animation is in progress.',
-          name: 'onLayout',
+          title: 'onLayout',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'When accessible is true, the system will invoke this function when the user performs the magic tap gesture.',
-          name: 'onMagicTap',
+          title: 'onMagicTap',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Does this view want to "claim" touch responsiveness? This is called for every touch move on the View when it is not the responder.\n\nView.props.onMoveShouldSetResponder: (event) => [true | false], where event is a synthetic touch event as described above.',
-          name: 'onMoveShouldSetResponder',
+          title: 'onMoveShouldSetResponder',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'If a parent View wants to prevent a child View from becoming responder on a move, it should have this handler which returns true.\n\nView.props.onMoveShouldSetResponderCapture: (event) => [true | false], where event is a synthetic touch event as described above.',
-          name: 'onMoveShouldSetResponderCapture',
+          title: 'onMoveShouldSetResponderCapture',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The View is now responding for touch events. This is the time to highlight and show the user what is happening.\n\nView.props.onResponderGrant: (event) => {}, where event is a synthetic touch event as described above.',
-          name: 'onResponderGrant',
+          title: 'onResponderGrant',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The user is moving their finger.\n\nView.props.onResponderMove: (event) => {}, where event is a synthetic touch event as described above.',
-          name: 'onResponderMove',
+          title: 'onResponderMove',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Another responder is already active and will not release it to that View asking to be the responder.\n\nView.props.onResponderReject: (event) => {}, where event is a synthetic touch event as described above.',
-          name: 'onResponderReject',
+          title: 'onResponderReject',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Fired at the end of the touch.\n\nView.props.onResponderRelease: (event) => {}, where event is a synthetic touch event as described above.',
-          name: 'onResponderRelease',
+          title: 'onResponderRelease',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The responder has been taken from the View. Might be taken by other views after a call to onResponderTerminationRequest, or might be taken by the OS without asking (e.g., happens with control center/ notification center on iOS)\n\nView.props.onResponderTerminate: (event) => {}, where event is a synthetic touch event as described above.',
-          name: 'onResponderTerminate',
+          title: 'onResponderTerminate',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Some other View wants to become responder and is asking this View to release its responder. Returning true allows its release.\n\nView.props.onResponderTerminationRequest: (event) => {}, where event is a synthetic touch event as described above.',
-          name: 'onResponderTerminationRequest',
+          title: 'onResponderTerminationRequest',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'When true, indicates that the view is an accessibility element. By default, all the touchable elements are accessible.',
-          name: 'accessible',
+          title: 'accessible',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If a parent View wants to prevent a child View from becoming responder on a touch start, it should have this handler which returns true.\n\nView.props.onStartShouldSetResponderCapture: (event) => [true | false], where event is a synthetic touch event as described above.',
-          name: 'onStartShouldSetResponderCapture',
+          title: 'onStartShouldSetResponderCapture',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Controls whether the View can be the target of touch events.\n\n\'auto\': The View can be the target of touch events.\n\'none\': The View is never the target of touch events.\n\'box-none\': The View is never the target of touch events but it\'s subviews can be. It behaves like if the view had the following classes in CSS:\n.box-none {\n     pointer-events: none;\n}\n.box-none * {\n     pointer-events: all;\n}\n\'box-only\': The view can be the target of touch events but it\'s subviews cannot be. It behaves like if the view had the following classes in CSS:\n.box-only {\n     pointer-events: all;\n}\n.box-only * {\n     pointer-events: none;\n}\nSince pointerEvents does not affect layout/appearance, and we are already deviating from the spec by adding additional modes, we opt to not include pointerEvents on style. On some platforms, we would need to implement it as a className anyways. Using style or not is an implementation detail of the platform.\n\nType: enum(\'box-none\', \'none\', \'box-only\', \'auto\')',
-          name: 'pointerEvents',
+          title: 'pointerEvents',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'This is a special performance property exposed by RCTView and is useful for scrolling content when there are many subviews, most of which are offscreen. For this property to be effective, it must be applied to a view that contains many subviews that extend outside its bound. The subviews must also have overflow: hidden, as should the containing view (or one of its superviews).',
-          name: 'removeClippedSubviews',
+          title: 'removeClippedSubviews',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'style',
-          name: 'style',
+          title: 'style',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Used to locate this view in end-to-end tests.\n\nThis disables the \'layout-only view removal\' optimization for this view!',
-          name: 'testID',
+          title: 'testID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: '> Note: accessibilityComponentTypewill soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead.\n\nIndicates to accessibility services to treat UI component like a native one. Works for Android only.\n\nPossible values are one of:\n\n\'none\'\n\'button\'\n\'radiobutton_checked\'\n\'radiobutton_unchecked\'\n\n',
-          name: 'accessibilityComponentType',
+          title: 'accessibilityComponentType',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Indicates to accessibility services whether the user should be notified when this view changes. Works for Android API >= 19 only. Possible values:\n\n\'none\' - Accessibility services should not announce changes to this view.\n\'polite\'- Accessibility services should announce changes to this view.\n\'assertive\' - Accessibility services should interrupt ongoing speech to immediately announce changes to this view.\n\nType: enum(\'none\', \'polite\', \'assertive\')',
-          name: 'accessibilityLiveRegion',
+          title: 'accessibilityLiveRegion',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Views that are only used to layout their children or otherwise don\'t draw anything may be automatically removed from the native hierarchy as an optimization. Set this property to false to disable this optimization and ensure that this View exists in the native view hierarchy.',
-          name: 'collapsable',
+          title: 'collapsable',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Controls how view is important for accessibility which is if it fires accessibility events and if it is reported to accessibility services that query the screen. Works for Android only.\n\nPossible values:\n\n\'auto\' - The system determines whether the view is important for accessibility - default (recommended).\n\'yes\' - The view is important for accessibility.\n\'no\' - The view is not important for accessibility.\n\'no-hide-descendants\' - The view is not important for accessibility, nor are any of its descendant views.\n\nType: enum(\'auto\', \'yes\', \'no\', \'no-hide-descendants\')',
-          name: 'importantForAccessibility',
+          title: 'importantForAccessibility',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Whether this View needs to rendered offscreen and composited with an alpha in order to preserve 100% correct colors and blending behavior. The default (false) falls back to drawing the component and its children with an alpha applied to the paint used to draw each element instead of rendering the full component offscreen and compositing it back with an alpha value. This default may be noticeable and undesired in the case where the View you are setting an opacity on has multiple overlapping elements (e.g. multiple overlapping Views, or text and a background).\n\nRendering offscreen to preserve correct alpha behavior is extremely expensive and hard to debug for non-native developers, which is why it is not turned on by default. If you do need to enable this property for an animation, consider combining it with renderToHardwareTextureAndroid if the view contents are static (i.e. it doesn\'t need to be redrawn each frame). If that property is enabled, this View will be rendered off-screen once, saved in a hardware texture, and then composited onto the screen with an alpha each frame without having to switch rendering targets on the GPU.',
-          name: 'needsOffscreenAlphaCompositing',
+          title: 'needsOffscreenAlphaCompositing',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Whether this View should render itself (and all of its children) into a single hardware texture on the GPU.\n\nOn Android, this is useful for animations and interactions that only modify opacity, rotation, translation, and/or scale: in those cases, the view doesn\'t have to be redrawn and display lists don\'t need to be re-executed. The texture can just be re-used and re-composited with different parameters. The downside is that this can use up limited video memory, so this prop should be set back to false at the end of the interaction/animation.',
-          name: 'renderToHardwareTextureAndroid',
+          title: 'renderToHardwareTextureAndroid',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: '> Note: AccessibilityRole and AccessibilityStates are meant to be a cross-platform solution to replace accessibilityTraits and accessibilityComponentType, which will soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead of accessibilityTraits and accessibilityComponentType.\n\nTells the screen reader to treat the currently focused on element as having a specific role.\n\nPossible values for AccessibilityRole is one of:\n\n\'none\' - The element has no role.\n\'button\' - The element should be treated as a button.\n\'link\' - The element should be treated as a link.\n\'header\' - The element is a header that divides content into sections.\n\'search\' - The element should be treated as a search field.\n\'image\' - The element should be treated as an image.\n\'key\' - The element should be treated like a keyboard key.\n\'text\' - The element should be treated as text.\n\'summary\' - The element provides app summary information.\n\'imagebutton\' - The element has the role of both an image and also a button.\n\'adjustable\' - The element allows adjustment over a range of values.\nOn iOS, these roles map to corresponding Accessibility Traits. Image button has the same functionality as if the trait was set to both \'image\' and \'button\'. See the Accessibility guide for more information.\n\nOn Android, these roles have similar functionality on TalkBack as adding Accessibility Traits does on Voiceover in iOS',
-          name: 'accessibilityRole',
+          title: 'accessibilityRole',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: '> Note: AccessibilityRole and AccessibilityStates are meant to be a cross-platform solution to replace accessibilityTraits and accessibilityComponentType, which will soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead of accessibilityTraits and accessibilityComponentType.\n\nTells the screen reader to treat the currently focused on element as being in a specific state.\n\nYou can provide one state, no state, or both states. The states must be passed in through an array. Ex: [\'selected\'] or [\'selected\', \'disabled\']\n\nPossible values for AccessibilityStates are:\n\n\'selected\' - The element is in a selcted state.\n\'disabled\' - The element is in a disabled state.',
-          name: 'accessibilityStates',
+          title: 'accessibilityStates',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: '> Note: accessibilityTraits will soon be deprecated. When possible, use accessibilityRole and accessibilityStates instead.\n\nProvides additional traits to screen reader. By default no traits are provided unless specified otherwise in element.\n\nYou can provide one trait or an array of many traits.\n\nPossible values for AccessibilityTraits are:\n\n\'none\' - The element has no traits.\n\'button\' - The element should be treated as a button.\n\'link\' - The element should be treated as a link.\n\'header\' - The element is a header that divides content into sections.\n\'search\' - The element should be treated as a search field.\n\'image\' - The element should be treated as an image.\n\'selected\' - The element is selected.\n\'plays\' - The element plays sound.\n\'key\' - The element should be treated like a keyboard key.\n\'text\' - The element should be treated as text.\n\'summary\' - The element provides app summary information.\n\'disabled\' - The element is disabled.\n\'frequentUpdates\' - The element frequently changes its value.\n\'startsMedia\' - The element starts a media session.\n\'adjustable\' - The element allows adjustment over a range of values.\n\'allowsDirectInteraction\' - The element allows direct touch interaction for VoiceOver users.\n\'pageTurn\' - Informs VoiceOver that it should scroll to the next page when it finishes reading the contents of the element.',
-          name: 'accessibilityTraits',
+          title: 'accessibilityTraits',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'A value indicating whether VoiceOver should ignore the elements within views that are siblings of the receiver. Default is false.',
-          name: 'accessibilityViewIsModal',
+          title: 'accessibilityViewIsModal',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A value indicating whether the accessibility elements contained within this accessibility element are hidden. Default is false.',
-          name: 'accessibilityElementsHidden',
+          title: 'accessibilityElementsHidden',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A value indicating this view should or should not be inverted when color inversion is turned on. A value of true will tell the view to not be inverted even if color inversion is turned on.',
-          name: 'accessibilityIgnoresInvertColors',
+          title: 'accessibilityIgnoresInvertColors',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Whether this View should be rendered as a bitmap before compositing.\n\nOn iOS, this is useful for animations and interactions that do not modify this component\'s dimensions nor its children; for example, when translating the position of a static view, rasterization allows the renderer to reuse a cached bitmap of a static view and quickly composite it during each frame.\n\nRasterization incurs an off-screen drawing pass and the bitmap consumes memory. Test and measure when using this property.',
-          name: 'shouldRasterizeIOS',
+          title: 'shouldRasterizeIOS',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -5566,8 +5566,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'ActivityIndicator',
-      subname: 'ReactNative'
+      title: 'ActivityIndicator',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -5576,289 +5576,289 @@ export const mock = {
       componentProps: [
         {
           description: 'Specifies whether fonts should scale to respect Text Size accessibility settings. The default is true.',
-          name: 'allowFontScaling',
+          title: 'allowFontScaling',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Can tell TextInput to automatically capitalize certain characters. This property is not supported by some keyboard types such as name-phone-pad.\n\ncharacters: all characters.\nwords: first letter of each word.\nsentences: first letter of each sentence (default).\nnone: don\'t auto capitalize anything.\n\nenum(\'none\', \'sentences\', \'words\', \'characters\')',
-          name: 'autoCapitalize',
+          title: 'autoCapitalize',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'If false, disables auto-correct. The default value is true.',
-          name: 'autoCorrect',
+          title: 'autoCorrect',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If true, focuses the input on componentDidMount. The default value is false.',
-          name: 'autoFocus',
+          title: 'autoFocus',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If true, the text field will blur when submitted. The default value is true for single-line fields and false for multiline fields. Note that for multiline fields, setting blurOnSubmit to true means that pressing return will blur the field and trigger the onSubmitEditing event instead of inserting a newline into the field.',
-          name: 'blurOnSubmit',
+          title: 'blurOnSubmit',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If true, caret is hidden. The default value is false.',
-          name: 'caretHidden',
+          title: 'caretHidden',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When the clear button should appear on the right side of the text view. This property is supported only for single-line TextInput component. The default value is never.\n\nenum(\'never\', \'while-editing\', \'unless-editing\', \'always\')',
-          name: 'clearButtonMode',
+          title: 'clearButtonMode',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'If true, clears the text field automatically when editing begins.',
-          name: 'clearTextOnFocus',
+          title: 'clearTextOnFocus',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If true, context menu is hidden. The default value is false.',
-          name: 'contextMenuHidden',
+          title: 'contextMenuHidden',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Determines the types of data converted to clickable URLs in the text input. Only valid if multiline={true} and editable={false}. By default no data types are detected.\n\nYou can provide one type or an array of many types.\n\nPossible values for dataDetectorTypes are:\n\n\'phoneNumber\'\n\'link\'\n\'address\'\n\'calendarEvent\'\n\'none\'\n\'all\'\n\nenum(\'phoneNumber\', \'link\', \'address\', \'calendarEvent\', \'none\', \'all\'), ,array of enum(\'phoneNumber\', \'link\', \'address\', \'calendarEvent\', \'none\', \'all\')\n',
-          name: 'dataDetectorTypes',
+          title: 'dataDetectorTypes',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Provides an initial value that will change when the user starts typing. Useful for simple use-cases where you do not want to deal with listening to events and updating the value prop to keep the controlled state in sync.',
-          name: 'defaultValue',
+          title: 'defaultValue',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'When false, if there is a small amount of space available around a text input (e.g. landscape orientation on a phone), the OS may choose to have the user edit the text inside of a full screen text input mode. When true, this feature is disabled and users will always edit the text directly inside of the text input. Defaults to false.',
-          name: 'disableFullscreenUI',
+          title: 'disableFullscreenUI',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If false, text is not editable. The default value is true.',
-          name: 'editable',
+          title: 'editable',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If true, the keyboard disables the return key when there is no text and automatically enables it when there is text. The default value is false.',
-          name: 'enablesReturnKeyAutomatically',
+          title: 'enablesReturnKeyAutomatically',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If defined, the provided image resource will be rendered on the left. The image resource must be inside /android/app/src/main/res/drawable and referenced like\n\n<TextInput\n inlineImageLeft=\'search_icon\'\n/>',
-          name: 'inlineImageLeft',
+          title: 'inlineImageLeft',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Padding between the inline image, if any, and the text input itself.',
-          name: 'inlineImagePadding',
+          title: 'inlineImagePadding',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Determines the color of the keyboard.\n\nenum(\'default\', \'light\', \'dark\')',
-          name: 'keyboardAppearance',
+          title: 'keyboardAppearance',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Determines which keyboard to open, e.g.numeric.\n\nThe following values work across platforms:\n\ndefault\nnumber-pad\ndecimal-pad\nnumeric\nemail-address\nphone-pad\niOS Only\n\nThe following values work on iOS only:\n\nascii-capable\nnumbers-and-punctuation\nurl\nname-phone-pad\ntwitter\nweb-search\nAndroid Only\n\nThe following values work on Android only:\n\nvisible-password\n\nenum(\'default\', \'email-address\', \'numeric\', \'phone-pad\', \'ascii-capable\', \'numbers-and-punctuation\', \'url\', \'number-pad\', \'name-phone-pad\', \'decimal-pad\', \'twitter\', \'web-search\', \'visible-password\')',
-          name: 'keyboardType',
+          title: 'keyboardType',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Limits the maximum number of characters that can be entered. Use this instead of implementing the logic in JS to avoid flicker.',
-          name: 'maxLength',
+          title: 'maxLength',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'If true, the text input can be multiple lines. The default value is false.',
-          name: 'multiline',
+          title: 'multiline',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the number of lines for a TextInput. Use it with multiline set to true to be able to fill the lines.',
-          name: 'numberOfLines',
+          title: 'numberOfLines',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Callback that is called when the text input is blurred.',
-          name: 'onBlur',
+          title: 'onBlur',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback that is called when the text input\'s text changes.',
-          name: 'onChange',
+          title: 'onChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback that is called when the text input\'s text changes. Changed text is passed as an argument to the callback handler.',
-          name: 'onChangeText',
+          title: 'onChangeText',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback that is called when the text input\'s content size changes. This will be called with { nativeEvent: { contentSize: { width, height } } }.\n\nOnly called for multiline text inputs.',
-          name: 'onContentSizeChange',
+          title: 'onContentSizeChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback that is called when text input ends.',
-          name: 'onEndEditing',
+          title: 'onEndEditing',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback that is called when the text input is focused.',
-          name: 'onFocus',
+          title: 'onFocus',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback that is called when a key is pressed. This will be called with { nativeEvent: { key: keyValue } } where keyValue is \'Enter\' or \'Backspace\' for respective keys and the typed-in character otherwise including \' \' for space. Fires before onChange callbacks. Note: on Android only the inputs from soft keyboard are handled, not the hardware keyboard inputs.',
-          name: 'onKeyPress',
+          title: 'onKeyPress',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked on mount and layout changes with {x, y, width, height}.',
-          name: 'onLayout',
+          title: 'onLayout',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked on content scroll with { nativeEvent: { contentOffset: { x, y } } }. May also contain other properties from ScrollEvent but on Android contentSize is not provided for performance reasons.',
-          name: 'onScroll',
+          title: 'onScroll',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback that is called when the text input selection is changed. This will be called with { nativeEvent: { selection: { start, end } } }.',
-          name: 'onSelectionChange',
+          title: 'onSelectionChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback that is called when the text input\'s submit button is pressed. Invalid if multiline={true} is specified.',
-          name: 'onSubmitEditing',
+          title: 'onSubmitEditing',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The string that will be rendered before text input has been entered.',
-          name: 'placeholder',
+          title: 'placeholder',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The text color of the placeholder string.',
-          name: 'placeholderTextColor',
+          title: 'placeholderTextColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the return key to the label. Use it instead of returnKeyType.',
-          name: 'returnKeyLabel',
+          title: 'returnKeyLabel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Determines how the return key should look. On Android you can also use returnKeyLabel.\n\nCross platform\n\nThe following values work across platforms:\n\ndone\ngo\nnext\nsearch\nsend\nAndroid Only\n\nThe following values work on Android only:\n\nnone\nprevious\niOS Only\n\nThe following values work on iOS only:\n\ndefault\nemergency-call\ngoogle\njoin\nroute\nyahoo\n\nenum(\'done\', \'go\', \'next\', \'search\', \'send\', \'none\', \'previous\', \'default\', \'emergency-call\', \'google\', \'join\', \'route\', \'yahoo\')',
-          name: 'returnKeyType',
+          title: 'returnKeyType',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'If false, scrolling of the text view will be disabled. The default value is true. Only works with multiline={true}.',
-          name: 'scrollEnabled',
+          title: 'scrollEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If true, the text input obscures the text entered so that sensitive text like passwords stay secure. The default value is false. Does not work with multiline={true}.',
-          name: 'secureTextEntry',
+          title: 'secureTextEntry',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The start and end of the text input\'s selection. Set start and end to the same value to position the cursor.\n\nobject: {start: number,end: number}',
-          name: 'selection',
+          title: 'selection',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'The highlight and cursor color of the text input.',
-          name: 'selectionColor',
+          title: 'selectionColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'An instance of DocumentSelectionState, this is some state that is responsible for maintaining selection information for a document.\n\nSome functionality that can be performed with this instance is:\n\nblur()\nfocus()\nupdate()\nYou can reference DocumentSelectionState in vendor/document/selection/DocumentSelectionState.js\n\nDocumentSelectionState',
-          name: 'selectionState',
+          title: 'selectionState',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'If true, all text will automatically be selected on focus.',
-          name: 'selectTextOnFocus',
+          title: 'selectTextOnFocus',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If false, disables spell-check style (i.e. red underlines). The default value is inherited from autoCorrect.',
-          name: 'spellCheck',
+          title: 'spellCheck',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Give the keyboard and the system information about the expected semantic meaning for the content that users enter.\n\nFor iOS 11+ you can set textContentType to username or password to enable autofill of login details from the device keychain.\n\nTo disable autofill, set textContentType to none.\n\nPossible values for textContentType are:\n\nnone\nURL\naddressCity\naddressCityAndState\naddressState\ncountryName\ncreditCardNumber\nemailAddress\nfamilyName\nfullStreetAddress\ngivenName\njobname\nlocation\nmiddleName\nname\nnamePrefix\nnameSuffix\nnickname\norganizationName\npostalCode\nstreetAddressLine1\nstreetAddressLine2\nsublocality\ntelephoneNumber\nusername\npassword\n\n\nenum(\'none\', \'URL\', \'addressCity\', \'addressCityAndState\', \'addressState\', \'countryName\', \'creditCardNumber\', \'emailAddress\', \'familyName\', \'fullStreetAddress\', \'givenName\', \'jobname\', \'location\', \'middleName\', \'name\', \'namePrefix\', \'nameSuffix\', \'nickname\', \'organizationName\', \'postalCode\', \'streetAddressLine1\', \'streetAddressLine2\', \'sublocality\', \'telephoneNumber\', \'username\', \'password\')',
-          name: 'textContentType',
+          title: 'textContentType',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Note that not all Text styles are supported, an incomplete list of what is not supported includes:\n\nborderLeftWidth\nborderTopWidth\nborderRightWidth\nborderBottomWidth\nborderTopLeftRadius\nborderTopRightRadius\nborderBottomRightRadius\nborderBottomLeftRadius\nsee Issue#7070 for more detail.',
-          name: 'style',
+          title: 'style',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Set text break strategy on Android API Level 23+, possible values are simple, highQuality, balanced The default value is simple.\n\nenum(\'simple\', \'highQuality\', \'balanced\')',
-          name: 'textBreakStrategy',
+          title: 'textBreakStrategy',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'The color of the TextInput underline.',
-          name: 'underlineColorAndroid',
+          title: 'underlineColorAndroid',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The value to show for the text input. TextInput is a controlled component, which means the native value will be forced to match this value prop if provided. For most uses, this works great, but in some cases this may cause flickering - one common cause is preventing edits by keeping value the same. In addition to simply setting the same value, either set editable={false}, or set/update maxLength to prevent unwanted edits without flicker.',
-          name: 'value',
+          title: 'value',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -5868,8 +5868,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'TextInput',
-      subname: 'ReactNative'
+      title: 'TextInput',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -5877,43 +5877,43 @@ export const mock = {
       componentProps: [
         {
           description: 'Adds borders on all sides of the table and cells.',
-          name: 'bordered',
+          title: 'bordered',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Enable a hover state on table rows within a <tbody>.',
-          name: 'hover',
+          title: 'hover',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: boolean | string\n\nResponsive tables allow tables to be scrolled horizontally with ease. Across every breakpoint, use responsive for horizontally scrolling tables. Responsive tables are wrapped automatically in a div. Use responsive="sm", responsive="md", responsive="lg", or responsive="xl" as needed to create responsive tables up to a particular breakpoint. From that breakpoint and up, the table will behave normally and not scroll horizontally.',
-          name: 'responsive',
+          title: 'responsive',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Make tables more compact by cutting cell padding in half by setting size as sm.',
-          name: 'size',
+          title: 'size',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Adds zebra-striping to any table row within the <tbody>.',
-          name: 'striped',
+          title: 'striped',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Invert the colors of the table — with light text on dark backgrounds by setting variant as dark.',
-          name: 'variant',
+          title: 'variant',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'table\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -5923,8 +5923,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Table',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Table',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -5933,61 +5933,61 @@ export const mock = {
       componentProps: [
         {
           description: 'Index of initial page that should be selected. Use setPage method to update the page, and onPageSelected to monitor page changes',
-          name: 'initialPage',
+          title: 'initialPage',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Determines whether the keyboard gets dismissed in response to a drag.\n\n\'none\' (the default), drags do not dismiss the keyboard.\n\'on-drag\', the keyboard is dismissed when a drag begins.\n\nenum(\'none\', \'on-drag\')',
-          name: 'keyboardDismissMode',
+          title: 'keyboardDismissMode',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Executed when transitioning between pages (either because of animation for the requested page change or when user is swiping/dragging between pages) The event.nativeEvent object for this callback will carry following data:\n\nposition - index of first page from the left that is currently visible\noffset - value from range [0, 1] describing stage between page transitions. Value x means that (1 - x) fraction of the page at "position" index is visible, and x fraction of the next page is visible.',
-          name: 'onPageScroll',
+          title: 'onPageScroll',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Function called when the page scrolling state has changed. The page scrolling state can be in 3 states:\n\nidle, meaning there is no interaction with the page scroller happening at the time\ndragging, meaning there is currently an interaction with the page scroller\nsettling, meaning that there was an interaction with the page scroller, and the page scroller is now finishing its closing or opening animation',
-          name: 'onPageScrollStateChanged',
+          title: 'onPageScrollStateChanged',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'This callback will be called once ViewPager finish navigating to selected page (when user swipes between pages). The event.nativeEvent object passed to this callback will have following fields:\n\nposition - index of page that has been selected',
-          name: 'onPageSelected',
+          title: 'onPageSelected',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Blank space to show between pages. This is only visible while scrolling, pages are still edge-to-edge.',
-          name: 'pageMargin',
+          title: 'pageMargin',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Whether enable showing peekFraction or not. If this is true, the preview of last and next page will show in current screen. Defaults to false.',
-          name: 'peekEnabled',
+          title: 'peekEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When false, the content does not scroll. The default value is true.',
-          name: 'scrollEnabled',
+          title: 'scrollEnabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A helper function to scroll to a specific page in the ViewPager. The transition between pages will be animated.\n\nposition - index of page that will be selected',
-          name: 'setPage',
+          title: 'setPage',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'A helper function to scroll to a specific page in the ViewPager. The transition between pages will not be animated.\n\nposition - index of page that will be selected',
-          name: 'setPageWithoutAnimation',
+          title: 'setPageWithoutAnimation',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         }
@@ -5997,8 +5997,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'ViewPagerAndroid',
-      subname: 'ReactNative'
+      title: 'ViewPagerAndroid',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -6006,19 +6006,19 @@ export const mock = {
       componentProps: [
         {
           description: 'type: \'21by9\' | \'16by9\' | \'4by3\' | \'1by1\'\ndefault: \'1by1\'\t\n\nSet the aspect ration of the embed',
-          name: 'aspectRatio',
+          title: 'aspectRatio',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\n\nThis component requires a single child element',
-          name: 'children',
+          title: 'children',
           propType: 'PropTypes.element',
           propTypeIsrequired: true
         },
         {
           description: 'default: \'embed-responsive\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6028,8 +6028,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'ResponsiveEmbed',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'ResponsiveEmbed',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -6037,19 +6037,19 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false\t\n\nStyles PageItem as active, and renders a <span> instead of an <a>.',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'(current)\'\t\n\nAn accessible label indicating the active state..',
-          name: 'activeLabel',
+          title: 'activeLabel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nDisables the PageItem',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -6059,8 +6059,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'PageItem',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'PageItem',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -6069,13 +6069,13 @@ export const mock = {
       componentProps: [
         {
           description: 'You can use a custom element type for this component.\n\ndefault: \'div\'',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault" \'panel\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6085,9 +6085,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Panel__Heading'
+      title: 'Panel__Heading'
     },
     {
       children: [],
@@ -6095,43 +6095,43 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'role',
-          name: 'role',
+          title: 'role',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'href',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'onClick',
-          name: 'onClick',
+          title: 'onClick',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'onSelect',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'A unique identifier for the Component, the eventKey makes it distinguishable from others in a set. Similar to React\'s key prop, in that it only needs to be unique amoungst the Components siblings, not globally.',
-          name: 'eventKey',
+          title: 'eventKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6141,9 +6141,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'NavItem'
+      title: 'NavItem'
     },
     {
       children: [],
@@ -6152,19 +6152,19 @@ export const mock = {
       componentProps: [
         {
           description: 'itemStyle',
-          name: 'itemStyle',
+          title: 'itemStyle',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'onValueChange',
-          name: 'onValueChange',
+          title: 'onValueChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'selectedValue',
-          name: 'selectedValue',
+          title: 'selectedValue',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6174,8 +6174,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'PickerIOS',
-      subname: 'ReactNative'
+      title: 'PickerIOS',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -6183,43 +6183,43 @@ export const mock = {
       componentProps: [
         {
           description: 'The checked state of the input, managed by <ToggleButtonGroup> automatically',
-          name: 'checked',
+          title: 'checked',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The disabled state of both the label and input',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: ReactRef\n\nA ref attached to the <input> element',
-          name: 'inputRef',
+          title: 'inputRef',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The HTML input name, used to group like checkboxes or radio buttons together semantically',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'A callback fired when the underlying input element changes. This is passed directly to the <input> so shares the same signature as a native onChange event.',
-          name: 'onChange',
+          title: 'onChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'type\t: \'checkbox\' | \'radio\'\n\nThe <input> element type',
-          name: 'type',
+          title: 'type',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'type: any\n\nThe value of the input, should be unique amoungst it\'s siblings when nested in a ToggleButtonGroup.',
-          name: 'value',
+          title: 'value',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -6229,8 +6229,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'ToggleButton',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'ToggleButton',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -6239,43 +6239,43 @@ export const mock = {
       componentProps: [
         {
           description: 'Determines what the opacity of the wrapped view should be when touch is active.',
-          name: 'activeOpacity',
+          title: 'activeOpacity',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Called immediately after the underlay is hidden',
-          name: 'onHideUnderlay',
+          title: 'onHideUnderlay',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Called immediately after the underlay is shown',
-          name: 'onShowUnderlay',
+          title: 'onShowUnderlay',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'style',
-          name: 'style',
+          title: 'style',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The color of the underlay that will show through when the touch is active.',
-          name: 'underlayColor',
+          title: 'underlayColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: '(Apple TV only) TV preferred focus (see documentation for the View component).',
-          name: 'hasTVPreferredFocus',
+          title: 'hasTVPreferredFocus',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: '(Apple TV only) Object with properties to control Apple TV parallax effects.\n\nenabled: If true, parallax effects are enabled. Defaults to true. shiftDistanceX: Defaults to 2.0. shiftDistanceY: Defaults to 2.0. tiltAngle: Defaults to 0.05. magnification: Defaults to 1.0. pressMagnification: Defaults to 1.0. pressDuration: Defaults to 0.3. pressDelay: Defaults to 0.0.',
-          name: 'tvParallaxProperties',
+          title: 'tvParallaxProperties',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         }
@@ -6285,8 +6285,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'TouchableHighlight',
-      subname: 'ReactNative'
+      title: 'TouchableHighlight',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -6295,7 +6295,7 @@ export const mock = {
       componentProps: [
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'help-block\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6305,9 +6305,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'HelpBlock'
+      title: 'HelpBlock'
     },
     {
       children: [],
@@ -6316,13 +6316,13 @@ export const mock = {
       componentProps: [
         {
           description: 'You can use a custom element type for this component.\n\ndefault: \'p\'',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'form-control-static\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6332,9 +6332,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'FormControl__Static'
+      title: 'FormControl__Static'
     },
     {
       children: [],
@@ -6343,103 +6343,103 @@ export const mock = {
       componentProps: [
         {
           description: 'Form id',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'className',
-          name: 'className',
+          title: 'className',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Form name',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'method="post"',
-          name: 'method',
+          title: 'method',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'target="_blank"',
-          name: 'target',
+          title: 'target',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'action="/users/list"',
-          name: 'action',
+          title: 'action',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'autocomplete="off"',
-          name: 'autocomplete',
+          title: 'autocomplete',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'enctype="multipart/form-data"',
-          name: 'enctype',
+          title: 'enctype',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'acceptcharset="ISO-8859-1"',
-          name: 'acceptcharset',
+          title: 'acceptcharset',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'schema',
-          name: 'schema',
+          title: 'schema',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         },
         {
           description: 'onSubmit',
-          name: 'onSubmit',
+          title: 'onSubmit',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'onBlur',
-          name: 'onBlur',
+          title: 'onBlur',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'onFocus',
-          name: 'onFocus',
+          title: 'onFocus',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'onError',
-          name: 'onError',
+          title: 'onError',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'formData',
-          name: 'formData',
+          title: 'formData',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         },
         {
           description: 'ref={(form) => {yourForm = form;}}',
-          name: 'ref',
+          title: 'ref',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'disabled',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -6449,8 +6449,8 @@ export const mock = {
       isDefault: true,
       provider: 'Jsonschema-form',
       techno: 'React',
-      name: 'Form',
-      subname: 'Jsonschema-form'
+      title: 'Form',
+      subtitle: 'Jsonschema-form'
     },
     {
       children: [],
@@ -6458,13 +6458,13 @@ export const mock = {
       componentProps: [
         {
           description: 'Type: elementType\ndefault: <SafeAnchor>\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'alert-link\'\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -6474,8 +6474,8 @@ export const mock = {
       isDefault: false,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Alert__Link',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Alert__Link',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -6483,25 +6483,25 @@ export const mock = {
       componentProps: [
         {
           description: 'type: elementType\ndefault: <Button>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ntype: string|number\n\nAn html id attribute, necessary for assistive technologies, such as screen readers.',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         },
         {
           description: 'split',
-          name: 'split',
+          title: 'split',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'dropdown-toggle\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6510,9 +6510,9 @@ export const mock = {
       id: 'eFd26kwbHtosMqKDPv9D',
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
-      subname: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Dropdown__Toggle'
+      title: 'Dropdown__Toggle'
     },
     {
       children: [],
@@ -6521,13 +6521,13 @@ export const mock = {
       componentProps: [
         {
           description: 'You can use a custom element type for this component.\n\ndefault: \'div\'',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'modal-body\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6537,9 +6537,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Modal__Body'
+      title: 'Modal__Body'
     },
     {
       children: [],
@@ -6547,43 +6547,43 @@ export const mock = {
       componentProps: [
         {
           description: 'Sets the text for alert close button.\nDefault: \'Close alert\'\t\n',
-          name: 'closeLabel',
+          title: 'closeLabel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Renders a properly aligned dismiss button, as well as adding extra horizontal padding to the Alert.',
-          name: 'dismissible',
+          title: 'dismissible',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'controls show\nCallback fired when alert is closed.\n\n',
-          name: 'onClose',
+          title: 'onClose',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'controlled by: onClose, initial prop: defaultShow\nControls the visual state of the Alert.\n\ndefault: true',
-          name: 'show',
+          title: 'show',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: elementType\ndefault: <Fade>\n\nA react-transition-group Transition component used to animate the Alert on dismissal.',
-          name: 'transition',
+          title: 'transition',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'primary\' | \'secondary\' | \'success\' | \'danger\' | \'warning\' | \'info\' | \'dark\' | \'light\'\n\nThe Alert visual variant',
-          name: 'variant',
+          title: 'variant',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'alert\'\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6592,9 +6592,9 @@ export const mock = {
       id: 'eQIrw5vkpyVf2cjDLc5L',
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
-      subname: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Alert'
+      title: 'Alert'
     },
     {
       children: [],
@@ -6602,25 +6602,25 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <button>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'The toggle content. When empty, the default toggle will be rendered.',
-          name: 'children',
+          title: 'children',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'Toggle navigation\'\t\n\nAn accessible ARIA label for the toggler button.',
-          name: 'label',
+          title: 'label',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'navbar-toggler\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6630,8 +6630,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Navbar__Toggle',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Navbar__Toggle',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -6640,37 +6640,37 @@ export const mock = {
       componentProps: [
         {
           description: 'Component visual or contextual style variants.',
-          name: 'bsStyle',
+          title: 'bsStyle',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Component size variations.',
-          name: 'bsSize',
+          title: 'bsSize',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'href',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'onClick',
-          name: 'onClick',
+          title: 'onClick',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The content of the split button.',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'Accessible label for the toggle; the value of name if not specified.',
-          name: 'toggleLabel',
+          title: 'toggleLabel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6680,9 +6680,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'SplitButton'
+      title: 'SplitButton'
     },
     {
       children: [],
@@ -6690,25 +6690,25 @@ export const mock = {
       componentProps: [
         {
           description: 'type: elementType\ndefault: <nav>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'breadcrumb\'\t\n\nARIA label for the nav element https://www.w3.org/TR/wai-aria-practices/#breadcrumb',
-          name: 'label',
+          title: 'label',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: {}\n\nAdditional props passed as-is to the underlying <ul> element',
-          name: 'listProps',
+          title: 'listProps',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'breadcrumb\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6718,8 +6718,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Breadcrumb',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Breadcrumb',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -6728,67 +6728,67 @@ export const mock = {
       componentProps: [
         {
           description: 'The navigation view that will be rendered to the side of the screen and can be pulled in.',
-          name: 'renderNavigationView',
+          title: 'renderNavigationView',
           propType: 'PropTypes.func',
           propTypeIsrequired: true
         },
         {
           description: 'Function called whenever the navigation view has been closed.',
-          name: 'onDrawerClose',
+          title: 'onDrawerClose',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Specifies the side of the screen from which the drawer will slide in.\n\nType: enum(DrawerConsts.DrawerPosition.Left, DrawerConsts.DrawerPosition.Right)',
-          name: 'drawerPosition',
+          title: 'drawerPosition',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Specifies the width of the drawer, more precisely the width of the view that be pulled in from the edge of the window.',
-          name: 'drawerWidth',
+          title: 'drawerWidth',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Determines whether the keyboard gets dismissed in response to a drag.\n\n\'none\' (the default), drags do not dismiss the keyboard.\n\'on-drag\', the keyboard is dismissed when a drag begins.\n\nType: enum(\'none\', \'on-drag\')',
-          name: 'keyboardDismissMode',
+          title: 'keyboardDismissMode',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Specifies the lock mode of the drawer. The drawer can be locked in 3 states:\n\nunlocked (default), meaning that the drawer will respond (open/close) to touch gestures.\nlocked-closed, meaning that the drawer will stay closed and not respond to gestures.\nlocked-open, meaning that the drawer will stay opened and not respond to gestures. The drawer may still be opened and closed programmatically (openDrawer/closeDrawer).\n\nType: enum(\'unlocked\', \'locked-closed\', \'locked-open\')',
-          name: 'drawerLockMode',
+          title: 'drawerLockMode',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Function called whenever the navigation view has been opened.',
-          name: 'onDrawerOpen',
+          title: 'onDrawerOpen',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Function called whenever there is an interaction with the navigation view.',
-          name: 'onDrawerSlide',
+          title: 'onDrawerSlide',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Function called when the drawer state has changed. The drawer can be in 3 states:\n\nidle, meaning there is no interaction with the navigation view happening at the time\ndragging, meaning there is currently an interaction with the navigation view\nsettling, meaning that there was an interaction with the navigation view, and the navigation view is now finishing its closing or opening animation',
-          name: 'onDrawerStateChanged',
+          title: 'onDrawerStateChanged',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Specifies the background color of the drawer. The default value is white. If you want to set the opacity of the drawer, use rgba. Example:\n\nreturn (\n  <DrawerLayoutAndroid drawerBackgroundColor="rgba(0,0,0,0.5)">\n  </DrawerLayoutAndroid>\n);',
-          name: 'drawerBackgroundColor',
+          title: 'drawerBackgroundColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Make the drawer take the entire screen and draw the background of the status bar to allow it to open over the status bar. It will only have an effect on API 21+.',
-          name: 'statusBarBackgroundColor',
+          title: 'statusBarBackgroundColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6798,8 +6798,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'DrawerLayoutAndroid',
-      subname: 'ReactNative'
+      title: 'DrawerLayoutAndroid',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -6808,19 +6808,19 @@ export const mock = {
       componentProps: [
         {
           description: 'style',
-          name: 'style',
+          title: 'style',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'imageStyle',
-          name: 'imageStyle',
+          title: 'imageStyle',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Allows to set a reference to the inner Image component',
-          name: 'imageRef',
+          title: 'imageRef',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6830,8 +6830,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'ImageBackground',
-      subname: 'ReactNative'
+      title: 'ImageBackground',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -6840,13 +6840,13 @@ export const mock = {
       componentProps: [
         {
           description: 'Component visual or contextual style variants.\n\ndefault: \'default\'',
-          name: 'bsStyle',
+          title: 'bsStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'label\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6856,9 +6856,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Label'
+      title: 'Label'
     },
     {
       children: [],
@@ -6866,67 +6866,67 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false\t\n\nRun the fade in animation when the component mounts, if it is initially shown',
-          name: 'appear',
+          title: 'appear',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nShow the component; triggers the fade in or fade out animation',
-          name: 'in',
+          title: 'in',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nWait until the first "enter" transition to mount the component (add it to the DOM)',
-          name: 'mountOnEnter',
+          title: 'mountOnEnter',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired before the component fades in',
-          name: 'onEnter',
+          title: 'onEnter',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the has component faded in',
-          name: 'onEntered',
+          title: 'onEntered',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component starts to fade in',
-          name: 'onEntering',
+          title: 'onEntering',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired before the component fades out',
-          name: 'onExit',
+          title: 'onExit',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component has faded out',
-          name: 'onExited',
+          title: 'onExited',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the component starts to fade out',
-          name: 'onExiting',
+          title: 'onExiting',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'default: 300\t\n\nDuration of the fade animation in milliseconds, to ensure that finishing callbacks are fired even if the original browser transition end events are canceled',
-          name: 'timeout',
+          title: 'timeout',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\n\t\nUnmount the component (remove it from the DOM) when it is faded out',
-          name: 'unmountOnExit',
+          title: 'unmountOnExit',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -6936,8 +6936,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Fade',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Fade',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -6945,13 +6945,13 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'tab-content\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -6961,8 +6961,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'TabContent',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'TabContent',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -6971,61 +6971,61 @@ export const mock = {
       componentProps: [
         {
           description: 'Default: false',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Default: false',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Default: false',
-          name: 'block',
+          title: 'block',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'onClick',
-          name: 'onClick',
+          title: 'onClick',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'You can use a custom element type for this component.',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'href',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Defines HTML button type attribute\n\ndefault: \'button\'',
-          name: 'type',
+          title: 'type',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Component visual or contextual style variants.\n\ndefault: \'default\'',
-          name: 'bsStyle',
+          title: 'bsStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Component size variations.',
-          name: 'bsSize',
+          title: 'bsSize',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'btn\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7035,9 +7035,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Button'
+      title: 'Button'
     },
     {
       children: [],
@@ -7045,19 +7045,19 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'The ARIA role of the component',
-          name: 'role',
+          title: 'role',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'nav-item\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7067,8 +7067,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Nav__Item',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Nav__Item',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -7076,13 +7076,13 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Change the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7092,8 +7092,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'ModalBody',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'ModalBody',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -7102,25 +7102,25 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false',
-          name: 'vertical',
+          title: 'vertical',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'justified',
+          title: 'justified',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Display block buttons; only useful when used with the "vertical" prop.\n\ndefault: false',
-          name: 'block',
+          title: 'block',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'btn-group\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7130,9 +7130,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'ButtonGroup'
+      title: 'ButtonGroup'
     },
     {
       children: [],
@@ -7141,37 +7141,37 @@ export const mock = {
       componentProps: [
         {
           description: 'src property that is passed down to the image inside this component',
-          name: 'src',
+          title: 'src',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'alt property that is passed down to the image inside this component',
-          name: 'alt',
+          title: 'alt',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'href property that is passed down to the image inside this component',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'onError callback that is passed down to the image inside this component',
-          name: 'onError',
+          title: 'onError',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'onLoad callback that is passed down to the image inside this component',
-          name: 'onLoad',
+          title: 'onLoad',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'thumbnail\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7181,9 +7181,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Thumbnail'
+      title: 'Thumbnail'
     },
     {
       children: [],
@@ -7192,7 +7192,7 @@ export const mock = {
       componentProps: [
         {
           description: 'You can use a custom element for this component\n\ndefault: SafeAnchor',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         }
@@ -7202,9 +7202,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Panel__Toggle'
+      title: 'Panel__Toggle'
     },
     {
       children: [],
@@ -7213,97 +7213,97 @@ export const mock = {
       componentProps: [
         {
           description: 'Used to style and layout the Slider. See StyleSheet.js and ViewStylePropTypes.js for more info.',
-          name: 'style',
+          title: 'style',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'If true the user won\'t be able to move the slider. Default value is false.',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Initial maximum value of the slider. Default value is 1.',
-          name: 'maximumValue',
+          title: 'maximumValue',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'The color used for the track to the left of the button. Overrides the default blue gradient image on iOS.',
-          name: 'minimumTrackTintColor',
+          title: 'minimumTrackTintColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Initial minimum value of the slider. Default value is 0.',
-          name: 'minimumValue',
+          title: 'minimumValue',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Callback that is called when the user releases the slider, regardless if the value has changed. The current value is passed as an argument to the callback handler.',
-          name: 'onSlidingComplete',
+          title: 'onSlidingComplete',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback continuously called while the user is dragging the slider.',
-          name: 'onValueChange',
+          title: 'onValueChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Step value of the slider. The value should be between 0 and (maximumValue - minimumValue). Default value is 0.',
-          name: 'step',
+          title: 'step',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'The color used for the track to the right of the button. Overrides the default gray gradient image on iOS.',
-          name: 'maximumTrackTintColor',
+          title: 'maximumTrackTintColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Used to locate this view in UI automation tests.',
-          name: 'testID',
+          title: 'testID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Initial value of the slider. The value should be between minimumValue and maximumValue, which default to 0 and 1 respectively. Default value is 0.\n\nThis is not a controlled component, you don\'t need to update the value during dragging.',
-          name: 'value',
+          title: 'value',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Color of the foreground switch grip.',
-          name: 'thumbTintColor',
+          title: 'thumbTintColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Assigns a maximum track image. Only static images are supported. The leftmost pixel of the image will be stretched to fill the track.\n\nType: Image.propTypes.source',
-          name: 'maximumTrackImage',
+          title: 'maximumTrackImage',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Assigns a minimum track image. Only static images are supported. The rightmost pixel of the image will be stretched to fill the track.\n\nType: Image.propTypes.source',
-          name: 'minimumTrackImage',
+          title: 'minimumTrackImage',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Sets an image for the thumb. Only static images are supported.\n\nType: Image.propTypes.source',
-          name: 'thumbImage',
+          title: 'thumbImage',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Assigns a single image for the track. Only static images are supported. The center pixel of the image will be stretched to fill the track.\n\nType: Image.propTypes.source',
-          name: 'trackImage',
+          title: 'trackImage',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7313,8 +7313,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'Slider',
-      subname: 'ReactNative'
+      title: 'Slider',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -7322,13 +7322,13 @@ export const mock = {
       componentProps: [
         {
           description: 'type: elementType\ndefault: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'card-body\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7338,8 +7338,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Card__Body',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Card__Body',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -7347,55 +7347,55 @@ export const mock = {
       componentProps: [
         {
           description: 'default: false\t\nManually set the visual state of the button to :active',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: elementType\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Spans the full width of the Button parent',
-          name: 'block',
+          title: 'block',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nDisables the Button, preventing mouse events, even if the underlying component is an <a> element',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Providing a href will render an <a> element, styled as a button.',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'sm\' | \'lg\'\n\nSpecifies a large or small button.',
-          name: 'size',
+          title: 'size',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'button\' | \'reset\' | \'submit\' | null\ndefault: \'button\'\t\n\nDefines HTML button type attribute.',
-          name: 'type',
+          title: 'type',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'primary\'\t\n\nOne or more button variant combinations\n\nbuttons may be one of a variety of visual variants such as:\n\n\'primary\', \'secondary\', \'success\', \'danger\', \'warning\', \'info\', \'dark\', \'light\', \'link\'\n\nas well as "outline" versions (prefixed by \'outline-*\')\n\n\'outline-primary\', \'outline-secondary\', \'outline-success\', \'outline-danger\', \'outline-warning\', \'outline-info\', \'outline-dark\', \'outline-light\'',
-          name: 'variant',
+          title: 'variant',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'btn\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7404,9 +7404,9 @@ export const mock = {
       id: 'iHLaRIu2JjuvM0TXJGrm',
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
-      subname: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Button'
+      title: 'Button'
     },
     {
       children: [],
@@ -7415,25 +7415,25 @@ export const mock = {
       componentProps: [
         {
           description: 'This is the distance between the top of the user screen and the react native view, may be non-zero in some use cases.',
-          name: 'keyboardVerticalOffset',
+          title: 'keyboardVerticalOffset',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Note: Android and iOS both interact with this prop differently. Android may behave better when given no behavior prop at all, whereas iOS is the opposite.\n\nType: enum(\'height\', \'position\', \'padding\')',
-          name: 'behavior',
+          title: 'behavior',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'The style of the content container(View) when behavior is \'position\'.',
-          name: 'contentContainerStyle',
+          title: 'contentContainerStyle',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Enabled or disabled KeyboardAvoidingView. The default is true.',
-          name: 'enabled',
+          title: 'enabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -7443,8 +7443,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'KeyboardAvoidingView',
-      subname: 'ReactNative'
+      title: 'KeyboardAvoidingView',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -7453,13 +7453,13 @@ export const mock = {
       componentProps: [
         {
           description: 'Component size variations.\n\none of: "lg", "large", "sm", "small"',
-          name: 'bsSize',
+          title: 'bsSize',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'input-group\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7469,9 +7469,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'InputGroup'
+      title: 'InputGroup'
     },
     {
       children: [],
@@ -7480,25 +7480,25 @@ export const mock = {
       componentProps: [
         {
           description: 'An HTML <input> name for each child button.\n\nRequired if type is set to \'radio\'',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The value, or array of values, of the active (pressed) buttons',
-          name: 'value',
+          title: 'value',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired when a button is pressed, depending on whether the type is \'radio\' or \'checkbox\', onChange will be called with the value or array of active values',
-          name: 'onChange',
+          title: 'onChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The input type of the rendered buttons, determines the toggle behavior of the buttons\n\ndefault: \'radio\'\n\none of: \'checkbox\', \'radio\'',
-          name: 'type',
+          title: 'type',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         }
@@ -7508,9 +7508,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'ToggleButtonGroup'
+      title: 'ToggleButtonGroup'
     },
     {
       children: [],
@@ -7522,9 +7522,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Breadcrumb'
+      title: 'Breadcrumb'
     },
     {
       children: [],
@@ -7532,43 +7532,43 @@ export const mock = {
       componentProps: [
         {
           description: 'Disables both Buttons',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'An href passed to the Toggle component',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ntype: string|number\n\nAn html id attribute for the Toggle button, necessary for assistive technologies, such as screen readers.',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         },
         {
           description: 'An ARIA accessible role applied to the Menu component. When set to \'menu\', The dropdown',
-          name: 'menuRole',
+          title: 'menuRole',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'An onClick handler passed to the Toggle component',
-          name: 'onClick',
+          title: 'onClick',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Which event when fired outside the component will cause it to be closed.\n\nsee DropdownMenu for more details',
-          name: 'rootCloseEvent',
+          title: 'rootCloseEvent',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ntype: node\n\nThe content of the non-toggle Button.',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.node',
           propTypeIsrequired: true
         }
@@ -7578,8 +7578,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'DropdownButton',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'DropdownButton',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -7588,13 +7588,13 @@ export const mock = {
       componentProps: [
         {
           description: 'You can use a custom element type for this component.\n\ndefault: \'div\'',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'carousel-caption\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7604,9 +7604,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Carousel__Caption'
+      title: 'Carousel__Caption'
     },
     {
       children: [],
@@ -7614,13 +7614,13 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Change the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7630,8 +7630,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'ModalFooter',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'ModalFooter',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -7639,13 +7639,13 @@ export const mock = {
       componentProps: [
         {
           description: 'default: \'toolbar\'\t\n\nThe ARIA role describing the button toolbar. Generally the default "toolbar" role is correct. An aria-label or aria-labelledby prop is also recommended.',
-          name: 'role',
+          title: 'role',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'btn-toolbar\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7655,8 +7655,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'ButtonToolbar',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'ButtonToolbar',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -7664,43 +7664,43 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'type: true | "auto" | number | { span: true | "auto" | number, offset: number, order: number }\n\nThe number of columns to span on large devices (≥992px)',
-          name: 'lg',
+          title: 'lg',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type: true | "auto" | number | { span: true | "auto" | number, offset: number, order: number }\n\nThe number of columns to span on medium devices (≥768px)',
-          name: 'md',
+          title: 'md',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type: true | "auto" | number | { span: true | "auto" | number, offset: number, order: number }\n\nThe number of columns to span on small devices (≥576px)',
-          name: 'sm',
+          title: 'sm',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type: true | "auto" | number | { span: true | "auto" | number, offset: number, order: number }\n\nThe number of columns to span on extra large devices (≥1200px)',
-          name: 'xl',
+          title: 'xl',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type: true | "auto" | number | { span: true | "auto" | number, offset: number, order: number }\n\nThe number of columns to span on sxtra small devices (<576px)',
-          name: 'xs',
+          title: 'xs',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'col\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7710,8 +7710,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Col',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Col',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -7720,13 +7720,13 @@ export const mock = {
       componentProps: [
         {
           description: 'You can use a custom element type for this component.',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'modal-name\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7736,9 +7736,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Modal__name'
+      title: 'Modal__name'
     },
     {
       children: [],
@@ -7747,13 +7747,13 @@ export const mock = {
       componentProps: [
         {
           description: 'Specifies which form element a label is bound to',
-          name: 'for',
+          title: 'for',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Specifies one or more forms the label belongs to',
-          name: 'form',
+          title: 'form',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7763,8 +7763,8 @@ export const mock = {
       isDefault: false,
       provider: 'HTML',
       techno: 'React',
-      name: 'label',
-      subname: 'HTML'
+      title: 'label',
+      subtitle: 'HTML'
     },
     {
       children: [],
@@ -7772,13 +7772,13 @@ export const mock = {
       componentProps: [
         {
           description: 'type: elementType\ndefault: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'carousel-caption\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7787,9 +7787,9 @@ export const mock = {
       id: 'nA7OmIHlHOjwxS8GYjbq',
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
-      subname: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Carousel__Caption'
+      title: 'Carousel__Caption'
     },
     {
       children: [],
@@ -7798,67 +7798,67 @@ export const mock = {
       componentProps: [
         {
           description: 'Uniquely identify the <TabPane> among its siblings.',
-          name: 'eventKey',
+          title: 'eventKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Use animation when showing or hiding <TabPane>s. Use false to disable, true to enable the default <Fade> animation or a react-transition-group v2 <Transition/> component.',
-          name: 'animation',
+          title: 'animation',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'tab-pane\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Transition onEnter callback when animation is not false',
-          name: 'onEnter',
+          title: 'onEnter',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Transition onEntering callback when animation is not false',
-          name: 'onEntering',
+          title: 'onEntering',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: '\t\nTransition onEntered callback when animation is not false',
-          name: 'onEntered',
+          title: 'onEntered',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Transition onExit callback when animation is not false',
-          name: 'onExit',
+          title: 'onExit',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Transition onExiting callback when animation is not false',
-          name: 'onExiting',
+          title: 'onExiting',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Transition onExited callback when animation is not false',
-          name: 'onExited',
+          title: 'onExited',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Wait until the first "enter" transition to mount the tab (add it to the DOM)',
-          name: 'mountOnEnter',
+          title: 'mountOnEnter',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Unmount the tab (remove it from the DOM) when it is no longer visible',
-          name: 'unmountOnExit',
+          title: 'unmountOnExit',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         }
@@ -7868,9 +7868,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'TabPane'
+      title: 'TabPane'
     },
     {
       children: [],
@@ -7878,31 +7878,31 @@ export const mock = {
       componentProps: [
         {
           description: 'You can use a custom element type for this component.\n\ndefault: \'div\'',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Sets a default animation strategy for all children <TabPane>s. Use false to disable, true to enable the default <Fade> animation or a react-transition-group v2 <Transition/> component.\n\ndefault: true',
-          name: 'animation',
+          title: 'animation',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Wait until the first "enter" transition to mount tabs (add them to the DOM)\n\ndefault: false',
-          name: 'mountOnEnter',
+          title: 'mountOnEnter',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Unmount tabs (remove it from the DOM) when they are no longer visible\n\ndefault: false',
-          name: 'unmountOnExit',
+          title: 'unmountOnExit',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'tab\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -7912,9 +7912,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'TabContent'
+      title: 'TabContent'
     },
     {
       children: [],
@@ -7922,31 +7922,31 @@ export const mock = {
       componentProps: [
         {
           description: 'children',
-          name: 'children',
+          title: 'children',
           propType: 'PropTypes.element',
           propTypeIsrequired: true
         },
         {
           description: 'The initial visibility state of the Overlay. For more nuanced visibility control, consider using the Overlay component directly.',
-          name: 'defaultShow',
+          title: 'defaultShow',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: number | shape\n\nA millisecond delay amount to show and hide the Overlay once triggered',
-          name: 'delay',
+          title: 'delay',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'type: function | element\n\nAn element or text to overlay next to the target.',
-          name: 'overlay',
+          title: 'overlay',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'hover\' | \'click\' |\'focus\' | Array<\'hover\' | \'click\' |\'focus\'>\ndefault: [\'hover\', \'focus\']\t\n\nSpecify which action or actions trigger Overlay visibility',
-          name: 'trigger',
+          title: 'trigger',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         }
@@ -7956,8 +7956,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'OverlayTrigger',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'OverlayTrigger',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -7966,37 +7966,37 @@ export const mock = {
       componentProps: [
         {
           description: 'direction',
-          name: 'direction',
+          title: 'direction',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'onAnimateOutEnd',
-          name: 'onAnimateOutEnd',
+          title: 'onAnimateOutEnd',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'active',
+          title: 'active',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'animateIn',
+          title: 'animateIn',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'animateOut',
+          title: 'animateOut',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'index',
-          name: 'index',
+          title: 'index',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         }
@@ -8006,9 +8006,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Carousel__Item'
+      title: 'Carousel__Item'
     },
     {
       children: [],
@@ -8016,19 +8016,19 @@ export const mock = {
       componentProps: [
         {
           description: 'type: elementType\ndefault: <img>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'top\' | \'bottom\'\ndefault: null\t\n\nDefines image position inside the card.',
-          name: 'variant',
+          title: 'variant',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'card-img\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -8038,8 +8038,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Card__Img',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Card__Img',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -8048,37 +8048,37 @@ export const mock = {
       componentProps: [
         {
           description: 'default: fasle',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: fasle',
-          name: 'previous',
+          title: 'previous',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: fasle',
-          name: 'next',
+          title: 'next',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'onClick',
-          name: 'onClick',
+          title: 'onClick',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'onSelect',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'A unique identifier for the Component, the eventKey makes it distinguishable from others in a set. Similar to React\'s key prop, in that it only needs to be unique amoungst the Components siblings, not globally.',
-          name: 'eventKey',
+          title: 'eventKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8088,9 +8088,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Pager__Item'
+      title: 'Pager__Item'
     },
     {
       children: [],
@@ -8098,91 +8098,91 @@ export const mock = {
       componentProps: [
         {
           description: 'type: componentOrElement | function\n\nA component instance, DOM node, or function that returns either. The container element will have the Overlay appended to it via a React portal.',
-          name: 'container',
+          title: 'container',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired before the Overlay transitions in',
-          name: 'onEnter',
+          title: 'onEnter',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the Overlay finishes transitioning in',
-          name: 'onEntered',
+          title: 'onEntered',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired as the Overlay begins to transition in',
-          name: 'onEntering',
+          title: 'onEntering',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired right before the Overlay transitions out',
-          name: 'onExit',
+          title: 'onExit',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired after the Overlay finishes transitioning out',
-          name: 'onExited',
+          title: 'onExited',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Callback fired as the Overlay begins to transition out',
-          name: 'onExiting',
+          title: 'onExiting',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'A callback invoked by the overlay when it wishes to be hidden. Required if rootClose is specified.',
-          name: 'onHide',
+          title: 'onHide',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'auto-start\' | \'auto\' | \'auto-end\' | \'top-start\' | \'top\' | \'top-end\' | \'right-start\' | \'right\' | \'right-end\' | \'bottom-end\' | \'bottom\' | \'bottom-start\' | \'left-end\' | \'left\' | \'left-start\'\ndefault: \'top\'\t\n\nThe placement of the OVerlay in relation to it\'s target.',
-          name: 'placement',
+          title: 'placement',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'A set of popper options and props passed directly to react-popper\'s Popper component.',
-          name: 'popperConfig',
+          title: 'popperConfig',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nSpecify whether the overlay should trigger onHide when the user clicks outside the overlay',
-          name: 'rootClose',
+          title: 'rootClose',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'click\' | \'mousedown\'\n\nSpecify event for triggering a "root close" toggle.',
-          name: 'rootCloseEvent',
+          title: 'rootCloseEvent',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nSet the visibility of the Overlay',
-          name: 'show',
+          title: 'show',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: componentOrElement | function\n\nA component instance, DOM node, or function that returns either. The overlay will be positioned in relation to the target',
-          name: 'target',
+          title: 'target',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'type: boolean | elementType\ndefault: Fade\t\n\nAnimate the entering and exiting of the Ovelay. true will use the <Fade> transition, or a custom react-transition-group <Transition> component can be provided.',
-          name: 'transition',
+          title: 'transition',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -8192,8 +8192,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Overlay',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Overlay',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -8201,13 +8201,13 @@ export const mock = {
       componentProps: [
         {
           description: 'type: \'sm\' | \'lg\'\n\nSet\'s the size of all PageItems.',
-          name: 'size',
+          title: 'size',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'pagination\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8217,8 +8217,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Pagination',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Pagination',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -8226,7 +8226,7 @@ export const mock = {
       componentProps: [
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'page-header\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8236,9 +8236,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'PageHeader'
+      title: 'PageHeader'
     },
     {
       children: [],
@@ -8246,25 +8246,25 @@ export const mock = {
       componentProps: [
         {
           description: 'Sets id on <FormControl> and htmlFor on <FormGroup.Label>.',
-          name: 'controlId',
+          title: 'controlId',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'one of: \'success\', \'warning\', \'error\', null',
-          name: 'validationState',
+          title: 'validationState',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Component size variations.\n\none of: "lg", "large", "sm", "small"',
-          name: 'bsSize',
+          title: 'bsSize',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'form-group\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8274,9 +8274,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'FormGroup'
+      title: 'FormGroup'
     },
     {
       children: [],
@@ -8285,31 +8285,31 @@ export const mock = {
       componentProps: [
         {
           description: 'The target destination of a link.',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The browsing context in which the target destination should open.',
-          name: 'target',
+          title: 'target',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Indicates that the target should be downloaded instead of navigated to.',
-          name: 'download',
+          title: 'download',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The relationship between the link’s page and the link’s target destination.',
-          name: 'rel',
+          title: 'rel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'className',
-          name: 'className',
+          title: 'className',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8319,8 +8319,8 @@ export const mock = {
       isDefault: false,
       provider: 'HTML',
       techno: 'React',
-      name: 'a',
-      subname: 'HTML'
+      title: 'a',
+      subtitle: 'HTML'
     },
     {
       children: [],
@@ -8328,25 +8328,25 @@ export const mock = {
       componentProps: [
         {
           description: 'An HTML <input> name for each child button.\n\nRequired if type is set to \'radio\'',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'controls values\nCallback fired when a button is pressed, depending on whether the type is \'radio\' or \'checkbox\', onChange will be called with the value or array of active values',
-          name: 'onChange',
+          title: 'onChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'checkbox\' | \'radio\'\ndefault: \'radio\'\t\n\nThe input type of the rendered buttons, determines the toggle behavior of the buttons',
-          name: 'type',
+          title: 'type',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'type: any\n\ncontrolled by: onChange, initial prop: defaultValue\nThe value, or array of values, of the active (pressed) buttons',
-          name: 'value',
+          title: 'value',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8356,8 +8356,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'ToggleButtonGroup',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'ToggleButtonGroup',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -8365,13 +8365,13 @@ export const mock = {
       componentProps: [
         {
           description: 'onSelect',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: pager',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8381,9 +8381,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Pager'
+      title: 'Pager'
     },
     {
       children: [],
@@ -8392,61 +8392,61 @@ export const mock = {
       componentProps: [
         {
           description: 'Whether the view should be indicating an active refresh.',
-          name: 'refreshing',
+          title: 'refreshing',
           propType: 'PropTypes.bool',
           propTypeIsrequired: true
         },
         {
           description: 'Called when the view starts refreshing.',
-          name: 'onRefresh',
+          title: 'onRefresh',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The colors (at least one) that will be used to draw the refresh indicator.',
-          name: 'colors',
+          title: 'colors',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         },
         {
           description: 'Whether the pull to refresh functionality is enabled.',
-          name: 'enabled',
+          title: 'enabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The background color of the refresh indicator.',
-          name: 'progressBackgroundColor',
+          title: 'progressBackgroundColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Progress view top offset',
-          name: 'progressViewOffset',
+          title: 'progressViewOffset',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Size of the refresh indicator, see RefreshControl.SIZE.\n\nType: enum(RefreshLayoutConsts.SIZE.DEFAULT, RefreshLayoutConsts.SIZE.LARGE)',
-          name: 'size',
+          title: 'size',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'The color of the refresh indicator.',
-          name: 'tintColor',
+          title: 'tintColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The name displayed under the refresh indicator.',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'name color.',
-          name: 'nameColor',
+          title: 'nameColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8456,8 +8456,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'RefreshControl',
-      subname: 'ReactNative'
+      title: 'RefreshControl',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -8466,25 +8466,25 @@ export const mock = {
       componentProps: [
         {
           description: 'Provides an accessible label for the close button. It is used for Assistive Technology when the label text is not readable.\n\ndefault: \'Close\'',
-          name: 'closeLabel',
+          title: 'closeLabel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Specify whether the Component should contain a close button\n\ndefault: false',
-          name: 'closeButton',
+          title: 'closeButton',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A Callback fired when the close button is clicked. If used directly inside a Modal component, the onHide will automatically be propagated up to the parent Modal onHide.',
-          name: 'onHide',
+          title: 'onHide',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \t\'modal-header\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8494,9 +8494,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Modal__Header'
+      title: 'Modal__Header'
     },
     {
       children: [],
@@ -8505,7 +8505,7 @@ export const mock = {
       componentProps: [
         {
           description: 'className',
-          name: 'className',
+          title: 'className',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8515,8 +8515,8 @@ export const mock = {
       isDefault: false,
       provider: 'HTML',
       techno: 'React',
-      name: 'h3',
-      subname: 'HTML'
+      title: 'h3',
+      subtitle: 'HTML'
     },
     {
       children: [],
@@ -8524,49 +8524,49 @@ export const mock = {
       componentProps: [
         {
           description: 'Align the menu to the right side of the Dropdown toggle',
-          name: 'alignRight',
+          title: 'alignRight',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'up\' | \'left\' | \'right\' | \'down\'\n\nDetermines the direction and location of the Menu in relation to it\'s Toggle.',
-          name: 'drop',
+          title: 'drop',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Allow Dropdown to flip in case of an overlapping on the reference element. For more information refer to Popper.js\'s flip docs.',
-          name: 'flip',
+          title: 'flip',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A callback fired when a menu item is selected.\n\n(eventKey: any, event: Object) => any',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'controls show\nA callback fired when the Dropdown wishes to change visibility. Called with the requested show value, the DOM event, and the source that fired it: \'click\',\'keydown\',\'rootClose\', or \'select\'.\n\nfunction(\n  isOpen: boolean,\n  event: SyntheticEvent,\n  metadata: {\n    source: \'select\' | \'click\' | \'rootClose\' | \'keydown\'\n  }\n): void',
-          name: 'onToggle',
+          title: 'onToggle',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'controlled by: onToggle, initial prop: defaultShow\nWhether or not the Dropdown is visible.',
-          name: 'show',
+          title: 'show',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'dropdown\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8576,8 +8576,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Dropdown',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Dropdown',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -8585,31 +8585,31 @@ export const mock = {
       componentProps: [
         {
           description: 'An Overlay injected set of props for positioning the popover arrow.\n\nThis is generally provided by the Overlay component positioning the popover',
-          name: 'arrowProps',
+          title: 'arrowProps',
           propType: 'PropTypes.shape({})',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ntype: string|number\n\nAn html id attribute, necessary for accessibility',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         },
         {
           description: 'type: \'auto-start\' | \'auto\' | \'auto-end\' | \'top-start\' | \'top\' | \'top-end\' | \'right-start\' | \'right\' | \'right-end\' | \'bottom-end\' | \'bottom\' | \'bottom-start\' | \'left-end\' | \'left\' | \'left-start\'\ndefault: \'right\'\t\n\nSets the direction the Popover is positioned towards.\n\nThis is generally provided by the Overlay component positioning the popover',
-          name: 'placement',
+          title: 'placement',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'name content',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'popover\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8618,9 +8618,9 @@ export const mock = {
       id: 'sDey4hyXFseA8tua2wLA',
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
-      subname: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Popover'
+      title: 'Popover'
     },
     {
       children: [],
@@ -8629,43 +8629,43 @@ export const mock = {
       componentProps: [
         {
           description: 'If the transition between status bar property changes should be animated. Supported for backgroundColor, barStyle and hidden.',
-          name: 'animated',
+          title: 'animated',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the color of the status bar text.\n\nType: enum(\'default\', \'light-content\', \'dark-content\')',
-          name: 'barStyle',
+          title: 'barStyle',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'If the status bar is hidden.',
-          name: 'hidden',
+          title: 'hidden',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The background color of the status bar.',
-          name: 'backgroundColor',
+          title: 'backgroundColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'If the status bar is translucent. When translucent is set to true, the app will draw under the status bar. This is useful when using a semi transparent status bar color.',
-          name: 'translucent',
+          title: 'translucent',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'If the network activity indicator should be visible.',
-          name: 'networkActivityIndicatorVisible',
+          title: 'networkActivityIndicatorVisible',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The transition effect when showing and hiding the status bar using the hidden prop. Defaults to \'fade\'.\n\nenum(\'fade\', \'slide\')',
-          name: 'showHideTransition',
+          title: 'showHideTransition',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         }
@@ -8675,8 +8675,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'StatusBar',
-      subname: 'ReactNative'
+      title: 'StatusBar',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -8684,55 +8684,55 @@ export const mock = {
       componentProps: [
         {
           description: 'Marks the NavItem with a matching eventKey (or href if present) as active.',
-          name: 'activeKey',
+          title: 'activeKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nHave all NavItems to proportionatly fill all available width.',
-          name: 'fill',
+          title: 'fill',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\n\t\nHave all NavItems to evenly fill all available width.',
-          name: 'justify',
+          title: 'justify',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Apply styling an alignment for use in a Navbar. This prop will be set automatically when the Nav is used inside a Navbar.',
-          name: 'navbar',
+          title: 'navbar',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A callback fired when a NavItem is selected.\n\nfunction (\n Any eventKey,\n SyntheticEvent event?\n)',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'ARIA role for the Nav, in the context of a TabContainer, the default will be set to "tablist", but can be overridden by the Nav when set explicitly.\n\nWhen the role is "tablist", NavLink focus is managed according to the ARIA authoring practices for tabs: https://www.w3.org/TR/2013/WD-wai-aria-practices-20130307/#tabpanel',
-          name: 'role',
+          title: 'role',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'tabs\' | \'pills\'\n\nThe visual variant of the nav items.',
-          name: 'variant',
+          title: 'variant',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'nav\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8742,8 +8742,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Nav',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Nav',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -8752,25 +8752,25 @@ export const mock = {
       componentProps: [
         {
           description: 'Controls the collapsed/expanded state ofthe Panel. Requires a Panel.Collapse or <Panel.Body collapsible> child component in order to actually animate out or in.',
-          name: 'expanded',
+          title: 'expanded',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A callback fired when the collapse state changes.',
-          name: 'onToggle',
+          title: 'onToggle',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'A unique identifier for the Component, the eventKey makes it distinguishable from others in a set. Similar to React\'s key prop, in that it only needs to be unique amoungst the Components siblings, not globally.',
-          name: 'eventKey',
+          title: 'eventKey',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'An HTML id attribute uniquely identifying the Panel component.',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8780,9 +8780,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Panel'
+      title: 'Panel'
     },
     {
       children: [],
@@ -8791,49 +8791,49 @@ export const mock = {
       componentProps: [
         {
           description: 'Callback for when an item is selected. This is called with the following parameters:\n\nitemValue: the value prop of the item that was selected\nitemPosition: the index of the selected item in this picker',
-          name: 'onValueChange',
+          title: 'onValueChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Value matching value of one of the items. Can be a string or an integer.',
-          name: 'selectedValue',
+          title: 'selectedValue',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'style',
-          name: 'style',
+          title: 'style',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Used to locate this view in end-to-end tests.',
-          name: 'testID',
+          title: 'testID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'If set to false, the picker will be disabled, i.e. the user will not be able to make a selection.',
-          name: 'enabled',
+          title: 'enabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'On Android, specifies how to display the selection items when the user taps on the picker:\n\n\'dialog\': Show a modal dialog. This is the default.\n\'dropdown\': Shows a dropdown anchored to the picker view\n\nType: enum(\'dialog\', \'dropdown\')',
-          name: 'mode',
+          title: 'mode',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Prompt string for this picker, used on Android in dialog mode as the name of the dialog.',
-          name: 'prompt',
+          title: 'prompt',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Style to apply to each of the item labels.',
-          name: 'itemStyle',
+          title: 'itemStyle',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8843,8 +8843,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'Picker',
-      subname: 'ReactNative'
+      title: 'Picker',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -8852,55 +8852,55 @@ export const mock = {
       componentProps: [
         {
           description: 'Disables both Buttons',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'An href passed to the non-toggle Button',
-          name: 'href',
+          title: 'href',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ntype" string|number\n\nAn html id attribute for the Toggle button, necessary for assistive technologies, such as screen readers.',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'An ARIA accessible role applied to the Menu component. When set to \'menu\', The dropdown',
-          name: 'menuRole',
+          title: 'menuRole',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'An onClick handler passed to the non-toggle Button',
-          name: 'onClick',
+          title: 'onClick',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Which event when fired outside the component will cause it to be closed.\n\nsee DropdownMenu for more details',
-          name: 'rootCloseEvent',
+          title: 'rootCloseEvent',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'An anchor target passed to the non-toggle Button',
-          name: 'target',
+          title: 'target',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ntype: node\n\nThe content of the non-toggle Button.',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.node',
           propTypeIsrequired: true
         },
         {
           description: 'default: \'Toggle dropdown\'\t\n\nAccessible label for the toggle; the value of name if not specified.',
-          name: 'toggleLabel',
+          title: 'toggleLabel',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8910,8 +8910,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'SplitButton',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'SplitButton',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -8923,9 +8923,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Navbar__Brand'
+      title: 'Navbar__Brand'
     },
     {
       children: [],
@@ -8934,7 +8934,7 @@ export const mock = {
       componentProps: [
         {
           description: 'className',
-          name: 'className',
+          title: 'className',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -8944,8 +8944,8 @@ export const mock = {
       isDefault: false,
       provider: 'HTML',
       techno: 'React',
-      name: 'span',
-      subname: 'HTML'
+      title: 'span',
+      subtitle: 'HTML'
     },
     {
       children: [],
@@ -8954,49 +8954,49 @@ export const mock = {
       componentProps: [
         {
           description: '\t\nAn html id attribute, necessary for accessibility',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Sets the direction the Popover is positioned towards.\n\ndefault: \'right\'\n\none of: \'top\', \'right\', \'bottom\', \'left\'',
-          name: 'placement',
+          title: 'placement',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'The "top" position value for the Popover.',
-          name: 'positionTop',
+          title: 'positionTop',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The "left" position value for the Popover.',
-          name: 'positionLeft',
+          title: 'positionLeft',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The "top" position value for the Popover arrow.',
-          name: 'arrowOffsetTop',
+          title: 'arrowOffsetTop',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The "left" position value for the Popover arrow.',
-          name: 'arrowOffsetLeft',
+          title: 'arrowOffsetLeft',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'name content',
-          name: 'name',
+          title: 'name',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'popover\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -9006,9 +9006,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Popover'
+      title: 'Popover'
     },
     {
       children: [],
@@ -9016,13 +9016,13 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <divWithClassName(h4)>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Change the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -9032,8 +9032,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Modalname',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'Modalname',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -9042,187 +9042,187 @@ export const mock = {
       componentProps: [
         {
           description: '(info: any) => ?React.Element<any>\nTakes an item from data and renders it into the list',
-          name: 'renderItem',
+          title: 'renderItem',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The default accessor functions assume this is an array of objects with shape {key: string} but you can override getItem, getItemCount, and keyExtractor to handle any type of index-based data.',
-          name: 'data',
+          title: 'data',
           propType: 'PropTypes.array',
           propTypeIsrequired: true
         },
         {
           description: '(data: any, index: number) => object;\nA generic accessor for extracting an item from any sort of data blob.',
-          name: 'getItem',
+          title: 'getItem',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: '(data: any) => number;\nDetermines how many items are in the data blob.',
-          name: 'getItemCount',
+          title: 'getItemCount',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'debug will turn on extra logging and visual overlays to aid with debugging both usage and implementation, but with a significant perf hit.',
-          name: 'debug',
+          title: 'debug',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A marker property for telling the list to re-render (since it implements PureComponent). If any of your renderItem, Header, Footer, etc. functions depend on anything outside of the data prop, stick it here and treat it immutably.',
-          name: 'extraData',
+          title: 'extraData',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: '(\n    data: any,\n    index: number,\n  ) => {length: number, offset: number, index: number}',
-          name: 'getItemLayout',
+          title: 'getItemLayout',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Instead of starting at the top with the first item, start at initialScrollIndex. This disables the "scroll to top" optimization that keeps the first initialNumToRender items always rendered and immediately renders the items starting at this initial index. Requires getItemLayout to be implemented.',
-          name: 'initialScrollIndex',
+          title: 'initialScrollIndex',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Reverses the direction of scroll. Uses scale transforms of -1.',
-          name: 'inverted',
+          title: 'inverted',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Each cell is rendered using this element. Can be a React Component Class,or a render function. Defaults to using View.',
-          name: 'CellRendererComponent',
+          title: 'CellRendererComponent',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Rendered when the list is empty. Can be a React Component Class, a render function, or a rendered element.',
-          name: 'ListEmptyComponent',
+          title: 'ListEmptyComponent',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Rendered at the bottom of all the items. Can be a React Component Class, a render function, or a rendered element.',
-          name: 'ListFooterComponent',
+          title: 'ListFooterComponent',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Rendered at the top of all the items. Can be a React Component Class, a render function, or a rendered element.',
-          name: 'ListHeaderComponent',
+          title: 'ListHeaderComponent',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'onLayout',
-          name: 'onLayout',
+          title: 'onLayout',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: '() => void\nIf provided, a standard RefreshControl will be added for "Pull to Refresh" functionality. Make sure to also set the refreshing prop correctly.',
-          name: 'onRefresh',
+          title: 'onRefresh',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: '(info: {\n    index: number,\n    highestMeasuredFrameIndex: number,\n    averageItemLength: number,\n  }) => void\nUsed to handle failures when scrolling to an index that has not been measured yet. Recommended action is to either compute your own offset and scrollTo it, or scroll as far as possible and then try again after more items have been rendered.\n\n',
-          name: 'onScrollToIndexFailed',
+          title: 'onScrollToIndexFailed',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: '(info: {\n    viewableItems: array,\n    changed: array,\n  }) => void\nCalled when the viewability of rows changes, as defined by the viewabilityConfig prop.',
-          name: 'onViewableItemsChanged',
+          title: 'onViewableItemsChanged',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Set this true while waiting for new data from a refresh.',
-          name: 'refreshing',
+          title: 'refreshing',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'This may improve scroll performance for large lists.\n\nNote: May have bugs (missing content) in some circumstances - use at your own risk.',
-          name: 'removeClippedSubviews',
+          title: 'removeClippedSubviews',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: '(props: object) => element;\nRender a custom scroll component, e.g. with a differently styled RefreshControl.',
-          name: 'renderScrollComponent',
+          title: 'renderScrollComponent',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'See ViewabilityHelper.js for flow type and further documentation.\n\ntYPE: ViewabilityConfig',
-          name: 'viewabilityConfig',
+          title: 'viewabilityConfig',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'List of ViewabilityConfig/onViewableItemsChanged pairs. A specific onViewableItemsChanged will be called when its corresponding ViewabilityConfig\'s conditions are met. See ViewabilityHelper.js for flow type and further documentation.\n\narray of ViewabilityConfigCallbackPair',
-          name: 'viewabilityConfigCallbackPairs',
+          title: 'viewabilityConfigCallbackPairs',
           propType: 'PropTypes.array',
           propTypeIsrequired: false
         },
         {
           description: 'horizontal',
-          name: 'horizontal',
+          title: 'horizontal',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'How many items to render in the initial batch. This should be enough to fill the screen but not much more. Note these items will never be unmounted as part of the windowed rendering in order to improve perceived performance of scroll-to-top actions.',
-          name: 'initialNumToRender',
+          title: 'initialNumToRender',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: '(item: object, index: number) => string;\nUsed to extract a unique key for a given item at the specified index. Key is used for caching and as the react key to track item re-ordering. The default extractor checks item.key, then falls back to using the index, like React does.',
-          name: 'keyExtractor',
+          title: 'keyExtractor',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'The maximum number of items to render in each incremental render batch. The more rendered at once, the better the fill rate, but responsiveness may suffer because rendering content may interfere with responding to button taps or other interactions.',
-          name: 'maxToRenderPerBatch',
+          title: 'maxToRenderPerBatch',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: '(info: {distanceFromEnd: number}) => void\nCalled once when the scroll position gets within onEndReachedThreshold of the rendered content.',
-          name: 'onEndReached',
+          title: 'onEndReached',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'How far from the end (in units of visible length of the list) the bottom edge of the list must be from the end of the content to trigger the onEndReached callback. Thus a value of 0.5 will trigger onEndReached when the end of the content is within half the visible length of the list.',
-          name: 'onEndReachedThreshold',
+          title: 'onEndReachedThreshold',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Amount of time between low-pri item render batches, e.g. for rendering items quite a ways off screen. Similar fill rate/responsiveness tradeoff as maxToRenderPerBatch.',
-          name: 'updateCellsBatchingPeriod',
+          title: 'updateCellsBatchingPeriod',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Determines the maximum number of items rendered outside of the visible area, in units of visible lengths. So if your list fills the screen, then windowSize={21} (the default) will render the visible screen area plus up to 10 screens above and 10 below the viewport. Reducing this number will reduce memory consumption and may improve performance, but will increase the chance that fast scrolling may reveal momentary blank areas of unrendered content.\n\n',
-          name: 'windowSize',
+          title: 'windowSize',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Set this when offset is needed for the loading indicator to show correctly.',
-          name: 'progressViewOffset',
+          title: 'progressViewOffset',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         }
@@ -9232,8 +9232,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'VirtualizedList',
-      subname: 'ReactNative'
+      title: 'VirtualizedList',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -9241,13 +9241,13 @@ export const mock = {
       componentProps: [
         {
           description: 'type: elementType\ndefault: <div>\t\n\nYou can use a custom element type for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'card-deck\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -9257,8 +9257,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'CardDeck',
-      subname: 'ReactBootstrap_1.0.0-beta.5'
+      title: 'CardDeck',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5'
     },
     {
       children: [],
@@ -9267,85 +9267,85 @@ export const mock = {
       componentProps: [
         {
           description: 'Lets the user select text, to use the native copy and paste functionality.',
-          name: 'selectable',
+          title: 'selectable',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'An accessibility hint helps users understand what will happen when they perform an action on the accessibility element when that result is not obvious from the accessibility label.',
-          name: 'accessibilityHint',
+          title: 'accessibilityHint',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Overrides the text that\'s read by the screen reader when the user interacts with the element. By default, the label is constructed by traversing all the children and accumulating all the Text nodes separated by space.',
-          name: 'accessibilityLabel',
+          title: 'accessibilityLabel',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'When set to true, indicates that the view is an accessibility element. The default value for a Text element is true.\n\nSee the Accessibility guide for more information.',
-          name: 'accessible',
+          title: 'accessible',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'When numberOfLines is set, this prop defines how text will be truncated. numberOfLines must be set in conjunction with this prop.\n\nThis can be one of the following values:\n\nhead - The line is displayed so that the end fits in the container and the missing text at the beginning of the line is indicated by an ellipsis glyph. e.g., "...wxyz"\nmiddle - The line is displayed so that the beginning and end fit in the container and the missing text in the middle is indicated by an ellipsis glyph. "ab...yz"\ntail - The line is displayed so that the beginning fits in the container and the missing text at the end of the line is indicated by an ellipsis glyph. e.g., "abcd..."\nclip - Lines are not drawn past the edge of the text container.\nThe default is tail.\n\nenum(\'head\', \'middle\', \'tail\', \'clip\')',
-          name: 'ellipsizeMode',
+          title: 'ellipsizeMode',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Used to locate this view from native code.',
-          name: 'nativeID',
+          title: 'nativeID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Used to truncate the text with an ellipsis after computing the text layout, including line wrapping, such that the total number of lines does not exceed this number.\n\nThis prop is commonly used with ellipsizeMode.',
-          name: 'numberOfLines',
+          title: 'numberOfLines',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked on mount and layout changes with\n\n{nativeEvent: {layout: {x, y, width, height}}}',
-          name: 'onLayout',
+          title: 'onLayout',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'This function is called on long press.\n\ne.g., onLongPress={this.increaseSize}>',
-          name: 'onLongPress',
+          title: 'onLongPress',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'This function is called on press.\n\ne.g., onPress={() => console.log(\'1st\')}',
-          name: 'onPress',
+          title: 'onPress',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'When the scroll view is disabled, this defines how far your touch may move off of the button, before deactivating the button. Once deactivated, try moving it back and you\'ll see that the button is once again reactivated! Move it back and forth several times while the scroll view is disabled. Ensure you pass in a constant to reduce memory allocations.\n\nobject: {top: number, left: number, bottom: number, right: number}',
-          name: 'pressRetentionOffset',
+          title: 'pressRetentionOffset',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'Specifies whether fonts should scale to respect Text Size accessibility settings. The default is true.',
-          name: 'allowFontScaling',
+          title: 'allowFontScaling',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'style',
-          name: 'style',
+          title: 'style',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Used to locate this view in end-to-end tests.',
-          name: 'testID',
+          title: 'testID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -9355,8 +9355,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'Text',
-      subname: 'ReactNative'
+      title: 'Text',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -9368,8 +9368,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'SafeAreaView',
-      subname: 'ReactNative'
+      title: 'SafeAreaView',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -9378,7 +9378,7 @@ export const mock = {
       componentProps: [
         {
           description: 'className',
-          name: 'className',
+          title: 'className',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -9388,8 +9388,8 @@ export const mock = {
       isDefault: false,
       provider: 'HTML',
       techno: 'React',
-      name: 'h2',
-      subname: 'HTML'
+      title: 'h2',
+      subtitle: 'HTML'
     },
     {
       children: [],
@@ -9398,19 +9398,19 @@ export const mock = {
       componentProps: [
         {
           description: 'Determines what the opacity of the wrapped view should be when touch is active. Defaults to 0.2.',
-          name: 'activeOpacity',
+          title: 'activeOpacity',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: '(Apple TV only) Object with properties to control Apple TV parallax effects.\n\nenabled: If true, parallax effects are enabled. Defaults to true. shiftDistanceX: Defaults to 2.0. shiftDistanceY: Defaults to 2.0. tiltAngle: Defaults to 0.05. magnification: Defaults to 1.0. pressMagnification: Defaults to 1.0. pressDuration: Defaults to 0.3. pressDelay: Defaults to 0.0.',
-          name: 'tvParallaxProperties',
+          title: 'tvParallaxProperties',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: '(Apple TV only) TV preferred focus (see documentation for the View component).',
-          name: 'hasTVPreferredFocus',
+          title: 'hasTVPreferredFocus',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -9420,8 +9420,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'TouchableOpacity',
-      subname: 'ReactNative'
+      title: 'TouchableOpacity',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -9430,13 +9430,13 @@ export const mock = {
       componentProps: [
         {
           description: 'Component size variations.',
-          name: 'bsSize',
+          title: 'bsSize',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'well\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -9446,9 +9446,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Well'
+      title: 'Well'
     },
     {
       children: [],
@@ -9457,61 +9457,61 @@ export const mock = {
       componentProps: [
         {
           description: 'The menu will open above the dropdown button, instead of below it.',
-          name: 'dropup',
+          title: 'dropup',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'An html id attribute, necessary for assistive technologies, such as screen readers.',
-          name: 'id',
+          title: 'id',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'You can use a custom element type for this component.\n\ndefault: ButtonGroup',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: '\t\nThe children of a Dropdown may be a <Dropdown.Toggle> or a <Dropdown.Menu>.',
-          name: 'children',
+          title: 'children',
           propType: 'PropTypes.node',
           propTypeIsrequired: false
         },
         {
           description: 'Whether or not component is disabled.',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Align the menu to the right side of the Dropdown toggle',
-          name: 'pullRight',
+          title: 'pullRight',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Whether or not the Dropdown is visible.',
-          name: 'open',
+          title: 'open',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'defaultOpen',
-          name: 'defaultOpen',
+          title: 'defaultOpen',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'A callback fired when the Dropdown wishes to change visibility. Called with the requested open value, the DOM event, and the source that fired it: \'click\',\'keydown\',\'rootClose\', or \'select\'.\n\nfunction(Boolean isOpen, Object event, { String source }) {}',
-          name: 'onToggle',
+          title: 'onToggle',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Which event when fired outside the component will cause it to be closed\n\nNote: For custom dropdown components, you will have to pass the rootCloseEvent to <RootCloseWrapper> in your custom dropdown menu component (similarly to how it is implemented in <Dropdown.Menu>).\n\none of: \'click\', \'mousedown\'',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         }
@@ -9521,9 +9521,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Dropdown'
+      title: 'Dropdown'
     },
     {
       children: [],
@@ -9531,73 +9531,73 @@ export const mock = {
       componentProps: [
         {
           description: 'default: <nav>\t\n\nSet a custom element for this component.',
-          name: 'as',
+          title: 'as',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'A convenience prop for adding bg-* utility classes since they are so commonly used here. light and dark are common choices but any bg-* class is supported, including any custom ones you might define.\n\nPairs nicely with the variant prop.',
-          name: 'bg',
+          title: 'bg',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'default: false\t\n\nToggles expanded to false after the onSelect event of a descendant of a child <Nav> fires. Does nothing if no <Nav> or <Nav> descendants exist.\n\nManually controlling expanded via the onSelect callback is recommended instead, for more complex operations that need to be executed after the select event of <Nav> descendants.',
-          name: 'collapseOnSelect',
+          title: 'collapseOnSelect',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: true | \'sm\' | \'md\' | \'lg\' | \'xl\'\ndefault: true\t\n\nThe breakpoint, below which, the Navbar will collapse. When true the Navbar will always be expanded regardless of screen size.',
-          name: 'expand',
+          title: 'expand',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'controlled by: onToggle, initial prop: defaultExpanded\nControls the visiblity of the navbar body',
-          name: 'expanded',
+          title: 'expanded',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'top\' | \'bottom\'\n\nCreate a fixed navbar along the top or bottom of the screen, that scrolls with the page. A convenience prop for the fixed-* positioning classes.',
-          name: 'fixed',
+          title: 'fixed',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'A callback fired when a descendant of a child <Nav> is selected. Should be used to execute complex closing or other miscellaneous actions desired after selecting a descendant of <Nav>. Does nothing if no <Nav> or <Nav> descendants exist. The callback is called with an eventKey, which is a prop from the selected <Nav> descendant, and an event.\n\nfunction (\n eventKey: mixed,\n event?: SyntheticEvent\n)\nFor basic closing behavior after all <Nav> descendant onSelect events in mobile viewports, try using collapseOnSelect.\n\nNote: If you are manually closing the navbar using this OnSelect prop, ensure that you are setting expanded to false and not toggling between true and false.',
-          name: 'onSelect',
+          title: 'onSelect',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'controls expanded\nA callback fired when the <Navbar> body collapses or expands. Fired when a <Navbar.Toggle> is clicked and called with the new expanded boolean value.',
-          name: 'onToggle',
+          title: 'onToggle',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'default: \'navigation\'\t\n\nThe ARIA role for the navbar, will default to \'navigation\' for Navbars whose as is something other than <nav>.',
-          name: 'role',
+          title: 'role',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'top\' | \'bottom\'\n\nPosition the navbar at the top or bottom of the viewport, but only after scrolling past it. . A convenience prop for the sticky-* positioning classes.\n\nNot supported in <= IE11 and other older browsers without a polyfill',
-          name: 'sticky',
+          title: 'sticky',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'type: \'light\' | \'dark\'\ndefault: \'light\'\t\n\nThe general visual variant a the Navbar. Use in combination with the bg prop, background-color utilities, or your own background styles.',
-          name: 'variant',
+          title: 'variant',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'required\t\ndefault: \'navbar\'\t\n\nChange the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.',
-          name: 'bsPrefix',
+          title: 'bsPrefix',
           propType: 'PropTypes.string',
           propTypeIsrequired: true
         }
@@ -9606,9 +9606,9 @@ export const mock = {
       id: 'zGTqZTpY0jrPiXGjU7JG',
       isDefault: true,
       provider: 'ReactBootstrap_1.0.0-beta.5',
-      subname: 'ReactBootstrap_1.0.0-beta.5',
+      subtitle: 'ReactBootstrap_1.0.0-beta.5',
       techno: 'React',
-      name: 'Navbar'
+      title: 'Navbar'
     },
     {
       children: [],
@@ -9617,43 +9617,43 @@ export const mock = {
       componentProps: [
         {
           description: 'If true the user won\'t be able to toggle the switch. Default value is false.',
-          name: 'disabled',
+          title: 'disabled',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Custom colors for the switch track.\n\niOS: When the switch value is false, the track shrinks into the border. If you want to change the color of the background exposed by the shrunken track, use ios_backgroundColor.\n\nobject: {false: color, true: color}',
-          name: 'trackColor',
+          title: 'trackColor',
           propType: 'PropTypes.object',
           propTypeIsrequired: false
         },
         {
           description: 'On iOS, custom color for the background. This background color can be seen either when the switch value is false or when the switch is disabled (and the switch is translucent).',
-          name: 'ios_backgroundColor',
+          title: 'ios_backgroundColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Invoked with the new value when the value changes.',
-          name: 'onValueChange',
+          title: 'onValueChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: false
         },
         {
           description: 'Used to locate this view in end-to-end tests.',
-          name: 'testID',
+          title: 'testID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Color of the foreground switch grip. If this is set on iOS, the switch grip will lose its drop shadow.',
-          name: 'thumbColor',
+          title: 'thumbColor',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'The value of the switch. If true the switch will be turned on. Default value is false.',
-          name: 'value',
+          title: 'value',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         }
@@ -9663,8 +9663,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'Switch',
-      subname: 'ReactNative'
+      title: 'Switch',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -9673,37 +9673,37 @@ export const mock = {
       componentProps: [
         {
           description: 'Whether to show the ProgressBar (true, the default) or hide it (false).',
-          name: 'animating',
+          title: 'animating',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Color of the progress bar.',
-          name: 'color',
+          title: 'color',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'If the progress bar will show indeterminate progress. Note that this can only be false if styleAttr is Horizontal.',
-          name: 'indeterminate',
+          title: 'indeterminate',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'The progress value (between 0 and 1).',
-          name: 'progress',
+          title: 'progress',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         },
         {
           description: 'Style of the ProgressBar. One of:\n\nHorizontal\nNormal (default)\nSmall\nLarge\nInverse\nSmallInverse\nLargeInverse\n\nType: enum(\'Horizontal\', \'Normal\', \'Small\', \'Large\', \'Inverse\', \'SmallInverse\', \'LargeInverse\')\n',
-          name: 'styleAttr',
+          title: 'styleAttr',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'Used to locate this view in end-to-end tests.',
-          name: 'testID',
+          title: 'testID',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -9713,8 +9713,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'ProgressBarAndroid',
-      subname: 'ReactNative'
+      title: 'ProgressBarAndroid',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -9723,49 +9723,49 @@ export const mock = {
       componentProps: [
         {
           description: 'The currently selected date.',
-          name: 'date',
+          title: 'date',
           propType: 'PropTypes.instanceOf()',
           propTypeIsrequired: true
         },
         {
           description: 'Date change handler.\n\nThis is called when the user changes the date or time in the UI. The first and only argument is a Date object representing the new date and time.\n\n',
-          name: 'onDateChange',
+          title: 'onDateChange',
           propType: 'PropTypes.func',
           propTypeIsrequired: true
         },
         {
           description: 'Maximum date.\n\nRestricts the range of possible date/time values.',
-          name: 'maximumDate',
+          title: 'maximumDate',
           propType: 'PropTypes.instanceOf()',
           propTypeIsrequired: false
         },
         {
           description: 'Minimum date.\n\nRestricts the range of possible date/time values.',
-          name: 'minimumDate',
+          title: 'minimumDate',
           propType: 'PropTypes.instanceOf()',
           propTypeIsrequired: false
         },
         {
           description: 'The interval at which minutes can be selected.',
-          name: 'minuteInterval',
+          title: 'minuteInterval',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'The date picker mode.\n\nType: enum(\'date\', \'time\', \'datetime\')',
-          name: 'mode',
+          title: 'mode',
           propType: 'PropTypes.oneOf([\'\', \'\'])',
           propTypeIsrequired: false
         },
         {
           description: 'The locale for the date picker. Value needs to be a Locale ID.',
-          name: 'locale',
+          title: 'locale',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         },
         {
           description: 'Timezone offset in minutes.\n\nBy default, the date picker will use the device\'s timezone. With this parameter, it is possible to force a certain timezone offset. For instance, to show times in Pacific Standard Time, pass -7 * 60.',
-          name: 'timeZoneOffsetInMinutes',
+          title: 'timeZoneOffsetInMinutes',
           propType: 'PropTypes.number',
           propTypeIsrequired: false
         }
@@ -9775,8 +9775,8 @@ export const mock = {
       isDefault: true,
       provider: 'ReactNative',
       techno: 'React Native',
-      name: 'DatePickerIOS',
-      subname: 'ReactNative'
+      title: 'DatePickerIOS',
+      subtitle: 'ReactNative'
     },
     {
       children: [],
@@ -9785,37 +9785,37 @@ export const mock = {
       componentProps: [
         {
           description: 'striped\n\ndefault: false',
-          name: 'striped',
+          title: 'striped',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'bordered\n\ndefault: false',
-          name: 'bordered',
+          title: 'bordered',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'condensed',
+          title: 'condensed',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'hover',
+          title: 'hover',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'default: false',
-          name: 'responsive',
+          title: 'responsive',
           propType: 'PropTypes.bool',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'table\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -9825,9 +9825,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Table'
+      title: 'Table'
     },
     {
       children: [],
@@ -9836,7 +9836,7 @@ export const mock = {
       componentProps: [
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'btn-toolbar\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -9846,9 +9846,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'ButtonToolbar'
+      title: 'ButtonToolbar'
     },
     {
       children: [],
@@ -9857,13 +9857,13 @@ export const mock = {
       componentProps: [
         {
           description: 'You can use a custom element type for this component.\n\ndefault: \'div\'',
-          name: 'componentClass',
+          title: 'componentClass',
           propType: 'PropTypes.element',
           propTypeIsrequired: false
         },
         {
           description: 'Base CSS class and prefix for the component. Generally one should only change bsClass to provide new, non-Bootstrap, CSS styles for a component.\n\ndefault: \'modal-footer\'',
-          name: 'bsClass',
+          title: 'bsClass',
           propType: 'PropTypes.string',
           propTypeIsrequired: false
         }
@@ -9873,9 +9873,9 @@ export const mock = {
       isDefault: true,
       provider: 'Bootstrap_0_32_4',
       providerVersion: '0.32.4',
-      subname: 'Bootstrap_0_32_4',
+      subtitle: 'Bootstrap_0_32_4',
       techno: 'React',
-      name: 'Modal__Footer'
+      title: 'Modal__Footer'
     }
   ],
 }
