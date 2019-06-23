@@ -17,7 +17,8 @@ const ProjectSettingsForm = props => {
     setProjectSettings,
     projectSettings,
     technos,
-    templates
+    templates,
+    setCustomForm
   } = props;
 
   const projectTypeEnums = [APPLICATION, SERVICE, COMPONENT];
@@ -97,6 +98,7 @@ const ProjectSettingsForm = props => {
       template,
       flatForms: getFlatForms(template.templateFiles)
     });
+    setCustomForm({ projectSettings: data.formData })
     removeModal();
   };
 

@@ -33,9 +33,9 @@ const NavBar = props => {
   if (isEmpty(templates)) {
     getAllTemplates();
   }
-  if (isEmpty(components)) {
-    getAllComponents();
-  }
+  // if (isEmpty(components)) {
+  //   getAllComponents();
+  // }
 
   const goTo = e => navigate(e.target.name);
 
@@ -74,7 +74,7 @@ const NavBar = props => {
       <Nav>
         {!isAuthenticated && (
           <Nav.Link
-            name="/login"
+            name="login"
             onClick={goTo}
             className="justify-content-end"
           >
@@ -84,7 +84,7 @@ const NavBar = props => {
 
         {isAuthenticated && (
           <Nav.Link
-            name="/logout"
+            name="logout"
             onClick={logout}
             className="justify-content-end"
           >

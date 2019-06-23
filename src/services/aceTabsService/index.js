@@ -11,7 +11,8 @@ export function* watchSetProjectSettings() {
   } = (yield select()).projectSettingsReducer.projectSettings;
   const { templateFiles } = template;
   const files = templateFiles.map(e => e.fileName);
-  const tabs = projectType === SERVICE ? files : files.push(projectName);
+
+  const tabs = projectType === SERVICE ? files : files; //.push(projectName);
 
   yield put(setAceTabs(tabs));
 }

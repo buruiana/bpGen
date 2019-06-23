@@ -1,7 +1,5 @@
 import React from "react";
 import { Route, Switch } from "react-router";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Home from "../components/layouts/Home";
 
 import LoginForm from "../components/forms/LoginForm";
@@ -20,29 +18,25 @@ import Editor from "../components/layouts/Editor";
 import NoMatch from "../components/layouts/NoMatch";
 
 const routes = (
-  <Container>
-    <Row>
-      <div className="body-div">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/home" component={Home} />
-          <Route path="/login" component={LoginForm} />
-          <Route path="/editor" component={Editor} />
-          <Route path="/templates" component={Templates} />
-          <Route path="/template/:id" component={TemplatesForm} />
-          <Route path="/providers" component={Providers} />
-          <Route path="/provider/:id" component={ProviderForm} />
-          <Route path="/technos" component={Technos} />
-          <Route path="/techno/:id" component={TechnosForm} />
-          <Route path="/components" component={Components} />
-          <Route path="/component/:id" component={ComponentsForm} />
-          <Route path="/proptypes" component={PropTypes} />
-          <Route path="/proptype/:id" component={PropTypesForm} />
-          <Route component={NoMatch} />
-        </Switch>
-      </div>
-    </Row>
-  </Container>
+  <div className="container-fluid">
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/home" component={Home} />
+      <Route path="/login" component={LoginForm} />
+      <Route path="/editor" component={Editor} />
+      <Route path="/templates" component={Templates} />
+      <Route path="/template/:id" component={TemplatesForm} />
+      <Route path="/providers" component={Providers} />
+      <Route path="/provider/:id" component={ProviderForm} />
+      <Route path="/technos" component={Technos} />
+      <Route path="/techno/:id" component={TechnosForm} />
+      <Route path="/components" component={Components} />
+      <Route path="/component/:id" component={ComponentsForm} />
+      <Route path="/proptypes" component={PropTypes} />
+      <Route path="/proptype/:id" component={PropTypesForm} />
+      <Route component={NoMatch} />
+    </Switch>
+  </div>
 );
 
 export default routes;

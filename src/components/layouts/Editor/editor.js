@@ -3,6 +3,12 @@ import Alert from 'react-bootstrap/Alert';
 import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
 import sortBy from "lodash/sortBy";
 import get from "lodash/get";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faInfoCircle,
+  faMinusCircle,
+  faAdjust
+} from '@fortawesome/free-solid-svg-icons';
 import CustomNavBar from "../CustomNavBar";
 import Ace from "../AceEditor";
 import isEmpty from "lodash/isEmpty";
@@ -95,7 +101,7 @@ const Editor = props => {
             dndType={externalNodeType}
             shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
             generateNodeProps={({ node, path }) => ({
-              buttons: [<a onClick={() => addModal(COMPONENT_INFO, node, path)} >Info</a>]
+              buttons: [<FontAwesomeIcon icon={faInfoCircle} onClick={() => addModal(COMPONENT_INFO, node, path)} />]
             })}
           />
         </div>
@@ -114,8 +120,8 @@ const Editor = props => {
             getNodeKey={getNodeKey}
             generateNodeProps={({ node, path }) => ({
               buttons: [
-                <a onClick={() => remove(path)}>Remove</a>,
-                <a onClick={() => addModal(PROPS_FORM, node, path)} >Props</a>
+                <FontAwesomeIcon icon={faMinusCircle} onClick={() => remove(path)} />,
+                <FontAwesomeIcon icon={faAdjust} onClick={() => addModal(PROPS_FORM, node, path)} />
               ]
             })}
           />

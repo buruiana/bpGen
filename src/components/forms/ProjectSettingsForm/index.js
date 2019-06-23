@@ -2,6 +2,7 @@ import ProjectSettingsForm from "./projectSettingsForm";
 import { connect } from "react-redux";
 import { setProjectSettings } from "../../../services/projectSettingsService/actions";
 import { removeModal } from "../../../services/modalService/actions";
+import { setCustomForm } from '../../../services/customFormService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -13,7 +14,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   setProjectSettings,
-  removeModal
+  removeModal,
+  setCustomForm
 };
 
 export default connect(

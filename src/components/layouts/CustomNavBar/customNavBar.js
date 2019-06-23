@@ -2,6 +2,11 @@ import * as React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import isEmpty from "lodash/isEmpty";
 import Nav from "react-bootstrap/Nav";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faCogs,
+  faEraser
+} from '@fortawesome/free-solid-svg-icons';
 import { navigate } from "../../../utils";
 import { allmodals } from "../../../utils/constants";
 
@@ -14,7 +19,6 @@ const NavBar = props => {
   };
 
   const openModalForm = event => addModal(event.target.name);
-
   const getTemplateForms = () => {
     return !isEmpty(projectSettings)
       ? projectSettings.template.templateFiles.map(file => {
@@ -40,15 +44,15 @@ const NavBar = props => {
       <Navbar bg="dark" variant="dark" expand="lg">
         <Nav className="mr-auto">
           <Nav.Link
-            name="/init"
-            onClick={openModalForm}
             name={allmodals.PROJECT_SETTINGS}
+            onClick={openModalForm}
+            id={allmodals.PROJECT_SETTINGS}
           >
-            Project Settings
+            <FontAwesomeIcon icon={faCogs} /> Project Settings
           </Nav.Link>
           {getTemplateForms()}
-          <Nav.Link name="/init" onClick={initProject} className="justify-content-end">
-            Init Project
+          <Nav.Link name="init" onClick={initProject} className="justify-content-end">
+            <FontAwesomeIcon icon={faEraser} /> Init Project
           </Nav.Link>
         </Nav>
       </Navbar>

@@ -1,6 +1,7 @@
 export const mock = {
   allTemplates: [
     {
+      id: 'Ce4eZvpVbG93tq66qRPu',
       name: 'react-componnet',
       templateDescription: 'react-component',
       templateFiles: [
@@ -8,7 +9,7 @@ export const mock = {
           fileBlocks: [
             {
               blockDescription: 'imports block',
-              blockImplementation: '',
+              blockImplementation: 'const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);\n\nlet code = `import ${capitalize(forms.projectSettings.projectName)} from \'./${forms.projectSettings.projectName}\';\\n`;\n\n  if (forms.HOC.connectRedux) {\n    let mapStateToProps = \'null\';\n    let mapDispatchToProps = \'null\';\n\n    code+= `import { connect } from "react-redux";\\n\\n`\n\n    if (forms.HOC.mapStateToProps) {\n      code+= `const mapStateToProps = () => {}\\n\\n`;\n      mapStateToProps = \'mapStateToProps\';\n    }\n\n    if (forms.HOC.mapDispatchToProps) {\n      code+= `const mapDispatchToProps = () => {}\\n\\n`;\n      mapDispatchToProps = \'mapDispatchToProps\';\n    }\n\n    if (forms.HOC.mapStateToProps && !forms.HOC.mapDispatchToProps) {\n      code += `export default connect(${mapStateToProps})(${capitalize(forms.projectSettings.projectName)});`;\n    } else if (forms.HOC.mapDispatchToProps) {\n      code += `export default connect(${mapStateToProps}, ${mapDispatchToProps})(${capitalize(forms.projectSettings.projectName)});`;\n    } else {\n      code += `export default connect(null, null)(${capitalize(forms.projectSettings.projectName)});`;\n    }\n  } else {\n    code += `export default ${capitalize(forms.HOC.projectName)};`;\n  }\n\n  return code;',
               blockIsActive: true,
               blockName: 'imports block',
               blockSequence: 1
@@ -68,8 +69,8 @@ export const mock = {
                   ]
                 }
               ],
-              formSchema: '',
-              formUISchema: ''
+              formSchema: 'return {\n    type: \'object\',\n    properties: {\n      connectRedux: { type: \'boolean\', title: \'Connect To Redux\' },\n      mapStateToProps: { type: \'boolean\', title: \'mapStateToProps\' },\n      mapDispatchToProps: { type: \'boolean\', title: \'mapDispatchToProps\' },\n    },\n  };',
+              formUISchema: 'return {\n    "ui:options": { removable: false },\n  };'
             }
           ],
           fileIsActive: true,
@@ -119,8 +120,7 @@ export const mock = {
       templateIsActive: true,
       templateName: 'react-component',
       templateTechnos: 'react',
-      userid: 'aaa',
-      id: 'Ce4eZvpVbG93tq66qRPu'
+      userid: 'aaa'
     },
     {
       id: 'gc45ycQcM1m0K7sjLcCA',
@@ -240,7 +240,7 @@ export const mock = {
           fileBlocks: [
             {
               blockDescription: 'import block descr',
-              blockImplementation: 'const isEmpty = obj => [Object, Array].includes((obj || {}).constructor) && !Object.entries((obj || {})).length;\n\nif(isEmpty(forms.reducerForm)) return \'no reducer\';\nconst reducer = forms.reducerForm;\n\n  let code = ``;\n\n    code = `import * as actionTypes from \'./actionTypes\';\\n\\n`;\n    code+= `export const initialState = () => ({\\n`;\n    const reducerInitVals = [];\n    reducer.map(el => {\n      if (!isEmpty(el.payloadInfo)) {\n        el.payloadInfo.map(payloadInfo => {\n          const dup = reducerInitVals.find(el => el === payloadInfo.payload);\n          if (isEmpty(dup)) {\n            reducerInitVals.push(payloadInfo.payload);\n            code += `${payloadInfo.payload}: ${payloadInfo.initVal},\\n`;\n          }\n        });\n      }\n    });\n    code += `});\\n\\n`;\n\n    code += `export default (state = initialState(), action) => {\\n`;\n    code += ` switch (action.type) {\\n`;\n\n\n    reducer.map(el => {\n      if (el.isActive) {\n        code += `   case actionTypes.${el.name}:\\n`;\n        code += `     return {\\n`;\n        code += `       ...state,\\n`;\n        if (!isEmpty(el.payloadInfo)) {\n          el.payloadInfo.map(payloadInfoEl => {\n            code += `       ${payloadInfoEl.payload}: ${payloadInfoEl.payloadVal},\\n`;\n          });\n        }\n        code += `       };\\n`;\n      }\n    });\n\n    code += `  default:  return state;\\n }\\n`;\n    code += `}\\n`;\n\n  return code;',
+              blockImplementation: 'const isEmpty = obj => [Object, Array].includes((obj || {}).constructor) && !Object.entries((obj || {})).length;\n\nif(isEmpty(forms.reducerForm)) return \'\';\nconst reducer = forms.reducerForm;\n\n  let code = ``;\n\n    code = `import * as actionTypes from \'./actionTypes\';\\n\\n`;\n    code+= `export const initialState = () => ({\\n`;\n    const reducerInitVals = [];\n    reducer.map(el => {\n      if (!isEmpty(el.payloadInfo)) {\n        el.payloadInfo.map(payloadInfo => {\n          const dup = reducerInitVals.find(el => el === payloadInfo.payload);\n          if (isEmpty(dup)) {\n            reducerInitVals.push(payloadInfo.payload);\n            code += `${payloadInfo.payload}: ${payloadInfo.initVal},\\n`;\n          }\n        });\n      }\n    });\n    code += `});\\n\\n`;\n\n    code += `export default (state = initialState(), action) => {\\n`;\n    code += ` switch (action.type) {\\n`;\n\n\n    reducer.map(el => {\n      if (el.isActive) {\n        code += `   case actionTypes.${el.name}:\\n`;\n        code += `     return {\\n`;\n        code += `       ...state,\\n`;\n        if (!isEmpty(el.payloadInfo)) {\n          el.payloadInfo.map(payloadInfoEl => {\n            code += `       ${payloadInfoEl.payload}: ${payloadInfoEl.payloadVal},\\n`;\n          });\n        }\n        code += `       };\\n`;\n      }\n    });\n\n    code += `  default:  return state;\\n }\\n`;\n    code += `}\\n`;\n\n  return code;',
               blockIsActive: true,
               blockName: 'import block',
               blockSequence: 1
