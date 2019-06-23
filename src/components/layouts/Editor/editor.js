@@ -1,8 +1,15 @@
 import React from "react";
+import Alert from 'react-bootstrap/Alert';
+import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
+import sortBy from "lodash/sortBy";
+import get from "lodash/get";
 import CustomNavBar from "../CustomNavBar";
 import Ace from "../AceEditor";
 import isEmpty from "lodash/isEmpty";
-import SortableTree, { removeNodeAtPath } from 'react-sortable-tree';
+import { fillNodeData } from '../../../services/sortableTreeService/helper';
+import GenericSearchForm from '../../forms/GenericSearchForm';
+import { availablecomponents } from '../../../utils/constants';
+
 import 'react-sortable-tree/style.css';
 
 const externalNodeType = 'yourNodeType';
@@ -10,45 +17,71 @@ const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const Editor = props => {
-  const { projectSettings, components, addModal, defaultTree, tree } = props;
+  const { projectSettings, components, addModal, defaultTree, tree, providers, setTree, searchData, projectError } = props;
   const renderAce = () => {
     return !isEmpty(projectSettings) ? <Ace /> : null;
   };
 
-  const setNewTree = treeData2 => props.setTree({ treeData2 });
+  const setNewTree = treeData2 => setTree({ treeData2 });
   const onChange = treeData => {
-    if (treeData.length === 1) setNewTree(fillNodeData(treeData, props.providers));
+    if (treeData.length === 1) setNewTree(fillNodeData(treeData, providers));
   };
   const remove = path => {
     const newTree = {
       treeData2: removeNodeAtPath({
-        treeData: props.tree,
+        treeData: tree,
         path,
         getNodeKey
       })
     };
-    setNewTree(fillNodeData(newTree.treeData2, props.providers));
+    setNewTree(fillNodeData(newTree.treeData2, providers));
   };
 
   const filteredDefaultTree = () => {
-    const filteredTree = props.defaultTree.filter(el => {
-      if (!isEmpty(props.searchData) && props.searchData.name) {
-        return (el.title.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
-          && el.techno === props.searchData.projectTechno
-          && get(props.searchData, 'provider', el.provider) === el.provider)
+    const filteredTree = components.filter(el => {
+      if (!isEmpty(searchData) && searchData.name) {
+        return (el.title.toLowerCase().indexOf(searchData.name.toLowerCase()) !== -1
+          && get(searchData, 'techno', el.techno) === el.techno
+          && get(searchData, 'provider', el.provider) === el.provider)
       }
-      return (get(props.searchData, 'provider', el.provider) === el.provider
-        && get(props.searchData, 'projectTechno', el.techno) === el.techno);
+      return (get(searchData, 'provider', el.provider) === el.provider
+        && get(searchData, 'techno', el.techno) === el.techno);
     });
     return sortBy(filteredTree, el => el.title);
   };
 
 
+  const { projectName} = projectSettings;
+  const renderSearchField = () => {
+    return <GenericSearchForm componentname={availablecomponents.COMPONENTS} />
+    // return projectName
+    //   ? <GenericSearchForm componentname={availablecomponents.COMPONENTS} />
+    //   : null;
+  };
+
+  const renderError = () => {
+    const shortErr = projectError.slice(
+      projectError.indexOf('<pre>') + 5,
+      projectError.indexOf('<br>')
+    );
+
+    if (projectError) {
+      return (
+        <Alert>
+          <div>
+            {shortErr}
+          </div>
+        </Alert>
+      );
+    }
+    return null;
+  };
+
   const returnComponentBlock = () => {
     return (
       <div className='paddingTop'>
-        {/* {renderSearchField()}
-        {renderError()} */}
+        {renderSearchField()}
+        {renderError()}
         <div
           style={{
             height: 800,
@@ -57,7 +90,7 @@ const Editor = props => {
           }}
         >
           <SortableTree
-            treeData={components}
+            treeData={filteredDefaultTree()}
             onChange={() => console.log('changed')}
             dndType={externalNodeType}
             shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}

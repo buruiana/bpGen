@@ -2,6 +2,7 @@ import Editor from "./editor";
 import { connect } from "react-redux";
 
 import { addModal } from "../../../services/modalService/actions";
+import { setTree } from "../../../services/sortableTreeService/actions";
 
 const mapStateToProps = state => ({
   projectSettings: state.projectSettingsReducer.projectSettings,
@@ -9,10 +10,13 @@ const mapStateToProps = state => ({
   providers: state.providersReducer.providers,
   defaultTree: state.sortableTreeReducer.defaultTree,
   tree: state.sortableTreeReducer.tree,
+  projectError: state.projectSettingsReducer.projectError,
+  searchData: state.filterDataReducer.searchData,
 });
 
 const mapDispatchToProps = {
-  addModal: modal => addModal(modal)
+  addModal,
+  setTree
 };
 
 export default connect(
