@@ -3,7 +3,7 @@ import Form from "react-jsonschema-form";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import isEmpty from 'lodash/isEmpty';
-import { fields } from './constants.js';
+import { availablefields } from './constants.js';
 import { availablecomponents } from '../../../utils/constants';
 
 const GenericSearchForm = props => {
@@ -24,7 +24,7 @@ const GenericSearchForm = props => {
     },
   };
 
-  fields[componentname].map(el => {
+  availablefields[componentname].map(el => {
     if (el === availablecomponents.TECHNOS) {
       schema.properties.techno = {
         type: 'string',
