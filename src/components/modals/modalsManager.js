@@ -3,6 +3,8 @@ import isEmpty from "lodash/isEmpty";
 import GenericModal from "./GenericModal";
 import ProjectSettings from "../modals/ProjectSettings";
 import { allmodals } from "../../utils/constants";
+import ComponentInfo from '../modals/ComponentInfo';
+import ComponentProps from '../modals/ComponentProps';
 
 const ModalsManager = (modals, projectSettings) => {
   const currentModal = !isEmpty(modals) ? modals[modals.length - 1] : null;
@@ -25,6 +27,10 @@ const ModalsManager = (modals, projectSettings) => {
     switch (currentModal) {
       case allmodals.PROJECT_SETTINGS:
         return <ProjectSettings />;
+      case allmodals.COMPONENT_INFO:
+        return <ComponentInfo />;
+      case allmodals.COMPONENT_PROPS:
+        return <ComponentProps />;
       default:
         return getCustomModals(currentModal);
     }

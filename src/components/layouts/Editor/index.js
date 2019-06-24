@@ -2,9 +2,10 @@ import Editor from "./editor";
 import { connect } from "react-redux";
 
 import { addModal } from "../../../services/modalService/actions";
-import { setTree } from "../../../services/sortableTreeService/actions";
+import { setTree, setNodePath } from "../../../services/sortableTreeService/actions";
 import { setCustomForm } from '../../../services/customFormService/actions';
 import { generateCode } from "../../../services/codeGenerationService/actions";
+import { setModalData } from '../../../services/modalService/actions';
 
 const mapStateToProps = state => ({
   projectSettings: state.projectSettingsReducer.projectSettings,
@@ -21,7 +22,9 @@ const mapDispatchToProps = {
   addModal,
   setTree,
   setCustomForm,
-  generateCode
+  generateCode,
+  setModalData,
+  setNodePath
 };
 
 export default connect(

@@ -1,7 +1,8 @@
 import * as actionTypes from "../modalService/actionTypes";
 import dropRight from "lodash/dropRight";
 export const initialState = () => ({
-  modals: []
+  modals: [],
+  modalData: {}
 });
 
 export default (state = initialState(), action) => {
@@ -15,6 +16,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         modals: dropRight(state.modals, 1)
+      };
+    case actionTypes.SET_MODDAL_DATA:
+      return {
+        ...state,
+        modalData: action.modalData
       };
     default:
       return state;

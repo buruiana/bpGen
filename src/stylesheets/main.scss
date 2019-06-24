@@ -62,8 +62,15 @@ body {
   background-color: #ECF8F1;
 }
 
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #495057;
+    background-color: #E68973 !important;
+    border-color: #fff !important;
+}
+
 .rst__moveHandle, .rst__loadingHandle {
   background-color: #db853d;
+  border-radius: 10px 0px 0px 10px;
 }
 
 div.rst__rowContents {
@@ -76,6 +83,12 @@ div.rst__moveHandle {
 
 .rstcustom__rowLabel {
   cursor: pointer;
+}
+
+.componentInfoIcon {
+  color: #3D93DB;
+  cursor: pointer;
+  margin-left: 5px;
 }
 
 .mainBox {

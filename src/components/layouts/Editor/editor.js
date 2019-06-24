@@ -13,7 +13,7 @@ import Ace from "../AceEditor";
 import isEmpty from "lodash/isEmpty";
 import { fillNodeData } from '../../../services/sortableTreeService/helper';
 import GenericSearchForm from '../../forms/GenericSearchForm';
-import { availablecomponents } from '../../../utils/constants';
+import { availablecomponents, allmodals } from '../../../utils/constants';
 
 import 'react-sortable-tree/style.css';
 
@@ -22,9 +22,15 @@ const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const Editor = props => {
-  const { projectSettings, components, addModal, defaultTree, tree, providers, setTree, searchData, projectError, setCustomForm, generateCode, forms } = props;
+  const { projectSettings, components, addModal, defaultTree, tree, providers, setTree, searchData, projectError, setCustomForm, generateCode, forms, setModalData, setNodePath } = props;
   const renderAce = () => {
     return !isEmpty(projectSettings) ? <Ace /> : null;
+  };
+
+  const openModal = (type, node, path) => {
+    setNodePath({ node, path })
+    setModalData({ node, path });
+    addModal(type);
   };
 
   const setNewTree = treeData2 => {
@@ -95,26 +101,6 @@ const Editor = props => {
     return (
       <div className='paddingTop'>
         {renderError()}
-        {/* <div>
-          <div
-            style={{
-              height: 200,
-              width: '50%',
-              float: 'left'
-            }}
-          >
-            {renderSearchField()}
-          </div>
-          <div
-            style={{
-              height: 200,
-              width: '50%',
-              float: 'left'
-            }}
-          >
-
-          </div>
-        </div> */}
         <div>
           {renderSearchField()}
         </div>
@@ -132,7 +118,7 @@ const Editor = props => {
               dndType={externalNodeType}
               shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
               generateNodeProps={({ node, path }) => ({
-                buttons: [<FontAwesomeIcon color='#3d44db' icon={faInfoCircle} onClick={() => addModal(COMPONENT_INFO, node, path)} />]
+                buttons: [<FontAwesomeIcon className='componentInfoIcon' icon={faInfoCircle} onClick={() => openModal(allmodals.COMPONENT_INFO, node, path)} />]
               })}
             />
           </div>
@@ -151,8 +137,8 @@ const Editor = props => {
               getNodeKey={getNodeKey}
               generateNodeProps={({ node, path }) => ({
                 buttons: [
-                  <FontAwesomeIcon icon={faMinusCircle} onClick={() => remove(path)} />,
-                  <FontAwesomeIcon icon={faAdjust} onClick={() => addModal(PROPS_FORM, node, path)} />
+                  <FontAwesomeIcon className='componentInfoIcon' icon={faMinusCircle} onClick={() => remove(path)} />,
+                  <FontAwesomeIcon className='componentInfoIcon' icon={faAdjust} onClick={() => openModal(allmodals.COMPONENT_PROPS, node, path)} />
                 ]
               })}
             />
