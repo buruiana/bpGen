@@ -26,12 +26,14 @@ const Ace = props => {
   //   props.projectSettings.projectType === SERVICE
   //     ? "serviceAce"
   //     : "componentAce";
-
   return (
     <div>
       {/* {getExportBox} */}
       <div className="paddingTop">
-        <AceTabs />
+        <div>
+          <AceTabs />
+        </div>
+        
         <AceEditor
           mode="jsx"
           theme="xcode"

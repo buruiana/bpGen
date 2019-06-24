@@ -63,7 +63,7 @@ body {
 }
 
 .rst__moveHandle, .rst__loadingHandle {
-  background-color: #92D4E8;
+  background-color: #db853d;
 }
 
 div.rst__rowContents {
@@ -71,39 +71,12 @@ div.rst__rowContents {
 }
 
 div.rst__moveHandle {
-  background-color: #92D4E8;
+  background-color: #db853d;
 }
 
 .rstcustom__rowLabel {
   cursor: pointer;
 }
-
-
-
-// .btn-add > i {
-//   display: none;
-// }
-
-// .btn-add::after {
-//   content: "Add";
-// }
-
-// .array-item-remove > i {
-//   display: none;
-// }
-
-// .array-item-remove::after {
-//   content: "Remove";
-// }
-
-// .array-item-move-down > i {
-//   display: none;
-// }
-
-// .array-item-move-up > i {
-//   display: none;
-// }
-
 
 .mainBox {
   position: relative;
@@ -116,9 +89,17 @@ div.rst__moveHandle {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: #f7d8d9;
+  background-color: white;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: #f7d8d9 !important;
+  background-color: white !important;
+}
+
+.rst__rowContents {
+  border: 1px solid #db853d;
+}
+
+.rst__moveHandle, .rst__loadingHandle {
+  border: 1px solid #db853d;
 }

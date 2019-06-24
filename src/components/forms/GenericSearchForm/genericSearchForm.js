@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import isEmpty from 'lodash/isEmpty';
 import { availablefields } from './constants.js';
 import { availablecomponents } from '../../../utils/constants';
+import LayoutField from '../../../utils/LayoutField';
 
 const GenericSearchForm = props => {
   const { providers, technos, searchData, componentname, setFilter } = props;
@@ -21,6 +22,8 @@ const GenericSearchForm = props => {
     type: "object",
     properties: {
       name: { type: "string", default: '' },
+      provider: { type: "string", default: '' },
+      techno: { type: "string", default: '' },
     },
   };
 
@@ -39,6 +42,9 @@ const GenericSearchForm = props => {
     }
   });
   const onChange = data => setFilter(data.formData);
+  const fields = {
+    layout: LayoutField
+  }
 
   const uiSchema = {
     name: {
@@ -63,7 +69,7 @@ const GenericSearchForm = props => {
     'ui:layout': [
       {
         name: { md: 4 },
-        projectTechno: { md: 4 },
+        techno: { md: 4 },
         provider: { md: 4 },
       },
     ],
@@ -94,6 +100,7 @@ const GenericSearchForm = props => {
               onError={log("errors")}
               formData={searchData}
               autocomplete='on'
+              fields={fields}
             >
               <button type="submit" className="hidden">Submit</button>
             </Form>

@@ -7,7 +7,8 @@ import { allmodals } from "../../../utils/constants";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faCogs,
-  faEraser
+  faEraser,
+  faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = props => {
@@ -41,9 +42,9 @@ const NavBar = props => {
   if (isEmpty(templates)) {
     getAllTemplates();
   }
-  // if (isEmpty(components)) {
-  //   getAllComponents();
-  // }
+  if (isEmpty(components)) {
+    getAllComponents();
+  }
 
   const initProject = () => {
     console.log("console: initProject");
@@ -72,67 +73,12 @@ const NavBar = props => {
   };
 
   return (
-    // <Navbar bg="dark" variant="dark" expand="lg">
-    //   <Navbar.Brand onClick={goTo} name="/home">
-    //     bpGen
-    //   </Navbar.Brand>
-    //   <Nav className="mr-auto">
-    //     <Nav.Link name="/home" onClick={goTo}>
-    //       Home
-    //     </Nav.Link>
-    //     {isAuthenticated && (
-    //       <>
-    //         <Nav.Link name="/templates" onClick={goTo}>
-    //           Templates
-    //         </Nav.Link>
-    //         <Nav.Link name="/providers" onClick={goTo}>
-    //           Providers
-    //         </Nav.Link>
-    //         <Nav.Link name="/technos" onClick={goTo}>
-    //           Technos
-    //         </Nav.Link>
-    //         <Nav.Link name="/components" onClick={goTo}>
-    //           Components
-    //         </Nav.Link>
-    //         <Nav.Link name="/proptypes" onClick={goTo}>
-    //           PropTypes
-    //         </Nav.Link>
-    //         <Nav.Link name="/editor" onClick={goTo}>
-    //           Editor
-    //         </Nav.Link>
-    //       </>
-    //     )}
-    //   </Nav>
-    //   <Nav>
-    //     {!isAuthenticated && (
-    //       <Nav.Link
-    //         name="login"
-    //         onClick={goTo}
-    //         className="justify-content-end"
-    //       >
-    //         Login
-    //       </Nav.Link>
-    //     )}
 
-    //     {isAuthenticated && (
-    //       <Nav.Link
-    //         name="logout"
-    //         onClick={logout}
-    //         className="justify-content-end"
-    //       >
-    //         Logout
-    //       </Nav.Link>
-    //     )}
-    //   </Nav>
-    // </Navbar>
     <Navbar expand="lg">
       <Navbar.Brand onClick={goTo} name="/home">
         bpGen
       </Navbar.Brand>
       <Nav className="mr-auto">
-        <Nav.Link name="/home" onClick={goTo}>
-          Home
-        </Nav.Link>
         {isAuthenticated && (
           <>
             <Nav.Link
@@ -166,7 +112,7 @@ const NavBar = props => {
             onClick={logout}
             className="justify-content-end"
           >
-            Logout
+            <FontAwesomeIcon icon={faSignOutAlt} />
           </Nav.Link>
         )}
       </Nav>

@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 
 import { addModal } from "../../../services/modalService/actions";
 import { setTree } from "../../../services/sortableTreeService/actions";
+import { setCustomForm } from '../../../services/customFormService/actions';
+import { generateCode } from "../../../services/codeGenerationService/actions";
 
 const mapStateToProps = state => ({
   projectSettings: state.projectSettingsReducer.projectSettings,
@@ -12,11 +14,14 @@ const mapStateToProps = state => ({
   tree: state.sortableTreeReducer.tree,
   projectError: state.projectSettingsReducer.projectError,
   searchData: state.filterDataReducer.searchData,
+  forms: state.customFormReducer.forms
 });
 
 const mapDispatchToProps = {
   addModal,
-  setTree
+  setTree,
+  setCustomForm,
+  generateCode
 };
 
 export default connect(

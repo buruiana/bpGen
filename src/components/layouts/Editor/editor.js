@@ -9,7 +9,6 @@ import {
   faMinusCircle,
   faAdjust
 } from '@fortawesome/free-solid-svg-icons';
-import CustomNavBar from "../CustomNavBar";
 import Ace from "../AceEditor";
 import isEmpty from "lodash/isEmpty";
 import { fillNodeData } from '../../../services/sortableTreeService/helper';
@@ -23,12 +22,21 @@ const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const Editor = props => {
-  const { projectSettings, components, addModal, defaultTree, tree, providers, setTree, searchData, projectError } = props;
+  const { projectSettings, components, addModal, defaultTree, tree, providers, setTree, searchData, projectError, setCustomForm, generateCode, forms } = props;
   const renderAce = () => {
     return !isEmpty(projectSettings) ? <Ace /> : null;
   };
 
-  const setNewTree = treeData2 => setTree({ treeData2 });
+  const setNewTree = treeData2 => {
+    setTree({ treeData2 });
+    const newForms = {
+      ...forms,
+      tree: treeData2
+    };
+    setCustomForm(newForms);
+
+    generateCode();
+  }
   const onChange = treeData => {
     if (treeData.length === 1) setNewTree(fillNodeData(treeData, providers));
   };
@@ -86,45 +94,69 @@ const Editor = props => {
   const returnComponentBlock = () => {
     return (
       <div className='paddingTop'>
-        {renderSearchField()}
         {renderError()}
-        <div
-          style={{
-            height: 800,
-            width: '25%',
-            float: 'left'
-          }}
-        >
-          <SortableTree
-            treeData={filteredDefaultTree()}
-            onChange={() => console.log('changed')}
-            dndType={externalNodeType}
-            shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
-            generateNodeProps={({ node, path }) => ({
-              buttons: [<FontAwesomeIcon icon={faInfoCircle} onClick={() => addModal(COMPONENT_INFO, node, path)} />]
-            })}
-          />
+        {/* <div>
+          <div
+            style={{
+              height: 200,
+              width: '50%',
+              float: 'left'
+            }}
+          >
+            {renderSearchField()}
+          </div>
+          <div
+            style={{
+              height: 200,
+              width: '50%',
+              float: 'left'
+            }}
+          >
+
+          </div>
+        </div> */}
+        <div>
+          {renderSearchField()}
         </div>
-        <div
-          style={{
-            height: 800,
-            width: '35%',
-            float: 'left'
-          }}
-        >
-          <SortableTree
-            treeData={tree}
-            onChange={onChange}
-            dndType={externalNodeType}
-            shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
-            getNodeKey={getNodeKey}
-            generateNodeProps={({ node, path }) => ({
-              buttons: [
-                <FontAwesomeIcon icon={faMinusCircle} onClick={() => remove(path)} />,
-                <FontAwesomeIcon icon={faAdjust} onClick={() => addModal(PROPS_FORM, node, path)} />
-              ]
-            })}
-          />
+        <div>
+          <div
+            style={{
+              height: 800,
+              width: '25%',
+              float: 'left'
+            }}
+          >
+            <SortableTree
+              treeData={filteredDefaultTree()}
+              onChange={() => console.log('changed')}
+              dndType={externalNodeType}
+              shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
+              generateNodeProps={({ node, path }) => ({
+                buttons: [<FontAwesomeIcon color='#3d44db' icon={faInfoCircle} onClick={() => addModal(COMPONENT_INFO, node, path)} />]
+              })}
+            />
+          </div>
+          <div
+            style={{
+              height: 800,
+              width: '35%',
+              float: 'left'
+            }}
+          >
+            <SortableTree
+              treeData={tree}
+              onChange={onChange}
+              dndType={externalNodeType}
+              shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
+              getNodeKey={getNodeKey}
+              generateNodeProps={({ node, path }) => ({
+                buttons: [
+                  <FontAwesomeIcon icon={faMinusCircle} onClick={() => remove(path)} />,
+                  <FontAwesomeIcon icon={faAdjust} onClick={() => addModal(PROPS_FORM, node, path)} />
+                ]
+              })}
+            />
+          </div>
         </div>
       </div>
     );

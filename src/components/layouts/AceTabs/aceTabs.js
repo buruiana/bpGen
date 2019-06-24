@@ -5,6 +5,7 @@ import isEmpty from "lodash/isEmpty";
 
 const AceTabs = props => {
   const { projectSettings, aceTab, aceTabs, setAceTab } = props;
+
   if (!aceTab) setAceTab(aceTabs[0]);
 
   const onSelect = data => setAceTab(data);
@@ -24,10 +25,10 @@ const AceTabs = props => {
   return (
     <div className="tabsList">
       <Tabs
-        defaultActiveKey="index"
+        defaultActiveKey="index.js"
         id="uncontrolled-tab-example"
         onSelect={onSelect}
-        activeKey={props.aceTab}
+        activeKey={aceTab}
       >
         {renderTabs()}
       </Tabs>
