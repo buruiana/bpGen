@@ -15,7 +15,8 @@ const mapStateToProps = state => ({
   tree: state.sortableTreeReducer.tree,
   projectError: state.projectSettingsReducer.projectError,
   searchData: state.filterDataReducer.searchData,
-  forms: state.customFormReducer.forms
+  forms: state.customFormReducer.forms,
+  generatedCode: state.codeGenerationReducer.code
 });
 
 const mapDispatchToProps = {

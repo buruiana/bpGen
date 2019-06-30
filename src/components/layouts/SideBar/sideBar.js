@@ -50,7 +50,7 @@ const SideBar = props => {
         </NavItem>
         <NavItem eventKey="providers">
           <NavIcon>
-            <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+            <i className="fa fa-product-hunt" style={{ fontSize: '1.75em' }} aria-hidden="true" />
           </NavIcon>
           <NavText>
             Providers
@@ -58,7 +58,7 @@ const SideBar = props => {
         </NavItem>
         <NavItem eventKey="technos">
           <NavIcon>
-            <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+            <i className="fab fa-accessible-icon" style={{ fontSize: '1.75em' }} />
           </NavIcon>
           <NavText>
             Technos

@@ -64,3 +64,9 @@ export const deleteTemplate = template => ({
   type: actionTypes.DELETE_TEMPLATE,
   template
 });
+
+export const setTemplateTree = tree => ({
+  type: actionTypes.SET_TEMPLATE_TREE,
+  tree
+});
+

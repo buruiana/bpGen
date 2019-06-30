@@ -15,14 +15,35 @@ import { fillNodeData } from '../../../services/sortableTreeService/helper';
 import GenericSearchForm from '../../forms/GenericSearchForm';
 import { availablecomponents, allmodals } from '../../../utils/constants';
 
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+
 import 'react-sortable-tree/style.css';
+
+
+import Card from 'react-bootstrap/Card';
 
 const externalNodeType = 'yourNodeType';
 const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const Editor = props => {
-  const { projectSettings, components, addModal, defaultTree, tree, providers, setTree, searchData, projectError, setCustomForm, generateCode, forms, setModalData, setNodePath } = props;
+  const {
+    projectSettings,
+    components,
+    addModal,
+    defaultTree,
+    tree,
+    providers,
+    setTree,
+    searchData,
+    projectError,
+    setCustomForm,
+    generateCode,
+    forms,
+    setModalData,
+    setNodePath,
+    generatedCode
+  } = props;
   const renderAce = () => {
     return !isEmpty(projectSettings) ? <Ace /> : null;
   };
@@ -148,10 +169,53 @@ const Editor = props => {
     );
   };
 
+  const componentCode = generatedCode.filter(e => e.id === 'component.js');
+  console.log('console: componentCode', componentCode);
+  const scope = { Alert, Card };
+  console.log('console: ------------', get(componentCode, '[0].code', ''));
+  console.log('console: scopescope', scope);
+
+  const ccc = `
+() => {
+  const onClick = () => {
+    return alert('aaaa');
+  };
+
+  const onAlertClose = () => {
+    return null;
+  };
+
+  return (
+    <div>
+      <div>
+        <h1 />
+        <button onClick={onClick} style={{border: '1px solid green', width: '100px', height: '25px'}}/>
+        <Alert closeLabel="close" onClose={onAlertClose} />
+        <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="holder.js/100px180" />
+          <Card.Body>
+            <Card.Title>Card Title</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+            <button variant="primary">Go somewhere</button>
+          </Card.Body>
+        </Card>
+      </div>
+    </div>
+  );
+};
+`;
   return (
     <div>
       {returnComponentBlock()}
-      {renderAce()}
+      {/* {renderAce()} */}
+      <LiveProvider code={ccc} scope={scope} >
+        <LiveError />
+        <LiveEditor />
+        <LivePreview />
+      </LiveProvider>
     </div>
   );
 };

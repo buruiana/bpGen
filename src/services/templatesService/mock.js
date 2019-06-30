@@ -13,27 +13,6 @@ export const mock = {
               blockIsActive: true,
               blockName: 'imports block',
               blockSequence: 1
-            },
-            {
-              blockDescription: 'mapStateToProps block',
-              blockImplementation: '',
-              blockIsActive: true,
-              blockName: 'mapStateToProps block',
-              blockSequence: 2
-            },
-            {
-              blockDescription: 'mapDispatchToProps block',
-              blockImplementation: '',
-              blockIsActive: true,
-              blockName: 'mapDispatchToProps block',
-              blockSequence: 3
-            },
-            {
-              blockDescription: 'exports block',
-              blockImplementation: '',
-              blockIsActive: true,
-              blockName: 'exports block',
-              blockSequence: 4
             }
           ],
           fileDescription: 'hoc',
@@ -42,7 +21,7 @@ export const mock = {
               formDescription: 'form for hoc',
               formIsActive: true,
               formName: 'HOC',
-              formPrepareData: '',
+              formPrepareData: 'return {};',
               formProps: [
                 {
                   item: [
@@ -85,13 +64,6 @@ export const mock = {
               blockIsActive: true,
               blockName: 'import block',
               blockSequence: 1
-            },
-            {
-              blockDescription: 'definition block descr',
-              blockImplementation: '',
-              blockIsActive: true,
-              blockName: 'definition block',
-              blockSequence: 2
             }
           ],
           fileDescription: 'file for component',
@@ -101,15 +73,7 @@ export const mock = {
           fileSequence: 2
         },
         {
-          fileBlocks: [
-            {
-              blockDescription: 'import block descr',
-              blockImplementation: '',
-              blockIsActive: true,
-              blockName: 'import block',
-              blockSequence: 1
-            }
-          ],
+          fileBlocks: [],
           fileDescription: 'file for styles',
           fileForms: [],
           fileIsActive: true,

@@ -3,7 +3,8 @@ import * as actionTypes from "./actionTypes";
 export const initialState = () => ({
   error: "",
   currentTemplate: {},
-  templates: []
+  templates: [],
+  tree: [],
 });
 
 export default (state = initialState(), action) => {
@@ -29,6 +30,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         error: action.error
+      };
+    case actionTypes.SET_TEMPLATE_TREE:
+      return {
+        ...state,
+        tree: action.tree
       };
     default:
       return state;

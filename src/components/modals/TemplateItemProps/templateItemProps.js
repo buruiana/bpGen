@@ -1,8 +1,10 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
-import ComponentPropsForm from "../../forms/ComponentPropsForm";
+import TemplateItemForm from '../../forms/TemplateItemForm';
 
-const ComponentProps = ({ removeModal }) => {
+const TemplateItemProps = ({ removeModal, modalData }) => {
+  const { node } = modalData;
+  console.log('console: nodenode', node);
   return (
     <div>
       <Modal
@@ -11,17 +13,16 @@ const ComponentProps = ({ removeModal }) => {
         onHide={removeModal}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Component Props</Modal.Title>
+          <Modal.Title>Edit {node.subtitle}</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
-          <div>
-            <ComponentPropsForm />
-          </div>
+          <TemplateItemForm />>
+
         </Modal.Body>
       </Modal>
     </div>
   );
 };
 
-export default ComponentProps;
+export default TemplateItemProps;
