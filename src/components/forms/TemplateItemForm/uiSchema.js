@@ -1,13 +1,13 @@
 const uiSchema = {
+  blockImplementation: {
+    "ui:widget": "myCustomWidget"
+  },
   templateFiles: {
     items: {
       fileBlocks: {
         items: {
           blockImplementation: {
-            "ui:widget": "textarea",
-            "ui:options": {
-              rows: 15
-            }
+            "ui:widget": "myCustomWidget"
           }
         }
       },

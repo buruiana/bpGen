@@ -1,40 +1,51 @@
 import React, { useState, useEffect } from "react";
 import Form from "react-jsonschema-form-bs4";
-import { changeNodeAtPath } from 'react-sortable-tree';
+import { changeNodeAtPath } from "react-sortable-tree";
 //import schema from "./schema";
 import { navigate } from "../../../utils";
-import uiSchema from "./uiSchema";
+//import uiSchema from "./uiSchema";
+
+import Editor from "react-simple-code-editor";
+import { highlight, languages } from "prismjs/components/prism-core";
+import "prismjs/components/prism-clike";
+import "prismjs/components/prism-javascript";
 
 const TemplatesForm = props => {
   const { setTemplateTree, removeModal, tree, modalData } = props;
   let fileReader;
   const currentModalData = modalData[modalData.length - 1].node;
 
-  const [formSchema, setFormSchema] = useState([]
+  const [formSchema, setFormSchema] = useState(
+    []
     //templates.filter(template => template.id === props.match.params.id)[0] || []
   );
 
   let schema = {
     type: "object",
-    properties: {
+    properties: {}
+  };
+
+  if (currentModalData.subtitle === "File") {
+    schema.properties = {
+      ...schema.properties,
       title: { type: "string", title: "Name" },
-      subtitle: { type: "string", title: "Name" },
+      subtitle: { type: "string", title: "File" },
       children: {
         type: "array",
         title: "",
-        items: {},
-      },
-    },
-  };
+        items: {}
+      }
+    };
+  }
 
-  if (currentModalData.subtitle === 'Form') {
+  if (currentModalData.subtitle === "Form") {
     schema.properties = {
       ...schema.properties,
       formDescription: { type: "string", title: "Form Description" },
       formDescription: { type: "string", title: "Form Description" },
       formIsActive: { type: "boolean", title: "Form is Active" },
-      formSchema: { type: "string", title: "Form Schema" },
-      formUISchema: { type: "string", title: "Form UI Schema" },
+      // formSchema: { type: "string", title: "Form Schema" },
+      // formUISchema: { type: "string", title: "Form UI Schema" },
       formPrepareData: { type: "string", title: "Form Prepare Data" },
       formProps: {
         type: "array",
@@ -57,9 +68,9 @@ const TemplatesForm = props => {
         }
       }
     };
-  };
+  }
 
-  if (currentModalData.subtitle === 'Block') {
+  if (currentModalData.subtitle === "Block") {
     schema.properties = {
       ...schema.properties,
       blockDescription: {
@@ -69,24 +80,24 @@ const TemplatesForm = props => {
       blockSequence: { type: "number", title: "Block Sequence" },
       blockIsActive: { type: "boolean", title: "Block is Active" }
     };
-  };
+  }
 
-  if (currentModalData.subtitle === 'Block Implementation') {
+  if (currentModalData.subtitle === "Block Implementation") {
     schema.properties = {
       ...schema.properties,
       blockImplementation: {
         type: "string",
         title: "Block Implementation"
-      },
+      }
     };
-  };
+  }
 
   const onSubmit = data => {
     const { formData } = data;
     const getNodeKey = ({ treeIndex }) => treeIndex;
     const newEl = {
       ...formData,
-      children: modalData[0].node.children,
+      children: modalData[0].node.children
     };
 
     const newTree = changeNodeAtPath({
@@ -114,6 +125,42 @@ const TemplatesForm = props => {
     fileReader.readAsText(e.target.files[0]);
   };
 
+  const onValueChange = val => {
+    console.log("console: vvvvvvvvvvvvvvvvvvvv", val);
+  };
+
+  const MyCustomWidget = props => {
+    console.log("console: ============================", props);
+    return (
+      <Editor
+        value={props.value || "Enter Block Implementation"}
+        onValueChange={onValueChange}
+        highlight={code =>
+          highlight(code, languages.jsx)
+            .split("\n")
+            .map(
+              line =>
+                `<span class="container_editor_line_number">${line}</span>`
+            )
+            .join("\n")
+        }
+        padding={10}
+        className="container__editor"
+      />
+    );
+  };
+
+  const widgets = {
+    myCustomWidget: MyCustomWidget
+  };
+
+  const uiSchema = {
+    "ui:widget": "myCustomWidget",
+    blockImplementation: {
+      "ui:widget": "myCustomWidget"
+    }
+  };
+
   return (
     <div>
       <>
@@ -122,8 +169,9 @@ const TemplatesForm = props => {
           schema={schema}
           onSubmit={onSubmit}
           onChange={onChange}
-          formData={formSchema}
-          //uiSchema={uiSchema}
+          //formData={formSchema}
+          uiSchema={uiSchema}
+          widgets={widgets}
         />
       </>
     </div>

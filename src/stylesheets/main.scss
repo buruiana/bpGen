@@ -29,7 +29,7 @@ body {
 }
 
 .rightLink {
-  justify-content: flex-end
+  justify-content: flex-end;
 }
 
 .addEditLink {
@@ -37,6 +37,10 @@ body {
 }
 .hidden {
   display: none;
+}
+
+.point {
+  cursor: pointer;
 }
 
 .customNavBar {
@@ -52,23 +56,27 @@ body {
 }
 
 .navBar-txt {
-  color: #3D5B94;
+  color: #3d5b94;
   padding-right: 20px;
 }
 
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
   border: 1px solid #6dcd9a;
   border-bottom: 0px;
-  background-color: #ECF8F1;
+  background-color: #ecf8f1;
 }
 
-.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
-    color: #495057;
-    background-color: #E68973 !important;
-    border-color: #fff !important;
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #495057;
+  background-color: #e68973 !important;
+  border-color: #fff !important;
 }
 
-.rst__moveHandle, .rst__loadingHandle {
+.rst__moveHandle,
+.rst__loadingHandle {
   background-color: #db853d;
   border-radius: 10px 0px 0px 10px;
 }
@@ -86,7 +94,7 @@ div.rst__moveHandle {
 }
 
 .componentInfoIcon {
-  color: #3D93DB;
+  color: #3d93db;
   cursor: pointer;
   margin-left: 5px;
 }
@@ -94,8 +102,8 @@ div.rst__moveHandle {
 .mainBox {
   position: relative;
   overflow: hidden;
-  -webkit-transition: all .15s;
-  transition: all .15s;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
   padding: 0 20px;
   margin-left: 64px;
   width: 100%;
@@ -113,6 +121,26 @@ div.rst__moveHandle {
   border: 1px solid #db853d;
 }
 
-.rst__moveHandle, .rst__loadingHandle {
+.rst__moveHandle,
+.rst__loadingHandle {
   border: 1px solid #db853d;
+}
+
+.container_editor_line_number:before {
+  position: absolute;
+  right: 100%;
+  margin-right: 10px;
+  text-align: right;
+  opacity: 0.3;
+  user-select: none;
+  counter-increment: line;
+  content: counter(line);
+}
+
+.container__editor {
+  font-size: 12px;
+  font-variant-ligatures: common-ligatures;
+  background-color: #fafafa;
+  border-radius: 3px;
+  counter-reset: line;
 }

@@ -1,10 +1,10 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
-import TemplateItemForm from '../../forms/TemplateItemForm';
+import TemplateItemForm from "../../forms/TemplateItemForm";
 
 const TemplateItemProps = ({ removeModal, modalData }) => {
   const { node } = modalData[modalData.length - 1];
-  console.log('console: nodenode', node);
+  console.log("console: nodenode", node);
   return (
     <div>
       <Modal
@@ -17,8 +17,7 @@ const TemplateItemProps = ({ removeModal, modalData }) => {
         </Modal.Header>
 
         <Modal.Body>
-          <TemplateItemForm />>
-
+          <TemplateItemForm />
         </Modal.Body>
       </Modal>
     </div>
