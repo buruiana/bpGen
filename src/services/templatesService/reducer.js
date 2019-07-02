@@ -4,7 +4,12 @@ export const initialState = () => ({
   error: "",
   currentTemplate: {},
   templates: [],
-  tree: [],
+  tree: [{
+    title: '',
+    subtitle: 'Template',
+    expanded: true,
+    children: [],
+  }],
 });
 
 export default (state = initialState(), action) => {

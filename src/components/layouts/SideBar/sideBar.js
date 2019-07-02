@@ -26,7 +26,7 @@ const SideBar = props => {
         </NavItem>
         <NavItem eventKey="editor">
           <NavIcon>
-            <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+            <i className="fas fa-edit" style={{ fontSize: '1.75em' }} />
           </NavIcon>
           <NavText>
             Editor
@@ -34,7 +34,7 @@ const SideBar = props => {
         </NavItem>
         <NavItem eventKey="components">
           <NavIcon>
-            <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+            <i className="fab fa-cuttlefish" style={{ fontSize: '1.75em' }} />
           </NavIcon>
           <NavText>
             Components
@@ -42,7 +42,7 @@ const SideBar = props => {
         </NavItem>
         <NavItem eventKey="propTypes">
           <NavIcon>
-            <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+            <i className="fas fa-table" style={{ fontSize: '1.75em' }} />
           </NavIcon>
           <NavText>
             Prop Types
@@ -50,7 +50,7 @@ const SideBar = props => {
         </NavItem>
         <NavItem eventKey="providers">
           <NavIcon>
-            <i className="fa fa-product-hunt" style={{ fontSize: '1.75em' }} aria-hidden="true" />
+            <i className="fas fa-book-reader" style={{ fontSize: '1.75em' }} />
           </NavIcon>
           <NavText>
             Providers
@@ -58,7 +58,7 @@ const SideBar = props => {
         </NavItem>
         <NavItem eventKey="technos">
           <NavIcon>
-            <i className="fab fa-accessible-icon" style={{ fontSize: '1.75em' }} />
+            <i className="fas fa-building" style={{ fontSize: '1.75em' }} />
           </NavIcon>
           <NavText>
             Technos
@@ -66,7 +66,7 @@ const SideBar = props => {
         </NavItem>
         <NavItem eventKey="templates">
           <NavIcon>
-            <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+            <i className="fas fa-stream" style={{ fontSize: '1.75em' }} />
           </NavIcon>
           <NavText>
             Templates

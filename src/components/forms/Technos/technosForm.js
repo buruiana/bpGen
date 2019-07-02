@@ -45,7 +45,7 @@ const TechnosForm = props => {
 
   const log = (type) => console.log.bind(console, type);
   return (
-    <div className="middle20">
+    <div>
       <div>
         <a onClick={goTo} className="simpleLink">
           Back

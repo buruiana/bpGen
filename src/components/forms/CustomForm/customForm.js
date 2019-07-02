@@ -41,7 +41,7 @@ const CustomForm = props => {
 
   const log = type => console.log.bind(console, type);
   return (
-    <div className="middle20">
+    <div>
       <Form
         schema={schema}
         uiSchema={uiSchema}

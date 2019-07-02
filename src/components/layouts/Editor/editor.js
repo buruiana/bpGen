@@ -31,7 +31,6 @@ const Editor = props => {
     projectSettings,
     components,
     addModal,
-    defaultTree,
     tree,
     providers,
     setTree,
@@ -40,7 +39,6 @@ const Editor = props => {
     setCustomForm,
     generateCode,
     forms,
-    setModalData,
     setNodePath,
     generatedCode
   } = props;
@@ -50,8 +48,7 @@ const Editor = props => {
 
   const openModal = (type, node, path) => {
     setNodePath({ node, path })
-    setModalData({ node, path });
-    addModal(type);
+    addModal(type, { node, path });
   };
 
   const setNewTree = treeData2 => {

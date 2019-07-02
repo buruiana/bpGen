@@ -5,7 +5,6 @@ import { removeModal } from "../../../services/modalService/actions";
 
 const mapStateToProps = state => {
   return {
-    modals: state.modalsReducer.modals,
     modalData: state.modalsReducer.modalData,
   };
 };

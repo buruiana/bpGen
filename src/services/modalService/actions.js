@@ -1,15 +1,11 @@
 import { ADD_MODAL, REMOVE_MODAL, SET_MODDAL_DATA } from "./actionTypes";
 
-export const addModal = modal => ({
+export const addModal = (modal, modalData) => ({
   type: ADD_MODAL,
-  modal
+  modal,
+  modalData
 });
 
 export const removeModal = () => ({
   type: REMOVE_MODAL
-});
-
-export const setModalData = modalData => ({
-  type: SET_MODDAL_DATA,
-  modalData
 });

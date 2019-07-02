@@ -1,31 +1,102 @@
 import React, { useState, useEffect } from "react";
 import Form from "react-jsonschema-form-bs4";
+import { changeNodeAtPath } from 'react-sortable-tree';
 //import schema from "./schema";
 import { navigate } from "../../../utils";
 import uiSchema from "./uiSchema";
 
 const TemplatesForm = props => {
-  const { setTemplate, userid, templates, modalData } = props;
+  const { setTemplateTree, removeModal, tree, modalData } = props;
   let fileReader;
+  const currentModalData = modalData[modalData.length - 1].node;
 
-  const [formSchema, setFormSchema] = useState(
-    templates.filter(template => template.id === props.match.params.id)[0] || []
+  const [formSchema, setFormSchema] = useState([]
+    //templates.filter(template => template.id === props.match.params.id)[0] || []
   );
 
-  const schema = {
+  let schema = {
     type: "object",
     properties: {
-      name: { type: "string", title: "Name" },
-      templateDescription: { type: "string", title: "Description" },
-      templateTechnos: { type: "string", title: "Technos" },
-      templateIsActive: { type: "boolean", title: "Active" },
+      title: { type: "string", title: "Name" },
+      subtitle: { type: "string", title: "Name" },
+      children: {
+        type: "array",
+        title: "",
+        items: {},
+      },
     },
+  };
+
+  if (currentModalData.subtitle === 'Form') {
+    schema.properties = {
+      ...schema.properties,
+      formDescription: { type: "string", title: "Form Description" },
+      formDescription: { type: "string", title: "Form Description" },
+      formIsActive: { type: "boolean", title: "Form is Active" },
+      formSchema: { type: "string", title: "Form Schema" },
+      formUISchema: { type: "string", title: "Form UI Schema" },
+      formPrepareData: { type: "string", title: "Form Prepare Data" },
+      formProps: {
+        type: "array",
+        title: "Form Props",
+        items: {
+          type: "object",
+          properties: {
+            item: {
+              title: "Item",
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  propName: { type: "string", title: "Prop Name" },
+                  propType: { type: "string", title: "Prop Type" }
+                }
+              }
+            }
+          }
+        }
+      }
+    };
+  };
+
+  if (currentModalData.subtitle === 'Block') {
+    schema.properties = {
+      ...schema.properties,
+      blockDescription: {
+        type: "string",
+        title: "Block Description"
+      },
+      blockSequence: { type: "number", title: "Block Sequence" },
+      blockIsActive: { type: "boolean", title: "Block is Active" }
+    };
+  };
+
+  if (currentModalData.subtitle === 'Block Implementation') {
+    schema.properties = {
+      ...schema.properties,
+      blockImplementation: {
+        type: "string",
+        title: "Block Implementation"
+      },
+    };
   };
 
   const onSubmit = data => {
     const { formData } = data;
-    setTemplate({ ...formData, userid });
-    goBack();
+    const getNodeKey = ({ treeIndex }) => treeIndex;
+    const newEl = {
+      ...formData,
+      children: modalData[0].node.children,
+    };
+
+    const newTree = changeNodeAtPath({
+      treeData: tree,
+      path: modalData[0].path,
+      getNodeKey,
+      newNode: newEl
+    });
+    setTemplateTree(newTree);
+    removeModal();
   };
 
   const onChange = data => {
@@ -46,7 +117,7 @@ const TemplatesForm = props => {
   return (
     <div>
       <>
-        <input type="file" id="importFile" onChange={onImport} />
+        {/* <input type="file" id="importFile" onChange={onImport} /> */}
         <Form
           schema={schema}
           onSubmit={onSubmit}

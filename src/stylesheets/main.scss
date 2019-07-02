@@ -25,6 +25,11 @@ body {
 .simpleLink {
   text-decoration: underline !important;
   cursor: pointer;
+  display: flex;
+}
+
+.rightLink {
+  justify-content: flex-end
 }
 
 .addEditLink {
@@ -32,11 +37,6 @@ body {
 }
 .hidden {
   display: none;
-}
-
-.middle20 {
-  padding-left: 20%;
-  padding-right: 20%;
 }
 
 .customNavBar {

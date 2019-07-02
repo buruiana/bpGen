@@ -7,7 +7,7 @@ import {
 import { generateCode } from "../../../services/codeGenerationService/actions";
 import TemplatesForm from "./templatesFormTree";
 import { setTemplateTree } from '../../../services/templatesService/actions';
-import { addModal, setModalData } from '../../../services/modalService/actions';
+import { addModal } from '../../../services/modalService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -23,7 +23,6 @@ const mapDispatchToProps = {
   getAllTemplates,
   setTemplateTree,
   addModal,
-  setModalData
 };
 
 export default connect(
