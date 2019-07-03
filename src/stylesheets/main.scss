@@ -126,16 +126,7 @@ div.rst__moveHandle {
   border: 1px solid #db853d;
 }
 
-.container_editor_line_number:before {
-  position: absolute;
-  right: 100%;
-  margin-right: 10px;
-  text-align: right;
-  opacity: 0.3;
-  user-select: none;
-  counter-increment: line;
-  content: counter(line);
-}
+
 
 .container__editor {
   font-size: 12px;
@@ -143,4 +134,20 @@ div.rst__moveHandle {
   background-color: #fafafa;
   border-radius: 3px;
   counter-reset: line;
+  min-height: 30rem;
+}
+
+.container_editor_line_number:before {
+  //position: absolute;
+  right: 100%;
+  margin-right: 10px;
+  text-align: right;
+  opacity: .3;
+  user-select: none;
+  counter-increment: line;
+  content: counter(line);
+}
+
+.container__editor textarea {
+  outline: 0;
 }

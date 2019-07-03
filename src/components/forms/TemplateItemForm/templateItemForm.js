@@ -14,6 +14,7 @@ const TemplatesForm = props => {
   const { setTemplateTree, removeModal, tree, modalData } = props;
   let fileReader;
   const currentModalData = modalData[modalData.length - 1].node;
+  const getNodeKey = ({ treeIndex }) => treeIndex;
 
   const [formSchema, setFormSchema] = useState(
     []
@@ -82,19 +83,38 @@ const TemplatesForm = props => {
     };
   }
 
+  if (currentModalData.subtitle === "Schema") {
+    schema.properties = {
+      ...schema.properties,
+      formSchema: {
+        type: "string",
+        title: ""
+      }
+    };
+  }
+
+  if (currentModalData.subtitle === "UISchema") {
+    schema.properties = {
+      ...schema.properties,
+      formUISchema: {
+        type: "string",
+        title: ""
+      }
+    };
+  }
+
   if (currentModalData.subtitle === "Block Implementation") {
     schema.properties = {
       ...schema.properties,
       blockImplementation: {
         type: "string",
-        title: "Block Implementation"
+        title: ""
       }
     };
   }
 
   const onSubmit = data => {
     const { formData } = data;
-    const getNodeKey = ({ treeIndex }) => treeIndex;
     const newEl = {
       ...formData,
       children: modalData[0].node.children
@@ -114,39 +134,67 @@ const TemplatesForm = props => {
     //generateCode();
   };
 
-  const handleFileRead = e => {
-    const redux = new Function(fileReader.result);
-    setFormSchema(redux);
-  };
+  // const handleFileRead = e => {
+  //   const redux = new Function(fileReader.result);
+  //   setFormSchema(redux);
+  // };
 
-  const onImport = e => {
-    fileReader = new FileReader();
-    fileReader.onloadend = handleFileRead;
-    fileReader.readAsText(e.target.files[0]);
-  };
+  // const onImport = e => {
+  //   fileReader = new FileReader();
+  //   fileReader.onloadend = handleFileRead;
+  //   fileReader.readAsText(e.target.files[0]);
+  // };
 
   const onValueChange = val => {
-    console.log("console: vvvvvvvvvvvvvvvvvvvv", val);
+    console.log("console: onValueChange", val);
+    let newEl = {};
+    if (currentModalData.subtitle === 'Schema') {
+      newEl = {
+        ...modalData[0].node,
+        formSchema: val
+      };
+    } else if (currentModalData.subtitle === 'UISchema') {
+      newEl = {
+        ...modalData[0].node,
+        formUISchema: val
+      };
+    }
+    console.log('console: newElnewElnewEl', newEl);
+
+    const newTree = changeNodeAtPath({
+      treeData: tree,
+      path: modalData[0].path,
+      getNodeKey,
+      newNode: newEl
+    });
+    setTemplateTree(newTree);
   };
 
   const MyCustomWidget = props => {
-    console.log("console: ============================", props);
+    let val = '';
+    if (currentModalData.subtitle === 'Schema') {
+      val = currentModalData.formSchema;
+    } else if (currentModalData.subtitle === 'UISchema') {
+      val = currentModalData.formUISchema;
+    }
+
     return (
-      <Editor
-        value={props.value || "Enter Block Implementation"}
-        onValueChange={onValueChange}
-        highlight={code =>
-          highlight(code, languages.jsx)
-            .split("\n")
+      <div className="container_editor_area">
+        <Editor
+          value={val}
+          onValueChange={onValueChange}
+          highlight={code => highlight(code, languages.js)
+            .split('\n')
             .map(
               line =>
                 `<span class="container_editor_line_number">${line}</span>`
             )
-            .join("\n")
-        }
-        padding={10}
-        className="container__editor"
-      />
+            .join('\n')
+          }
+          padding={10}
+          className="container__editor"
+        />
+      </div>
     );
   };
 
@@ -157,6 +205,12 @@ const TemplatesForm = props => {
   const uiSchema = {
     "ui:widget": "myCustomWidget",
     blockImplementation: {
+      "ui:widget": "myCustomWidget"
+    },
+    formSchema: {
+      "ui:widget": "myCustomWidget"
+    },
+    formUISchema: {
       "ui:widget": "myCustomWidget"
     }
   };

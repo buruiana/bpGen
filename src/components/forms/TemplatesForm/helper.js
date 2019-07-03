@@ -7,12 +7,12 @@ export const getForms = forms => {
       children: [
         {
           formSchema: form.formSchema,
-          subtitle: `${form.formName}_Schema`,
+          subtitle: `Schema`,
           formName: form.formName,
         },
         {
           formUISchema: form.formUISchema,
-          subtitle: `${form.formName}_UISchema`,
+          subtitle: `UISchema`,
         },
       ],
     };
