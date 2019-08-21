@@ -6,14 +6,14 @@ import {
 } from "../../../services/templatesService/actions";
 import { generateCode } from "../../../services/codeGenerationService/actions";
 import TemplatesForm from "./templatesFormTree";
-import { setTemplateTree } from '../../../services/templatesService/actions';
-import { addModal } from '../../../services/modalService/actions';
+import { setTemplateTree } from "../../../services/templatesService/actions";
+import { addModal } from "../../../services/modalService/actions";
 
 const mapStateToProps = state => {
   return {
     userid: get(state, "loginReducer.userInfo.user.uid", "aaa"),
     templates: state.templatesReducer.templates,
-    tree: state.templatesReducer.tree,
+    tree: state.templatesReducer.tree
   };
 };
 
@@ -22,7 +22,7 @@ const mapDispatchToProps = {
   generateCode,
   getAllTemplates,
   setTemplateTree,
-  addModal,
+  addModal
 };
 
 export default connect(

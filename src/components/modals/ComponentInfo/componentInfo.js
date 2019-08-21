@@ -1,9 +1,9 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 
-
 const ComponentInfo = ({ removeModal, modalData }) => {
-  const { node } = modalData;
+  const { node } = modalData[0];
+  console.log("console: ----------------", modalData);
   return (
     <div>
       <Modal
@@ -16,15 +16,9 @@ const ComponentInfo = ({ removeModal, modalData }) => {
         </Modal.Header>
 
         <Modal.Body>
-          <div>
-            Provider: {node.provider}
-          </div>
-          <div>
-            Techno: {node.techno}
-          </div>
-          <div>
-            {node.description}
-          </div>
+          <div>Provider: {node.provider}</div>
+          <div>Techno: {node.techno}</div>
+          <div>{node.description}</div>
         </Modal.Body>
       </Modal>
     </div>
