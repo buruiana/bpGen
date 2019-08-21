@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "react-jsonschema-form";
+import Form from "react-jsonschema-form-bs4";
 import isEmpty from "lodash/isEmpty";
 import get from "lodash/get";
 

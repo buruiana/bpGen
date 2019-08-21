@@ -1,27 +1,36 @@
-import React from 'react';
-import Form from "react-jsonschema-form";
-import isEmpty from 'lodash/isEmpty';
-import { navigate } from '../../../utils';
-
+import React from "react";
+import Form from "react-jsonschema-form-bs4";
+import isEmpty from "lodash/isEmpty";
+import { navigate } from "../../../utils";
 
 const ComponentsForm = props => {
   let { components, technos, providers, propTypes } = props;
   if (isEmpty(components)) components = [];
 
-  const componentsArray = components.filter(component => component.id === props.match.params.id);
+  const componentsArray = components.filter(
+    component => component.id === props.match.params.id
+  );
 
-  let component = (!isEmpty(componentsArray))
+  let component = !isEmpty(componentsArray)
     ? componentsArray[0]
     : {
-      name: '',
-      id: '',
-      description: '',
-      provider: '',
-      techno: '',
-      componentProps: [],
-    };
+        title: "",
+        id: "",
+        description: "",
+        provider: "",
+        techno: "",
+        componentProps: []
+      };
 
-  const { name, id, description, techno, provider, componentImport, isDefault } = component;
+  const {
+    title,
+    id,
+    description,
+    techno,
+    provider,
+    componentImport,
+    isDefault
+  } = component;
 
   const technosEnums = !isEmpty(technos)
     ? technos.map(techno => techno.name)
@@ -29,53 +38,63 @@ const ComponentsForm = props => {
   const providersEnums = !isEmpty(providers)
     ? providers.map(provider => provider.name)
     : [];
-  const propTypesEnums = !isEmpty(propTypes)
-    ? propTypes.map(p => p.name)
-    : [];
+  const propTypesEnums = !isEmpty(propTypes) ? propTypes.map(p => p.name) : [];
 
   const schema = {
     type: "object",
-    required: ['name', 'provider', 'techno'],
+    required: ["title", "provider", "techno"],
     properties: {
       id: { type: "string", name: "Id", default: id },
-      name: { type: "string", name: "Name", default: name },
-      description: { type: "string", name: "Description", default: description || '' },
+      title: { type: "string", name: "Name", default: title },
+      description: {
+        type: "string",
+        name: "Description",
+        default: description || ""
+      },
       provider: {
         type: "string",
         name: "Provider",
         enum: providersEnums,
-        default: provider,
+        default: provider
       },
       componentImport: {
         type: "string",
         name: "Import Path",
-        default: componentImport,
+        default: componentImport
       },
       techno: {
-        type: 'string',
+        type: "string",
         name: "Techno",
         enum: technosEnums,
-        default: techno,
+        default: techno
       },
-      isDefault: { type: "boolean", name: "isDefault", default: isDefault || false },
+      isDefault: {
+        type: "boolean",
+        name: "isDefault",
+        default: isDefault || false
+      },
       componentProps: {
         type: "array",
         items: {
-          type: 'object',
-          required: ['name'],
+          type: "object",
+          required: ["title"],
           properties: {
-            name: { type: 'string', name: 'Name' },
-            description: { type: 'string', name: 'Description', default: '' },
+            title: { type: "string", name: "Name" },
+            description: { type: "string", name: "Description", default: "" },
             propType: {
-              type: 'string',
-              name: 'PropType',
-              enum: propTypesEnums,
+              type: "string",
+              name: "PropType",
+              enum: propTypesEnums
             },
-            propTypeIsrequired: { type: 'boolean', name: 'Prop Type isRequired', default: false },
+            propTypeIsrequired: {
+              type: "boolean",
+              name: "Prop Type isRequired",
+              default: false
+            }
           }
-        },
-      },
-    },
+        }
+      }
+    }
   };
 
   const uiSchema = {
@@ -96,9 +115,9 @@ const ComponentsForm = props => {
             rows: 5
           }
         },
-        propType: { "ui:placeholder": "Choose an propType" },
-      },
-    },
+        propType: { "ui:placeholder": "Choose an propType" }
+      }
+    }
   };
 
   const goTo = () => {
@@ -111,7 +130,7 @@ const ComponentsForm = props => {
     goTo();
   };
 
-  const log = (type) => console.log.bind(console, type);
+  const log = type => console.log.bind(console, type);
   return (
     <div>
       <>
@@ -120,7 +139,8 @@ const ComponentsForm = props => {
             Back
           </a>
         </div>
-        <Form schema={schema}
+        <Form
+          schema={schema}
           uiSchema={uiSchema}
           onChange={log("changed")}
           onSubmit={onSubmit}
@@ -130,6 +150,6 @@ const ComponentsForm = props => {
       </>
     </div>
   );
-}
+};
 
 export default ComponentsForm;

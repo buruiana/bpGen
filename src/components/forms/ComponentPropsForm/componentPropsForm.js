@@ -1,7 +1,8 @@
 import React from "react";
-import Form from "react-jsonschema-form";
-import isEmpty from 'lodash/isEmpty';
-import { changeNodeAtPath } from 'react-sortable-tree';
+import Form from "react-jsonschema-form-bs4";
+import isEmpty from "lodash/isEmpty";
+import get from "lodash/get";
+import { changeNodeAtPath } from "react-sortable-tree";
 
 const ComponentPropsForm = props => {
   const { modalData, setTree, removeModal, tree, generateCode } = props;
@@ -13,21 +14,21 @@ const ComponentPropsForm = props => {
     properties: {}
   };
   const properties = schema.properties;
-  const propsInfo = node.componentProps;
+  const propsInfo = get(node, "componentProps", []);
 
   propsInfo.map(prop => {
     properties[prop.title] = {
       type: "string",
       title: prop.title,
       val: prop.val,
-      default: prop.val,
-    }
+      default: prop.val
+    };
   });
 
   const uiSchema = {};
 
   propsInfo.map(prop => {
-    uiSchema[prop.title] = { "ui:placeholder": `${prop.propType}` }
+    uiSchema[prop.title] = { "ui:placeholder": `${prop.propType}` };
   });
 
   const onSubmit = data => {
@@ -44,7 +45,7 @@ const ComponentPropsForm = props => {
           propTypeIsrequired: prop[0].propTypeIsrequired,
           title: prop[0].title,
           description: prop[0].description,
-          val: formData[key],
+          val: formData[key]
         };
       } else {
         newProp = prop[0];

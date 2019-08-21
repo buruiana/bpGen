@@ -1,22 +1,23 @@
-import React from 'react';
-import Form from "react-jsonschema-form";
-import isEmpty from 'lodash/isEmpty';
-import { navigate } from '../../../utils';
-
+import React from "react";
+import Form from "react-jsonschema-form-bs4";
+import isEmpty from "lodash/isEmpty";
+import { navigate } from "../../../utils";
 
 const PropTypesForm = props => {
   let { propTypes } = props;
   if (isEmpty(propTypes)) propTypes = [];
 
-  const propTypesArray = propTypes.filter(propType => propType.id === props.match.params.id);
+  const propTypesArray = propTypes.filter(
+    propType => propType.id === props.match.params.id
+  );
 
   let propType = {};
   if (!isEmpty(propTypesArray)) {
-    propType = propTypesArray[0]
+    propType = propTypesArray[0];
   } else {
     propType = {
-      name: '',
-      id: '',
+      name: "",
+      id: ""
     };
   }
 
@@ -26,11 +27,11 @@ const PropTypesForm = props => {
     required: ["name"],
     properties: {
       id: { type: "string", title: "Id", default: id },
-      name: { type: "string", title: "Name", default: name },
+      name: { type: "string", title: "Name", default: name }
     }
   };
   const uiSchema = {
-    id: { "ui:widget": "hidden" },
+    id: { "ui:widget": "hidden" }
   };
 
   const goTo = () => {
@@ -43,7 +44,7 @@ const PropTypesForm = props => {
     goTo();
   };
 
-  const log = (type) => console.log.bind(console, type);
+  const log = type => console.log.bind(console, type);
   return (
     <div>
       <div>
@@ -51,7 +52,8 @@ const PropTypesForm = props => {
           Back
         </a>
       </div>
-      <Form schema={schema}
+      <Form
+        schema={schema}
         uiSchema={uiSchema}
         onChange={log("changed")}
         onSubmit={onSubmit}
@@ -59,6 +61,6 @@ const PropTypesForm = props => {
       />
     </div>
   );
-}
+};
 
 export default PropTypesForm;

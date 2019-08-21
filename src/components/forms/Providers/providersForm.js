@@ -1,25 +1,26 @@
-import React from 'react';
-import Form from "react-jsonschema-form";
-import isEmpty from 'lodash/isEmpty';
-import { navigate } from '../../../utils';
-
+import React from "react";
+import Form from "react-jsonschema-form-bs4";
+import isEmpty from "lodash/isEmpty";
+import { navigate } from "../../../utils";
 
 const ProvidersForm = props => {
   let { providers } = props;
   if (isEmpty(providers)) providers = [];
 
-  const providersArray = providers.filter(provider => provider.id === props.match.params.id);
-  const technoTypeEnums = ['REACT', 'REACT_NATIVE'];
+  const providersArray = providers.filter(
+    provider => provider.id === props.match.params.id
+  );
+  const technoTypeEnums = ["REACT", "REACT_NATIVE"];
 
   let provider = {};
   if (!isEmpty(providersArray)) {
-    provider = providersArray[0]
+    provider = providersArray[0];
   } else {
     provider = {
-      name: '',
-      path: '',
-      id: '',
-      providersTechno: '',
+      name: "",
+      path: "",
+      id: "",
+      providersTechno: ""
     };
   }
 
@@ -31,14 +32,14 @@ const ProvidersForm = props => {
     properties: {
       id: { type: "string", title: "Id", default: id },
       name: { type: "string", title: "Name", default: name },
-      path: { type: "string", title: "Path", default: path || '' },
-      providerUrl: { type: "string", title: "URL", default: providerUrl || '' },
+      path: { type: "string", title: "Path", default: path || "" },
+      providerUrl: { type: "string", title: "URL", default: providerUrl || "" },
       providersTechno: {
-        type: 'string',
-        title: 'Techno',
+        type: "string",
+        title: "Techno",
         enum: technoTypeEnums,
-        default: providersTechno,
-      },
+        default: providersTechno
+      }
     }
   };
   const uiSchema = {
@@ -46,9 +47,9 @@ const ProvidersForm = props => {
     providersTechno: {
       "ui:placeholder": "Select techno",
       "ui:options": {
-        "label": true,
-      },
-    },
+        label: true
+      }
+    }
   };
 
   const goTo = () => navigate("/providers");
@@ -59,7 +60,7 @@ const ProvidersForm = props => {
     goTo();
   };
 
-  const log = (type) => console.log.bind(console, type);
+  const log = type => console.log.bind(console, type);
   return (
     <div>
       <div>
@@ -67,7 +68,8 @@ const ProvidersForm = props => {
           Back
         </a>
       </div>
-      <Form schema={schema}
+      <Form
+        schema={schema}
         uiSchema={uiSchema}
         onChange={log("changed")}
         onSubmit={onSubmit}
@@ -75,6 +77,6 @@ const ProvidersForm = props => {
       />
     </div>
   );
-}
+};
 
 export default ProvidersForm;

@@ -1,23 +1,24 @@
-import React from 'react';
-import Form from "react-jsonschema-form";
-import isEmpty from 'lodash/isEmpty';
-import { navigate } from '../../../utils';
-
+import React from "react";
+import Form from "react-jsonschema-form-bs4";
+import isEmpty from "lodash/isEmpty";
+import { navigate } from "../../../utils";
 
 const TechnosForm = props => {
   let { technos } = props;
   if (isEmpty(technos)) technos = [];
 
-  const technosArray = technos.filter(techno => techno.id === props.match.params.id);
+  const technosArray = technos.filter(
+    techno => techno.id === props.match.params.id
+  );
 
   let techno = {};
   if (!isEmpty(technosArray)) {
-    techno = technosArray[0]
+    techno = technosArray[0];
   } else {
     techno = {
-      name: '',
-      technoUrl: '',
-      id: '',
+      name: "",
+      technoUrl: "",
+      id: ""
     };
   }
 
@@ -28,11 +29,11 @@ const TechnosForm = props => {
     properties: {
       id: { type: "string", title: "Id", default: id },
       name: { type: "string", title: "Name", default: name },
-      technoUrl: { type: "string", title: "URL", default: technoUrl || '' },
+      technoUrl: { type: "string", title: "URL", default: technoUrl || "" }
     }
   };
   const uiSchema = {
-    id: { "ui:widget": "hidden" },
+    id: { "ui:widget": "hidden" }
   };
 
   const goTo = () => navigate("/technos");
@@ -43,7 +44,7 @@ const TechnosForm = props => {
     goTo();
   };
 
-  const log = (type) => console.log.bind(console, type);
+  const log = type => console.log.bind(console, type);
   return (
     <div>
       <div>
@@ -51,7 +52,8 @@ const TechnosForm = props => {
           Back
         </a>
       </div>
-      <Form schema={schema}
+      <Form
+        schema={schema}
         uiSchema={uiSchema}
         onChange={log("changed")}
         onSubmit={onSubmit}
@@ -59,6 +61,6 @@ const TechnosForm = props => {
       />
     </div>
   );
-}
+};
 
 export default TechnosForm;
