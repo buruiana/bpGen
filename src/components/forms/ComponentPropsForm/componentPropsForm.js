@@ -6,7 +6,7 @@ import { changeNodeAtPath } from "react-sortable-tree";
 
 const ComponentPropsForm = props => {
   const { modalData, setTree, removeModal, tree, generateCode } = props;
-  const { node, path } = modalData;
+  const { node, path } = modalData[0];
 
   const getNodeKey = ({ treeIndex }) => treeIndex;
   const schema = {
