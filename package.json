@@ -5,10 +5,11 @@
   "main": "dist/index.html",
   "scripts": {
     "test": "",
-    "client": "parcel src/app/index.html --open --out-dir dist ",
+    "client": "parcel src/app/index.html --open",
+    "build": "parcel build src/app/index.html --no-source-maps --public-url ./",
     "server": "nodemon ./server.js",
     "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "parcel build src/app/index.html",
+    "heroku-postbuild": "parcel build src/app/index.html --public-url ./",
     "prebuild": "rm -rf dist"
   },
   "browserslist": [
