@@ -14,7 +14,6 @@ import ComponentsForm from "../components/forms/ComponentsForm";
 import PropTypes from "../components/layouts/PropTypes";
 import PropTypesForm from "../components/forms/PropTypesForm";
 import Editor from "../components/layouts/Editor";
-
 import NoMatch from "../components/layouts/NoMatch";
 
 const routes = (
