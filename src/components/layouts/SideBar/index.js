@@ -1,13 +1,20 @@
 import SideBar from "./sideBar";
 import { connect } from "react-redux";
 
-import { addModal } from "../../../services/modalService/actions";
+import { initApp } from "../../../services/configsService/actions";
+
+const mapStateToProps = state => {
+  return {
+    initAppDone: state.configsReducer.initAppDone,
+  }
+}
 
 const mapDispatchToProps = {
-  addModal: modal => addModal(modal)
+  initApp,
+
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(SideBar);

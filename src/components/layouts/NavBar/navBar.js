@@ -30,21 +30,21 @@ const NavBar = props => {
   } = props;
 
   // remove this shit
-  if (isEmpty(providers)) {
-    getAllProviders();
-  }
-  if (isEmpty(technos)) {
-    getAllTechnos();
-  }
-  if (isEmpty(propTypes)) {
-    getAllPropTypes();
-  }
-  if (isEmpty(templates)) {
-    getAllTemplates();
-  }
-  if (isEmpty(components)) {
-    getAllComponents();
-  }
+  // if (isEmpty(providers)) {
+  //   getAllProviders();
+  // }
+  // if (isEmpty(technos)) {
+  //   getAllTechnos();
+  // }
+  // if (isEmpty(propTypes)) {
+  //   getAllPropTypes();
+  // }
+  // if (isEmpty(templates)) {
+  //   getAllTemplates();
+  // }
+  // if (isEmpty(components)) {
+  //   getAllComponents();
+  // }
 
   const initProject = () => {
     console.log("console: initProject");

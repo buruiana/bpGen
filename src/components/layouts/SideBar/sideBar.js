@@ -1,9 +1,12 @@
 import React from "react";
-import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import SideNav, { Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import { history } from '../../../redux/store';
 
 const SideBar = props => {
-  const addNewModal = () => props.addModal("TEST_MODAL");
+  const { initAppDone, initApp } = props;
+  if (!initAppDone) {
+    initApp();
+  }
 
   return (
     <SideNav

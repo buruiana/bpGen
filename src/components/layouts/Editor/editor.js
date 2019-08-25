@@ -29,7 +29,7 @@ const getNodeKey = ({ treeIndex }) => treeIndex;
 const Editor = props => {
   const {
     projectSettings,
-    components,
+    components = [],
     addModal,
     tree,
     providers,

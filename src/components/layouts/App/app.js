@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ConnectedRouter } from "connected-react-router";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import routes from "../../../app/routes";
 import NavBar from "../NavBar";
 import ModalsManager from "../../modals/modalsManager";

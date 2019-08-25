@@ -8,3 +8,7 @@ export const setConfigsIsOffline = isOffline => ({
 export const initApp = () => ({
   type: actionTypes.INIT_APP
 });
+
+export const setInitAppDone = () => ({
+  type: actionTypes.INIT_APP_DONE
+});

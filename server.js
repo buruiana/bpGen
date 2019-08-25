@@ -181,7 +181,7 @@ async function myAsyncFunction(settings, src, dest) {
   io.sockets.emit("npm_done");
 }
 
-const port = process.env.PORT || 5555;
+const port = process.env.PORT || 5000;
 server.listen(port);
 
 console.log("App is listening on port " + port);
