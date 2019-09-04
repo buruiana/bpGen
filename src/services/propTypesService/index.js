@@ -1,10 +1,16 @@
 import { call, put, takeLatest, select } from "redux-saga/effects";
 import isEmpty from "lodash/isEmpty";
 import sortBy from "lodash/sortBy";
-import { SET_PROP_TYPE, GET_ALL_PROP_TYPES, DELETE_PROP_TYPE } from "./actionTypes";
+import {
+  SET_PROP_TYPE,
+  GET_ALL_PROP_TYPES,
+  DELETE_PROP_TYPE,
+  IMPORT_PROP_TYPES
+} from "./actionTypes";
 import rsf from "../../redux/firebaseConfig";
 import { setAllPropTypes, getAllPropTypes } from "./actions";
 import { mock } from "./mock";
+import { setInitAppDone } from '../configsService/actions';
 
 export function* watchSetPropType(action) {
   const { propType } = action;
@@ -35,6 +41,7 @@ export function* watchGetAllPropTypes(action) {
   if (isEmpty(allPropTypes)) allPropTypes = [];
   sortBy(allPropTypes, el => el.title);
   yield put(setAllPropTypes(allPropTypes));
+  yield put(setInitAppDone());
 }
 
 export function* watchDeletePropType(action) {
@@ -47,8 +54,24 @@ export function* watchDeletePropType(action) {
   }
 }
 
+export function* watchImportPropType(action) {
+  const { propTypes } = action;
+  const { isOffline } = (yield select()).configsReducer;
+
+  if (!isOffline) {
+    if (!isEmpty(propTypes)) {
+      yield all(propTypes.map(el => {
+        if (el.id) call(rsf.firestore.deleteDocument, `propTypes/${id}`);
+        call(rsf.firestore.addDocument, `propTypes`, el);
+      }));
+    }
+    yield put(getAllPropTypes());
+  }
+}
+
 export default function* rootSaga() {
   yield takeLatest(SET_PROP_TYPE, watchSetPropType);
   yield takeLatest(GET_ALL_PROP_TYPES, watchGetAllPropTypes);
   yield takeLatest(DELETE_PROP_TYPE, watchDeletePropType);
+  yield takeLatest(IMPORT_PROP_TYPES, watchImportPropType);
 }

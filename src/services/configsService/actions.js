@@ -12,3 +12,9 @@ export const initApp = () => ({
 export const setInitAppDone = () => ({
   type: actionTypes.INIT_APP_DONE
 });
+
+export const importData = ({ data, importType }) => ({
+  type: actionTypes.IMPORT_DATA,
+  data,
+  importType
+});

@@ -29,3 +29,7 @@ export const setFilterData = searchData => ({
   type: actionTypes.FILTER_PROP_TYPES,
   searchData,
 })
+
+export const importPropTypes = propTypes => ({
+  type: actionTypes.IMPORT_PROP_TYPES,
+})

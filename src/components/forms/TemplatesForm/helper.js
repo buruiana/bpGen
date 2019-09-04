@@ -4,16 +4,22 @@ export const getForms = forms => {
       title: form.formName,
       subtitle: 'Form',
       expanded: true,
+      formDescription: form.formDescription,
+      formIsActive: form.formIsActive,
+      formSchema: form.formSchema,
+      formUISchema: form.formUISchema,
+      formPrepareData: form.formPrepareData,
+      formProps: form.formProps,
       children: [
-        {
-          formSchema: form.formSchema,
-          subtitle: `Schema`,
-          formName: form.formName,
-        },
-        {
-          formUISchema: form.formUISchema,
-          subtitle: `UISchema`,
-        },
+        // {
+        //   formSchema: form.formSchema,
+        //   subtitle: `Schema`,
+        //   formName: form.formName,
+        // },
+        // {
+        //   formUISchema: form.formUISchema,
+        //   subtitle: `UISchema`,
+        // },
       ],
     };
   })

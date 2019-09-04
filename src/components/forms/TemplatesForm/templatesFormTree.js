@@ -10,7 +10,6 @@ import {
   faMinusCircle,
   faArrowCircleRight
 } from "@fortawesome/free-solid-svg-icons";
-import {} from "@fortawesome/free-regular-svg-icons";
 
 import { getDafaultTreeData, getForms, getBlocks } from "./helper";
 import { allmodals } from "../../../utils/constants";
@@ -35,7 +34,7 @@ const TemplatesForm = props => {
   const convertJsonSchema2SortableTree = () => {
     let tree = [];
     let treeObj = {
-      title: get(currentTemplate, "name", ""),
+      title: get(currentTemplate, "title", ""),
       subtitle: "Template",
       expanded: true,
       children: []
@@ -64,8 +63,9 @@ const TemplatesForm = props => {
         });
       });
     }
-
+    console.log('console: treeObj', treeObj);
     tree.push(treeObj);
+    console.log('console: tree', tree);
     return tree;
   };
 

@@ -5,6 +5,7 @@ import {
   setComponent,
   getAllComponents,
 } from '../../../services/componentsService/actions';
+import { importData } from '../../../services/configsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -14,9 +15,10 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  deleteComponent: component => deleteComponent(component),
-  setComponent: component => setComponent(component),
-  getAllComponents: () => getAllComponents(),
+  deleteComponent,
+  setComponent,
+  getAllComponents,
+  importData,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ComponentsListView);

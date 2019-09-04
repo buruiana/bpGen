@@ -10,7 +10,8 @@ import { highlight, languages } from "prismjs/components/prism-core";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 
-const TemplatesForm = props => {
+const TemplateItemForm = props => {
+  console.log('console: oooooooooooooooooooooooooooooo', props);
   const { setTemplateTree, removeModal, tree, modalData } = props;
   let fileReader;
   const currentModalData = modalData[modalData.length - 1].node;
@@ -42,12 +43,11 @@ const TemplatesForm = props => {
   if (currentModalData.subtitle === "Form") {
     schema.properties = {
       ...schema.properties,
-      formDescription: { type: "string", title: "Form Description" },
-      formDescription: { type: "string", title: "Form Description" },
-      formIsActive: { type: "boolean", title: "Form is Active" },
-      // formSchema: { type: "string", title: "Form Schema" },
-      // formUISchema: { type: "string", title: "Form UI Schema" },
-      formPrepareData: { type: "string", title: "Form Prepare Data" },
+      formDescription: { type: "string", title: "Form Description", default: currentModalData.formDescription },
+      formIsActive: { type: "boolean", title: "Form is Active", default: currentModalData.formIsActive },
+      formSchema: { type: "string", title: "Form Schema", default: currentModalData.formSchema },
+      formUISchema: { type: "string", title: "Form UI Schema", default: currentModalData.formUISchema },
+      formPrepareData: { type: "string", title: "Form Prepare Data", default: currentModalData.formPrepareData },
       formProps: {
         type: "array",
         title: "Form Props",
@@ -60,8 +60,8 @@ const TemplatesForm = props => {
               items: {
                 type: "object",
                 properties: {
-                  propName: { type: "string", title: "Prop Name" },
-                  propType: { type: "string", title: "Prop Type" }
+                  propName: { type: "string", title: "Prop Name", default: currentModalData.formProps.propName },
+                  propType: { type: "string", title: "Prop Type", default: currentModalData.formProps.propType }
                 }
               }
             }
@@ -232,4 +232,4 @@ const TemplatesForm = props => {
   );
 };
 
-export default TemplatesForm;
+export default TemplateItemForm;

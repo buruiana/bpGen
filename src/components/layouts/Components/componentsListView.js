@@ -8,8 +8,9 @@ import { navigate } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
 
 const ComponentsListView = props => {
-  const { searchData, components = [], deleteComponent } = props;
+  const { searchData, components = [], deleteComponent, importData } = props;
   const { COMPONENTS } = availablecomponents;
+  let fileReader;
 
   const deleteSelectedComponent = event =>  deleteComponent({ id: event.target.id });
   const goTo = event => navigate(`/component/${event.target.id}`);
@@ -47,9 +48,27 @@ const ComponentsListView = props => {
     })
   };
 
+  const handleFileRead = e => {
+    const components = new Function(fileReader.result);
+
+    const list = {
+      data: components,
+      importType: 'components'
+    };
+    importData(list);
+  };
+
+  const onImport = e => {
+    fileReader = new FileReader();
+    fileReader.onloadend = handleFileRead;
+    console.log('console: ------------------------', e.target.files[0]);
+    fileReader.readAsText(e.target.files[0]);
+  };
+
   return (
     <div>
       <GenericSearchForm componentname={COMPONENTS} />
+      <input type="file" id="importFile" onChange={onImport} />
       <div className='addEditLink'>
         <a className="simpleLink" onClick={() => navigate("/component/new")}>
           Add Component
