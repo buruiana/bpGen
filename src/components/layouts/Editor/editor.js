@@ -16,11 +16,13 @@ import GenericSearchForm from '../../forms/GenericSearchForm';
 import { availablecomponents, allmodals } from '../../../utils/constants';
 
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+import Preview from '../Preview';
 
 import 'react-sortable-tree/style.css';
 
 
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const externalNodeType = 'yourNodeType';
 const shouldCopyOnOutsideDrop = true;
@@ -167,9 +169,8 @@ const Editor = props => {
     );
   };
 
-  const componentCode = generatedCode.filter(e => e.id === 'component.js');
-  console.log('console: componentCode', componentCode);
-  const scope = { Alert, Card };
+  const componentCode = generatedCode.filter(e => e.id === 'component.js_preview');
+  const scope = { Alert, Card, Button };
   console.log('console: ------------', get(componentCode, '[0].code', ''));
   console.log('console: scopescope', scope);
 
@@ -209,11 +210,12 @@ const Editor = props => {
     <div>
       {returnComponentBlock()}
       {renderAce()}
-      {/* <LiveProvider code={ccc} scope={scope} >
+      {/* <LiveProvider code={get(componentCode, '[0].code', '')} scope={scope} >
         <LiveError />
         <LiveEditor />
         <LivePreview />
       </LiveProvider> */}
+      <Preview />
     </div>
   );
 };

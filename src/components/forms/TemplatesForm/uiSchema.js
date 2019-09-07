@@ -8,6 +8,12 @@ const uiSchema = {
             "ui:options": {
               rows: 15
             }
+          },
+          blockPreviewImplementation: {
+            "ui:widget": "textarea",
+            "ui:options": {
+              rows: 15
+            }
           }
         }
       },

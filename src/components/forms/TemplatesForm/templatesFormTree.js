@@ -20,13 +20,11 @@ const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const TemplatesForm = props => {
-  console.log("console: -----------", props);
   const { jsonForm, setTemplateTree, addModal, templates, tree } = props;
   const currentTemplate = templates.filter(
     template => template.id === props.match.params.id
   )[0];
 
-  console.log("console: currentTemplate", currentTemplate);
   const convertSortableTree2JsonSchema = treeData => {
     console.log("console: treeData", treeData);
   };
@@ -63,16 +61,13 @@ const TemplatesForm = props => {
         });
       });
     }
-    console.log('console: treeObj', treeObj);
     tree.push(treeObj);
-    console.log('console: tree', tree);
     return tree;
   };
 
   let treeData = [];
   if (isEmpty(tree[0].children)) {
     treeData = convertJsonSchema2SortableTree();
-    console.log("console: 33333333", treeData);
     setTemplateTree(treeData);
   }
 

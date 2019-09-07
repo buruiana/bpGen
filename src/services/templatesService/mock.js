@@ -21,7 +21,7 @@ export const mock = {
               formDescription: 'form for hoc',
               formIsActive: true,
               formName: 'HOC',
-              formPrepareData: 'return {};',
+              formPrepareData: 'return \'\';',
               formProps: [
                 {
                   item: [
@@ -64,6 +64,141 @@ export const mock = {
               blockIsActive: true,
               blockName: 'import block',
               blockSequence: 1
+            }
+          ],
+          fileDescription: 'file for component',
+          fileForms: [],
+          fileIsActive: true,
+          fileName: 'component.js',
+          fileSequence: 2
+        },
+        {
+          fileBlocks: [],
+          fileDescription: 'file for styles',
+          fileForms: [],
+          fileIsActive: true,
+          fileName: 'styles.css',
+          fileSequence: 3
+        }
+      ],
+      templateIsActive: true,
+      templateName: 'react-component',
+      templateTechnos: 'react',
+      userid: 'aaa'
+    },
+    {
+      id: 'dajgS1l6a5zYNGQenztE',
+      name: 'react-dumb-component',
+      templateDescription: 'react-dumb-component',
+      templateFiles: [
+        {
+          fileBlocks: [
+            {
+              blockDescription: 'hoc imports block',
+              blockImplementation: 'let code = `import ${helper.capitalize(forms.projectSettings.projectName)} from \'./${forms.projectSettings.projectName}\';\\n`;\n\nif (forms.HOC.connectRedux || false) {\n  code+= `import { connect } from "react-redux";\\n\\n`\n}\n\nreturn code;',
+              blockIsActive: true,
+              blockName: 'hoc imports block',
+              blockSequence: 1
+            },
+            {
+              blockDescription: 'hoc main block',
+              blockImplementation: 'let code = \'\';\nif (forms.HOC.connectRedux || false) {\n  let mapStateToProps = \'null\';\n  let mapDispatchToProps = \'null\';\n  if (forms.HOC.mapStateToProps  || false) {\n    code+= `const mapStateToProps = () => {}\\n\\n`;\n    mapStateToProps = \'mapStateToProps\';\n  }\n\n  if (forms.HOC.mapDispatchToProps  || false) {\n    code+= `const mapDispatchToProps = () => {}\\n\\n`;\n    mapDispatchToProps = \'mapDispatchToProps\';\n  }\n}\nreturn code;',
+              blockIsActive: true,
+              blockName: 'hoc main block',
+              blockPreviewImplementation: 'return \'\';',
+              blockSequence: 2
+            },
+            {
+              blockDescription: 'hoc exports block',
+              blockImplementation: 'let code = \'\';\n let mapStateToProps = \'null\';\n  let mapDispatchToProps = \'null\';\n  if (forms.HOC.mapStateToProps  || false) {\n    mapStateToProps = \'mapStateToProps\';\n  }\n\n  if (forms.HOC.mapDispatchToProps  || false) {\n    mapDispatchToProps = \'mapDispatchToProps\';\n  }\n\nif (forms.HOC.connectRedux || false) {\n  if ((forms.HOC.mapStateToProps  || false) && !forms.HOC.mapDispatchToProps) {\n    code += `export default connect(${mapStateToProps})(${helper.capitalize(forms.projectSettings.projectName)});`;\n  } else if (forms.HOC.mapDispatchToProps) {\n    code += `export default connect(${mapStateToProps}, ${mapDispatchToProps})(${helper.capitalize(forms.projectSettings.projectName)});`;\n  } else {\n    code += `export default connect(null, null)(${helper.capitalize(forms.projectSettings.projectName)});`;\n  }\n} else {\n  code += `export default ${helper.capitalize(forms.HOC.projectName)};`;\n}\n\nreturn code;',
+              blockIsActive: true,
+              blockName: 'hoc exports block',
+              blockPreviewImplementation: 'return \'\';',
+              blockSequence: 3
+            }
+          ],
+          fileDescription: 'hoc',
+          fileForms: [
+            {
+              formDescription: 'form for hoc',
+              formIsActive: true,
+              formName: 'HOC',
+              formPrepareData: 'return {};',
+              formProps: [
+                {
+                  item: [
+                    {
+                      propName: 'connect-redux',
+                      propType: 'boolean'
+                    }
+                  ]
+                },
+                {
+                  item: [
+                    {
+                      propName: 'mapStateToProps',
+                      propType: 'boolean'
+                    }
+                  ]
+                },
+                {
+                  item: [
+                    {
+                      propName: 'mapDispatchToProps',
+                      propType: 'boolean'
+                    }
+                  ]
+                }
+              ],
+              formSchema: 'return {\n  type: \'object\',\n  properties: {\n    connectRedux: { type: \'boolean\', title: \'Connect To Redux\' },\n    mapStateToProps: { type: \'boolean\', title: \'mapStateToProps\' },\n    mapDispatchToProps: { type: \'boolean\', title: \'mapDispatchToProps\' },\n  },\n};',
+              formUISchema: 'return {\n  "ui:options": { removable: false },\n};'
+            }
+          ],
+          fileIsActive: true,
+          fileName: 'index.js',
+          fileSequence: 1
+        },
+        {
+          fileBlocks: [
+            {
+              blockDescription: 'component imports block',
+              blockImplementation: 'let code = \'\';\nconst importsList = helper.getImportList(forms.tree);\ncode += `import React from \'react\';\\n`;\nimportsList.sortedDefaultImports.map(el => {\n  code += `import ${el.node.title} from \'${el.node.componentImport}\';\\n`;\n});\n\nObject.keys(importsList.groupSortedNonDefaultImports).forEach(key => {\n  code += `import {\\n`;\n  importsList.groupSortedNonDefaultImports[key].map(el => {\n    code += `${el.node.title},\\n`;\n  });\n  code += `} from \'${importsList.groupSortedNonDefaultImports[key][0].node.providerPath}\';\\n`;\n});\nreturn code;',
+              blockIsActive: true,
+              blockName: 'component imports block',
+              blockPreviewImplementation: 'return \'\';',
+              blockSequence: 1
+            },
+            {
+              blockDescription: 'component start block',
+              blockImplementation: 'let code = \'\';\ncode += `\\nconst ${helper.capitalize(forms.projectSettings.projectName)} = props => {\\n`;\nreturn code;',
+              blockIsActive: true,
+              blockName: 'component start block',
+              blockPreviewImplementation: 'let code = \'\';\ncode += `() => {\\n`;\nreturn code;',
+              blockSequence: 2
+            },
+            {
+              blockDescription: 'component constants block',
+              blockImplementation: 'let code = \'\';\nconst constList = helper.getConstList(forms.tree);\nif (!helper.isEmpty(constList)) {\n  constList.map(el => {\n    code += ` const ${el} = () => {\\n`;\n    code += `   return null;\\n`;\n    code += ` };\\n\\n`;\n  });\n}\nreturn code;',
+              blockIsActive: true,
+              blockName: 'component constants block',
+              blockPreviewImplementation: 'return \'\';l',
+              blockSequence: 3
+            },
+            {
+              blockDescription: 'component return block',
+              blockImplementation: 'let code = \'\';\nconst flatData = helper.getFlatDataFromTree1({\n  treeData: forms.tree,\n  getNodeKey: ({ treeIndex }) => treeIndex,\n  ignoreCollapsed: false,\n});\ncode += ` return (\\n`;\ncode += helper.getTree(flatData) || \'<div />\';\ncode += ` );\\n`;\ncode += `};\\n\\n`;\nreturn code;',
+              blockIsActive: true,
+              blockName: 'component return block',
+              blockPreviewImplementation: 'let code = \'\';\nconst flatData = helper.getFlatDataFromTree1({\n  treeData: forms.tree,\n  getNodeKey: ({ treeIndex }) => treeIndex,\n  ignoreCollapsed: false,\n});\ncode += ` return (\\n`;\ncode += helper.getTree(flatData) || \'<div />\';\ncode += ` );\\n`;\ncode += `};\\n\\n`;\nreturn code;',
+              blockSequence: 4
+            },
+            {
+              blockDescription: 'component export block',
+              blockImplementation: 'let code = \'\';\ncode += `export default ${helper.capitalize(forms.projectSettings.projectName)};`;\nreturn code;',
+              blockIsActive: true,
+              blockName: 'component export block',
+              blockPreviewImplementation: 'return \'\';',
+              blockSequence: 5
             }
           ],
           fileDescription: 'file for component',

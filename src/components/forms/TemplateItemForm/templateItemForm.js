@@ -11,7 +11,6 @@ import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 
 const TemplateItemForm = props => {
-  console.log('console: oooooooooooooooooooooooooooooo', props);
   const { setTemplateTree, removeModal, tree, modalData } = props;
   let fileReader;
   const currentModalData = modalData[modalData.length - 1].node;
@@ -146,7 +145,6 @@ const TemplateItemForm = props => {
   // };
 
   const onValueChange = val => {
-    console.log("console: onValueChange", val);
     let newEl = {};
     if (currentModalData.subtitle === 'Schema') {
       newEl = {
@@ -159,7 +157,6 @@ const TemplateItemForm = props => {
         formUISchema: val
       };
     }
-    console.log('console: newElnewElnewEl', newEl);
 
     const newTree = changeNodeAtPath({
       treeData: tree,

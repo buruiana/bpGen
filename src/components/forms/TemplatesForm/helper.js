@@ -26,7 +26,6 @@ export const getForms = forms => {
 };
 
 export const getBlocks = blocks => {
-  console.log('console: blocks', blocks);
   return blocks.map(block => {
     return {
       title: block.blockName,

@@ -5,7 +5,7 @@ import {
   getAllTemplates
 } from "../../../services/templatesService/actions";
 import { generateCode } from "../../../services/codeGenerationService/actions";
-import TemplatesForm from "./templatesFormTree";
+import TemplatesForm from "./templatesForm";
 import { setTemplateTree } from "../../../services/templatesService/actions";
 import { addModal } from "../../../services/modalService/actions";
 

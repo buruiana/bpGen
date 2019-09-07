@@ -5,12 +5,13 @@ export const executeCodeGeneration = (template, forms) => {
   template.templateFiles.map(file => {
     let code = "";
     let codePreview = "";
+
     file.fileBlocks.map(block => {
       if (block.blockImplementation) {
-        code = new Function("forms", "helper", block.blockImplementation)(forms, helper);
+        code+= new Function("forms", "helper", block.blockImplementation)(forms, helper);
       }
       if (block.blockPreviewImplementation) {
-        codePreview = new Function("forms", "helper", block.blockPreviewImplementation)(forms, helper);
+        codePreview+= new Function("forms", "helper", block.blockPreviewImplementation)(forms, helper);
       }
     });
 

@@ -8,8 +8,6 @@ const TemplatesForm = props => {
   const { setTemplate, userid, templates } = props;
   let fileReader;
 
-  console.log('console: propsprops', props);
-
   const [formSchema, setFormSchema] = useState(
     templates.filter(template => template.id === props.match.params.id)[0] || []
   );
