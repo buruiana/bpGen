@@ -42,6 +42,7 @@ const Editor = props => {
     setNodePath,
     generatedCode
   } = props;
+
   const renderAce = () => {
     return !isEmpty(projectSettings) ? <Ace /> : null;
   };
@@ -207,12 +208,12 @@ const Editor = props => {
   return (
     <div>
       {returnComponentBlock()}
-      {/* {renderAce()} */}
-      <LiveProvider code={ccc} scope={scope} >
+      {renderAce()}
+      {/* <LiveProvider code={ccc} scope={scope} >
         <LiveError />
         <LiveEditor />
         <LivePreview />
-      </LiveProvider>
+      </LiveProvider> */}
     </div>
   );
 };

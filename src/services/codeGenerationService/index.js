@@ -16,7 +16,11 @@ export function* watchGenerateCode(action) {
   }
 
   try {
-    yield put(prettifyCode(executeCodeGeneration(template, forms)));
+    yield put(
+      prettifyCode(
+        executeCodeGeneration(template, forms)
+      )
+    );
   } catch (error) {
     generateCodeFail(error);
   }

@@ -97,7 +97,7 @@ export const getTree = flatTree => {
         let componentProps = '';
         if (hasComponentProps) {
           el.node.componentProps.map(el => {
-            if (!isEmpty(el.val)) componentProps += `\n${el.name}=${el.val}\n`;
+            if (!isEmpty(el.val)) componentProps += `\n${el.title}=${el.val}\n`;
           });
         }
         return componentProps;

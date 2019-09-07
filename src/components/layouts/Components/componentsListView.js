@@ -49,8 +49,7 @@ const ComponentsListView = props => {
   };
 
   const handleFileRead = e => {
-    const components = new Function(fileReader.result);
-
+    const components = new Function(fileReader.result)();
     const list = {
       data: components,
       importType: 'components'
@@ -61,7 +60,6 @@ const ComponentsListView = props => {
   const onImport = e => {
     fileReader = new FileReader();
     fileReader.onloadend = handleFileRead;
-    console.log('console: ------------------------', e.target.files[0]);
     fileReader.readAsText(e.target.files[0]);
   };
 
