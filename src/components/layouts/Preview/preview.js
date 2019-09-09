@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useEffect, useCallback}  from "react";
 import get from "lodash/get";
-
+import isEmpty from "lodash/isEmpty";
+import uniqBy from 'lodash/uniqBy';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
 import { getImportList } from '../../../utils/helper';
+import { getImport } from './helper';
 
 const Preview = props => {
   const {
@@ -11,65 +13,49 @@ const Preview = props => {
     forms
   } = props;
 
+  const [scope, setScope] = useState({});
+
+  const importsList = useCallback(
+    () => {
+      getImportList(get(forms, 'tree', []));
+    },
+    [forms, getImportList],
+  );
+  console.log('console: importsList', importsList());
+  useEffect(() => {
+    const importModule = async (el) => {
+      if (isEmpty(el)) return;
+      await getImport(el.node.componentImport)
+        .then(e => ({ default: e }))
+        .then(c => setScope({ ...scope, [el.node.title]: c.default }));
+    };
+
+    async () => await importsList.sortedDefaultImports.map(el => importModule(el));
+  }, [forms]);
+
   const componentCode = generatedCode.filter(e => e.id === 'component.js_preview');
-  const importsList = getImportList(get(forms, 'tree', []));
-  let scope = {};
+  //const importsList = getImportList(get(forms, 'tree', []));
 
+  //const getScope = async () => await importsList.sortedDefaultImports.map(el => importModule(el));
+  const getUniqueSortedDefaultImportsLength = () => uniqBy(importsList.sortedDefaultImports, 'node[componentImport]').length;
+  const shouldShowPreview = () => getUniqueSortedDefaultImportsLength() === Object.keys(scope).length;
 
-
-  const Alert = React.lazy(() => import('../../../../node_modules/react-bootstrap/Alert'));
-  console.log('console: 111111111111111', Alert);
-
-  // import('lodash/iaEmpty')
-  //   .then((moduleA) => {
-  //     console.log('console: moduleA', moduleA);
-  //   })
-  //   .catch(err => {
-  //     console.log('console: eeeeeeeee', err);
-  //   });
-
-
-  const handleClick = zzz => {
-    console.log('console: uuuuuuuuuuuuuuuuuuuu', );
-    import('../../../../node_modules/react-bootstrap/Alert')
-      .then((moduleA) => {
-        scope = { moduleA };
-        console.log('console: moduleA', moduleA, scope);
-        return moduleA;
-      })
-      .catch(err => {
-        console.log('console: aaaaaaaaaaaaaa', err);
-      });
-  };
-
-  importsList.sortedDefaultImports.map(el => {
-    let ccc = `import ${el.node.title} from '${el.node.componentImport}'`;
-    console.log('console: ccccccccc', ccc);
-   // getComponent(el.node.componentImport);
-    //const Alert = handleClick(el.node.componentImport)
-    console.log('console: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', Alert );
-    //scope = { Alert };
-    // const Alert = React.lazy(() => import(`${el.node.componentImport}`));
-    // console.log('console: OtherComponent', Alert);
-    ///let code = new Function(ccc)();
-    //scope[el.node.title] = require('${el.node.componentImport}');
-    //let aaa = require(`${el.node.componentImport}`);
-   // let Alert = require('react');
-    //console.log('console: ===============', code);
-  });
-
-  console.log('console: importListimportList', importsList);
-  console.log('console: ------------', get(componentCode, '[0].code', ''));
-  console.log('console: scopescope', scope);
-
+  //if (getUniqueSortedDefaultImportsLength() !== Object.keys(scope).length) getScope();
+  console.log('console: 111111111111111111111', scope);
+  console.log('console: shouldShowPreview', shouldShowPreview());
+  console.log('console:  getUniqueSortedDefaultImportsLength()', getUniqueSortedDefaultImportsLength());
+  console.log('console: Object.keys(scope).length', Object.keys(scope).length);
 
   return (
     <div>
-      <LiveProvider code={get(componentCode, '[0].code', '')} scope={scope} >
-        <LiveError />
-        <LiveEditor />
-        <LivePreview />
-      </LiveProvider>
+      {
+        shouldShowPreview() &&
+        <LiveProvider code={get(componentCode, '[0].code', '')} scope={scope} >
+          <LiveError />
+          <LiveEditor />
+          <LivePreview />
+        </LiveProvider>
+        }
     </div>
   );
 };

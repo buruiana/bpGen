@@ -169,43 +169,43 @@ const Editor = props => {
     );
   };
 
-  const componentCode = generatedCode.filter(e => e.id === 'component.js_preview');
-  const scope = { Alert, Card, Button };
-  console.log('console: ------------', get(componentCode, '[0].code', ''));
-  console.log('console: scopescope', scope);
+//   const componentCode = generatedCode.filter(e => e.id === 'component.js_preview');
+//   const scope = { Alert, Card, Button };
+//   console.log('console: ------------', get(componentCode, '[0].code', ''));
+//   console.log('console: scopescope', scope);
 
-  const ccc = `
-() => {
-  const onClick = () => {
-    return alert('aaaa');
-  };
+//   const ccc = `
+// () => {
+//   const onClick = () => {
+//     return alert('aaaa');
+//   };
 
-  const onAlertClose = () => {
-    return null;
-  };
+//   const onAlertClose = () => {
+//     return null;
+//   };
 
-  return (
-    <div>
-      <div>
-        <h1 />
-        <button onClick={onClick} style={{border: '1px solid green', width: '100px', height: '25px'}}/>
-        <Alert closeLabel="close" onClose={onAlertClose} />
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
-            </Card.Text>
-            <button variant="primary">Go somewhere</button>
-          </Card.Body>
-        </Card>
-      </div>
-    </div>
-  );
-};
-`;
+//   return (
+//     <div>
+//       <div>
+//         <h1 />
+//         <button onClick={onClick} style={{border: '1px solid green', width: '100px', height: '25px'}}/>
+//         <Alert closeLabel="close" onClose={onAlertClose} />
+//         <Card style={{ width: '18rem' }}>
+//           <Card.Img variant="top" src="holder.js/100px180" />
+//           <Card.Body>
+//             <Card.Title>Card Title</Card.Title>
+//             <Card.Text>
+//               Some quick example text to build on the card title and make up the bulk of
+//               the card's content.
+//             </Card.Text>
+//             <button variant="primary">Go somewhere</button>
+//           </Card.Body>
+//         </Card>
+//       </div>
+//     </div>
+//   );
+// };
+// `;
   return (
     <div>
       {returnComponentBlock()}
@@ -215,7 +215,7 @@ const Editor = props => {
         <LiveEditor />
         <LivePreview />
       </LiveProvider> */}
-      <Preview />
+      {!isEmpty(tree) && <Preview />}
     </div>
   );
 };
