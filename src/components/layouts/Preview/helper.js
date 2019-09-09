@@ -1,12 +1,23 @@
-
-export const getImport = async (type) => {
+export const getImport = async type => {
   switch (type) {
-    case 'react-bootstrap/Alert': return await import('react-bootstrap/Alert');
-    case 'react-bootstrap/Button': return await import('react-bootstrap/Button');
+    case "react-bootstrap/Alert":
+      return await import("react-bootstrap/Alert");
+    case "react-bootstrap/Button":
+      return await import("react-bootstrap/Button");
+    case "react-bootstrap/Accordion":
+      return await import("react-bootstrap/Accordion");
+    case "react-bootstrap/Badge":
+      return await import("react-bootstrap/Badge");
+    case "react-bootstrap/Breadcrumb":
+      return await import("react-bootstrap/Breadcrumb");
+    case "react-bootstrap/BreadcrumbItem":
+      return await import("react-bootstrap/BreadcrumbItem");
+    case "react-bootstrap/ButtonGroup":
+      return await import("react-bootstrap/ButtonGroup");
+    case "react-bootstrap/ButtonToolbar":
+      return await import("react-bootstrap/ButtonToolbar");
   }
 };
-
-
 
 // import Accordion = require('react-bootstrap/lib/Accordion');
 // import Alert = require('react-bootstrap/lib/Alert');
