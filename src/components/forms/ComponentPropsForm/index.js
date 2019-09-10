@@ -12,7 +12,8 @@ const mapStateToProps = state => {
     projectSettings: state.projectSettingsReducer.projectSettings,
     technos: state.technosReducer.technos,
     tree: state.sortableTreeReducer.tree,
-    modalData: state.modalsReducer.modalData
+    modalData: state.modalsReducer.modalData,
+    forms: state.customFormReducer.forms,
   };
 };
 

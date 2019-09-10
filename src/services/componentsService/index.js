@@ -4,11 +4,14 @@ import sortBy from "lodash/sortBy";
 import { SET_COMPONENT, GET_ALL_COMPONENTS, DELETE_COMPONENT } from "./actionTypes";
 import rsf from "../../redux/firebaseConfig";
 import { setAllComponents, getAllComponents } from "./actions";
+import { exportModules } from '../backEndService/actions';
+import { getExportModulesCode } from './helper';
 import { mock } from "./mock";
 
 export function* watchSetComponent(action) {
   const { component } = action;
   const { isOffline } = (yield select()).configsReducer;
+  const { components } = (yield select()).componentsReducer;
 
   if (!isOffline) {
     if (component.id) {
@@ -18,6 +21,7 @@ export function* watchSetComponent(action) {
     }
     yield put(getAllComponents());
   }
+  yield put(exportModules(getExportModulesCode(components)));
 }
 
 export function* watchGetAllComponents(action) {

@@ -181,7 +181,7 @@ export const mock = {
               blockImplementation: 'let code = \'\';\nconst constList = helper.getConstList(forms.tree);\nif (!helper.isEmpty(constList)) {\n  constList.map(el => {\n    code += ` const ${el} = () => {\\n`;\n    code += `   return null;\\n`;\n    code += ` };\\n\\n`;\n  });\n}\nreturn code;',
               blockIsActive: true,
               blockName: 'component constants block',
-              blockPreviewImplementation: 'return \'\';l',
+              blockPreviewImplementation: 'let code = \'\';\nconst constList = helper.getConstList(forms.tree);\nif (!helper.isEmpty(constList)) {\n  constList.map(el => {\n    code += ` const ${el} = () => {\\n`;\n    code += `   return null;\\n`;\n    code += ` };\\n\\n`;\n  });\n}\nreturn code;',
               blockSequence: 3
             },
             {

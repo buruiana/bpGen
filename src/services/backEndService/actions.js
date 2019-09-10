@@ -14,3 +14,8 @@ export const prettifyCodeFail = error => ({
   type: actionTypes.PRETTIFY_CODE_FAIL,
   error
 });
+
+export const exportModules = data => ({
+  type: actionTypes.EXPORT_MODULES,
+  data
+});

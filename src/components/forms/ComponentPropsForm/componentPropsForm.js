@@ -5,7 +5,15 @@ import get from "lodash/get";
 import { changeNodeAtPath } from "react-sortable-tree";
 
 const ComponentPropsForm = props => {
-  const { modalData, setTree, removeModal, tree, generateCode } = props;
+  const {
+    modalData,
+    setTree,
+    removeModal,
+    tree,
+    generateCode,
+    setCustomForm,
+    forms
+  } = props;
   const { node, path } = modalData[0];
 
   const getNodeKey = ({ treeIndex }) => treeIndex;
@@ -68,6 +76,11 @@ const ComponentPropsForm = props => {
       })
     };
     setTree(newTree);
+    const newForms = {
+      ...forms,
+      tree: newTree.treeData2
+    };
+    setCustomForm(newForms);
     generateCode();
     removeModal();
   };

@@ -54,8 +54,8 @@ const Editor = props => {
       ...forms,
       tree: treeData2
     };
-    setCustomForm(newForms);
 
+    setCustomForm(newForms);
     generateCode();
   };
   const onChange = treeData => {

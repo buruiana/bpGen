@@ -5,7 +5,7 @@ import uniqBy from "lodash/uniqBy";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
 import { getImportList } from "../../../utils/helper";
-import { getImport } from "./helper";
+import { getImport } from "../../../utils/importModules";
 
 const Preview = props => {
   const { generatedCode, forms } = props;
@@ -24,13 +24,15 @@ const Preview = props => {
     if (!shouldShowPreview()) {
       const importModule = async el => {
         if (isEmpty(el)) return;
-        await getImport(el.node.componentImport)
-          .then(e => ({ default: e }))
-          .then(c => {
-            if (!scope.hasOwnProperty([el.node.title])) {
-              setScope({ ...scope, [el.node.title]: c.default });
-            }
-          });
+        if (el.node.componentImport !== '-') {
+          await getImport(el.node.componentImport)
+            .then(e => ({ default: e }))
+            .then(c => {
+              if (!scope.hasOwnProperty([el.node.title])) {
+                setScope({ ...scope, [el.node.title]: c.default });
+              }
+            });
+        }
       };
       const requestModule = async () => {
         await importsList.sortedDefaultImports.map(el => importModule(el));
@@ -47,8 +49,8 @@ const Preview = props => {
     <div>
       {shouldShowPreview() && (
         <LiveProvider code={get(componentCode, "[0].code", "")} scope={scope}>
-          <LiveError />
-          <LiveEditor />
+          {/* <LiveError />
+          <LiveEditor /> */}
           <LivePreview />
         </LiveProvider>
       )}

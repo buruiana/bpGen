@@ -27,21 +27,34 @@ function copyFiles(src, dest) {
   shell.exec(`cp -r ${src} ${dest}`);
 }
 
-app.post("/api/prettify", (req, res) => {
-  const opt = {
-    useTabs: false,
-    printWidth: 60,
-    tabWidth: 2,
-    semi: true,
-    singleQuote: true,
-    bracketSpacing: false,
-    jsxBracketSameLine: true,
-    parser: `${req.body.parser}`,
-    trailingComma: "all",
-    arrowParens: "avoid",
-    proseWrap: "preserve"
-  };
+const opt = {
+  useTabs: false,
+  printWidth: 60,
+  tabWidth: 2,
+  semi: true,
+  singleQuote: true,
+  bracketSpacing: false,
+  jsxBracketSameLine: true,
+  parser: `babel`,
+  trailingComma: "all",
+  arrowParens: "avoid",
+  proseWrap: "preserve"
+};
 
+app.post("/api/prettify", (req, res) => {
+  // const opt = {
+  //   useTabs: false,
+  //   printWidth: 60,
+  //   tabWidth: 2,
+  //   semi: true,
+  //   singleQuote: true,
+  //   bracketSpacing: false,
+  //   jsxBracketSameLine: true,
+  //   parser: `${req.body.parser}`,
+  //   trailingComma: "all",
+  //   arrowParens: "avoid",
+  //   proseWrap: "preserve"
+  // };
   let newCode = [];
   req.body.code.code.map(e => {
     let theCode = "";
@@ -60,6 +73,12 @@ function execWrapper(command, options) {
     });
   });
 }
+
+app.post("/api/exportModules", (req, res) => {
+  console.log('console: 0000000000000', req.body.data);
+  fs.writeFileSync('./src/utils/importModules.js',  prettier.format(req.body.data, opt));
+  res.json("done");
+});
 
 app.post("/api/exportFiles", (req, res) => {
   const name = req.body.name;
