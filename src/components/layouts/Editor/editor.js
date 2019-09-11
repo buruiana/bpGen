@@ -2,6 +2,7 @@ import React from "react";
 import Alert from "react-bootstrap/Alert";
 import SortableTree, { removeNodeAtPath } from "react-sortable-tree";
 import sortBy from "lodash/sortBy";
+import has from "lodash/has";
 import get from "lodash/get";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -36,7 +37,7 @@ const Editor = props => {
     generateCode,
     forms,
     setNodePath,
-    generatedCode
+    configs
   } = props;
 
   const renderAce = () => {
@@ -74,10 +75,11 @@ const Editor = props => {
 
   const filteredDefaultTree = () => {
     const filteredTree = components.filter(el => {
-      if (!isEmpty(searchData) && searchData.name) {
+      if (has(searchData, 'name')) {
         return (
-          el.title.toLowerCase().indexOf(searchData.name.toLowerCase()) !==
-            -1 &&
+          el.title
+            .toLowerCase()
+            .indexOf(searchData.name.toLowerCase()) !== -1 &&
           get(searchData, "techno", el.techno) === el.techno &&
           get(searchData, "provider", el.provider) === el.provider
         );
@@ -185,7 +187,7 @@ const Editor = props => {
     <div>
       {returnComponentBlock()}
       {renderAce()}
-      {!isEmpty(tree) && <Preview />}
+      {!isEmpty(tree) && configs.hasComponentPreview && <Preview />}
     </div>
   );
 };

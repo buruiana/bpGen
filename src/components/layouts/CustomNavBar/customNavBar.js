@@ -50,10 +50,10 @@ const NavBar = props => {
           >
             <FontAwesomeIcon icon={faCogs} /> Project Settings
           </Nav.Link>
-          {getTemplateForms()}
           <Nav.Link name="init" onClick={initProject} className="justify-content-end">
             <FontAwesomeIcon icon={faEraser} /> Init Project
           </Nav.Link>
+          {getTemplateForms()}
         </Nav>
       </Navbar>
     </div>

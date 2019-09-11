@@ -18,3 +18,8 @@ export const importData = ({ data, importType }) => ({
   data,
   importType
 });
+
+export const setConfigs = configs => ({
+  type: actionTypes.SET_CONFIGS_IS_OFFLINE,
+  configs
+});

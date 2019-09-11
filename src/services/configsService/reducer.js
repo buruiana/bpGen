@@ -2,7 +2,8 @@ import * as actionTypes from "../configsService/actionTypes";
 
 export const initialState = () => ({
   isOffline: true,
-  initAppDone: false
+  initAppDone: false,
+  hasComponentPreview: false
 });
 
 export default (state = initialState(), action) => {
@@ -11,6 +12,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         isOffline: action.isOffline
+      };
+    case actionTypes.SET_CONFIG:
+      return {
+        ...state,
+        [action.configs.name]: action.configs.val
       };
     case actionTypes.INIT_APP_DONE:
       return {
