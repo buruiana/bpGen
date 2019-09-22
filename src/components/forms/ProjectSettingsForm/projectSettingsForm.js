@@ -1,14 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "react-jsonschema-form-bs4";
+import isEmpty from 'lodash/isEmpty';
 import {
-  APPLICATION,
-  SERVICE,
-  COMPONENT,
-  PROJECT_TECHNO,
-  PROJECT_TYPE,
   PROJECT_NAME,
   PROJECT_DESTINATION,
-  PROJECT_TEMPLATE
+  PROJECT_TEMPLATE,
+  PROJECT_TECHNO,
 } from "../../../utils/constants";
 
 const ProjectSettingsForm = props => {
@@ -16,16 +13,28 @@ const ProjectSettingsForm = props => {
     removeModal,
     setProjectSettings,
     projectSettings,
-    technos,
     templates,
     setCustomForm,
-    forms
+    forms,
+    technos
   } = props;
 
-  const projectTypeEnums = [APPLICATION, SERVICE, COMPONENT];
-  const technoTypeEnums = technos.map(el => el.name);
-  const templatesTypeEnums = templates.map(el => el.name);
-  const requiredFieldsEnum = ["projectName", "projectTechno", "projectType"];
+  const [formState, setFormState] = useState(projectSettings);
+  const technoTypeEnums = technos.map(el => el.name.toLowerCase());
+  //const templatesTypeEnums = templates.map(el => el.name);
+  const requiredFieldsEnum = ["projectName", "projectTemplate"];
+
+  const getTemplatesTypeEnums = () => {
+    return !isEmpty(formState.projectTechno)
+      ? templates.filter(el => {
+          return el.templateTechnos
+            .toLowerCase()
+            .includes(
+              formState.projectTechno
+            );
+        }).map(e => e.name)
+      : templates.map(e => e.name);
+  };
 
   const schema = {
     type: "object",
@@ -45,34 +54,15 @@ const ProjectSettingsForm = props => {
         type: "string",
         title: PROJECT_TECHNO,
         enum: technoTypeEnums
-        //default: projectTechno || ""
-      },
-      projectType: {
-        type: "string",
-        title: PROJECT_TYPE,
-        enum: projectTypeEnums
-        //default: projectType || ""
       },
       projectTemplate: {
         type: "string",
         title: PROJECT_TEMPLATE,
-        enum: templatesTypeEnums
+        enum: getTemplatesTypeEnums()
       }
     }
   };
   const uiSchema = {
-    projectType: {
-      "ui:widget": "select",
-      "ui:placeholder": "Choose a type"
-    },
-    projectTechno: {
-      "ui:widget": "select",
-      "ui:placeholder": "Choose a technology"
-    },
-    componentType: {
-      "ui:widget": "select",
-      "ui:placeholder": "Choose a component type"
-    },
     projectTemplate: {
       "ui:widget": "select",
       "ui:placeholder": "Choose a template"
@@ -113,10 +103,12 @@ const ProjectSettingsForm = props => {
     <Form
       schema={schema}
       uiSchema={uiSchema}
-      onChange={log("changed")}
       onSubmit={onSubmit}
       onError={log("errors")}
-      formData={projectSettings}
+      formData={formState}
+      onChange={({ formData }) => {
+        setFormState(formData);
+      }}
     />
   );
 };

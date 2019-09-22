@@ -41,9 +41,9 @@ const Ace = props => {
           name="UNIQUE_ID_OF_DIV"
           editorProps={{ $blockScrolling: true }}
           setOptions={{
-            enableBasicAutocompletion: true,
-            enableLiveAutocompletion: true,
-            enableSnippets: false,
+            // enableBasicAutocompletion: true,
+            // enableLiveAutocompletion: true,
+            // enableSnippets: false,
             showLineNumbers: true,
             tabSize: 2
           }}

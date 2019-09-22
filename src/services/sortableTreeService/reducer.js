@@ -27,6 +27,17 @@ export default (state = initialState(), action) => {
         ...state,
         nodePath: action.payload
       };
+    case actionTypes.INIT_PROJECT:
+      return {
+        ...state,
+        tree: [],
+        defaultTree: [],
+        nodePath: {
+          node: {},
+          path: [],
+          type: '',
+        },
+      };
     default:
       return state;
   }

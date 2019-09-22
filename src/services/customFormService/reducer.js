@@ -11,6 +11,11 @@ export default (state = initialState(), action) => {
         ...state,
         forms: action.forms
       };
+    case actionTypes.INIT_PROJECT:
+      return {
+        ...state,
+        forms: {}
+      };
     default:
       return state;
   }

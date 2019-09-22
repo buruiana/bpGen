@@ -1,1 +1,2 @@
 export const SET_CUSTOM_FORM = "SET_CUSTOM_FORM";
+export const INIT_PROJECT = "INIT_PROJECT";

@@ -7,6 +7,7 @@ import { getAllPropTypes } from "../../../services/propTypesService/actions";
 import { getAllTemplates } from "../../../services/templatesService/actions";
 import { getAllComponents } from "../../../services/componentsService/actions";
 import { addModal } from '../../../services/modalService/actions';
+import { initProject } from '../../../services/projectSettingsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -27,7 +28,8 @@ const mapDispatchToProps = {
   getAllPropTypes,
   getAllTemplates,
   getAllComponents,
-  addModal
+  addModal,
+  initProject
 };
 
 export default connect(

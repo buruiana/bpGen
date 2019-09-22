@@ -24,6 +24,12 @@ export default (state = initialState(), action) => {
         error: action.error,
         code: []
       };
+    case actionTypes.INIT_PROJECT:
+      return {
+        ...state,
+        error: "",
+        code: []
+      };
     default:
       return state;
   }

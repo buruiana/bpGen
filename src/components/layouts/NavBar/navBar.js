@@ -26,7 +26,8 @@ const NavBar = props => {
     components,
     getAllComponents,
     addModal,
-    projectSettings
+    projectSettings,
+    initProject
   } = props;
 
   // remove this shit
@@ -46,8 +47,13 @@ const NavBar = props => {
   //   getAllComponents();
   // }
 
-  const initProject = () => {
-    console.log("console: initProject");
+
+  const getInitProject = () => {
+    return !isEmpty(projectSettings) && (
+      <Nav.Link name="init" onClick={initProject} className="justify-content-end">
+        <FontAwesomeIcon icon={faEraser} /> Init Project
+      </Nav.Link>
+    );
   };
 
   const goTo = e => navigate(e.target.name);
@@ -87,10 +93,8 @@ const NavBar = props => {
               id={allmodals.PROJECT_SETTINGS}
             >
               <FontAwesomeIcon icon={faCogs} /> Project Settings
-              </Nav.Link>
-            <Nav.Link name="init" onClick={initProject}>
-              <FontAwesomeIcon icon={faEraser} /> Init Project
             </Nav.Link>
+            {getInitProject()}
             {getTemplateForms()}
           </>
         )}
