@@ -185,7 +185,7 @@ const Editor = props => {
 
   return (
     <div>
-      {!isEmpty(projectSettings) && returnComponentBlock()}
+      {!isEmpty(projectSettings) && projectSettings.template.templateIsComponent && returnComponentBlock()}
       {renderAce()}
       {!isEmpty(projectSettings) && !isEmpty(tree) && configs.hasComponentPreview && <Preview />}
     </div>

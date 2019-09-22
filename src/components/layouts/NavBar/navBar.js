@@ -21,7 +21,6 @@ const NavBar = props => {
     router
   } = props;
 
-  console.log('console: routerrouter', router);
   if (router.location.pathname !== '/editor') return null;
 
   const getInitProject = () => {
