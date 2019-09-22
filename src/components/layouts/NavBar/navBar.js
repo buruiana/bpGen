@@ -15,38 +15,14 @@ const NavBar = props => {
   const {
     isAuthenticated,
     logout,
-    providers,
-    getAllProviders,
-    technos,
-    getAllTechnos,
-    propTypes,
-    getAllPropTypes,
-    templates,
-    getAllTemplates,
-    components,
-    getAllComponents,
     addModal,
     projectSettings,
-    initProject
+    initProject,
+    router
   } = props;
 
-  // remove this shit
-  // if (isEmpty(providers)) {
-  //   getAllProviders();
-  // }
-  // if (isEmpty(technos)) {
-  //   getAllTechnos();
-  // }
-  // if (isEmpty(propTypes)) {
-  //   getAllPropTypes();
-  // }
-  // if (isEmpty(templates)) {
-  //   getAllTemplates();
-  // }
-  // if (isEmpty(components)) {
-  //   getAllComponents();
-  // }
-
+  console.log('console: routerrouter', router);
+  if (router.location.pathname !== '/editor') return null;
 
   const getInitProject = () => {
     return !isEmpty(projectSettings) && (
@@ -92,7 +68,7 @@ const NavBar = props => {
               onClick={openModalForm}
               id={allmodals.PROJECT_SETTINGS}
             >
-              <FontAwesomeIcon icon={faCogs} /> Project Settings
+              <FontAwesomeIcon icon={faCogs} /> Project Settings2
             </Nav.Link>
             {getInitProject()}
             {getTemplateForms()}

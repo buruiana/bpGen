@@ -54,7 +54,7 @@ const NavBar = props => {
             onClick={openModalForm}
             id={allmodals.PROJECT_SETTINGS}
           >
-            <FontAwesomeIcon icon={faCogs} /> Project Settings
+            <FontAwesomeIcon icon={faCogs} /> Project Settings1
           </Nav.Link>
           {getInitProject()}
           {getTemplateForms()}
