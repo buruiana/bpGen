@@ -82,6 +82,7 @@ export const mock = {
         }
       ],
       templateIsActive: true,
+      templateIsComponent: true,
       templateName: 'react-component',
       templateTechnos: 'react',
       userid: 'aaa'
@@ -217,6 +218,7 @@ export const mock = {
         }
       ],
       templateIsActive: true,
+      templateIsComponent: true,
       templateName: 'react-component',
       templateTechnos: 'react',
       userid: 'aaa'
@@ -410,6 +412,7 @@ export const mock = {
         }
       ],
       templateIsActive: true,
+      templateIsComponent: false,
       templateName: 'react-redux',
       templateTechnos: 'react, redux',
       userid: 'aaa'
