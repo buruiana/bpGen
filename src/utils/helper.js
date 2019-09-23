@@ -112,8 +112,11 @@ export const getTree = flatTree => {
         }
         return componentProps;
       };
-
-      code += `<${theTitle}${getComponentProps()}${closeTag}`;
+      if (theTitle !== 'txt') {
+        code += `<${theTitle}${getComponentProps()}${closeTag}`;
+      } else {
+        if (!isEmpty(el.node.componentProps[0].val)) code += el.node.componentProps[0].val;
+      }
 
       // set the parent data
       if (hasParent) {

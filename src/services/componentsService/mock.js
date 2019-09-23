@@ -8284,6 +8284,26 @@ export const mock = {
       componentImport: '-',
       componentProps: [
         {
+          description: 'value of the text',
+          title: 'val',
+          propType: 'PropTypes.string',
+          propTypeIsrequired: true
+        },
+      ],
+      description: 'simple text.',
+      id: 'qIhVQYGIOE7Adfds8dAxD24J',
+      isDefault: false,
+      provider: 'HTML',
+      techno: 'React',
+      title: 'txt',
+      subtitle: 'Text'
+    },
+    {
+      children: [],
+      closeTag: true,
+      componentImport: '-',
+      componentProps: [
+        {
           description: 'The target destination of a link.',
           title: 'href',
           propType: 'PropTypes.string',
