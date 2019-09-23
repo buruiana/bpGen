@@ -56,8 +56,8 @@ const ComponentInfo = ({ removeModal, modalData }) => {
         </Modal.Header>
 
         <Modal.Body>
-          <div>Provider: {node.provider}</div>
-          <div>Techno: {node.techno}</div>
+          <div className='blue_title'>Provider: {node.provider}</div>
+          <div className='blue_title'>Techno: {node.techno}</div>
           <div>{renderDescription(node.description)}</div>
           <div>{renderProps()}</div>
         </Modal.Body>

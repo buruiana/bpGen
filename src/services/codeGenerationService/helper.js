@@ -10,9 +10,9 @@ export const executeCodeGeneration = (template, forms) => {
       if (block.blockImplementation) {
         code+= new Function("forms", "helper", block.blockImplementation)(forms, helper);
       }
-      if (block.blockPreviewImplementation) {
-        codePreview+= new Function("forms", "helper", block.blockPreviewImplementation)(forms, helper);
-      }
+      // if (block.blockPreviewImplementation) {
+      //   codePreview+= new Function("forms", "helper", block.blockPreviewImplementation)(forms, helper);
+      // }
     });
 
     codeFile.push({
