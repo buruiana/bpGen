@@ -104,7 +104,7 @@ div.rst__moveHandle {
   overflow: hidden;
   -webkit-transition: all 0.15s;
   transition: all 0.15s;
-  padding: 0 20px;
+  padding: 0 0.5rem;
   margin-left: 64px;
   width: 100%;
 }
@@ -138,7 +138,6 @@ div.rst__moveHandle {
 }
 
 .container_editor_line_number:before {
-  //position: absolute;
   right: 100%;
   margin-right: 10px;
   text-align: right;
@@ -167,4 +166,8 @@ div.rst__moveHandle {
 .blue_title {
   color: #3d93db;
   font-size: 1rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #206cac !important;
 }

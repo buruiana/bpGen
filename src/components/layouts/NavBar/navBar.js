@@ -55,7 +55,7 @@ const NavBar = props => {
 
   return (
 
-    <Navbar expand="lg">
+    <Navbar expand="lg" bg="light">
       <Navbar.Brand onClick={goTo} name="/home">
         bpGen
       </Navbar.Brand>
@@ -67,7 +67,7 @@ const NavBar = props => {
               onClick={openModalForm}
               id={allmodals.PROJECT_SETTINGS}
             >
-              <FontAwesomeIcon icon={faCogs} /> Project Settings2
+              <FontAwesomeIcon icon={faCogs} /> Project Settings
             </Nav.Link>
             {getInitProject()}
             {getTemplateForms()}
