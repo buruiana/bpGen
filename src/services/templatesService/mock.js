@@ -96,14 +96,14 @@ export const mock = {
           fileBlocks: [
             {
               blockDescription: 'hoc imports block',
-              blockImplementation: 'let code = `import ${helper.capitalize(forms.projectSettings.projectName)} from \'./${forms.projectSettings.projectName}\';\\n`;\n\nif (forms.HOC && forms.HOC.connectRedux) {\n  code+= `import { connect } from "react-redux";\\n\\n`\n}\nalert(code);\nreturn code;',
+              blockImplementation: 'let code = `import ${helper.capitalize(forms.projectSettings.projectName)} from \'./${forms.projectSettings.projectName}\';\\n`;\n\nif (forms.HOC && forms.HOC.connectRedux) {\n  code+= `import { connect } from "react-redux";\\n\\n`\n}\n\nreturn code;',
               blockIsActive: true,
               blockName: 'hoc imports block',
               blockSequence: 1
             },
             {
               blockDescription: 'hoc main block',
-              blockImplementation: 'let code = \'\';\nif (forms.HOC && forms.HOC.connectRedux) {\n  let mapStateToProps = \'null\';\n  let mapDispatchToProps = \'null\';\n  if (forms.HOC && forms.HOC.mapStateToProps) {\n    code+= `const mapStateToProps = () => {}\\n\\n`;\n    mapStateToProps = \'mapStateToProps\';\n  }\n\n  if (forms.HOC && forms.HOC.mapDispatchToProps) {\n    code+= `const mapDispatchToProps = () => {}\\n\\n`;\n    mapDispatchToProps = \'mapDispatchToProps\';\n  }\n}\nalert(code);\nreturn code;',
+              blockImplementation: 'let code = \'\';\nif (forms.HOC && forms.HOC.connectRedux) {\n  let mapStateToProps = \'null\';\n  let mapDispatchToProps = \'null\';\n  if (forms.HOC && forms.HOC.mapStateToProps) {\n    code+= `const mapStateToProps = () => {}\\n\\n`;\n    mapStateToProps = \'mapStateToProps\';\n  }\n\n  if (forms.HOC && forms.HOC.mapDispatchToProps) {\n    code+= `const mapDispatchToProps = () => {}\\n\\n`;\n    mapDispatchToProps = \'mapDispatchToProps\';\n  }\n}\n\nreturn code;',
               blockIsActive: true,
               blockName: 'hoc main block',
               blockPreviewImplementation: 'return \'\';',
@@ -111,7 +111,7 @@ export const mock = {
             },
             {
               blockDescription: 'hoc exports block',
-              blockImplementation: 'let code = \'\';\n let mapStateToProps = \'null\';\n  let mapDispatchToProps = \'null\';\n  if (forms.HOC && forms.HOC.mapStateToProps) {\n    mapStateToProps = \'mapStateToProps\';\n  }\n\n  if (forms.HOC && forms.HOC.mapDispatchToProps) {\n    mapDispatchToProps = \'mapDispatchToProps\';\n  }\n\nif (forms.HOC && forms.HOC.connectRedux) {\n  if ((forms.HOC && forms.HOC.mapStateToProps) && (forms.HOC && !forms.HOC.mapDispatchToProps)) {\n    code += `export default connect(${mapStateToProps})(${helper.capitalize(forms.projectSettings.projectName)});`;\n  } else if (forms.HOC && forms.HOC.mapDispatchToProps) {\n    code += `export default connect(${mapStateToProps}, ${mapDispatchToProps})(${helper.capitalize(forms.projectSettings.projectName)});`;\n  } else {\n    code += `export default connect(null, null)(${helper.capitalize(forms.projectSettings.projectName)});`;\n  }\n} else {\n  code += `export default ${helper.capitalize(forms.projectSettings.projectName)};`;\n}\nalert(code);\nreturn code;',
+              blockImplementation: 'let code = \'\';\n let mapStateToProps = \'null\';\n  let mapDispatchToProps = \'null\';\n  if (forms.HOC && forms.HOC.mapStateToProps) {\n    mapStateToProps = \'mapStateToProps\';\n  }\n\n  if (forms.HOC && forms.HOC.mapDispatchToProps) {\n    mapDispatchToProps = \'mapDispatchToProps\';\n  }\n\nif (forms.HOC && forms.HOC.connectRedux) {\n  if ((forms.HOC && forms.HOC.mapStateToProps) && (forms.HOC && !forms.HOC.mapDispatchToProps)) {\n    code += `export default connect(${mapStateToProps})(${helper.capitalize(forms.projectSettings.projectName)});`;\n  } else if (forms.HOC && forms.HOC.mapDispatchToProps) {\n    code += `export default connect(${mapStateToProps}, ${mapDispatchToProps})(${helper.capitalize(forms.projectSettings.projectName)});`;\n  } else {\n    code += `export default connect(null, null)(${helper.capitalize(forms.projectSettings.projectName)});`;\n  }\n} else {\n  code += `export default ${helper.capitalize(forms.projectSettings.projectName)};`;\n}\n\nreturn code;',
               blockIsActive: true,
               blockName: 'hoc exports block',
               blockPreviewImplementation: 'return \'\';',
