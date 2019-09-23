@@ -21,7 +21,6 @@ const ProjectSettingsForm = props => {
 
   const [formState, setFormState] = useState(projectSettings);
   const technoTypeEnums = technos.map(el => el.name.toLowerCase());
-  //const templatesTypeEnums = templates.map(el => el.name);
   const requiredFieldsEnum = ["projectName", "projectTemplate"];
 
   const getTemplatesTypeEnums = () => {

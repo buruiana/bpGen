@@ -7,11 +7,7 @@ const ComponentInfo = ({ removeModal, modalData }) => {
 
   const renderDescription = descr => {
     return descr
-      ? (
-        <textarea rows={Math.round(descr.length / 33)} cols="100" className='textarea-noBorder'>
-          {descr}
-        </textarea>
-      )
+      ? <textarea rows={Math.round(descr.length / 33)} cols="100" className='textarea-noBorder' defaultValue={descr} />
       : null;
   };
 
@@ -30,7 +26,7 @@ const ComponentInfo = ({ removeModal, modalData }) => {
         ? (
           <div>
             {prop.propType}
-            {prop.description}
+            <textarea rows={Math.round(prop.description.length / 50)} cols="100" className='textarea-noBorder' defaultValue={prop.description} />
           </div>
         )
         : null;
