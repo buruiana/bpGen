@@ -1,7 +1,6 @@
 import React from "react";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
-import isEmpty from "lodash/isEmpty";
 
 const AceTabs = props => {
   const { projectSettings, aceTab, aceTabs, setAceTab } = props;

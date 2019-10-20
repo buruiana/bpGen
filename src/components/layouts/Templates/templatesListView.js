@@ -39,7 +39,9 @@ const TemplatesListView = props => {
           </td>
           <td><a id={id} target='blank'>{templateTechnos}</a></td>
           <td>
-            <a className="simpleLink" id={id} onClick={deleteSelectedTemplate}>Delete</a>
+            <a className="simpleLink" id={id} onClick={deleteSelectedTemplate}>
+              Delete
+            </a>
           </td>
         </tr>
       );

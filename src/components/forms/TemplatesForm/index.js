@@ -5,13 +5,13 @@ import {
   getAllTemplates
 } from "../../../services/templatesService/actions";
 import { generateCode } from "../../../services/codeGenerationService/actions";
-import TemplatesForm from "./templatesForm";
+import templatesFormMain from "./templatesFormMain";
 import { setTemplateTree } from "../../../services/templatesService/actions";
 import { addModal } from "../../../services/modalService/actions";
 
 const mapStateToProps = state => {
   return {
-    userid: get(state, "loginReducer.userInfo.user.uid", "aaa"),
+    userid: get(state, "loginReducer.userInfo.user.uid", ""),
     templates: state.templatesReducer.templates,
     tree: state.templatesReducer.tree
   };
@@ -28,4 +28,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TemplatesForm);
+)(templatesFormMain);

@@ -9,17 +9,24 @@ export const getForms = forms => {
       formSchema: form.formSchema,
       formUISchema: form.formUISchema,
       formPrepareData: form.formPrepareData,
-      formProps: form.formProps,
       children: [
-        // {
-        //   formSchema: form.formSchema,
-        //   subtitle: `Schema`,
-        //   formName: form.formName,
-        // },
-        // {
-        //   formUISchema: form.formUISchema,
-        //   subtitle: `UISchema`,
-        // },
+        {
+          formSchema: form.formSchema,
+          subtitle: `Schema`,
+          formName: form.formName,
+        },
+        {
+          formUISchema: form.formUISchema,
+          subtitle: `UI Schema`,
+        },
+        {
+          formPrepareData: form.formPrepareData,
+          subtitle: `Prepare Data`,
+        },
+        {
+          formProps: form.formProps,
+          subtitle: `Props`,
+        },
       ],
     };
   })
@@ -31,10 +38,11 @@ export const getBlocks = blocks => {
       title: block.blockName,
       subtitle: 'Block',
       expanded: true,
-      children: [{
-        blockImplementation: block.blockImplementation,
-        subtitle: 'Block Implementation',
-      }],
+      blockImplementation: block.blockImplementation,
+      blockDescription: block.blockDescription,
+      blockIsActive: block.blockIsActive,
+      blockSequence: block.blockSequence,
+      blockName: block.blockName
     };
   })
 };
@@ -43,13 +51,24 @@ export const getDafaultTreeData = [
   {
     title: '',
     subtitle: 'File',
+    expanded: true,
     children: [
       {
+        title: '',
         subtitle: 'Blocks Wrapper',
+        expanded: true,
         children: [
           {
-            subtitle: 'Block Implementation'
-          }
+            title: '',
+            subtitle: 'Block',
+            expanded: true,
+            children: [
+              {
+                subtitle: 'Block Implementatio'
+              },
+
+            ],
+          },
         ],
       },
     ],
@@ -57,43 +76,26 @@ export const getDafaultTreeData = [
   {
     title: '',
     subtitle: 'Forms Wrapper',
+    expanded: true,
     children: [
       {
         subtitle: 'Form',
+        expanded: true,
         children: [
           {
             subtitle: 'Schema'
           },
           {
-            subtitle: 'UISchema'
+            subtitle: 'UI Schema'
+          },
+          {
+            subtitle: 'Prepare Data'
+          },
+          {
+            subtitle: 'Props'
           },
         ],
       }
     ],
-  },
-  {
-    title: '',
-    subtitle: 'Form',
-    children: [
-      {
-        subtitle: 'Schema'
-      },
-      {
-        subtitle: 'UISchema'
-      },
-    ],
-  },
-  {
-    title: '',
-    subtitle: 'Blocks Wrapper',
-    children: [
-      {
-        subtitle: 'Block Implementation'
-      }
-    ],
-  },
-  {
-    title: '',
-    subtitle: 'Block',
   },
 ];

@@ -28,3 +28,8 @@ export const allmodals = {
   COMPONENT_INFO: "COMPONENT_INFO",
   TEMPLATE_ITEM_PROPS: "TEMPLATE_ITEM_PROPS"
 };
+
+export const templateFormTypes = {
+  JSON_FORM: "JSON_FORM",
+  TREE: "TREE"
+};

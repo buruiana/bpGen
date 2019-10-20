@@ -80,9 +80,7 @@ const TemplatesForm = props => {
     setTemplateTree(newTree);
   };
 
-  const onChange = treeData => {
-    setTemplateTree(treeData);
-  };
+  const onChange = treeData => setTemplateTree(treeData);
 
   const validateTemplate = treeData => {
     const isTemplate = (treeData[0].subtitle =

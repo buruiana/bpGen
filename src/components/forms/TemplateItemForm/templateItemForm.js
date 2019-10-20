@@ -12,14 +12,10 @@ import "prismjs/components/prism-javascript";
 
 const TemplateItemForm = props => {
   const { setTemplateTree, removeModal, tree, modalData } = props;
-  let fileReader;
   const currentModalData = modalData[modalData.length - 1].node;
   const getNodeKey = ({ treeIndex }) => treeIndex;
 
-  const [formSchema, setFormSchema] = useState(
-    []
-    //templates.filter(template => template.id === props.match.params.id)[0] || []
-  );
+  const [formSchema, setFormSchema] = useState(currentModalData);
 
   let schema = {
     type: "object",
@@ -42,11 +38,72 @@ const TemplateItemForm = props => {
   if (currentModalData.subtitle === "Form") {
     schema.properties = {
       ...schema.properties,
-      formDescription: { type: "string", title: "Form Description", default: currentModalData.formDescription },
-      formIsActive: { type: "boolean", title: "Form is Active", default: currentModalData.formIsActive },
-      formSchema: { type: "string", title: "Form Schema", default: currentModalData.formSchema },
-      formUISchema: { type: "string", title: "Form UI Schema", default: currentModalData.formUISchema },
-      formPrepareData: { type: "string", title: "Form Prepare Data", default: currentModalData.formPrepareData },
+      formDescription: {
+        type: "string",
+        title: "Form Description",
+        default: currentModalData.formDescription
+      },
+      formIsActive: {
+        type: "boolean",
+        title: "Form is Active",
+        default: currentModalData.formIsActive
+      },
+    };
+  }
+
+  if (currentModalData.subtitle === "Block") {
+    schema.properties = {
+      ...schema.properties,
+      blockDescription: {
+        type: "string",
+        title: "Block Description",
+        default: currentModalData.title
+      },
+      blockSequence: { type: "number", title: "Block Sequence" },
+      blockIsActive: { type: "boolean", title: "Block is Active" },
+      blockImplementation: {
+        type: "string",
+        title: ""
+      }
+    };
+  }
+
+  if (currentModalData.subtitle === "Schema") {
+    schema.properties = {
+      ...schema.properties,
+      formSchema: {
+        type: "string",
+        title: "Form Schema",
+        default: currentModalData.formSchema
+      },
+    };
+  }
+
+  if (currentModalData.subtitle === "UI Schema") {
+    schema.properties = {
+      ...schema.properties,
+      formUISchema: {
+        type: "string",
+        title: "Form UI Schema",
+        default: currentModalData.formUISchema
+      },
+    };
+  }
+
+  if (currentModalData.subtitle === "Prepare Data") {
+    schema.properties = {
+      ...schema.properties,
+      formPrepareData: {
+        type: "string",
+        title: "Form Prepare Data",
+        default: currentModalData.formPrepareData
+      },
+    };
+  }
+
+  if (currentModalData.subtitle === "Props") {
+    schema.properties = {
+      ...schema.properties,
       formProps: {
         type: "array",
         title: "Form Props",
@@ -66,38 +123,6 @@ const TemplateItemForm = props => {
             }
           }
         }
-      }
-    };
-  }
-
-  if (currentModalData.subtitle === "Block") {
-    schema.properties = {
-      ...schema.properties,
-      blockDescription: {
-        type: "string",
-        title: "Block Description"
-      },
-      blockSequence: { type: "number", title: "Block Sequence" },
-      blockIsActive: { type: "boolean", title: "Block is Active" }
-    };
-  }
-
-  if (currentModalData.subtitle === "Schema") {
-    schema.properties = {
-      ...schema.properties,
-      formSchema: {
-        type: "string",
-        title: ""
-      }
-    };
-  }
-
-  if (currentModalData.subtitle === "UISchema") {
-    schema.properties = {
-      ...schema.properties,
-      formUISchema: {
-        type: "string",
-        title: ""
       }
     };
   }
@@ -132,17 +157,6 @@ const TemplateItemForm = props => {
   const onChange = data => {
     //generateCode();
   };
-
-  // const handleFileRead = e => {
-  //   const redux = new Function(fileReader.result);
-  //   setFormSchema(redux);
-  // };
-
-  // const onImport = e => {
-  //   fileReader = new FileReader();
-  //   fileReader.onloadend = handleFileRead;
-  //   fileReader.readAsText(e.target.files[0]);
-  // };
 
   const onValueChange = val => {
     let newEl = {};
@@ -195,34 +209,33 @@ const TemplateItemForm = props => {
     );
   };
 
-  const widgets = {
-    myCustomWidget: MyCustomWidget
-  };
+  // const widgets = {
+  //   myCustomWidget: MyCustomWidget
+  // };
 
   const uiSchema = {
-    "ui:widget": "myCustomWidget",
-    blockImplementation: {
-      "ui:widget": "myCustomWidget"
-    },
-    formSchema: {
-      "ui:widget": "myCustomWidget"
-    },
-    formUISchema: {
-      "ui:widget": "myCustomWidget"
-    }
+    // "ui:widget": "myCustomWidget",
+    // blockImplementation: {
+    //   "ui:widget": "myCustomWidget"
+    // },
+    // formSchema: {
+    //   "ui:widget": "myCustomWidget"
+    // },
+    // formUISchema: {
+    //   "ui:widget": "myCustomWidget"
+    // }
   };
 
   return (
     <div>
       <>
-        {/* <input type="file" id="importFile" onChange={onImport} /> */}
         <Form
           schema={schema}
           onSubmit={onSubmit}
           onChange={onChange}
-          //formData={formSchema}
+          formData={formSchema}
           uiSchema={uiSchema}
-          widgets={widgets}
+          //widgets={widgets}
         />
       </>
     </div>

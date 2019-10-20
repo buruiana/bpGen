@@ -15,9 +15,12 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  deleteTemplate: template => deleteTemplate(template),
-  setTemplate: template => setTemplate(template),
-  getAllTemplates: () => getAllTemplates(),
+  deleteTemplate,
+  setTemplate,
+  getAllTemplates,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TemplatesListView);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TemplatesListView);
