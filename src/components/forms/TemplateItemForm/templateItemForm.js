@@ -17,6 +17,7 @@ const TemplateItemForm = props => {
 
   const [formSchema, setFormSchema] = useState(currentModalData);
 
+  console.log('console: currentModalData', currentModalData);
   let schema = {
     type: "object",
     properties: {}
@@ -25,19 +26,37 @@ const TemplateItemForm = props => {
   if (currentModalData.subtitle === "File") {
     schema.properties = {
       ...schema.properties,
-      title: { type: "string", title: "Name" },
-      subtitle: { type: "string", title: "File" },
-      children: {
-        type: "array",
-        title: "",
-        items: {}
-      }
+      fileName: {
+        type: "string",
+        title: " File Name",
+        default: currentModalData.fileName
+      },
+      fileDescription: {
+        type: "string",
+        title: " File Description",
+        default: currentModalData.fileDescription
+      },
+      fileSequence: {
+        type: "number",
+        title: " File Sequence",
+        default: currentModalData.fileSequence
+      },
+      fileIsActive: {
+        type: "boolean",
+        title: " File Active",
+        default: currentModalData.fileIsActive
+      },
     };
   }
 
   if (currentModalData.subtitle === "Form") {
     schema.properties = {
       ...schema.properties,
+      formName: {
+        type: "string",
+        title: "Form Name",
+        default: currentModalData.formName
+      },
       formDescription: {
         type: "string",
         title: "Form Description",
@@ -133,6 +152,47 @@ const TemplateItemForm = props => {
       blockImplementation: {
         type: "string",
         title: ""
+      }
+    };
+  }
+
+  if (currentModalData.subtitle === "Template") {
+    schema.properties = {
+      ...schema.properties,
+      id: {
+        type: "string",
+        title: "ID",
+        default: currentModalData.id
+      },
+      name: {
+        type: "string",
+        title: "Name",
+        default: currentModalData.name
+      },
+      templateDescription: {
+        type: "string",
+        title: "Description",
+        default: currentModalData.templateDescription
+      },
+      templateIsActive: {
+        type: "boolean",
+        title: "Active",
+        default: currentModalData.templateIsActive
+      },
+      templateIsComponent: {
+        type: "boolean",
+        title: "isComponent",
+        default: currentModalData.templateIsActive
+      },
+      templateTechnos: {
+        type: "string",
+        title: "Technos",
+        default: currentModalData.templateTechnos
+      },
+      userid: {
+        type: "string",
+        title: "User",
+        default: currentModalData.userid
       }
     };
   }

@@ -4,6 +4,7 @@ export const getForms = forms => {
       title: form.formName,
       subtitle: 'Form',
       expanded: true,
+      formName: form.formName,
       formDescription: form.formDescription,
       formIsActive: form.formIsActive,
       formSchema: form.formSchema,
@@ -71,31 +72,31 @@ export const getDafaultTreeData = [
           },
         ],
       },
-    ],
-  },
-  {
-    title: '',
-    subtitle: 'Forms Wrapper',
-    expanded: true,
-    children: [
       {
-        subtitle: 'Form',
+        title: '',
+        subtitle: 'Forms Wrapper',
         expanded: true,
         children: [
           {
-            subtitle: 'Schema'
-          },
-          {
-            subtitle: 'UI Schema'
-          },
-          {
-            subtitle: 'Prepare Data'
-          },
-          {
-            subtitle: 'Props'
-          },
+            subtitle: 'Form',
+            expanded: true,
+            children: [
+              {
+                subtitle: 'Schema'
+              },
+              {
+                subtitle: 'UI Schema'
+              },
+              {
+                subtitle: 'Prepare Data'
+              },
+              {
+                subtitle: 'Props'
+              },
+            ],
+          }
         ],
-      }
+      },
     ],
   },
 ];

@@ -21,9 +21,12 @@ const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const TemplatesForm = props => {
   const { jsonForm, setTemplateTree, addModal, templates, tree } = props;
+
   const currentTemplate = templates.filter(
     template => template.id === props.match.params.id
   )[0];
+
+  if (isEmpty(currentTemplate)) return null;
 
   const convertSortableTree2JsonSchema = treeData => {
     console.log("console: treeData", treeData);
@@ -32,17 +35,31 @@ const TemplatesForm = props => {
   const convertJsonSchema2SortableTree = () => {
     let tree = [];
     let treeObj = {
-      title: get(currentTemplate, "title", ""),
+      title: get(currentTemplate, "name", ""),
       subtitle: "Template",
       expanded: true,
+      id: get(currentTemplate, 'id', ''),
+      name: currentTemplate.name,
+      templateDescription: currentTemplate.templateDescription,
+      templateFiles: currentTemplate.templateFiles,
+      templateIsActive: currentTemplate.templateIsActive,
+      templateIsComponent: currentTemplate.templateIsComponent,
+      templateName: currentTemplate.templateName,
+      templateTechnos: currentTemplate.templateTechnos,
+      userid: currentTemplate.userid,
       children: []
     };
+    console.log('console: currentTemplate', currentTemplate);
 
     if (currentTemplate && !isEmpty(currentTemplate.templateFiles)) {
       currentTemplate.templateFiles.map(file => {
         treeObj.children.push({
           title: file.fileName,
           subtitle: "File",
+          fileDescription: file.fileDescription,
+          fileIsActive: file.fileIsActive,
+          fileName: file.fileName,
+          fileSequence: file.fileSequence,
           expanded: true,
           children: [
             {
