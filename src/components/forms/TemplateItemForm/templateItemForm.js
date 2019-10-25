@@ -4,11 +4,8 @@ import { changeNodeAtPath } from "react-sortable-tree";
 //import schema from "./schema";
 import { navigate } from "../../../utils";
 //import uiSchema from "./uiSchema";
+import AceEditor from "react-ace";
 
-import Editor from "react-simple-code-editor";
-import { highlight, languages } from "prismjs/components/prism-core";
-import "prismjs/components/prism-clike";
-import "prismjs/components/prism-javascript";
 
 const TemplateItemForm = props => {
   const { setTemplateTree, removeModal, tree, modalData } = props;
@@ -17,7 +14,6 @@ const TemplateItemForm = props => {
 
   const [formSchema, setFormSchema] = useState(currentModalData);
 
-  console.log('console: currentModalData', currentModalData);
   let schema = {
     type: "object",
     properties: {}
@@ -80,10 +76,6 @@ const TemplateItemForm = props => {
       },
       blockSequence: { type: "number", title: "Block Sequence" },
       blockIsActive: { type: "boolean", title: "Block is Active" },
-      blockImplementation: {
-        type: "string",
-        title: ""
-      }
     };
   }
 
@@ -151,7 +143,7 @@ const TemplateItemForm = props => {
       ...schema.properties,
       blockImplementation: {
         type: "string",
-        title: ""
+        default: formSchema.blockImplementation
       }
     };
   }
@@ -247,43 +239,51 @@ const TemplateItemForm = props => {
       val = currentModalData.formSchema;
     } else if (currentModalData.subtitle === 'UISchema') {
       val = currentModalData.formUISchema;
+    } else if (currentModalData.subtitle === 'Block Implementation') {
+      val = currentModalData.blockImplementation;
     }
+
 
     return (
       <div className="container_editor_area">
-        <Editor
+        <AceEditor
+          mode="jsx"
+          theme="xcode"
+          onChange={onValueChange}
+          name="UNIQUE_ID_OF_DIV"
+          editorProps={{ $blockScrolling: true }}
+          setOptions={{
+            showLineNumbers: true,
+            tabSize: 2
+          }}
+          fontSize={12}
+          showPrintMargin={true}
+          showGutter={true}
+          highlightActiveLine={true}
           value={val}
-          onValueChange={onValueChange}
-          highlight={code => highlight(code, languages.js)
-            .split('\n')
-            .map(
-              line =>
-                `<span class="container_editor_line_number">${line}</span>`
-            )
-            .join('\n')
-          }
-          padding={10}
-          className="container__editor"
         />
       </div>
     );
   };
 
-  // const widgets = {
-  //   myCustomWidget: MyCustomWidget
-  // };
+  const widgets = {
+    myCustomWidget: MyCustomWidget
+  };
 
   const uiSchema = {
-    // "ui:widget": "myCustomWidget",
-    // blockImplementation: {
-    //   "ui:widget": "myCustomWidget"
-    // },
-    // formSchema: {
-    //   "ui:widget": "myCustomWidget"
-    // },
-    // formUISchema: {
-    //   "ui:widget": "myCustomWidget"
-    // }
+    "ui:widget": "myCustomWidget",
+    blockImplementation: {
+      "ui:widget": "myCustomWidget"
+    },
+    formSchema: {
+      "ui:widget": "myCustomWidget"
+    },
+    formUISchema: {
+      "ui:widget": "myCustomWidget"
+    },
+    formPrepareData: {
+      "ui:widget": "myCustomWidget"
+    }
   };
 
   return (
@@ -295,7 +295,7 @@ const TemplateItemForm = props => {
           onChange={onChange}
           formData={formSchema}
           uiSchema={uiSchema}
-          //widgets={widgets}
+          widgets={widgets}
         />
       </>
     </div>

@@ -24,7 +24,6 @@ const exportModules = data => {
 }
 
 export function* watchExportModule(info) {
-  console.log('console: info.data', info.data);
   if (!info.data) return;
   try {
     const res = yield exportModules(info.data);

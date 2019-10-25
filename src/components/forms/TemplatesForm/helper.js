@@ -43,7 +43,13 @@ export const getBlocks = blocks => {
       blockDescription: block.blockDescription,
       blockIsActive: block.blockIsActive,
       blockSequence: block.blockSequence,
-      blockName: block.blockName
+      blockName: block.blockName,
+      children: [
+        {
+          subtitle: 'Block Implementation',
+          blockImplementation: block.blockImplementation,
+        }
+      ]
     };
   })
 };

@@ -20,16 +20,27 @@ const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const TemplatesForm = props => {
-  const { jsonForm, setTemplateTree, addModal, templates, tree } = props;
+  const { jsonForm, setTemplateTree, addModal, templates, tree, setTemplate } = props;
 
   const currentTemplate = templates.filter(
     template => template.id === props.match.params.id
   )[0];
 
   if (isEmpty(currentTemplate)) return null;
-
+  console.log('console: currentTemplate', currentTemplate);
   const convertSortableTree2JsonSchema = treeData => {
-    console.log("console: treeData", treeData);
+    console.log("console: treeData", treeData[0]);
+    let treeObj = {
+      id: get(treeData[0], 'id', ''),
+      name: treeData[0].name,
+      templateDescription: treeData[0].templateDescription,
+      templateFiles: treeData[0].templateFiles,
+      templateIsActive: treeData[0].templateIsActive,
+      templateIsComponent: treeData[0].templateIsComponent,
+      templateName: treeData[0].templateName,
+      templateTechnos: treeData[0].templateTechnos,
+      userid: treeData[0].userid
+    };
   };
 
   const convertJsonSchema2SortableTree = () => {
@@ -49,7 +60,6 @@ const TemplatesForm = props => {
       userid: currentTemplate.userid,
       children: []
     };
-    console.log('console: currentTemplate', currentTemplate);
 
     if (currentTemplate && !isEmpty(currentTemplate.templateFiles)) {
       currentTemplate.templateFiles.map(file => {
@@ -99,10 +109,11 @@ const TemplatesForm = props => {
 
   const onChange = treeData => setTemplateTree(treeData);
 
-  const validateTemplate = treeData => {
-    const isTemplate = (treeData[0].subtitle =
-      "Template" && treeData.length === 1);
-    const hasFiles = !isEmpty(treeData[0].children);
+  const validateTemplate = () => {
+    console.log('console: treeData', tree);
+    const isTemplate = (tree[0].subtitle =
+      "Template" && tree.length === 1);
+    const hasFiles = !isEmpty(tree[0].children);
 
     return isTemplate && hasFiles;
   };
@@ -115,9 +126,12 @@ const TemplatesForm = props => {
 
   const goTo = () => navigate("/templates");
   const saveTemplate = () => {
-    const tree = validateTemplate(treeData)
-      ? convertSortableTree2JsonSchema(treeData)
+    const newTree = validateTemplate(tree)
+      ? convertSortableTree2JsonSchema(tree)
       : [];
+    
+    setTemplate(newTree);
+    goTo();
   };
 
   const hasEdit = node => {

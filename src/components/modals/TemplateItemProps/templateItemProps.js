@@ -10,6 +10,7 @@ const TemplateItemProps = ({ removeModal, modalData }) => {
         show={true}
         aria-labelledby="contained-modal-title-lg"
         onHide={removeModal}
+        dialogClassName="modal-dialog modal-lg"
       >
         <Modal.Header closeButton>
           <Modal.Title>Edit {node.subtitle}</Modal.Title>

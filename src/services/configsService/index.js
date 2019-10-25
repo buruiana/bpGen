@@ -17,7 +17,6 @@ export function* watchInitApp(action) {
 export function* watchImportData(action) {
   const { data, importType } = action;
   const { isOffline } = (yield select()).configsReducer;
-  console.log('console: actionaction', action);
 
 
   // if (!isOffline) {
