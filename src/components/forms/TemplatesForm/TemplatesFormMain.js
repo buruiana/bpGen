@@ -7,7 +7,7 @@ import TemplatesForm from './templatesForm';
 import TemplatesFormTree from './templatesFormTree';
 
 const TemplatesFormMain = props => {
-  const [templateFormType, setTemplateFormTypea] = useState(templateFormTypes.JSON_FORM);
+  const [templateFormType, setTemplateFormTypea] = useState(templateFormTypes.TREE);
 
   return (
     <div>

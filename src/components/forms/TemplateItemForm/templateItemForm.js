@@ -191,7 +191,7 @@ const TemplateItemForm = props => {
 
   const onSubmit = data => {
     const { formData } = data;
-    const newEl = {
+    const newNode = {
       ...formData,
       children: modalData[0].node.children
     };
@@ -200,7 +200,7 @@ const TemplateItemForm = props => {
       treeData: tree,
       path: modalData[0].path,
       getNodeKey,
-      newNode: newEl
+      newNode
     });
     setTemplateTree(newTree);
     removeModal();
@@ -211,25 +211,39 @@ const TemplateItemForm = props => {
   };
 
   const onValueChange = val => {
-    let newEl = {};
+    console.log('console: ---------', val);
+    console.log('console: ---------', modalData[0]);
+    let newNode = {};
     if (currentModalData.subtitle === 'Schema') {
-      newEl = {
+      newNode = {
         ...modalData[0].node,
         formSchema: val
       };
     } else if (currentModalData.subtitle === 'UISchema') {
-      newEl = {
+      newNode = {
         ...modalData[0].node,
         formUISchema: val
       };
-    }
+    } else if (currentModalData.subtitle === 'Block Implementation') {
+      newNode = {
+        ...modalData[0].node,
+        blockImplementation: val
+      };
+    };
+
+    console.log('console: newNode', newNode);
+
+    console.log('console: formSchema', formSchema);
 
     const newTree = changeNodeAtPath({
       treeData: tree,
       path: modalData[0].path,
       getNodeKey,
-      newNode: newEl
+      newNode
     });
+
+    console.log('console: newTree', newTree);
+
     setTemplateTree(newTree);
   };
 

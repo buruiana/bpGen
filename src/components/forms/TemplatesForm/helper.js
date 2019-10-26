@@ -1,3 +1,6 @@
+import get from "lodash/get";
+import isEmpty from "lodash/isEmpty";
+
 export const getForms = forms => {
   return forms.map(form => {
     return {
@@ -106,3 +109,68 @@ export const getDafaultTreeData = [
     ],
   },
 ];
+
+export const convertSortableTree2JsonSchema = treeData => {
+  console.log('console: convertSortableTree2JsonSchema-intro', treeData);
+  let treeObj = {
+    id: get(treeData[0], 'id', ''),
+    name: treeData[0].name,
+    templateDescription: treeData[0].templateDescription,
+    templateFiles: treeData[0].children,
+    templateIsActive: treeData[0].templateIsActive,
+    templateIsComponent: treeData[0].templateIsComponent,
+    templateName: treeData[0].templateName,
+    templateTechnos: treeData[0].templateTechnos,
+    userid: treeData[0].userid
+  };
+  console.log("console: convertSortableTree2JsonSchema", treeObj);
+  return treeObj;
+};
+
+export const convertJsonSchema2SortableTree = currentTemplate => {
+  let tree = [];
+  let treeObj = {
+    title: get(currentTemplate, "name", ""),
+    subtitle: "Template",
+    expanded: true,
+    id: get(currentTemplate, 'id', ''),
+    name: currentTemplate.name,
+    templateDescription: currentTemplate.templateDescription,
+    templateIsActive: currentTemplate.templateIsActive,
+    templateIsComponent: currentTemplate.templateIsComponent,
+    templateName: currentTemplate.templateName,
+    templateTechnos: currentTemplate.templateTechnos,
+    userid: currentTemplate.userid,
+    children: []
+  };
+
+  if (currentTemplate && !isEmpty(currentTemplate.templateFiles)) {
+    currentTemplate.templateFiles.map(file => {
+      treeObj.children.push({
+        title: file.fileName,
+        subtitle: "File",
+        fileDescription: file.fileDescription,
+        fileIsActive: file.fileIsActive,
+        fileName: file.fileName,
+        fileSequence: file.fileSequence,
+        expanded: true,
+        children: [
+          {
+            title: "File Forms",
+            subtitle: "File Forms Wrapper",
+            children: getForms(file.fileForms),
+            expanded: true
+          },
+          {
+            title: "File Blocks",
+            subtitle: "File Blocks Wrapper",
+            children: getBlocks(file.fileBlocks),
+            expanded: true
+          }
+        ]
+      });
+    });
+  }
+  tree.push(treeObj);
+  return tree;
+};

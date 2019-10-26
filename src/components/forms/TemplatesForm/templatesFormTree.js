@@ -1,5 +1,4 @@
 import React from "react";
-import get from "lodash/get";
 import SortableTree, {
   removeNodeAtPath,
   getVisibleNodeCount
@@ -11,7 +10,11 @@ import {
   faArrowCircleRight
 } from "@fortawesome/free-solid-svg-icons";
 
-import { getDafaultTreeData, getForms, getBlocks } from "./helper";
+import {
+  getDafaultTreeData,
+  convertSortableTree2JsonSchema,
+  convertJsonSchema2SortableTree
+} from "./helper";
 import { allmodals } from "../../../utils/constants";
 import { navigate } from "../../../utils";
 
@@ -28,73 +31,10 @@ const TemplatesForm = props => {
 
   if (isEmpty(currentTemplate)) return null;
   console.log('console: currentTemplate', currentTemplate);
-  const convertSortableTree2JsonSchema = treeData => {
-    console.log("console: treeData", treeData[0]);
-    let treeObj = {
-      id: get(treeData[0], 'id', ''),
-      name: treeData[0].name,
-      templateDescription: treeData[0].templateDescription,
-      templateFiles: treeData[0].templateFiles,
-      templateIsActive: treeData[0].templateIsActive,
-      templateIsComponent: treeData[0].templateIsComponent,
-      templateName: treeData[0].templateName,
-      templateTechnos: treeData[0].templateTechnos,
-      userid: treeData[0].userid
-    };
-  };
-
-  const convertJsonSchema2SortableTree = () => {
-    let tree = [];
-    let treeObj = {
-      title: get(currentTemplate, "name", ""),
-      subtitle: "Template",
-      expanded: true,
-      id: get(currentTemplate, 'id', ''),
-      name: currentTemplate.name,
-      templateDescription: currentTemplate.templateDescription,
-      templateFiles: currentTemplate.templateFiles,
-      templateIsActive: currentTemplate.templateIsActive,
-      templateIsComponent: currentTemplate.templateIsComponent,
-      templateName: currentTemplate.templateName,
-      templateTechnos: currentTemplate.templateTechnos,
-      userid: currentTemplate.userid,
-      children: []
-    };
-
-    if (currentTemplate && !isEmpty(currentTemplate.templateFiles)) {
-      currentTemplate.templateFiles.map(file => {
-        treeObj.children.push({
-          title: file.fileName,
-          subtitle: "File",
-          fileDescription: file.fileDescription,
-          fileIsActive: file.fileIsActive,
-          fileName: file.fileName,
-          fileSequence: file.fileSequence,
-          expanded: true,
-          children: [
-            {
-              title: "File Forms",
-              subtitle: "File Forms Wrapper",
-              children: getForms(file.fileForms),
-              expanded: true
-            },
-            {
-              title: "File Blocks",
-              subtitle: "File Blocks Wrapper",
-              children: getBlocks(file.fileBlocks),
-              expanded: true
-            }
-          ]
-        });
-      });
-    }
-    tree.push(treeObj);
-    return tree;
-  };
 
   let treeData = [];
   if (isEmpty(tree[0].children)) {
-    treeData = convertJsonSchema2SortableTree();
+    treeData = convertJsonSchema2SortableTree(currentTemplate);
     setTemplateTree(treeData);
   }
 
@@ -107,7 +47,7 @@ const TemplatesForm = props => {
     setTemplateTree(newTree);
   };
 
-  const onChange = treeData => setTemplateTree(treeData);
+  const onChange = treeData => setTemplateTree(convertSortableTree2JsonSchema(treeData));
 
   const validateTemplate = () => {
     console.log('console: treeData', tree);
@@ -140,7 +80,7 @@ const TemplatesForm = props => {
       node.subtitle !== "File Blocks Wrapper"
     );
   };
-
+  console.log('console: ============tree==========', tree);
   return (
     <div>
       <div>
