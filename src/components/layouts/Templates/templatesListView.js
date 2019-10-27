@@ -7,11 +7,22 @@ import { navigate } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
 
 const TemplatesListView = props => {
-  const { templates = [], searchData, deleteTemplate } = props;
+  const { templates = [], searchData, deleteTemplate, setTemplate } = props;
   const { TEMPLATES } = availablecomponents;
 
   const deleteSelectedTemplate = event => deleteTemplate({ id: event.target.id });
-  const goTo = event => navigate(`/template/${event.target.id}`);
+  const onClick = event => navigate(`/template/${event.target.id}`);
+  const duplicateSelectedTemplate = event => {
+    const currentTemplate = templates.filter(
+      template => template.id === event.target.id
+    )[0];
+
+    setTemplate({
+      ...currentTemplate,
+      id: null,
+      name: `${currentTemplate.name}-duplicate`
+    });
+  };
 
   const filteredItems = () => {
     const filteredTemplates = templates.filter(el => {
@@ -35,9 +46,14 @@ const TemplatesListView = props => {
       return (
         <tr key={id}>
           <td>
-            <a id={id} className="simpleLink" onClick={goTo}>{name}</a>
+            <a id={id} className="simpleLink" onClick={onClick}>{name}</a>
           </td>
           <td><a id={id} target='blank'>{templateTechnos}</a></td>
+          <td>
+            <a className="simpleLink" id={id} onClick={duplicateSelectedTemplate}>
+              Duplicate
+            </a>
+          </td>
           <td>
             <a className="simpleLink" id={id} onClick={deleteSelectedTemplate}>
               Delete

@@ -6,7 +6,6 @@ import { navigate } from "../../../utils";
 //import uiSchema from "./uiSchema";
 import AceEditor from "react-ace";
 
-
 const TemplateItemForm = props => {
   const { setTemplateTree, removeModal, tree, modalData } = props;
   const currentModalData = modalData[modalData.length - 1].node;
@@ -191,10 +190,7 @@ const TemplateItemForm = props => {
 
   const onSubmit = data => {
     const { formData } = data;
-    const newNode = {
-      ...formData,
-      children: modalData[0].node.children
-    };
+    const newNode = formData;
 
     const newTree = changeNodeAtPath({
       treeData: tree,
@@ -202,6 +198,7 @@ const TemplateItemForm = props => {
       getNodeKey,
       newNode
     });
+
     setTemplateTree(newTree);
     removeModal();
   };
@@ -211,8 +208,7 @@ const TemplateItemForm = props => {
   };
 
   const onValueChange = val => {
-    console.log('console: ---------', val);
-    console.log('console: ---------', modalData[0]);
+
     let newNode = {};
     if (currentModalData.subtitle === 'Schema') {
       newNode = {
@@ -231,18 +227,12 @@ const TemplateItemForm = props => {
       };
     };
 
-    console.log('console: newNode', newNode);
-
-    console.log('console: formSchema', formSchema);
-
     const newTree = changeNodeAtPath({
       treeData: tree,
       path: modalData[0].path,
       getNodeKey,
       newNode
     });
-
-    console.log('console: newTree', newTree);
 
     setTemplateTree(newTree);
   };

@@ -10,9 +10,6 @@ export const getForms = forms => {
       formName: form.formName,
       formDescription: form.formDescription,
       formIsActive: form.formIsActive,
-      formSchema: form.formSchema,
-      formUISchema: form.formUISchema,
-      formPrepareData: form.formPrepareData,
       children: [
         {
           formSchema: form.formSchema,
@@ -51,6 +48,10 @@ export const getBlocks = blocks => {
         {
           subtitle: 'Block Implementation',
           blockImplementation: block.blockImplementation,
+        },
+        {
+          subtitle: 'Block Preview Implementation',
+          blockPreviewImplementation: block.blockPreviewImplementation,
         }
       ]
     };
@@ -74,9 +75,11 @@ export const getDafaultTreeData = [
             expanded: true,
             children: [
               {
-                subtitle: 'Block Implementatio'
+                subtitle: 'Block Implementation'
               },
-
+              {
+                subtitle: 'Block Preview Implementation'
+              },
             ],
           },
         ],
@@ -111,23 +114,121 @@ export const getDafaultTreeData = [
 ];
 
 export const convertSortableTree2JsonSchema = treeData => {
-  console.log('console: convertSortableTree2JsonSchema-intro', treeData);
+
+  const getTemplateFiles = () => {
+    return treeData[0].children.map(el => {
+      const getFileForms = f => {
+        let forms = [];
+        f.children.map(u => {
+          let element = {};
+          u.children.map(c => {
+            if (c.formName) {
+              element = {
+                formDescription: c.formDescription,
+                formIsActive: c.formIsActive,
+                formName: c.formName,
+              };
+            };
+
+            c.children.map(k => {
+              if ('formPrepareData' in k) {
+                element = {
+                  ...element,
+                  formPrepareData: k.formPrepareData,
+                };
+              };
+              if ('formProps' in k) {
+                element = {
+                  ...element,
+                  formProps: k.formProps,
+                };
+              };
+              if ('formSchema' in k) {
+                element = {
+                  ...element,
+                  formSchema: k.formSchema,
+                };
+              };
+              if ('formUISchema' in k) {
+                element = {
+                  ...element,
+                  formUISchema: k.formUISchema,
+                };
+              };
+            });
+            if (!isEmpty(element)) {
+              forms.push(element);
+            };
+          });
+        });
+        if (!isEmpty(forms)) return forms;
+      };
+      const getFileBlocks = f => {
+        let blocks = [];
+        f.children.map(u => {
+          let element = {};
+          u.children.map(c => {
+            if (c.blockName) {
+              element = {
+                blockDescription: c.blockDescription,
+                blockImplementation: c.blockImplementation || '',
+                blockIsActive: c.blockIsActive,
+                blockName: c.blockName,
+                blockPreviewImplementation: c.blockPreviewImplementation || '',
+                blockSequence: c.blockSequence,
+              };
+            };
+
+            c.children.map(k => {
+              if ('blockImplementation' in k) {
+                element = {
+                  ...element,
+                  blockImplementation: k.blockImplementation || '',
+                };
+              };
+              if ('blockPreviewImplementation' in k) {
+                element = {
+                  ...element,
+                  blockPreviewImplementation: k.blockPreviewImplementation || '',
+                };
+              };
+            });
+            if (!isEmpty(element)) {
+              blocks.push(element);
+            };
+          });
+        });
+        if (!isEmpty(blocks)) return blocks;
+      };
+      return {
+        fileDescription: el.fileDescription,
+        fileIsActive: el.fileIsActive,
+        fileName: el.fileName,
+        fileSequence: el.fileSequence,
+        fileForms: getFileForms(el) || [],
+        fileBlocks: getFileBlocks(el) || []
+      };
+    });
+
+  };
+
   let treeObj = {
     id: get(treeData[0], 'id', ''),
     name: treeData[0].name,
     templateDescription: treeData[0].templateDescription,
-    templateFiles: treeData[0].children,
+    templateFiles: getTemplateFiles(),
     templateIsActive: treeData[0].templateIsActive,
-    templateIsComponent: treeData[0].templateIsComponent,
+    templateIsComponent: treeData[0].templateIsComponent || false,
     templateName: treeData[0].templateName,
     templateTechnos: treeData[0].templateTechnos,
     userid: treeData[0].userid
   };
-  console.log("console: convertSortableTree2JsonSchema", treeObj);
+
   return treeObj;
 };
 
 export const convertJsonSchema2SortableTree = currentTemplate => {
+
   let tree = [];
   let treeObj = {
     title: get(currentTemplate, "name", ""),

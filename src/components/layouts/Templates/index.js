@@ -4,6 +4,7 @@ import {
   deleteTemplate,
   setTemplate,
   getAllTemplates,
+  setTemplateTree
 } from '../../../services/templatesService/actions';
 
 const mapStateToProps = state => {
@@ -18,6 +19,7 @@ const mapDispatchToProps = {
   deleteTemplate,
   setTemplate,
   getAllTemplates,
+  setTemplateTree,
 }
 
 export default connect(

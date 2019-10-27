@@ -4,6 +4,7 @@ import SortableTree, {
   getVisibleNodeCount
 } from "react-sortable-tree";
 import isEmpty from "lodash/isEmpty";
+import get from "lodash/get";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMinusCircle,
@@ -21,23 +22,27 @@ import { navigate } from "../../../utils";
 const externalNodeType = "yourNodeType";
 const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
+const goTo = () => navigate("/templates");
 
 const TemplatesForm = props => {
-  const { jsonForm, setTemplateTree, addModal, templates, tree, setTemplate } = props;
+  const {
+    jsonForm,
+    setTemplateTree,
+    addModal,
+    templates,
+    tree,
+    setTemplate
+  } = props;
 
-  const currentTemplate = templates.filter(
-    template => template.id === props.match.params.id
-  )[0];
-
-  if (isEmpty(currentTemplate)) return null;
-  console.log('console: currentTemplate', currentTemplate);
-
-  let treeData = [];
-  if (isEmpty(tree[0].children)) {
-    treeData = convertJsonSchema2SortableTree(currentTemplate);
-    setTemplateTree(treeData);
+  if (isEmpty(get(tree, '[0].children', null))) {
+    const currentTemplate = templates.filter(
+      template => template.id === props.match.params.id
+    )[0];
+    if (isEmpty(currentTemplate)) return null;
+    setTemplateTree(convertJsonSchema2SortableTree(currentTemplate));
   }
 
+  const hasFiles = !isEmpty(tree[0].children);
   const remove = path => {
     const newTree = removeNodeAtPath({
       treeData: jsonForm,
@@ -47,30 +52,35 @@ const TemplatesForm = props => {
     setTemplateTree(newTree);
   };
 
-  const onChange = treeData => setTemplateTree(convertSortableTree2JsonSchema(treeData));
+  const onChange = treeData => setTemplateTree(treeData);
 
   const validateTemplate = () => {
-    console.log('console: treeData', tree);
     const isTemplate = (tree[0].subtitle =
       "Template" && tree.length === 1);
-    const hasFiles = !isEmpty(tree[0].children);
+    // const hasFiles = !isEmpty(tree[0].children);
 
     return isTemplate && hasFiles;
   };
 
   const log = type => console.log.bind(console, type);
   const count =
-    getVisibleNodeCount({ treeData }) > 1
-      ? getVisibleNodeCount({ treeData })
+    getVisibleNodeCount({ treeData: tree }) > 1
+      ? getVisibleNodeCount({ treeData: tree})
       : 800;
 
-  const goTo = () => navigate("/templates");
+
   const saveTemplate = () => {
     const newTree = validateTemplate(tree)
       ? convertSortableTree2JsonSchema(tree)
       : [];
-    
+
     setTemplate(newTree);
+    setTemplateTree([{
+      title: '',
+      subtitle: 'Template',
+      expanded: true,
+      children: [],
+    }],);
     goTo();
   };
 
@@ -80,7 +90,7 @@ const TemplatesForm = props => {
       node.subtitle !== "File Blocks Wrapper"
     );
   };
-  console.log('console: ============tree==========', tree);
+
   return (
     <div>
       <div>
