@@ -23,54 +23,46 @@ const externalNodeType = "yourNodeType";
 const shouldCopyOnOutsideDrop = true;
 const getNodeKey = ({ treeIndex }) => treeIndex;
 
-const TemplatesForm = props => {
+const ComponentsFormTree = props => {
   const {
     jsonForm,
-    setTemplateTree,
+    setComponentTree,
     addModal,
-    templates,
+    components,
     tree,
-    setTemplate
+    setComponent
   } = props;
 
   if (isEmpty(get(tree, '[0].children', null))
     && props.match.params.id !== 'new'
-    && !isEmpty(templates)) {
-    let currentTemplate = templates.filter(
-      template => template.id === props.match.params.id
+    && !isEmpty(components)) {
+    let currentComponent = components.filter(
+      components => components.id === props.match.params.id
     )[0];
-    setTemplateTree(convertJsonSchema2SortableTree(currentTemplate));
+
+    setComponentTree(convertJsonSchema2SortableTree(currentComponent));
   }
 
   const goTo = () => {
-    setTemplateTree([{
+    setComponentTree([{
       title: '',
-      subtitle: 'Template',
+      subtitle: 'Component',
       expanded: true,
       children: [],
     }]);
-    navigate("/templates");
+    navigate("/components");
   }
 
-  const hasFiles = !isEmpty(tree[0].children);
   const remove = path => {
     const newTree = removeNodeAtPath({
       treeData: jsonForm,
       path,
       getNodeKey
     });
-    setTemplateTree(newTree);
+    setComponentTree(newTree);
   };
 
-  const onChange = treeData => setTemplateTree(treeData);
-
-  const validateTemplate = () => {
-    const isTemplate = (tree[0].subtitle =
-      "Template" && tree.length === 1);
-    // const hasFiles = !isEmpty(tree[0].children);
-
-    return isTemplate && hasFiles;
-  };
+  const onChange = treeData => setComponentTree(treeData);
 
   const log = type => console.log.bind(console, type);
   const count =
@@ -79,12 +71,8 @@ const TemplatesForm = props => {
       : 800;
 
 
-  const saveTemplate = () => {
-    const newTree = validateTemplate(tree)
-      ? convertSortableTree2JsonSchema(tree)
-      : [];
-
-    setTemplate(newTree);
+  const saveComponent = () => {
+    setComponent(convertSortableTree2JsonSchema(tree));
     goTo();
   };
 
@@ -99,8 +87,8 @@ const TemplatesForm = props => {
     <div>
       <div className='linkConrtainer'>
         <a onClick={goTo} className="simpleLink leftLink">Back</a>
-        <a onClick={saveTemplate} className="simpleLink rightLink">
-          Save Template
+        <a onClick={saveComponent} className="simpleLink rightLink">
+          Save Component
         </a>
       </div>
       <div className="flex">
@@ -144,7 +132,7 @@ const TemplatesForm = props => {
                     className="componentInfoIcon"
                     icon={faArrowCircleRight}
                     onClick={() =>
-                      addModal(allmodals.TEMPLATE_ITEM_PROPS, { node, path })
+                      addModal(allmodals.COMPONENT_ITEM_PROPS, { node, path })
                     }
                   />
                 )
@@ -157,4 +145,4 @@ const TemplatesForm = props => {
   );
 };
 
-export default TemplatesForm;
+export default ComponentsFormTree;

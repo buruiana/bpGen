@@ -6,6 +6,7 @@ import { allmodals } from "../../utils/constants";
 import ComponentInfo from '../modals/ComponentInfo';
 import ComponentProps from '../modals/ComponentProps';
 import TemplateItemProps from '../modals/TemplateItemProps';
+import ComponentItemProps from '../modals/ComponentItemProps';
 
 const ModalsManager = (modals, projectSettings) => {
   const currentModal = !isEmpty(modals) ? modals[modals.length - 1] : null;
@@ -34,6 +35,8 @@ const ModalsManager = (modals, projectSettings) => {
         return <ComponentProps />;
       case allmodals.TEMPLATE_ITEM_PROPS:
         return <TemplateItemProps />;
+      case allmodals.COMPONENT_ITEM_PROPS:
+        return <ComponentItemProps />;
       default:
         return getCustomModals(currentModal);
     }

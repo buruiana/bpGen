@@ -4,7 +4,13 @@ import isEmpty from "lodash/isEmpty";
 import { navigate } from "../../../utils";
 
 const ComponentsForm = props => {
-  let { components, technos, providers, propTypes } = props;
+  let {
+    components,
+    technos,
+    providers,
+    propTypes,
+    setComponent
+  } = props;
   if (isEmpty(components)) components = [];
 
   const componentsArray = components.filter(
@@ -126,7 +132,7 @@ const ComponentsForm = props => {
 
   const onSubmit = data => {
     const { formData } = data;
-    props.setComponent(formData);
+    setComponent(formData);
     goTo();
   };
 

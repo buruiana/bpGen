@@ -10,7 +10,7 @@ import ProviderForm from "../components/forms/Providers";
 import Technos from "../components/layouts/Technos";
 import TechnosForm from "../components/forms/Technos";
 import Components from "../components/layouts/Components";
-import ComponentsForm from "../components/forms/ComponentsForm";
+import ComponentsMainForm from "../components/forms/ComponentsForm";
 import PropTypes from "../components/layouts/PropTypes";
 import PropTypesForm from "../components/forms/PropTypesForm";
 import Editor from "../components/layouts/Editor";
@@ -30,7 +30,7 @@ const routes = (
       <Route path="/technos" component={Technos} />
       <Route path="/techno/:id" component={TechnosForm} />
       <Route path="/components" component={Components} />
-      <Route path="/component/:id" component={ComponentsForm} />
+      <Route path="/component/:id" component={ComponentsMainForm} />
       <Route path="/proptypes" component={PropTypes} />
       <Route path="/proptype/:id" component={PropTypesForm} />
       <Route component={NoMatch} />

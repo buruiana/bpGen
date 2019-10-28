@@ -4,10 +4,16 @@ export const initialState = () => ({
   component: {},
   components: [],
   searchData: {},
+  tree: [],
 });
 
 export default (state = initialState(), action) => {
   switch (action.type) {
+    case actionTypes.SET_COMPONENT_TREE:
+      return {
+        ...state,
+        tree: action.tree,
+      };
     case actionTypes.SET_COMPONENT:
       return {
         ...state,

@@ -26,10 +26,14 @@ body {
   text-decoration: underline !important;
   cursor: pointer;
   display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .rightLink {
   justify-content: flex-end;
+  display: flex;
+  width: 100%;;
 }
 
 .addEditLink {
@@ -150,3 +154,8 @@ div.rst__moveHandle {
 // .ace_editor {
 //   min-width: 650px;;
 // }
+
+.linkConrtainer {
+  display: flex;
+  flex-direction: row;
+}

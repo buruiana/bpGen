@@ -66,7 +66,7 @@ export const getDafaultTreeData = [
     children: [
       {
         title: '',
-        subtitle: 'Blocks Wrapper',
+        subtitle: 'File Blocks Wrapper',
         expanded: true,
         children: [
           {
@@ -86,7 +86,7 @@ export const getDafaultTreeData = [
       },
       {
         title: '',
-        subtitle: 'Forms Wrapper',
+        subtitle: 'File Forms Wrapper',
         expanded: true,
         children: [
           {

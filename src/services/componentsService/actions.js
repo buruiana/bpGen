@@ -29,3 +29,8 @@ export const setFilterData = searchData => ({
   type: actionTypes.FILTER_COMPONENTS,
   searchData,
 });
+
+export const setComponentTree = tree => ({
+  type: actionTypes.SET_COMPONENT_TREE,
+  tree,
+});

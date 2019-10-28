@@ -21,7 +21,7 @@ export function* watchSetComponent(action) {
     }
     yield put(getAllComponents());
   }
-  yield put(exportModules(getExportModulesCode(components)));
+  //yield put(exportModules(getExportModulesCode(components)));
 }
 
 export function* watchGetAllComponents(action) {

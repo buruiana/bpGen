@@ -8,7 +8,7 @@ export const initialState = () => ({
     title: '',
     subtitle: 'Template',
     expanded: true,
-    children: [],
+    //children: [],
   }],
 });
 
