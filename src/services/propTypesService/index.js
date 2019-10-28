@@ -14,7 +14,7 @@ import { setInitAppDone } from '../configsService/actions';
 
 export function* watchSetPropType(action) {
   const { propType } = action;
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
 
   if (!isOffline) {
     if (propType.id) {

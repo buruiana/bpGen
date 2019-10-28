@@ -3,6 +3,7 @@ import Form from "react-jsonschema-form-bs4";
 import schema from "./schema";
 import { navigate } from "../../../utils";
 import uiSchema from "./uiSchema";
+import { isEmpty } from "../../../utils/helper";
 
 const TemplatesForm = props => {
   const { setTemplate, userid, templates } = props;
@@ -14,6 +15,13 @@ const TemplatesForm = props => {
 
   const onSubmit = data => {
     const { formData } = data;
+    // if (isEmpty(formData.templateFiles.fileBlocks)) {
+    //   formData.templateFiles.fileBlocks = [];
+    // }
+    // if (isEmpty(formData.templateFiles.fileForms)) {
+    //   formData.templateFiles.fileForms = [];
+    // }
+    console.log('console:formDataformData ', formData);
     setTemplate({ ...formData, userid });
     goBack();
   };

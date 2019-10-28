@@ -10,7 +10,7 @@ import { mock } from "./mock";
 
 export function* watchSetComponent(action) {
   const { component } = action;
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
   const { components } = (yield select()).componentsReducer;
 
   if (!isOffline) {
@@ -26,7 +26,7 @@ export function* watchSetComponent(action) {
 
 export function* watchGetAllComponents(action) {
   let allComponents = [];
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
 
   if (isOffline) {
     allComponents = mock.allComponents;
@@ -43,7 +43,7 @@ export function* watchGetAllComponents(action) {
 
 export function* watchDeleteComponent(action) {
   const { id } = action.component;
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
 
   if (!isOffline) {
     yield call(rsf.firestore.deleteDocument, `components/${id}`);

@@ -11,6 +11,7 @@ const mapStateToProps = state => {
   return {
     components: state.componentsReducer.components,
     searchData: state.filterDataReducer.searchData,
+    hasComponentImport: state.configsReducer.configs.hasComponentImport,
   }
 }
 

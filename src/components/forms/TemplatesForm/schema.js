@@ -22,12 +22,12 @@ const schema = {
             items: {
               type: "object",
               properties: {
-                formName: { type: "string", title: "Form Name" },
-                formDescription: { type: "string", title: "Form Description" },
-                formIsActive: { type: "boolean", title: "Form is Active" },
-                formSchema: { type: "string", title: "Form Schema" },
-                formUISchema: { type: "string", title: "Form UI Schema" },
-                formPrepareData: { type: "string", title: "Form Prepare Data" },
+                formName: { type: "string", title: "Form Name", default: '' },
+                formDescription: { type: "string", title: "Form Description", default: '' },
+                formIsActive: { type: "boolean", title: "Form is Active", default: false},
+                formSchema: { type: "string", title: "Form Schema", default: '' },
+                formUISchema: { type: "string", title: "Form UI Schema", default: ''},
+                formPrepareData: { type: "string", title: "Form Prepare Data", default: '' },
                 formProps: {
                   type: "array",
                   title: "Form Props",
@@ -40,8 +40,8 @@ const schema = {
                         items: {
                           type: "object",
                           properties: {
-                            propName: { type: "string", title: "Prop Name" },
-                            propType: { type: "string", title: "Prop Type" }
+                            propName: { type: "string", title: "Prop Name", default: '' },
+                            propType: { type: "string", title: "Prop Type", default: '' }
                           }
                         }
                       }

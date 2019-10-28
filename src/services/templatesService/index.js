@@ -12,16 +12,18 @@ import { mock } from "./mock";
 
 export function* watchSetTemplate(action) {
   const { template } = action;
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
 
   if (!isOffline) {
     if (template.id) {
+      console.log('console: uuuuuuuuuuuuuuuuuu', );
       yield call(
         rsf.firestore.setDocument,
         `templates/${template.id}`,
         template
       );
     } else {
+      console.log('console: aaaaaaaaaaaaaaaaa', );
       yield call(rsf.firestore.addDocument, `templates`, template);
     }
     yield put(getAllTemplates());

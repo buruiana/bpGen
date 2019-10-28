@@ -8,7 +8,7 @@ import { mock } from "./mock";
 
 export function* watchSetProvider(action) {
   const { provider } = action;
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
   let newProvider = { ...provider };
   newProvider.children = [];
 

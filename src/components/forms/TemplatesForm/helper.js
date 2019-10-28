@@ -219,7 +219,7 @@ export const convertSortableTree2JsonSchema = treeData => {
     templateFiles: getTemplateFiles(),
     templateIsActive: treeData[0].templateIsActive,
     templateIsComponent: treeData[0].templateIsComponent || false,
-    templateName: treeData[0].templateName,
+    templateName: treeData[0].name,
     templateTechnos: treeData[0].templateTechnos,
     userid: treeData[0].userid
   };

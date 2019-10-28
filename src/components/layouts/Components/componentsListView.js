@@ -8,7 +8,13 @@ import { navigate } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
 
 const ComponentsListView = props => {
-  const { searchData, components = [], deleteComponent, importData } = props;
+  const {
+    searchData,
+    components = [],
+    deleteComponent,
+    importData,
+    hasComponentImport
+  } = props;
   const { COMPONENTS } = availablecomponents;
   let fileReader;
 
@@ -66,7 +72,7 @@ const ComponentsListView = props => {
   return (
     <div>
       <GenericSearchForm componentname={COMPONENTS} />
-      <input type="file" id="importFile" onChange={onImport} />
+      {hasComponentImport && <input type="file" id="importFile" onChange={onImport} />}
       <div className='addEditLink'>
         <a className="simpleLink" onClick={() => navigate("/component/new")}>
           Add Component

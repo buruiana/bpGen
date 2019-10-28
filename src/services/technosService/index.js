@@ -8,7 +8,7 @@ import { mock } from "./mock";
 
 export function* watchSetTechno(action) {
   const { techno } = action;
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
 
   if (!isOffline) {
     if (techno.id) {
