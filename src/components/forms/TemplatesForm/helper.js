@@ -123,12 +123,11 @@ export const convertSortableTree2JsonSchema = treeData => {
           let element = {};
           u.children.map(c => {
             if ('formName' in c) {
-              console.log('console:zzzzzzzzzzzzzzz ', c);
               element = {
                 formDescription: get(c, 'formDescription', ''),
-                formIsActive: get(c, 'c.formIsActive', false),
-                formName: get(c, 'c.formName', ''),
-                title: get(c, 'c.formName', ''),
+                formIsActive: get(c, 'formIsActive', false),
+                formName: get(c, 'formName', ''),
+                title: get(c, 'formName', ''),
               };
             };
 
@@ -163,7 +162,6 @@ export const convertSortableTree2JsonSchema = treeData => {
             };
           });
         });
-        console.log('console: formsforms', forms);
         if (!isEmpty(forms)) return forms;
       };
 
@@ -218,7 +216,7 @@ export const convertSortableTree2JsonSchema = treeData => {
   };
 
   let treeObj = {
-    id: get(treeData[0], 'id', ''),
+    id: get(treeData[0], 'id', null),
     name: get(treeData, '[0].name', ''),
     templateDescription: get(treeData, '[0].templateDescription', ''),
     templateFiles: getTemplateFiles(),
@@ -239,26 +237,26 @@ export const convertJsonSchema2SortableTree = currentTemplate => {
     title: get(currentTemplate, "name", ""),
     subtitle: "Template",
     expanded: true,
-    id: get(currentTemplate, 'id', ''),
-    name: currentTemplate.name,
-    templateDescription: currentTemplate.templateDescription,
-    templateIsActive: currentTemplate.templateIsActive,
-    templateIsComponent: currentTemplate.templateIsComponent,
-    templateName: currentTemplate.templateName,
-    templateTechnos: currentTemplate.templateTechnos,
-    userid: currentTemplate.userid,
+    id: get(currentTemplate, 'id', null),
+    name: get(currentTemplate, 'name', ''),
+    templateDescription: get(currentTemplate, 'templateDescription', ''),
+    templateIsActive: get(currentTemplate, 'templateIsActive', false),
+    templateIsComponent: get(currentTemplate, 'templateIsComponent', ''),
+    templateName: get(currentTemplate, 'templateName', ''),
+    templateTechnos: get(currentTemplate, 'templateTechnos', ''),
+    userid: get(currentTemplate, 'userid', ''),
     children: []
   };
 
   if (currentTemplate && !isEmpty(currentTemplate.templateFiles)) {
     currentTemplate.templateFiles.map(file => {
       treeObj.children.push({
-        title: file.fileName,
+        title: get(file, 'fileName', ''),
         subtitle: "File",
-        fileDescription: file.fileDescription,
-        fileIsActive: file.fileIsActive,
-        fileName: file.fileName,
-        fileSequence: file.fileSequence,
+        fileDescription: get(file, 'fileDescription', ''),
+        fileIsActive: get(file, 'fileIsActive', false),
+        fileName: get(file, 'fileName', ''),
+        fileSequence: get(file, 'fileSequence', 1),
         expanded: true,
         children: [
           {
