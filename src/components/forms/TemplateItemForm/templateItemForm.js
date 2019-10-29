@@ -5,6 +5,7 @@ import { changeNodeAtPath } from "react-sortable-tree";
 import { navigate } from "../../../utils";
 //import uiSchema from "./uiSchema";
 import AceEditor from "react-ace";
+import get from 'lodash/get';
 
 const TemplateItemForm = props => {
   const { setTemplateTree, removeModal, tree, modalData } = props;
@@ -68,10 +69,15 @@ const TemplateItemForm = props => {
   if (currentModalData.subtitle === "Block") {
     schema.properties = {
       ...schema.properties,
+      blockName: {
+        type: "string",
+        title: "Block Name",
+        default: currentModalData.blockName
+      },
       blockDescription: {
         type: "string",
         title: "Block Description",
-        default: currentModalData.title
+        default: currentModalData.blockDescription
       },
       blockSequence: { type: "number", title: "Block Sequence" },
       blockIsActive: { type: "boolean", title: "Block is Active" },
@@ -126,8 +132,8 @@ const TemplateItemForm = props => {
               items: {
                 type: "object",
                 properties: {
-                  propName: { type: "string", title: "Prop Name", default: currentModalData.formProps.propName },
-                  propType: { type: "string", title: "Prop Type", default: currentModalData.formProps.propType }
+                  propName: { type: "string", title: "Prop Name", default: get(currentModalData, 'formProps.propName', '') },
+                  propType: { type: "string", title: "Prop Type", default: get(currentModalData, 'formProps.propType', '') }
                 }
               }
             }
@@ -143,6 +149,16 @@ const TemplateItemForm = props => {
       blockImplementation: {
         type: "string",
         default: formSchema.blockImplementation
+      }
+    };
+  }
+
+  if (currentModalData.subtitle === "Block Preview Implementation") {
+    schema.properties = {
+      ...schema.properties,
+      blockPreviewImplementation: {
+        type: "string",
+        default: formSchema.blockPreviewImplementation
       }
     };
   }
@@ -215,7 +231,7 @@ const TemplateItemForm = props => {
         ...modalData[0].node,
         formSchema: val
       };
-    } else if (currentModalData.subtitle === 'UISchema') {
+    } else if (currentModalData.subtitle === 'UI Schema') {
       newNode = {
         ...modalData[0].node,
         formUISchema: val
@@ -224,6 +240,16 @@ const TemplateItemForm = props => {
       newNode = {
         ...modalData[0].node,
         blockImplementation: val
+      };
+    } else if (currentModalData.subtitle === 'Block Preview Implementation') {
+      newNode = {
+        ...modalData[0].node,
+        blockPreviewImplementation: val
+      };
+    } else if (currentModalData.subtitle === 'Prepare Data') {
+      newNode = {
+        ...modalData[0].node,
+        prepareData: val
       };
     };
 
@@ -241,10 +267,14 @@ const TemplateItemForm = props => {
     let val = '';
     if (currentModalData.subtitle === 'Schema') {
       val = currentModalData.formSchema;
-    } else if (currentModalData.subtitle === 'UISchema') {
+    } else if (currentModalData.subtitle === 'UI Schema') {
       val = currentModalData.formUISchema;
     } else if (currentModalData.subtitle === 'Block Implementation') {
       val = currentModalData.blockImplementation;
+    } else if (currentModalData.subtitle === 'Block Preview Implementation') {
+      val = currentModalData.blockPreviewImplementation;
+    } else if (currentModalData.subtitle === 'Prepare Data') {
+      val = currentModalData.prepareData;
     }
 
 
@@ -277,6 +307,9 @@ const TemplateItemForm = props => {
   const uiSchema = {
     "ui:widget": "myCustomWidget",
     blockImplementation: {
+      "ui:widget": "myCustomWidget"
+    },
+    blockPreviewImplementation: {
       "ui:widget": "myCustomWidget"
     },
     formSchema: {

@@ -55,7 +55,7 @@ const TemplatesForm = props => {
   const hasFiles = !isEmpty(tree[0].children);
   const remove = path => {
     const newTree = removeNodeAtPath({
-      treeData: jsonForm,
+      treeData: tree,
       path,
       getNodeKey
     });

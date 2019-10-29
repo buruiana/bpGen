@@ -55,7 +55,7 @@ const ComponentsFormTree = props => {
 
   const remove = path => {
     const newTree = removeNodeAtPath({
-      treeData: jsonForm,
+      treeData: tree,
       path,
       getNodeKey
     });

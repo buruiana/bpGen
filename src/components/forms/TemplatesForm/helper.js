@@ -122,11 +122,13 @@ export const convertSortableTree2JsonSchema = treeData => {
         f.children.map(u => {
           let element = {};
           u.children.map(c => {
-            if (c.formName) {
+            if ('formName' in c) {
+              console.log('console:zzzzzzzzzzzzzzz ', c);
               element = {
-                formDescription: c.formDescription,
-                formIsActive: c.formIsActive,
-                formName: c.formName,
+                formDescription: get(c, 'formDescription', ''),
+                formIsActive: get(c, 'c.formIsActive', false),
+                formName: get(c, 'c.formName', ''),
+                title: get(c, 'c.formName', ''),
               };
             };
 
@@ -134,25 +136,25 @@ export const convertSortableTree2JsonSchema = treeData => {
               if ('formPrepareData' in k) {
                 element = {
                   ...element,
-                  formPrepareData: k.formPrepareData,
+                  formPrepareData: get(k, 'formPrepareData', ''),
                 };
               };
               if ('formProps' in k) {
                 element = {
                   ...element,
-                  formProps: k.formProps,
+                  formProps: get(k, 'formProps', []),
                 };
               };
               if ('formSchema' in k) {
                 element = {
                   ...element,
-                  formSchema: k.formSchema,
+                  formSchema: get(k, 'formSchema', ''),
                 };
               };
               if ('formUISchema' in k) {
                 element = {
                   ...element,
-                  formUISchema: k.formUISchema,
+                  formUISchema: get(k, 'formUISchema', ''),
                 };
               };
             });
@@ -161,8 +163,10 @@ export const convertSortableTree2JsonSchema = treeData => {
             };
           });
         });
+        console.log('console: formsforms', forms);
         if (!isEmpty(forms)) return forms;
       };
+
       const getFileBlocks = f => {
         let blocks = [];
         f.children.map(u => {
@@ -170,12 +174,13 @@ export const convertSortableTree2JsonSchema = treeData => {
           u.children.map(c => {
             if (c.blockName) {
               element = {
-                blockDescription: c.blockDescription,
-                blockImplementation: c.blockImplementation || '',
-                blockIsActive: c.blockIsActive,
-                blockName: c.blockName,
-                blockPreviewImplementation: c.blockPreviewImplementation || '',
-                blockSequence: c.blockSequence,
+                blockDescription: get(c, 'blockDescription', ''),
+                blockImplementation: get(c, 'blockImplementation', ''),
+                blockIsActive: get(c, 'blockIsActive', false),
+                blockName: get(c, 'blockName', ''),
+                blockPreviewImplementation: get(c, 'blockPreviewImplementation', ''),
+                blockSequence: get(c, 'blockSequence', 1),
+                title: get(c, 'blockName', ''),
               };
             };
 
@@ -183,13 +188,13 @@ export const convertSortableTree2JsonSchema = treeData => {
               if ('blockImplementation' in k) {
                 element = {
                   ...element,
-                  blockImplementation: k.blockImplementation || '',
+                  blockImplementation: get(k, 'blockImplementation', ''),
                 };
               };
               if ('blockPreviewImplementation' in k) {
                 element = {
                   ...element,
-                  blockPreviewImplementation: k.blockPreviewImplementation || '',
+                  blockPreviewImplementation: get(k, 'blockPreviewImplementation', ''),
                 };
               };
             });
@@ -201,10 +206,10 @@ export const convertSortableTree2JsonSchema = treeData => {
         if (!isEmpty(blocks)) return blocks;
       };
       return {
-        fileDescription: el.fileDescription,
-        fileIsActive: el.fileIsActive,
-        fileName: el.fileName,
-        fileSequence: el.fileSequence,
+        fileDescription: get(el, 'fileDescription', ''),
+        fileIsActive: get(el, 'fileIsActive', false),
+        fileName: get(el, 'fileName', ''),
+        fileSequence: get(el, 'fileSequence', ''),
         fileForms: getFileForms(el) || [],
         fileBlocks: getFileBlocks(el) || []
       };
@@ -214,14 +219,14 @@ export const convertSortableTree2JsonSchema = treeData => {
 
   let treeObj = {
     id: get(treeData[0], 'id', ''),
-    name: treeData[0].name,
-    templateDescription: treeData[0].templateDescription,
+    name: get(treeData, '[0].name', ''),
+    templateDescription: get(treeData, '[0].templateDescription', ''),
     templateFiles: getTemplateFiles(),
-    templateIsActive: treeData[0].templateIsActive,
-    templateIsComponent: treeData[0].templateIsComponent || false,
-    templateName: treeData[0].name,
-    templateTechnos: treeData[0].templateTechnos,
-    userid: treeData[0].userid
+    templateIsActive: get(treeData, '[0].templateIsActive', false),
+    templateIsComponent: get(treeData, '[0].templateIsComponent', false),
+    templateName: get(treeData, '[0].name', ''),
+    templateTechnos: get(treeData, '[0].templateTechnos', ''),
+    userid: get(treeData, '[0].userid', ''),
   };
 
   return treeObj;

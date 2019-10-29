@@ -67,6 +67,10 @@ const schema = {
                   type: "string",
                   title: "Block Implementation"
                 },
+                blockPreviewImplementation: {
+                  type: "string",
+                  title: "Block Preview Implementation"
+                },
                 blockIsActive: { type: "boolean", title: "Block is Active" }
               }
             }
