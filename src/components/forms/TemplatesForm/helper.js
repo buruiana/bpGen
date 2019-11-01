@@ -1,31 +1,34 @@
-import get from "lodash/get";
-import isEmpty from "lodash/isEmpty";
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
 
 export const getForms = forms => {
   return forms.map(form => {
     return {
-      title: form.formName,
+      title: get(form, 'formName', ''),
       subtitle: 'Form',
       expanded: true,
-      formName: form.formName,
-      formDescription: form.formDescription,
-      formIsActive: form.formIsActive,
+      formName: get(form, 'formName', ''),
+      formDescription: get(form, 'formDescription', false),
+      formIsActive: get(form, 'formIsActive', false),
       children: [
         {
-          formSchema: form.formSchema,
+          formSchema: get(form, 'formSchema', false),
           subtitle: `Schema`,
-          formName: form.formName,
+          formName: get(form, 'formName', ''),
+          title: get(form, 'formName', '').substring(0, 20),
         },
         {
-          formUISchema: form.formUISchema,
+          formUISchema: get(form, 'formUISchema', ''),
           subtitle: `UI Schema`,
+          title: get(form, 'formUISchema', '').substring(0, 20),
         },
         {
-          formPrepareData: form.formPrepareData,
+          formPrepareData: get(form, 'formPrepareData', ''),
           subtitle: `Prepare Data`,
+          title: get(form, 'formPrepareData', '').substring(0, 20),
         },
         {
-          formProps: form.formProps,
+          formProps: get(form, 'formProps', ''),
           subtitle: `Props`,
         },
       ],
@@ -36,22 +39,22 @@ export const getForms = forms => {
 export const getBlocks = blocks => {
   return blocks.map(block => {
     return {
-      title: block.blockName,
+      title: get(block, 'blockName', ''),
       subtitle: 'Block',
       expanded: true,
-      blockImplementation: block.blockImplementation,
-      blockDescription: block.blockDescription,
-      blockIsActive: block.blockIsActive,
-      blockSequence: block.blockSequence,
-      blockName: block.blockName,
+      blockImplementation: get(block, 'blockImplementation', ''),
+      blockDescription: get(block, 'blockDescription', ''),
+      blockIsActive: get(block, 'blockIsActive', false),
+      blockSequence: get(block, 'blockSequence', 0),
+      blockName: get(block, 'blockName', ''),
       children: [
         {
           subtitle: 'Block Implementation',
-          blockImplementation: block.blockImplementation,
+          blockImplementation: get(block, 'blockImplementation', ''),
         },
         {
           subtitle: 'Block Preview Implementation',
-          blockPreviewImplementation: block.blockPreviewImplementation,
+          blockPreviewImplementation: get(block, 'blockPreviewImplementation', ''),
         }
       ]
     };
@@ -218,6 +221,7 @@ export const convertSortableTree2JsonSchema = treeData => {
   let treeObj = {
     id: get(treeData[0], 'id', null),
     name: get(treeData, '[0].name', ''),
+    title: get(treeData, '[0].name', ''),
     templateDescription: get(treeData, '[0].templateDescription', ''),
     templateFiles: getTemplateFiles(),
     templateIsActive: get(treeData, '[0].templateIsActive', false),
@@ -234,8 +238,8 @@ export const convertJsonSchema2SortableTree = currentTemplate => {
 
   let tree = [];
   let treeObj = {
-    title: get(currentTemplate, "name", ""),
-    subtitle: "Template",
+    title: get(currentTemplate, 'name', ''),
+    subtitle: 'Template',
     expanded: true,
     id: get(currentTemplate, 'id', null),
     name: get(currentTemplate, 'name', ''),
@@ -252,7 +256,7 @@ export const convertJsonSchema2SortableTree = currentTemplate => {
     currentTemplate.templateFiles.map(file => {
       treeObj.children.push({
         title: get(file, 'fileName', ''),
-        subtitle: "File",
+        subtitle: 'File',
         fileDescription: get(file, 'fileDescription', ''),
         fileIsActive: get(file, 'fileIsActive', false),
         fileName: get(file, 'fileName', ''),
@@ -260,16 +264,16 @@ export const convertJsonSchema2SortableTree = currentTemplate => {
         expanded: true,
         children: [
           {
-            title: "File Forms",
-            subtitle: "File Forms Wrapper",
+            title: 'File Forms',
+            subtitle: 'File Forms Wrapper',
             children: getForms(file.fileForms),
-            expanded: true
+            expanded: false
           },
           {
-            title: "File Blocks",
-            subtitle: "File Blocks Wrapper",
+            title: 'File Blocks',
+            subtitle: 'File Blocks Wrapper',
             children: getBlocks(file.fileBlocks),
-            expanded: true
+            expanded: false
           }
         ]
       });
@@ -277,4 +281,13 @@ export const convertJsonSchema2SortableTree = currentTemplate => {
   }
   tree.push(treeObj);
   return tree;
+};
+
+export const getDefaultTree = () => {
+  return [{
+    title: '',
+    subtitle: 'Template',
+    expanded: true,
+    children: [],
+  }]
 };

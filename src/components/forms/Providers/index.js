@@ -5,6 +5,7 @@ import ProvidersForm from './providersForm';
 const mapStateToProps = state => {
   return {
     providers: state.providersReducer.providers,
+    technos: state.technosReducer.technos,
   }
 };
 

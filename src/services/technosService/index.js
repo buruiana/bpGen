@@ -22,7 +22,7 @@ export function* watchSetTechno(action) {
 
 export function* watchGetAllTechnos(action) {
   let allTechnos = [];
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
 
   if (isOffline) {
     allTechnos = mock.allTechnos;
@@ -39,7 +39,7 @@ export function* watchGetAllTechnos(action) {
 
 export function* watchDeleteTechno(action) {
   const { id } = action.techno;
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
 
   if (!isOffline) {
     yield call(rsf.firestore.deleteDocument, `technos/${id}`);

@@ -39,7 +39,7 @@ const Editor = props => {
     setNodePath,
     configs
   } = props;
-console.log('console: =============================', configs);
+
   const renderAce = () => {
     return !isEmpty(projectSettings) ? <Ace /> : null;
   };

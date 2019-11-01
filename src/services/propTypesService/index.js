@@ -28,7 +28,7 @@ export function* watchSetPropType(action) {
 
 export function* watchGetAllPropTypes(action) {
   let allPropTypes = [];
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
 
   if (isOffline) {
     allPropTypes = mock.allPropTypes;
@@ -56,7 +56,7 @@ export function* watchDeletePropType(action) {
 
 export function* watchImportPropType(action) {
   const { propTypes } = action;
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
 
   if (!isOffline) {
     if (!isEmpty(propTypes)) {

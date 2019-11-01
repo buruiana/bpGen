@@ -24,7 +24,7 @@ export function* watchSetProvider(action) {
 
 export function* watchGetAllProviders(action) {
   let allProviders = [];
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
 
   if (isOffline) {
     allProviders = mock.allProviders;
@@ -41,7 +41,7 @@ export function* watchGetAllProviders(action) {
 
 export function* watchDeleteProvider(action) {
   const { id } = action.provider;
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
 
   if (!isOffline) {
     yield call(rsf.firestore.deleteDocument, `providers/${id}`);

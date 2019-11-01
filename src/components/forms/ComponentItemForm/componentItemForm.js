@@ -10,7 +10,8 @@ const ComponentItemForm = props => {
     tree,
     modalData,
     technos,
-    providers
+    providers,
+    propTypes,
   } = props;
   const currentModalData = modalData[modalData.length - 1].node;
   const getNodeKey = ({ treeIndex }) => treeIndex;
@@ -56,13 +57,13 @@ const ComponentItemForm = props => {
         type: "string",
         name: "Provider",
         enum: providersEnums,
-        default: currentModalData.provider
+        //default: currentModalData.provider
       },
       techno: {
         type: "string",
         name: "Techno",
         enum: technosEnums,
-        default: currentModalData.techno
+        //default: currentModalData.techno
       },
       isDefault: {
         type: "boolean",
@@ -77,12 +78,14 @@ const ComponentItemForm = props => {
     };
   };
 
+  const propTypesEnums = !isEmpty(propTypes) ? propTypes.map(p => p.name) : [];
+
   if (currentModalData.subtitle === "Component Prop") {
     schema.properties = {
       ...schema.properties,
       title: { type: "string", title: "Name", default: currentModalData.title },
       description: { type: "string", title: "Description", default: currentModalData.description },
-      propType: { type: "string", title: "Prop Type", default: currentModalData.propType },
+      propType: { type: "string", title: "Prop Type", enum: propTypesEnums},
       propTypeIsrequired: { type: "boolean", title: "is Required", default: currentModalData.propTypeIsrequired },
     }
   }
@@ -108,6 +111,9 @@ const ComponentItemForm = props => {
 
   const uiSchema = {
     "ui:widget": "myCustomWidget",
+    provider: { "ui:placeholder": "Choose a provider" },
+    techno: { "ui:placeholder": "Choose a technology" },
+    id: { "ui:widget": "hidden" },
     blockImplementation: {
       "ui:widget": "myCustomWidget"
     },
@@ -119,7 +125,14 @@ const ComponentItemForm = props => {
     },
     formPrepareData: {
       "ui:widget": "myCustomWidget"
-    }
+    },
+    description: {
+      "ui:widget": "textarea",
+      "ui:options": {
+        rows: 15
+      }
+    },
+    propType: { "ui:placeholder": "Choose an propType" }
   };
 
   return (

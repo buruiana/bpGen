@@ -17,6 +17,7 @@ const mapStateToProps = state => {
     modalData: state.modalsReducer.modalData,
     providers: state.providersReducer.providers,
     technos: state.technosReducer.technos,
+    propTypes: state.propTypesReducer.propTypes,
   };
 };
 

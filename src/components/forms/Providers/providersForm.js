@@ -4,13 +4,13 @@ import isEmpty from "lodash/isEmpty";
 import { navigate } from "../../../utils";
 
 const ProvidersForm = props => {
-  let { providers } = props;
+  let { providers, technos } = props;
   if (isEmpty(providers)) providers = [];
 
   const providersArray = providers.filter(
     provider => provider.id === props.match.params.id
   );
-  const technoTypeEnums = ["REACT", "REACT_NATIVE"];
+  const technoTypeEnums = technos.map(techno => techno.name)
 
   let provider = {};
   if (!isEmpty(providersArray)) {

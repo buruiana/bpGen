@@ -14,7 +14,7 @@ import {
 import {
   getDafaultTreeData,
   convertSortableTree2JsonSchema,
-  convertJsonSchema2SortableTree
+  getDefaultTree
 } from "./helper";
 import { allmodals } from "../../../utils/constants";
 import { navigate } from "../../../utils";
@@ -25,30 +25,15 @@ const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const TemplatesForm = props => {
   const {
-    jsonForm,
     setTemplateTree,
     addModal,
-    templates,
     tree,
     setTemplate
   } = props;
-
-  if (isEmpty(get(tree, '[0].children', null))
-    && props.match.params.id !== 'new'
-    && !isEmpty(templates)) {
-    let currentTemplate = templates.filter(
-      template => template.id === props.match.params.id
-    )[0];
-    setTemplateTree(convertJsonSchema2SortableTree(currentTemplate));
-  }
+  console.log('console: ================tree===========', tree);
 
   const goTo = () => {
-    setTemplateTree([{
-      title: '',
-      subtitle: 'Template',
-      expanded: true,
-      children: [],
-    }]);
+    setTemplateTree(getDefaultTree());
     navigate("/templates");
   }
 

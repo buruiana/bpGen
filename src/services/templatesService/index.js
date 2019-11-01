@@ -16,14 +16,12 @@ export function* watchSetTemplate(action) {
 
   if (!isOffline) {
     if (template.id) {
-      console.log('console: uuuuuuuuuuuuuuuuuu', );
       yield call(
         rsf.firestore.setDocument,
         `templates/${template.id}`,
         template
       );
     } else {
-      console.log('console: aaaaaaaaaaaaaaaaa', );
       yield call(rsf.firestore.addDocument, `templates`, template);
     }
     yield put(getAllTemplates());
@@ -32,7 +30,7 @@ export function* watchSetTemplate(action) {
 
 export function* watchGetAllTemplates(action) {
   let allTemplates = [];
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
 
   if (isOffline) {
     allTemplates = mock.allTemplates;
@@ -49,7 +47,7 @@ export function* watchGetAllTemplates(action) {
 
 export function* watchDeleteTemplate(action) {
   const { id } = action.template;
-  const { isOffline } = (yield select()).configsReducer;
+  const { isOffline } = (yield select()).configsReducer.configs;
 
   if (!isOffline) {
     yield call(rsf.firestore.deleteDocument, `templates/${id}`);
