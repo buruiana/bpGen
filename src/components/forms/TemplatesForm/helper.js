@@ -51,10 +51,12 @@ export const getBlocks = blocks => {
         {
           subtitle: 'Block Implementation',
           blockImplementation: get(block, 'blockImplementation', ''),
+          title: get(block, 'blockImplementation', '').substring(0, 20),
         },
         {
           subtitle: 'Block Preview Implementation',
           blockPreviewImplementation: get(block, 'blockPreviewImplementation', ''),
+          title: get(block, 'blockPreviewImplementation', '').substring(0, 20),
         }
       ]
     };
