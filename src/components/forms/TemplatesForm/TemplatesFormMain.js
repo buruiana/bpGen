@@ -8,13 +8,14 @@ import { templateFormTypes } from '../../../utils/constants';
 
 import TemplatesForm from './templatesForm';
 import TemplatesFormTree from './templatesFormTree';
-
+import { navigate2Login } from '../../../utils';
 import { convertJsonSchema2SortableTree } from './helper';
 
 const TemplatesFormMain = props => {
-  const { tree = [], templates = [], setTemplateTree } = props;
+  const { tree = [], templates = [], setTemplateTree, isAuthenticated } = props;
 
   const [templateFormType, setTemplateFormType] = useState(templateFormTypes.TREE);
+  if (!isAuthenticated) navigate2Login();
 
   if (
     isEmpty(get(tree, '[0].children', null))
@@ -23,6 +24,7 @@ const TemplatesFormMain = props => {
     let currentTemplate = templates.filter(
       template => template.id === props.match.params.id
     )[0];
+
     setTemplateTree(convertJsonSchema2SortableTree(currentTemplate));
   };
 

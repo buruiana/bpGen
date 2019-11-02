@@ -3,12 +3,13 @@ import Table from "react-bootstrap/Table";
 import sortBy from "lodash/sortBy";
 import get from "lodash/get";
 import GenericSearchForm from "../../forms/GenericSearchForm";
-import { navigate } from "../../../utils";
+import { navigate, navigate2Login } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
 
 const PropTypesListView = props => {
-  const { propTypes = [], searchData, deletePropType } = props;
+  const { propTypes = [], searchData, deletePropType, isAuthenticated } = props;
   const { PROP_TYPES } = availablecomponents;
+  if (!isAuthenticated) navigate2Login();
 
   const deleteSelectedPropType = event => deletePropType({ id: event.target.id });
   const goTo = event => navigate(`/propType/${event.target.id}`);

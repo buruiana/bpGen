@@ -17,6 +17,8 @@ export const getDafaultTreeData = [
     techno: '',
     title: '',
     expanded: true,
+    closeTag: false,
+    isPublic: false,
   },
 ];
 
@@ -39,6 +41,7 @@ export const convertSortableTree2JsonSchema = treeData => {
     description: get(treeData[0], 'description'),
     id: get(treeData[0], 'id', null),
     isDefault: get(treeData[0], 'isDefault', false),
+    isPublic: get(treeData[0], 'isPublic', false),
     provider: get(treeData[0], 'provider'),
     subtitle: get(treeData[0], 'subtitle'),
     techno: get(treeData[0], 'techno'),
@@ -54,6 +57,7 @@ export const convertJsonSchema2SortableTree = currentTemplate => {
   let tree = [];
   let treeObj = {
     children: [],
+    isPublic: get(currentTemplate, 'isPublic', false),
     closeTag: get(currentTemplate, 'closeTag', false),
     componentImport: get(currentTemplate, 'componentImport', ''),
     description: get(currentTemplate, 'description', ''),

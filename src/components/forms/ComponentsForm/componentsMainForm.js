@@ -6,10 +6,12 @@ import { componentFormTypes } from '../../../utils/constants';
 import ComponentsForm from './componentsForm';
 import ComponentsFormTree from './componentsFormTree';
 
+import { navigate2Login } from '../../../utils';
+
 const ComponentsFormMain = props => {
-
+  const { isAuthenticated } = props;
   const [componentFormType, setComponentFormType] = useState(componentFormTypes.TREE);
-
+  if (!isAuthenticated) navigate2Login();
   return (
     <div>
       <div className="tabsList">

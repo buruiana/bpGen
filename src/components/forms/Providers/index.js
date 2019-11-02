@@ -6,6 +6,7 @@ const mapStateToProps = state => {
   return {
     providers: state.providersReducer.providers,
     technos: state.technosReducer.technos,
+    isAuthenticated: state.loginReducer.isAuthenticated,
   }
 };
 

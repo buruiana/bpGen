@@ -25,7 +25,7 @@ const getNodeKey = ({ treeIndex }) => treeIndex;
 
 const ComponentsFormTree = props => {
   const {
-    jsonForm,
+    userid,
     setComponentTree,
     addModal,
     components,
@@ -72,7 +72,7 @@ const ComponentsFormTree = props => {
 
 
   const saveComponent = () => {
-    setComponent(convertSortableTree2JsonSchema(tree));
+    setComponent({ ...convertSortableTree2JsonSchema(tree), userid });
     goTo();
   };
 

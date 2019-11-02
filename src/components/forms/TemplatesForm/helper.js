@@ -227,10 +227,11 @@ export const convertSortableTree2JsonSchema = treeData => {
     templateDescription: get(treeData, '[0].templateDescription', ''),
     templateFiles: getTemplateFiles(),
     templateIsActive: get(treeData, '[0].templateIsActive', false),
+    templateIsPublic: get(treeData, '[0].templateIsPublic', false),
     templateIsComponent: get(treeData, '[0].templateIsComponent', false),
     templateName: get(treeData, '[0].name', ''),
     templateTechnos: get(treeData, '[0].templateTechnos', ''),
-    userid: get(treeData, '[0].userid', ''),
+    userid: get(treeData, '[0].userid', undefined),
   };
 
   return treeObj;
@@ -247,10 +248,11 @@ export const convertJsonSchema2SortableTree = currentTemplate => {
     name: get(currentTemplate, 'name', ''),
     templateDescription: get(currentTemplate, 'templateDescription', ''),
     templateIsActive: get(currentTemplate, 'templateIsActive', false),
-    templateIsComponent: get(currentTemplate, 'templateIsComponent', ''),
+    templateIsPublic: get(currentTemplate, 'templateIsPublic', false),
+    templateIsComponent: get(currentTemplate, 'templateIsComponent', false),
     templateName: get(currentTemplate, 'templateName', ''),
     templateTechnos: get(currentTemplate, 'templateTechnos', ''),
-    userid: get(currentTemplate, 'userid', ''),
+    userid: get(currentTemplate, 'userid', undefined),
     children: []
   };
 

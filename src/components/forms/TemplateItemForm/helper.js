@@ -2,6 +2,8 @@ import get from 'lodash/get';
 
 export const getNewtemplate = formData => {
   let newTemplate = {};
+  console.log('console:================= ', formData);
+
   if ('templateDescription' in formData) {
     newTemplate = {
       expanded: true,
@@ -11,9 +13,11 @@ export const getNewtemplate = formData => {
       templateDescription: get(formData, 'templateDescription', ''),
       templateIsActive: get(formData, 'templateIsActive', false),
       templateIsComponent: get(formData, 'templateIsComponent', false),
+      templateIsPublic: get(formData, 'templateIsPublic', false),
       templateTechnos: get(formData, 'templateTechnos', ''),
       title: get(formData, 'name', ''),
-      userid: get(formData, 'id', ''),
+      userid: get(formData, 'id', undefined),
+      children: get(formData, 'children', []),
     };
   };
 
@@ -100,22 +104,22 @@ export const getSchema = (currentModalData, schema) => {
       fileName: {
         type: 'string',
         title: ' File Name',
-        default: currentModalData.fileName
+        default: get(currentModalData, 'fileName', '')
       },
       fileDescription: {
         type: 'string',
         title: ' File Description',
-        default: currentModalData.fileDescription
+        default: get(currentModalData, 'fileDescription', '')
       },
       fileSequence: {
         type: 'number',
         title: ' File Sequence',
-        default: currentModalData.fileSequence
+        default: get(currentModalData, 'fileSequence', 0)
       },
       fileIsActive: {
         type: 'boolean',
         title: ' File Active',
-        default: currentModalData.fileIsActive
+        default: get(currentModalData, 'fileIsActive', false)
       },
     };
   }
@@ -126,17 +130,17 @@ export const getSchema = (currentModalData, schema) => {
       formName: {
         type: 'string',
         title: 'Form Name',
-        default: currentModalData.formName
+        default: get(currentModalData, 'formName', '')
       },
       formDescription: {
         type: 'string',
         title: 'Form Description',
-        default: currentModalData.formDescription
+        default: get(currentModalData, 'formDescription', '')
       },
       formIsActive: {
         type: 'boolean',
         title: 'Form is Active',
-        default: currentModalData.formIsActive
+        default: get(currentModalData, 'formIsActive', '')
       },
     };
   }
@@ -147,12 +151,12 @@ export const getSchema = (currentModalData, schema) => {
       blockName: {
         type: 'string',
         title: 'Block Name',
-        default: currentModalData.blockName
+        default: get(currentModalData, 'blockName', '')
       },
       blockDescription: {
         type: 'string',
         title: 'Block Description',
-        default: currentModalData.blockDescription
+        default: get(currentModalData, 'blockDescription', '')
       },
       blockSequence: { type: 'number', title: 'Block Sequence' },
       blockIsActive: { type: 'boolean', title: 'Block is Active' },
@@ -165,7 +169,7 @@ export const getSchema = (currentModalData, schema) => {
       formSchema: {
         type: 'string',
         title: 'Form Schema',
-        default: currentModalData.formSchema
+        default: get(currentModalData, 'formSchema', '')
       },
     };
   }
@@ -176,7 +180,7 @@ export const getSchema = (currentModalData, schema) => {
       formUISchema: {
         type: 'string',
         title: 'Form UI Schema',
-        default: currentModalData.formUISchema
+        default: get(currentModalData, 'formUISchema', '')
       },
     };
   }
@@ -187,7 +191,7 @@ export const getSchema = (currentModalData, schema) => {
       formPrepareData: {
         type: 'string',
         title: 'Form Prepare Data',
-        default: currentModalData.formPrepareData
+        default: get(currentModalData, 'formPrepareData', '')
       },
     };
   }
@@ -223,7 +227,7 @@ export const getSchema = (currentModalData, schema) => {
       ...schema.properties,
       blockImplementation: {
         type: 'string',
-        default: currentModalData.blockImplementation
+        default: get(currentModalData, 'blockImplementation', '')
       }
     };
   }
@@ -233,7 +237,7 @@ export const getSchema = (currentModalData, schema) => {
       ...schema.properties,
       blockPreviewImplementation: {
         type: 'string',
-        default: currentModalData.blockPreviewImplementation
+        default: get(currentModalData, 'blockPreviewImplementation', '')
       }
     };
   }
@@ -244,37 +248,42 @@ export const getSchema = (currentModalData, schema) => {
       id: {
         type: 'string',
         title: 'ID',
-        default: currentModalData.id
+        default: get(currentModalData, 'id', '')
       },
       name: {
         type: 'string',
         title: 'Name',
-        default: currentModalData.name
+        default: get(currentModalData, 'name', '')
       },
       templateDescription: {
         type: 'string',
         title: 'Description',
-        default: currentModalData.templateDescription
+        default: get(currentModalData, 'templateDescription', '')
       },
       templateTechnos: {
         type: 'string',
         title: 'Technos',
-        default: currentModalData.templateTechnos
+        default: get(currentModalData, 'templateTechnos', '')
       },
       templateIsActive: {
         type: 'boolean',
         title: 'Is Active',
-        default: currentModalData.templateIsActive
+        default: get(currentModalData, 'templateIsActive', false)
       },
       templateIsComponent: {
         type: 'boolean',
         title: 'Is Component Template',
-        default: currentModalData.templateIsActive
+        default: get(currentModalData, 'templateIsComponent', false)
+      },
+      templateIsPublic: {
+        type: 'boolean',
+        title: 'Is Public Template',
+        default: get(currentModalData, 'templateIsPublic', false)
       },
       userid: {
         type: 'string',
         title: 'User',
-        default: currentModalData.userid
+        default: get(currentModalData, 'userid', undefined)
       }
     };
   }

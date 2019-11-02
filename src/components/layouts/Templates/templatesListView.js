@@ -3,12 +3,20 @@ import Table from "react-bootstrap/Table";
 import sortBy from "lodash/sortBy";
 import get from "lodash/get";
 import GenericSearchForm from "../../forms/GenericSearchForm";
-import { navigate } from "../../../utils";
+import { navigate, navigate2Login } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
 
 const TemplatesListView = props => {
-  const { templates = [], searchData, deleteTemplate, setTemplate } = props;
+  const {
+    templates = [],
+    searchData,
+    deleteTemplate,
+    setTemplate,
+    isAuthenticated
+  } = props;
   const { TEMPLATES } = availablecomponents;
+
+  if (!isAuthenticated) navigate2Login();
 
   const deleteSelectedTemplate = event => deleteTemplate({ id: event.target.id });
   const onClick = event => navigate(`/template/${event.target.id}`);

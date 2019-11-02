@@ -21,8 +21,6 @@ const NavBar = props => {
     router
   } = props;
 
-  if (router.location.pathname !== '/editor') return null;
-
   const getInitProject = () => {
     return !isEmpty(projectSettings) && (
       <Nav.Link name="init" onClick={initProject} className="justify-content-end">

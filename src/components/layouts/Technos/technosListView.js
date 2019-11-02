@@ -3,12 +3,13 @@ import Table from "react-bootstrap/Table";
 import sortBy from "lodash/sortBy";
 import get from "lodash/get";
 import GenericSearchForm from "../../forms/GenericSearchForm";
-import { navigate } from "../../../utils";
+import { navigate, navigate2Login } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
 
 const TechnosListView = props => {
-  const { technos = [], searchData, deleteTechno } = props;
+  const { technos = [], searchData, deleteTechno, isAuthenticated } = props;
   const { TECHNOS } = availablecomponents;
+  if (!isAuthenticated) navigate2Login();
 
   const deleteSelectedTechno = event => deleteTechno({ id: event.target.id });
   const goTo = event => navigate(`/techno/${event.target.id}`);

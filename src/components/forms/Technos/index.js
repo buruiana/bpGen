@@ -5,6 +5,7 @@ import TechnosForm from './technosForm';
 const mapStateToProps = state => {
   return {
     technos: state.technosReducer.technos,
+    isAuthenticated: state.loginReducer.isAuthenticated,
   }
 };
 

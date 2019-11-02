@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import get from 'lodash/get';
 import {
   setComponent,
   setComponentTree
@@ -14,6 +15,8 @@ const mapStateToProps = state => {
     providers: state.providersReducer.providers,
     technos: state.technosReducer.technos,
     propTypes: state.propTypesReducer.propTypes,
+    userid: get(state, 'loginReducer.userInfo.user.uid', ''),
+    isAuthenticated: state.loginReducer.isAuthenticated,
   }
 };
 

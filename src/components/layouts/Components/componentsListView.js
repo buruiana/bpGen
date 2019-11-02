@@ -4,7 +4,7 @@ import sortBy from "lodash/sortBy";
 import isEmpty from "lodash/isEmpty";
 import get from "lodash/get";
 import GenericSearchForm from "../../forms/GenericSearchForm";
-import { navigate } from "../../../utils";
+import { navigate, navigate2Login } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
 
 const ComponentsListView = props => {
@@ -13,9 +13,11 @@ const ComponentsListView = props => {
     components = [],
     deleteComponent,
     importData,
-    hasComponentImport
+    hasComponentImport,
+    isAuthenticated
   } = props;
   const { COMPONENTS } = availablecomponents;
+  if (!isAuthenticated) navigate2Login();
   let fileReader;
 
   const deleteSelectedComponent = event =>  deleteComponent({ id: event.target.id });

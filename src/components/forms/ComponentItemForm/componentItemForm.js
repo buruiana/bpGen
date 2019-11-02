@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Form from "react-jsonschema-form-bs4";
 import { changeNodeAtPath } from "react-sortable-tree";
+import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
 const ComponentItemForm = props => {
@@ -36,22 +37,22 @@ const ComponentItemForm = props => {
       id: {
         type: "string",
         title: "Id",
-        default: currentModalData.id
+        default: get(currentModalData, 'id', undefined),
       },
       title: {
         type: "string",
         title: "Title",
-        default: currentModalData.title
+        default: get(currentModalData, 'title', ''),
       },
       description: {
         type: "string",
         title: "Description",
-        default: currentModalData.description
+        default: get(currentModalData, 'description', ''),
       },
       componentImport: {
         type: "string",
         title: "Component Import",
-        default: currentModalData.componentImport
+        default: get(currentModalData, 'componentImport', ''),
       },
       provider: {
         type: "string",
@@ -68,12 +69,17 @@ const ComponentItemForm = props => {
       isDefault: {
         type: "boolean",
         title: " Is Defauls",
-        default: currentModalData.isDefault
+        default: get(currentModalData, 'isDefault', false),
       },
       closeTag: {
         type: "boolean",
         title: " CloseTag",
-        default: currentModalData.closeTag
+        default: get(currentModalData, 'closeTag', false),
+      },
+      isPublic: {
+        type: "boolean",
+        title: " Is Public",
+        default: get(currentModalData, 'isPublic', false),
       },
     };
   };

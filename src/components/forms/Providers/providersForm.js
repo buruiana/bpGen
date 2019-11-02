@@ -1,12 +1,12 @@
 import React from "react";
 import Form from "react-jsonschema-form-bs4";
 import isEmpty from "lodash/isEmpty";
-import { navigate } from "../../../utils";
+import { navigate, navigate2Login } from "../../../utils";
 
 const ProvidersForm = props => {
-  let { providers, technos } = props;
+  let { providers, technos, isAuthenticated } = props;
   if (isEmpty(providers)) providers = [];
-
+  if (!isAuthenticated) navigate2Login();
   const providersArray = providers.filter(
     provider => provider.id === props.match.params.id
   );

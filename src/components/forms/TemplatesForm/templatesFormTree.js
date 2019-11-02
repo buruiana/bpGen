@@ -30,7 +30,6 @@ const TemplatesForm = props => {
     tree,
     setTemplate
   } = props;
-  console.log('console: ================tree===========', tree);
 
   const goTo = () => {
     setTemplateTree(getDefaultTree());

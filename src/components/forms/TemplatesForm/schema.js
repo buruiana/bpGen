@@ -4,8 +4,9 @@ const schema = {
     name: { type: "string", title: "Name" },
     templateDescription: { type: "string", title: "Description" },
     templateTechnos: { type: "string", title: "Technos" },
-    templateIsActive: { type: "boolean", title: "Active" },
-    templateIsComponent: { type: "boolean", title: "isComponent" },
+    templateIsActive: { type: "boolean", title: "Active", default: false },
+    templateIsPublic: { type: "boolean", title: "Public", default: false },
+    templateIsComponent: { type: "boolean", title: "isComponent", default: false },
     templateFiles: {
       type: "array",
       title: "Files",

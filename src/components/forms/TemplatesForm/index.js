@@ -13,7 +13,8 @@ const mapStateToProps = state => {
   return {
     userid: get(state, 'loginReducer.userInfo.user.uid', ''),
     templates: state.templatesReducer.templates,
-    tree: state.templatesReducer.tree
+    tree: state.templatesReducer.tree,
+    isAuthenticated: state.loginReducer.isAuthenticated,
   };
 };
 

@@ -5,6 +5,7 @@ import PropTypesForm from './propTypesForm';
 const mapStateToProps = state => {
   return {
     propTypes: state.propTypesReducer.propTypes,
+    isAuthenticated: state.loginReducer.isAuthenticated,
   }
 };
 

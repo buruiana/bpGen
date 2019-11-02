@@ -31,6 +31,7 @@ export function* watchSetTemplate(action) {
 export function* watchGetAllTemplates(action) {
   let allTemplates = [];
   const { isOffline } = (yield select()).configsReducer.configs;
+  const userid = (yield select()).loginReducer.userInfo.user.uid;
 
   if (isOffline) {
     allTemplates = mock.allTemplates;
@@ -39,6 +40,8 @@ export function* watchGetAllTemplates(action) {
     allTemplates = snapshot.docs.map(template => {
       return { ...template.data(), id: template.id };
     });
+
+    //allTemplates = snapshot.docs.filter(template => template.data.userid === userid || template.isPublic);
   }
   if (isEmpty(allTemplates)) allTemplates = [];
   sortBy(allTemplates, el => el.title);
