@@ -58,13 +58,11 @@ const ComponentItemForm = props => {
         type: "string",
         name: "Provider",
         enum: providersEnums,
-        //default: currentModalData.provider
       },
       techno: {
         type: "string",
         name: "Techno",
         enum: technosEnums,
-        //default: currentModalData.techno
       },
       isDefault: {
         type: "boolean",
@@ -81,6 +79,11 @@ const ComponentItemForm = props => {
         title: " Is Public",
         default: get(currentModalData, 'isPublic', false),
       },
+      isActive: {
+        type: "boolean",
+        title: " Is Active",
+        default: get(currentModalData, 'isActive', false),
+      },
     };
   };
 
@@ -89,10 +92,12 @@ const ComponentItemForm = props => {
   if (currentModalData.subtitle === "Component Prop") {
     schema.properties = {
       ...schema.properties,
-      title: { type: "string", title: "Name", default: currentModalData.title },
-      description: { type: "string", title: "Description", default: currentModalData.description },
+      title: { type: "string", title: "Name", default: get(currentModalData, 'title', '') },
+      description: {
+        type: "string", title: "Description", default: get(currentModalData, 'description', '') },
       propType: { type: "string", title: "Prop Type", enum: propTypesEnums},
-      propTypeIsrequired: { type: "boolean", title: "is Required", default: currentModalData.propTypeIsrequired },
+      propTypeIsrequired: {
+        type: "boolean", title: "is Required", default: get(currentModalData, 'propTypeIsrequired', '') },
     }
   }
 

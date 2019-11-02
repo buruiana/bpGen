@@ -3,8 +3,6 @@ import SortableTree, {
   removeNodeAtPath,
   getVisibleNodeCount
 } from "react-sortable-tree";
-import isEmpty from "lodash/isEmpty";
-import get from "lodash/get";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMinusCircle,
@@ -14,7 +12,6 @@ import {
 import {
   getDafaultTreeData,
   convertSortableTree2JsonSchema,
-  convertJsonSchema2SortableTree
 } from "./helper";
 import { allmodals } from "../../../utils/constants";
 import { navigate } from "../../../utils";
@@ -32,16 +29,6 @@ const ComponentsFormTree = props => {
     tree,
     setComponent
   } = props;
-
-  if (isEmpty(get(tree, '[0].children', null))
-    && props.match.params.id !== 'new'
-    && !isEmpty(components)) {
-    let currentComponent = components.filter(
-      components => components.id === props.match.params.id
-    )[0];
-
-    setComponentTree(convertJsonSchema2SortableTree(currentComponent));
-  }
 
   const goTo = () => {
     setComponentTree([{

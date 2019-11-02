@@ -30,9 +30,13 @@ const ProjectSettingsForm = props => {
             .toLowerCase()
             .includes(
               formState.projectTechno
-            );
-        }).map(e => e.name)
-      : templates.map(e => e.name);
+          )
+      })
+        .filter(e => e.templateIsActive)
+        .map(e => e.name)
+      : templates
+        .filter(e => e.templateIsActive)
+        .map(e => e.name);
   };
 
   const schema = {

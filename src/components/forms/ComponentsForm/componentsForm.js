@@ -35,7 +35,9 @@ const ComponentsForm = props => {
     techno,
     provider,
     componentImport,
-    isDefault
+    isDefault,
+    isPublic,
+    isActive
   } = component;
 
   const technosEnums = !isEmpty(technos)
@@ -74,10 +76,20 @@ const ComponentsForm = props => {
         enum: technosEnums,
         default: techno
       },
+      isActive: {
+        type: "boolean",
+        name: "isActive",
+        default: isActive || false
+      },
       isDefault: {
         type: "boolean",
         name: "isDefault",
         default: isDefault || false
+      },
+      isPublic: {
+        type: "boolean",
+        name: "isPublic",
+        default: isPublic || false
       },
       componentProps: {
         type: "array",

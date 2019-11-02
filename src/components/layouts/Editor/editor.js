@@ -26,7 +26,6 @@ const getNodeKey = ({ treeIndex }) => treeIndex;
 const Editor = props => {
   const {
     projectSettings,
-    components = [],
     addModal,
     tree,
     providers,
@@ -37,8 +36,10 @@ const Editor = props => {
     generateCode,
     forms,
     setNodePath,
-    configs
+    configs,
   } = props;
+
+  const components = props.components.filter(e => e.isActive) || [];
 
   const renderAce = () => {
     return !isEmpty(projectSettings) ? <Ace /> : null;
