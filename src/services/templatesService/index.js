@@ -13,13 +13,14 @@ import { mock } from "./mock";
 export function* watchSetTemplate(action) {
   const { template } = action;
   const { isOffline } = (yield select()).configsReducer.configs;
+  const userid = (yield select()).loginReducer.userInfo.user.uid;
 
   if (!isOffline) {
     if (template.id) {
       yield call(
         rsf.firestore.setDocument,
         `templates/${template.id}`,
-        template
+        { ...template, userid }
       );
     } else {
       yield call(rsf.firestore.addDocument, `templates`, template);
@@ -32,20 +33,22 @@ export function* watchGetAllTemplates(action) {
   let allTemplates = [];
   const { isOffline } = (yield select()).configsReducer.configs;
   const userid = (yield select()).loginReducer.userInfo.user.uid;
-
+  const templateArr = [];
   if (isOffline) {
-    allTemplates = mock.allTemplates;
+    templateArr = mock.allTemplates;
   } else {
     const snapshot = yield call(rsf.firestore.getCollection, "templates");
-    allTemplates = snapshot.docs.map(template => {
-      return { ...template.data(), id: template.id };
+    snapshot.docs.filter(template => {
+      const newTemplate = template.data();
+      console.log('console: newTemplate', newTemplate );
+      if (newTemplate.userid === userid || newTemplate.templateIsPublic) {
+        templateArr.push(newTemplate);
+      }
     });
-
-    //allTemplates = snapshot.docs.filter(template => template.data.userid === userid || template.isPublic);
   }
-  if (isEmpty(allTemplates)) allTemplates = [];
-  sortBy(allTemplates, el => el.title);
-  yield put(setAllTemplates(allTemplates));
+  if (isEmpty(templateArr)) templateArr = [];
+  sortBy(templateArr, el => el.title);
+  yield put(setAllTemplates(templateArr));
 }
 
 export function* watchDeleteTemplate(action) {

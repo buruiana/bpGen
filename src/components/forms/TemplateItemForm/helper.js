@@ -16,7 +16,7 @@ export const getNewtemplate = formData => {
       templateIsPublic: get(formData, 'templateIsPublic', false),
       templateTechnos: get(formData, 'templateTechnos', ''),
       title: get(formData, 'name', ''),
-      userid: get(formData, 'id', undefined),
+      userid: get(formData, 'userid', undefined),
       children: get(formData, 'children', []),
     };
   };
