@@ -3,7 +3,7 @@ import * as actionTypes from "../configsService/actionTypes";
 export const initialState = () => ({
   initAppDone: false,
   configs: {
-    isOffline: false,
+    isOffline: true,
     hasComponentPreview: false,
     hasComponentImport: false,
     hasTemplateImport: false,

@@ -30,17 +30,16 @@ export function* watchSetTemplate(action) {
 }
 
 export function* watchGetAllTemplates(action) {
-  let allTemplates = [];
   const { isOffline } = (yield select()).configsReducer.configs;
   const userid = (yield select()).loginReducer.userInfo.user.uid;
-  const templateArr = [];
+  let templateArr = [];
   if (isOffline) {
     templateArr = mock.allTemplates;
   } else {
     const snapshot = yield call(rsf.firestore.getCollection, "templates");
     snapshot.docs.filter(template => {
       const newTemplate = template.data();
-      console.log('console: newTemplate', newTemplate );
+
       if (newTemplate.userid === userid || newTemplate.templateIsPublic) {
         templateArr.push(newTemplate);
       }

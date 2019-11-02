@@ -2,8 +2,12 @@ import * as actionTypes from "./actionTypes";
 
 export const initialState = () => ({
   error: "",
-  isAuthenticated: false,
-  userInfo: {}
+  isAuthenticated: true,
+  userInfo: {
+    user: {
+      uid: '3QcNVuAKuDew1HhWnaO0LANGVA72'
+    },
+  }
 });
 
 export default (state = initialState(), action) => {
