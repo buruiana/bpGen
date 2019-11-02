@@ -25,20 +25,25 @@ export function* watchSetComponent(action) {
 }
 
 export function* watchGetAllComponents(action) {
-  let allComponents = [];
+  const userid = (yield select()).loginReducer.userInfo.user.uid;
   const { isOffline } = (yield select()).configsReducer.configs;
+  const componentsArr = [];
 
   if (isOffline) {
     allComponents = mock.allComponents;
   } else {
     const snapshot = yield call(rsf.firestore.getCollection, "components");
-    allComponents = snapshot.docs.map(component => {
-      return { ...component.data(), id: component.id };
+    snapshot.docs.filter(component => {
+      const newComponent = component.data();
+
+      if (newComponent.userid === userid || newComponent.isPublic) {
+        componentsArr.push(newComponent);
+      }
     });
   }
-  if (isEmpty(allComponents)) allComponents = [];
-  sortBy(allComponents, el => el.title);
-  yield put(setAllComponents(allComponents));
+  if (isEmpty(componentsArr)) componentsArr = [];
+  sortBy(componentsArr, el => el.title);
+  yield put(setAllComponents(componentsArr));
 }
 
 export function* watchDeleteComponent(action) {

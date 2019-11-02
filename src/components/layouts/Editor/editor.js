@@ -39,7 +39,8 @@ const Editor = props => {
     configs,
   } = props;
 
-  const components = props.components.filter(e => e.isActive) || [];
+  let components = props.components || [];
+  components = components.filter(e => e.isActive) || [];
 
   const renderAce = () => {
     return !isEmpty(projectSettings) ? <Ace /> : null;
@@ -96,9 +97,6 @@ const Editor = props => {
   const { projectName } = projectSettings;
   const renderSearchField = () => {
     return <GenericSearchForm componentname={availablecomponents.COMPONENTS} />;
-    // return projectName
-    //   ? <GenericSearchForm componentname={availablecomponents.COMPONENTS} />
-    //   : null;
   };
 
   const renderError = () => {
