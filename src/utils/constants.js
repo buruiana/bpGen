@@ -3,7 +3,8 @@ export const availablecomponents = {
   COMPONENTS: "COMPONENTS",
   PROP_TYPES: "PROP_TYPES",
   PROVIDERS: "PROVIDERS",
-  TEMPLATES: "TEMPLATES"
+  TEMPLATES: "TEMPLATES",
+  PROJECTS: "PROJECTS"
 };
 
 export const APPLICATION = "Application";
@@ -36,6 +37,11 @@ export const templateFormTypes = {
 };
 
 export const componentFormTypes = {
+  JSON_FORM: "JSON_FORM",
+  TREE: "TREE"
+};
+
+export const projectFormTypes = {
   JSON_FORM: "JSON_FORM",
   TREE: "TREE"
 };

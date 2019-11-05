@@ -6,4 +6,5 @@ export const availablefields = {
   [availablecomponents. PROP_TYPES]: ['NAME'],
   [availablecomponents.PROVIDERS]: ['NAME'],
   [availablecomponents.TEMPLATES]: ['NAME'],
+  [availablecomponents.PROJECTS]: ['NAME'],
 };

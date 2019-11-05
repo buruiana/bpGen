@@ -27,6 +27,14 @@ const SideBar = props => {
             Home
          </NavText>
         </NavItem>
+        <NavItem eventKey="projects">
+          <NavIcon>
+            <i className="fab fa-cuttlefish" style={{ fontSize: '1.75em' }} />
+          </NavIcon>
+          <NavText>
+            Projects
+          </NavText>
+        </NavItem>
         <NavItem eventKey="editor">
           <NavIcon>
             <i className="fas fa-edit" style={{ fontSize: '1.75em' }} />

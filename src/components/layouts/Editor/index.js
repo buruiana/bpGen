@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { addModal } from "../../../services/modalService/actions";
 import { setTree, setNodePath } from "../../../services/sortableTreeService/actions";
 import { setCustomForm } from '../../../services/customFormService/actions';
+import { setProject } from '../../../services/projectsService/actions';
 import { generateCode } from "../../../services/codeGenerationService/actions";
 
 const mapStateToProps = state => ({
@@ -23,7 +24,8 @@ const mapDispatchToProps = {
   setTree,
   setCustomForm,
   generateCode,
-  setNodePath
+  setNodePath,
+  setProject
 };
 
 export default connect(

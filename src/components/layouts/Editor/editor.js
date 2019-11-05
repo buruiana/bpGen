@@ -37,6 +37,7 @@ const Editor = props => {
     forms,
     setNodePath,
     configs,
+    setProject,
   } = props;
 
   let components = props.components || [];
@@ -115,9 +116,17 @@ const Editor = props => {
     return null;
   };
 
+  console.log('console: -----------tree-----------', tree);
+  const saveProject = () => setProject({ id:get(tree, 'id', null) , tree });
+
   const returnComponentBlock = () => {
     return (
       <div className="paddingTop">
+        <div className='linkConrtainer'>
+          <a onClick={saveProject} className="simpleLink rightLink">
+            Save Ptoject
+        </a>
+        </div>
         {renderError()}
         <div>{renderSearchField()}</div>
         <div>

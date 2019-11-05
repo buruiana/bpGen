@@ -5,6 +5,7 @@ import Home from "../components/layouts/Home";
 import LoginForm from "../components/forms/LoginForm";
 import Templates from "../components/layouts/Templates";
 import TemplatesFormMain from "../components/forms/templatesForm";
+import Projects from "../components/layouts/Projects";
 import Providers from "../components/layouts/Providers";
 import ProviderForm from "../components/forms/Providers";
 import Technos from "../components/layouts/Technos";
@@ -25,6 +26,7 @@ const routes = (
       <Route path="/editor" component={Editor} />
       <Route path="/templates" component={Templates} />
       <Route path="/template/:id" component={TemplatesFormMain} />
+      <Route path="/projects" component={Projects} />
       <Route path="/providers" component={Providers} />
       <Route path="/provider/:id" component={ProviderForm} />
       <Route path="/technos" component={Technos} />

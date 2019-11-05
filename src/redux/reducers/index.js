@@ -15,6 +15,7 @@ import codeGenerationReducer from "../../services/codeGenerationService/reducer"
 import aceTabsReducer from "../../services/aceTabsService/reducer";
 import backEndReducer from "../../services/backEndService/reducer";
 import sortableTreeReducer from "../../services/sortableTreeService/reducer";
+import projectsReducer from "../../services/projectsService/reducer";
 
 export default history =>
   combineReducers({
@@ -26,6 +27,7 @@ export default history =>
     providersReducer,
     technosReducer,
     componentsReducer,
+    projectsReducer,
     propTypesReducer,
     filterDataReducer,
     projectSettingsReducer,
