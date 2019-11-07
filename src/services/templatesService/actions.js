@@ -5,15 +5,15 @@ export const setTemplate = template => ({
   template
 });
 
-export const setTemplateSuccess = template => ({
-  type: actionTypes.SET_TEMPLATE,
-  template
-});
+// export const setTemplateSuccess = template => ({
+//   type: actionTypes.SET_TEMPLATE,
+//   template
+// });
 
-export const setTemplateFailure = error => ({
-  type: actionTypes.SET_TEMPLATE_FAILURE,
-  error
-});
+// export const setTemplateFailure = error => ({
+//   type: actionTypes.SET_TEMPLATE_FAILURE,
+//   error
+// });
 
 export const getTemplate = template => ({
   type: actionTypes.GET_TEMPLATE,
@@ -68,5 +68,10 @@ export const deleteTemplate = template => ({
 export const setTemplateTree = tree => ({
   type: actionTypes.SET_TEMPLATE_TREE,
   tree
+});
+
+export const setCurrentTemplate = currentTemplate => ({
+  type: actionTypes.SET_CURRENT_TEMPLATE,
+  currentTemplate
 });
 

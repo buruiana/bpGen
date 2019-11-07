@@ -1,6 +1,5 @@
 import ComponentPropsForm from "./componentPropsForm";
 import { connect } from "react-redux";
-import { setProjectSettings } from "../../../services/projectSettingsService/actions";
 import { removeModal } from "../../../services/modalService/actions";
 import { setCustomForm } from '../../../services/customFormService/actions';
 import { setComponent } from '../../../services/componentsService';
@@ -18,7 +17,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  setProjectSettings,
   removeModal,
   setCustomForm,
   setComponent,

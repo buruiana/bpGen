@@ -8,6 +8,9 @@ import {
   PROJECT_TECHNO,
 } from "../../../utils/constants";
 
+//import { getFlatForms } from '../../../services/projectSettingsService/helper';
+//import { setCurrentTemplate } from "../../../services/templatesService/actions";
+
 const ProjectSettingsForm = props => {
   const {
     removeModal,
@@ -16,14 +19,15 @@ const ProjectSettingsForm = props => {
     templates,
     setCustomForm,
     forms,
-    technos
+    technos,
+    setCurrentTemplate,
   } = props;
 
   const [formState, setFormState] = useState(projectSettings);
   const technoTypeEnums = technos.map(el => el.name.toLowerCase());
   const requiredFieldsEnum = ["projectName", "projectTemplate"];
 
-  const getTemplatesTypeEnums = () => {
+  const getTemplatesTypeEnumNames = () => {
     return !isEmpty(formState.projectTechno)
       ? templates.filter(el => {
           return el.templateTechnos
@@ -37,6 +41,22 @@ const ProjectSettingsForm = props => {
       : templates
         .filter(e => e.templateIsActive)
         .map(e => e.name);
+  };
+
+  const getTemplatesTypeEnums = () => {
+    return !isEmpty(formState.projectTechno)
+      ? templates.filter(el => {
+        return el.templateTechnos
+          .toLowerCase()
+          .includes(
+            formState.projectTechno
+          )
+      })
+        .filter(e => e.templateIsActive)
+        .map(e => e.id)
+      : templates
+        .filter(e => e.templateIsActive)
+        .map(e => e.id);
   };
 
   const schema = {
@@ -56,12 +76,13 @@ const ProjectSettingsForm = props => {
       projectTechno: {
         type: "string",
         title: PROJECT_TECHNO,
-        enum: technoTypeEnums
+        enum: technoTypeEnums,
       },
       projectTemplate: {
         type: "string",
         title: PROJECT_TEMPLATE,
-        enum: getTemplatesTypeEnums()
+        enum: getTemplatesTypeEnums(),
+        enumNames: getTemplatesTypeEnumNames()
       }
     }
   };
@@ -72,25 +93,26 @@ const ProjectSettingsForm = props => {
     }
   };
 
-  const getFlatForms = files => {
-    let customModals = [];
-    files.map(file => {
-      file.fileForms.map(form => {
-        customModals.push(form);
-      });
-    });
+  // const getFlatForms = files => {
+  //   let customModals = [];
+  //   files.map(file => {
+  //     file.fileForms.map(form => {
+  //       customModals.push(form);
+  //     });
+  //   });
 
-    return customModals;
-  };
+  //   return customModals;
+  // };
 
   const onSubmit = data => {
-    const template = templates.filter(
-      el => el.name === data.formData.projectTemplate
+    const currentTemplate = templates.filter(
+      el => el.id === data.formData.projectTemplate
     )[0];
+    setCurrentTemplate(currentTemplate);
     setProjectSettings({
       ...data.formData,
-      template,
-      flatForms: getFlatForms(template.templateFiles)
+      //template,
+      //flatForms: getFlatForms(template.templateFiles)
     });
     const newForms = {
       ...forms,

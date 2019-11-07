@@ -16,6 +16,8 @@ const ProjectsListView = props => {
     setTree,
     setCustomForm,
     setProjectSettings,
+    templates,
+    setCurrentTemplate,
   } = props;
   const { PROJECTS } = availablecomponents;
 
@@ -26,6 +28,10 @@ const ProjectsListView = props => {
     console.log('console: xxxxxxxxxxxxxx', projects);
     const project = projects.filter(e => e.projectId === event.target.id);
     console.log('console: ooooooooooooooooo', event.target.id, project);
+    const currentTemplate = templates.filter(
+      el => el.id === project[0].projectSettings.projectTemplate
+    )[0];
+    setCurrentTemplate(currentTemplate);
     setTree({ treeData2: project[0].tree });
     setCustomForm(project[0].forms);
     setProjectSettings(project[0].projectSettings);

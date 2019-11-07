@@ -8,7 +8,8 @@ const mapStateToProps = state => {
   return {
     isAuthenticated: state.loginReducer.isAuthenticated,
     projectSettings: state.projectSettingsReducer.projectSettings,
-    router: state.router
+    router: state.router,
+    currentTemplate: state.templatesReducer.currentTemplate,
   };
 };
 

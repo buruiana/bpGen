@@ -3,7 +3,8 @@ import GenericModal from "./genericModal";
 import { removeModal } from "../../../services/modalService/actions";
 
 const mapStateToProps = state => ({
-  flatForms: state.projectSettingsReducer.projectSettings.flatForms
+  //flatForms: state.projectSettingsReducer.projectSettings.flatForms
+  currentTemplate: state.templatesReducer.currentTemplate
 });
 
 const mapDispatchToProps = {

@@ -19,11 +19,11 @@ export default (state = initialState(), action) => {
         ...state,
         error: ""
       };
-    case actionTypes.SET_TEMPLATE_SUCCESS:
+    case actionTypes.SET_CURRENT_TEMPLATE:
       return {
         ...state,
         error: "",
-        currentTemplate: action.template
+        currentTemplate: action.currentTemplate
       };
     case actionTypes.SET_ALL_TEMPLATES:
       return {

@@ -18,6 +18,7 @@ const NavBar = props => {
     addModal,
     projectSettings,
     initProject,
+    currentTemplate,
   } = props;
 
   const getInitProject = () => {
@@ -32,7 +33,7 @@ const NavBar = props => {
   const openModalForm = event => addModal(event.target.name);
   const getTemplateForms = () => {
     return !isEmpty(projectSettings)
-      ? projectSettings.template.templateFiles.map(file => {
+      ? currentTemplate.templateFiles.map(file => {
         return file.fileForms.map(form => {
           return (
             form.formIsActive && (

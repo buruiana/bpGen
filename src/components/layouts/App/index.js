@@ -6,6 +6,7 @@ const mapStateToProps = state => {
     modals: state.modalsReducer.modals,
     projectSettings: state.projectSettingsReducer.projectSettings,
     isAuthenticated: state.loginReducer.isAuthenticated,
+    currentTemplate: state.templatesReducer.currentTemplate,
   };
 };
 

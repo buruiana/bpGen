@@ -6,9 +6,15 @@ import { setAceTabs } from "./actions";
 export function* watchSetProjectSettings() {
   const {
     projectType,
-    projectName,
-    template
+    projectTemplate,
   } = (yield select()).projectSettingsReducer.projectSettings;
+
+  const { templates } = (yield select()).templatesReducer;
+
+  const template = templates.filter(
+    el => el.id === projectTemplate
+  )[0];
+
   const { templateFiles } = template;
   const files = templateFiles.map(e => e.fileName);
 

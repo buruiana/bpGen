@@ -1,10 +1,12 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
 import CustomForm from "../../forms/CustomForm";
+import { getFlatForms } from '../../../services/projectSettingsService/helper';
 
 const GenericModal = props => {
-  const { removeModal, flatForms, name } = props;
+  const { removeModal, currentTemplate, name } = props;
+
+  const flatForms = getFlatForms(currentTemplate.templateFiles);
   const currentForm = flatForms.filter(form => form.formName === name)[0];
 
   return (

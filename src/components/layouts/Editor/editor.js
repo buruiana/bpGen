@@ -38,6 +38,7 @@ const Editor = props => {
     setNodePath,
     configs,
     setProject,
+    currentTemplate,
   } = props;
 
   console.log('console: vvvvvvvvvvvvvvvvv',props );
@@ -122,7 +123,7 @@ const Editor = props => {
     setProject({
       tree,
       projectSettings,
-      forms
+      //forms
     });
   };
 
@@ -200,7 +201,7 @@ const Editor = props => {
 
   return (
     <div>
-      {!isEmpty(projectSettings) && projectSettings.template.templateIsComponent && returnComponentBlock()}
+      {!isEmpty(projectSettings) && currentTemplate.templateIsComponent && returnComponentBlock()}
       {renderAce()}
       {!isEmpty(projectSettings) && !isEmpty(tree) && configs.hasComponentPreview && <Preview />}
     </div>

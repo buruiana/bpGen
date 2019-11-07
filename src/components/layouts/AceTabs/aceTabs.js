@@ -3,14 +3,14 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 
 const AceTabs = props => {
-  const { projectSettings, aceTab, aceTabs, setAceTab } = props;
+  const { currentTemplate, aceTab, aceTabs, setAceTab } = props;
 
   if (!aceTab) setAceTab(aceTabs[0]);
 
   const onSelect = data => setAceTab(data);
 
   const renderTabs = () => {
-    return projectSettings.template.templateFiles.map(file => {
+    return currentTemplate.templateFiles.map(file => {
       return (
         <Tab
           eventKey={file.fileName}

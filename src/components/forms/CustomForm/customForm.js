@@ -3,17 +3,20 @@ import Form from "react-jsonschema-form-bs4";
 import isEmpty from "lodash/isEmpty";
 import get from "lodash/get";
 
+import { getFlatForms } from '../../../services/projectSettingsService/helper';
+
 const CustomForm = props => {
   const {
     setCustomForm,
-    flatForms,
     name,
     forms = [],
     removeModal,
-    generateCode
+    generateCode,
+    currentTemplate,
   } = props;
-  if (isEmpty(flatForms)) flatForms = [];
 
+  const flatForms = getFlatForms(currentTemplate.templateFiles);
+  if (isEmpty(flatForms)) flatForms = [];
   const currentForm = flatForms.filter(form => form.formName === name)[0];
 
   const getFormData = () => {

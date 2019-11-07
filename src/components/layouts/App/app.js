@@ -9,7 +9,7 @@ import "../../../stylesheets/main.scss";
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import SideBar from '../SideBar';
 
-const App = ({ history, modals, projectSettings, isAuthenticated }) => {
+const App = ({ history, modals, projectSettings, isAuthenticated, currentTemplate }) => {
   return (
     <ConnectedRouter history={history}>
       <Row className="justify-content-md-center">
@@ -21,7 +21,7 @@ const App = ({ history, modals, projectSettings, isAuthenticated }) => {
         <div className='mainBox'>
           <NavBar />
           {routes}
-          {ModalsManager(modals, projectSettings)}
+          {ModalsManager(modals, projectSettings, currentTemplate)}
         </div>
       </Row>
     </ConnectedRouter>

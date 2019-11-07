@@ -17,6 +17,7 @@ const mapStateToProps = state => ({
   forms: state.customFormReducer.forms,
   generatedCode: state.codeGenerationReducer.code,
   configs: state.configsReducer,
+  currentTemplate: state.templatesReducer.currentTemplate,
 });
 
 const mapDispatchToProps = {

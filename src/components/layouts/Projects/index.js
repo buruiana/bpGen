@@ -9,6 +9,7 @@ import {
 import { setTree } from "../../../services/sortableTreeService/actions";
 import { setCustomForm } from '../../../services/customFormService/actions';
 import { setProjectSettings } from "../../../services/projectSettingsService/actions";
+import { setCurrentTemplate } from "../../../services/templatesService/actions";
 
 const mapStateToProps = state => {
   return {
@@ -16,6 +17,7 @@ const mapStateToProps = state => {
     searchData: state.filterDataReducer.searchData,
     providers: state.providersReducer.providers,
     isAuthenticated: state.loginReducer.isAuthenticated,
+    templates: state.templatesReducer.templates,
   }
 }
 
@@ -27,6 +29,7 @@ const mapDispatchToProps = {
   setTree,
   setCustomForm,
   setProjectSettings,
+  setCurrentTemplate,
 }
 
 export default connect(

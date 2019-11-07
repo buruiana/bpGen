@@ -8,11 +8,11 @@ import ComponentProps from '../modals/ComponentProps';
 import TemplateItemProps from '../modals/TemplateItemProps';
 import ComponentItemProps from '../modals/ComponentItemProps';
 
-const ModalsManager = (modals, projectSettings) => {
+const ModalsManager = (modals, projectSettings, currentTemplate) => {
   const currentModal = !isEmpty(modals) ? modals[modals.length - 1] : null;
   let customModals = [];
   if (!isEmpty(projectSettings)) {
-    projectSettings.template.templateFiles.map(file => {
+    currentTemplate.templateFiles.map(file => {
       file.fileForms.map(form => {
         customModals.push(form.formName);
       });
