@@ -6,6 +6,9 @@ import {
   getAllProjects,
   setProjectTree
 } from '../../../services/projectsService/actions';
+import { setTree } from "../../../services/sortableTreeService/actions";
+import { setCustomForm } from '../../../services/customFormService/actions';
+import { setProjectSettings } from "../../../services/projectSettingsService/actions";
 
 const mapStateToProps = state => {
   return {
@@ -21,6 +24,9 @@ const mapDispatchToProps = {
   setProject,
   getAllProjects,
   setProjectTree,
+  setTree,
+  setCustomForm,
+  setProjectSettings,
 }
 
 export default connect(

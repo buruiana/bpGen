@@ -12,14 +12,25 @@ const ProjectsListView = props => {
     searchData,
     deleteProject,
     setProject,
-    isAuthenticated
+    isAuthenticated,
+    setTree,
+    setCustomForm,
+    setProjectSettings,
   } = props;
   const { PROJECTS } = availablecomponents;
 
   if (!isAuthenticated) navigate2Login();
 
   const deleteSelectedProject = event => deleteProject({ id: event.target.id });
-  const onClick = event => navigate(`/project/${event.target.id}`);
+  const onClick = event => {
+    console.log('console: xxxxxxxxxxxxxx', projects);
+    const project = projects.filter(e => e.projectId === event.target.id);
+    console.log('console: ooooooooooooooooo', event.target.id, project);
+    setTree({ treeData2: project[0].tree });
+    setCustomForm(project[0].forms);
+    setProjectSettings(project[0].projectSettings);
+    navigate('/editor');
+  };
   const duplicateSelectedProject = event => {
     const currentProject = projects.filter(
       project => project.id === event.target.id
@@ -49,21 +60,26 @@ const ProjectsListView = props => {
 
   const projectsList = () => {
     return filteredItems().map(project => {
-      const { name, id, projectTechnos } = project;
+      console.log('console: ==============', project);
+      const { projectId } = project;
+      const { title, description, techno } = project.tree[0];
 
       return (
-        <tr key={id}>
+        <tr key={projectId}>
           <td>
-            <a id={id} className="simpleLink" onClick={onClick}>{name}</a>
+            <a id={projectId} className="simpleLink" onClick={onClick}>{title}</a>
           </td>
-          <td><a id={id} target='blank'>{projectTechnos}</a></td>
           <td>
-            <a className="simpleLink" id={id} onClick={duplicateSelectedProject}>
+            <a id={projectId} className="simpleLink" onClick={onClick}>{description}</a>
+          </td>
+          <td><a id={projectId} target='blank'>{techno}</a></td>
+          <td>
+            <a className="simpleLink" id={projectId} onClick={duplicateSelectedProject}>
               Duplicate
             </a>
           </td>
           <td>
-            <a className="simpleLink" id={id} onClick={deleteSelectedProject}>
+            <a className="simpleLink" id={projectId} onClick={deleteSelectedProject}>
               Delete
             </a>
           </td>
@@ -76,8 +92,8 @@ const ProjectsListView = props => {
     <div>
       <GenericSearchForm componentname={PROJECTS} />
       <div className='addEditLink'>
-        <a className="simpleLink" onClick={() => navigate("/project/new")}>
-          Add Project
+        <a className="simpleLink" onClick={() => navigate("/editor")}>
+          New Project
       </a>
       </div>
       <Table striped bordered hover>

@@ -18,7 +18,6 @@ const NavBar = props => {
     addModal,
     projectSettings,
     initProject,
-    router
   } = props;
 
   const getInitProject = () => {

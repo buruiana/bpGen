@@ -5,6 +5,7 @@ import { getAllProviders } from "../providersService/actions";
 import { getAllTechnos } from "../technosService/actions";
 import { getAllTemplates } from "../templatesService/actions";
 import { getAllPropTypes } from "../propTypesService/actions";
+import { getAllProjects } from "../projectsService/actions";
 
 export function* watchInitApp(action) {
   yield put(getAllComponents());
@@ -12,6 +13,7 @@ export function* watchInitApp(action) {
   yield put(getAllTechnos());
   yield put(getAllTemplates());
   yield put(getAllPropTypes());
+  yield put(getAllProjects());
 }
 
 export function* watchImportData(action) {

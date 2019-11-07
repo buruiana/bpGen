@@ -40,8 +40,10 @@ const Editor = props => {
     setProject,
   } = props;
 
+  console.log('console: vvvvvvvvvvvvvvvvv',props );
+
   let components = props.components || [];
-  components = components.filter(e => e.isActive) || [];
+  components = components.filter(e => e.isActive);
 
   const renderAce = () => {
     return !isEmpty(projectSettings) ? <Ace /> : null;
@@ -92,10 +94,10 @@ const Editor = props => {
         get(searchData, "techno", el.techno) === el.techno
       );
     });
+
     return sortBy(filteredTree, el => el.title);
   };
 
-  const { projectName } = projectSettings;
   const renderSearchField = () => {
     return <GenericSearchForm componentname={availablecomponents.COMPONENTS} />;
   };
@@ -116,15 +118,20 @@ const Editor = props => {
     return null;
   };
 
-  console.log('console: -----------tree-----------', tree);
-  const saveProject = () => setProject({ id:get(tree, 'id', null) , tree });
+  const saveProject = () => {
+    setProject({
+      tree,
+      projectSettings,
+      forms
+    });
+  };
 
   const returnComponentBlock = () => {
     return (
       <div className="paddingTop">
         <div className='linkConrtainer'>
           <a onClick={saveProject} className="simpleLink rightLink">
-            Save Ptoject
+            Save Project
         </a>
         </div>
         {renderError()}
