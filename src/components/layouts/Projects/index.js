@@ -18,6 +18,7 @@ const mapStateToProps = state => {
     providers: state.providersReducer.providers,
     isAuthenticated: state.loginReducer.isAuthenticated,
     templates: state.templatesReducer.templates,
+    currentTemplate: state.templatesReducer.currentTemplate,
   }
 }
 

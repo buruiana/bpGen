@@ -14,16 +14,17 @@ export function* watchSetProject(action) {
   const { project } = action;
   const { isOffline } = (yield select()).configsReducer.configs;
   const userid = (yield select()).loginReducer.userInfo.user.uid;
+  const { forms } = (yield select()).customFormReducer;
 
   if (!isOffline) {
-    if (project.id) {
+    if (project.projectId) {
       yield call(
         rsf.firestore.setDocument,
         `projects/${project.id}`,
-        { ...project, userid }
+        { userid, forms, projectId}
       );
     } else {
-      yield call(rsf.firestore.addDocument, `projects`, { ...project, userid });
+      yield call(rsf.firestore.addDocument, `projects`, { userid, forms });
     }
     yield put(getAllProjects());
   }
@@ -39,12 +40,10 @@ export function* watchGetAllProjects(action) {
     const snapshot = yield call(rsf.firestore.getCollection, "projects");
     snapshot.docs.filter(project => {
       const newProject = project.data();
-      console.log('console: zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz', newProject );
-      if (newProject.userid === userid || newProject.projectIsPublic) {
+
+      if (newProject.userid === userid || newProject.projectSettings.projectIsPublic) {
         projectArr.push({
-          tree: newProject.tree,
           projectId: project.id,
-          projectSettings: newProject.projectSettings,
           forms: newProject.forms,
           userid: newProject.userid,
         });

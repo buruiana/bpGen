@@ -6,8 +6,7 @@ import { executeCodeGeneration } from "./helper";
 import { prettifyCode } from "../backEndService/actions";
 
 export function* watchGenerateCode(action) {
-  const template = (yield select()).projectSettingsReducer.projectSettings
-    .template;
+  const template = (yield select()).templatesReducer.currentTemplate;
   const forms = (yield select()).customFormReducer.forms;
 
   if (isEmpty(template)) {

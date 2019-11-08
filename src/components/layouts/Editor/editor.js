@@ -17,6 +17,8 @@ import GenericSearchForm from "../../forms/GenericSearchForm";
 import { availablecomponents, allmodals } from "../../../utils/constants";
 import Preview from "../Preview";
 
+import { replaceUndefined } from '../../../utils';
+
 import "react-sortable-tree/style.css";
 
 const externalNodeType = "yourNodeType";
@@ -27,7 +29,7 @@ const Editor = props => {
   const {
     projectSettings,
     addModal,
-    tree,
+    //tree,
     providers,
     setTree,
     searchData,
@@ -41,7 +43,7 @@ const Editor = props => {
     currentTemplate,
   } = props;
 
-  console.log('console: vvvvvvvvvvvvvvvvv',props );
+  const { tree } = forms;
 
   let components = props.components || [];
   components = components.filter(e => e.isActive);
@@ -120,10 +122,11 @@ const Editor = props => {
   };
 
   const saveProject = () => {
+    const cleanForms = replaceUndefined(forms);
     setProject({
-      tree,
-      projectSettings,
-      //forms
+      // tree,
+      // projectSettings,
+      forms
     });
   };
 

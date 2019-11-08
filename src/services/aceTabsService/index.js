@@ -4,23 +4,11 @@ import { SERVICE } from "../../utils/constants";
 import { setAceTabs } from "./actions";
 
 export function* watchSetProjectSettings() {
-  const {
-    projectType,
-    projectTemplate,
-  } = (yield select()).projectSettingsReducer.projectSettings;
-
-  const { templates } = (yield select()).templatesReducer;
-
-  const template = templates.filter(
-    el => el.id === projectTemplate
-  )[0];
-
-  const { templateFiles } = template;
+  const { currentTemplate } = (yield select()).templatesReducer || [];
+  const { templateFiles } = currentTemplate;
   const files = templateFiles.map(e => e.fileName);
 
-  const tabs = projectType === SERVICE ? files : files; //.push(projectName);
-
-  yield put(setAceTabs(tabs));
+  yield put(setAceTabs(files));
 }
 
 export default function* rootSaga() {

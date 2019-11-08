@@ -18,6 +18,7 @@ const ProjectsListView = props => {
     setProjectSettings,
     templates,
     setCurrentTemplate,
+    currentTemplate,
   } = props;
   const { PROJECTS } = availablecomponents;
 
@@ -25,16 +26,14 @@ const ProjectsListView = props => {
 
   const deleteSelectedProject = event => deleteProject({ id: event.target.id });
   const onClick = event => {
-    console.log('console: xxxxxxxxxxxxxx', projects);
     const project = projects.filter(e => e.projectId === event.target.id);
-    console.log('console: ooooooooooooooooo', event.target.id, project);
-    const currentTemplate = templates.filter(
-      el => el.id === project[0].projectSettings.projectTemplate
-    )[0];
-    setCurrentTemplate(currentTemplate);
+    const newCurrentTemplate = templates.filter(t => t.id === project[0].forms.projectSettings.projectTemplate)
+
+    setCurrentTemplate(newCurrentTemplate[0]);
     setTree({ treeData2: project[0].tree });
     setCustomForm(project[0].forms);
-    setProjectSettings(project[0].projectSettings);
+    setProjectSettings(project[0].forms.projectSettings);
+
     navigate('/editor');
   };
   const duplicateSelectedProject = event => {
@@ -66,9 +65,8 @@ const ProjectsListView = props => {
 
   const projectsList = () => {
     return filteredItems().map(project => {
-      console.log('console: ==============', project);
       const { projectId } = project;
-      const { title, description, techno } = project.tree[0];
+      const { title, description, techno } = project.forms.tree[0];
 
       return (
         <tr key={projectId}>

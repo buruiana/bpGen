@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
   projectSettings: state.projectSettingsReducer.projectSettings,
   components: state.componentsReducer.components,
   providers: state.providersReducer.providers,
-  tree: state.sortableTreeReducer.tree,
+  //tree: state.sortableTreeReducer.tree,
   projectError: state.projectSettingsReducer.projectError,
   searchData: state.filterDataReducer.searchData,
   forms: state.customFormReducer.forms,
