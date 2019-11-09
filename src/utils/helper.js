@@ -6,10 +6,13 @@ import reverse from "lodash/reverse";
 
 export const capitalize = string =>
   string.charAt(0).toUpperCase() + string.slice(1);
+
 export const isEmpty = obj =>
   [Object, Array].includes((obj || {}).constructor) &&
   !Object.entries(obj || {}).length;
+  
 export const getFlatDataFromTree1 = getFlatDataFromTree;
+
 export const getConstList = tree => {
   const flatData = getFlatDataFromTree({
     treeData: tree,

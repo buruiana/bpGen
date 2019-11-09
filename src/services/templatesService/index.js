@@ -38,14 +38,14 @@ export function* watchGetAllTemplates(action) {
   } else {
     const snapshot = yield call(rsf.firestore.getCollection, "templates");
     snapshot.docs.filter(template => {
-      const newTemplate = template.data();
+      const newTemplate = { ...template.data(), id: template.id };
 
       if (newTemplate.userid === userid || newTemplate.templateIsPublic) {
         templateArr.push(newTemplate);
       }
     });
   }
-  if (isEmpty(templateArr)) templateArr = [];
+  //if (isEmpty(templateArr)) templateArr = [];
   sortBy(templateArr, el => el.title);
   yield put(setAllTemplates(templateArr));
 }
