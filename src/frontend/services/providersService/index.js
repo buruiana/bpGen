@@ -2,13 +2,13 @@ import { call, put, takeLatest, select } from "redux-saga/effects";
 import isEmpty from "lodash/isEmpty";
 import sortBy from "lodash/sortBy";
 import { SET_PROVIDER, GET_ALL_PROVIDERS, DELETE_PROVIDER } from "./actionTypes";
-import rsf from "../../redux/firebaseConfig";
-import { setAllProviders, getAllProviders } from "./actions";
+import { getAllProviders } from "./actions";
 import { mock } from "./mock";
 
 import {
   create,
   update,
+  remove,
   getCollection
 } from '../backEndService/actions';
 
@@ -40,11 +40,11 @@ export function* watchGetAllProviders(action) {
 }
 
 export function* watchDeleteProvider(action) {
-  const { id } = action.provider;
+  const { _id } = action.provider;
   const { isOffline } = (yield select()).configsReducer.configs;
 
   if (!isOffline) {
-    yield call(rsf.firestore.deleteDocument, `providers/${id}`);
+    yield put(remove('providers', _id));
     yield put(getAllProviders());
   }
 }

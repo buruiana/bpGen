@@ -2,7 +2,6 @@ import { call, put, takeLatest, select } from "redux-saga/effects";
 import isEmpty from "lodash/isEmpty";
 import sortBy from "lodash/sortBy";
 import { SET_COMPONENT, GET_ALL_COMPONENTS, DELETE_COMPONENT } from "./actionTypes";
-import rsf from "../../redux/firebaseConfig";
 import { setAllComponents, getAllComponents } from "./actions";
 import { exportModules } from '../backEndService/actions';
 import { getExportModulesCode } from './helper';
@@ -54,11 +53,11 @@ export function* watchGetAllComponents(action) {
 }
 
 export function* watchDeleteComponent(action) {
-  const { id } = action.component;
+  const { _id } = action.component;
   const { isOffline } = (yield select()).configsReducer.configs;
 
   if (!isOffline) {
-    yield call(rsf.firestore.deleteDocument, `components/${id}`);
+    yield put(remove('components', _id));
     yield put(getAllComponents());
   }
 }

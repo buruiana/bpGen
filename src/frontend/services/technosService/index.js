@@ -2,8 +2,7 @@ import { call, put, takeLatest, select } from "redux-saga/effects";
 import isEmpty from "lodash/isEmpty";
 import sortBy from "lodash/sortBy";
 import { SET_TECHNO, GET_ALL_TECHNOS, DELETE_TECHNO } from "./actionTypes";
-import rsf from "../../redux/firebaseConfig";
-import { setAllTechnos, getAllTechnos } from "./actions";
+import { getAllTechnos } from "./actions";
 import { mock } from "./mock";
 
 import {

@@ -6,7 +6,7 @@ import {
   DELETE_PROJECT,
   GET_ALL_PROJECTS
 } from "./actionTypes";
-import rsf from "../../redux/firebaseConfig";
+
 import { setAllProjects, getAllProjects } from "./actions";
 import { mock } from "./mock";
 
@@ -33,19 +33,19 @@ export function* watchGetAllProjects(action) {
   if (isOffline) {
     projectArr = mock.allProjects;
   } else {
-    const snapshot = yield call(rsf.firestore.getCollection, "projects");
-    snapshot.docs.filter(project => {
-      const newProject = project.data();
-      console.log('console: newProject', newProject);
+    // const snapshot = yield call(rsf.firestore.getCollection, "projects");
+    // snapshot.docs.filter(project => {
+    //   const newProject = project.data();
+    //   console.log('console: newProject', newProject);
 
-      if (newProject.userid === userid || newProject.forms.projectSettings.projectIsPublic) {
-        projectArr.push({
-          projectId: project.id,
-          forms: newProject.forms,
-          userid: newProject.userid,
-        });
-      }
-    });
+    //   if (newProject.userid === userid || newProject.forms.projectSettings.projectIsPublic) {
+    //     projectArr.push({
+    //       projectId: project.id,
+    //       forms: newProject.forms,
+    //       userid: newProject.userid,
+    //     });
+    //   }
+    // });
   }
   if (isEmpty(projectArr)) projectArr = [];
   sortBy(projectArr, el => el.title);
@@ -53,11 +53,11 @@ export function* watchGetAllProjects(action) {
 }
 
 export function* watchDeleteProject(action) {
-  const { id } = action.project;
+  const { _id } = action.project;
   const { isOffline } = (yield select()).configsReducer.configs;
 
   if (!isOffline) {
-    yield call(rsf.firestore.deleteDocument, `projects/${id}`);
+    yield put(remove('projects', _id));
     yield put(getAllProjects());
   }
 }

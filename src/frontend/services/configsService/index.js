@@ -7,13 +7,18 @@ import { getAllTemplates } from "../templatesService/actions";
 import { getAllPropTypes } from "../propTypesService/actions";
 import { getAllProjects } from "../projectsService/actions";
 
+import { addModal, removeModal } from '../modalService/actions';
+import { allmodals } from '../../utils/constants';
+
 export function* watchInitApp(action) {
+  yield put(addModal(allmodals.SPINNER));
   yield put(getAllComponents());
   yield put(getAllProviders());
   yield put(getAllTechnos());
   yield put(getAllTemplates());
   yield put(getAllPropTypes());
   yield put(getAllProjects());
+ //yield put(removeModal(allmodals.SPINNER));
 }
 
 export function* watchImportData(action) {

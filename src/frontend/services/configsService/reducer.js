@@ -2,6 +2,7 @@ import * as actionTypes from "../configsService/actionTypes";
 
 export const initialState = () => ({
   initAppDone: false,
+  isLoading: false,
   configs: {
     isOffline: false,
     hasComponentPreview: false,
@@ -23,7 +24,13 @@ export default (state = initialState(), action) => {
     case actionTypes.INIT_APP_DONE:
       return {
         ...state,
-        initAppDone: true
+        initAppDone: true,
+        isLoading: false,
+      };
+    case actionTypes.INIT_APP:
+      return {
+        ...state,
+        isLoading: true,
       };
     default:
       return state;

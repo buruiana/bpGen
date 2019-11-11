@@ -7,7 +7,7 @@ import {
   DELETE_PROP_TYPE,
   IMPORT_PROP_TYPES
 } from "./actionTypes";
-import rsf from "../../redux/firebaseConfig";
+
 import { setAllPropTypes, getAllPropTypes } from "./actions";
 import { mock } from "./mock";
 import { setInitAppDone } from '../configsService/actions';
@@ -42,18 +42,16 @@ export function* watchGetAllPropTypes(action) {
   } else {
     yield put(getCollection('propTypes', {}));
   }
-  // if (isEmpty(allPropTypes)) allPropTypes = [];
-  // sortBy(allPropTypes, el => el.title);
-  // yield put(setAllPropTypes(allPropTypes));
+
   yield put(setInitAppDone());
 }
 
 export function* watchDeletePropType(action) {
-  const { id } = action.propType;
+  const { _id } = action.propType;
   const { isOffline } = (yield select()).configsReducer;
 
   if (!isOffline) {
-    yield call(rsf.firestore.deleteDocument, `propTypes/${id}`);
+    yield put(remove('propTypes', _id));
     yield put(getAllPropTypes());
   }
 }
@@ -65,8 +63,8 @@ export function* watchImportPropType(action) {
   if (!isOffline) {
     if (!isEmpty(propTypes)) {
       yield all(propTypes.map(el => {
-        if (el.id) call(rsf.firestore.deleteDocument, `propTypes/${id}`);
-        call(rsf.firestore.addDocument, `propTypes`, el);
+       // if (el.id) call(rsf.firestore.deleteDocument, `propTypes/${id}`);
+        //call(rsf.firestore.addDocument, `propTypes`, el);
       }));
     }
     yield put(getAllPropTypes());

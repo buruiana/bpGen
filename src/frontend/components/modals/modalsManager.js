@@ -7,6 +7,7 @@ import ComponentInfo from '../modals/ComponentInfo';
 import ComponentProps from '../modals/ComponentProps';
 import TemplateItemProps from '../modals/TemplateItemProps';
 import ComponentItemProps from '../modals/ComponentItemProps';
+import SpinnerModal from '../modals/Spinner';
 
 const ModalsManager = (modals, projectSettings, currentTemplate) => {
   const currentModal = !isEmpty(modals) ? modals[modals.length - 1] : null;
@@ -18,7 +19,7 @@ const ModalsManager = (modals, projectSettings, currentTemplate) => {
       });
     });
   }
-
+  console.log('console: currentModalcurrentModal', currentModal );
   const getCustomModals = currentModal => {
     return customModals.includes(currentModal) ? (
       <GenericModal name={currentModal} />
@@ -37,6 +38,8 @@ const ModalsManager = (modals, projectSettings, currentTemplate) => {
         return <TemplateItemProps />;
       case allmodals.COMPONENT_ITEM_PROPS:
         return <ComponentItemProps />;
+      case allmodals.SPINNER:
+        return <SpinnerModal />;
       default:
         return getCustomModals(currentModal);
     }

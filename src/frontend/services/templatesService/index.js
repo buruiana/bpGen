@@ -6,8 +6,8 @@ import {
   DELETE_TEMPLATE,
   GET_ALL_TEMPLATES
 } from "./actionTypes";
-import rsf from "../../redux/firebaseConfig";
-import { setAllTemplates, getAllTemplates } from "./actions";
+
+import { getAllTemplates } from "./actions";
 import { mock } from "./mock";
 
 import {
@@ -54,11 +54,11 @@ export function* watchGetAllTemplates(action) {
 }
 
 export function* watchDeleteTemplate(action) {
-  const { id } = action.template;
+  const { _id } = action.template;
   const { isOffline } = (yield select()).configsReducer.configs;
 
   if (!isOffline) {
-    yield call(rsf.firestore.deleteDocument, `templates/${id}`);
+    yield put(remove('templates', _id));
     yield put(getAllTemplates());
   }
 }
