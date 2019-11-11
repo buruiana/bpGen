@@ -8,7 +8,7 @@ const PropTypesForm = props => {
   if (isEmpty(propTypes)) propTypes = [];
   if (!isAuthenticated) navigate2Login();
   const propTypesArray = propTypes.filter(
-    propType => propType.id === props.match.params.id
+    propType => propType._id === props.match.params.id
   );
 
   let propType = {};
@@ -17,21 +17,20 @@ const PropTypesForm = props => {
   } else {
     propType = {
       name: "",
-      id: ""
     };
   }
 
-  const { name, id } = propType;
+  const { name, _id } = propType;
   const schema = {
     type: "object",
     required: ["name"],
     properties: {
-      id: { type: "string", title: "Id", default: id },
+      _id: { type: "string", title: "Id", default: _id },
       name: { type: "string", title: "Name", default: name }
     }
   };
   const uiSchema = {
-    id: { "ui:widget": "hidden" }
+    _id: { "ui:widget": "hidden" }
   };
 
   const goTo = () => {

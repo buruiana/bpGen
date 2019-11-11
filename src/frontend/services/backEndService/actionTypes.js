@@ -5,3 +5,9 @@ export const EXPORT_MODULES = 'EXPORT_MODULES';
 
 export const AUTHENTICATE = 'AUTHENTICATE';
 export const REGISTER = 'REGISTER';
+
+export const CREATE = 'CREATE';
+export const UPDATE = 'UPDATE';
+export const DELETE = 'DELETE';
+
+export const GET_COLLECTION = 'GET_COLLECTION';

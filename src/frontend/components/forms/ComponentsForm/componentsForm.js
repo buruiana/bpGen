@@ -21,7 +21,7 @@ const ComponentsForm = props => {
     ? componentsArray[0]
     : {
         title: "",
-        id: "",
+        _id: "",
         description: "",
         provider: "",
         techno: "",
@@ -30,7 +30,7 @@ const ComponentsForm = props => {
 
   const {
     title,
-    id,
+    _id,
     description,
     techno,
     provider,
@@ -52,7 +52,7 @@ const ComponentsForm = props => {
     type: "object",
     required: ["title", "provider", "techno"],
     properties: {
-      id: { type: "string", name: "Id", default: id },
+      _id: { type: "string", name: "Id", default: _id },
       title: { type: "string", name: "Name", default: title },
       description: {
         type: "string",
@@ -116,7 +116,7 @@ const ComponentsForm = props => {
   };
 
   const uiSchema = {
-    id: { "ui:widget": "hidden" },
+    _id: { "ui:widget": "hidden" },
     description: {
       "ui:widget": "textarea",
       "ui:options": {

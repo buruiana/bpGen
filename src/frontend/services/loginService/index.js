@@ -1,6 +1,5 @@
 import { call, put, takeLatest, select } from "redux-saga/effects";
-import { push } from "react-router-redux";
-import rsf from "../../redux/firebaseConfig";
+
 import { LOGIN, LOGOUT } from "./actionTypes";
 import {
   loginSuccess,

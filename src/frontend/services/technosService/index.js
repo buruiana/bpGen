@@ -6,43 +6,46 @@ import rsf from "../../redux/firebaseConfig";
 import { setAllTechnos, getAllTechnos } from "./actions";
 import { mock } from "./mock";
 
+import {
+  create,
+  update,
+  remove,
+  getCollection
+} from '../backEndService/actions';
+
 export function* watchSetTechno(action) {
   const { techno } = action;
   const { isOffline } = (yield select()).configsReducer.configs;
+  const  userid = (yield select()).loginReducer.userInfo._id;
+
+  console.log('console: userid', userid);
 
   if (!isOffline) {
-    if (techno.id) {
-      yield call(rsf.firestore.setDocument, `technos/${techno.id}`, techno);
+    if (techno._id) {
+      yield put(update('technos', { ...techno, userid }));
     } else {
-      yield call(rsf.firestore.addDocument, `technos`, techno);
+      yield put(create('technos', { ...techno, userid }));
     }
     yield put(getAllTechnos());
   }
 }
 
 export function* watchGetAllTechnos(action) {
-  let allTechnos = [];
   const { isOffline } = (yield select()).configsReducer.configs;
 
   if (isOffline) {
-    allTechnos = mock.allTechnos;
+    allTechnos = mock.allTechnos || [];
   } else {
-    const snapshot = yield call(rsf.firestore.getCollection, "technos");
-    allTechnos = snapshot.docs.map(techno => {
-      return { ...techno.data(), id: techno.id };
-    });
+    yield put(getCollection('technos', {}));
   }
-  if (isEmpty(allTechnos)) allTechnos = [];
-  sortBy(allTechnos, el => el.title);
-  yield put(setAllTechnos(allTechnos));
 }
 
 export function* watchDeleteTechno(action) {
-  const { id } = action.techno;
+  const { _id } = action.techno;
   const { isOffline } = (yield select()).configsReducer.configs;
 
   if (!isOffline) {
-    yield call(rsf.firestore.deleteDocument, `technos/${id}`);
+    yield put(remove('technos', _id));
     yield put(getAllTechnos());
   }
 }

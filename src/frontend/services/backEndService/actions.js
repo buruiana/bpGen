@@ -29,3 +29,27 @@ export const register = data => ({
   type: actionTypes.REGISTER,
   data
 });
+
+export const create = (dataType, data) => ({
+  type: actionTypes.CREATE,
+  dataType,
+  data
+});
+
+export const update = (dataType, data) => ({
+  type: actionTypes.UPDATE,
+  dataType,
+  data
+});
+
+export const remove = (dataType, data) => ({
+  type: actionTypes.DELETE,
+  dataType,
+  data
+});
+
+export const getCollection = (dataType, data) => ({
+  type: actionTypes.GET_COLLECTION,
+  dataType,
+  data
+});

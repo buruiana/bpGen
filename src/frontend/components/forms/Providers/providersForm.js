@@ -8,7 +8,7 @@ const ProvidersForm = props => {
   if (isEmpty(providers)) providers = [];
   if (!isAuthenticated) navigate2Login();
   const providersArray = providers.filter(
-    provider => provider.id === props.match.params.id
+    provider => provider._id === props.match.params.id
   );
   const technoTypeEnums = technos.map(techno => techno.name)
 
@@ -19,18 +19,17 @@ const ProvidersForm = props => {
     provider = {
       name: "",
       path: "",
-      id: "",
       providersTechno: ""
     };
   }
 
-  const { name, path, id, providersTechno, providerUrl } = provider;
+  const { name, path, _id, providersTechno, providerUrl } = provider;
 
   const schema = {
     type: "object",
     required: ["name"],
     properties: {
-      id: { type: "string", title: "Id", default: id },
+      _id: { type: "string", title: "Id", default: _id },
       name: { type: "string", title: "Name", default: name },
       path: { type: "string", title: "Path", default: path || "" },
       providerUrl: { type: "string", title: "URL", default: providerUrl || "" },
@@ -38,12 +37,12 @@ const ProvidersForm = props => {
         type: "string",
         title: "Techno",
         enum: technoTypeEnums,
-        default: providersTechno
+        //default: providersTechno
       }
     }
   };
   const uiSchema = {
-    id: { "ui:widget": "hidden" },
+    _id: { "ui:widget": "hidden" },
     providersTechno: {
       "ui:placeholder": "Select techno",
       "ui:options": {

@@ -6,8 +6,6 @@ import Tab from "react-bootstrap/Tab";
 import schema from "./schema";
 import uiSchema from "./uiSchema";
 
-import { navigate } from "../../../utils/";
-
 const LoginForm = props => {
   const [loginType, setLoginType] = useState('signin');
   let formData = {

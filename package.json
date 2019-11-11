@@ -7,7 +7,7 @@
     "test": "",
     "client": "parcel src/frontend/app/index.html --open",
     "build": "parcel build src/frontend/app/index.html --no-source-maps --public-url ./",
-    "server": "nodemon backend/server.js",
+    "server": "nodemon ./backend/server.js",
     "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "parcel build src/frontend/app/index.html --public-url ./",
     "prebuild": "rm -rf dist"
@@ -40,6 +40,7 @@
     "http": "0.0.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.11",
+    "mongoose": "^5.7.9",
     "nodemon": "^1.19.1",
     "parcel-bundler": "^1.12.3",
     "path": "^0.12.7",

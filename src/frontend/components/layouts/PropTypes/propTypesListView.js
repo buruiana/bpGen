@@ -11,7 +11,7 @@ const PropTypesListView = props => {
   const { PROP_TYPES } = availablecomponents;
   if (!isAuthenticated) navigate2Login();
 
-  const deleteSelectedPropType = event => deletePropType({ id: event.target.id });
+  const deleteSelectedPropType = event => deletePropType({ _id: event.target.id });
   const goTo = event => navigate(`/propType/${event.target.id}`);
 
   const filteredItems = () => {
@@ -31,15 +31,15 @@ const PropTypesListView = props => {
 
   const propTypesList = () => {
     return filteredItems().map(propType => {
-      const { name, id } = propType;
+      const { name, _id } = propType;
 
       return (
-        <tr key={id}>
+        <tr key={_id}>
           <td>
-            <a id={id} className="simpleLink" onClick={goTo}>{name}</a>
+            <a id={_id} className="simpleLink" onClick={goTo}>{name}</a>
           </td>
           <td>
-            <a className="simpleLink" id={id} onClick={deleteSelectedPropType}>Delete</a>
+            <a className="simpleLink" id={_id} onClick={deleteSelectedPropType}>Delete</a>
           </td>
         </tr>
       );

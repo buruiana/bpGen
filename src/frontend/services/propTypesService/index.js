@@ -12,15 +12,22 @@ import { setAllPropTypes, getAllPropTypes } from "./actions";
 import { mock } from "./mock";
 import { setInitAppDone } from '../configsService/actions';
 
+import {
+  create,
+  update,
+  getCollection
+} from '../backEndService/actions';
+
 export function* watchSetPropType(action) {
   const { propType } = action;
   const { isOffline } = (yield select()).configsReducer.configs;
+  const userid = (yield select()).loginReducer.userInfo._id;
 
   if (!isOffline) {
-    if (propType.id) {
-      yield call(rsf.firestore.setDocument, `propTypes/${propType.id}`, propType);
+    if (propType._id) {
+      yield put(update('propTypes', { ...propType, userid }));
     } else {
-      yield call(rsf.firestore.addDocument, `propTypes`, propType);
+      yield put(create('propTypes', { ...propType, userid }));
     }
     yield put(getAllPropTypes());
   }
@@ -31,16 +38,13 @@ export function* watchGetAllPropTypes(action) {
   const { isOffline } = (yield select()).configsReducer.configs;
 
   if (isOffline) {
-    allPropTypes = mock.allPropTypes;
+    allPropTypes = mock.allPropTypes || [];
   } else {
-    const snapshot = yield call(rsf.firestore.getCollection, "propTypes");
-    allPropTypes = snapshot.docs.map(propType => {
-      return { ...propType.data(), id: propType.id };
-    });
+    yield put(getCollection('propTypes', {}));
   }
-  if (isEmpty(allPropTypes)) allPropTypes = [];
-  sortBy(allPropTypes, el => el.title);
-  yield put(setAllPropTypes(allPropTypes));
+  // if (isEmpty(allPropTypes)) allPropTypes = [];
+  // sortBy(allPropTypes, el => el.title);
+  // yield put(setAllPropTypes(allPropTypes));
   yield put(setInitAppDone());
 }
 

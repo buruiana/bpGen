@@ -3,7 +3,6 @@ const http = require("http");
 const socketIO = require("socket.io");
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const passport = require('passport');
 const shell = require("shelljs");
 const prettier = require("prettier");
 const fs = require("fs");
@@ -11,6 +10,8 @@ const cors = require("cors");
 const jwt = require('jsonwebtoken');
 const User = require('./models/User');
 const withAuth = require('./middleware');
+const { getModel, getMod } = require('./utils');
+const Techno = require('./models/Techno');
 const app = express();
 app.use(cors());
 
@@ -21,14 +22,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const server = http.createServer(app);
 const io = socketIO(server);
 io.setMaxListeners(0);
-
-// mongoose.connect(config.DB, { useNewUrlParser: true }).then(
-//   () => { console.log('Database is connected') },
-//   err => { console.log('Can not connect to the database' + err) }
-// );
-
-// mongoose.Promise = global.Promise;
-// mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/bpGen`);
 
 const mongo_uri = 'mongodb://localhost/bpGen';
 const secret = 'mysecretsshhh';
@@ -75,17 +68,69 @@ app.get('/checkToken', withAuth, function (req, res) {
   res.sendStatus(200);
 });
 
+app.post('/api/create', function (req, res) {
+  const model = getModel(req.body.data.dataType, req.body.data.data);
+
+  model.save(function (err) {
+    if (err) {
+      res.status(500)
+        .send(err);
+    } else {
+      res.json(model);
+    }
+  });
+});
+
+app.post('/api/update', function (req, res) {
+  const model = getMod(req.body.data.dataType, req.body.data.data);
+
+  model.findByIdAndUpdate(req.body.data.data._id, req.body.data.data, (err) => {
+    if (err) return res.json({ success: false, error: err });
+    return res.json({ success: true });
+  });
+});
+
+app.delete('/api/delete', function (req, res) {
+  const model = getMod(req.body.dataType, req.body.data);
+  var myquery = { _id: req.body.data };
+  model.deleteOne(myquery, function (error, obj) {
+    if (error) {
+      res.status(500)
+        .send(error);
+    }
+    res.json("delete success");
+  });
+});
+
+
+app.post('/api/getCollection', async (req, res) => {
+  const model = getMod(req.body.data);
+
+  model.find({}, (error, collection) => {
+    if (error) {
+      res.status(500)
+        .send(error);
+    } else {
+      res.status(200).json(collection)
+    }
+  })
+});
+
+
 app.post('/api/register', function (req, res) {
   const { email, password } = req.body.data;
   const user = new User({ email, password });
-  user.save(function (err) {
-    if (err) {
-      console.log('console: errerrerr', err );
-      res.status(500)
-        .send("Error registering new user please try again.");
+  user.save(function (error) {
+    if (error) {
+      return res.status(500)
+        .send({
+          error});
     } else {
-      //res.status(200).send("Welcome to the club!");
-      res.json(user);
+      return res.status(200)
+        .send({
+        error: false,
+        user
+      })
     }
   });
 });

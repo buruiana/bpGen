@@ -4,11 +4,11 @@ import isEmpty from "lodash/isEmpty";
 import { navigate, navigate2Login } from "../../../utils";
 
 const TechnosForm = props => {
-  let { technos, isAuthenticated } = props;
+  let { technos, isAuthenticated, setTechno } = props;
   if (isEmpty(technos)) technos = [];
   if (!isAuthenticated) navigate2Login();
   const technosArray = technos.filter(
-    techno => techno.id === props.match.params.id
+    techno => techno._id === props.match.params.id
   );
 
   let techno = {};
@@ -18,29 +18,28 @@ const TechnosForm = props => {
     techno = {
       name: "",
       technoUrl: "",
-      id: ""
     };
   }
 
-  const { name, id, technoUrl } = techno;
+  const { name, _id, technoUrl } = techno;
   const schema = {
     type: "object",
     required: ["name"],
     properties: {
-      id: { type: "string", title: "Id", default: id },
+      _id: { type: "string", title: "Id", default: _id },
       name: { type: "string", title: "Name", default: name },
       technoUrl: { type: "string", title: "URL", default: technoUrl || "" }
     }
   };
   const uiSchema = {
-    id: { "ui:widget": "hidden" }
+    _id: { "ui:widget": "hidden" }
   };
 
   const goTo = () => navigate("/technos");
 
   const onSubmit = data => {
     const { formData } = data;
-    props.setTechno(formData);
+    setTechno(formData);
     goTo();
   };
 

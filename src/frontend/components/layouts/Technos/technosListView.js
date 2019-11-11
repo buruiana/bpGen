@@ -11,7 +11,7 @@ const TechnosListView = props => {
   const { TECHNOS } = availablecomponents;
   if (!isAuthenticated) navigate2Login();
 
-  const deleteSelectedTechno = event => deleteTechno({ id: event.target.id });
+  const deleteSelectedTechno = event => deleteTechno({ _id: event.target.id });
   const goTo = event => navigate(`/techno/${event.target.id}`);
 
   const filteredItems = () => {
@@ -31,15 +31,15 @@ const TechnosListView = props => {
 
   const technosList = () => {
     return filteredItems().map(techno => {
-      const { name, id } = techno;
+      const { name, _id } = techno;
 
       return (
-        <tr key={id}>
+        <tr key={_id}>
           <td>
-            <a id={id} className="simpleLink" onClick={goTo}>{name}</a>
+            <a id={_id} className="simpleLink" onClick={goTo}>{name}</a>
           </td>
           <td>
-            <a className="simpleLink" id={id} onClick={deleteSelectedTechno}>Delete</a>
+            <a className="simpleLink" id={_id} onClick={deleteSelectedTechno}>Delete</a>
           </td>
         </tr>
       );

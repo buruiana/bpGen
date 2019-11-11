@@ -18,11 +18,11 @@ const TemplatesListView = props => {
 
   if (!isAuthenticated) navigate2Login();
 
-  const deleteSelectedTemplate = event => deleteTemplate({ id: event.target.id });
+  const deleteSelectedTemplate = event => deleteTemplate({ _id: event.target.id });
   const onClick = event => navigate(`/template/${event.target.id}`);
   const duplicateSelectedTemplate = event => {
     const currentTemplate = templates.filter(
-      template => template.id === event.target.id
+      template => template._id === event.target.id
     )[0];
 
     setTemplate({
@@ -49,21 +49,21 @@ const TemplatesListView = props => {
 
   const templatesList = () => {
     return filteredItems().map(template => {
-      const { name, id, templateTechnos } = template;
+      const { name, _id, templateTechnos } = template;
 
       return (
-        <tr key={id}>
+        <tr key={_id}>
           <td>
-            <a id={id} className="simpleLink" onClick={onClick}>{name}</a>
+            <a id={_id} className="simpleLink" onClick={onClick}>{name}</a>
           </td>
-          <td><a id={id} target='blank'>{templateTechnos}</a></td>
+          <td><a id={_id} target='blank'>{templateTechnos}</a></td>
           <td>
-            <a className="simpleLink" id={id} onClick={duplicateSelectedTemplate}>
+            <a className="simpleLink" id={_id} onClick={duplicateSelectedTemplate}>
               Duplicate
             </a>
           </td>
           <td>
-            <a className="simpleLink" id={id} onClick={deleteSelectedTemplate}>
+            <a className="simpleLink" id={_id} onClick={deleteSelectedTemplate}>
               Delete
             </a>
           </td>

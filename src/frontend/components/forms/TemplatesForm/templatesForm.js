@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Form from "react-jsonschema-form-bs4";
 import schema from "./schema";
 import { navigate } from "../../../utils";
 import uiSchema from "./uiSchema";
-import { isEmpty } from "../../../utils/helper";
 
 const TemplatesForm = props => {
   const { setTemplate, userid, templates } = props;

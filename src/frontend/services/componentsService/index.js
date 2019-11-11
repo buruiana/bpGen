@@ -8,16 +8,22 @@ import { exportModules } from '../backEndService/actions';
 import { getExportModulesCode } from './helper';
 import { mock } from "./mock";
 
+import {
+  create,
+  update,
+  getCollection
+} from '../backEndService/actions';
+
 export function* watchSetComponent(action) {
   const { component } = action;
   const { isOffline } = (yield select()).configsReducer.configs;
-  const { components } = (yield select()).componentsReducer;
+  const userid = (yield select()).loginReducer.userInfo._id;
 
   if (!isOffline) {
-    if (component.id) {
-      yield call(rsf.firestore.setDocument, `components/${component.id}`, component);
+    if (component._id) {
+      yield put(update('components', { ...component, userid }));
     } else {
-      yield call(rsf.firestore.addDocument, `components`, component);
+      yield put(create('components', { ...component, userid }));
     }
     yield put(getAllComponents());
   }
@@ -30,20 +36,21 @@ export function* watchGetAllComponents(action) {
   let componentsArr = [];
 
   if (isOffline) {
-    allComponents = mock.allComponents;
+    allComponents = mock.allComponents || [];
   } else {
-    const snapshot = yield call(rsf.firestore.getCollection, "components");
-    snapshot.docs.filter(component => {
-      const newComponent = component.data();
+    yield put(getCollection('components', {}));
+    // const snapshot = yield call(rsf.firestore.getCollection, "components");
+    // snapshot.docs.filter(component => {
+    //   const newComponent = component.data();
 
-      if (newComponent.userid === userid || newComponent.isPublic) {
-        componentsArr.push(newComponent);
-      }
-    });
+    //   if (newComponent.userid === userid || newComponent.isPublic) {
+    //     componentsArr.push(newComponent);
+    //   }
+    // });
   }
-  if (isEmpty(componentsArr)) componentsArr = [];
-  sortBy(componentsArr, el => el.title);
-  yield put(setAllComponents(componentsArr));
+  // if (isEmpty(componentsArr)) componentsArr = [];
+  // sortBy(componentsArr, el => el.title);
+  // yield put(setAllComponents(componentsArr));
 }
 
 export function* watchDeleteComponent(action) {

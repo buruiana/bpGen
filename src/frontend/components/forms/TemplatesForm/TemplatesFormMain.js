@@ -22,7 +22,7 @@ const TemplatesFormMain = props => {
     && props.match.params.id !== 'new'
   ) {
     let currentTemplate = templates.filter(
-      template => template.id === props.match.params.id
+      template => template._id === props.match.params.id
     )[0];
 
     setTemplateTree(convertJsonSchema2SortableTree(currentTemplate));

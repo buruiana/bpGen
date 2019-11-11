@@ -6,37 +6,37 @@ import rsf from "../../redux/firebaseConfig";
 import { setAllProviders, getAllProviders } from "./actions";
 import { mock } from "./mock";
 
+import {
+  create,
+  update,
+  getCollection
+} from '../backEndService/actions';
+
 export function* watchSetProvider(action) {
   const { provider } = action;
   const { isOffline } = (yield select()).configsReducer.configs;
+  const userid = (yield select()).loginReducer.userInfo._id;
   let newProvider = { ...provider };
   newProvider.children = [];
 
   if (!isOffline) {
-    if (provider.id) {
-      yield call(rsf.firestore.setDocument, `providers/${provider.id}`, newProvider);
+    if (provider._id) {
+      yield put(update('providers', { ...provider, userid } ));
     } else {
-      yield call(rsf.firestore.addDocument, `providers`, newProvider);
+      yield put(create('providers', { ...provider, userid } ));
     }
     yield put(getAllProviders());
   }
 }
 
 export function* watchGetAllProviders(action) {
-  let allProviders = [];
   const { isOffline } = (yield select()).configsReducer.configs;
 
   if (isOffline) {
-    allProviders = mock.allProviders;
+    allProviders = mock.allProviders || [];
   } else {
-    const snapshot = yield call(rsf.firestore.getCollection, "providers");
-    allProviders = snapshot.docs.map(provider => {
-      return { ...provider.data(), id: provider.id };
-    });
+    yield put(getCollection('providers', {}));
   }
-  if (isEmpty(allProviders)) allProviders = [];
-  sortBy(allProviders, el => el.title);
-  yield put(setAllProviders(allProviders));
 }
 
 export function* watchDeleteProvider(action) {

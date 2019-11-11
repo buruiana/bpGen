@@ -20,7 +20,7 @@ const ComponentsListView = props => {
   if (!isAuthenticated) navigate2Login();
   let fileReader;
 
-  const deleteSelectedComponent = event =>  deleteComponent({ id: event.target.id });
+  const deleteSelectedComponent = event =>  deleteComponent({ _id: event.target.id });
   const goTo = event => navigate(`/component/${event.target.id}`);
 
   const filteredItems = () => {
@@ -39,17 +39,17 @@ const ComponentsListView = props => {
 
   const componentsList = () => {
     return filteredItems().map(component => {
-      const { title, id, provider, techno } = component;
+      const { title, _id, provider, techno } = component;
 
       return (
-        <tr key={id}>
+        <tr key={_id}>
           <td>
-            <a id={id} className="simpleLink" onClick={goTo}>{title}</a>
+            <a id={_id} className="simpleLink" onClick={goTo}>{title}</a>
           </td>
           <td>{techno}</td>
           <td>{provider}</td>
           <td>
-            <a className="simpleLink" id={id} onClick={deleteSelectedComponent}>Delete</a>
+            <a className="simpleLink" id={_id} onClick={deleteSelectedComponent}>Delete</a>
           </td>
         </tr>
       );

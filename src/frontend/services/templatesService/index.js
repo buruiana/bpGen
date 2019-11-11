@@ -10,20 +10,22 @@ import rsf from "../../redux/firebaseConfig";
 import { setAllTemplates, getAllTemplates } from "./actions";
 import { mock } from "./mock";
 
+import {
+  create,
+  update,
+  getCollection
+} from '../backEndService/actions';
+
+
 export function* watchSetTemplate(action) {
   const { template } = action;
   const { isOffline } = (yield select()).configsReducer.configs;
-  const userid = (yield select()).loginReducer.userInfo._id;
 
   if (!isOffline) {
-    if (template.id) {
-      yield call(
-        rsf.firestore.setDocument,
-        `templates/${template.id}`,
-        { ...template, userid }
-      );
+    if (template._id) {
+      yield put(update('templates', template));
     } else {
-      yield call(rsf.firestore.addDocument, `templates`, template);
+      yield put(create('templates', template));
     }
     yield put(getAllTemplates());
   }
@@ -34,20 +36,21 @@ export function* watchGetAllTemplates(action) {
   const userid = (yield select()).loginReducer.userInfo._id;
   let templateArr = [];
   if (isOffline) {
-    templateArr = mock.allTemplates;
+    templateArr = mock.allTemplates || [];
   } else {
-    const snapshot = yield call(rsf.firestore.getCollection, "templates");
-    snapshot.docs.filter(template => {
-      const newTemplate = { ...template.data(), id: template.id };
+    // const snapshot = yield call(rsf.firestore.getCollection, "templates");
+    // snapshot.docs.filter(template => {
+    //   const newTemplate = { ...template.data(), id: template.id };
 
-      if (newTemplate.userid === userid || newTemplate.templateIsPublic) {
-        templateArr.push(newTemplate);
-      }
-    });
+    //   if (newTemplate.userid === userid || newTemplate.templateIsPublic) {
+    //     templateArr.push(newTemplate);
+    //   }
+    // });
+    yield put(getCollection('templates', {}));
   }
   //if (isEmpty(templateArr)) templateArr = [];
-  sortBy(templateArr, el => el.title);
-  yield put(setAllTemplates(templateArr));
+  // sortBy(templateArr, el => el.title);
+  // yield put(setAllTemplates(templateArr));
 }
 
 export function* watchDeleteTemplate(action) {

@@ -22,7 +22,7 @@ const ComponentsFormMain = props => {
     && props.match.params.id !== 'new'
     && !isEmpty(components)) {
     let currentComponent = components.filter(
-      components => components.id === props.match.params.id
+      components => components._id === props.match.params.id
     )[0];
 
     setComponentTree(convertJsonSchema2SortableTree(currentComponent));

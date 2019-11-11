@@ -10,21 +10,17 @@ import rsf from "../../redux/firebaseConfig";
 import { setAllProjects, getAllProjects } from "./actions";
 import { mock } from "./mock";
 
+import { create, update } from '../backEndService/actions';
+
 export function* watchSetProject(action) {
   const { project } = action;
   const { isOffline } = (yield select()).configsReducer.configs;
-  const userid = (yield select()).loginReducer.userInfo._id;
-  const { forms } = (yield select()).customFormReducer;
 
   if (!isOffline) {
-    if (project.projectId) {
-      yield call(
-        rsf.firestore.setDocument,
-        `projects/${project.id}`,
-        { userid, forms, projectId}
-      );
+    if (project._id) {
+      yield put(update('project', project));
     } else {
-      yield call(rsf.firestore.addDocument, `projects`, { userid, forms });
+      yield put(create('project', project));
     }
     yield put(getAllProjects());
   }

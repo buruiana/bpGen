@@ -11,7 +11,7 @@ const ProvidersListView = props => {
   const { PROVIDERS } = availablecomponents;
   if (!isAuthenticated) navigate2Login();
 
-  const deleteSelectedProvider = event => deleteProvider({ id: event.target.id });
+  const deleteSelectedProvider = event => deleteProvider({ _id: event.target.id });
   const goTo = event => navigate(`/provider/${event.target.id}`);
 
   const filteredItems = () => {
@@ -31,16 +31,16 @@ const ProvidersListView = props => {
 
   const providersList = () => {
     return filteredItems().map(provider => {
-      const { name, id, providerUrl } = provider;
+      const { name, _id, providerUrl } = provider;
 
       return (
-        <tr key={id}>
+        <tr key={_id}>
           <td>
-            <a id={id} className="simpleLink" onClick={goTo}>{name}</a>
+            <a id={_id} className="simpleLink" onClick={goTo}>{name}</a>
           </td>
-          <td><a id={id} className="simpleLink">{providerUrl}</a></td>
+          <td><a id={_id} className="simpleLink">{providerUrl}</a></td>
           <td>
-            <a className="simpleLink" id={id} onClick={deleteSelectedProvider}>Delete</a>
+            <a className="simpleLink" id={_id} onClick={deleteSelectedProvider}>Delete</a>
           </td>
         </tr>
       );
