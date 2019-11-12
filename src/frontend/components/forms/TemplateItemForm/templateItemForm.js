@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Form from 'react-jsonschema-form-bs4';
 import { changeNodeAtPath } from 'react-sortable-tree';
-//import schema from './schema';
-import { navigate } from '../../../utils';
-//import uiSchema from './uiSchema';
 import AceEditor from 'react-ace';
-import get from 'lodash/get';
 
 import {
   getNewtemplate,
@@ -104,7 +100,7 @@ const TemplateItemForm = props => {
 
   const uiSchema = {
     'ui:widget': 'myCustomWidget',
-    id: { 'ui:widget': 'hidden' },
+    _id: { 'ui:widget': 'hidden' },
     userid: { 'ui:widget': 'hidden' },
     blockImplementation: {
       'ui:widget': 'myCustomWidget'

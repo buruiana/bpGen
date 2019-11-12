@@ -61,10 +61,17 @@ export function* setData({ importType, data }) {
 export function* watchImportData(action) {
   const { data, importType } = action;
   const { isOffline } = (yield select()).configsReducer.configs;
+  const userid = (yield select()).loginReducer.userInfo._id;
 
   if (!isOffline) {
     if (!isEmpty(data)) {
-      yield all(data.map(el => call(setData, { data: el, importType })));
+      yield all(data.map(el => call(
+        setData, {
+          data: {
+            ...el, userid
+          },
+          importType }
+      )));
     }
   }
 }

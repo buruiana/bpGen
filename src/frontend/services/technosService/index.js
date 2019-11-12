@@ -1,4 +1,4 @@
-import { call, put, takeLatest, select } from "redux-saga/effects";
+import { takeEvery, put, takeLatest, select } from "redux-saga/effects";
 import isEmpty from "lodash/isEmpty";
 import sortBy from "lodash/sortBy";
 import { SET_TECHNO, GET_ALL_TECHNOS, DELETE_TECHNO } from "./actionTypes";
@@ -48,7 +48,7 @@ export function* watchDeleteTechno(action) {
 }
 
 export default function* rootSaga() {
-  yield takeLatest(SET_TECHNO, watchSetTechno);
+  yield takeEvery(SET_TECHNO, watchSetTechno);
   yield takeLatest(GET_ALL_TECHNOS, watchGetAllTechnos);
   yield takeLatest(DELETE_TECHNO, watchDeleteTechno);
 }

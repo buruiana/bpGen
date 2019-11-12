@@ -13,11 +13,14 @@ const TemplatesListView = props => {
     deleteTemplate,
     setTemplate,
     isAuthenticated,
-    hasTemplatesImport
+    hasTemplatesImport,
+    importData,
   } = props;
-  const { TEMPLATES } = availablecomponents;
 
   if (!isAuthenticated) navigate2Login();
+
+  const { TEMPLATES } = availablecomponents;
+  let fileReader;
 
   const deleteSelectedTemplate = event => deleteTemplate({ _id: event.target.id });
   const onClick = event => navigate(`/template/${event.target.id}`);
@@ -91,7 +94,10 @@ const TemplatesListView = props => {
   return (
     <div>
       <GenericSearchForm componentname={TEMPLATES} />
-      {hasTemplatesImport && <input type="file" id="importFile" onChange={onImport} />}
+      { hasTemplatesImport &&
+        <div className='importContainer'>
+          <input type="file" id="importFile" onChange={onImport} />
+        </div> }
       <div className='addEditLink'>
         <a className="simpleLink" onClick={() => navigate("/template/new")}>
           Add Template

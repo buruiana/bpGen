@@ -13,9 +13,13 @@ const UserListView = props => {
     deleteUser,
     isAuthenticated,
     hasUsersImport,
+    importData,
   } = props;
-  const { USERS } = availablecomponents;
+
   if (!isAuthenticated) navigate2Login();
+
+  const { USERS } = availablecomponents;
+  let fileReader;
 
   const deleteSelectedUser = event => deleteUser({ _id: event.target.id });
   const goTo = event => navigate(`/user/${event.target.id}`);
@@ -73,7 +77,10 @@ const UserListView = props => {
   return (
     <div>
       <GenericSearchForm componentname={USERS} />
-      {hasUsersImport && <input type="file" id="importFile" onChange={onImport} />}
+      { hasUsersImport &&
+        <div className='importContainer'>
+          <input type="file" id="importFile" onChange={onImport} />
+        </div> }
       <div className='addEditLink'>
         <a className="simpleLink" onClick={() => navigate("/user/new")}>
           Add User

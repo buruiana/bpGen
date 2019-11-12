@@ -5,6 +5,7 @@ import {
   setProvider,
   getAllProviders,
 } from '../../../services/providersService/actions';
+import { importData } from '../../../services/configsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -16,9 +17,10 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  deleteProvider: provider => deleteProvider(provider),
-  setProvider: provider => setProvider(provider),
-  getAllProviders: () => getAllProviders(),
+  deleteProvider,
+  setProvider,
+  getAllProviders,
+  importData,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProvidersListView);

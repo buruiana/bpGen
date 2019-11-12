@@ -79,7 +79,7 @@ const NavBar = props => {
             onClick={goTo}
             className="justify-content-end"
           >
-            Login
+            Sign In
           </Nav.Link>
         )}
 

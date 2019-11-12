@@ -13,9 +13,13 @@ const TechnosListView = props => {
     deleteTechno,
     isAuthenticated,
     hasTechnosImport,
+    importData,
   } = props;
-  const { TECHNOS } = availablecomponents;
+
   if (!isAuthenticated) navigate2Login();
+
+  const { TECHNOS } = availablecomponents;
+  let fileReader;
 
   const deleteSelectedTechno = event => deleteTechno({ _id: event.target.id });
   const goTo = event => navigate(`/techno/${event.target.id}`);
@@ -70,7 +74,10 @@ const TechnosListView = props => {
   return (
     <div>
       <GenericSearchForm componentname={TECHNOS} />
-      {hasTechnosImport && <input type="file" id="importFile" onChange={onImport} />}
+      { hasTechnosImport &&
+        <div className='importContainer'>
+          <input type="file" id="importFile" onChange={onImport} />
+        </div> }
       <div className='addEditLink'>
         <a className="simpleLink" onClick={() => navigate("/techno/new")}>
           Add Techno

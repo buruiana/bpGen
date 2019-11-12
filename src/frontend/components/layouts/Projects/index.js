@@ -10,6 +10,7 @@ import { setTree } from "../../../services/sortableTreeService/actions";
 import { setCustomForm } from '../../../services/customFormService/actions';
 import { setProjectSettings } from "../../../services/projectSettingsService/actions";
 import { setCurrentTemplate } from "../../../services/templatesService/actions";
+import { importData } from '../../../services/configsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -32,6 +33,7 @@ const mapDispatchToProps = {
   setCustomForm,
   setProjectSettings,
   setCurrentTemplate,
+  importData
 }
 
 export default connect(

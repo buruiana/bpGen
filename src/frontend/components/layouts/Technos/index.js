@@ -5,6 +5,7 @@ import {
   setTechno,
   getAllTechnos,
 } from '../../../services/technosService/actions';
+import { importData } from '../../../services/configsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -17,9 +18,10 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  deleteTechno: techno => deleteTechno(techno),
-  setTechno: techno => setTechno(techno),
-  getAllTechnos: () => getAllTechnos(),
+  deleteTechno,
+  setTechno,
+  getAllTechnos,
+  importData,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TechnosListView);

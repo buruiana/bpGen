@@ -1,4 +1,4 @@
-import { call, put, takeLatest, select } from "redux-saga/effects";
+import { takeEvery, put, takeLatest, select } from "redux-saga/effects";
 import isEmpty from "lodash/isEmpty";
 import sortBy from "lodash/sortBy";
 import { SET_PROVIDER, GET_ALL_PROVIDERS, DELETE_PROVIDER } from "./actionTypes";
@@ -50,7 +50,7 @@ export function* watchDeleteProvider(action) {
 }
 
 export default function* rootSaga() {
-  yield takeLatest(SET_PROVIDER, watchSetProvider);
+  yield takeEvery(SET_PROVIDER, watchSetProvider);
   yield takeLatest(GET_ALL_PROVIDERS, watchGetAllProviders);
   yield takeLatest(DELETE_PROVIDER, watchDeleteProvider);
 }

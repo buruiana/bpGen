@@ -1,4 +1,4 @@
-import { call, put, takeLatest, select } from "redux-saga/effects";
+import { takeEvery, put, takeLatest, select } from "redux-saga/effects";
 import isEmpty from "lodash/isEmpty";
 import sortBy from "lodash/sortBy";
 import {
@@ -73,7 +73,7 @@ export function* watchImportPropType(action) {
 }
 
 export default function* rootSaga() {
-  yield takeLatest(SET_PROP_TYPE, watchSetPropType);
+  yield takeEvery(SET_PROP_TYPE, watchSetPropType);
   yield takeLatest(GET_ALL_PROP_TYPES, watchGetAllPropTypes);
   yield takeLatest(DELETE_PROP_TYPE, watchDeletePropType);
   yield takeLatest(IMPORT_PROP_TYPES, watchImportPropType);

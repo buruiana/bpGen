@@ -12,10 +12,14 @@ const ProvidersListView = props => {
     providers = [],
     deleteProvider,
     isAuthenticated,
-    hasProvidersImport
+    hasProvidersImport,
+    importData,
   } = props;
-  const { PROVIDERS } = availablecomponents;
+
   if (!isAuthenticated) navigate2Login();
+
+  const { PROVIDERS } = availablecomponents;
+  let fileReader;
 
   const deleteSelectedProvider = event => deleteProvider({ _id: event.target.id });
   const goTo = event => navigate(`/provider/${event.target.id}`);
@@ -71,7 +75,10 @@ const ProvidersListView = props => {
   return (
     <div>
       <GenericSearchForm componentname={PROVIDERS} />
-      {hasProvidersImport && <input type="file" id="importFile" onChange={onImport} />}
+      { hasProvidersImport &&
+        <div className='importContainer'>
+          <input type="file" id="importFile" onChange={onImport} />
+        </div> }
       <div className='addEditLink'>
         <a className="simpleLink" onClick={() => navigate("/provider/new")}>
           Add Provider

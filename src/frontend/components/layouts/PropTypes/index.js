@@ -5,6 +5,7 @@ import {
   setPropType,
   getAllPropTypes,
 } from '../../../services/propTypesService/actions';
+import { importData } from '../../../services/configsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -16,9 +17,10 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  deletePropType: propType => deletePropType(propType),
-  setPropType: propType => setPropType(propType),
-  getAllPropTypes: () => getAllPropTypes(),
+  deletePropType,
+  setPropType,
+  getAllPropTypes,
+  importData,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PropTypesListView);

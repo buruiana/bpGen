@@ -16,8 +16,10 @@ const ComponentsListView = props => {
     hasComponentImport,
     isAuthenticated
   } = props;
-  const { COMPONENTS } = availablecomponents;
+
   if (!isAuthenticated) navigate2Login();
+
+  const { COMPONENTS } = availablecomponents;
   let fileReader;
 
   const deleteSelectedComponent = event =>  deleteComponent({ _id: event.target.id });
@@ -74,7 +76,10 @@ const ComponentsListView = props => {
   return (
     <div>
       <GenericSearchForm componentname={COMPONENTS} />
-      {hasComponentImport && <input type="file" id="importFile" onChange={onImport} />}
+      { hasComponentImport &&
+        <div className='importContainer'>
+          <input type="file" id="importFile" onChange={onImport} />
+        </div> }
       <div className='addEditLink'>
         <a className="simpleLink" onClick={() => navigate("/component/new")}>
           Add Component

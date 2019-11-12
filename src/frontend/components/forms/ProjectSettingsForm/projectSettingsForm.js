@@ -23,6 +23,8 @@ const ProjectSettingsForm = props => {
     setCurrentTemplate,
   } = props;
 
+  console.log('console: propspropspropsprops', props );
+
   const [formState, setFormState] = useState(projectSettings);
   const technoTypeEnums = technos.map(el => el.name.toLowerCase());
   const requiredFieldsEnum = ["projectName", "projectTemplate"];
@@ -53,12 +55,12 @@ const ProjectSettingsForm = props => {
           )
       })
         .filter(e => e.templateIsActive)
-        .map(e => e.id)
+        .map(e => e._id)
       : templates
         .filter(e => e.templateIsActive)
-        .map(e => e.id);
+        .map(e => e._id);
   };
-
+  console.log('console: getTemplatesTypeEnums', getTemplatesTypeEnums());
   const schema = {
     type: "object",
     required: requiredFieldsEnum,
@@ -106,7 +108,7 @@ const ProjectSettingsForm = props => {
 
   const onSubmit = data => {
     const currentTemplate = templates.filter(
-      el => el.id === data.formData.projectTemplate
+      el => el._id === data.formData.projectTemplate
     )[0];
     setCurrentTemplate(currentTemplate);
     setProjectSettings({

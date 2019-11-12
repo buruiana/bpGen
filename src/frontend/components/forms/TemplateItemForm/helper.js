@@ -7,7 +7,7 @@ export const getNewtemplate = formData => {
   if ('templateDescription' in formData) {
     newTemplate = {
       expanded: true,
-      id: get(formData, 'id', undefined),
+      _id: get(formData, '_id', undefined),
       name: get(formData, 'name', ''),
       subtitle: 'Template',
       templateDescription: get(formData, 'templateDescription', ''),
@@ -245,10 +245,10 @@ export const getSchema = (currentModalData, schema) => {
   if (currentModalData.subtitle === 'Template') {
     schema.properties = {
       ...schema.properties,
-      id: {
+      _id: {
         type: 'string',
         title: 'ID',
-        default: get(currentModalData, 'id', '')
+        default: get(currentModalData, '_id', '')
       },
       name: {
         type: 'string',

@@ -5,6 +5,7 @@ import {
   setUser,
   getAllUsers,
 } from '../../../services/usersService/actions';
+import { importData } from '../../../services/configsService/actions';
 
 const mapStateToProps = state => {
   return {
@@ -16,9 +17,10 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  deleteUser: user => deleteUser(user),
-  setUser: user => setUser(user),
-  getAllUsers: () => getAllUsers(),
+  deleteUser,
+  setUser,
+  getAllUsers,
+  importData,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserListView);

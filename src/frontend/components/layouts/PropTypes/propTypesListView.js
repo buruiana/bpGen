@@ -13,9 +13,13 @@ const PropTypesListView = props => {
     deletePropType,
     isAuthenticated,
     hasPropTypesImport,
+    importData,
   } = props;
-  const { PROP_TYPES } = availablecomponents;
+
   if (!isAuthenticated) navigate2Login();
+
+  const { PROP_TYPES } = availablecomponents;
+  let fileReader;
 
   const deleteSelectedPropType = event => deletePropType({ _id: event.target.id });
   const goTo = event => navigate(`/propType/${event.target.id}`);
@@ -70,7 +74,10 @@ const PropTypesListView = props => {
   return (
     <div>
       <GenericSearchForm componentname={PROP_TYPES} />
-      {hasPropTypesImport && <input type="file" id="importFile" onChange={onImport} />}
+      { hasPropTypesImport &&
+        <div className='importContainer'>
+          <input type="file" id="importFile" onChange={onImport} />
+        </div> }
       <div className='addEditLink'>
         <a className="simpleLink" onClick={() => navigate("/propType/new")}>
           Add PropType

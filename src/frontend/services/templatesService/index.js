@@ -1,4 +1,4 @@
-import { call, put, takeLatest, select } from "redux-saga/effects";
+import { takeEvery, put, takeLatest, select } from "redux-saga/effects";
 import isEmpty from "lodash/isEmpty";
 import sortBy from "lodash/sortBy";
 import {
@@ -65,7 +65,7 @@ export function* watchDeleteTemplate(action) {
 }
 
 export default function* rootSaga() {
-  yield takeLatest(SET_TEMPLATE, watchSetTemplate);
+  yield takeEvery(SET_TEMPLATE, watchSetTemplate);
   yield takeLatest(GET_ALL_TEMPLATES, watchGetAllTemplates);
   yield takeLatest(DELETE_TEMPLATE, watchDeleteTemplate);
 }

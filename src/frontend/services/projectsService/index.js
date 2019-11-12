@@ -1,4 +1,4 @@
-import { call, put, takeLatest, select } from "redux-saga/effects";
+import { takeEvery, put, takeLatest, select } from "redux-saga/effects";
 import isEmpty from "lodash/isEmpty";
 import sortBy from "lodash/sortBy";
 import {
@@ -63,7 +63,7 @@ export function* watchDeleteProject(action) {
 }
 
 export default function* rootSaga() {
-  yield takeLatest(SET_PROJECT, watchSetProject);
+  yield takeEvery(SET_PROJECT, watchSetProject);
   yield takeLatest(GET_ALL_PROJECTS, watchGetAllProjects);
   yield takeLatest(DELETE_PROJECT, watchDeleteProject);
 }

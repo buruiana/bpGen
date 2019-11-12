@@ -20,10 +20,13 @@ const ProjectsListView = props => {
     setCurrentTemplate,
     currentTemplate,
     hasProjectsImport,
+    importData,
   } = props;
-  const { PROJECTS } = availablecomponents;
 
   if (!isAuthenticated) navigate2Login();
+
+  const { PROJECTS } = availablecomponents;
+  let fileReader;
 
   const deleteSelectedProject = event => deleteProject({ id: event.target.id });
   const onClick = event => {
@@ -111,7 +114,11 @@ const ProjectsListView = props => {
   return (
     <div>
       <GenericSearchForm componentname={PROJECTS} />
-      {hasProjectsImport && <input type="file" id="importFile" onChange={onImport} />}
+      { hasProjectsImport &&
+        <div className='importContainer'>
+          <input type="file" id="importFile" onChange={onImport} />
+        </div>
+      }
       <div className='addEditLink'>
         <a className="simpleLink" onClick={() => navigate("/editor")}>
           New Project

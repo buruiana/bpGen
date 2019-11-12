@@ -2,7 +2,8 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-size: 1rem;
+  font-size: 0.8rem;
+  font-family: 'PragmataPro' !important;
 }
 
 .container {
@@ -88,7 +89,7 @@ body {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #e68973 !important;
+  background-color: #3d93db !important;
   border-color: #fff !important;
 }
 
@@ -96,6 +97,7 @@ body {
 .rst__loadingHandle {
   background-color: #db853d;
   border-radius: 10px 0px 0px 10px;
+  color: white;
 }
 
 div.rst__rowContents {
@@ -188,4 +190,27 @@ div.rst__moveHandle {
 
 .alertStyle {
   margin: 1rem;
+}
+
+.importContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-form {
+  padding: 10rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  min-width: 50%;
+}
+
+.nav-tabs .nav-link {
+  min-width: 50%;
+}
+
+.login-form-inner {
+  margin-top:2rem;
 }
