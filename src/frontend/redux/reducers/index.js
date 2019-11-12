@@ -16,6 +16,7 @@ import aceTabsReducer from "../../services/aceTabsService/reducer";
 import backEndReducer from "../../services/backEndService/reducer";
 import sortableTreeReducer from "../../services/sortableTreeService/reducer";
 import projectsReducer from "../../services/projectsService/reducer";
+import alertReducer from "../../services/alertService/reducer";
 
 export default history =>
   combineReducers({
@@ -35,5 +36,6 @@ export default history =>
     codeGenerationReducer,
     aceTabsReducer,
     backEndReducer,
-    sortableTreeReducer
+    sortableTreeReducer,
+    alertReducer,
   });

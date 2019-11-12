@@ -8,17 +8,18 @@ import { getAllPropTypes } from "../propTypesService/actions";
 import { getAllProjects } from "../projectsService/actions";
 
 import { addModal, removeModal } from '../modalService/actions';
-import { allmodals } from '../../utils/constants';
+import { allmodals, alertTypes } from '../../utils/constants';
+import { setAlert } from '../alertService/actions';
 
 export function* watchInitApp(action) {
-  yield put(addModal(allmodals.SPINNER));
+  yield put(setAlert('Loading data..', '', alertTypes.INFO));
   yield put(getAllComponents());
   yield put(getAllProviders());
   yield put(getAllTechnos());
   yield put(getAllTemplates());
   yield put(getAllPropTypes());
   yield put(getAllProjects());
- //yield put(removeModal(allmodals.SPINNER));
+  yield put(setAlert('Done..', '', alertTypes.INFO));
 }
 
 export function* watchImportData(action) {

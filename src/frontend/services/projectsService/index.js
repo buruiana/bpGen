@@ -10,7 +10,7 @@ import {
 import { setAllProjects, getAllProjects } from "./actions";
 import { mock } from "./mock";
 
-import { create, update } from '../backEndService/actions';
+import { create, update, remove } from '../backEndService/actions';
 
 export function* watchSetProject(action) {
   const { project } = action;

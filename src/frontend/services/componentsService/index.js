@@ -10,6 +10,7 @@ import { mock } from "./mock";
 import {
   create,
   update,
+  remove,
   getCollection
 } from '../backEndService/actions';
 

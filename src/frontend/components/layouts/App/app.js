@@ -8,6 +8,7 @@ import ModalsManager from "../../modals/modalsManager";
 import "../../../stylesheets/main.scss";
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import SideBar from '../SideBar';
+import Alert from '../Alert';
 
 const App = ({ history, modals, projectSettings, isAuthenticated, currentTemplate }) => {
   return (
@@ -20,6 +21,7 @@ const App = ({ history, modals, projectSettings, isAuthenticated, currentTemplat
         }
         <div className='mainBox'>
           <NavBar />
+          <Alert />
           {routes}
           {ModalsManager(modals, projectSettings, currentTemplate)}
         </div>

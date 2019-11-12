@@ -15,6 +15,7 @@ import { setInitAppDone } from '../configsService/actions';
 import {
   create,
   update,
+  remove,
   getCollection
 } from '../backEndService/actions';
 

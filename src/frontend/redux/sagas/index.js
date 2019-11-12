@@ -10,6 +10,7 @@ import aceTabsSaga from "../../services/aceTabsService";
 import backEndSaga from "../../services/backEndService";
 import configsSaga from "../../services/configsService";
 import projectsSaga from "../../services/projectsService";
+import alertSaga from "../../services/alertService";
 
 export default function* sagas() {
   yield all(
@@ -24,7 +25,8 @@ export default function* sagas() {
       aceTabsSaga,
       backEndSaga,
       configsSaga,
-      projectsSaga
+      projectsSaga,
+      alertSaga,
     ].map(saga => fork(saga))
   );
 }
