@@ -17,8 +17,6 @@ export function* watchSetTechno(action) {
   const { isOffline } = (yield select()).configsReducer.configs;
   const  userid = (yield select()).loginReducer.userInfo._id;
 
-  console.log('console: userid', userid);
-
   if (!isOffline) {
     if (techno._id) {
       yield put(update('technos', { ...techno, userid }));

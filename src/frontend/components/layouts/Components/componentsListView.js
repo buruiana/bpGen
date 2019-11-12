@@ -26,7 +26,7 @@ const ComponentsListView = props => {
   const filteredItems = () => {
     const filteredComponents = components.filter(el => {
       if (!isEmpty(searchData) && searchData.name) {
-        return (el.title.toLowerCase().indexOf(props.searchData.name.toLowerCase()) !== -1
+        return (el.title.toLowerCase().indexOf(searchData.name.toLowerCase()) !== -1
           && get(searchData, 'provider', el.provider) === el.provider
           && get(searchData, 'techno', el.techno) === el.techno);
       }

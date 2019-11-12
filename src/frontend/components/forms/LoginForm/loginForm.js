@@ -10,7 +10,8 @@ const LoginForm = props => {
   const [loginType, setLoginType] = useState('signin');
   let formData = {
     email: "",
-    password: ""
+    password: "",
+    isAdmin: false
   };
   const { register, authenticate } = props;
 

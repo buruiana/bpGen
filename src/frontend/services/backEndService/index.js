@@ -1,5 +1,6 @@
 import { put, takeLatest, call, takeEvery } from "redux-saga/effects";
 import axios from 'axios';
+import get from 'lodash/get';
 import {
   PRETTIFY_CODE,
   EXPORT_MODULES,
@@ -20,6 +21,7 @@ import { setAllPropTypes } from '../propTypesService/actions';
 import { setAllProjects } from '../projectsService/actions';
 import { setAllTemplates } from '../templatesService/actions';
 import { setAllComponents } from '../componentsService/actions';
+import { setAllUsers } from '../usersService/actions';
 import { navigate } from '../../utils';
 import { alertTypes } from '../../utils/constants';
 
@@ -53,8 +55,12 @@ export function* watchExportModule(info) {
     const res = yield callBackend('exportModules', info);
     return res;
   } catch (err) {
-    console.log('console: err', err);
-    yield put(setAlert(JSON.stringify(err.message), 'ERROR', alertTypes.DANGER));
+    yield put(
+      setAlert(
+        JSON.stringify(get(err, 'response.data.error', err.message)),
+        '',
+        alertTypes.DANGER)
+    );
   }
 }
 
@@ -66,9 +72,13 @@ export function* watchAuthenticate(info) {
     yield call(navigate, '/editor');
     return res;
   } catch (err) {
-    console.log('console: err', err);
     yield put(loginFailure(err));
-    yield put(setAlert(JSON.stringify(err.message), 'ERROR', alertTypes.DANGER));
+    yield put(
+      setAlert(
+        JSON.stringify(get(err, 'response.data.error', err.message)),
+        '',
+        alertTypes.DANGER)
+    );
   }
 }
 
@@ -80,9 +90,13 @@ export function* watchRegister(info) {
     yield call(navigate, '/editor');
     return res;
   } catch (err) {
-    console.log('console: err', err);
     yield put(loginFailure(err));
-    yield put(setAlert(JSON.stringify(err.message), 'ERROR', alertTypes.DANGER));
+    yield put(
+      setAlert(
+        JSON.stringify(get(err, 'response.data.error', err.message)),
+        '',
+        alertTypes.DANGER)
+    );
   }
 }
 
@@ -92,8 +106,12 @@ export function* watchCreate(info) {
     const res = yield callBackend('create', info);
     return res;
   } catch (err) {
-    console.log('console: err', err);
-    yield put(setAlert(JSON.stringify(err.message), 'ERROR', alertTypes.DANGER));
+    yield put(
+      setAlert(
+        JSON.stringify(get(err, 'response.data.error', err.message)),
+        '',
+        alertTypes.DANGER)
+    );
   }
 }
 
@@ -103,8 +121,12 @@ export function* watchUpdate(info) {
     const res = yield callBackend('update', info);
     return res;
   } catch (err) {
-    console.log('console: err', err);
-    yield put(setAlert(JSON.stringify(err.message), 'ERROR', alertTypes.DANGER));
+    yield put(
+      setAlert(
+        JSON.stringify(get(err, 'response.data.error', err.message)),
+        '',
+        alertTypes.DANGER)
+    );
   }
 };
 
@@ -129,6 +151,9 @@ export function* updateCollection({ info, res }) {
     case 'components':
       yield put(setAllComponents(res));
       break;
+    case 'users':
+      yield put(setAllUsers(res));
+      break;
     default:
       break;
   }
@@ -142,13 +167,16 @@ export function* watchGetCollection(info) {
 
     return res;
   } catch (err) {
-    console.log('console: err', err);
-    yield put(setAlert(JSON.stringify(err.message), 'ERROR', alertTypes.DANGER));
+    yield put(
+      setAlert(
+        JSON.stringify(get(err, 'response.data.error', err.message)),
+        '',
+        alertTypes.DANGER)
+    );
   }
 }
 
 export function* watchDelete(info) {
-  console.log('console: watchDelete info', info);
   if (!info.dataType) return;
   try {
     const res = yield callBackendDelete(info);
@@ -156,8 +184,12 @@ export function* watchDelete(info) {
 
     return res;
   } catch (err) {
-    console.log('console: err', err);
-    yield put(setAlert(JSON.stringify(err.message), 'ERROR', alertTypes.DANGER));
+    yield put(
+      setAlert(
+        JSON.stringify(get(err, 'response.data.error', err.message)),
+        '',
+        alertTypes.DANGER)
+    );
   }
 }
 

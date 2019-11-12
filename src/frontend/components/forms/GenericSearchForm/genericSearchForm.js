@@ -8,7 +8,13 @@ import { availablecomponents } from "../../../utils/constants";
 import LayoutField from "../../../utils/LayoutField";
 
 const GenericSearchForm = props => {
-  const { providers, technos, searchData, componentname, setFilter } = props;
+  const {
+    providers,
+    technos,
+    searchData,
+    componentname,
+    setFilter,
+  } = props;
 
   const providersEnums = !isEmpty(providers)
     ? providers.map(provider => provider.name)

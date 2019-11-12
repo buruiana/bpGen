@@ -7,6 +7,7 @@ const TechnosForm = props => {
   let { technos, isAuthenticated, setTechno } = props;
   if (isEmpty(technos)) technos = [];
   if (!isAuthenticated) navigate2Login();
+
   const technosArray = technos.filter(
     techno => techno._id === props.match.params.id
   );

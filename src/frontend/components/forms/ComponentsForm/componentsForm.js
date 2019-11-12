@@ -138,9 +138,7 @@ const ComponentsForm = props => {
     }
   };
 
-  const goTo = () => {
-    navigate("/components");
-  };
+  const goTo = () => navigate("/components");
 
   const onSubmit = data => {
     const { formData } = data;

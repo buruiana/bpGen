@@ -3,30 +3,34 @@ import Form from "react-jsonschema-form-bs4";
 import isEmpty from "lodash/isEmpty";
 import { navigate, navigate2Login } from "../../../utils";
 
-const PropTypesForm = props => {
-  let { propTypes, isAuthenticated, setPropType } = props;
-  if (isEmpty(propTypes)) propTypes = [];
+const UsersForm = props => {
+  let { users, isAuthenticated, setUser } = props;
+  if (isEmpty(users)) users = [];
   if (!isAuthenticated) navigate2Login();
-  const propTypesArray = propTypes.filter(
-    propType => propType._id === props.match.params.id
+  const usersArray = users.filter(
+    user => user._id === props.match.params.id
   );
 
-  let propType = {};
-  if (!isEmpty(propTypesArray)) {
-    propType = propTypesArray[0];
+  let user = {};
+  if (!isEmpty(usersArray)) {
+    user = usersArray[0];
   } else {
-    propType = {
-      name: "",
+    user = {
+      email: "",
+      password: '',
+      isAdmin: false,
     };
   }
 
-  const { name, _id } = propType;
+  const { email, isAdmin, _id, password } = user;
   const schema = {
     type: "object",
-    required: ["name"],
+    required: ["email", 'password'],
     properties: {
       _id: { type: "string", title: "Id", default: _id },
-      name: { type: "string", title: "Name", default: name }
+      email: { type: "string", title: "Name", default: email },
+      password: { type: "string", title: "Name", default: password },
+      isAdmin: { type: "boolean", title: "isAdmin", default: isAdmin },
     }
   };
   const uiSchema = {
@@ -34,12 +38,13 @@ const PropTypesForm = props => {
   };
 
   const goTo = () => {
-    navigate("/propTypes");
+    navigate("/users");
   };
 
   const onSubmit = data => {
     const { formData } = data;
-    setPropType(formData);
+
+    setUser(formData);
     goTo();
   };
 
@@ -62,4 +67,4 @@ const PropTypesForm = props => {
   );
 };
 
-export default PropTypesForm;
+export default UsersForm;

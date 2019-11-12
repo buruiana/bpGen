@@ -11,6 +11,7 @@ const mapStateToProps = state => {
     propTypes: state.propTypesReducer.propTypes,
     searchData: state.filterDataReducer.searchData,
     isAuthenticated: state.loginReducer.isAuthenticated,
+    hasPropTypesImport: state.configsReducer.configs.hasPropTypesImport,
   }
 }
 

@@ -112,6 +112,15 @@ div.rst__moveHandle {
   width: 100%;
 }
 
+.mainBoxNotLogged {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+  padding: 0 0.5rem;
+  width: 100%;
+}
+
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: white;
 }

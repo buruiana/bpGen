@@ -34,10 +34,10 @@ const ComponentItemForm = props => {
   if (currentModalData.subtitle === "Component") {
     schema.properties = {
       ...schema.properties,
-      id: {
+      _id: {
         type: "string",
         title: "Id",
-        default: get(currentModalData, 'id', undefined),
+        default: get(currentModalData, '_id', undefined),
       },
       title: {
         type: "string",
@@ -124,7 +124,7 @@ const ComponentItemForm = props => {
     "ui:widget": "myCustomWidget",
     provider: { "ui:placeholder": "Choose a provider" },
     techno: { "ui:placeholder": "Choose a technology" },
-    id: { "ui:widget": "hidden" },
+    _id: { "ui:widget": "hidden" },
     blockImplementation: {
       "ui:widget": "myCustomWidget"
     },
@@ -143,7 +143,7 @@ const ComponentItemForm = props => {
         rows: 15
       }
     },
-    propType: { "ui:placeholder": "Choose an propType" }
+    propType: { "ui:placeholder": "Choose a propType" }
   };
 
   return (

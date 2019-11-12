@@ -1,8 +1,14 @@
 import * as actionTypes from './actionTypes';
 
-export const setAlert = (alertMsg, alertHead, alertType) => ({
+export const setAlert = (alertMsg, alertHead, alertType, alertAutoClose, alertAutoCloseDelay) => ({
   type: actionTypes.SET_ALERT,
   alertMsg,
   alertHead,
-  alertType
+  alertType,
+  alertAutoClose,
+  alertAutoCloseDelay
+});
+
+export const clearAlert = () => ({
+  type: actionTypes.CLEAR_ALERT,
 });

@@ -5,6 +5,7 @@ const PropType = require('./models/PropType');
 const Provider = require('./models/Provider');
 const Project = require('./models/Project');
 const Template = require('./models/Template');
+const User = require('./models/User');
 
 const getModel = (dataType, data) => {
   switch (dataType) {
@@ -25,6 +26,9 @@ const getModel = (dataType, data) => {
       break;
     case 'templates':
       return new Template(data);
+      break;
+    case 'users':
+      return new User(data);
       break;
     default:
       break;
@@ -50,6 +54,9 @@ const getMod = dataType => {
       break;
     case 'templates':
       return Template;
+      break;
+    case 'users':
+      return User;
       break;
     default:
       break;

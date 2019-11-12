@@ -3,7 +3,7 @@ import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import { history } from '../../../redux/store';
 
 const SideBar = props => {
-  const { initAppDone, initApp, isAuthenticated } = props;
+  const { initAppDone, initApp, isAuthenticated, isAdmin } = props;
   if (!initAppDone && isAuthenticated) {
     initApp();
   }
@@ -27,12 +27,12 @@ const SideBar = props => {
             Home
          </NavText>
         </NavItem>
-        <NavItem eventKey="projects">
+        <NavItem eventKey="configs">
           <NavIcon>
-            <i className="fab fa-cuttlefish" style={{ fontSize: '1.75em' }} />
+            <i className="fas fa-cog" style={{ fontSize: '1.75em' }} />
           </NavIcon>
           <NavText>
-            Projects
+            Configs
           </NavText>
         </NavItem>
         <NavItem eventKey="editor">
@@ -45,15 +45,26 @@ const SideBar = props => {
         </NavItem>
         <NavItem eventKey="components">
           <NavIcon>
-            <i className="fab fa-cuttlefish" style={{ fontSize: '1.75em' }} />
+            {/* <i className="fab fa-cuttlefish" style={{ fontSize: '1.75em' }} /> */}
+            Comp
           </NavIcon>
           <NavText>
             Components
           </NavText>
         </NavItem>
+        <NavItem eventKey="projects">
+          <NavIcon>
+            {/* <i className="fab fa-cuttlefish" style={{ fontSize: '1.75em' }} /> */}
+            Proj
+          </NavIcon>
+          <NavText>
+            Projects
+          </NavText>
+        </NavItem>
         <NavItem eventKey="propTypes">
           <NavIcon>
-            <i className="fas fa-table" style={{ fontSize: '1.75em' }} />
+            {/* <i className="fas fa-table" style={{ fontSize: '1.75em' }} /> */}
+            PT
           </NavIcon>
           <NavText>
             Prop Types
@@ -61,7 +72,8 @@ const SideBar = props => {
         </NavItem>
         <NavItem eventKey="providers">
           <NavIcon>
-            <i className="fas fa-book-reader" style={{ fontSize: '1.75em' }} />
+            {/* <i className="fas fa-book-reader" style={{ fontSize: '1.75em' }} /> */}
+            Prov
           </NavIcon>
           <NavText>
             Providers
@@ -69,7 +81,8 @@ const SideBar = props => {
         </NavItem>
         <NavItem eventKey="technos">
           <NavIcon>
-            <i className="fas fa-building" style={{ fontSize: '1.75em' }} />
+            {/* <i className="fas fa-building" style={{ fontSize: '1.75em' }} /> */}
+            Tec
           </NavIcon>
           <NavText>
             Technos
@@ -77,12 +90,23 @@ const SideBar = props => {
         </NavItem>
         <NavItem eventKey="templates">
           <NavIcon>
-            <i className="fas fa-stream" style={{ fontSize: '1.75em' }} />
+            {/* <i className="fas fa-stream" style={{ fontSize: '1.75em' }} /> */}
+            Templ
           </NavIcon>
           <NavText>
             Templates
           </NavText>
         </NavItem>
+        {isAdmin &&
+          <NavItem eventKey="users">
+            <NavIcon>
+              {/* <i className="fas fa-stream" style={{ fontSize: '1.75em' }} /> */}
+              Users
+          </NavIcon>
+            <NavText>
+              Users
+          </NavText>
+          </NavItem>}
       </SideNav.Nav>
     </SideNav>
   );

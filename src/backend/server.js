@@ -179,10 +179,10 @@ app.post('/api/authenticate', function (req, res) {
           const token = jwt.sign(payload, secret, {
             expiresIn: '1h'
           });
-          // res.cookie('token', token, { httpOnly: true })
-          //   .sendStatus(200);
+          res.cookie('token', token, { httpOnly: true })
+            .json(user);
 
-          res.json(user);
+          //res.json(user);
         }
       });
     }
@@ -199,7 +199,6 @@ function execWrapper(command, options) {
 }
 
 app.post("/api/exportModules", (req, res) => {
-  console.log('console: exportingMOdules', req.body.data);
   fs.writeFileSync('./src/utils/importModules.js',  prettier.format(req.body.data, opt));
   res.json("done");
 });

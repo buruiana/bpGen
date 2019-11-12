@@ -6,22 +6,22 @@ import GenericSearchForm from "../../forms/GenericSearchForm";
 import { navigate, navigate2Login } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
 
-const TechnosListView = props => {
+const UserListView = props => {
   const {
-    technos = [],
+    users = [],
     searchData,
-    deleteTechno,
+    deleteUser,
     isAuthenticated,
-    hasTechnosImport,
+    hasUsersImport,
   } = props;
-  const { TECHNOS } = availablecomponents;
+  const { USERS } = availablecomponents;
   if (!isAuthenticated) navigate2Login();
 
-  const deleteSelectedTechno = event => deleteTechno({ _id: event.target.id });
-  const goTo = event => navigate(`/techno/${event.target.id}`);
+  const deleteSelectedUser = event => deleteUser({ _id: event.target.id });
+  const goTo = event => navigate(`/user/${event.target.id}`);
 
   const filteredItems = () => {
-    const filteredTechnos = technos.filter(el => {
+    const filteredUsers = users.filter(el => {
       if (searchData.name) {
         return (
           el.name
@@ -32,14 +32,14 @@ const TechnosListView = props => {
       return el;
     });
 
-    return sortBy(filteredTechnos, el => el.name);
+    return sortBy(filteredUsers, el => el.name);
   };
 
   const handleFileRead = e => {
-    const technos = new Function(fileReader.result)();
+    const users = new Function(fileReader.result)();
     const list = {
-      data: technos,
-      importType: 'technos'
+      data: users,
+      importType: 'users'
     };
     importData(list);
   };
@@ -50,17 +50,20 @@ const TechnosListView = props => {
     fileReader.readAsText(e.target.files[0]);
   };
 
-  const technosList = () => {
-    return filteredItems().map(techno => {
-      const { name, _id } = techno;
+  const usersList = () => {
+    return filteredItems().map(user => {
+      const { email, isAdmin, _id } = user;
 
       return (
         <tr key={_id}>
           <td>
-            <a id={_id} className="simpleLink" onClick={goTo}>{name}</a>
+            <a id={_id} className="simpleLink" onClick={goTo}>{email}</a>
           </td>
           <td>
-            <a className="simpleLink" id={_id} onClick={deleteSelectedTechno}>Delete</a>
+            <a id={_id} className="simpleLink" onClick={goTo}>{isAdmin.toString()}</a>
+          </td>
+          <td>
+            <a className="simpleLink" id={_id} onClick={deleteSelectedUser}>Delete</a>
           </td>
         </tr>
       );
@@ -69,18 +72,18 @@ const TechnosListView = props => {
 
   return (
     <div>
-      <GenericSearchForm componentname={TECHNOS} />
-      {hasTechnosImport && <input type="file" id="importFile" onChange={onImport} />}
+      <GenericSearchForm componentname={USERS} />
+      {hasUsersImport && <input type="file" id="importFile" onChange={onImport} />}
       <div className='addEditLink'>
-        <a className="simpleLink" onClick={() => navigate("/techno/new")}>
-          Add Techno
-      </a>
+        <a className="simpleLink" onClick={() => navigate("/user/new")}>
+          Add User
+        </a>
       </div>
       <Table striped bordered hover>
-        <tbody>{technosList()}</tbody>
+        <tbody>{usersList()}</tbody>
       </Table>
     </div>
   );
 };
 
-export default TechnosListView;
+export default UserListView;

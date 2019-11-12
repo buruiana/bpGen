@@ -4,9 +4,10 @@ import isEmpty from "lodash/isEmpty";
 import { navigate, navigate2Login } from "../../../utils";
 
 const ProvidersForm = props => {
-  let { providers, technos, isAuthenticated } = props;
+  let { providers, technos, isAuthenticated, setProvider } = props;
   if (isEmpty(providers)) providers = [];
   if (!isAuthenticated) navigate2Login();
+  
   const providersArray = providers.filter(
     provider => provider._id === props.match.params.id
   );
@@ -55,7 +56,7 @@ const ProvidersForm = props => {
 
   const onSubmit = data => {
     const { formData } = data;
-    props.setProvider(formData);
+    setProvider(formData);
     goTo();
   };
 

@@ -6,8 +6,13 @@ export const initialState = () => ({
   configs: {
     isOffline: false,
     hasComponentPreview: false,
-    hasComponentImport: false,
-    hasTemplateImport: false,
+    hasComponentImport: true,
+    hasTemplatesImport: true,
+    hasPropTypesImport: true,
+    hasTechnosImport: true,
+    hasProjectsImport: true,
+    hasProvidersImport: true,
+    hasUsersImport: true,
   },
 });
 
@@ -20,6 +25,11 @@ export default (state = initialState(), action) => {
           ...configs,
           [action.configs.name]: action.configs.val
         },
+      };
+    case actionTypes.SET_CONFIGS:
+      return {
+        ...state,
+        configs: action.configs
       };
     case actionTypes.INIT_APP_DONE:
       return {

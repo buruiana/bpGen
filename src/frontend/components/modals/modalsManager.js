@@ -19,7 +19,7 @@ const ModalsManager = (modals, projectSettings, currentTemplate) => {
       });
     });
   }
-  console.log('console: currentModalcurrentModal', currentModal );
+
   const getCustomModals = currentModal => {
     return customModals.includes(currentModal) ? (
       <GenericModal name={currentModal} />

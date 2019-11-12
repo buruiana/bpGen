@@ -1,21 +1,19 @@
-import SideBar from "./sideBar";
 import { connect } from "react-redux";
-
-import { initApp } from "../../../services/configsService/actions";
+import { setConfigs } from "../../../services/configsService/actions";
+import ConfigsForm from "./configsForm";
 
 const mapStateToProps = state => {
   return {
-    initAppDone: state.configsReducer.initAppDone,
+    configs: state.configsReducer.configs,
     isAuthenticated: state.loginReducer.isAuthenticated,
-    isAdmin: state.loginReducer.userInfo.isAdmin,
   }
-}
+};
 
 const mapDispatchToProps = {
-  initApp,
+  setConfigs
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SideBar);
+)(ConfigsForm);

@@ -2,7 +2,6 @@ import React from "react";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
 const Home = props => {
-  const addNewModal = () => props.addModal("TEST_MODAL");
 
   const code = `
   class Counter extends React.Component {

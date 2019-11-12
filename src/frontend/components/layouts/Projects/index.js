@@ -19,6 +19,7 @@ const mapStateToProps = state => {
     isAuthenticated: state.loginReducer.isAuthenticated,
     templates: state.templatesReducer.templates,
     currentTemplate: state.templatesReducer.currentTemplate,
+    hasProjectsImport: state.configsReducer.configs.hasProjectsImport,
   }
 }
 

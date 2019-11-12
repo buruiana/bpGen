@@ -7,7 +7,13 @@ import { navigate, navigate2Login } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
 
 const ProvidersListView = props => {
-  const { searchData, providers = [], deleteProvider, isAuthenticated } = props;
+  const {
+    searchData,
+    providers = [],
+    deleteProvider,
+    isAuthenticated,
+    hasProvidersImport
+  } = props;
   const { PROVIDERS } = availablecomponents;
   if (!isAuthenticated) navigate2Login();
 
@@ -27,6 +33,21 @@ const ProvidersListView = props => {
     });
 
     return sortBy(filteredProviders, el => el.name);
+  };
+
+  const handleFileRead = e => {
+    const providers = new Function(fileReader.result)();
+    const list = {
+      data: providers,
+      importType: 'providers'
+    };
+    importData(list);
+  };
+
+  const onImport = e => {
+    fileReader = new FileReader();
+    fileReader.onloadend = handleFileRead;
+    fileReader.readAsText(e.target.files[0]);
   };
 
   const providersList = () => {
@@ -50,6 +71,7 @@ const ProvidersListView = props => {
   return (
     <div>
       <GenericSearchForm componentname={PROVIDERS} />
+      {hasProvidersImport && <input type="file" id="importFile" onChange={onImport} />}
       <div className='addEditLink'>
         <a className="simpleLink" onClick={() => navigate("/provider/new")}>
           Add Provider

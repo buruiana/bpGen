@@ -11,6 +11,11 @@ import SideBar from '../SideBar';
 import Alert from '../Alert';
 
 const App = ({ history, modals, projectSettings, isAuthenticated, currentTemplate }) => {
+  const getStyle = () => {
+    return isAuthenticated
+      ? 'mainBox'
+      : 'mainBoxNotLogged';
+  };
   return (
     <ConnectedRouter history={history}>
       <Row className="justify-content-md-center">
@@ -19,7 +24,7 @@ const App = ({ history, modals, projectSettings, isAuthenticated, currentTemplat
             <SideBar />
           </div>
         }
-        <div className='mainBox'>
+        <div className={getStyle()}>
           <NavBar />
           <Alert />
           {routes}

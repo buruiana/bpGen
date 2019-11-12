@@ -16,6 +16,9 @@ import PropTypes from "../components/layouts/PropTypes";
 import PropTypesForm from "../components/forms/PropTypesForm";
 import Editor from "../components/layouts/Editor";
 import NoMatch from "../components/layouts/NoMatch";
+import ConfigsForm from "../components/forms/ConfigsForm";
+import Users from "../components/layouts/Users";
+import UsersForm from "../components/forms/UsersForm";
 
 const routes = (
   <div className="container-fluid">
@@ -35,6 +38,9 @@ const routes = (
       <Route path="/component/:id" component={ComponentsMainForm} />
       <Route path="/proptypes" component={PropTypes} />
       <Route path="/proptype/:id" component={PropTypesForm} />
+      <Route path="/users" component={Users} />
+      <Route path="/user/:id" component={UsersForm} />
+      <Route path="/configs" component={ConfigsForm} />
       <Route component={NoMatch} />
     </Switch>
   </div>

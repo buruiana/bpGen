@@ -4,7 +4,8 @@ export const availablecomponents = {
   PROP_TYPES: "PROP_TYPES",
   PROVIDERS: "PROVIDERS",
   TEMPLATES: "TEMPLATES",
-  PROJECTS: "PROJECTS"
+  PROJECTS: "PROJECTS",
+  USERS: "USERS"
 };
 
 export const APPLICATION = "Application";

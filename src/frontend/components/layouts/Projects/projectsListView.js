@@ -19,6 +19,7 @@ const ProjectsListView = props => {
     templates,
     setCurrentTemplate,
     currentTemplate,
+    hasProjectsImport,
   } = props;
   const { PROJECTS } = availablecomponents;
 
@@ -63,6 +64,21 @@ const ProjectsListView = props => {
     return sortBy(filteredProjects, el => el.name);
   };
 
+  const handleFileRead = e => {
+    const projects = new Function(fileReader.result)();
+    const list = {
+      data: projects,
+      importType: 'projects'
+    };
+    importData(list);
+  };
+
+  const onImport = e => {
+    fileReader = new FileReader();
+    fileReader.onloadend = handleFileRead;
+    fileReader.readAsText(e.target.files[0]);
+  };
+
   const projectsList = () => {
     return filteredItems().map(project => {
       const { projectId } = project;
@@ -95,6 +111,7 @@ const ProjectsListView = props => {
   return (
     <div>
       <GenericSearchForm componentname={PROJECTS} />
+      {hasProjectsImport && <input type="file" id="importFile" onChange={onImport} />}
       <div className='addEditLink'>
         <a className="simpleLink" onClick={() => navigate("/editor")}>
           New Project

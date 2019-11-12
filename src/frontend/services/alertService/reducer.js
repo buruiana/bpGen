@@ -4,6 +4,8 @@ export const initialState = () => ({
   alertMsg: '',
   alertHead: '',
   alertType: '',
+  alertAutoClose: false,
+  alertAutoCloseDelay: 5000,
 });
 
 export default (state = initialState(), action) => {
@@ -13,7 +15,9 @@ export default (state = initialState(), action) => {
         ...state,
         alertMsg: action.alertMsg,
         alertHead: action.alertHead,
-        alertType: action.alertType
+        alertType: action.alertType,
+        alertAutoClose: action.alertAutoClose,
+        alertAutoCloseDelay: action.alertAutoCloseDelay,
       };
     case actionTypes.CLEAR_ALERT:
       return initialState();

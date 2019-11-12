@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import Alert from "react-bootstrap/Alert";
 
-const AlertComponent = props => {
-  const {
-    alertData,
-  } = props;
-  const [show, setShow] = useState(true);
-
+const AlertComponent = ({ alertData, clearAlert }) => {
+  //const [show, setShow] = useState(true);
 
   const showAlert = () => {
     const {
@@ -18,15 +14,15 @@ const AlertComponent = props => {
     } = alertData;
 
     const onClose = () => {
-      setShow(false);
-      setTimeout(function () { setShow(true); }, alertAutoCloseDelay);
+      //setShow(false);
+      clearAlert();
     };
 
     if (alertMsg && alertType) {
       if (alertAutoClose) setTimeout(function () { onClose(); }, alertAutoCloseDelay);
       return (
         <div className='alertStyle'>
-          <Alert show={show} variant={alertType} onClose={onClose} dismissible>
+          <Alert show={true} variant={alertType} onClose={onClose} dismissible>
             <Alert.Heading>{alertHead}</Alert.Heading>
             <p>{alertMsg}</p>
           </Alert>

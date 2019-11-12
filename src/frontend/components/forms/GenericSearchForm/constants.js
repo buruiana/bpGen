@@ -7,4 +7,5 @@ export const availablefields = {
   [availablecomponents.PROVIDERS]: ['NAME'],
   [availablecomponents.TEMPLATES]: ['NAME'],
   [availablecomponents.PROJECTS]: ['NAME'],
+  [availablecomponents.USERS]: ['NAME'],
 };

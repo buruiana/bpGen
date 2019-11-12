@@ -7,7 +7,13 @@ import { navigate, navigate2Login } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
 
 const PropTypesListView = props => {
-  const { propTypes = [], searchData, deletePropType, isAuthenticated } = props;
+  const {
+    propTypes = [],
+    searchData,
+    deletePropType,
+    isAuthenticated,
+    hasPropTypesImport,
+  } = props;
   const { PROP_TYPES } = availablecomponents;
   if (!isAuthenticated) navigate2Login();
 
@@ -27,6 +33,21 @@ const PropTypesListView = props => {
     });
 
     return sortBy(filteredPropTypes, el => el.name);
+  };
+
+  const handleFileRead = e => {
+    const propTypes = new Function(fileReader.result)();
+    const list = {
+      data: propTypes,
+      importType: 'propTypes'
+    };
+    importData(list);
+  };
+
+  const onImport = e => {
+    fileReader = new FileReader();
+    fileReader.onloadend = handleFileRead;
+    fileReader.readAsText(e.target.files[0]);
   };
 
   const propTypesList = () => {
@@ -49,6 +70,7 @@ const PropTypesListView = props => {
   return (
     <div>
       <GenericSearchForm componentname={PROP_TYPES} />
+      {hasPropTypesImport && <input type="file" id="importFile" onChange={onImport} />}
       <div className='addEditLink'>
         <a className="simpleLink" onClick={() => navigate("/propType/new")}>
           Add PropType

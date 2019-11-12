@@ -17,6 +17,7 @@ import backEndReducer from "../../services/backEndService/reducer";
 import sortableTreeReducer from "../../services/sortableTreeService/reducer";
 import projectsReducer from "../../services/projectsService/reducer";
 import alertReducer from "../../services/alertService/reducer";
+import usersReducer from "../../services/usersService/reducer";
 
 export default history =>
   combineReducers({
@@ -38,4 +39,5 @@ export default history =>
     backEndReducer,
     sortableTreeReducer,
     alertReducer,
+    usersReducer,
   });

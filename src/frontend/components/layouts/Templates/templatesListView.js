@@ -12,7 +12,8 @@ const TemplatesListView = props => {
     searchData,
     deleteTemplate,
     setTemplate,
-    isAuthenticated
+    isAuthenticated,
+    hasTemplatesImport
   } = props;
   const { TEMPLATES } = availablecomponents;
 
@@ -47,6 +48,21 @@ const TemplatesListView = props => {
     return sortBy(filteredTemplates, el => el.name);
   };
 
+  const handleFileRead = e => {
+    const templates = new Function(fileReader.result)();
+    const list = {
+      data: templates,
+      importType: 'templates'
+    };
+    importData(list);
+  };
+
+  const onImport = e => {
+    fileReader = new FileReader();
+    fileReader.onloadend = handleFileRead;
+    fileReader.readAsText(e.target.files[0]);
+  };
+
   const templatesList = () => {
     return filteredItems().map(template => {
       const { name, _id, templateTechnos } = template;
@@ -75,6 +91,7 @@ const TemplatesListView = props => {
   return (
     <div>
       <GenericSearchForm componentname={TEMPLATES} />
+      {hasTemplatesImport && <input type="file" id="importFile" onChange={onImport} />}
       <div className='addEditLink'>
         <a className="simpleLink" onClick={() => navigate("/template/new")}>
           Add Template

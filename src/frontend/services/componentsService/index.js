@@ -7,6 +7,9 @@ import { exportModules } from '../backEndService/actions';
 import { getExportModulesCode } from './helper';
 import { mock } from "./mock";
 
+import { setAlert } from '../alertService/actions';
+import { alertTypes } from '../../utils/constants';
+
 import {
   create,
   update,
@@ -38,6 +41,7 @@ export function* watchGetAllComponents(action) {
   if (isOffline) {
     allComponents = mock.allComponents || [];
   } else {
+    yield put(setAlert('Getting Components', '', alertTypes.INFO));
     yield put(getCollection('components', {}));
     // const snapshot = yield call(rsf.firestore.getCollection, "components");
     // snapshot.docs.filter(component => {
