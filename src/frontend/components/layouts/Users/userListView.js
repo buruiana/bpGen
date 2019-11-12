@@ -52,12 +52,12 @@ const UserListView = props => {
 
   const usersList = () => {
     return filteredItems().map(user => {
-      const { email, isAdmin, _id } = user;
+      const { name, isAdmin, _id } = user;
 
       return (
         <tr key={_id}>
           <td>
-            <a id={_id} className="simpleLink" onClick={goTo}>{email}</a>
+            <a id={_id} className="simpleLink" onClick={goTo}>{name}</a>
           </td>
           <td>
             <a id={_id} className="simpleLink" onClick={goTo}>{isAdmin.toString()}</a>

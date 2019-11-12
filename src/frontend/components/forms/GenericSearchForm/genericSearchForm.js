@@ -20,6 +20,8 @@ const GenericSearchForm = props => {
     ? providers.map(provider => provider.name)
     : [];
 
+  console.log('console: providersEnums', providersEnums);
+
   const technoTypeEnums = !isEmpty(technos)
     ? technos.map(techno => techno.name)
     : [];
@@ -28,8 +30,6 @@ const GenericSearchForm = props => {
     type: "object",
     properties: {
       name: { type: "string", default: "" },
-      provider: { type: "string", default: "" },
-      techno: { type: "string", default: "" }
     }
   };
 
@@ -81,6 +81,8 @@ const GenericSearchForm = props => {
     ]
   };
 
+  console.log('console: ====================================', schema);
+
   const getExportFilesView = () => {
     return props.pathname === "editor" || props.pathname === "/editor" ? (
       <Col md={5}>{/* <ExportFilesView /> */}</Col>
@@ -90,30 +92,32 @@ const GenericSearchForm = props => {
   const log = type => console.log.bind(console, type);
 
   return (
-    <Row>
-      <Col md={12}>
-        {/* <Col md={((props.pathname === 'editor') || (props.pathname === '/editor')) ? 7 : 12}> */}
-        <div className="filterComponentsBox">
-          <span className="filterComponentsLabel">FILTER {componentname}</span>
-          <div className="paddingTop">
-            <Form
-              schema={schema}
-              uiSchema={uiSchema}
-              onChange={onChange}
-              onError={log("errors")}
-              formData={searchData}
-              autocomplete="on"
-              fields={fields}
-            >
-              <button type="submit" className="hidden">
-                Submit
+    <div className='filterSection'>
+      <Row>
+        <Col md={12}>
+          {/* <Col md={((props.pathname === 'editor') || (props.pathname === '/editor')) ? 7 : 12}> */}
+          <div className="filterComponentsBox">
+            <span className="filterComponentsLabel">FILTER {componentname}</span>
+            <div className="paddingTop">
+              <Form
+                schema={schema}
+                uiSchema={uiSchema}
+                onChange={onChange}
+                onError={log("errors")}
+                formData={searchData}
+                autocomplete="on"
+                fields={fields}
+              >
+                <button type="submit" className="hidden">
+                  Submit
               </button>
-            </Form>
+              </Form>
+            </div>
           </div>
-        </div>
-      </Col>
-      {/* {getExportFilesView()} */}
-    </Row>
+        </Col>
+        {/* {getExportFilesView()} */}
+      </Row>
+    </div>
   );
 };
 

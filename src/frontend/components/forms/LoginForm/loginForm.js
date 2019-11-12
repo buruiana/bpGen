@@ -9,7 +9,7 @@ import uiSchema from "./uiSchema";
 const LoginForm = props => {
   const [loginType, setLoginType] = useState('signin');
   let formData = {
-    email: "",
+    name: "",
     password: "",
     isAdmin: false
   };

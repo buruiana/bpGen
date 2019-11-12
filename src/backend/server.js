@@ -118,8 +118,8 @@ app.post('/api/getCollection', async (req, res) => {
 
 
 app.post('/api/register', function (req, res) {
-  const { email, password } = req.body.data;
-  const user = new User({ email, password });
+  const { name, password } = req.body.data;
+  const user = new User({ name, password });
   user.save(function (error) {
     if (error) {
       return res.status(500)
@@ -147,9 +147,9 @@ app.post("/api/prettify", (req, res) => {
 });
 
 app.post('/api/authenticate', function (req, res) {
-  const { email, password } = req.body.data;
+  const { name, password } = req.body.data;
 
-  User.findOne({ email }, function (err, user) {
+  User.findOne({ name }, function (err, user) {
     if (err) {
       console.error(err);
       res.status(500)
@@ -175,7 +175,7 @@ app.post('/api/authenticate', function (req, res) {
             });
         } else {
           // Issue token
-          const payload = { email };
+          const payload = { name };
           const token = jwt.sign(payload, secret, {
             expiresIn: '1h'
           });

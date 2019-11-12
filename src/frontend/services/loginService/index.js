@@ -9,7 +9,7 @@ import {
 } from "../loginService/actions";
 
 export function* watchLogin(action) {
-  const { email, password } = action.credentials;
+  const { name, password } = action.credentials;
 
   try {
   //   const data = yield call(

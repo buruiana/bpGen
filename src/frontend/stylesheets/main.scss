@@ -54,6 +54,11 @@ body {
   margin-top: 1rem;
 }
 
+.navbar-light .navbar-brand {
+    color: white !important;
+    font-size: 2rem;;
+}
+
 .navbar-default .navbar-brand {
   color: #468362;
 }
@@ -61,6 +66,15 @@ body {
 .navBar-txt {
   color: #3d5b94;
   padding-right: 20px;
+}
+
+.filterSection {
+  background-color: #d1ecf1;
+  padding: 1rem;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-color: #bee5eb;
 }
 
 .nav-tabs > li.active > a,
@@ -121,6 +135,10 @@ div.rst__moveHandle {
   width: 100%;
 }
 
+.navbar,
+.navbar-default {
+    background-image: linear-gradient(to bottom,#db3d44 0,#db3d44 100%) !important;
+}
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: white;
 }
@@ -156,7 +174,7 @@ div.rst__moveHandle {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #206cac !important;
+    color: white !important;
 }
 
 // .ace_editor {

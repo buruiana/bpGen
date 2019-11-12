@@ -16,19 +16,19 @@ const UsersForm = props => {
     user = usersArray[0];
   } else {
     user = {
-      email: "",
+      name: "",
       password: '',
       isAdmin: false,
     };
   }
 
-  const { email, isAdmin, _id, password } = user;
+  const { name, isAdmin, _id, password } = user;
   const schema = {
     type: "object",
-    required: ["email", 'password'],
+    required: ["name", 'password'],
     properties: {
       _id: { type: "string", title: "Id", default: _id },
-      email: { type: "string", title: "Name", default: email },
+      name: { type: "string", title: "Name", default: name },
       password: { type: "string", title: "Name", default: password },
       isAdmin: { type: "boolean", title: "isAdmin", default: isAdmin },
     }
@@ -43,7 +43,6 @@ const UsersForm = props => {
 
   const onSubmit = data => {
     const { formData } = data;
-
     setUser(formData);
     goTo();
   };
