@@ -8,9 +8,6 @@ import {
   PROJECT_TECHNO,
 } from "../../../utils/constants";
 
-//import { getFlatForms } from '../../../services/projectSettingsService/helper';
-//import { setCurrentTemplate } from "../../../services/templatesService/actions";
-
 const ProjectSettingsForm = props => {
   const {
     removeModal,
@@ -22,8 +19,6 @@ const ProjectSettingsForm = props => {
     technos,
     setCurrentTemplate,
   } = props;
-
-  console.log('console: propspropspropsprops', props );
 
   const [formState, setFormState] = useState(projectSettings);
   const technoTypeEnums = technos.map(el => el.name.toLowerCase());
@@ -60,7 +55,7 @@ const ProjectSettingsForm = props => {
         .filter(e => e.templateIsActive)
         .map(e => e._id);
   };
-  console.log('console: getTemplatesTypeEnums', getTemplatesTypeEnums());
+
   const schema = {
     type: "object",
     required: requiredFieldsEnum,

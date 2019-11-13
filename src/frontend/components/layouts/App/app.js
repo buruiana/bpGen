@@ -26,8 +26,10 @@ const App = ({ history, modals, projectSettings, isAuthenticated, currentTemplat
         }
         <div className={getStyle()}>
           <NavBar />
-          <Alert />
-          {routes}
+          <div className='inner-container'>
+            <Alert />
+            {routes}
+          </div>
           {ModalsManager(modals, projectSettings, currentTemplate)}
         </div>
       </Row>

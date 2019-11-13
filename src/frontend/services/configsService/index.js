@@ -22,7 +22,6 @@ import { setProject } from '../projectsService/actions';
 import { setTechno } from '../technosService/actions';
 
 export function* watchInitApp(action) {
-  yield put(setAlert('Loading data..', '', alertTypes.INFO));
   yield put(getAllUsers());
   yield put(getAllComponents());
   yield put(getAllProviders());
@@ -30,7 +29,6 @@ export function* watchInitApp(action) {
   yield put(getAllTemplates());
   yield put(getAllPropTypes());
   yield put(getAllProjects());
-  yield put(setAlert('Done..', '', alertTypes.INFO, true));
 }
 
 export function* setData({ importType, data }) {

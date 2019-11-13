@@ -19,7 +19,11 @@ const NavBar = props => {
     projectSettings,
     initProject,
     currentTemplate,
+    router,
   } = props;
+  const { pathname } = router.location;
+
+ const isEditorPage = pathname === '/editor'
 
   const getInitProject = () => {
     return !isEmpty(projectSettings) && (
@@ -58,7 +62,7 @@ const NavBar = props => {
         bpGen
       </Navbar.Brand>
       <Nav className="mr-auto">
-        {isAuthenticated && (
+        {isAuthenticated && isEditorPage && (
           <>
             <Nav.Link
               name={allmodals.PROJECT_SETTINGS}

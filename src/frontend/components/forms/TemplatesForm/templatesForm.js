@@ -9,7 +9,7 @@ const TemplatesForm = props => {
   let fileReader;
 
   const [formSchema, setFormSchema] = useState(
-    templates.filter(template => template.id === props.match.params.id)[0] || []
+    templates.filter(template => template._id === props.match.params.id)[0] || []
   );
 
   const onSubmit = data => {
@@ -50,7 +50,9 @@ const TemplatesForm = props => {
             Back
           </a>
         </div>
-        <input type="file" id="importFile" onChange={onImport} />
+        <div className='importContainer'>
+          <input type="file" id="importFile" onChange={onImport} />
+        </div>
         <Form
           schema={schema}
           onSubmit={onSubmit}

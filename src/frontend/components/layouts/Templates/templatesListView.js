@@ -31,7 +31,6 @@ const TemplatesListView = props => {
 
     setTemplate({
       ...currentTemplate,
-      id: null,
       name: `${currentTemplate.name}-duplicate`
     });
   };

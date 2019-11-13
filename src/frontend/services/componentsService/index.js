@@ -41,7 +41,6 @@ export function* watchGetAllComponents(action) {
   if (isOffline) {
     allComponents = mock.allComponents || [];
   } else {
-    yield put(setAlert('Getting Components', '', alertTypes.INFO));
     yield put(getCollection('components', {}));
     // const snapshot = yield call(rsf.firestore.getCollection, "components");
     // snapshot.docs.filter(component => {

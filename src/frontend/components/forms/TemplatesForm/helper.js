@@ -221,7 +221,7 @@ export const convertSortableTree2JsonSchema = treeData => {
   };
 
   let treeObj = {
-    id: get(treeData[0], 'id', null),
+    _id: get(treeData[0], '_id', null),
     name: get(treeData, '[0].name', ''),
     title: get(treeData, '[0].name', ''),
     templateDescription: get(treeData, '[0].templateDescription', ''),
@@ -238,13 +238,12 @@ export const convertSortableTree2JsonSchema = treeData => {
 };
 
 export const convertJsonSchema2SortableTree = currentTemplate => {
-
   let tree = [];
   let treeObj = {
     title: get(currentTemplate, 'name', ''),
     subtitle: 'Template',
     expanded: true,
-    id: get(currentTemplate, 'id', null),
+    _id: get(currentTemplate, '_id', null),
     name: get(currentTemplate, 'name', ''),
     templateDescription: get(currentTemplate, 'templateDescription', ''),
     templateIsActive: get(currentTemplate, 'templateIsActive', false),

@@ -20,8 +20,6 @@ const GenericSearchForm = props => {
     ? providers.map(provider => provider.name)
     : [];
 
-  console.log('console: providersEnums', providersEnums);
-
   const technoTypeEnums = !isEmpty(technos)
     ? technos.map(techno => techno.name)
     : [];
@@ -80,8 +78,6 @@ const GenericSearchForm = props => {
       }
     ]
   };
-
-  console.log('console: ====================================', schema);
 
   const getExportFilesView = () => {
     return props.pathname === "editor" || props.pathname === "/editor" ? (
