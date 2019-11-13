@@ -15,18 +15,28 @@ import {
 import { navigate2Login } from '../../../utils';
 
 const ComponentsFormMain = props => {
-  const { isAuthenticated, tree, components, setComponentTree } = props;
+  const {
+    isAuthenticated,
+    tree,
+    components,
+    setComponentTree,
+    match
+  } = props;
   const [componentFormType, setComponentFormType] = useState(componentFormTypes.TREE);
-  if (!isAuthenticated) navigate2Login();
-  if (isEmpty(get(tree, '[0].children', null))
-    && props.match.params.id !== 'new'
-    && !isEmpty(components)) {
-    let currentComponent = components.filter(
-      components => components._id === props.match.params.id
-    )[0];
 
-    setComponentTree(convertJsonSchema2SortableTree(currentComponent));
-  }
+  if (!isAuthenticated) navigate2Login();
+
+  useEffect(() => {
+    if (isEmpty(get(tree, 'title', null))
+      && match.params.id !== 'new'
+      && !isEmpty(components)) {
+      let currentComponent = components.filter(
+        components => components._id === match.params.id
+      )[0];
+
+      setComponentTree(convertJsonSchema2SortableTree(currentComponent));
+    }
+  }, [components, match.params.id]);
 
   return (
     <div>

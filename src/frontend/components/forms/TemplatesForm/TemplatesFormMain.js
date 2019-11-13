@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import isEmpty from "lodash/isEmpty";
 import get from "lodash/get";
 
@@ -12,21 +12,30 @@ import { navigate2Login } from '../../../utils';
 import { convertJsonSchema2SortableTree } from './helper';
 
 const TemplatesFormMain = props => {
-  const { tree = [], templates = [], setTemplateTree, isAuthenticated } = props;
+  const {
+    tree = [],
+    templates = [],
+    setTemplateTree,
+    isAuthenticated,
+    match
+  } = props;
 
   const [templateFormType, setTemplateFormType] = useState(templateFormTypes.TREE);
   if (!isAuthenticated) navigate2Login();
 
-  if (
-    isEmpty(get(tree, '[0].children', null))
-    && props.match.params.id !== 'new'
-  ) {
-    let currentTemplate = templates.filter(
-      template => template._id === props.match.params.id
-    )[0];
+  useEffect(() => {
 
-    setTemplateTree(convertJsonSchema2SortableTree(currentTemplate));
-  };
+    if (match.params.id !== 'new') {
+      let currentTemplate = templates.filter(
+        template => template._id === match.params.id
+      )[0];
+
+     setTemplateTree(convertJsonSchema2SortableTree(currentTemplate));
+    };
+  }, [templates, match.params.id]);
+
+
+
 
   return (
     <div>

@@ -14,14 +14,12 @@ const ComponentsForm = props => {
   if (isEmpty(components)) components = [];
 
   const componentsArray = components.filter(
-    component => component.id === props.match.params.id
+    component => component._id === props.match.params.id
   );
 
   let component = !isEmpty(componentsArray)
     ? componentsArray[0]
     : {
-        title: "",
-        _id: "",
         description: "",
         provider: "",
         techno: "",
@@ -63,7 +61,7 @@ const ComponentsForm = props => {
         type: "string",
         name: "Provider",
         enum: providersEnums,
-        default: provider
+        //default: provider
       },
       componentImport: {
         type: "string",
@@ -74,7 +72,7 @@ const ComponentsForm = props => {
         type: "string",
         name: "Techno",
         enum: technosEnums,
-        default: techno
+        //default: techno
       },
       isActive: {
         type: "boolean",
