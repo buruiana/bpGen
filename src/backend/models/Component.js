@@ -12,7 +12,8 @@ const ComponentSchema = new mongoose.Schema({
   isPublic: { type: Boolean, required: false },
   componentProps: { type: Array, required: false },
   children: { type: Array, required: false },
-  userid: { type: String, required: true }
+  userid: { type: String, required: true },
+  propType: { type: String, required: false }
 });
 
 module.exports = mongoose.model('Component', ComponentSchema);

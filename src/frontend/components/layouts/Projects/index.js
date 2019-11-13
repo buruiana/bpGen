@@ -11,6 +11,7 @@ import { setCustomForm } from '../../../services/customFormService/actions';
 import { setProjectSettings } from "../../../services/projectSettingsService/actions";
 import { setCurrentTemplate } from "../../../services/templatesService/actions";
 import { importData } from '../../../services/configsService/actions';
+import { generateCode } from "../../../services/codeGenerationService/actions";
 
 const mapStateToProps = state => {
   return {
@@ -33,7 +34,8 @@ const mapDispatchToProps = {
   setCustomForm,
   setProjectSettings,
   setCurrentTemplate,
-  importData
+  importData,
+  generateCode
 }
 
 export default connect(

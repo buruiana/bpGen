@@ -82,7 +82,6 @@ app.post('/api/create', function (req, res) {
 });
 
 app.post('/api/update', function (req, res) {
-  console.log('console:-------------------- ', req.body.data.dataType, req.body.data.data);
   const model = getMod(req.body.data.dataType, req.body.data.data);
 
   model.findByIdAndUpdate(req.body.data.data._id, req.body.data.data, (err) => {

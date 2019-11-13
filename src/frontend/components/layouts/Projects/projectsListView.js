@@ -18,7 +18,7 @@ const ProjectsListView = props => {
     setProjectSettings,
     templates,
     setCurrentTemplate,
-    currentTemplate,
+    generateCode,
     hasProjectsImport,
     importData,
   } = props;
@@ -28,26 +28,30 @@ const ProjectsListView = props => {
   const { PROJECTS } = availablecomponents;
   let fileReader;
 
-  const deleteSelectedProject = event => deleteProject({ id: event.target.id });
+  const deleteSelectedProject = event => deleteProject({ _id: event.target.id });
   const onClick = event => {
-    const project = projects.filter(e => e.projectId === event.target.id);
-    const newCurrentTemplate = templates.filter(t => t.id === project[0].forms.projectSettings.projectTemplate)
+    const project = projects.filter(e => e._id === event.target.id);
+
+    console.log('console: ==============', project, props);
+
+
+    const newCurrentTemplate = templates.filter(t => t._id === project[0].forms.projectSettings.projectTemplate)
 
     setCurrentTemplate(newCurrentTemplate[0]);
     setTree({ treeData2: project[0].tree });
     setCustomForm(project[0].forms);
     setProjectSettings(project[0].forms.projectSettings);
+    generateCode()
 
     navigate('/editor');
   };
   const duplicateSelectedProject = event => {
     const currentProject = projects.filter(
-      project => project.id === event.target.id
+      project => project._id === event.target.id
     )[0];
 
     setProject({
       ...currentProject,
-      id: null,
       name: `${currentProject.name}-duplicate`
     });
   };
@@ -84,25 +88,25 @@ const ProjectsListView = props => {
 
   const projectsList = () => {
     return filteredItems().map(project => {
-      const { projectId } = project;
+      const { _id } = project;
       const { title, description, techno } = project.forms.tree[0];
 
       return (
-        <tr key={projectId}>
+        <tr key={_id}>
           <td>
-            <a id={projectId} className="simpleLink" onClick={onClick}>{title}</a>
+            <a id={_id} className="simpleLink" onClick={onClick}>{title}</a>
           </td>
           <td>
-            <a id={projectId} className="simpleLink" onClick={onClick}>{description}</a>
+            <a id={_id} className="simpleLink" onClick={onClick}>{description}</a>
           </td>
-          <td><a id={projectId} target='blank'>{techno}</a></td>
+          <td><a id={_id} target='blank'>{techno}</a></td>
           <td>
-            <a className="simpleLink" id={projectId} onClick={duplicateSelectedProject}>
+            <a className="simpleLink" id={_id} onClick={duplicateSelectedProject}>
               Duplicate
             </a>
           </td>
           <td>
-            <a className="simpleLink" id={projectId} onClick={deleteSelectedProject}>
+            <a className="simpleLink" id={_id} onClick={deleteSelectedProject}>
               Delete
             </a>
           </td>

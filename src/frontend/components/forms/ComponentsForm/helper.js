@@ -12,6 +12,7 @@ export const getDafaultTreeData = [
     description: '',
     isDefault: false,
     provider: '',
+    propType: '',
     subtitle: 'Component',
     techno: '',
     title: '',
@@ -27,7 +28,6 @@ export const convertSortableTree2JsonSchema = treeData => {
     return treeData[0].children.map(el => {
       return {
         description: get(el, 'description', ''),
-        propType: get(el, 'propType', ''),
         propTypeProp: get(el, 'propTypeProp', ''),
         propTypeVal: get(el, 'propTypeVal', ''),
         propTypeIsRequired: get(el, 'propTypeIsRequired', false),
@@ -49,6 +49,7 @@ export const convertSortableTree2JsonSchema = treeData => {
     subtitle: get(treeData[0], 'subtitle'),
     techno: get(treeData[0], 'techno'),
     title: get(treeData[0], 'title'),
+    propType: get(treeData[0], 'propType', ''),
     componentProps: getcomponentProps()
   };
 
@@ -71,6 +72,7 @@ export const convertJsonSchema2SortableTree = currentTemplate => {
     subtitle: "Component",
     techno: get(currentTemplate, 'techno', ''),
     title: get(currentTemplate, 'title', ''),
+    propType: get(currentTemplate, 'propType', ''),
     expanded: true
   };
 
@@ -78,7 +80,6 @@ export const convertJsonSchema2SortableTree = currentTemplate => {
     currentTemplate.componentProps.map(prop => {
       treeObj.children.push({
         description: get(prop, 'description', ''),
-        propType: get(prop, 'propType', ''),
         propTypeProp: get(prop, 'propTypeProp', ''),
         propTypeVal: get(prop, 'propTypeVal', ''),
         propTypeIsRequired: get(prop, 'propTypeIsRequired', ''),

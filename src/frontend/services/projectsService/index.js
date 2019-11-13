@@ -10,7 +10,12 @@ import {
 import { setAllProjects, getAllProjects } from "./actions";
 import { mock } from "./mock";
 
-import { create, update, remove } from '../backEndService/actions';
+import {
+  create,
+  update,
+  remove,
+  getCollection
+} from '../backEndService/actions';
 
 export function* watchSetProject(action) {
   const { project } = action;
@@ -18,9 +23,9 @@ export function* watchSetProject(action) {
 
   if (!isOffline) {
     if (project._id) {
-      yield put(update('project', project));
+      yield put(update('projects', project));
     } else {
-      yield put(create('project', project));
+      yield put(create('projects', project));
     }
     yield put(getAllProjects());
   }
@@ -46,6 +51,7 @@ export function* watchGetAllProjects(action) {
     //     });
     //   }
     // });
+    yield put(getCollection('projects', {}));
   }
   if (isEmpty(projectArr)) projectArr = [];
   sortBy(projectArr, el => el.title);
