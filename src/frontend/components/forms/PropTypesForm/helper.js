@@ -24,7 +24,6 @@ export const convertSortableTree2JsonSchema = treeData => {
         description: get(el, 'description', ''),
         title: get(el, 'title', ''),
         subtitle: get(el, 'subtitle', ''),
-        subtype: get(el, 'subtype', ''),
       };
     });
   };

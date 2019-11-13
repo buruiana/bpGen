@@ -25,7 +25,6 @@ const PropTypesFormTree = props => {
     userid,
     setPropTypeTree,
     addModal,
-    propTypes,
     tree,
     setPropType
   } = props;

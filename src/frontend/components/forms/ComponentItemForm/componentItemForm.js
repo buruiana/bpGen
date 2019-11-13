@@ -14,31 +14,34 @@ const ComponentItemForm = props => {
     providers,
     propTypes,
   } = props;
+
   const currentModalData = modalData[modalData.length - 1].node;
   const getNodeKey = ({ treeIndex }) => treeIndex;
-
+  console.log('console:modalDatamodalDatamodalData', modalData);
   const [formSchema, setFormSchema] = useState(currentModalData);
 
   let schema = {
     type: "object",
     properties: {}
   };
-  console.log('console: formSchemaformSchema', formSchema );
+
   const technosEnums = !isEmpty(technos)
     ? technos.map(techno => techno.name)
     : [];
+
   const providersEnums = !isEmpty(providers)
     ? providers.map(provider => provider.name)
     : [];
+  console.log('console:formSchemaformSchemaformSchema ', formSchema);
+  const getPropTypePropEnums = () => {
+    const propTypeProps = propTypes
+      .filter(el => el.title === tree[0].propType)
+      .map(e => e.propTypeProps);
 
-  const getPropTypeValsEnums = () => {
-    const propTypeProps = !isEmpty(formSchema.propType)
-      ? propTypes
-        .filter(el => el.title === formSchema.propType)
-        .map(e => e.propTypeProps)
-      : [];
     return !isEmpty(propTypeProps) && propTypeProps[0].map(e => e.title);
   };
+
+  const propTypesEnums = !isEmpty(propTypes) ? propTypes.map(p => p.title) : [];
 
   if (currentModalData.subtitle === "Component") {
     schema.properties = {
@@ -66,12 +69,19 @@ const ComponentItemForm = props => {
       provider: {
         type: "string",
         name: "Provider",
+        title: "Provider",
         enum: providersEnums,
       },
       techno: {
         type: "string",
         name: "Techno",
+        title: "Techno",
         enum: technosEnums,
+      },
+      propType: {
+        type: "string",
+        title: "Prop Type",
+        enum: propTypesEnums
       },
       isDefault: {
         type: "boolean",
@@ -96,19 +106,35 @@ const ComponentItemForm = props => {
     };
   };
 
-  const propTypesEnums = !isEmpty(propTypes) ? propTypes.map(p => p.title) : [];
-
   if (currentModalData.subtitle === "Component Prop") {
     schema.properties = {
       ...schema.properties,
-      title: { type: "string", title: "Name", default: get(currentModalData, 'title', '') },
+      title: {
+        type: "string",
+        title: "Name",
+        default: get(currentModalData, 'title', '')
+      },
       description: {
-        type: "string", title: "Description", default: get(currentModalData, 'description', '') },
-      propType: { type: "string", title: "Prop Type", enum: propTypesEnums },
-      propTypeProp: { type: "string", title: "Prop Type Prop", enum: getPropTypeValsEnums() },
-      propTypeVal: { type: "string", title: "Prop Type Val", default: get(currentModalData, 'propTypeVal', '') },
-      propTypeIsrequired: {
-        type: "boolean", title: "is Required", default: get(currentModalData, 'propTypeIsrequired', false) },
+        type: "string",
+        title: "Description",
+        default: get(currentModalData, 'description', '')
+      },
+      propTypeProp: {
+        type: "string",
+        title: "Prop Type Prop",
+        enum: getPropTypePropEnums(),
+        //default: getPropTypePropEnums(),
+      },
+      propTypeVal: {
+        type: "string",
+        title: "Prop Type Val",
+        default: get(currentModalData, 'propTypeVal', '')
+      },
+      propTypeIsRequired: {
+        type: "boolean",
+        title: "is Required",
+        default: get(currentModalData, 'propTypeIsRequired', false)
+      },
     }
   }
 

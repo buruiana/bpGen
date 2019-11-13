@@ -10,7 +10,6 @@ const PropTypeItemForm = props => {
     removeModal,
     tree,
     modalData,
-    propTypes,
   } = props;
   const currentModalData = modalData[modalData.length - 1].node;
   const getNodeKey = ({ treeIndex }) => treeIndex;

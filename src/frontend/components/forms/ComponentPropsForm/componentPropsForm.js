@@ -50,7 +50,9 @@ const ComponentPropsForm = props => {
       if (prop) {
         newProp = {
           propType: prop[0].propType,
-          propTypeIsrequired: prop[0].propTypeIsrequired,
+          propTypeProp: prop[0].propTypeProp,
+          propTypeVal: prop[0].propTypeVal,
+          propTypeIsRequired: prop[0].propTypeIsRequired,
           title: prop[0].title,
           description: prop[0].description,
           val: formData[key]

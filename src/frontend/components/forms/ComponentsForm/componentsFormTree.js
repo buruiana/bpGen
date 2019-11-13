@@ -25,7 +25,6 @@ const ComponentsFormTree = props => {
     userid,
     setComponentTree,
     addModal,
-    components,
     tree,
     setComponent
   } = props;

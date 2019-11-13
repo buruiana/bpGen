@@ -30,21 +30,31 @@ const ComponentsForm = props => {
     title,
     _id,
     description,
-    techno,
-    provider,
     componentImport,
     isDefault,
     isPublic,
-    isActive
+    isActive,
+    componentProps,
   } = component;
 
   const technosEnums = !isEmpty(technos)
     ? technos.map(techno => techno.name)
     : [];
+
   const providersEnums = !isEmpty(providers)
     ? providers.map(provider => provider.name)
     : [];
-  const propTypesEnums = !isEmpty(propTypes) ? propTypes.map(p => p.name) : [];
+
+  const propTypesEnums = !isEmpty(propTypes) ? propTypes.map(p => p.title) : [];
+
+  const getPropTypeValsEnums = () => {
+    const propTypeProps = !isEmpty(componentProps)
+      ? propTypes
+        .filter(el => el.title === componentProps[0].propType)
+        .map(e => e.propTypeProps)
+      : [];
+    return !isEmpty(propTypeProps) && propTypeProps[0].map(e => e.title);
+  };
 
   const schema = {
     type: "object",
@@ -61,7 +71,6 @@ const ComponentsForm = props => {
         type: "string",
         name: "Provider",
         enum: providersEnums,
-        //default: provider
       },
       componentImport: {
         type: "string",
@@ -72,7 +81,11 @@ const ComponentsForm = props => {
         type: "string",
         name: "Techno",
         enum: technosEnums,
-        //default: techno
+      },
+      propType: {
+        type: "string",
+        name: "PropType",
+        enum: propTypesEnums
       },
       isActive: {
         type: "boolean",
@@ -95,14 +108,24 @@ const ComponentsForm = props => {
           type: "object",
           required: ["title"],
           properties: {
-            title: { type: "string", name: "Name" },
-            description: { type: "string", name: "Description", default: "" },
-            propType: {
+            title: {
+              type: "string",
+              name: "Name"
+            },
+            description: {
+              type: "string",
+              name: "Description", default: ""
+            },
+            propTypeProp: {
               type: "string",
               name: "PropType",
-              enum: propTypesEnums
+              enum: getPropTypeValsEnums(),
             },
-            propTypeIsrequired: {
+            propTypeVal: {
+              type: "string",
+              name: "PropType",
+            },
+            propTypeIsRequired: {
               type: "boolean",
               name: "Prop Type isRequired",
               default: false
@@ -131,7 +154,8 @@ const ComponentsForm = props => {
             rows: 5
           }
         },
-        propType: { "ui:placeholder": "Choose an propType" }
+        propType: { "ui:placeholder": "Choose a propType" },
+        propTypeProp: { "ui:placeholder": "Choose a propType Prop" }
       }
     }
   };

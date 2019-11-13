@@ -2,7 +2,6 @@ import get from 'lodash/get';
 
 export const getNewtemplate = formData => {
   let newTemplate = {};
-  console.log('console:================= ', formData);
 
   if ('templateDescription' in formData) {
     newTemplate = {
