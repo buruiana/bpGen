@@ -4,14 +4,12 @@ import { changeNodeAtPath } from "react-sortable-tree";
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
-const ComponentItemForm = props => {
+const PropTypeItemForm = props => {
   const {
-    setComponentTree,
+    setPropTypeTree,
     removeModal,
     tree,
     modalData,
-    technos,
-    providers,
     propTypes,
   } = props;
   const currentModalData = modalData[modalData.length - 1].node;
@@ -24,14 +22,8 @@ const ComponentItemForm = props => {
     properties: {}
   };
 
-  const technosEnums = !isEmpty(technos)
-    ? technos.map(techno => techno.name)
-    : [];
-  const providersEnums = !isEmpty(providers)
-    ? providers.map(provider => provider.name)
-    : [];
 
-  if (currentModalData.subtitle === "Component") {
+  if (currentModalData.subtitle === "PropType") {
     schema.properties = {
       ...schema.properties,
       _id: {
@@ -49,31 +41,6 @@ const ComponentItemForm = props => {
         title: "Description",
         default: get(currentModalData, 'description', ''),
       },
-      componentImport: {
-        type: "string",
-        title: "Component Import",
-        default: get(currentModalData, 'componentImport', ''),
-      },
-      provider: {
-        type: "string",
-        name: "Provider",
-        enum: providersEnums,
-      },
-      techno: {
-        type: "string",
-        name: "Techno",
-        enum: technosEnums,
-      },
-      isDefault: {
-        type: "boolean",
-        title: " Is Defauls",
-        default: get(currentModalData, 'isDefault', false),
-      },
-      closeTag: {
-        type: "boolean",
-        title: " CloseTag",
-        default: get(currentModalData, 'closeTag', false),
-      },
       isPublic: {
         type: "boolean",
         title: " Is Public",
@@ -87,17 +54,13 @@ const ComponentItemForm = props => {
     };
   };
 
-  const propTypesEnums = !isEmpty(propTypes) ? propTypes.map(p => p.name) : [];
-
-  if (currentModalData.subtitle === "Component Prop") {
+  if (currentModalData.subtitle === "PropType Prop") {
     schema.properties = {
       ...schema.properties,
       title: { type: "string", title: "Name", default: get(currentModalData, 'title', '') },
       description: {
-        type: "string", title: "Description", default: get(currentModalData, 'description', '') },
-      propType: { type: "string", title: "Prop Type", enum: propTypesEnums},
-      propTypeIsrequired: {
-        type: "boolean", title: "is Required", default: get(currentModalData, 'propTypeIsrequired', false) },
+        type: "string", title: "Description", default: get(currentModalData, 'description', '')
+      },
     }
   }
 
@@ -112,7 +75,7 @@ const ComponentItemForm = props => {
       newNode
     });
 
-    setComponentTree(newTree);
+    setPropTypeTree(newTree);
     removeModal();
   };
 
@@ -122,21 +85,7 @@ const ComponentItemForm = props => {
 
   const uiSchema = {
     "ui:widget": "myCustomWidget",
-    provider: { "ui:placeholder": "Choose a provider" },
-    techno: { "ui:placeholder": "Choose a technology" },
     _id: { "ui:widget": "hidden" },
-    blockImplementation: {
-      "ui:widget": "myCustomWidget"
-    },
-    formSchema: {
-      "ui:widget": "myCustomWidget"
-    },
-    formUISchema: {
-      "ui:widget": "myCustomWidget"
-    },
-    formPrepareData: {
-      "ui:widget": "myCustomWidget"
-    },
     description: {
       "ui:widget": "textarea",
       "ui:options": {
@@ -159,4 +108,4 @@ const ComponentItemForm = props => {
   );
 };
 
-export default ComponentItemForm;
+export default PropTypeItemForm;

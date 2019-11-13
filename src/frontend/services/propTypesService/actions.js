@@ -33,3 +33,8 @@ export const setFilterData = searchData => ({
 export const importPropTypes = propTypes => ({
   type: actionTypes.IMPORT_PROP_TYPES,
 })
+
+export const setPropTypeTree = tree => ({
+  type: actionTypes.SET_PROP_TYPE_TREE,
+  tree,
+});

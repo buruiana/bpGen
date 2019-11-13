@@ -56,12 +56,12 @@ const PropTypesListView = props => {
 
   const propTypesList = () => {
     return filteredItems().map(propType => {
-      const { name, _id } = propType;
+      const { title, _id } = propType;
 
       return (
         <tr key={_id}>
           <td>
-            <a id={_id} className="simpleLink" onClick={goTo}>{name}</a>
+            <a id={_id} className="simpleLink" onClick={goTo}>{title}</a>
           </td>
           <td>
             <a className="simpleLink" id={_id} onClick={deleteSelectedPropType}>Delete</a>

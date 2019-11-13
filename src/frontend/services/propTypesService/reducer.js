@@ -4,6 +4,7 @@ export const initialState = () => ({
   propType: {},
   propTypes: [],
   searchData: {},
+  tree: [],
 });
 
 export default (state = initialState(), action) => {
@@ -37,6 +38,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         searchData: action.searchData,
+      };
+    case actionTypes.SET_PROP_TYPE_TREE:
+      return {
+        ...state,
+        tree: action.tree,
       };
     default:
       return state;

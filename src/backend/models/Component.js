@@ -5,7 +5,6 @@ const ComponentSchema = new mongoose.Schema({
   description: { type: String, required: false },
   provider: { type: String, required: false },
   techno: { type: String, required: false },
-  title: { type: String, required: false },
   subtitle: { type: String, required: false },
   componentImport: { type: String, required: false },
   isDefault: { type: Boolean, required: false },

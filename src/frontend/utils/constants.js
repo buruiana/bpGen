@@ -30,10 +30,15 @@ export const allmodals = {
   COMPONENT_INFO: "COMPONENT_INFO",
   TEMPLATE_ITEM_PROPS: "TEMPLATE_ITEM_PROPS",
   COMPONENT_ITEM_PROPS: "COMPONENT_ITEM_PROPS",
-  SPINNER: "SPINNER"
+  PROPTYPE_ITEM_PROPS: "PROPTYPE_ITEM_PROPS"
 };
 
 export const templateFormTypes = {
+  JSON_FORM: "JSON_FORM",
+  TREE: "TREE"
+};
+
+export const propTypeFormTypes = {
   JSON_FORM: "JSON_FORM",
   TREE: "TREE"
 };
