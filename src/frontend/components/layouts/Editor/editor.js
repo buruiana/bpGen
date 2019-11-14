@@ -124,10 +124,8 @@ const Editor = props => {
   };
 
   const saveProject = () => {
-    const cleanForms = replaceUndefined(forms);
+   // const cleanForms = replaceUndefined(forms);
     setProject({
-      // tree,
-      // projectSettings,
       forms
     });
   };
