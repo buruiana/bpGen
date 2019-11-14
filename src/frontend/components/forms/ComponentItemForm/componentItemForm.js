@@ -4,6 +4,15 @@ import { changeNodeAtPath } from "react-sortable-tree";
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
+import {
+  getTechnosEnums,
+  getTechnosEnumNames,
+  getProvidersEnums,
+  getProvidersEnumNames,
+  getPropTypesEnums,
+  getPropTypesEnumNames,
+ } from '../../../utils';
+
 const ComponentItemForm = props => {
   const {
     setComponentTree,
@@ -16,32 +25,38 @@ const ComponentItemForm = props => {
   } = props;
 
   const currentModalData = modalData[modalData.length - 1].node;
-  const getNodeKey = ({ treeIndex }) => treeIndex;
-  console.log('console:modalDatamodalDatamodalData', modalData);
   const [formSchema, setFormSchema] = useState(currentModalData);
+
+  const getNodeKey = ({ treeIndex }) => treeIndex;
 
   let schema = {
     type: "object",
     properties: {}
   };
 
-  const technosEnums = !isEmpty(technos)
-    ? technos.map(techno => techno.title)
-    : [];
-
-  const providersEnums = !isEmpty(providers)
-    ? providers.map(provider => provider.title)
-    : [];
+  console.log('console: tree[0]', tree[0] );
 
   const getPropTypePropEnums = () => {
     const propTypeProps = propTypes
-      .filter(el => el.title === tree[0].propType)
+      .filter(el => el._id === tree[0].propType)
       .map(e => e.propTypeProps);
 
-    return !isEmpty(propTypeProps) && propTypeProps[0].map(e => e.title);
+    return !isEmpty(propTypeProps)
+      ? propTypeProps[0].map(e => e.id)
+      : [];
+  };
+  const getPropTypePropEnumNames = () => {
+    const propTypeProps = propTypes
+      .filter(el => el._id === tree[0].propType)
+      .map(e => e.propTypeProps);
+
+    return !isEmpty(propTypeProps)
+      ? propTypeProps[0].map(e => e.title)
+      : [];
   };
 
-  const propTypesEnums = !isEmpty(propTypes) ? propTypes.map(p => p.title) : [];
+  console.log('console: getPropTypePropEnums', getPropTypePropEnums());
+  console.log('console: getPropTypePropEnumNames', getPropTypePropEnumNames());
 
   if (currentModalData.subtitle === "Component") {
     schema.properties = {
@@ -69,17 +84,20 @@ const ComponentItemForm = props => {
       provider: {
         type: "string",
         title: "Provider",
-        enum: providersEnums,
+        enum: getProvidersEnums(providers),
+        enumNames: getProvidersEnumNames(providers),
       },
       techno: {
         type: "string",
         title: "Techno",
-        enum: technosEnums,
+        enum: getTechnosEnums(technos),
+        enumNames: getTechnosEnumNames(technos),
       },
       propType: {
         type: "string",
         title: "Prop Type",
-        enum: propTypesEnums
+        enum: getPropTypesEnums(propTypes),
+        enumNames: getPropTypesEnumNames(propTypes),
       },
       isDefault: {
         type: "boolean",
@@ -121,7 +139,7 @@ const ComponentItemForm = props => {
         type: "string",
         title: "Prop Type Prop",
         enum: getPropTypePropEnums(),
-        //default: getPropTypePropEnums(),
+        enumNames: getPropTypePropEnumNames(),
       },
       propTypeVal: {
         type: "string",

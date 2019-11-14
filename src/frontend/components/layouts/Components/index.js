@@ -13,6 +13,8 @@ const mapStateToProps = state => {
     searchData: state.filterDataReducer.searchData,
     hasComponentImport: state.configsReducer.configs.hasComponentImport,
     isAuthenticated: state.loginReducer.isAuthenticated,
+    providers: state.providersReducer.providers,
+    technos: state.technosReducer.technos,
   }
 }
 

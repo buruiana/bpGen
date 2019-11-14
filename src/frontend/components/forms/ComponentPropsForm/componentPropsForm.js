@@ -36,7 +36,7 @@ const ComponentPropsForm = props => {
   const uiSchema = {};
 
   propsInfo.map(prop => {
-    uiSchema[prop.title] = { "ui:placeholder": `${prop.propType}` };
+    uiSchema[prop.title] = { "ui:placeholder": `${prop.propTypeProp}` };
   });
 
   const onSubmit = data => {

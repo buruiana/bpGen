@@ -7,6 +7,11 @@ import GenericSearchForm from "../../forms/GenericSearchForm";
 import { navigate, navigate2Login } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
 
+import {
+  getTechnoName,
+  getProviderName,
+} from '../../../utils';
+
 const ComponentsListView = props => {
   const {
     searchData,
@@ -14,7 +19,9 @@ const ComponentsListView = props => {
     deleteComponent,
     importData,
     hasComponentImport,
-    isAuthenticated
+    isAuthenticated,
+    providers,
+    technos,
   } = props;
 
   if (!isAuthenticated) navigate2Login();
@@ -48,8 +55,8 @@ const ComponentsListView = props => {
           <td>
             <a id={_id} className="simpleLink" onClick={goTo}>{title}</a>
           </td>
-          <td>{techno}</td>
-          <td>{provider}</td>
+          <td>{getTechnoName(technos, techno)}</td>
+          <td>{getProviderName(providers, provider)}</td>
           <td>
             <a className="simpleLink" id={_id} onClick={deleteSelectedComponent}>Delete</a>
           </td>

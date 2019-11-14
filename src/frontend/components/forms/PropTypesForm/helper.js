@@ -24,6 +24,7 @@ export const convertSortableTree2JsonSchema = treeData => {
         description: get(el, 'description', ''),
         title: get(el, 'title', ''),
         subtitle: get(el, 'subtitle', ''),
+        id: get(el, 'id', ''),
       };
     });
   };
@@ -58,6 +59,7 @@ export const convertJsonSchema2SortableTree = currentTemplate => {
   if (currentTemplate && !isEmpty(currentTemplate.propTypeProps)) {
     currentTemplate.propTypeProps.map(prop => {
       treeObj.children.push({
+        id: get(prop, 'id', ''),
         description: get(prop, 'description', ''),
         title: get(prop, 'title', ''),
         subtitle: 'PropType Prop',

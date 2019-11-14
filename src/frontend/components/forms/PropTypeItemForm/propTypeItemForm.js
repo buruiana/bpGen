@@ -56,9 +56,20 @@ const PropTypeItemForm = props => {
   if (currentModalData.subtitle === "PropType Prop") {
     schema.properties = {
       ...schema.properties,
-      title: { type: "string", title: "Name", default: get(currentModalData, 'title', '') },
+      id: {
+        type: "string",
+        title: "Id",
+        default: get(currentModalData, '_id', '')
+      },
+      title: {
+        type: "string",
+        title: "Name",
+        default: get(currentModalData, 'title', '')
+      },
       description: {
-        type: "string", title: "Description", default: get(currentModalData, 'description', '')
+        type: "string",
+        title: "Description",
+        default: get(currentModalData, 'description', '')
       },
     }
   }
