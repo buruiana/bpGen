@@ -26,7 +26,6 @@ import { navigate } from '../../utils';
 import { alertTypes } from '../../utils/constants';
 
 const callBackend = (type, data) => {
-  console.log('console: ------------------------', data);
   return axios.post(`http://localhost:5000/api/${type}`, { data });
 };
 

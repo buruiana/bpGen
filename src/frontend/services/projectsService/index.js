@@ -29,8 +29,6 @@ export function* watchSetProject(action) {
       yield put(create('projects', {
         ...project,
         userid,
-        title: project.forms.projectSettings.projectName,
-        techno: project.forms.projectSettings.projectTechno
       }));
     }
     // yield put(getAllProjects());

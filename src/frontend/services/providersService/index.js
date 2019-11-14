@@ -25,7 +25,7 @@ export function* watchSetProvider(action) {
     } else {
       yield put(create('providers', { ...provider, userid } ));
     }
-    yield put(getAllProviders());
+    //yield put(getAllProviders());
   }
 }
 
@@ -45,7 +45,7 @@ export function* watchDeleteProvider(action) {
 
   if (!isOffline) {
     yield put(remove('providers', _id));
-    yield put(getAllProviders());
+    //yield put(getAllProviders());
   }
 }
 

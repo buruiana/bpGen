@@ -2,7 +2,7 @@ import * as actionTypes from "./actionTypes";
 
 export const setProject = project => ({
   type: actionTypes.SET_PROJECT,
-  project
+  project,
 });
 
 export const setProjectSuccess = project => ({

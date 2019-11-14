@@ -44,7 +44,7 @@ export function* watchGetAllPropTypes(action) {
     yield put(getCollection('propTypes', {}));
   }
 
-  yield put(setInitAppDone());
+  //yield put(setInitAppDone());
 }
 
 export function* watchDeletePropType(action) {
@@ -53,7 +53,7 @@ export function* watchDeletePropType(action) {
 
   if (!isOffline) {
     yield put(remove('propTypes', _id));
-    yield put(getAllPropTypes());
+    //yield put(getAllPropTypes());
   }
 }
 

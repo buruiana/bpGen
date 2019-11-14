@@ -51,7 +51,7 @@ export function* watchDeleteUser(action) {
 
   if (!isOffline) {
     yield put(remove('users', _id));
-    yield put(getAllUsers());
+    //yield put(getAllUsers());
   }
 }
 
@@ -66,7 +66,7 @@ export function* watchImportUser(action) {
         //call(rsf.firestore.addDocument, `users`, el);
       }));
     }
-    yield put(getAllUsers());
+   // yield put(getAllUsers());
   }
 }
 

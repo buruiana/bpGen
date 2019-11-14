@@ -86,8 +86,7 @@ const ProjectsListView = props => {
 
   const projectsList = () => {
     return filteredItems().map(project => {
-      const { _id } = project;
-      const { title } = project.forms.tree[0];
+      const { _id, title } = project;
 
       return (
         <tr key={_id}>

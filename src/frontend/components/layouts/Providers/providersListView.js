@@ -25,21 +25,6 @@ const ProvidersListView = props => {
   const deleteSelectedProvider = event => deleteProvider({ _id: event.target.id });
   const goTo = event => navigate(`/provider/${event.target.id}`);
 
-  // const filteredItems = () => {
-  //   const filteredProviders = providers.filter(el => {
-  //     if (searchData.title) {
-  //       return (
-  //         el.title
-  //           .toLowerCase()
-  //           .includes(get(searchData, "title", el.title).toLowerCase())
-  //       );
-  //     }
-  //     return el;
-  //   });
-
-  //   return sortBy(filteredProviders, el => el.title);
-  // };
-
   const filteredItems = () => {
     const filteredProviders = providers.filter(el => {
       if (!isEmpty(searchData) && searchData.title) {

@@ -28,7 +28,7 @@ export function* watchSetTemplate(action) {
     } else {
       yield put(create('templates', template));
     }
-    yield put(getAllTemplates());
+    //yield put(getAllTemplates());
   }
 }
 
@@ -39,19 +39,8 @@ export function* watchGetAllTemplates(action) {
   if (isOffline) {
     templateArr = mock.allTemplates || [];
   } else {
-    // const snapshot = yield call(rsf.firestore.getCollection, "templates");
-    // snapshot.docs.filter(template => {
-    //   const newTemplate = { ...template.data(), id: template.id };
-
-    //   if (newTemplate.userid === userid || newTemplate.templateIsPublic) {
-    //     templateArr.push(newTemplate);
-    //   }
-    // });
     yield put(getCollection('templates', {}));
   }
-  //if (isEmpty(templateArr)) templateArr = [];
-  // sortBy(templateArr, el => el.title);
-  // yield put(setAllTemplates(templateArr));
 }
 
 export function* watchDeleteTemplate(action) {

@@ -28,7 +28,7 @@ export function* watchSetComponent(action) {
     } else {
       yield put(create('components', { ...component, userid }));
     }
-    yield put(getAllComponents());
+    //yield put(getAllComponents());
   }
   //yield put(exportModules(getExportModulesCode(components)));
 }
@@ -42,18 +42,7 @@ export function* watchGetAllComponents(action) {
     allComponents = mock.allComponents || [];
   } else {
     yield put(getCollection('components', {}));
-    // const snapshot = yield call(rsf.firestore.getCollection, "components");
-    // snapshot.docs.filter(component => {
-    //   const newComponent = component.data();
-
-    //   if (newComponent.userid === userid || newComponent.isPublic) {
-    //     componentsArr.push(newComponent);
-    //   }
-    // });
   }
-  // if (isEmpty(componentsArr)) componentsArr = [];
-  // sortBy(componentsArr, el => el.title);
-  // yield put(setAllComponents(componentsArr));
 }
 
 export function* watchDeleteComponent(action) {
