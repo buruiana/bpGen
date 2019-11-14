@@ -15,13 +15,13 @@ import { generateCodeSuccess } from '../codeGenerationService/actions';
 
 import { loginSuccess, loginFailure } from '../loginService/actions';
 import { setAlert } from '../alertService/actions';
-import { setAllTechnos } from '../technosService/actions';
-import { setAllProviders } from '../providersService/actions';
-import { setAllPropTypes } from '../propTypesService/actions';
-import { setAllProjects } from '../projectsService/actions';
-import { setAllTemplates } from '../templatesService/actions';
-import { setAllComponents } from '../componentsService/actions';
-import { setAllUsers } from '../usersService/actions';
+import { setAllTechnos, getAllTechnos } from '../technosService/actions';
+import { setAllProviders, getAllProviders } from '../providersService/actions';
+import { setAllPropTypes, getAllPropTypes } from '../propTypesService/actions';
+import { setAllProjects, getAllProjects } from '../projectsService/actions';
+import { setAllTemplates, getAllTemplates } from '../templatesService/actions';
+import { setAllComponents, getAllComponents } from '../componentsService/actions';
+import { setAllUsers, getAllUsers } from '../usersService/actions';
 import { navigate } from '../../utils';
 import { alertTypes } from '../../utils/constants';
 
@@ -104,6 +104,7 @@ export function* watchCreate(info) {
   if (!info.data) return;
   try {
     const res = yield callBackend('create', info);
+    yield call(getCollection, info.dataType);
     return res;
   } catch (err) {
     yield put(
@@ -119,6 +120,7 @@ export function* watchUpdate(info) {
   if (!info.data) return;
   try {
     const res = yield callBackend('update', info);
+    yield call(getCollection, info.dataType);
     return res;
   } catch (err) {
     yield put(
@@ -159,6 +161,35 @@ export function* updateCollection({ info, res }) {
   }
 };
 
+export function* getCollection( info ) {
+
+  switch (info) {
+    case 'technos':
+      yield put(getAllTechnos());
+      break;
+    case 'providers':
+      yield put(getAllProviders());
+      break;
+    case 'propTypes':
+      yield put(getAllPropTypes());
+      break;
+    case 'templates':
+      yield put(getAllTemplates());
+      break;
+    case 'projects':
+      yield put(getAllProjects());
+      break;
+    case 'components':
+      yield put(getAllComponents());
+      break;
+    case 'users':
+      yield put(getAllUsers());
+      break;
+    default:
+      break;
+  }
+};
+
 export function* watchGetCollection(info) {
   if (!info.dataType) return;
   try {
@@ -180,7 +211,7 @@ export function* watchDelete(info) {
   if (!info.dataType) return;
   try {
     const res = yield callBackendDelete(info);
-    yield call(updateCollection, { info, res });
+    yield call(getCollection, info.dataType);
 
     return res;
   } catch (err) {

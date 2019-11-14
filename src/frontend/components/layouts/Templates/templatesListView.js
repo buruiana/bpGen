@@ -37,17 +37,17 @@ const TemplatesListView = props => {
 
   const filteredItems = () => {
     const filteredTemplates = templates.filter(el => {
-      if (searchData.name) {
+      if (searchData.title) {
         return (
-          el.name
+          el.title
             .toLowerCase()
-            .includes(get(searchData, "name", el.name).toLowerCase())
+            .includes(get(searchData, "title", el.title).toLowerCase())
         );
       }
       return el;
     });
 
-    return sortBy(filteredTemplates, el => el.name);
+    return sortBy(filteredTemplates, el => el.title);
   };
 
   const handleFileRead = e => {

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const ProviderSchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true },
+  title: { type: String, required: true, unique: true },
   path: { type: String, required: false },
   providerUrl: { type: String, required: false },
   providersTechno: { type: String, required: false },

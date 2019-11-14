@@ -26,17 +26,17 @@ const UserListView = props => {
 
   const filteredItems = () => {
     const filteredUsers = users.filter(el => {
-      if (searchData.name) {
+      if (searchData.title) {
         return (
-          el.name
+          el.title
             .toLowerCase()
-            .includes(get(searchData, "name", el.name).toLowerCase())
+            .includes(get(searchData, "title", el.title).toLowerCase())
         );
       }
       return el;
     });
 
-    return sortBy(filteredUsers, el => el.name);
+    return sortBy(filteredUsers, el => el.title);
   };
 
   const handleFileRead = e => {

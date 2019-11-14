@@ -7,31 +7,31 @@ const ProvidersForm = props => {
   let { providers, technos, isAuthenticated, setProvider } = props;
   if (isEmpty(providers)) providers = [];
   if (!isAuthenticated) navigate2Login();
-  
+
   const providersArray = providers.filter(
     provider => provider._id === props.match.params.id
   );
-  const technoTypeEnums = technos.map(techno => techno.name)
+  const technoTypeEnums = technos.map(techno => techno.title)
 
   let provider = {};
   if (!isEmpty(providersArray)) {
     provider = providersArray[0];
   } else {
     provider = {
-      name: "",
+      title: "",
       path: "",
       providersTechno: ""
     };
   }
 
-  const { name, path, _id, providersTechno, providerUrl } = provider;
+  const { title, path, _id, providersTechno, providerUrl } = provider;
 
   const schema = {
     type: "object",
-    required: ["name"],
+    required: ["title"],
     properties: {
       _id: { type: "string", title: "Id", default: _id },
-      name: { type: "string", title: "Name", default: name },
+      title: { type: "string", title: "Name", default: title },
       path: { type: "string", title: "Path", default: path || "" },
       providerUrl: { type: "string", title: "URL", default: providerUrl || "" },
       providersTechno: {

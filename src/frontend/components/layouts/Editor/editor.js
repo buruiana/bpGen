@@ -85,11 +85,11 @@ const Editor = props => {
 
   const filteredDefaultTree = () => {
     const filteredTree = components.filter(el => {
-      if (has(searchData, 'name')) {
+      if (has(searchData, 'title')) {
         return (
           el.title
             .toLowerCase()
-            .indexOf(searchData.name.toLowerCase()) !== -1 &&
+            .indexOf(searchData.title.toLowerCase()) !== -1 &&
           get(searchData, "techno", el.techno) === el.techno &&
           get(searchData, "provider", el.provider) === el.provider
         );

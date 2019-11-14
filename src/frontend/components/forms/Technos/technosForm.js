@@ -17,18 +17,18 @@ const TechnosForm = props => {
     techno = technosArray[0];
   } else {
     techno = {
-      name: "",
+      title: "",
       technoUrl: "",
     };
   }
 
-  const { name, _id, technoUrl } = techno;
+  const { title, _id, technoUrl } = techno;
   const schema = {
     type: "object",
-    required: ["name"],
+    required: ["title"],
     properties: {
       _id: { type: "string", title: "Id", default: _id },
-      name: { type: "string", title: "Name", default: name },
+      title: { type: "string", title: "Name", default: title },
       technoUrl: { type: "string", title: "URL", default: technoUrl || "" }
     }
   };

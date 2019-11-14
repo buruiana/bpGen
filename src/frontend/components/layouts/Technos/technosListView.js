@@ -26,17 +26,17 @@ const TechnosListView = props => {
 
   const filteredItems = () => {
     const filteredTechnos = technos.filter(el => {
-      if (searchData.name) {
+      if (searchData.title) {
         return (
-          el.name
+          el.title
             .toLowerCase()
-            .includes(get(searchData, "name", el.name).toLowerCase())
+            .includes(get(searchData, "title", el.title).toLowerCase())
         );
       }
       return el;
     });
 
-    return sortBy(filteredTechnos, el => el.name);
+    return sortBy(filteredTechnos, el => el.title);
   };
 
   const handleFileRead = e => {
@@ -56,12 +56,12 @@ const TechnosListView = props => {
 
   const technosList = () => {
     return filteredItems().map(techno => {
-      const { name, _id } = techno;
+      const { title, _id } = techno;
 
       return (
         <tr key={_id}>
           <td>
-            <a id={_id} className="simpleLink" onClick={goTo}>{name}</a>
+            <a id={_id} className="simpleLink" onClick={goTo}>{title}</a>
           </td>
           <td>
             <a className="simpleLink" id={_id} onClick={deleteSelectedTechno}>Delete</a>

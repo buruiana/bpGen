@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const TechnoSchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true },
+  title: { type: String, required: true, unique: true },
   technoUrl: { type: String, required: false },
   userid: { type: String, required: true }
 });

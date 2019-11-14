@@ -17,17 +17,17 @@ const GenericSearchForm = props => {
   } = props;
 
   const providersEnums = !isEmpty(providers)
-    ? providers.map(provider => provider.name)
+    ? providers.map(provider => provider.title)
     : [];
 
   const technoTypeEnums = !isEmpty(technos)
-    ? technos.map(techno => techno.name)
+    ? technos.map(techno => techno.title)
     : [];
 
   const schema = {
     type: "object",
     properties: {
-      name: { type: "string", default: "" },
+      title: { type: "string", default: "" },
     }
   };
 
@@ -51,7 +51,7 @@ const GenericSearchForm = props => {
   };
 
   const uiSchema = {
-    name: {
+    title: {
       "ui:options": {
         label: false
       },
@@ -72,7 +72,7 @@ const GenericSearchForm = props => {
     "ui:field": "layout",
     "ui:layout": [
       {
-        name: { md: 4 },
+        title: { md: 4 },
         techno: { md: 4 },
         provider: { md: 4 }
       }

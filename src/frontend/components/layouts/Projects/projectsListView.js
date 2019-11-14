@@ -32,9 +32,6 @@ const ProjectsListView = props => {
   const onClick = event => {
     const project = projects.filter(e => e._id === event.target.id);
 
-    console.log('console: ==============', project, props);
-
-
     const newCurrentTemplate = templates.filter(t => t._id === project[0].forms.projectSettings.projectTemplate)
 
     setCurrentTemplate(newCurrentTemplate[0]);
@@ -58,17 +55,17 @@ const ProjectsListView = props => {
 
   const filteredItems = () => {
     const filteredProjects = projects.filter(el => {
-      if (searchData.name) {
+      if (searchData.title) {
         return (
-          el.name
+          el.title
             .toLowerCase()
-            .includes(get(searchData, "name", el.name).toLowerCase())
+            .includes(get(searchData, "title", el.title).toLowerCase())
         );
       }
       return el;
     });
 
-    return sortBy(filteredProjects, el => el.name);
+    return sortBy(filteredProjects, el => el.title);
   };
 
   const handleFileRead = e => {

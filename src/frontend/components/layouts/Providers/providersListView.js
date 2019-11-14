@@ -26,17 +26,17 @@ const ProvidersListView = props => {
 
   const filteredItems = () => {
     const filteredProviders = providers.filter(el => {
-      if (searchData.name) {
+      if (searchData.title) {
         return (
-          el.name
+          el.title
             .toLowerCase()
-            .includes(get(searchData, "name", el.name).toLowerCase())
+            .includes(get(searchData, "title", el.title).toLowerCase())
         );
       }
       return el;
     });
 
-    return sortBy(filteredProviders, el => el.name);
+    return sortBy(filteredProviders, el => el.title);
   };
 
   const handleFileRead = e => {
@@ -56,12 +56,12 @@ const ProvidersListView = props => {
 
   const providersList = () => {
     return filteredItems().map(provider => {
-      const { name, _id, providerUrl } = provider;
+      const { title, _id, providerUrl } = provider;
 
       return (
         <tr key={_id}>
           <td>
-            <a id={_id} className="simpleLink" onClick={goTo}>{name}</a>
+            <a id={_id} className="simpleLink" onClick={goTo}>{title}</a>
           </td>
           <td><a id={_id} className="simpleLink">{providerUrl}</a></td>
           <td>
