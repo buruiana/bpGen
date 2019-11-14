@@ -1,7 +1,7 @@
 const schema = {
   type: "object",
   properties: {
-    name: { title: "Email", type: "string" },
+    title: { title: "Email", type: "string" },
     password: { title: "Password", type: "string" },
     isAdmin: { title: "isAdmin", type: "boolean" }
   }

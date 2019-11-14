@@ -104,9 +104,8 @@ app.delete('/api/delete', function (req, res) {
 
 
 app.post('/api/getCollection', async (req, res) => {
-  const model = getMod(req.body.data);
-
-  model.find({}, (error, collection) => {
+  const model = getMod(req.body.data.info);
+  model.find({ userid: req.body.data.userid}, (error, collection) => {
     if (error) {
       res.status(500)
         .send(error);
@@ -118,8 +117,8 @@ app.post('/api/getCollection', async (req, res) => {
 
 
 app.post('/api/register', function (req, res) {
-  const { name, password } = req.body.data;
-  const user = new User({ name, password });
+  const { title, password } = req.body.data;
+  const user = new User({ title, password });
   user.save(function (error) {
     if (error) {
       return res.status(500)
@@ -147,9 +146,9 @@ app.post("/api/prettify", (req, res) => {
 });
 
 app.post('/api/authenticate', function (req, res) {
-  const { name, password } = req.body.data;
+  const { title, password } = req.body.data;
 
-  User.findOne({ name }, function (err, user) {
+  User.findOne({ title }, function (err, user) {
     if (err) {
       console.error(err);
       res.status(500)
@@ -175,7 +174,7 @@ app.post('/api/authenticate', function (req, res) {
             });
         } else {
           // Issue token
-          const payload = { name };
+          const payload = { title };
           const token = jwt.sign(payload, secret, {
             expiresIn: '1h'
           });

@@ -20,42 +20,34 @@ import {
 export function* watchSetProject(action) {
   const { project } = action;
   const { isOffline } = (yield select()).configsReducer.configs;
+  const userid = (yield select()).loginReducer.userInfo._id;
 
   if (!isOffline) {
     if (project._id) {
-      yield put(update('projects', project));
+      yield put(update('projects', { ...project, userid }));
     } else {
-      yield put(create('projects', project));
+      yield put(create('projects', {
+        ...project,
+        userid,
+        title: project.forms.projectSettings.projectName,
+        techno: project.forms.projectSettings.projectTechno
+      }));
     }
-    yield put(getAllProjects());
+    // yield put(getAllProjects());
   }
 }
 
 export function* watchGetAllProjects(action) {
   const { isOffline } = (yield select()).configsReducer.configs;
-  const userid = (yield select()).loginReducer.userInfo._id;
   let projectArr = [];
   if (isOffline) {
     projectArr = mock.allProjects;
   } else {
-    // const snapshot = yield call(rsf.firestore.getCollection, "projects");
-    // snapshot.docs.filter(project => {
-    //   const newProject = project.data();
-    //   console.log('console: newProject', newProject);
-
-    //   if (newProject.userid === userid || newProject.forms.projectSettings.projectIsPublic) {
-    //     projectArr.push({
-    //       projectId: project.id,
-    //       forms: newProject.forms,
-    //       userid: newProject.userid,
-    //     });
-    //   }
-    // });
     yield put(getCollection('projects', {}));
   }
-  if (isEmpty(projectArr)) projectArr = [];
-  sortBy(projectArr, el => el.title);
-  yield put(setAllProjects(projectArr));
+  // if (isEmpty(projectArr)) projectArr = [];
+  // sortBy(projectArr, el => el.title);
+  // yield put(setAllProjects(projectArr));
 }
 
 export function* watchDeleteProject(action) {
@@ -64,7 +56,7 @@ export function* watchDeleteProject(action) {
 
   if (!isOffline) {
     yield put(remove('projects', _id));
-    yield put(getAllProjects());
+    // yield put(getAllProjects());
   }
 }
 

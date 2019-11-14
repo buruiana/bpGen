@@ -21,7 +21,7 @@ const ProjectSettingsForm = props => {
   } = props;
 
   const [formState, setFormState] = useState(projectSettings);
-  const technoTypeEnums = technos.map(el => el.name.toLowerCase());
+  const technoTypeEnums = technos.map(el => el.title.toLowerCase());
   const requiredFieldsEnum = ["projectName", "projectTemplate"];
 
   const getTemplatesTypeEnumNames = () => {
@@ -90,17 +90,6 @@ const ProjectSettingsForm = props => {
     }
   };
 
-  // const getFlatForms = files => {
-  //   let customModals = [];
-  //   files.map(file => {
-  //     file.fileForms.map(form => {
-  //       customModals.push(form);
-  //     });
-  //   });
-
-  //   return customModals;
-  // };
-
   const onSubmit = data => {
     const currentTemplate = templates.filter(
       el => el._id === data.formData.projectTemplate
@@ -108,9 +97,8 @@ const ProjectSettingsForm = props => {
     setCurrentTemplate(currentTemplate);
     setProjectSettings({
       ...data.formData,
-      //template,
-      //flatForms: getFlatForms(template.templateFiles)
     });
+
     const newForms = {
       ...forms,
       projectSettings: data.formData

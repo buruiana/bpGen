@@ -49,7 +49,8 @@ const ProjectsListView = props => {
 
     setProject({
       ...currentProject,
-      name: `${currentProject.name}-duplicate`
+      title: `${currentProject.title}-duplicate`,
+      _id: undefined
     });
   };
 
@@ -86,17 +87,13 @@ const ProjectsListView = props => {
   const projectsList = () => {
     return filteredItems().map(project => {
       const { _id } = project;
-      const { title, description, techno } = project.forms.tree[0];
+      const { title } = project.forms.tree[0];
 
       return (
         <tr key={_id}>
           <td>
             <a id={_id} className="simpleLink" onClick={onClick}>{title}</a>
           </td>
-          <td>
-            <a id={_id} className="simpleLink" onClick={onClick}>{description}</a>
-          </td>
-          <td><a id={_id} target='blank'>{techno}</a></td>
           <td>
             <a className="simpleLink" id={_id} onClick={duplicateSelectedProject}>
               Duplicate

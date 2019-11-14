@@ -1,5 +1,5 @@
 const uiSchema = {
-  name: {
+  title: {
     "ui:placeholder": "email"
   },
   password: {

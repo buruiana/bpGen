@@ -26,13 +26,13 @@ const ComponentItemForm = props => {
   };
 
   const technosEnums = !isEmpty(technos)
-    ? technos.map(techno => techno.name)
+    ? technos.map(techno => techno.title)
     : [];
 
   const providersEnums = !isEmpty(providers)
-    ? providers.map(provider => provider.name)
+    ? providers.map(provider => provider.title)
     : [];
-  console.log('console:formSchemaformSchemaformSchema ', formSchema);
+
   const getPropTypePropEnums = () => {
     const propTypeProps = propTypes
       .filter(el => el.title === tree[0].propType)
@@ -68,13 +68,11 @@ const ComponentItemForm = props => {
       },
       provider: {
         type: "string",
-        name: "Provider",
         title: "Provider",
         enum: providersEnums,
       },
       techno: {
         type: "string",
-        name: "Techno",
         title: "Techno",
         enum: technosEnums,
       },

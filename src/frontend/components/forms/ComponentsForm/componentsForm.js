@@ -11,6 +11,7 @@ const ComponentsForm = props => {
     propTypes,
     setComponent
   } = props;
+
   if (isEmpty(components)) components = [];
 
   const componentsArray = components.filter(
@@ -38,11 +39,11 @@ const ComponentsForm = props => {
   } = component;
 
   const technosEnums = !isEmpty(technos)
-    ? technos.map(techno => techno.name)
+    ? technos.map(techno => techno.title)
     : [];
 
   const providersEnums = !isEmpty(providers)
-    ? providers.map(provider => provider.name)
+    ? providers.map(provider => provider.title)
     : [];
 
   const propTypesEnums = !isEmpty(propTypes) ? propTypes.map(p => p.title) : [];

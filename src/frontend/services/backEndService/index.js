@@ -1,4 +1,4 @@
-import { put, takeLatest, call, takeEvery } from "redux-saga/effects";
+import { put, takeLatest, call, select, takeEvery } from "redux-saga/effects";
 import axios from 'axios';
 import get from 'lodash/get';
 import {
@@ -26,6 +26,7 @@ import { navigate } from '../../utils';
 import { alertTypes } from '../../utils/constants';
 
 const callBackend = (type, data) => {
+  console.log('console: ------------------------', data);
   return axios.post(`http://localhost:5000/api/${type}`, { data });
 };
 
@@ -193,7 +194,8 @@ export function* getCollection( info ) {
 export function* watchGetCollection(info) {
   if (!info.dataType) return;
   try {
-    const res = yield callBackend('getCollection', info.dataType);
+    const userid = (yield select()).loginReducer.userInfo._id;
+    const res = yield callBackend('getCollection', { info: info.dataType, userid });
     yield call(updateCollection, { info: info.dataType, res: res.data });
 
     return res;
