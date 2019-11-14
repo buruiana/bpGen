@@ -8,7 +8,6 @@ import { setCurrentTemplate } from '../../../services/templatesService/actions';
 const mapStateToProps = state => {
   return {
     projectSettings: state.projectSettingsReducer.projectSettings,
-    technos: state.technosReducer.technos,
     templates: state.templatesReducer.templates,
     forms: state.customFormReducer.forms
   };

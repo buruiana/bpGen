@@ -16,12 +16,10 @@ const ProjectSettingsForm = props => {
     templates,
     setCustomForm,
     forms,
-    technos,
     setCurrentTemplate,
   } = props;
 
   const [formState, setFormState] = useState(projectSettings);
-  const technoTypeEnums = technos.map(el => el.title.toLowerCase());
   const requiredFieldsEnum = ["projectName", "projectTemplate"];
 
   const getTemplatesTypeEnumNames = () => {
@@ -69,11 +67,6 @@ const ProjectSettingsForm = props => {
         type: "string",
         title: PROJECT_DESTINATION,
         default: projectSettings.projectDestination
-      },
-      projectTechno: {
-        type: "string",
-        title: PROJECT_TECHNO,
-        enum: technoTypeEnums,
       },
       projectTemplate: {
         type: "string",

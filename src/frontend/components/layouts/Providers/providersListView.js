@@ -1,6 +1,7 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
 import sortBy from "lodash/sortBy";
+import isEmpty from "lodash/isEmpty";
 import get from "lodash/get";
 import GenericSearchForm from "../../forms/GenericSearchForm";
 import { navigate, navigate2Login } from "../../../utils";
@@ -24,16 +25,28 @@ const ProvidersListView = props => {
   const deleteSelectedProvider = event => deleteProvider({ _id: event.target.id });
   const goTo = event => navigate(`/provider/${event.target.id}`);
 
+  // const filteredItems = () => {
+  //   const filteredProviders = providers.filter(el => {
+  //     if (searchData.title) {
+  //       return (
+  //         el.title
+  //           .toLowerCase()
+  //           .includes(get(searchData, "title", el.title).toLowerCase())
+  //       );
+  //     }
+  //     return el;
+  //   });
+
+  //   return sortBy(filteredProviders, el => el.title);
+  // };
+
   const filteredItems = () => {
     const filteredProviders = providers.filter(el => {
-      if (searchData.title) {
-        return (
-          el.title
-            .toLowerCase()
-            .includes(get(searchData, "title", el.title).toLowerCase())
-        );
+      if (!isEmpty(searchData) && searchData.title) {
+        return (el.title.toLowerCase().indexOf(searchData.title.toLowerCase()) !== -1
+          && get(searchData, 'techno', el.techno) === el.techno);
       }
-      return el;
+      return get(searchData, 'techno', el.techno) === el.techno;
     });
 
     return sortBy(filteredProviders, el => el.title);
