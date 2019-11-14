@@ -197,6 +197,12 @@ const ComponentItemForm = props => {
         rows: 15
       }
     },
+    propTypeVal: {
+      "ui:widget": "textarea",
+      "ui:options": {
+        rows: 5
+      }
+    },
     propType: { "ui:placeholder": "Choose a propType" }
   };
 
