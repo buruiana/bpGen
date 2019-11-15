@@ -7,6 +7,9 @@ const mapStateToProps = state => {
   return {
     modals: state.modalsReducer.modals,
     modalData: state.modalsReducer.modalData,
+    providers: state.providersReducer.providers,
+    technos: state.technosReducer.technos,
+    propTypes: state.propTypesReducer.propTypes,
   };
 };
 

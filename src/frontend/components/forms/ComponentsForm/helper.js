@@ -33,6 +33,7 @@ export const convertSortableTree2JsonSchema = treeData => {
         propTypeIsRequired: get(el, 'propTypeIsRequired', false),
         title: get(el, 'title', ''),
         subtitle: get(el, 'subtitle', ''),
+        type: get(el, 'type', ''),
       };
     });
   };
@@ -84,7 +85,8 @@ export const convertJsonSchema2SortableTree = currentTemplate => {
         propTypeVal: get(prop, 'propTypeVal', ''),
         propTypeIsRequired: get(prop, 'propTypeIsRequired', ''),
         title: get(prop, 'title', ''),
-        subtitle: 'Component Prop',
+        subtitle: get(prop, 'propTypeProp', ''),
+        type: 'Component Prop',
       });
     });
   }

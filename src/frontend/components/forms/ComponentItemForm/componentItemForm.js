@@ -34,8 +34,6 @@ const ComponentItemForm = props => {
     properties: {}
   };
 
-  console.log('console: tree[0]', tree[0] );
-
   const getPropTypePropEnums = () => {
     const propTypeProps = propTypes
       .filter(el => el._id === tree[0].propType)
@@ -122,7 +120,7 @@ const ComponentItemForm = props => {
     };
   };
 
-  if (currentModalData.subtitle === "Component Prop") {
+  if (currentModalData.type === "Component Prop") {
     schema.properties = {
       ...schema.properties,
       title: {

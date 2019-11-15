@@ -40,3 +40,4 @@ export const getPropTypesEnumNames = propTypes => !isEmpty(propTypes)
 
 export const getTechnoName = (technos, id) => technos.filter(e => e._id === id).map(el => el.title);
 export const getProviderName = (providers, id) => providers.filter(e => e._id === id).map(el => el.title);
+export const getPropTypeName = (propTypes, id) => propTypes.filter(e => e._id === id).map(el => el.title);

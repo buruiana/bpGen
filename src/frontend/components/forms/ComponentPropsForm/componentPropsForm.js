@@ -25,12 +25,26 @@ const ComponentPropsForm = props => {
   const propsInfo = get(node, "componentProps", []);
 
   propsInfo.map(prop => {
-    properties[prop.title] = {
-      type: "string",
-      title: prop.title,
-      val: prop.val,
-      default: prop.val
-    };
+    console.log('console: ----------------------', prop);
+    if (prop.subtitle.includes('string')) {
+      properties[prop.title] = {
+        type: "string",
+        title: prop.title,
+        val: prop.val,
+        default: prop.val
+      };
+    }
+    if (prop.subtitle.includes('oneOf')) {
+      const propEnum = prop.propTypeVal.replace(/'/g, '').split('|')
+      properties[prop.title] = {
+        type: "string",
+        title: prop.title,
+        val: prop.val,
+        //default: prop.val
+        enum: propEnum
+      };
+    }
+
   });
 
   const uiSchema = {};

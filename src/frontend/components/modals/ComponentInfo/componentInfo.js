@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 
-const ComponentInfo = ({ removeModal, modalData }) => {
+import {
+  getTechnoName,
+  getProviderName,
+  getPropTypeName,
+ } from '../../../utils';
+
+const ComponentInfo = ({ removeModal, modalData, technos, providers, propTypes }) => {
   const { node } = modalData[0];
   const [open, setOpen] = useState({});
 
@@ -22,10 +28,12 @@ const ComponentInfo = ({ removeModal, modalData }) => {
     };
 
     const renderDetails = prop => {
+      console.log('console: ==================',prop );
       return (open[prop.title] || false)
         ? (
           <div>
-            {prop.propType}
+            <div className='blue_title'>{prop.propTypeProp}</div>
+            <div className='blue_title'>{prop.propTypeVal}</div>
             <textarea rows={Math.round(prop.description.length / 50)} cols="100" className='textarea-noBorder' defaultValue={prop.description} />
           </div>
         )
@@ -56,8 +64,9 @@ const ComponentInfo = ({ removeModal, modalData }) => {
         </Modal.Header>
 
         <Modal.Body>
-          <div className='blue_title'>Provider: {node.provider}</div>
-          <div className='blue_title'>Techno: {node.techno}</div>
+          <div className='blue_title'>Provider: {getProviderName(providers, node.provider)}</div>
+          <div className='blue_title'>Techno: {getTechnoName(technos, node.techno)}</div>
+          <div className='blue_title'>PropType: {getPropTypeName(propTypes, node.propType)}</div>
           <div>{renderDescription(node.description)}</div>
           <div>{renderProps()}</div>
         </Modal.Body>
