@@ -6,6 +6,8 @@ import GenericSearchForm from "../../forms/GenericSearchForm";
 import { navigate, navigate2Login } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
 
+import { getTechnoName } from '../../../utils';
+
 const TemplatesListView = props => {
   const {
     templates = [],
@@ -15,6 +17,7 @@ const TemplatesListView = props => {
     isAuthenticated,
     hasTemplatesImport,
     importData,
+    technos,
   } = props;
 
   if (!isAuthenticated) navigate2Login();
@@ -31,7 +34,7 @@ const TemplatesListView = props => {
 
     setTemplate({
       ...currentTemplate,
-      name: `${currentTemplate.name}-duplicate`,
+      title: `${currentTemplate.title}-duplicate`,
       _id: undefined
     });
   };
@@ -68,14 +71,14 @@ const TemplatesListView = props => {
 
   const templatesList = () => {
     return filteredItems().map(template => {
-      const { name, _id, templateTechnos } = template;
+      const { title, _id, templateTechno } = template;
 
       return (
         <tr key={_id}>
           <td>
-            <a id={_id} className="simpleLink" onClick={onClick}>{name}</a>
+            <a id={_id} className="simpleLink" onClick={onClick}>{title}</a>
           </td>
-          <td><a id={_id} target='blank'>{templateTechnos}</a></td>
+          <td><a id={_id} target='blank'>{getTechnoName(technos, templateTechno)}</a></td>
           <td>
             <a className="simpleLink" id={_id} onClick={duplicateSelectedTemplate}>
               Duplicate
@@ -91,6 +94,8 @@ const TemplatesListView = props => {
     })
   };
 
+  const addNew = () => navigate("/template/new")
+
   return (
     <div>
       <GenericSearchForm componentname={TEMPLATES} />
@@ -99,7 +104,7 @@ const TemplatesListView = props => {
           <input type="file" id="importFile" onChange={onImport} />
         </div> }
       <div className='addEditLink'>
-        <a className="simpleLink" onClick={() => navigate("/template/new")}>
+        <a className="simpleLink" onClick={addNew}>
           Add Template
       </a>
       </div>

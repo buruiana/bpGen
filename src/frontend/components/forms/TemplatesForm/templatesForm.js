@@ -14,14 +14,8 @@ const TemplatesForm = props => {
 
   const onSubmit = data => {
     const { formData } = data;
-    // if (isEmpty(formData.templateFiles.fileBlocks)) {
-    //   formData.templateFiles.fileBlocks = [];
-    // }
-    // if (isEmpty(formData.templateFiles.fileForms)) {
-    //   formData.templateFiles.fileForms = [];
-    // }
     console.log('console:formDataformData ', formData);
-    setTemplate({ ...formData, userid });
+    setTemplate({ ...formData });
     goBack();
   };
 

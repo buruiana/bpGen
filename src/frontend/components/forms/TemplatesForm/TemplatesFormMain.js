@@ -29,7 +29,7 @@ const TemplatesFormMain = props => {
       let currentTemplate = templates.filter(
         template => template._id === match.params.id
       )[0];
-
+      console.log('console: convertJsonSchema2SortableTree ', );
      setTemplateTree(convertJsonSchema2SortableTree(currentTemplate));
     };
   }, [templates, match.params.id]);

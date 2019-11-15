@@ -3,7 +3,7 @@ const schema = {
   properties: {
     title: { type: "string", title: "Name" },
     templateDescription: { type: "string", title: "Description" },
-    templateTechnos: { type: "string", title: "Technos" },
+    templateTechno: { type: "string", title: "Techno" },
     templateIsActive: { type: "boolean", title: "Active", default: false },
     templateIsPublic: { type: "boolean", title: "Public", default: false },
     templateIsComponent: { type: "boolean", title: "isComponent", default: false },

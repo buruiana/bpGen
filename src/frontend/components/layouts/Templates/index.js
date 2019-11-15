@@ -10,6 +10,7 @@ import { importData } from '../../../services/configsService/actions';
 
 const mapStateToProps = state => {
   return {
+    technos: state.technosReducer.technos,
     templates: state.templatesReducer.templates,
     searchData: state.filterDataReducer.searchData,
     providers: state.providersReducer.providers,

@@ -150,7 +150,6 @@ app.post('/api/authenticate', function (req, res) {
 
   User.findOne({ title }, function (err, user) {
     if (err) {
-      console.error(err);
       res.status(500)
         .json({
           error: 'Internal error please try again'

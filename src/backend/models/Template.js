@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const TemplateSchema = new mongoose.Schema({
   title: { type: String, required: true, unique: true },
   templateDescription: { type: String, required: false },
-  //templateName: { type: String, required: false },
-  templateTechnos: { type: String, required: false },
+  templateTechno: { type: String, required: false },
   templateIsActive: { type: Boolean, required: false },
   templateIsComponent: { type: Boolean, required: false },
   templateIsPublic: { type: Boolean, required: false },

@@ -14,7 +14,8 @@ const mapStateToProps = state => {
     userid: get(state, "loginReducer.userInfo._id", ""),
     templates: state.templatesReducer.templates,
     tree: state.templatesReducer.tree,
-    modalData: state.modalsReducer.modalData
+    modalData: state.modalsReducer.modalData,
+    technos: state.technosReducer.technos,
   };
 };
 

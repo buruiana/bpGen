@@ -25,7 +25,7 @@ const ProjectSettingsForm = props => {
   const getTemplatesTypeEnumNames = () => {
     return !isEmpty(formState.projectTechno)
       ? templates.filter(el => {
-          return el.templateTechnos
+          return el.templateTechno
             .toLowerCase()
             .includes(
               formState.projectTechno
@@ -41,7 +41,7 @@ const ProjectSettingsForm = props => {
   const getTemplatesTypeEnums = () => {
     return !isEmpty(formState.projectTechno)
       ? templates.filter(el => {
-        return el.templateTechnos
+        return el.templateTechno
           .toLowerCase()
           .includes(
             formState.projectTechno
@@ -90,6 +90,7 @@ const ProjectSettingsForm = props => {
     setCurrentTemplate(currentTemplate);
     setProjectSettings({
       ...data.formData,
+      projectTechno: currentTemplate.templateTechno
     });
 
     const newForms = {

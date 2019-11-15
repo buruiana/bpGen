@@ -6,15 +6,14 @@ export const getNewtemplate = formData => {
   if ('templateDescription' in formData) {
     newTemplate = {
       expanded: true,
-      _id: get(formData, '_id', undefined),
+      _id: get(formData, '_id', null),
       subtitle: 'Template',
       templateDescription: get(formData, 'templateDescription', ''),
       templateIsActive: get(formData, 'templateIsActive', false),
       templateIsComponent: get(formData, 'templateIsComponent', false),
       templateIsPublic: get(formData, 'templateIsPublic', false),
-      templateTechnos: get(formData, 'templateTechnos', ''),
+      templateTechno: get(formData, 'templateTechno', ''),
       title: get(formData, 'title', ''),
-      userid: get(formData, 'userid', undefined),
       children: get(formData, 'children', []),
     };
   };
@@ -95,7 +94,7 @@ export const getNewNodeForValueChange = (currentModalData, modalData, val) => {
   return newNode;
 };
 
-export const getSchema = (currentModalData, schema) => {
+export const getSchema = (currentModalData, schema, other) => {
   if (currentModalData.subtitle === 'File') {
     schema.properties = {
       ...schema.properties,
@@ -243,11 +242,11 @@ export const getSchema = (currentModalData, schema) => {
   if (currentModalData.subtitle === 'Template') {
     schema.properties = {
       ...schema.properties,
-      _id: {
-        type: 'string',
-        title: 'ID',
-        default: get(currentModalData, '_id', '')
-      },
+      // _id: {
+      //   type: 'string',
+      //   title: 'ID',
+      //   default: get(currentModalData, '_id', '')
+      // },
       title: {
         type: 'string',
         title: 'Name',
@@ -258,10 +257,12 @@ export const getSchema = (currentModalData, schema) => {
         title: 'Description',
         default: get(currentModalData, 'templateDescription', '')
       },
-      templateTechnos: {
+      templateTechno: {
         type: 'string',
-        title: 'Technos',
-        default: get(currentModalData, 'templateTechnos', '')
+        title: 'Techno',
+        enum: other.technos.map(e => e._id),
+        enumNames: other.technos.map(e => e.title),
+        default: get(currentModalData, 'templateTechno', '')
       },
       templateIsActive: {
         type: 'boolean',

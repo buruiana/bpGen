@@ -17,7 +17,7 @@ import GenericSearchForm from "../../forms/GenericSearchForm";
 import { availablecomponents, allmodals } from "../../../utils/constants";
 import Preview from "../Preview";
 
-import { replaceUndefined, navigate2Login } from '../../../utils';
+import { navigate2Login } from '../../../utils';
 
 import "react-sortable-tree/style.css";
 
@@ -86,6 +86,8 @@ const Editor = props => {
   const filteredDefaultTree = () => {
     const filteredTree = components.filter(el => {
       if (has(searchData, 'title')) {
+        console.log('console: 111111111111111', get(searchData, "techno", el.techno));
+        console.log('console: 222222222222222', el.techno);
         return (
           el.title
             .toLowerCase()
@@ -201,7 +203,8 @@ const Editor = props => {
       </div>
     );
   };
-
+  console.log('console: projectSettings', projectSettings);
+  console.log('console: currentTemplate', currentTemplate);
   return (
     <div>
       {!isEmpty(projectSettings) && currentTemplate.templateIsComponent && returnComponentBlock()}

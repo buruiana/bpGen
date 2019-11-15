@@ -21,12 +21,15 @@ import {
 export function* watchSetTemplate(action) {
   const { template } = action;
   const { isOffline } = (yield select()).configsReducer.configs;
+  const userid = (yield select()).loginReducer.userInfo._id;
+
+  console.log('console: ================', template);
 
   if (!isOffline) {
     if (template._id) {
-      yield put(update('templates', template));
+      yield put(update('templates', { ...template, userid }));
     } else {
-      yield put(create('templates', template));
+      yield put(create('templates', { ...template, userid }));
     }
     //yield put(getAllTemplates());
   }

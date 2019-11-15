@@ -4,7 +4,7 @@ export const initialState = () => ({
   error: "",
   isAuthenticated: false,
   userInfo: {
-      _id: '3QcNVuAKuDew1HhWnaO0LANGVA72'
+    _id: '5dcb2a710c6db3b4602abe80'
     },
 });
 

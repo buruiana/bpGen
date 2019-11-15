@@ -10,17 +10,25 @@ import {
 } from './helper';
 
 const TemplateItemForm = props => {
-  const { setTemplateTree, removeModal, tree, modalData } = props;
+  const {
+    setTemplateTree,
+    removeModal,
+    tree,
+    modalData,
+    technos,
+  } = props;
+
   const currentModalData = modalData[modalData.length - 1].node;
   const getNodeKey = ({ treeIndex }) => treeIndex;
-
-  //const [formSchema, setFormSchema] = useState(currentModalData);
 
   const schema = getSchema(
     currentModalData,
     {
       type: 'object',
       properties: {},
+    },
+    {
+      technos,
     }
   );
 
@@ -44,7 +52,6 @@ const TemplateItemForm = props => {
   };
 
   const onValueChange = val => {
-
     let newNode = getNewNodeForValueChange(currentModalData, modalData, val);
 
     const newTree = changeNodeAtPath({

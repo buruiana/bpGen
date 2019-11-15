@@ -3,6 +3,8 @@ import Form from "react-jsonschema-form-bs4";
 import isEmpty from "lodash/isEmpty";
 import get from "lodash/get";
 import { changeNodeAtPath } from "react-sortable-tree";
+import { getTechnoName } from '../../../utils';
+
 
 const ComponentPropsForm = props => {
   const {
@@ -12,7 +14,8 @@ const ComponentPropsForm = props => {
     tree,
     generateCode,
     setCustomForm,
-    forms
+    forms,
+    templates,
   } = props;
   const { node, path } = modalData[0];
 
@@ -25,8 +28,8 @@ const ComponentPropsForm = props => {
   const propsInfo = get(node, "componentProps", []);
 
   propsInfo.map(prop => {
-    console.log('console: ----------------------', prop);
-    if (prop.subtitle.includes('string')) {
+    if (get(prop, 'subtitle', '').includes('string')
+      || get(prop, 'propTypeProp', '').includes('string')) {
       properties[prop.title] = {
         type: "string",
         title: prop.title,
@@ -34,13 +37,13 @@ const ComponentPropsForm = props => {
         default: prop.val
       };
     }
-    if (prop.subtitle.includes('oneOf')) {
+    if (get(prop, 'subtitle', '').includes('oneOf') || get(prop, 'propTypeProp', '').includes('oneOf')) {
       const propEnum = prop.propTypeVal.replace(/'/g, '').split('|')
       properties[prop.title] = {
         type: "string",
         title: prop.title,
         val: prop.val,
-        //default: prop.val
+        default: prop.val,
         enum: propEnum
       };
     }
@@ -63,7 +66,6 @@ const ComponentPropsForm = props => {
       let newProp = {};
       if (prop) {
         newProp = {
-          propType: prop[0].propType,
           propTypeProp: prop[0].propTypeProp,
           propTypeVal: prop[0].propTypeVal,
           propTypeIsRequired: prop[0].propTypeIsRequired,
@@ -92,11 +94,16 @@ const ComponentPropsForm = props => {
       })
     };
     setTree(newTree);
+    const templateTechno = templates
+      .filter(e => e._id === forms.projectSettings.projectTemplate)
+      .map(e => e.templateTechno)
     const newForms = {
       ...forms,
-      tree: newTree.treeData2
+      tree: newTree.treeData2,
     };
-    setCustomForm(newForms);
+    setCustomForm({
+      forms: newForms,
+    });
     generateCode();
     removeModal();
   };
@@ -109,7 +116,6 @@ const ComponentPropsForm = props => {
       onChange={log("changed")}
       onSubmit={onSubmit}
       onError={log("errors")}
-      //formData={projectSettings}
     />
   );
 };

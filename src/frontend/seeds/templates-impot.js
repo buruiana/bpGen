@@ -81,7 +81,7 @@ return [
         ],
         templateIsActive: true,
         templateName: 'react-component',
-        templateTechnos: 'react',
+        templateTechno: 'react',
     },
     {
         title: 'react-dumb-component',
@@ -214,7 +214,7 @@ return [
         ],
         templateIsActive: true,
         templateName: 'react-component',
-        templateTechnos: 'react',
+        templateTechno: 'react',
     },
     {
         title: 'react-dumb-component-duplicate',
@@ -349,7 +349,7 @@ return [
         templateIsActive: true,
         templateIsComponent: false,
         templateName: 'react-component',
-        templateTechnos: 'react',
+        templateTechno: 'react',
     },
     {
         title: 'uma_sevice',
@@ -417,7 +417,7 @@ return [
         templateIsComponent: true,
         templateIsPublic: true,
         templateName: 'uma_sevice',
-        templateTechnos: 'react',
+        templateTechno: 'react',
         title: 'uma_sevice',
     },
     {
@@ -626,7 +626,7 @@ return [
         templateIsComponent: false,
         templateIsPublic: true,
         templateName: 'react-redux',
-        templateTechnos: 'react, redux',
+        templateTechno: 'react, redux',
         title: 'react-redux',
     }
 ];
