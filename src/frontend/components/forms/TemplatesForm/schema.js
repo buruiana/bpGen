@@ -1,7 +1,7 @@
 const schema = {
   type: "object",
   properties: {
-    name: { type: "string", title: "Name" },
+    title: { type: "string", title: "Name" },
     templateDescription: { type: "string", title: "Description" },
     templateTechnos: { type: "string", title: "Technos" },
     templateIsActive: { type: "boolean", title: "Active", default: false },

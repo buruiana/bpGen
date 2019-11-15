@@ -11,7 +11,8 @@ const ProvidersForm = props => {
   const providersArray = providers.filter(
     provider => provider._id === props.match.params.id
   );
-  const technoTypeEnums = technos.map(techno => techno.title)
+  const technoTypeEnums = technos.map(techno => techno._id)
+  const technoTypeEnumNames = technos.map(techno => techno.title)
 
   let provider = {};
   if (!isEmpty(providersArray)) {
@@ -38,7 +39,7 @@ const ProvidersForm = props => {
         type: "string",
         title: "Techno",
         enum: technoTypeEnums,
-        //default: providersTechno
+        enumNames: technoTypeEnumNames,
       }
     }
   };

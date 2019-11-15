@@ -60,7 +60,7 @@ const ProjectsListView = props => {
         return (
           el.title
             .toLowerCase()
-            .includes(get(searchData, "title", el.title).toLowerCase())
+            .includes(get(searchData, "title", el._id).toLowerCase())
         );
       }
       return el;

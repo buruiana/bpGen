@@ -1,6 +1,6 @@
 return [
     {
-        name: 'react-componnet',
+        title: 'react-componnet',
         templateDescription: 'react-component',
         templateFiles: [
             {
@@ -84,7 +84,7 @@ return [
         templateTechnos: 'react',
     },
     {
-        name: 'react-dumb-component',
+        title: 'react-dumb-component',
         templateDescription: 'react-dumb-component',
         templateFiles: [
             {
@@ -217,7 +217,7 @@ return [
         templateTechnos: 'react',
     },
     {
-        name: 'react-dumb-component-duplicate',
+        title: 'react-dumb-component-duplicate',
         templateDescription: 'react-dumb-component',
         templateFiles: [
             {
@@ -352,7 +352,7 @@ return [
         templateTechnos: 'react',
     },
     {
-        name: 'uma_sevice',
+        title: 'uma_sevice',
         templateDescription: 'uma_sevice',
         templateFiles: [
             {
@@ -421,7 +421,7 @@ return [
         title: 'uma_sevice',
     },
     {
-        name: 'react-redux',
+        title: 'react-redux',
         templateDescription: 'react-redux',
         templateFiles: [
             {

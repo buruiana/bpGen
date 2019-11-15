@@ -17,10 +17,17 @@ const GenericSearchForm = props => {
   } = props;
 
   const providersEnums = !isEmpty(providers)
+    ? providers.map(provider => provider._id)
+    : [];
+
+  const providersEnumNames = !isEmpty(providers)
     ? providers.map(provider => provider.title)
     : [];
 
   const technoTypeEnums = !isEmpty(technos)
+    ? technos.map(techno => techno._id)
+    : [];
+  const technoTypeEnumNames = !isEmpty(technos)
     ? technos.map(techno => techno.title)
     : [];
 
@@ -35,13 +42,15 @@ const GenericSearchForm = props => {
     if (el === availablecomponents.TECHNOS) {
       schema.properties.techno = {
         type: "string",
-        enum: technoTypeEnums
+        enum: technoTypeEnums,
+        enumNames: technoTypeEnumNames
       };
     }
     if (el === availablecomponents.PROVIDERS) {
       schema.properties.provider = {
         type: "string",
-        enum: providersEnums
+        enum: providersEnums,
+        enumNames: providersEnumNames
       };
     }
   });

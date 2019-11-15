@@ -6,6 +6,7 @@ export const getDafaultTreeData = [
   {
     children: [{
       subtitle: 'Component Prop',
+      type: 'Component Prop',
     }],
     componentImport: '',
     componentProps: [],
@@ -33,7 +34,7 @@ export const convertSortableTree2JsonSchema = treeData => {
         propTypeIsRequired: get(el, 'propTypeIsRequired', false),
         title: get(el, 'title', ''),
         subtitle: get(el, 'subtitle', ''),
-        type: get(el, 'type', ''),
+        type: get(el, 'type', 'Component Prop'),
       };
     });
   };

@@ -28,7 +28,6 @@ const ComponentInfo = ({ removeModal, modalData, technos, providers, propTypes }
     };
 
     const renderDetails = prop => {
-      console.log('console: ==================',prop );
       return (open[prop.title] || false)
         ? (
           <div>

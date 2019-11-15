@@ -9,7 +9,7 @@ import { generateCode } from '../../../services/codeGenerationService/actions';
 const mapStateToProps = state => {
   return {
     projectSettings: state.projectSettingsReducer.projectSettings,
-    technos: state.technosReducer.technos,
+    templates: state.templatesReducer.templates,
     tree: state.sortableTreeReducer.tree,
     modalData: state.modalsReducer.modalData,
     forms: state.customFormReducer.forms,

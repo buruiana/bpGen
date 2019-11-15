@@ -32,10 +32,10 @@ const ProjectSettingsForm = props => {
           )
       })
         .filter(e => e.templateIsActive)
-        .map(e => e.name)
+        .map(e => e.title)
       : templates
         .filter(e => e.templateIsActive)
-        .map(e => e.name);
+        .map(e => e.title);
   };
 
   const getTemplatesTypeEnums = () => {

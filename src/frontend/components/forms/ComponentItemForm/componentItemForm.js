@@ -53,9 +53,6 @@ const ComponentItemForm = props => {
       : [];
   };
 
-  console.log('console: getPropTypePropEnums', getPropTypePropEnums());
-  console.log('console: getPropTypePropEnumNames', getPropTypePropEnumNames());
-
   if (currentModalData.subtitle === "Component") {
     schema.properties = {
       ...schema.properties,

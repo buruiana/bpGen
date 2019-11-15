@@ -13,7 +13,8 @@ const ComponentSchema = new mongoose.Schema({
   componentProps: { type: Array, required: false },
   children: { type: Array, required: false },
   userid: { type: String, required: true },
-  propType: { type: String, required: false }
+  propType: { type: String, required: false },
+  closeTag: { type: Boolean, required: false }
 });
 
 module.exports = mongoose.model('Component', ComponentSchema);

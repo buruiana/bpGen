@@ -7,10 +7,16 @@ import GenericSearchForm from "../../forms/GenericSearchForm";
 import { navigate, navigate2Login } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
 
+import {
+  getTechnoName,
+  getProviderName,
+} from '../../../utils';
+
 const ProvidersListView = props => {
   const {
     searchData,
     providers = [],
+    technos,
     deleteProvider,
     isAuthenticated,
     hasProvidersImport,
@@ -28,10 +34,10 @@ const ProvidersListView = props => {
   const filteredItems = () => {
     const filteredProviders = providers.filter(el => {
       if (!isEmpty(searchData) && searchData.title) {
-        return (el.title.toLowerCase().indexOf(searchData.title.toLowerCase()) !== -1
-          && get(searchData, 'techno', el.techno) === el.techno);
+        return (el._id.toLowerCase().indexOf(searchData.title.toLowerCase()) !== -1
+          && get(searchData, 'techno', el.providersTechno) === el.providersTechno);
       }
-      return get(searchData, 'techno', el.techno) === el.techno;
+      return get(searchData, 'techno', el.providersTechno) === el.providersTechno;
     });
 
     return sortBy(filteredProviders, el => el.title);
@@ -54,13 +60,14 @@ const ProvidersListView = props => {
 
   const providersList = () => {
     return filteredItems().map(provider => {
-      const { title, _id, providerUrl } = provider;
+      const { title, _id, providerUrl, providersTechno } = provider;
 
       return (
         <tr key={_id}>
           <td>
             <a id={_id} className="simpleLink" onClick={goTo}>{title}</a>
           </td>
+          <td><a id={_id} className="simpleLink">{getTechnoName(technos, providersTechno)}</a></td>
           <td><a id={_id} className="simpleLink">{providerUrl}</a></td>
           <td>
             <a className="simpleLink" id={_id} onClick={deleteSelectedProvider}>Delete</a>

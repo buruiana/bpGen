@@ -7,14 +7,13 @@ export const getNewtemplate = formData => {
     newTemplate = {
       expanded: true,
       _id: get(formData, '_id', undefined),
-      name: get(formData, 'name', ''),
       subtitle: 'Template',
       templateDescription: get(formData, 'templateDescription', ''),
       templateIsActive: get(formData, 'templateIsActive', false),
       templateIsComponent: get(formData, 'templateIsComponent', false),
       templateIsPublic: get(formData, 'templateIsPublic', false),
       templateTechnos: get(formData, 'templateTechnos', ''),
-      title: get(formData, 'name', ''),
+      title: get(formData, 'title', ''),
       userid: get(formData, 'userid', undefined),
       children: get(formData, 'children', []),
     };
@@ -249,10 +248,10 @@ export const getSchema = (currentModalData, schema) => {
         title: 'ID',
         default: get(currentModalData, '_id', '')
       },
-      name: {
+      title: {
         type: 'string',
         title: 'Name',
-        default: get(currentModalData, 'name', '')
+        default: get(currentModalData, 'title', '')
       },
       templateDescription: {
         type: 'string',
