@@ -70,19 +70,18 @@ const ComponentsFormTree = props => {
   };
 
   return (
-    <div>
+    <div className='page-wrapper'>
       <div className='linkConrtainer'>
         <a onClick={goTo} className="simpleLink leftLink">Back</a>
         <a onClick={saveComponent} className="simpleLink rightLink">
           Save Component
         </a>
       </div>
-      <div className="flex">
-        <div
+      <div className='row'>
+        <div className='column50'
           style={{
             height: count * 65 + 100,
-            width: "40%",
-            float: "left"
+            float: 'left',
           }}
         >
           <SortableTree
@@ -92,12 +91,10 @@ const ComponentsFormTree = props => {
             shouldCopyOnOutsideDrop={shouldCopyOnOutsideDrop}
           />
         </div>
-
-        <div
+        <div className='column50'
           style={{
             height: count * 65 + 100,
-            width: "60%",
-            float: "left"
+            float: 'left',
           }}
         >
           <SortableTree

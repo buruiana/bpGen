@@ -1,6 +1,9 @@
 import React from "react";
 import Alert from "react-bootstrap/Alert";
-import SortableTree, { removeNodeAtPath } from "react-sortable-tree";
+import SortableTree, {
+  removeNodeAtPath,
+  getVisibleNodeCount
+} from "react-sortable-tree";
 import sortBy from "lodash/sortBy";
 import has from "lodash/has";
 import get from "lodash/get";
@@ -128,6 +131,11 @@ const Editor = props => {
     });
   };
 
+  const count =
+    getVisibleNodeCount({ treeData: filteredDefaultTree() }) > 1
+      ? getVisibleNodeCount({ treeData: filteredDefaultTree() })
+      : 400;
+
   const returnComponentBlock = () => {
     return (
       <div className="paddingTop">
@@ -138,12 +146,11 @@ const Editor = props => {
         </div>
         {renderError()}
         <div>{renderSearchField()}</div>
-        <div>
-          <div
+        <div className='row'>
+          <div className='column50'
             style={{
-              height: 800,
-              width: "40%",
-              float: "left"
+              height: count * 65 + 100,
+              float: 'left',
             }}
           >
             <SortableTree
@@ -164,13 +171,7 @@ const Editor = props => {
               })}
             />
           </div>
-          <div
-            style={{
-              height: 800,
-              width: "60%",
-              float: "left"
-            }}
-          >
+          <div className='column50'>
             <SortableTree
               treeData={tree}
               onChange={onChange}
@@ -201,12 +202,12 @@ const Editor = props => {
   };
 
   return (
-    <div class='editor-page-wrapper'>
-      <div class='row'>
-        <div class='columnTree'>
+    <div className='page-wrapper'>
+      <div className='row'>
+        <div className='columnTree'>
           {!isEmpty(projectSettings) && currentTemplate.templateIsComponent && returnComponentBlock()}
         </div>
-        <div class='columnAce'>
+        <div className='columnAce'>
           {renderAce()}
         </div>
       </div>
