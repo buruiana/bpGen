@@ -202,7 +202,7 @@ const Editor = props => {
   };
 
   return (
-    <div className='page-wrapper'>
+    <div>
       <div className='row'>
         <div className='columnTree'>
           {!isEmpty(projectSettings) && currentTemplate.templateIsComponent && returnComponentBlock()}

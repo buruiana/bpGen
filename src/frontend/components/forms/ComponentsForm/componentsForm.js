@@ -21,11 +21,11 @@ const ComponentsForm = props => {
   let component = !isEmpty(componentsArray)
     ? componentsArray[0]
     : {
-        description: "",
-        provider: "",
-        techno: "",
-        componentProps: []
-      };
+      description: "",
+      provider: "",
+      techno: "",
+      componentProps: []
+    };
 
   const {
     title,
@@ -172,21 +172,19 @@ const ComponentsForm = props => {
   const log = type => console.log.bind(console, type);
   return (
     <div>
-      <>
-        <div>
-          <a onClick={goTo} className="simpleLink">
-            Back
+      <div>
+        <a onClick={goTo} className="simpleLink">
+          Back
           </a>
-        </div>
-        <Form
-          schema={schema}
-          uiSchema={uiSchema}
-          onChange={log("changed")}
-          onSubmit={onSubmit}
-          onError={log("errors")}
-          formData={component}
-        />
-      </>
+      </div>
+      <Form
+        schema={schema}
+        uiSchema={uiSchema}
+        onChange={log("changed")}
+        onSubmit={onSubmit}
+        onError={log("errors")}
+        formData={component}
+      />
     </div>
   );
 };

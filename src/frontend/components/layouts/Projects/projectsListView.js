@@ -113,7 +113,7 @@ const ProjectsListView = props => {
   };
 
   return (
-    <div>
+    <div className='wrapper'>
       <GenericSearchForm componentname={PROJECTS} />
       { hasProjectsImport &&
         <div className='importContainer'>

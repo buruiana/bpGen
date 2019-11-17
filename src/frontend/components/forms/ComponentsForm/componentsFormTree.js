@@ -70,7 +70,7 @@ const ComponentsFormTree = props => {
   };
 
   return (
-    <div className='page-wrapper'>
+    <div>
       <div className='linkConrtainer'>
         <a onClick={goTo} className="simpleLink leftLink">Back</a>
         <a onClick={saveComponent} className="simpleLink rightLink">

@@ -38,7 +38,7 @@ const TemplatesFormMain = props => {
 
 
   return (
-    <div>
+    <div className='wrapper'>
       <div className="tabsList">
         <Tabs
           id="controlled-tab-example"

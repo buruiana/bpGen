@@ -38,23 +38,21 @@ const TemplatesForm = props => {
 
   return (
     <div>
-      <>
-        <div>
-          <a onClick={goBack} className="simpleLink">
-            Back
+      <div>
+        <a onClick={goBack} className="simpleLink">
+          Back
           </a>
-        </div>
-        <div className='importContainer'>
-          <input type="file" id="importFile" onChange={onImport} />
-        </div>
-        <Form
-          schema={schema}
-          onSubmit={onSubmit}
-          onChange={onChange}
-          formData={formSchema}
-          uiSchema={uiSchema}
-        />
-      </>
+      </div>
+      <div className='importContainer'>
+        <input type="file" id="importFile" onChange={onImport} />
+      </div>
+      <Form
+        schema={schema}
+        onSubmit={onSubmit}
+        onChange={onChange}
+        formData={formSchema}
+        uiSchema={uiSchema}
+      />
     </div>
   );
 };

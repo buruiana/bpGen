@@ -19,11 +19,11 @@ const PropTypesForm = props => {
   let propType = !isEmpty(propTypesArray)
     ? propTypesArray[0]
     : {
-        description: "",
-        provider: "",
-        techno: "",
-        propTypeProps: []
-      };
+      description: "",
+      provider: "",
+      techno: "",
+      propTypeProps: []
+    };
 
   const {
     title,
@@ -101,21 +101,19 @@ const PropTypesForm = props => {
   const log = type => console.log.bind(console, type);
   return (
     <div>
-      <>
-        <div>
-          <a onClick={goTo} className="simpleLink">
-            Back
-          </a>
-        </div>
-        <Form
-          schema={schema}
-          uiSchema={uiSchema}
-          onChange={log("changed")}
-          onSubmit={onSubmit}
-          onError={log("errors")}
-          formData={propType}
-        />
-      </>
+      <div>
+        <a onClick={goTo} className="simpleLink">
+          Back
+        </a>
+      </div>
+      <Form
+        schema={schema}
+        uiSchema={uiSchema}
+        onChange={log("changed")}
+        onSubmit={onSubmit}
+        onError={log("errors")}
+        formData={propType}
+      />
     </div>
   );
 };

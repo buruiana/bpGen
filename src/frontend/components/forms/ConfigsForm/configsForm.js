@@ -58,7 +58,7 @@ const ConfigsForm = props => {
   const onChange = data => setConfigs(data.formData);
 
   return (
-    <div>
+    <div className='wrapper'>
       <Form
         schema={schema}
         onSubmit={onSubmit}

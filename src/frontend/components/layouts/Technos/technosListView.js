@@ -72,7 +72,7 @@ const TechnosListView = props => {
   };
 
   return (
-    <div>
+    <div className='wrapper'>
       <GenericSearchForm componentname={TECHNOS} />
       { hasTechnosImport &&
         <div className='importContainer'>

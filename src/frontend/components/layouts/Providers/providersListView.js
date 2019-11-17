@@ -78,7 +78,7 @@ const ProvidersListView = props => {
   };
 
   return (
-    <div>
+    <div className='wrapper'>
       <GenericSearchForm componentname={PROVIDERS} />
       { hasProvidersImport &&
         <div className='importContainer'>

@@ -49,7 +49,7 @@ const UsersForm = props => {
 
   const log = type => console.log.bind(console, type);
   return (
-    <div>
+    <div className='wrapper'>
       <div>
         <a onClick={goTo} className="simpleLink">
           Back

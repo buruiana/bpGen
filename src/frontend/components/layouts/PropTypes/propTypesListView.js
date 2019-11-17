@@ -72,7 +72,7 @@ const PropTypesListView = props => {
   };
 
   return (
-    <div>
+    <div className='wrapper'>
       <GenericSearchForm componentname={PROP_TYPES} />
       { hasPropTypesImport &&
         <div className='importContainer'>

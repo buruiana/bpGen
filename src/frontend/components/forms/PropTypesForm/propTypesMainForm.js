@@ -39,7 +39,7 @@ const PropTypesFormMain = props => {
   }, [propTypes, match.params.id]);
 
   return (
-    <div>
+    <div className='wrapper'>
       <div className="tabsList">
         <Tabs
           id="controlled-tab-example"

@@ -95,7 +95,7 @@ const TemplatesListView = props => {
   const addNew = () => navigate("/template/new")
 
   return (
-    <div>
+    <div className='wrapper'>
       <GenericSearchForm componentname={TEMPLATES} />
       { hasTemplatesImport &&
         <div className='importContainer'>
