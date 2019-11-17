@@ -3,10 +3,10 @@ import ProjectsListView from './projectsListView';
 import {
   deleteProject,
   setProject,
+  setCurrentProject,
   getAllProjects,
   setProjectTree
 } from '../../../services/projectsService/actions';
-import { setTree } from "../../../services/sortableTreeService/actions";
 import { setCustomForm } from '../../../services/customFormService/actions';
 import { setProjectSettings } from "../../../services/projectSettingsService/actions";
 import { setCurrentTemplate } from "../../../services/templatesService/actions";
@@ -31,7 +31,7 @@ const mapDispatchToProps = {
   setProject,
   getAllProjects,
   setProjectTree,
-  //setTree,
+  setCurrentProject,
   setCustomForm,
   setProjectSettings,
   setCurrentTemplate,

@@ -40,10 +40,10 @@ const Editor = props => {
     setCustomForm,
     generateCode,
     forms,
-    //setNodePath,
     currentTemplate,
     isAuthenticated,
-    configs,
+    currentProject,
+    setProject,
   } = props;
 
   if (!isAuthenticated) navigate2Login();
@@ -57,32 +57,33 @@ const Editor = props => {
   };
 
   const openModal = (type, node, path) => {
-    //setNodePath({ node, path });
     addModal(type, { node, path });
   };
 
-  const setNewTree = treeData2 => {
-    setProjectTree({ treeData2 });
+  const setNewTree = tree => {
+    setProjectTree(tree);
     const newForms = {
       ...forms,
-      tree: treeData2
+      tree
     };
 
     setCustomForm(newForms);
     generateCode();
   };
+
   const onChange = treeData => {
     if (treeData.length === 1) setNewTree(fillNodeData(treeData, providers));
   };
+
   const remove = path => {
-    const newTree = {
-      treeData2: removeNodeAtPath({
+    const newTree =
+      removeNodeAtPath({
         treeData: tree,
         path,
         getNodeKey
-      })
-    };
-    setNewTree(fillNodeData(newTree.treeData2, providers));
+      });
+
+    setNewTree(fillNodeData(newTree, providers));
   };
 
   const filteredDefaultTree = () => {
@@ -124,10 +125,11 @@ const Editor = props => {
       .filter(e => e._id === forms.projectSettings.projectTemplate)
       .map(e => e.templateTechno);
 
-    setProjectTree({
+    setProject({
       forms,
       title: forms.projectSettings.projectName,
-      techno: templateTechno[0]
+      techno: templateTechno[0],
+      _id: get(currentProject[0], '_id', null),
     });
   };
 
@@ -135,6 +137,10 @@ const Editor = props => {
     getVisibleNodeCount({ treeData: filteredDefaultTree() }) > 1
       ? getVisibleNodeCount({ treeData: filteredDefaultTree() })
       : 400;
+
+  const onClickComponent = () => {
+
+  };
 
   const returnComponentBlock = () => {
     return (

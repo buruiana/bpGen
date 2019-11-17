@@ -112,7 +112,7 @@ export const getTree = flatTree => {
             START: "'",
             END: "'",
           };
-        } else if (type.includes('object') || type.includes('func')) {
+        } else if (type.includes('object') || type.includes('func') || type.includes('bool')) {
           return {
             START: "{",
             END: "}",

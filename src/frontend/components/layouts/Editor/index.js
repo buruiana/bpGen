@@ -4,10 +4,11 @@ import { connect } from "react-redux";
 import { addModal } from "../../../services/modalService/actions";
 //import { setTree, setNodePath } from "../../../services/sortableTreeService/actions";
 import { setCustomForm } from '../../../services/customFormService/actions';
-import { setProjectTree } from '../../../services/projectsService/actions';
+import { setProject, setProjectTree } from '../../../services/projectsService/actions';
 import { generateCode } from "../../../services/codeGenerationService/actions";
 
 const mapStateToProps = state => ({
+  currentProject: state.projectsReducer.currentProject,
   projectSettings: state.projectSettingsReducer.projectSettings,
   components: state.componentsReducer.components,
   providers: state.providersReducer.providers,
@@ -24,10 +25,10 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   addModal,
+  setProject,
   setProjectTree,
   setCustomForm,
   generateCode,
-  //setNodePath,
 };
 
 export default connect(

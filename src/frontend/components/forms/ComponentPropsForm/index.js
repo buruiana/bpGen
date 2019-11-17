@@ -5,12 +5,12 @@ import { setCustomForm } from '../../../services/customFormService/actions';
 import { setComponent } from '../../../services/componentsService';
 import { setProject } from '../../../services/projectsService/actions';
 import { generateCode } from '../../../services/codeGenerationService/actions';
+import { setProjectTree } from '../../../services/projectsService/actions';
 
 const mapStateToProps = state => {
   return {
     projectSettings: state.projectSettingsReducer.projectSettings,
     templates: state.templatesReducer.templates,
-    //tree: state.sortableTreeReducer.tree,
     tree: state.projectsReducer.tree,
     modalData: state.modalsReducer.modalData,
     forms: state.customFormReducer.forms,
@@ -23,7 +23,8 @@ const mapDispatchToProps = {
   setCustomForm,
   setComponent,
   setProject,
-  generateCode
+  generateCode,
+  setProjectTree,
 };
 
 export default connect(

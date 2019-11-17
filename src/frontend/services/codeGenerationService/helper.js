@@ -1,7 +1,7 @@
 import * as helper from '../../utils/helper';
 
 export const executeCodeGeneration = (template, forms) => {
-
+  console.log('console: aaaaaaaaaaaaaaa', template, forms);
   let codeFile = [];
   template.templateFiles.map(file => {
     let code = "";

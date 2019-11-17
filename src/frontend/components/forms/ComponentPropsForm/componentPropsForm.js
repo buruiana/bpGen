@@ -9,19 +9,17 @@ import { getTechnoName } from '../../../utils';
 const ComponentPropsForm = props => {
   const {
     modalData,
-    setProject,
+    setProjectTree,
     removeModal,
     tree,
     generateCode,
     setCustomForm,
     forms,
-    templates,
-    propTypes,
   } = props;
   const { node, path } = modalData[0];
 
   const getNodeKey = ({ treeIndex }) => treeIndex;
-  const uiSchema = {};
+  const uiSchema = { componentProps: {}};
   const schema = {
     type: "object",
     properties: {}
@@ -30,18 +28,15 @@ const ComponentPropsForm = props => {
   const propsInfo = get(node, "componentProps", []);
 
   propsInfo.map(prop => {
-    console.log('console: ===========================', prop);
+    const { title, propTypeVal, val, propTypeProp } = prop;
     if (get(prop, 'propTypeProp', '').includes('oneOf')) {
-      // const xx = propTypes[0].propTypeProps
-      //   .filter(e => e.title === prop.propTypeProp)
-      //   .map(e => e);
-      const propEnum = prop.propTypeVal.replace(/'/g, '').split('|')
-      const { title, propTypeVal } = prop;
+      const propEnum = propTypeVal.replace(/'/g, '').split('|')
+
       properties[title] = {
         type: "string",
         title: title,
-        //default: propTypeVal,
-        enum: propEnum
+        enum: propEnum,
+        default: val
       };
 
       uiSchema[title] = {
@@ -51,16 +46,15 @@ const ComponentPropsForm = props => {
         }
       }
     } else {
-      properties[prop.title] = {
+      properties[title] = {
         type: "string",
-        title: prop.title,
-        default: prop.propTypeVal
+        title: title,
+        default: val
       };
+      uiSchema[title] = {
+        "ui:placeholder": propTypeProp,
+      }
     }
-  });
-
-  propsInfo.map(prop => {
-    uiSchema[prop.title] = { "ui:placeholder": `${prop.propTypeProp}` };
   });
 
   const onSubmit = data => {
@@ -68,22 +62,9 @@ const ComponentPropsForm = props => {
     const newProps = [];
 
     Object.keys(formData).forEach(key => {
-      let prop = node.componentProps.filter(prop => prop.title === key);
-
-      let newProp = {};
-      if (prop) {
-        newProp = {
-          propTypeProp: prop[0].propTypeProp,
-          propTypeVal: formData[key],
-          propTypeIsRequired: prop[0].propTypeIsRequired,
-          title: prop[0].title,
-          description: prop[0].description,
-        };
-      } else {
-        newProp = prop[0];
-        newProp.propTypeVal = '';
-      }
-      newProps.push(newProp);
+      let prop = node.componentProps.filter(prop => prop.title === key)[0];
+      prop = { ...prop, val: formData[key] }
+      newProps.push(prop);
     });
 
     const newNode = { ...node };
@@ -91,21 +72,20 @@ const ComponentPropsForm = props => {
     const hasComponentPropsVals = newProps.filter(el => el.val);
     newNode.hasComponentPropsVals = !isEmpty(hasComponentPropsVals);
 
-    const newTree = {
-      treeData2: changeNodeAtPath({
-        treeData: tree,
-        path,
-        getNodeKey,
-        newNode
-      })
-    };
+    const newTree = changeNodeAtPath({
+      treeData: tree,
+      path,
+      getNodeKey,
+      newNode
+    });
 
-    setProject(newTree);
+    setProjectTree(newTree);
 
     const newForms = {
       ...forms,
-      tree: newTree.treeData2,
+      tree: newTree,
     };
+
     setCustomForm(newForms);
     generateCode();
     removeModal();

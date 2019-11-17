@@ -136,6 +136,7 @@ app.post('/api/register', function (req, res) {
 
 app.post("/api/prettify", (req, res) => {
   let newCode = [];
+  console.log('console: 1111111111111', req.body);
   req.body.code.code.map(e => {
     let theCode = "";
     if (e.code) theCode = e.code;

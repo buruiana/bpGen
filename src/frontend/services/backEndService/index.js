@@ -39,6 +39,7 @@ const prettify = (code, parser) => {
 
 export function* watchPrettyfyCode(code, parser = "babel") {
   let prettyCode = [];
+  console.log('console:watchPrettyfyCode ', code);
   try {
     const res = yield prettify({ code, parser });
     prettyCode = res.data;

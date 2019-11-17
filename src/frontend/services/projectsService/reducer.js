@@ -19,7 +19,7 @@ export default (state = initialState(), action) => {
         ...state,
         error: ""
       };
-    case actionTypes.SET_PROJECT_SUCCESS:
+    case actionTypes.SET_CURRENT_PROJECT:
       return {
         ...state,
         error: "",

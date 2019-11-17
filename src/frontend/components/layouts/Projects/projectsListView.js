@@ -16,7 +16,6 @@ const ProjectsListView = props => {
     deleteProject,
     setProject,
     isAuthenticated,
-    //setTree,
     setCustomForm,
     setProjectSettings,
     templates,
@@ -25,6 +24,7 @@ const ProjectsListView = props => {
     hasProjectsImport,
     importData,
     setProjectTree,
+    setCurrentProject,
   } = props;
 
   if (!isAuthenticated) navigate2Login();
@@ -38,8 +38,9 @@ const ProjectsListView = props => {
 
     const newCurrentTemplate = templates.filter(t => t._id === project[0].forms.projectSettings.projectTemplate)
 
+    setCurrentProject(project);
     setCurrentTemplate(newCurrentTemplate[0]);
-    setProjectTree({ treeData2: project[0].tree });
+    setProjectTree(project[0].forms.tree);
     setCustomForm(project[0].forms);
     setProjectSettings(project[0].forms.projectSettings);
     generateCode()

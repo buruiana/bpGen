@@ -9,6 +9,9 @@ export function* watchGenerateCode(action) {
   const template = (yield select()).templatesReducer.currentTemplate;
   const forms = (yield select()).customFormReducer.forms;
 
+  console.log('console: template', template);
+  console.log('console: forms', forms);
+
   if (isEmpty(template)) {
     generateCodeFail({ error: "template not provided for code generation" });
     return null;

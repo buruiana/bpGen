@@ -5,8 +5,8 @@ export const setProject = project => ({
   project,
 });
 
-export const setProjectSuccess = project => ({
-  type: actionTypes.SET_PROJECT,
+export const setCurrentProject = project => ({
+  type: actionTypes.SET_CURRENT_PROJECT,
   project
 });
 
