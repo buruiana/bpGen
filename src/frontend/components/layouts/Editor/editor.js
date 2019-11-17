@@ -138,14 +138,13 @@ const Editor = props => {
 
   const returnComponentBlock = () => {
     return (
-      <div className="paddingTop">
+      <div>
+        {renderError()}
         <div className='linkConrtainer'>
           <a onClick={saveProject} className="simpleLink rightLink">
             Save Project
-        </a>
+          </a>
         </div>
-        {renderError()}
-        <div>{renderSearchField()}</div>
         <div className='row'>
           <div className='column50'
             style={{
@@ -202,7 +201,8 @@ const Editor = props => {
   };
 
   return (
-    <div>
+    <div className='wrapper'>
+      {!isEmpty(projectSettings) && <div>{renderSearchField()}</div>}
       <div className='row'>
         <div className='columnTree'>
           {!isEmpty(projectSettings) && currentTemplate.templateIsComponent && returnComponentBlock()}
