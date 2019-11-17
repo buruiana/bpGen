@@ -5,7 +5,7 @@ import {
   getAllTemplates
 } from '../../../services/templatesService/actions';
 import { generateCode } from '../../../services/codeGenerationService/actions';
-import templatesFormMain from './templatesFormMain';
+import TemplatesMainForm from './templatesMainForm';
 import { setTemplateTree } from '../../../services/templatesService/actions';
 import { addModal } from '../../../services/modalService/actions';
 
@@ -29,4 +29,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(templatesFormMain);
+)(TemplatesMainForm);

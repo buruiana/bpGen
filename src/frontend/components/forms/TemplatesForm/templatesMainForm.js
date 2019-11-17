@@ -11,7 +11,7 @@ import TemplatesFormTree from './templatesFormTree';
 import { navigate2Login } from '../../../utils';
 import { convertJsonSchema2SortableTree } from './helper';
 
-const TemplatesFormMain = props => {
+const TemplatesMainForm = props => {
   const {
     tree = [],
     templates = [],
@@ -57,4 +57,4 @@ const TemplatesFormMain = props => {
   );
 };
 
-export default TemplatesFormMain;
+export default TemplatesMainForm;
