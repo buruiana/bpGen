@@ -25,7 +25,7 @@ const LoginForm = props => {
   return (
     <div className='login-form'>
       <Tabs
-        id="controlled-tab-example"
+        id="login-tabs"
         activeKey={loginType}
         onSelect={k => setLoginType(k)}
       >

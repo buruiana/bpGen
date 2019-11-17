@@ -42,7 +42,7 @@ const ComponentsFormMain = props => {
     <div className='wrapper'>
       <div className="tabsList">
         <Tabs
-          id="controlled-tab-example"
+          id="components-tabs"
           activeKey={componentFormType}
           onSelect={k => setComponentFormType(k)}
         >

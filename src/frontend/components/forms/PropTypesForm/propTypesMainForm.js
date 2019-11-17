@@ -42,7 +42,7 @@ const PropTypesFormMain = props => {
     <div className='wrapper'>
       <div className="tabsList">
         <Tabs
-          id="controlled-tab-example"
+          id="propTypes-tabs"
           activeKey={propTypeFormType}
           onSelect={k => setPropTypeFormType(k)}
         >

@@ -41,7 +41,7 @@ const TemplatesMainForm = props => {
     <div className='wrapper'>
       <div className="tabsList">
         <Tabs
-          id="controlled-tab-example"
+          id="templates-tabs"
           activeKey={templateFormType}
           onSelect={k => setTemplateFormType(k)}
         >

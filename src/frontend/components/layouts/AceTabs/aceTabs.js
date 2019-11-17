@@ -25,7 +25,7 @@ const AceTabs = props => {
     <div className="tabsList">
       <Tabs
         //defaultActiveKey="index.js"
-        id="uncontrolled-tab-example"
+        id="ace-tabs"
         onSelect={onSelect}
         activeKey={aceTab}
       >
