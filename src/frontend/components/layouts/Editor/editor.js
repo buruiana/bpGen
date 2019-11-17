@@ -29,19 +29,18 @@ const Editor = props => {
   const {
     projectSettings,
     addModal,
-    //tree,
+    templates,
     providers,
-    setTree,
+    setProjectTree,
     searchData,
     projectError,
     setCustomForm,
     generateCode,
     forms,
-    setNodePath,
-    configs,
-    setProject,
+    //setNodePath,
     currentTemplate,
     isAuthenticated,
+    configs,
   } = props;
 
   if (!isAuthenticated) navigate2Login();
@@ -55,12 +54,12 @@ const Editor = props => {
   };
 
   const openModal = (type, node, path) => {
-    setNodePath({ node, path });
+    //setNodePath({ node, path });
     addModal(type, { node, path });
   };
 
   const setNewTree = treeData2 => {
-    setTree({ treeData2 });
+    setProjectTree({ treeData2 });
     const newForms = {
       ...forms,
       tree: treeData2
@@ -84,25 +83,17 @@ const Editor = props => {
   };
 
   const filteredDefaultTree = () => {
-    const filteredTree = components.filter(el => {
-      if (has(searchData, 'title')) {
-        console.log('console: 111111111111111', get(searchData, "techno", el.techno));
-        console.log('console: 222222222222222', el.techno);
-        return (
-          el.title
-            .toLowerCase()
-            .indexOf(searchData.title.toLowerCase()) !== -1 &&
-          get(searchData, "techno", el.techno) === el.techno &&
-          get(searchData, "provider", el.provider) === el.provider
-        );
+    const filteredComponents = components.filter(el => {
+      if (!isEmpty(searchData) && searchData.title) {
+        return (el.title.toLowerCase().indexOf(searchData.title.toLowerCase()) !== -1
+          && get(searchData, 'provider', el.provider) === el.provider
+          && get(searchData, 'techno', el.techno) === el.techno);
       }
-      return (
-        get(searchData, "provider", el.provider) === el.provider &&
-        get(searchData, "techno", el.techno) === el.techno
-      );
+      return (get(searchData, 'provider', el.provider) === el.provider
+        && get(searchData, 'techno', el.techno) === el.techno);
     });
 
-    return sortBy(filteredTree, el => el.title);
+    return sortBy(filteredComponents, el => el.title);
   };
 
   const renderSearchField = () => {
@@ -126,9 +117,14 @@ const Editor = props => {
   };
 
   const saveProject = () => {
-   // const cleanForms = replaceUndefined(forms);
-    setProject({
-      forms
+    const templateTechno = templates
+      .filter(e => e._id === forms.projectSettings.projectTemplate)
+      .map(e => e.templateTechno);
+
+    setProjectTree({
+      forms,
+      title: forms.projectSettings.projectName,
+      techno: templateTechno[0]
     });
   };
 
@@ -146,7 +142,7 @@ const Editor = props => {
           <div
             style={{
               height: 800,
-              width: "25%",
+              width: "40%",
               float: "left"
             }}
           >
@@ -171,7 +167,7 @@ const Editor = props => {
           <div
             style={{
               height: 800,
-              width: "35%",
+              width: "60%",
               float: "left"
             }}
           >
@@ -203,14 +199,21 @@ const Editor = props => {
       </div>
     );
   };
-  console.log('console: projectSettings', projectSettings);
-  console.log('console: currentTemplate', currentTemplate);
+
   return (
-    <div>
-      {!isEmpty(projectSettings) && currentTemplate.templateIsComponent && returnComponentBlock()}
-      {renderAce()}
-      {!isEmpty(projectSettings) && !isEmpty(tree) && configs.hasComponentPreview && <Preview />}
+    <div class='editor-page-wrapper'>
+      <div class='row'>
+        <div class='columnTree'>
+          {!isEmpty(projectSettings) && currentTemplate.templateIsComponent && returnComponentBlock()}
+        </div>
+        <div class='columnAce'>
+          {renderAce()}
+        </div>
+      </div>
     </div>
+
+
+      /* {!isEmpty(projectSettings) && !isEmpty(tree) && configs.hasComponentPreview && <Preview />} */
   );
 };
 

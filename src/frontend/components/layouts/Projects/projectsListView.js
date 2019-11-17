@@ -2,18 +2,21 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import sortBy from "lodash/sortBy";
 import get from "lodash/get";
+import isEmpty from "lodash/isEmpty";
 import GenericSearchForm from "../../forms/GenericSearchForm";
 import { navigate, navigate2Login } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
+import { getTechnoName } from '../../../utils';
 
 const ProjectsListView = props => {
   const {
     projects = [],
+    technos=[],
     searchData,
     deleteProject,
     setProject,
     isAuthenticated,
-    setTree,
+    //setTree,
     setCustomForm,
     setProjectSettings,
     templates,
@@ -21,6 +24,7 @@ const ProjectsListView = props => {
     generateCode,
     hasProjectsImport,
     importData,
+    setProjectTree,
   } = props;
 
   if (!isAuthenticated) navigate2Login();
@@ -35,7 +39,7 @@ const ProjectsListView = props => {
     const newCurrentTemplate = templates.filter(t => t._id === project[0].forms.projectSettings.projectTemplate)
 
     setCurrentTemplate(newCurrentTemplate[0]);
-    setTree({ treeData2: project[0].tree });
+    setProjectTree({ treeData2: project[0].tree });
     setCustomForm(project[0].forms);
     setProjectSettings(project[0].forms.projectSettings);
     generateCode()
@@ -55,18 +59,15 @@ const ProjectsListView = props => {
   };
 
   const filteredItems = () => {
-    const filteredProjects = projects.filter(el => {
-      if (searchData.title) {
-        return (
-          el.title
-            .toLowerCase()
-            .includes(get(searchData, "title", el._id).toLowerCase())
-        );
+    const filteredComponents = projects.filter(el => {
+      if (!isEmpty(searchData) && searchData.title) {
+        return (el.title.toLowerCase().indexOf(searchData.title.toLowerCase()) !== -1
+          && get(searchData, 'techno', el.techno) === el.techno);
       }
-      return el;
+      return get(searchData, 'techno', el.techno) === el.techno;
     });
 
-    return sortBy(filteredProjects, el => el.title);
+    return sortBy(filteredComponents, el => el.title);
   };
 
   const handleFileRead = e => {
@@ -86,12 +87,15 @@ const ProjectsListView = props => {
 
   const projectsList = () => {
     return filteredItems().map(project => {
-      const { _id, title } = project;
+      const { _id, title, techno } = project;
 
       return (
         <tr key={_id}>
           <td>
             <a id={_id} className="simpleLink" onClick={onClick}>{title}</a>
+          </td>
+          <td>
+            <a id={_id} className="simpleLink" onClick={onClick}>{getTechnoName(technos, techno)}</a>
           </td>
           <td>
             <a className="simpleLink" id={_id} onClick={duplicateSelectedProject}>

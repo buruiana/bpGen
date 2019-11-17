@@ -242,11 +242,6 @@ export const getSchema = (currentModalData, schema, other) => {
   if (currentModalData.subtitle === 'Template') {
     schema.properties = {
       ...schema.properties,
-      // _id: {
-      //   type: 'string',
-      //   title: 'ID',
-      //   default: get(currentModalData, '_id', '')
-      // },
       title: {
         type: 'string',
         title: 'Name',

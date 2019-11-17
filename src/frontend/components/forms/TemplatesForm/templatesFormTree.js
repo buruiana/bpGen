@@ -31,7 +31,6 @@ const TemplatesForm = props => {
     setTemplate
   } = props;
 
-  console.log('console: zzzzzzzzzzzzzzzzzz', props );
   const goTo = () => {
     setTemplateTree(getDefaultTree());
     navigate("/templates");
@@ -52,7 +51,6 @@ const TemplatesForm = props => {
   };
 
   const validateTemplate = () => {
-    console.log('console: validateTemplate', tree);
     const isTemplate = (tree[0].subtitle ===
       "Template" && tree.length === 1);
 
@@ -67,12 +65,10 @@ const TemplatesForm = props => {
 
 
   const saveTemplate = () => {
-    console.log('console: savesavesave', tree);
     const newTree = validateTemplate(tree)
       ? convertSortableTree2JsonSchema(tree)
       : [];
 
-    console.log('console: aaaaaaaaaaaaaaa', newTree, tree);
     setTemplate(newTree);
     goTo();
   };

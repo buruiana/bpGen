@@ -15,6 +15,7 @@ import { generateCode } from "../../../services/codeGenerationService/actions";
 
 const mapStateToProps = state => {
   return {
+    technos: state.technosReducer.technos,
     projects: state.projectsReducer.projects,
     searchData: state.filterDataReducer.searchData,
     providers: state.providersReducer.providers,
@@ -30,7 +31,7 @@ const mapDispatchToProps = {
   setProject,
   getAllProjects,
   setProjectTree,
-  setTree,
+  //setTree,
   setCustomForm,
   setProjectSettings,
   setCurrentTemplate,

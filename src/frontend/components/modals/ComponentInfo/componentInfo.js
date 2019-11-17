@@ -63,9 +63,9 @@ const ComponentInfo = ({ removeModal, modalData, technos, providers, propTypes }
         </Modal.Header>
 
         <Modal.Body>
-          <div className='blue_title'>Provider: {getProviderName(providers, node.provider)}</div>
-          <div className='blue_title'>Techno: {getTechnoName(technos, node.techno)}</div>
-          <div className='blue_title'>PropType: {getPropTypeName(propTypes, node.propType)}</div>
+          <div className='red_title'>Provider: {getProviderName(providers, node.provider)}</div>
+          <div className='red_title'>Techno: {getTechnoName(technos, node.techno)}</div>
+          <div className='red_title'>PropType: {getPropTypeName(propTypes, node.propType)}</div>
           <div>{renderDescription(node.description)}</div>
           <div>{renderProps()}</div>
         </Modal.Body>

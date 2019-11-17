@@ -53,7 +53,6 @@ const TemplatesForm = props => {
           onChange={onChange}
           formData={formSchema}
           uiSchema={uiSchema}
-          //ArrayFieldTemplate={ArrayFieldTemplate}
         />
       </>
     </div>

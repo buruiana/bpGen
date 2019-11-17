@@ -9,17 +9,19 @@ import { getTechnoName } from '../../../utils';
 const ComponentPropsForm = props => {
   const {
     modalData,
-    setTree,
+    setProject,
     removeModal,
     tree,
     generateCode,
     setCustomForm,
     forms,
     templates,
+    propTypes,
   } = props;
   const { node, path } = modalData[0];
 
   const getNodeKey = ({ treeIndex }) => treeIndex;
+  const uiSchema = {};
   const schema = {
     type: "object",
     properties: {}
@@ -28,29 +30,34 @@ const ComponentPropsForm = props => {
   const propsInfo = get(node, "componentProps", []);
 
   propsInfo.map(prop => {
-    if (get(prop, 'subtitle', '').includes('string')
-      || get(prop, 'propTypeProp', '').includes('string')) {
-      properties[prop.title] = {
-        type: "string",
-        title: prop.title,
-        val: prop.val,
-        default: prop.val
-      };
-    }
-    if (get(prop, 'subtitle', '').includes('oneOf') || get(prop, 'propTypeProp', '').includes('oneOf')) {
+    console.log('console: ===========================', prop);
+    if (get(prop, 'propTypeProp', '').includes('oneOf')) {
+      // const xx = propTypes[0].propTypeProps
+      //   .filter(e => e.title === prop.propTypeProp)
+      //   .map(e => e);
       const propEnum = prop.propTypeVal.replace(/'/g, '').split('|')
-      properties[prop.title] = {
+      const { title, propTypeVal } = prop;
+      properties[title] = {
         type: "string",
-        title: prop.title,
-        val: prop.val,
-        default: prop.val,
+        title: title,
+        //default: propTypeVal,
         enum: propEnum
       };
+
+      uiSchema[title] = {
+        "ui:placeholder": "Select",
+          "ui:options": {
+          label: true
+        }
+      }
+    } else {
+      properties[prop.title] = {
+        type: "string",
+        title: prop.title,
+        default: prop.propTypeVal
+      };
     }
-
   });
-
-  const uiSchema = {};
 
   propsInfo.map(prop => {
     uiSchema[prop.title] = { "ui:placeholder": `${prop.propTypeProp}` };
@@ -67,15 +74,14 @@ const ComponentPropsForm = props => {
       if (prop) {
         newProp = {
           propTypeProp: prop[0].propTypeProp,
-          propTypeVal: prop[0].propTypeVal,
+          propTypeVal: formData[key],
           propTypeIsRequired: prop[0].propTypeIsRequired,
           title: prop[0].title,
           description: prop[0].description,
-          val: formData[key]
         };
       } else {
         newProp = prop[0];
-        newProp.val = null;
+        newProp.propTypeVal = '';
       }
       newProps.push(newProp);
     });
@@ -93,17 +99,14 @@ const ComponentPropsForm = props => {
         newNode
       })
     };
-    setTree(newTree);
-    const templateTechno = templates
-      .filter(e => e._id === forms.projectSettings.projectTemplate)
-      .map(e => e.templateTechno)
+
+    setProject(newTree);
+
     const newForms = {
       ...forms,
       tree: newTree.treeData2,
     };
-    setCustomForm({
-      forms: newForms,
-    });
+    setCustomForm(newForms);
     generateCode();
     removeModal();
   };

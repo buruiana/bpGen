@@ -2,6 +2,7 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import sortBy from "lodash/sortBy";
 import get from "lodash/get";
+import isEmpty from "lodash/isEmpty";
 import GenericSearchForm from "../../forms/GenericSearchForm";
 import { navigate, navigate2Login } from "../../../utils";
 import { availablecomponents } from '../../../utils/constants';
@@ -40,18 +41,15 @@ const TemplatesListView = props => {
   };
 
   const filteredItems = () => {
-    const filteredTemplates = templates.filter(el => {
-      if (searchData.title) {
-        return (
-          el.title
-            .toLowerCase()
-            .includes(get(searchData, "title", el.title).toLowerCase())
-        );
+    const filteredComponents = templates.filter(el => {
+      if (!isEmpty(searchData) && searchData.title) {
+        return (el.title.toLowerCase().indexOf(searchData.title.toLowerCase()) !== -1
+          && get(searchData, 'techno', el.templateTechno) === el.templateTechno);
       }
-      return el;
+      return get(searchData, 'techno', el.templateTechno) === el.templateTechno;
     });
 
-    return sortBy(filteredTemplates, el => el.title);
+    return sortBy(filteredComponents, el => el.title);
   };
 
   const handleFileRead = e => {

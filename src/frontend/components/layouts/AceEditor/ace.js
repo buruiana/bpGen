@@ -1,7 +1,7 @@
 import React from "react";
 import AceEditor from "react-ace";
 import "brace/mode/jsx";
-import "brace/theme/xcode";
+import "brace/theme/github";
 import AceTabs from "../AceTabs";
 import isEmpty from "lodash/isEmpty";
 import { SERVICE, COMPONENT, SMART } from "../../../utils/constants";
@@ -36,7 +36,7 @@ const Ace = props => {
         
         <AceEditor
           mode="jsx"
-          theme="xcode"
+          theme="github"
           onChange={onChange}
           name="UNIQUE_ID_OF_DIV"
           editorProps={{ $blockScrolling: true }}

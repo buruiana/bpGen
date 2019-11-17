@@ -37,7 +37,7 @@ export default history =>
     codeGenerationReducer,
     aceTabsReducer,
     backEndReducer,
-    sortableTreeReducer,
+    //sortableTreeReducer,
     alertReducer,
     usersReducer,
   });

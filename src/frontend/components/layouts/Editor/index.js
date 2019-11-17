@@ -2,9 +2,9 @@ import Editor from "./editor";
 import { connect } from "react-redux";
 
 import { addModal } from "../../../services/modalService/actions";
-import { setTree, setNodePath } from "../../../services/sortableTreeService/actions";
+//import { setTree, setNodePath } from "../../../services/sortableTreeService/actions";
 import { setCustomForm } from '../../../services/customFormService/actions';
-import { setProject } from '../../../services/projectsService/actions';
+import { setProjectTree } from '../../../services/projectsService/actions';
 import { generateCode } from "../../../services/codeGenerationService/actions";
 
 const mapStateToProps = state => ({
@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
   components: state.componentsReducer.components,
   providers: state.providersReducer.providers,
   technos: state.technosReducer.technos,
-  //tree: state.sortableTreeReducer.tree,
+  templates: state.templatesReducer.templates,
   projectError: state.projectSettingsReducer.projectError,
   searchData: state.filterDataReducer.searchData,
   forms: state.customFormReducer.forms,
@@ -24,11 +24,10 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   addModal,
-  setTree,
+  setProjectTree,
   setCustomForm,
   generateCode,
-  setNodePath,
-  setProject
+  //setNodePath,
 };
 
 export default connect(

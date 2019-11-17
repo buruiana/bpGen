@@ -10,7 +10,7 @@ export const capitalize = string =>
 export const isEmpty = obj =>
   [Object, Array].includes((obj || {}).constructor) &&
   !Object.entries(obj || {}).length;
-  
+
 export const getFlatDataFromTree1 = getFlatDataFromTree;
 
 export const getConstList = tree => {
@@ -106,63 +106,86 @@ export const getTree = flatTree => {
 
       if (hasChildren) parentsList.push(theTitle);
 
-      const getComponentProps = () => {
-        let componentProps = "";
-        if (hasComponentProps) {
-          el.node.componentProps.map(el => {
-            if (!isEmpty(el.val)) componentProps += `\n${el.title}=${el.val}\n`;
-          });
+      const getWrapper = type => {
+        if (type.includes('string')) {
+          return {
+            START: "'",
+            END: "'",
+          };
+        } else if (type.includes('object') || type.includes('func')) {
+          return {
+            START: "{",
+            END: "}",
+          };
+        } else if (type.includes('array')) {
+          return {
+            START: "[",
+            END: "]",
+          };
         }
-        return componentProps;
       };
-      if (theTitle !== 'txt') {
-        code += `<${theTitle}${getComponentProps()}${closeTag}`;
-      } else {
-        if (!isEmpty(el.node.componentProps[0].val)) code += el.node.componentProps[0].val;
-      }
 
-      // set the parent data
-      if (hasParent) {
-        const currentParentId = el.parentNode.id;
-        const currentParent = tree.filter(el => el.node.id === currentParentId);
-        const currentParentLastChild =
-          el.parentNode.children.length > 1
-            ? el.parentNode.children[el.parentNode.children.length - 1]
-            : el.parentNode.children[0];
 
-        // check if current element is the last child
-        if (currentId === currentParentLastChild.uniqId && !hasChildren) {
-          code += `</ ${parentsList[parentsList.length - 1]}>`;
-          parentsList.pop();
-        }
+const getComponentProps = () => {
+  let componentProps = "";
+  if (hasComponentProps) {
+    el.node.componentProps.map(el => {
 
-        // check next elemen path
-        if (
-          !isEmpty(nextEl) &&
-          currentParent[0].path.length > nextEl.path.length
-        ) {
-          code += `</ ${parentsList[parentsList.length - 1]}>`;
-          parentsList.pop();
-        }
-      }
+      const wrapper = getWrapper(el.propTypeProp);
+      console.log(`\n${el.title}=${wrapper.START}${el.propTypeVal}${wrapper.END}\n`,);
+      if (!isEmpty(el.propTypeVal)) componentProps += `\n${el.title}=${wrapper.START}${el.propTypeVal}${wrapper.END}\n`;
+    });
+  }
+  return componentProps;
+};
+if (theTitle !== 'txt') {
+  code += `<${theTitle}${getComponentProps()}${closeTag}`;
+} else {
+  if (!isEmpty(el.node.componentProps[0].val)) code += el.node.componentProps[0].val;
+}
 
-      elIdx++;
-      return code;
+// set the parent data
+if (hasParent) {
+  const currentParentId = el.parentNode.id;
+  const currentParent = tree.filter(el => el.node.id === currentParentId);
+  const currentParentLastChild =
+    el.parentNode.children.length > 1
+      ? el.parentNode.children[el.parentNode.children.length - 1]
+      : el.parentNode.children[0];
+
+  // check if current element is the last child
+  if (currentId === currentParentLastChild.uniqId && !hasChildren) {
+    code += `</ ${parentsList[parentsList.length - 1]}>`;
+    parentsList.pop();
+  }
+
+  // check next elemen path
+  if (
+    !isEmpty(nextEl) &&
+    currentParent[0].path.length > nextEl.path.length
+  ) {
+    code += `</ ${parentsList[parentsList.length - 1]}>`;
+    parentsList.pop();
+  }
+}
+
+elIdx++;
+return code;
     });
 
-    // close remaining parents
-    if (parentsList.length) {
-      reverse(parentsList).map(el => {
-        code += `</ ${el}>`;
-      });
-    }
+// close remaining parents
+if (parentsList.length) {
+  reverse(parentsList).map(el => {
+    code += `</ ${el}>`;
+  });
+}
 
-    return code;
+return code;
   };
 
-  code += prepareTree(flatTree);
+code += prepareTree(flatTree);
 
-  return code;
+return code;
 };
 
 export const getLifeCycleCode = lifeCycleMethods => {

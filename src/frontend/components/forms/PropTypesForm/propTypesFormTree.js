@@ -109,13 +109,13 @@ const PropTypesFormTree = props => {
             generateNodeProps={({ node, path }) => ({
               buttons: [
                 <FontAwesomeIcon
-                  className="propTypeInfoIcon"
+                  className="componentInfoIcon"
                   icon={faMinusCircle}
                   onClick={() => remove(path)}
                 />,
                 hasEdit(node) && (
                   <FontAwesomeIcon
-                    className="propTypeInfoIcon"
+                    className="componentInfoIcon"
                     icon={faArrowCircleRight}
                     onClick={() =>
                       addModal(allmodals.PROPTYPE_ITEM_PROPS, { node, path })
