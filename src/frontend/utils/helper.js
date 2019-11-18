@@ -3,6 +3,7 @@ import uniqBy from "lodash/uniqBy";
 import sortBy from "lodash/sortBy";
 import groupBy from "lodash/groupBy";
 import reverse from "lodash/reverse";
+import * as lodash from 'lodash';
 
 export const capitalize = string =>
   string.charAt(0).toUpperCase() + string.slice(1);
@@ -12,6 +13,7 @@ export const isEmpty = obj =>
   !Object.entries(obj || {}).length;
 
 export const getFlatDataFromTree1 = getFlatDataFromTree;
+export const _ = lodash;
 
 export const getConstList = tree => {
   const flatData = getFlatDataFromTree({
@@ -112,7 +114,7 @@ export const getTree = flatTree => {
             START: "'",
             END: "'",
           };
-        } else if (type.includes('object') || type.includes('func') || type.includes('bool')) {
+        } else if (type.includes('object') || type.includes('func') || type.includes('bool') || type.includes('arrayOf')) {
           return {
             START: "{",
             END: "}",
@@ -121,6 +123,11 @@ export const getTree = flatTree => {
           return {
             START: "[",
             END: "]",
+          };
+        } else {
+          return {
+            START: "'",
+            END: "'",
           };
         }
       };
@@ -132,8 +139,9 @@ const getComponentProps = () => {
     el.node.componentProps.map(el => {
 
       const wrapper = getWrapper(el.propTypeProp);
+      console.log('console: wrapperwrapperwrapper', wrapper );
       console.log(`\n${el.title}=${wrapper.START}${el.propTypeVal}${wrapper.END}\n`,);
-      if (!isEmpty(el.propTypeVal)) componentProps += `\n${el.title}=${wrapper.START}${el.propTypeVal}${wrapper.END}\n`;
+      if (!isEmpty(el.val)) componentProps += `\n${el.title}=${wrapper.START}${el.val.trim()}${wrapper.END}\n`;
     });
   }
   return componentProps;

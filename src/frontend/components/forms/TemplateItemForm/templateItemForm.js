@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Form from 'react-jsonschema-form-bs4';
 import { changeNodeAtPath } from 'react-sortable-tree';
 import AceEditor from 'react-ace';
+import "brace/mode/jsx";
+import "brace/theme/github";
 
 import {
   getNewtemplate,
@@ -82,8 +84,8 @@ const TemplateItemForm = props => {
     return (
       <div className='container_editor_area'>
         <AceEditor
-          mode='jsx'
-          theme='xcode'
+          mode="jsx"
+          theme="github"
           onChange={onValueChange}
           name='UNIQUE_ID_OF_DIV'
           editorProps={{ $blockScrolling: true }}
