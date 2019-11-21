@@ -2,7 +2,7 @@ import * as actionTypes from "../projectSettingsService/actionTypes";
 
 export const initialState = () => ({
   projectSettings: {},
-  projectError: []
+  projectError: [],
 });
 
 export default (state = initialState(), action) => {

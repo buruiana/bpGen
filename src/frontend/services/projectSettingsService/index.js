@@ -7,7 +7,8 @@ import {
 } from '../../utils';
 
 export function* watchExportProjectFiles(action) {
-  yield call(exportFilesBE, action.data);
+  console.log('console: ooooooooooooooooooooooo', action);
+  //yield call(exportFilesBE, action.data);
 }
 
 export default function* rootSaga() {

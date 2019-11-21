@@ -11,3 +11,4 @@ export const UPDATE = 'UPDATE';
 export const DELETE = 'DELETE';
 
 export const GET_COLLECTION = 'GET_COLLECTION';
+export const EXPORT_PROJECT_FILES = 'EXPORT_PROJECT_FILES';

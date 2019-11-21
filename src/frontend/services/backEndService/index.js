@@ -10,6 +10,7 @@ import {
   UPDATE,
   DELETE,
   GET_COLLECTION,
+  EXPORT_PROJECT_FILES,
 } from '../backEndService/actionTypes';
 import { generateCodeSuccess } from '../codeGenerationService/actions';
 
@@ -35,7 +36,11 @@ const callBackendDelete = data => {
 
 const prettify = (code, parser) => {
   return axios.post('http://localhost:5000/api/prettify', code, parser);
-}
+};
+
+const exportFiles = data => {
+  return axios.post('http://localhost:5000/api/exportFiles', data);
+};
 
 export function* watchPrettyfyCode(code, parser = "babel") {
   let prettyCode = [];
@@ -226,6 +231,11 @@ export function* watchDelete(info) {
   }
 }
 
+export function* watchExportProjectFiles(action) {
+  console.log('console: ----------------------------------', action );
+  yield call(exportFiles, action.data);
+}
+
 export default function* rootSaga() {
   yield takeLatest(PRETTIFY_CODE, watchPrettyfyCode);
   yield takeLatest(EXPORT_MODULES, watchExportModule);
@@ -235,4 +245,6 @@ export default function* rootSaga() {
   yield takeLatest(UPDATE, watchUpdate);
   yield takeLatest(DELETE, watchDelete);
   yield takeEvery(GET_COLLECTION, watchGetCollection);
+  yield takeLatest(EXPORT_PROJECT_FILES, watchExportProjectFiles);
+
 }

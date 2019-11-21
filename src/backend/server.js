@@ -136,7 +136,6 @@ app.post('/api/register', function (req, res) {
 
 app.post("/api/prettify", (req, res) => {
   let newCode = [];
-  console.log('console: 1111111111111', req.body);
   req.body.code.code.map(e => {
     let theCode = "";
     if (e.code) theCode = e.code;
@@ -203,47 +202,54 @@ app.post("/api/exportModules", (req, res) => {
 });
 
 app.post("/api/exportFiles", (req, res) => {
-  const name = req.body.name;
-  const techno = req.body.techno;
-  const dest = req.body.destination + `/${name}`;
+  console.log('console: req.body', req.body);
+  const { id, code, dest } = req.body;
+  const finalDest = req.body.dest + `/${id}`;
   shell.mkdir(dest);
+  fs.writeFileSync(`${finalDest}`, code, "utf8");
 
-  if (req.body.projectType === "Service") {
-    if (req.body.reducer || req.body.exportAll) {
-      fs.writeFileSync(`${dest}/reducer.js`, req.body.reducer, "utf8");
-    }
 
-    if (req.body.saga || req.body.exportAll) {
-      fs.writeFileSync(`${dest}/index.js`, req.body.saga, "utf8");
-    }
+  // const name = req.body.name;
+  // const techno = req.body.techno;
+  // const dest = req.body.destination + `/${name}`;
+  // shell.mkdir(dest);
 
-    if (req.body.actions || req.body.exportAll) {
-      fs.writeFileSync(`${dest}/actions.js`, req.body.actions, "utf8");
-    }
+  // if (req.body.projectType === "Service") {
+  //   if (req.body.reducer || req.body.exportAll) {
+  //     fs.writeFileSync(`${dest}/reducer.js`, req.body.reducer, "utf8");
+  //   }
 
-    if (req.body.actionTypes || req.body.exportAll) {
-      fs.writeFileSync(`${dest}/actionTypes.js`, req.body.actionTypes, "utf8");
-    }
-  } else {
-    if (req.body.hoc || req.body.exportAll) {
-      fs.writeFileSync(`${dest}/index.js`, req.body.hoc, "utf8");
-    }
+  //   if (req.body.saga || req.body.exportAll) {
+  //     fs.writeFileSync(`${dest}/index.js`, req.body.saga, "utf8");
+  //   }
 
-    if (req.body.component || req.body.exportAll) {
-      fs.writeFileSync(
-        `${dest}/${name}.js`,
-        req.body.component.replace(/__/g, "."),
-        "utf8"
-      );
-    }
+  //   if (req.body.actions || req.body.exportAll) {
+  //     fs.writeFileSync(`${dest}/actions.js`, req.body.actions, "utf8");
+  //   }
 
-    if (req.body.styles || req.body.exportAll) {
-      const ext = req.body.techno === "React" ? "css" : "js";
-      fs.writeFileSync(`${dest}/styles.${ext}`, req.body.styles, "utf8");
-    }
-  }
+  //   if (req.body.actionTypes || req.body.exportAll) {
+  //     fs.writeFileSync(`${dest}/actionTypes.js`, req.body.actionTypes, "utf8");
+  //   }
+  // } else {
+  //   if (req.body.hoc || req.body.exportAll) {
+  //     fs.writeFileSync(`${dest}/index.js`, req.body.hoc, "utf8");
+  //   }
 
-  res.json("done");
+  //   if (req.body.component || req.body.exportAll) {
+  //     fs.writeFileSync(
+  //       `${dest}/${name}.js`,
+  //       req.body.component.replace(/__/g, "."),
+  //       "utf8"
+  //     );
+  //   }
+
+  //   if (req.body.styles || req.body.exportAll) {
+  //     const ext = req.body.techno === "React" ? "css" : "js";
+  //     fs.writeFileSync(`${dest}/styles.${ext}`, req.body.styles, "utf8");
+  //   }
+  // }
+
+  // res.json("done");
 });
 
 app.post("/api/generateApp", (req, res) => {

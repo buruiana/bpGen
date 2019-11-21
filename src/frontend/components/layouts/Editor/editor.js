@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Alert from "react-bootstrap/Alert";
 import SortableTree, {
   removeNodeAtPath,
   getVisibleNodeCount
 } from "react-sortable-tree";
 import sortBy from "lodash/sortBy";
-import has from "lodash/has";
+import isEmpty from "lodash/isEmpty";
 import get from "lodash/get";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,7 +14,7 @@ import {
   faAdjust
 } from "@fortawesome/free-solid-svg-icons";
 import Ace from "../AceEditor";
-import isEmpty from "lodash/isEmpty";
+
 import { fillNodeData } from "../../../services/sortableTreeService/helper";
 import GenericSearchForm from "../../forms/GenericSearchForm";
 import { availablecomponents, allmodals } from "../../../utils/constants";
@@ -48,16 +48,22 @@ const Editor = props => {
 
   if (!isAuthenticated) navigate2Login();
   const { tree } = forms;
+  const { projectName } = projectSettings;
+  const openModal = (type, node, path) => {
+    addModal(type, { node, path });
+  };
+
+  useEffect(() => {
+    if (!projectName && !isEmpty(templates)) {
+      addModal(allmodals.PROJECT_SETTINGS);
+    }
+  }, [projectName, templates]);
 
   let components = props.components || [];
   components = components.filter(e => e.isActive);
 
   const renderAce = () => {
     return !isEmpty(projectSettings) ? <Ace /> : null;
-  };
-
-  const openModal = (type, node, path) => {
-    addModal(type, { node, path });
   };
 
   const setNewTree = tree => {

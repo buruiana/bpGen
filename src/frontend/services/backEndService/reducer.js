@@ -2,7 +2,8 @@ import * as actionTypes from "../configsService/actionTypes";
 
 export const initialState = () => ({
   error: {},
-  code: []
+  code: [],
+  exported: false,
 });
 
 export default (state = initialState(), action) => {

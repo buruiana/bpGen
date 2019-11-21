@@ -53,3 +53,9 @@ export const getCollection = (dataType, data) => ({
   dataType,
   data
 });
+
+export const exportProjectFiles = data => ({
+  type: actionTypes.EXPORT_PROJECT_FILES,
+  exported: false,
+  data
+});

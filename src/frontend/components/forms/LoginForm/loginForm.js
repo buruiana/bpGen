@@ -30,22 +30,26 @@ const LoginForm = props => {
         onSelect={k => setLoginType(k)}
       >
         <Tab eventKey='signin' title="Sign In">
-          <Form
-            schema={schema}
-            onSubmit={onSubmitSignIn}
-            onChange={onChange}
-            formData={formData}
-            uiSchema={uiSchema}
-          />
+          <div className='login-container'>
+            <Form
+              schema={schema}
+              onSubmit={onSubmitSignIn}
+              onChange={onChange}
+              formData={formData}
+              uiSchema={uiSchema}
+            />
+          </div>
         </Tab>
         <Tab eventKey='signup' title="Sign Up">
-          <Form
-            schema={schema}
-            onSubmit={onSubmitSignUp}
-            onChange={onChange}
-            formData={formData}
-            uiSchema={uiSchema}
-          />
+          <div className='login-container'>
+            <Form
+              schema={schema}
+              onSubmit={onSubmitSignUp}
+              onChange={onChange}
+              formData={formData}
+              uiSchema={uiSchema}
+            />
+          </div>
         </Tab>
       </Tabs>
     </div>

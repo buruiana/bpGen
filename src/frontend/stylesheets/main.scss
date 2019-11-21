@@ -30,6 +30,16 @@ body {
   flex-direction: row;
 }
 
+.exportFilesLinks, .changeDest {
+  font-size: 14px;
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+.exportDest {
+  color: #FF7D7D;
+}
+
 .rightLink {
   justify-content: flex-end;
   display: flex;
@@ -77,6 +87,15 @@ body {
   margin-bottom: 1rem;
   border-color: #bee5eb;
 }
+
+.exportSection {
+  background-color: #ecf1d1;
+  padding: 1rem;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-color: #bee5eb;
+};
 
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:focus,
@@ -217,8 +236,8 @@ div.rst__moveHandle {
   min-width: 20%;
 }
 
-.nav-tabs {
-  margin-bottom: 2rem !important;
+.login-container{
+  margin-top: 2rem !important;
 }
 
 .nav-tabs .nav-link {
