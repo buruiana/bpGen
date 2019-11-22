@@ -3,7 +3,7 @@ import Form from "react-jsonschema-form-bs4";
 import isEmpty from "lodash/isEmpty";
 import get from "lodash/get";
 
-import { getFlatForms } from '../../../services/projectSettingsService/helper';
+import { getFlatForms } from '../../../utils/helper';
 
 const CustomForm = props => {
   const {

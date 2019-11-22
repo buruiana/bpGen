@@ -7,7 +7,7 @@ import {
 
 const mapStateToProps = state => {
     return {
-        projectSettings: state.projectSettingsReducer.projectSettings,
+        projectSettings: state.customFormReducer.forms.projectSettings,
         aceTabs: state.aceTabsReducer.aceTabs,
         code: state.codeGenerationReducer.code,
         modals: state.modalsReducer.modals,

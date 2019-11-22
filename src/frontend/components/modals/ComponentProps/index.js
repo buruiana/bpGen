@@ -5,8 +5,8 @@ import { removeModal } from "../../../services/modalService/actions";
 const mapStateToProps = state => {
   return {
     modals: state.modalsReducer.modals,
-    projectName: state.projectSettingsReducer.name,
-    projectType: state.projectSettingsReducer.type
+    projectName: get(state, 'customFormReducer.projectSettings.projectName', ''),
+    projectType: get(state, 'customFormReducer.projectSettings.projectType', ''),
   };
 };
 

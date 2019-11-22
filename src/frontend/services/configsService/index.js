@@ -10,10 +10,6 @@ import { getAllPropTypes } from "../propTypesService/actions";
 import { getAllProjects } from "../projectsService/actions";
 import { getAllUsers } from "../usersService/actions";
 
-import { addModal, removeModal } from '../modalService/actions';
-import { allmodals, alertTypes } from '../../utils/constants';
-import { setAlert } from '../alertService/actions';
-
 import { setComponent } from '../componentsService/actions';
 import { setPropType } from '../propTypesService/actions';
 import { setPovider } from '../providersService/actions';

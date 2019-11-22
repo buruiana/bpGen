@@ -87,15 +87,16 @@ const ProjectSettingsForm = props => {
     const currentTemplate = templates.filter(
       el => el._id === data.formData.projectTemplate
     )[0];
-    setCurrentTemplate(currentTemplate);
-    setProjectSettings({
-      ...data.formData,
-      projectTechno: currentTemplate.templateTechno
-    });
+    // setCurrentTemplate(currentTemplate);
+    // setProjectSettings({
+    //   ...data.formData,
+    //   projectTechno: currentTemplate.templateTechno
+    // });
 
     const newForms = {
       ...forms,
-      projectSettings: data.formData
+      projectSettings: data.formData,
+      currentTemplate,
     };
     setCustomForm(newForms);
 

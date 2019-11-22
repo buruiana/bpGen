@@ -3,7 +3,9 @@ import * as actionTypes from "./actionTypes";
 export const initialState = () => ({
   forms: {
     tree: [],
-  }
+    projectSettings: {},
+    currentTemplate: {},
+  },
 });
 
 export default (state = initialState(), action) => {

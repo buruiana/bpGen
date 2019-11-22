@@ -6,7 +6,7 @@ import { executeCodeGeneration } from "./helper";
 import { prettifyCode } from "../backEndService/actions";
 
 export function* watchGenerateCode(action) {
-  const template = (yield select()).templatesReducer.currentTemplate;
+  const template = (yield select()).customFormReducer.forms.currentTemplate;
   const forms = (yield select()).customFormReducer.forms;
 
   console.log('console: template', template);

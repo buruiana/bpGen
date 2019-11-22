@@ -8,7 +8,6 @@ import {
   setProjectTree
 } from '../../../services/projectsService/actions';
 import { setCustomForm } from '../../../services/customFormService/actions';
-import { setProjectSettings } from "../../../services/projectSettingsService/actions";
 import { setCurrentTemplate } from "../../../services/templatesService/actions";
 import { importData } from '../../../services/configsService/actions';
 import { generateCode } from "../../../services/codeGenerationService/actions";
@@ -21,7 +20,7 @@ const mapStateToProps = state => {
     providers: state.providersReducer.providers,
     isAuthenticated: state.loginReducer.isAuthenticated,
     templates: state.templatesReducer.templates,
-    currentTemplate: state.templatesReducer.currentTemplate,
+    currentTemplate: state.customFormReducer.forms.currentTemplate,
     hasProjectsImport: state.configsReducer.configs.hasProjectsImport,
   }
 }
@@ -33,7 +32,6 @@ const mapDispatchToProps = {
   setProjectTree,
   setCurrentProject,
   setCustomForm,
-  setProjectSettings,
   setCurrentTemplate,
   importData,
   generateCode

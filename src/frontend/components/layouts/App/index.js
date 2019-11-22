@@ -4,9 +4,9 @@ import App from "./app";
 const mapStateToProps = state => {
   return {
     modals: state.modalsReducer.modals,
-    projectSettings: state.projectSettingsReducer.projectSettings,
+    projectSettings: state.customFormReducer.forms.projectSettings,
     isAuthenticated: state.loginReducer.isAuthenticated,
-    currentTemplate: state.templatesReducer.currentTemplate,
+    currentTemplate: state.customFormReducer.forms.currentTemplate,
   };
 };
 

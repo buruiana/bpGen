@@ -9,12 +9,10 @@ import technosReducer from "../../services/technosService/reducer";
 import componentsReducer from "../../services/componentsService/reducer";
 import propTypesReducer from "../../services/propTypesService/reducer";
 import filterDataReducer from "../../services/filterDataService/reducer";
-import projectSettingsReducer from "../../services/projectSettingsService/reducer";
 import customFormReducer from "../../services/customFormService/reducer";
 import codeGenerationReducer from "../../services/codeGenerationService/reducer";
 import aceTabsReducer from "../../services/aceTabsService/reducer";
 import backEndReducer from "../../services/backEndService/reducer";
-import sortableTreeReducer from "../../services/sortableTreeService/reducer";
 import projectsReducer from "../../services/projectsService/reducer";
 import alertReducer from "../../services/alertService/reducer";
 import usersReducer from "../../services/usersService/reducer";
@@ -32,12 +30,10 @@ export default history =>
     projectsReducer,
     propTypesReducer,
     filterDataReducer,
-    projectSettingsReducer,
     customFormReducer,
     codeGenerationReducer,
     aceTabsReducer,
     backEndReducer,
-    //sortableTreeReducer,
     alertReducer,
     usersReducer,
   });

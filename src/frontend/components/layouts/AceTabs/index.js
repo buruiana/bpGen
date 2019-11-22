@@ -3,7 +3,7 @@ import AceTabs from "./aceTabs";
 import { setAceTab } from "../../../services/aceTabsService/actions";
 
 const mapStateToProps = state => ({
-  currentTemplate: state.templatesReducer.currentTemplate,
+  currentTemplate: state.customFormReducer.forms.currentTemplate,
   aceTab: state.aceTabsReducer.aceTab,
   aceTabs: state.aceTabsReducer.aceTabs
 });

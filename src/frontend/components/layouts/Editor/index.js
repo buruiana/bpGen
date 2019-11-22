@@ -9,17 +9,17 @@ import { generateCode } from "../../../services/codeGenerationService/actions";
 
 const mapStateToProps = state => ({
   currentProject: state.projectsReducer.currentProject,
-  projectSettings: state.projectSettingsReducer.projectSettings,
+  projectSettings: state.customFormReducer.forms.projectSettings,
   components: state.componentsReducer.components,
   providers: state.providersReducer.providers,
   technos: state.technosReducer.technos,
   templates: state.templatesReducer.templates,
-  projectError: state.projectSettingsReducer.projectError,
+  projectError: state.customFormReducer.forms.projectSettings.projectError,
   searchData: state.filterDataReducer.searchData,
   forms: state.customFormReducer.forms,
   generatedCode: state.codeGenerationReducer.code,
   configs: state.configsReducer,
-  currentTemplate: state.templatesReducer.currentTemplate,
+  currentTemplate: state.customFormReducer.forms.currentTemplate,
   isAuthenticated: state.loginReducer.isAuthenticated,
 });
 

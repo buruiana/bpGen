@@ -9,7 +9,7 @@ import { setProjectTree } from '../../../services/projectsService/actions';
 
 const mapStateToProps = state => {
   return {
-    projectSettings: state.projectSettingsReducer.projectSettings,
+    projectSettings: state.customFormReducer.forms.projectSettings,
     templates: state.templatesReducer.templates,
     tree: state.projectsReducer.tree,
     modalData: state.modalsReducer.modalData,
