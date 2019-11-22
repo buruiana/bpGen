@@ -12,7 +12,7 @@ import configsSaga from "../../services/configsService";
 import projectsSaga from "../../services/projectsService";
 import alertSaga from "../../services/alertService";
 import usersSaga from "../../services/usersService";
-import customForm from "../../services/customFormService";
+import customFormSaga from "../../services/customFormService";
 
 export default function* sagas() {
   yield all(
@@ -30,7 +30,7 @@ export default function* sagas() {
       projectsSaga,
       alertSaga,
       usersSaga,
-      customForm,
+      customFormSaga,
     ].map(saga => fork(saga))
   );
 }

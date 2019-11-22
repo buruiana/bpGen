@@ -1,8 +1,7 @@
 import Editor from "./editor";
 import { connect } from "react-redux";
-
+import get from 'lodash/get';
 import { addModal } from "../../../services/modalService/actions";
-//import { setTree, setNodePath } from "../../../services/sortableTreeService/actions";
 import { setCustomForm } from '../../../services/customFormService/actions';
 import { setProject, setProjectTree } from '../../../services/projectsService/actions';
 import { generateCode } from "../../../services/codeGenerationService/actions";
@@ -14,7 +13,7 @@ const mapStateToProps = state => ({
   providers: state.providersReducer.providers,
   technos: state.technosReducer.technos,
   templates: state.templatesReducer.templates,
-  projectError: state.customFormReducer.forms.projectSettings.projectError,
+  projectError: get(state, 'customFormReducer.forms.projectSettings.projectError', []),
   searchData: state.filterDataReducer.searchData,
   forms: state.customFormReducer.forms,
   generatedCode: state.codeGenerationReducer.code,

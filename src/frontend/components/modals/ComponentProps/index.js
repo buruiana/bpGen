@@ -1,5 +1,6 @@
 import ComponentProps from "./componentProps";
 import { connect } from "react-redux";
+import get from 'lodash/get';
 import { removeModal } from "../../../services/modalService/actions";
 
 const mapStateToProps = state => {
