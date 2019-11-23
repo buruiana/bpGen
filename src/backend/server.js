@@ -58,6 +58,9 @@ const opt = {
   arrowParens: "avoid",
   proseWrap: "preserve"
 };
+const optCss = {
+  parser: `css`,
+};
 
 app.get('/api/secret', withAuth, function (req, res) {
   res.send('The password is potato');
@@ -135,10 +138,14 @@ app.post('/api/register', function (req, res) {
 
 app.post("/api/prettify", (req, res) => {
   let newCode = [];
+
   req.body.code.code.map(e => {
     let theCode = "";
     if (e.code) theCode = e.code;
-    newCode.push({ id: e.id, code: prettier.format(theCode, opt) });
+    const newOpt = e.id === 'styles.css'
+      ? optCss
+      : opt
+    newCode.push({ id: e.id, code: prettier.format(theCode, newOpt) });
   });
 
   res.json(newCode);
@@ -210,8 +217,10 @@ app.post("/api/exportFiles", (req, res) => {
     fs.writeFileSync(`${finalDest}`, code, "utf8");
   } else {
     req.body.code.map(e => {
-      const finalDest = req.body.dest + `/${e.id}`;
-      fs.writeFileSync(`${finalDest}`, e.code, "utf8");
+      if (!e.id.includes('preview_')) {
+        const finalDest = req.body.dest + `/${e.id}`;
+        fs.writeFileSync(`${finalDest}`, e.code, "utf8");
+      }
     });
   }
 

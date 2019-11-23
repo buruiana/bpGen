@@ -136,7 +136,7 @@ export const convertSortableTree2JsonSchema = treeData => {
               };
             };
 
-            c.children.map(k => {
+            get(c, 'children', []).map(k => {
               if ('formPrepareData' in k) {
                 element = {
                   ...element,
@@ -172,22 +172,22 @@ export const convertSortableTree2JsonSchema = treeData => {
 
       const getFileBlocks = f => {
         let blocks = [];
-        f.children.map(u => {
+
+        get(f, 'children', []).map(u => {
           let element = {};
-          u.children.map(c => {
-            if (c.blockName) {
-              element = {
-                blockDescription: get(c, 'blockDescription', ''),
-                blockImplementation: get(c, 'blockImplementation', ''),
-                blockIsActive: get(c, 'blockIsActive', false),
-                blockName: get(c, 'blockName', ''),
-                blockPreviewImplementation: get(c, 'blockPreviewImplementation', ''),
-                blockSequence: get(c, 'blockSequence', 1),
-                title: get(c, 'blockName', ''),
-              };
+          get(u, 'children', []).map(c => {
+
+            element = {
+              blockDescription: get(c, 'blockDescription', ''),
+              blockImplementation: get(c, 'blockImplementation', ''),
+              blockIsActive: get(c, 'blockIsActive', false),
+              blockName: get(c, 'blockName', ''),
+              blockPreviewImplementation: get(c, 'blockPreviewImplementation', ''),
+              blockSequence: get(c, 'blockSequence', 1),
+              title: get(c, 'blockName', ''),
             };
 
-            c.children.map(k => {
+            get(c, 'children', []).map(k => {
               if ('blockImplementation' in k) {
                 element = {
                   ...element,

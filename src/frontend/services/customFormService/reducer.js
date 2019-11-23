@@ -5,6 +5,7 @@ export const initialState = () => ({
     tree: [],
     projectSettings: {},
     currentTemplate: {},
+    err: '',
   },
 });
 
@@ -19,6 +20,11 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         forms: {}
+      };
+    case actionTypes.SET_PROJECT_ERROR:
+      return {
+        ...state,
+        err: action.err
       };
     default:
       return state;

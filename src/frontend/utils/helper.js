@@ -23,10 +23,9 @@ export const getConstList = tree => {
   });
 
   let constList = [];
-
   flatData.map(el => {
     return el.node.componentProps.filter(prop => {
-      if (!isEmpty(prop.val) && prop.propType === "PropTypes.func") {
+      if (!isEmpty(prop.val) && prop.propTypeProp.includes('_function')) {
         constList.push(prop.val.replace(/[\W_]+/g, ""));
       }
     });
@@ -45,7 +44,7 @@ export const getStylesList = tree => {
 
   flatData.map(el => {
     return el.node.componentProps.filter(prop => {
-      if (!isEmpty(prop.val) && prop.name === "className") {
+      if (!isEmpty(prop.val) && prop.title === 'className') {
         stylesList.push(prop.val.replace(/[\W_]+/g, ""));
       }
     });

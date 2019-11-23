@@ -1,2 +1,3 @@
 export const SET_CUSTOM_FORM = "SET_CUSTOM_FORM";
 export const INIT_PROJECT = "INIT_PROJECT";
+export const SET_PROJECT_ERROR = "SET_PROJECT_ERROR";

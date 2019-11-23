@@ -14,7 +14,7 @@ export const executeCodeGeneration = (template, forms) => {
         code += new Function("forms", "helper", block.blockImplementation)(forms, helper);
         console.log('console: after block');
       }
-console.log('console:111111111111111111111 ', code);
+      console.log('console:111111111111111111111 ', code);
       if (block.blockPreviewImplementation) {
         console.log('console: before blockImpl');
         codePreview += new Function("forms", "helper", block.blockPreviewImplementation)(forms, helper);
@@ -27,7 +27,7 @@ console.log('console:111111111111111111111 ', code);
       code
     });
     codeFile.push({
-      id: `${file.fileName}_preview`,
+      id: `preview_${file.fileName}`,
       code: codePreview
     });
   });
