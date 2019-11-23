@@ -29,7 +29,6 @@ export function* watchSetTemplate(action) {
     } else {
       yield put(create('templates', { ...template, userid }));
     }
-    //yield put(getAllTemplates());
   }
 }
 

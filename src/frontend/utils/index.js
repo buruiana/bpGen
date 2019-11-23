@@ -1,5 +1,8 @@
 import { history } from "../redux/store";
 import isEmpty from 'lodash/isEmpty';
+import { walk, changeNodeAtPath } from 'react-sortable-tree';
+import get from 'lodash/get';
+import uniqueId from 'lodash/uniqueId';
 
 export const navigate = id => {
   history.push(id);
@@ -41,3 +44,32 @@ export const getPropTypesEnumNames = propTypes => !isEmpty(propTypes)
 export const getTechnoName = (technos, id) => technos.filter(e => e._id === id).map(el => el.title);
 export const getProviderName = (providers, id) => providers.filter(e => e._id === id).map(el => el.title);
 export const getPropTypeName = (propTypes, id) => propTypes.filter(e => e._id === id).map(el => el.title);
+
+
+export const fillNodeData = (treeData, providers) => {
+  walk({
+    treeData: treeData,
+    getNodeKey: ({ treeIndex: number }) => number,
+    callback: rowInfo => {
+      let node = {
+        ...rowInfo.node,
+      };
+      node.uniqId = uniqueId();
+      node.hasChildren = !isEmpty(node.children);
+      const hasComponentPropsVals = get(node, 'componentProps', []).filter(el => el.val);
+      node.hasComponentPropsVals = !isEmpty(hasComponentPropsVals);
+      node.providerPath = get(providers.filter(provider => provider.name === node.provider), '[0].path', '');
+
+      treeData = changeNodeAtPath({
+        treeData: treeData,
+        path: rowInfo.path,
+        newNode: node,
+        getNodeKey: ({ treeIndex }) => treeIndex,
+        ignoreCollapsed: false
+      });
+    },
+    ignoreCollapsed: false
+  });
+
+  return treeData;
+}

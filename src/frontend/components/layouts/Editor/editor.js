@@ -15,7 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Ace from "../AceEditor";
 
-import { fillNodeData } from "../../../services/sortableTreeService/helper";
+import { fillNodeData } from "../../../utils";
 import GenericSearchForm from "../../forms/GenericSearchForm";
 import { availablecomponents, allmodals } from "../../../utils/constants";
 import Preview from "../Preview";

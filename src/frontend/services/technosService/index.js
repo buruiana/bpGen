@@ -23,7 +23,6 @@ export function* watchSetTechno(action) {
     } else {
       yield put(create('technos', { ...techno, userid }));
     }
-    //yield put(getAllTechnos());
   }
 }
 
@@ -43,7 +42,6 @@ export function* watchDeleteTechno(action) {
 
   if (!isOffline) {
     yield put(remove('technos', _id));
-    //yield put(getAllTechnos());
   }
 }
 
