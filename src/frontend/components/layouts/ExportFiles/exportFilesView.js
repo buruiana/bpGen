@@ -17,21 +17,19 @@ const ExportFilesView = props => {
         exportProjectFiles,
         exported
     } = props
-    console.log('console: ------------------------', props);
 
     const renderLinks = () => {
         return (
             <span>
-                <a key='allFiles' className='exportFilesLinks' onClick={onClick} key='all'>All Files&nbsp;</a>
-                {aceTabs.map(tab => <a key={tab} className='exportFilesLinks' id={tab} onClick={onClick}>{`${tab} `} </a>)}
+                <a key='allFiles' className='exportFilesLinks' onClick={onClick} id='all'>All Files | </a>
+                {aceTabs.map(tab => <a key={tab} className='exportFilesLinks' id={tab} onClick={onClick}>{`${tab} `} | </a>)}
             </span>);
     };
 
     const prepareObject = tab => {
-        console.log('console: tab', tab, code);
         return (tab !== 'all')
             ? code.filter(e => e.id === tab)[0]
-            : code;
+            : { code, id: 'all' };
     }
 
     const renderExportStatus = () => {
@@ -40,14 +38,9 @@ const ExportFilesView = props => {
             : null;
     }
 
-    const changeDest = () => {
-        addModal(PROJECT_SETTINGS);
-    }
-
+    const changeDest = () => addModal(PROJECT_SETTINGS);
     const onClick = event => {
-        console.log('console: event.target.id', event.target.id);
         const data = prepareObject(event.target.id) || {};
-        console.log('console: data', data);
         data['dest'] = projectSettings.projectDestination;
 
         exportProjectFiles(data);

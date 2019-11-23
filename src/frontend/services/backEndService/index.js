@@ -232,7 +232,6 @@ export function* watchDelete(info) {
 }
 
 export function* watchExportProjectFiles(action) {
-  console.log('console: ----------------------------------', action );
   yield call(exportFiles, action.data);
 }
 

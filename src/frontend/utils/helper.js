@@ -139,8 +139,6 @@ const getComponentProps = () => {
     el.node.componentProps.map(el => {
 
       const wrapper = getWrapper(el.propTypeProp);
-      console.log('console: wrapperwrapperwrapper', wrapper );
-      console.log(`\n${el.title}=${wrapper.START}${el.propTypeVal}${wrapper.END}\n`,);
       if (!isEmpty(el.val)) componentProps += `\n${el.title}=${wrapper.START}${el.val.trim()}${wrapper.END}\n`;
     });
   }
